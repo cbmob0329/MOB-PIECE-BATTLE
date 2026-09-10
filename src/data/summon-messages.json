@@ -1,0 +1,42 @@
+{
+  "brand": "MOB POP!",
+  "header": "MOBを集めて、ドカンとオープン！",
+  "previewHeader": "演出プレビュー・獲得なし",
+  "skip": "スキップ →",
+  "eyebrow": "READY, SET… MOB!",
+  "title": "MOB、飛び出せ！",
+  "mob": "MOB",
+  "cutLabel": "POP! POP! POP!",
+  "seal": "M",
+  "sealLabel": "SPECIAL",
+  "previewResult": "演出プレビュー",
+  "result": "ようこそ、MOBコレクション！",
+  "ready": "MOBを集めて、なにが出るかな？",
+  "release": "MOBを発射！",
+  "releaseEnglish": "LET’S POP!",
+  "closePreview": "プレビューを閉じる",
+  "showResult": "結果を見る",
+  "reduced": "動きを抑えた演出で表示します",
+  "hint": "タップしてMOBを発射！",
+  "gather": "MOBがどんどん集まってきた！",
+  "flight": "いっけー！MOBラッシュ！",
+  "reveal": "じゃーん！ピース登場！",
+  "cues": {
+    "normal": [
+      "MOB集合！",
+      "どんなピースが飛び出すかな？"
+    ],
+    "chance": [
+      "ざわざわ…！",
+      "おっ、なんだかイイ予感！"
+    ],
+    "ultra": [
+      "激アツゲート！",
+      "UR以上 確定"
+    ],
+    "pickup": [
+      "主役のおでまし！",
+      "メインピックアップ 確定"
+    ]
+  }
+}
