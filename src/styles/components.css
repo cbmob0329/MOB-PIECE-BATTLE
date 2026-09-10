@@ -1,0 +1,67 @@
+.top-bar {
+  height: calc(74px + env(safe-area-inset-top));
+  padding: calc(10px + env(safe-area-inset-top)) 14px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: var(--line);
+  background: rgba(244,239,228,.96);
+  position: relative;
+  z-index: 30;
+}
+.profile-chip, .icon-btn, .currency, .nav-item, .quick-action, .event-card, .back-btn, .mode-card { border: 0; background: none; }
+.profile-chip { display:flex; gap:9px; align-items:center; padding:0; }
+.avatar { width:43px; height:43px; border: var(--line); border-radius:14px; display:grid; place-items:center; background:var(--mint); font-weight:1000; box-shadow:2px 2px 0 var(--ink); }
+.profile-copy { display:flex; flex-direction:column; align-items:flex-start; line-height:1.05; }
+.profile-copy strong { font-size:.88rem; letter-spacing:.08em; }
+.profile-copy small { font-size:.65rem; font-weight:900; letter-spacing:.08em; margin-top:5px; }
+.wallet { display:flex; align-items:center; gap:7px; }
+.currency { height:34px; min-width:58px; border:2px solid var(--ink); border-radius:18px; display:flex; gap:6px; align-items:center; justify-content:center; padding:0 9px; background:#fffaf0; }
+.currency .icon { width:16px; height:16px; }
+.currency strong { font-size:.75rem; }
+.icon-btn { width:38px; height:38px; display:grid; place-items:center; padding:0; }
+.icon-btn .icon { width:23px; height:23px; }
+
+.bottom-nav {
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:calc(72px + env(safe-area-inset-bottom));
+  padding:7px 9px calc(7px + env(safe-area-inset-bottom));
+  border-top:var(--line);
+  background:#f8f2e7;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:3px;
+  z-index:50;
+}
+.nav-item { min-width:0; padding:5px 2px 2px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; font-size:.58rem; font-weight:1000; letter-spacing:.02em; border-radius:13px; }
+.nav-item .nav-icon { width:30px; height:28px; display:grid; place-items:center; }
+.nav-item .icon { width:22px; height:22px; }
+.nav-item.is-active { background:var(--mint); border:2px solid var(--ink); box-shadow:2px 2px 0 var(--ink); }
+.nav-item.is-emphasis:not(.is-active) .nav-icon { background:var(--yellow); border:2px solid var(--ink); border-radius:50%; width:34px; height:34px; margin-top:-16px; box-shadow:2px 2px 0 var(--ink); }
+
+.sub-header {
+  height:calc(82px + env(safe-area-inset-top));
+  padding:calc(16px + env(safe-area-inset-top)) 16px 12px;
+  border-bottom:var(--line);
+  display:grid;
+  grid-template-columns:44px 1fr 44px;
+  align-items:center;
+  background:var(--paper);
+}
+.sub-header > div { text-align:center; line-height:1; }
+.sub-header small { font-size:.58rem; font-weight:1000; letter-spacing:.22em; }
+.sub-header h1 { margin:5px 0 0; font-size:1.6rem; letter-spacing:.04em; }
+.back-btn { width:40px; height:40px; border:2px solid var(--ink); border-radius:12px; background:#fffaf0; display:grid; place-items:center; box-shadow:2px 2px 0 var(--ink); }
+.back-btn .icon { width:20px; }
+.header-spacer { display:block; }
+.sub-main { height:calc(100% - 82px - 72px); overflow:auto; padding-bottom:94px; }
+
+.generic-main { min-height:calc(100dvh - 165px); display:grid; place-items:center; padding:26px; }
+.construction-stage { width:100%; background:#fffaf0; border:var(--line); box-shadow:var(--shadow); border-radius:24px; padding:30px 24px; text-align:center; }
+.construction-icon { width:88px; height:88px; margin:0 auto 18px; border:var(--line); border-radius:26px; display:grid; place-items:center; background:var(--yellow); transform:rotate(-3deg); }
+.construction-icon .icon { width:44px; height:44px; }
+.construction-stage small { font-size:.65rem; font-weight:1000; letter-spacing:.2em; }
+.construction-stage h2 { font-size:2rem; margin:7px 0; }
+.construction-stage p { font-size:.85rem; line-height:1.6; margin:0 auto 20px; max-width:270px; }
+.construction-stage button { border:var(--line); background:var(--ink); color:white; font-weight:900; padding:12px 20px; border-radius:14px; }

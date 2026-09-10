@@ -1,0 +1,18 @@
+.battle-select-screen { background:#e8dfcd; }
+.mode-list { padding:18px 14px 100px; display:flex; flex-direction:column; gap:13px; }
+.mode-card { position:relative; min-height:112px; border:var(--line); border-radius:22px; box-shadow:var(--shadow); padding:14px 14px; display:grid; grid-template-columns:62px 1fr 26px; gap:13px; align-items:center; text-align:left; overflow:hidden; }
+.mode-card::after { content:""; position:absolute; right:-23px; bottom:-30px; width:115px; height:115px; border:4px solid rgba(23,21,22,.13); border-radius:50%; }
+.mode-1 { background:var(--yellow); }
+.mode-2 { background:var(--sky); }
+.mode-3 { background:var(--coral); }
+.mode-4 { background:var(--mint); }
+.mode-5 { background:#d7cadf; }
+.mode-card.is-locked { opacity:.58; box-shadow:2px 3px 0 var(--ink); }
+.mode-icon { width:58px; height:58px; border:var(--line); border-radius:17px; background:#fffaf0; display:grid; place-items:center; z-index:2; }
+.mode-icon .icon { width:31px; height:31px; }
+.mode-copy { z-index:2; display:flex; flex-direction:column; min-width:0; }
+.mode-copy small { font-size:.48rem; font-weight:1000; letter-spacing:.2em; }
+.mode-copy strong { font-size:1.12rem; margin:4px 0 5px; letter-spacing:.02em; }
+.mode-copy span { font-size:.63rem; font-weight:800; line-height:1.35; }
+.mode-card em { z-index:2; font-size:.47rem; font-style:normal; font-weight:1000; border:2px solid var(--ink); background:#fffaf0; padding:5px 6px; border-radius:8px; text-align:center; }
+.mode-arrow { z-index:2; }
