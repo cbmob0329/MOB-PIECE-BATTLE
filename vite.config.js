@@ -1,3 +1,4 @@
+import './scripts/index-assets.mjs';
 import { defineConfig } from 'vite';
 import { cpSync, existsSync } from 'node:fs';
 // Preserve original stable asset paths in production as well as development.

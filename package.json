@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node scripts/rules-check.mjs && node scripts/gacha-rules-check.mjs",
+    "test:gacha": "node scripts/gacha-browser-check.mjs",
+    "assets:index": "node scripts/index-assets.mjs"
   },
   "devDependencies": {
     "vite": "^7.1.5"

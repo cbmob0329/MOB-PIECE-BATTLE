@@ -21,7 +21,7 @@ v136の行動進行は生存者のnextAt最小を選び、1000/max(18,spd)で更
 現段階は battle engine 未接続。表示を動かすための仮の勝敗処理は置かない。
 次段階で game/battle（戦闘状態・resolver）、game/cpu、game/rank、screen battle/resultへ分離する。
 デッキ検証のowned引数へ正式な所持数を渡し、draftをそのまま戦闘所有データとして採用しない。
-保存データはバージョン1。所有・ランク・通貨を追加する際は移行処理を設ける。
+保存データはガチャ追加時にバージョン2へ移行。所有・ダイヤ・ルビー・前回結果を追加し、旧編成・センターを保持。ランク追加時も移行処理を設ける。
 265体の全図鑑表示は所持・公開済みを意味しない。pendingはセンター選択/編成から除外。
 52タグはpieceTwo/pieceThreeを含め原データ保持。RPG用two/threeへ誤接続しない。
 SKILL FIGURE / PIECE BOOST / TOURNAMENT / SPECIAL / BOSS RAIDの本実装はしない。

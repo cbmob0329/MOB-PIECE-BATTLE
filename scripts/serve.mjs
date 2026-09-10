@@ -1,3 +1,4 @@
+import './index-assets.mjs';
 import http from 'node:http';
 import {readFile,stat} from 'node:fs/promises';
 import path from 'node:path';
