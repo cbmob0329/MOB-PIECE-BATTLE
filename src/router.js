@@ -1,22 +1,21 @@
-import { homeScreen } from './screens/home.js';
-import { battleSelectScreen } from './screens/battleSelect.js';
-import { genericScreen } from './screens/generic.js';
+(function (MPB) {
+  'use strict';
+  MPB.renderRoute = function renderRoute(route) {
+    const target = document.getElementById('app');
+    route = route || 'home';
+    let html;
+    if (route === 'home') html = MPB.screens.home();
+    else if (route === 'battleSelect') html = MPB.screens.battleSelect();
+    else if (route.indexOf('mode:') === 0) {
+      const mode = route.split(':')[1].toUpperCase();
+      html = MPB.screens.generic('battle');
+      html = html.replace('SCREEN', mode).replace('READY', 'BATTLE MODE').replace('将来機能用の画面です。', mode + ' のゲーム本編をここへ接続できます。');
+    } else html = MPB.screens.generic(route);
 
-const app = () => document.querySelector('#app');
-
-export function renderRoute(route = 'home') {
-  let html;
-  if (route === 'home') html = homeScreen();
-  else if (route === 'battleSelect') html = battleSelectScreen();
-  else if (route.startsWith('mode:')) {
-    const mode = route.split(':')[1].toUpperCase();
-    html = genericScreen('battle');
-    html = html.replace('SCREEN', mode).replace('READY', 'BATTLE MODE').replace('将来機能用の画面です。', `${mode} のゲーム本編をここへ接続できます。`);
-  } else html = genericScreen(route);
-
-  app().innerHTML = html;
-  app().querySelectorAll('[data-route]').forEach(el => {
-    el.addEventListener('click', () => renderRoute(el.dataset.route));
-  });
-  window.scrollTo(0,0);
-}
+    target.innerHTML = html;
+    Array.prototype.forEach.call(target.querySelectorAll('[data-route]'), function (el) {
+      el.addEventListener('click', function () { MPB.renderRoute(el.getAttribute('data-route')); });
+    });
+    window.scrollTo(0, 0);
+  };
+})(window.MPB);

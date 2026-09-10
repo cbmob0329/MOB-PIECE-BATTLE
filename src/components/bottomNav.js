@@ -1,15 +1,11 @@
-import { bottomMenu } from '../data/menu.js';
-import { icon } from './icons.js';
-
-export function bottomNav(active = 'home') {
-  return `
-    <nav class="bottom-nav" aria-label="メインナビゲーション">
-      ${bottomMenu.map(item => `
-        <button class="nav-item ${item.id === active ? 'is-active' : ''} ${item.emphasis ? 'is-emphasis' : ''}" data-route="${item.screen}">
-          <span class="nav-icon">${icon(item.icon)}</span>
-          <span>${item.label}</span>
-        </button>
-      `).join('')}
-    </nav>
-  `;
-}
+(function (MPB) {
+  'use strict';
+  MPB.components.bottomNav = function bottomNav(active) {
+    const icon = MPB.components.icon;
+    return '<nav class="bottom-nav" aria-label="メインナビゲーション">' +
+      MPB.data.bottomMenu.map(function (item) {
+        return '<button class="nav-item ' + (item.id === (active || 'home') ? 'is-active ' : '') + (item.emphasis ? 'is-emphasis' : '') + '" data-route="' + item.screen + '">' +
+          '<span class="nav-icon">' + icon(item.icon) + '</span><span>' + item.label + '</span></button>';
+      }).join('') + '</nav>';
+  };
+})(window.MPB);

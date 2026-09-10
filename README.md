@@ -1,60 +1,18 @@
-# MOB PIECE BATTLE HOME v1
+# MOB PIECE BATTLE HOME v1.1
 
-A from-scratch, mobile-first home/menu foundation for **MOB PIECE BATTLE**.
+## すぐ確認する方法
+`index.html` をダブルクリックしてください。ローカルファイル（file://）でも表示できます。
 
-## Start
-
+## Viteで起動する場合
 ```bash
 npm install
 npm run dev
 ```
 
-Build:
+## フィギュア画像の差し替え
+`public/assets/figures/center.png` を追加してください。
+画像がない場合はプレースホルダーが表示されます。
 
-```bash
-npm run build
-```
-
-## What is included
-
-- 390x844-first vertical mobile HOME
-- Responsive support for 320–430px widths
-- Safe-area aware top/bottom UI
-- Figure showroom HOME instead of a web-card dashboard
-- Large BATTLE CTA
-- BATTLE MODE SELECT
-  - FREE BATTLE
-  - RANK MATCH
-  - TOURNAMENT
-  - SPECIAL BATTLE
-  - BOSS RAID
-- FIGURE / DECK / GACHA / MISSION / SHOP / EVENT expansion screens
-- Data-driven menu, event, battle-mode and figure definitions
-- Separate internal figure ID and visible sequential dex number
-- Replaceable asset directories
-
-## Add a real center figure
-
-Put a transparent PNG at:
-
-`public/assets/figures/center.png`
-
-It will automatically replace the placeholder on HOME. The image uses `object-fit: contain` and preserves aspect ratio.
-
-## Where to edit data
-
-- `src/data/figures.js`
-- `src/data/battleModes.js`
-- `src/data/events.js`
-- `src/data/menu.js`
-
-## Asset folders
-
-- `public/assets/figures/`
-- `public/assets/backgrounds/`
-- `public/assets/ui/`
-- `public/assets/icons/`
-- `public/assets/banners/`
-- `public/assets/effects/`
-
-The current project intentionally does **not** implement the battle engine, gacha logic, deck builder, ranking logic, tournament logic or boss battle logic yet.
+## v1.1 修正
+v1はES Modulesを直接読み込む構成だったため、`index.html` をダブルクリックして `file://` で開いた場合、ブラウザのセキュリティ制限によりJavaScriptが読み込めず真っ白になる環境がありました。
+v1.1では、分割構造を保持しつつ classic script + namespace 方式へ変更し、ローカル直開き・GitHub Pages・Viteのいずれでも動作する構成に修正しました。
