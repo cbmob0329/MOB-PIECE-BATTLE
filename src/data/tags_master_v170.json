@@ -1,0 +1,950 @@
+[
+  {
+    "id": "01",
+    "name": "ぷにモブ",
+    "two": "HP+50",
+    "three": "HP+100",
+    "pieceTwo": {
+      "label": "ライフ50%UP",
+      "effects": {
+        "lifePct": 0.5
+      }
+    },
+    "pieceThree": {
+      "label": "ライフ100%UP",
+      "effects": {
+        "lifePct": 1.0
+      }
+    }
+  },
+  {
+    "id": "02",
+    "name": "グリーンカラー",
+    "two": "地属性耐性+10%",
+    "three": "地属性耐性+20%",
+    "pieceTwo": {
+      "label": "ディフェンス30%UP",
+      "effects": {
+        "defensePct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス60%UP",
+      "effects": {
+        "defensePct": 0.6
+      }
+    }
+  },
+  {
+    "id": "03",
+    "name": "レッドカラー",
+    "two": "火属性耐性+10%",
+    "three": "火属性耐性+20%",
+    "pieceTwo": {
+      "label": "アタック30%UP",
+      "effects": {
+        "attackPct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "アタック60%UP",
+      "effects": {
+        "attackPct": 0.6
+      }
+    }
+  },
+  {
+    "id": "04",
+    "name": "イエローカラー",
+    "two": "マヒ耐性+10%",
+    "three": "マヒ耐性+20%",
+    "pieceTwo": {
+      "label": "センターキャラライフ100%UP",
+      "effects": {
+        "centerLifePct": 1.0
+      }
+    },
+    "pieceThree": {
+      "label": "センターキャラライフ150%UP",
+      "effects": {
+        "centerLifePct": 1.5
+      }
+    }
+  },
+  {
+    "id": "05",
+    "name": "パープルカラー",
+    "two": "毒耐性+10%",
+    "three": "毒耐性+20%",
+    "pieceTwo": {
+      "label": "相手アタック20%DOWN",
+      "effects": {
+        "enemyAttackPct": -0.2
+      }
+    },
+    "pieceThree": {
+      "label": "相手アタック30%DOWN",
+      "effects": {
+        "enemyAttackPct": -0.3
+      }
+    }
+  },
+  {
+    "id": "06",
+    "name": "ピンクカラー",
+    "two": "MP+30",
+    "three": "MP+50",
+    "pieceTwo": {
+      "label": "相手ディフェンス20%DOWN",
+      "effects": {
+        "enemyDefensePct": -0.2
+      }
+    },
+    "pieceThree": {
+      "label": "相手ディフェンス30%DOWN",
+      "effects": {
+        "enemyDefensePct": -0.3
+      }
+    }
+  },
+  {
+    "id": "07",
+    "name": "オレンジカラー",
+    "two": "混乱耐性+10%",
+    "three": "混乱耐性+20%",
+    "pieceTwo": {
+      "label": "相手アタック20%DOWN",
+      "effects": {
+        "enemyAttackPct": -0.2
+      }
+    },
+    "pieceThree": {
+      "label": "相手アタック30%DOWN",
+      "effects": {
+        "enemyAttackPct": -0.3
+      }
+    }
+  },
+  {
+    "id": "08",
+    "name": "輝き",
+    "two": "光属性耐性+10%",
+    "three": "光属性耐性+20%",
+    "pieceTwo": {
+      "label": "相手アタック20%DOWN",
+      "effects": {
+        "enemyAttackPct": -0.2
+      }
+    },
+    "pieceThree": {
+      "label": "相手アタック30%DOWN",
+      "effects": {
+        "enemyAttackPct": -0.3
+      }
+    }
+  },
+  {
+    "id": "09",
+    "name": "モンスター",
+    "two": "通常モンスターへのダメージ+10%",
+    "three": "通常モンスターへのダメージ+15% & MP+15",
+    "pieceTwo": {
+      "label": "アタック20%UP",
+      "effects": {
+        "attackPct": 0.2
+      }
+    },
+    "pieceThree": {
+      "label": "アタック35%UP",
+      "effects": {
+        "attackPct": 0.35
+      }
+    }
+  },
+  {
+    "id": "10",
+    "name": "マスコット",
+    "two": "戦闘獲得経験値 & 戦闘獲得コイン +3%",
+    "three": "戦闘獲得経験値 & 戦闘獲得コイン +5%",
+    "pieceTwo": {
+      "label": "ライフ25%UP",
+      "effects": {
+        "lifePct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "ライフ45%UP",
+      "effects": {
+        "lifePct": 0.45
+      }
+    }
+  },
+  {
+    "id": "11",
+    "name": "PB2",
+    "two": "必殺技ダメージ+10%",
+    "three": "必殺技ダメージ+15% & MND+5",
+    "pieceTwo": {
+      "label": "センターアタック40%UP",
+      "effects": {
+        "centerAttackPct": 0.4
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック70%UP",
+      "effects": {
+        "centerAttackPct": 0.7
+      }
+    }
+  },
+  {
+    "id": "12",
+    "name": "MUSIC",
+    "two": "魔法与ダメージ+10% & MAG+5",
+    "three": "魔法与ダメージ15% & MAG+10",
+    "pieceTwo": {
+      "label": "アタック25%UP",
+      "effects": {
+        "attackPct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "アタック45%UP",
+      "effects": {
+        "attackPct": 0.45
+      }
+    }
+  },
+  {
+    "id": "13",
+    "name": "頼もしい仲間",
+    "two": "DEF+10",
+    "three": "DEF+20",
+    "pieceTwo": {
+      "label": "ディフェンス25%UP",
+      "effects": {
+        "defensePct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス45%UP",
+      "effects": {
+        "defensePct": 0.45
+      }
+    }
+  },
+  {
+    "id": "14",
+    "name": "MOB SHOT",
+    "two": "探索のレアアイテム率+2%",
+    "three": "探索のレアアイテム率+5% & 命中率+10%",
+    "pieceTwo": {
+      "label": "センターアタック30%UP",
+      "effects": {
+        "centerAttackPct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック55%UP",
+      "effects": {
+        "centerAttackPct": 0.55
+      }
+    }
+  },
+  {
+    "id": "15",
+    "name": "メニュー",
+    "two": "MP消費-10%",
+    "three": "MP消費-10%",
+    "pieceTwo": {
+      "label": "ディフェンス20%UP",
+      "effects": {
+        "defensePct": 0.2
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス35%UP",
+      "effects": {
+        "defensePct": 0.35
+      }
+    }
+  },
+  {
+    "id": "16",
+    "name": "ネコクー",
+    "two": "ダメージ軽減+3%",
+    "three": "ダメージ軽減+5%",
+    "pieceTwo": {
+      "label": "センターディフェンス40%UP",
+      "effects": {
+        "centerDefensePct": 0.4
+      }
+    },
+    "pieceThree": {
+      "label": "センターディフェンス70%UP",
+      "effects": {
+        "centerDefensePct": 0.7
+      }
+    }
+  },
+  {
+    "id": "17",
+    "name": "スライム",
+    "two": "物理ダメージ軽減+2%",
+    "three": "物理ダメージ軽減+3% + 水属性耐性+10%",
+    "pieceTwo": {
+      "label": "ライフ30%UP",
+      "effects": {
+        "lifePct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "ライフ55%UP",
+      "effects": {
+        "lifePct": 0.55
+      }
+    }
+  },
+  {
+    "id": "18",
+    "name": "美味しい食べ物",
+    "two": "全属性耐性+5%",
+    "three": "全属性耐性+10%",
+    "pieceTwo": {
+      "label": "ライフ35%UP",
+      "effects": {
+        "lifePct": 0.35
+      }
+    },
+    "pieceThree": {
+      "label": "ライフ65%UP",
+      "effects": {
+        "lifePct": 0.65
+      }
+    }
+  },
+  {
+    "id": "19",
+    "name": "ロゴ",
+    "two": "HP+30 & MP+15",
+    "three": "HP+50 & MP+30",
+    "pieceTwo": {
+      "label": "ディフェンス25%UP",
+      "effects": {
+        "defensePct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス50%UP",
+      "effects": {
+        "defensePct": 0.5
+      }
+    }
+  },
+  {
+    "id": "20",
+    "name": "MOB BR",
+    "two": "命中率+10% & SPD+5",
+    "three": "命中率+20% & SPD+10",
+    "pieceTwo": {
+      "label": "センターアタック50%UP",
+      "effects": {
+        "centerAttackPct": 0.5
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック80%UP",
+      "effects": {
+        "centerAttackPct": 0.8
+      }
+    }
+  },
+  {
+    "id": "21",
+    "name": "MOB PG",
+    "two": "MND+2 & SPD+3",
+    "three": "MND +8 & SPD+12",
+    "pieceTwo": {
+      "label": "アタック15%・ディフェンス15%UP",
+      "effects": {
+        "attackPct": 0.15,
+        "defensePct": 0.15
+      }
+    },
+    "pieceThree": {
+      "label": "アタック25%・ディフェンス25%UP",
+      "effects": {
+        "attackPct": 0.25,
+        "defensePct": 0.25
+      }
+    }
+  },
+  {
+    "id": "22",
+    "name": "MOB KART",
+    "two": "SPD+10",
+    "three": "SPD+15 & MP+10",
+    "pieceTwo": {
+      "label": "センターアタック35%UP",
+      "effects": {
+        "centerAttackPct": 0.35
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック60%UP",
+      "effects": {
+        "centerAttackPct": 0.6
+      }
+    }
+  },
+  {
+    "id": "23",
+    "name": "ソウル",
+    "two": "MND+10",
+    "three": "MND+15 & HP+20",
+    "pieceTwo": {
+      "label": "ディフェンス20%UP",
+      "effects": {
+        "defensePct": 0.2
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス40%UP",
+      "effects": {
+        "defensePct": 0.4
+      }
+    }
+  },
+  {
+    "id": "24",
+    "name": "主人公パーティー",
+    "two": "ATK+5 & DEF+5",
+    "three": "ATK+10 & DEF+10 & HP+30",
+    "pieceTwo": {
+      "label": "アタック20%・ディフェンス20%UP",
+      "effects": {
+        "attackPct": 0.2,
+        "defensePct": 0.2
+      }
+    },
+    "pieceThree": {
+      "label": "アタック35%・ディフェンス35%UP",
+      "effects": {
+        "attackPct": 0.35,
+        "defensePct": 0.35
+      }
+    }
+  },
+  {
+    "id": "25",
+    "name": "ボス",
+    "two": "与ダメージ+3%",
+    "three": "与ダメージ+8%",
+    "pieceTwo": {
+      "label": "アタック30%UP",
+      "effects": {
+        "attackPct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "アタック55%UP",
+      "effects": {
+        "attackPct": 0.55
+      }
+    }
+  },
+  {
+    "id": "26",
+    "name": "ヴィラン",
+    "two": "MND+5 & MP+30",
+    "three": "MND +10 & MP+30",
+    "pieceTwo": {
+      "label": "相手ディフェンス15%DOWN",
+      "effects": {
+        "enemyDefensePct": -0.15
+      }
+    },
+    "pieceThree": {
+      "label": "相手ディフェンス25%DOWN",
+      "effects": {
+        "enemyDefensePct": -0.25
+      }
+    }
+  },
+  {
+    "id": "27",
+    "name": "キュート",
+    "two": "回復量+10%",
+    "three": "回復量+20%",
+    "pieceTwo": {
+      "label": "ライフ30%UP",
+      "effects": {
+        "lifePct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "ライフ50%UP",
+      "effects": {
+        "lifePct": 0.5
+      }
+    }
+  },
+  {
+    "id": "28",
+    "name": "ホワイトカラー",
+    "two": "無属性耐性+10%",
+    "three": "無属性耐性+20%",
+    "pieceTwo": {
+      "label": "ディフェンス20%UP",
+      "effects": {
+        "defensePct": 0.2
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス40%UP",
+      "effects": {
+        "defensePct": 0.4
+      }
+    }
+  },
+  {
+    "id": "29",
+    "name": "ブラックカラー",
+    "two": "闇属性耐性+10%",
+    "three": "闇属性耐性+20%",
+    "pieceTwo": {
+      "label": "相手アタック15%DOWN",
+      "effects": {
+        "enemyAttackPct": -0.15
+      }
+    },
+    "pieceThree": {
+      "label": "相手アタック25%DOWN",
+      "effects": {
+        "enemyAttackPct": -0.25
+      }
+    }
+  },
+  {
+    "id": "30",
+    "name": "伝説",
+    "two": "必殺技ダメージ+10%",
+    "three": "必殺技ダメージ+10% & CT-1",
+    "pieceTwo": {
+      "label": "センターアタック60%UP",
+      "effects": {
+        "centerAttackPct": 0.6
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック100%UP",
+      "effects": {
+        "centerAttackPct": 1.0
+      }
+    }
+  },
+  {
+    "id": "31",
+    "name": "ブルーカラー",
+    "two": "水属性耐性+10%",
+    "three": "水属性耐性+20%",
+    "pieceTwo": {
+      "label": "ディフェンス30%UP",
+      "effects": {
+        "defensePct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス50%UP",
+      "effects": {
+        "defensePct": 0.5
+      }
+    }
+  },
+  {
+    "id": "32",
+    "name": "立ちはだかる強敵",
+    "two": "物理ダメージ軽減+3%",
+    "three": "ダメージ軽減+3% & 与ダメージ+3%",
+    "pieceTwo": {
+      "label": "アタック15%・ディフェンス25%UP",
+      "effects": {
+        "attackPct": 0.15,
+        "defensePct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "アタック25%・ディフェンス40%UP",
+      "effects": {
+        "attackPct": 0.25,
+        "defensePct": 0.4
+      }
+    }
+  },
+  {
+    "id": "33",
+    "name": "チルタイム",
+    "two": "状態異常耐性+5%",
+    "three": "状態異常耐性+5%",
+    "pieceTwo": {
+      "label": "ライフ20%・ディフェンス20%UP",
+      "effects": {
+        "lifePct": 0.2,
+        "defensePct": 0.2
+      }
+    },
+    "pieceThree": {
+      "label": "ライフ35%・ディフェンス35%UP",
+      "effects": {
+        "lifePct": 0.35,
+        "defensePct": 0.35
+      }
+    }
+  },
+  {
+    "id": "34",
+    "name": "勇猛果敢",
+    "two": "ひるみ耐性+10%",
+    "three": "ひるみ耐性+20%",
+    "pieceTwo": {
+      "label": "アタック25%UP",
+      "effects": {
+        "attackPct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "アタック45%UP",
+      "effects": {
+        "attackPct": 0.45
+      }
+    }
+  },
+  {
+    "id": "35",
+    "name": "破壊力",
+    "two": "与物理ダメージ+5%",
+    "three": "与物理ダメージ+10%",
+    "pieceTwo": {
+      "label": "アタック35%UP",
+      "effects": {
+        "attackPct": 0.35
+      }
+    },
+    "pieceThree": {
+      "label": "アタック65%UP",
+      "effects": {
+        "attackPct": 0.65
+      }
+    }
+  },
+  {
+    "id": "36",
+    "name": "技術力",
+    "two": "回避率+3%",
+    "three": "回避率+5%",
+    "pieceTwo": {
+      "label": "センターディフェンス30%UP",
+      "effects": {
+        "centerDefensePct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "センターディフェンス55%UP",
+      "effects": {
+        "centerDefensePct": 0.55
+      }
+    }
+  },
+  {
+    "id": "37",
+    "name": "魔法使い",
+    "two": "与魔法ダメージ+5%",
+    "three": "与魔法ダメージ+10%",
+    "pieceTwo": {
+      "label": "アタック30%UP",
+      "effects": {
+        "attackPct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "アタック55%UP",
+      "effects": {
+        "attackPct": 0.55
+      }
+    }
+  },
+  {
+    "id": "38",
+    "name": "ドラゴン",
+    "two": "弱点を突いた時のダメージ+10%",
+    "three": "弱点を突いた時のダメージ+15% & MP+15",
+    "pieceTwo": {
+      "label": "センターアタック50%UP",
+      "effects": {
+        "centerAttackPct": 0.5
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック85%UP",
+      "effects": {
+        "centerAttackPct": 0.85
+      }
+    }
+  },
+  {
+    "id": "39",
+    "name": "鉄壁",
+    "two": "全耐性+3% & ダメージ軽減+3%",
+    "three": "全耐性+3% & ダメージ軽減+3% & 状態異常耐性+3%",
+    "pieceTwo": {
+      "label": "ディフェンス40%UP",
+      "effects": {
+        "defensePct": 0.4
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス75%UP",
+      "effects": {
+        "defensePct": 0.75
+      }
+    }
+  },
+  {
+    "id": "40",
+    "name": "絆",
+    "two": "混乱耐性+10%",
+    "three": "混乱耐性+20%",
+    "pieceTwo": {
+      "label": "ライフ25%・アタック15%UP",
+      "effects": {
+        "lifePct": 0.25,
+        "attackPct": 0.15
+      }
+    },
+    "pieceThree": {
+      "label": "ライフ45%・アタック25%UP",
+      "effects": {
+        "lifePct": 0.45,
+        "attackPct": 0.25
+      }
+    }
+  },
+  {
+    "id": "41",
+    "name": "草原",
+    "two": "草原エリアでのみステータス10%アップ",
+    "three": "草原エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "ディフェンス20%UP",
+      "effects": {
+        "defensePct": 0.2
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス35%UP",
+      "effects": {
+        "defensePct": 0.35
+      }
+    }
+  },
+  {
+    "id": "42",
+    "name": "砂漠",
+    "two": "砂漠エリアでのみステータス10%アップ",
+    "three": "砂漠エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "アタック20%UP",
+      "effects": {
+        "attackPct": 0.2
+      }
+    },
+    "pieceThree": {
+      "label": "アタック35%UP",
+      "effects": {
+        "attackPct": 0.35
+      }
+    }
+  },
+  {
+    "id": "43",
+    "name": "田舎町",
+    "two": "田舎町エリアでのみステータス10%アップ",
+    "three": "田舎町エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "ライフ25%UP",
+      "effects": {
+        "lifePct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "ライフ45%UP",
+      "effects": {
+        "lifePct": 0.45
+      }
+    }
+  },
+  {
+    "id": "44",
+    "name": "ネオン街",
+    "two": "ネオン街エリアでのみステータス10%アップ",
+    "three": "ネオン街エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "センターアタック30%UP",
+      "effects": {
+        "centerAttackPct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック50%UP",
+      "effects": {
+        "centerAttackPct": 0.5
+      }
+    }
+  },
+  {
+    "id": "45",
+    "name": "海底",
+    "two": "海底エリアでのみステータス10%アップ",
+    "three": "海底エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "ディフェンス25%UP",
+      "effects": {
+        "defensePct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "ディフェンス45%UP",
+      "effects": {
+        "defensePct": 0.45
+      }
+    }
+  },
+  {
+    "id": "46",
+    "name": "部族村",
+    "two": "部族村エリアでのみステータス10%アップ",
+    "three": "部族村エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "アタック25%UP",
+      "effects": {
+        "attackPct": 0.25
+      }
+    },
+    "pieceThree": {
+      "label": "アタック45%UP",
+      "effects": {
+        "attackPct": 0.45
+      }
+    }
+  },
+  {
+    "id": "47",
+    "name": "マグマ",
+    "two": "マグマエリアでのみステータス10%アップ",
+    "three": "マグマエリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "アタック30%UP",
+      "effects": {
+        "attackPct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "アタック55%UP",
+      "effects": {
+        "attackPct": 0.55
+      }
+    }
+  },
+  {
+    "id": "48",
+    "name": "魔王城",
+    "two": "魔王城エリアでのみステータス10%アップ",
+    "three": "魔王城エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "相手ディフェンス20%DOWN",
+      "effects": {
+        "enemyDefensePct": -0.2
+      }
+    },
+    "pieceThree": {
+      "label": "相手ディフェンス30%DOWN",
+      "effects": {
+        "enemyDefensePct": -0.3
+      }
+    }
+  },
+  {
+    "id": "49",
+    "name": "斬撃",
+    "two": "会心率+2% & 通常攻撃の威力+10%",
+    "three": "会心率+2% & 通常攻撃の威力+10% & 必殺技の威力+5%",
+    "pieceTwo": {
+      "label": "センターアタック45%UP",
+      "effects": {
+        "centerAttackPct": 0.45
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック75%UP",
+      "effects": {
+        "centerAttackPct": 0.75
+      }
+    }
+  },
+  {
+    "id": "50",
+    "name": "浮遊",
+    "two": "回避率+3%",
+    "three": "回避率+3% & 地属性ダメージ30%軽減",
+    "pieceTwo": {
+      "label": "センターディフェンス40%UP",
+      "effects": {
+        "centerDefensePct": 0.4
+      }
+    },
+    "pieceThree": {
+      "label": "センターディフェンス70%UP",
+      "effects": {
+        "centerDefensePct": 0.7
+      }
+    }
+  },
+  {
+    "id": "51",
+    "name": "雷撃",
+    "two": "雷属性与ダメージ+10%",
+    "three": "雷属性与ダメージ+10% & マヒ耐性+5%",
+    "pieceTwo": {
+      "label": "アタック30%UP",
+      "effects": {
+        "attackPct": 0.3
+      }
+    },
+    "pieceThree": {
+      "label": "アタック50%UP",
+      "effects": {
+        "attackPct": 0.5
+      }
+    }
+  },
+  {
+    "id": "52",
+    "name": "読みかけの本",
+    "two": "読みかけの本エリアでのみステータス10%アップ",
+    "three": "読みかけの本エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "pieceTwo": {
+      "label": "センターアタック35%・ディフェンス35%UP",
+      "effects": {
+        "centerAttackPct": 0.35,
+        "centerDefensePct": 0.35
+      }
+    },
+    "pieceThree": {
+      "label": "センターアタック60%・ディフェンス60%UP",
+      "effects": {
+        "centerAttackPct": 0.6,
+        "centerDefensePct": 0.6
+      }
+    }
+  }
+]

@@ -1,0 +1,2 @@
+/* Native form and button appearance is reset without disabling browser zoom. */
+button{-webkit-appearance:none;appearance:none}h1,h2,p{overflow-wrap:break-word}

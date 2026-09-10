@@ -1,0 +1,8851 @@
+[
+  {
+    "id": "01",
+    "image": "fig/01.png",
+    "name": "ぷにモブグリーン",
+    "rarity": "R",
+    "statsText": "HP +5",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "02"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 83,
+      "attack": 18,
+      "defense": 20,
+      "speed": 18
+    },
+    "sourceId": "01",
+    "dexNo": 1,
+    "displayNo": "No.001",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 83,
+      "attack": 18,
+      "defense": 20,
+      "speed": 18
+    }
+  },
+  {
+    "id": "02",
+    "image": "fig/02.png",
+    "name": "ぷにモブレッド",
+    "rarity": "R",
+    "statsText": "ATK +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "03"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 22,
+      "defense": 17,
+      "speed": 17
+    },
+    "sourceId": "02",
+    "dexNo": 2,
+    "displayNo": "No.002",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 22,
+      "defense": 17,
+      "speed": 17
+    }
+  },
+  {
+    "id": "03",
+    "image": "fig/03.png",
+    "name": "ぷにモブオレンジ",
+    "rarity": "R",
+    "statsText": "MAG +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "07"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 21,
+      "defense": 18,
+      "speed": 17
+    },
+    "sourceId": "03",
+    "dexNo": 3,
+    "displayNo": "No.003",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 21,
+      "defense": 18,
+      "speed": 17
+    }
+  },
+  {
+    "id": "04",
+    "image": "fig/04.png",
+    "name": "ぷにモブイエロー",
+    "rarity": "R",
+    "statsText": "SPD +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "04"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 17,
+      "defense": 17,
+      "speed": 22
+    },
+    "sourceId": "04",
+    "dexNo": 4,
+    "displayNo": "No.004",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 17,
+      "defense": 17,
+      "speed": 22
+    }
+  },
+  {
+    "id": "05",
+    "image": "fig/05.png",
+    "name": "ぷにモブパープル",
+    "rarity": "R",
+    "statsText": "MND +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "05"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 18,
+      "defense": 21,
+      "speed": 17
+    },
+    "sourceId": "05",
+    "dexNo": 5,
+    "displayNo": "No.005",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 18,
+      "defense": 21,
+      "speed": 17
+    }
+  },
+  {
+    "id": "06",
+    "image": "fig/06.png",
+    "name": "ぷにモブ:ピンク",
+    "rarity": "R",
+    "statsText": "HP & MP +2",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "06"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 83,
+      "attack": 19,
+      "defense": 19,
+      "speed": 18
+    },
+    "sourceId": "06",
+    "dexNo": 6,
+    "displayNo": "No.006",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 83,
+      "attack": 19,
+      "defense": 19,
+      "speed": 18
+    }
+  },
+  {
+    "id": "07",
+    "image": "fig/07.png",
+    "name": "ぷにモブディープレッド",
+    "rarity": "R",
+    "statsText": "ATK +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "03"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 22,
+      "defense": 17,
+      "speed": 17
+    },
+    "sourceId": "07",
+    "dexNo": 7,
+    "displayNo": "No.007",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 22,
+      "defense": 17,
+      "speed": 17
+    }
+  },
+  {
+    "id": "08",
+    "image": "fig/08.png",
+    "name": "ぷにモブイタリアンレッド",
+    "rarity": "R",
+    "statsText": "ATK +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "03"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 22,
+      "defense": 17,
+      "speed": 17
+    },
+    "sourceId": "08",
+    "dexNo": 8,
+    "displayNo": "No.008",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 22,
+      "defense": 17,
+      "speed": 17
+    }
+  },
+  {
+    "id": "09",
+    "image": "fig/09.png",
+    "name": "ぷにモブブルー",
+    "rarity": "R",
+    "statsText": "DEF +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "31"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 17,
+      "defense": 22,
+      "speed": 17
+    },
+    "sourceId": "09",
+    "dexNo": 9,
+    "displayNo": "No.009",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 82,
+      "attack": 17,
+      "defense": 22,
+      "speed": 17
+    }
+  },
+  {
+    "id": "10",
+    "image": "fig/10.png",
+    "name": "ぷにモブミントグリーン",
+    "rarity": "R",
+    "statsText": "HP +5",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "02"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 83,
+      "attack": 18,
+      "defense": 20,
+      "speed": 18
+    },
+    "sourceId": "10",
+    "dexNo": 10,
+    "displayNo": "No.010",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 83,
+      "attack": 18,
+      "defense": 20,
+      "speed": 18
+    }
+  },
+  {
+    "id": "11",
+    "image": "fig/11.png",
+    "name": "ぷにモブブロンズ",
+    "rarity": "SR",
+    "statsText": "HP +3 & DEF +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "08",
+      "10"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 97,
+      "attack": 20,
+      "defense": 24,
+      "speed": 20
+    },
+    "sourceId": "11",
+    "dexNo": 11,
+    "displayNo": "No.011",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 97,
+      "attack": 20,
+      "defense": 24,
+      "speed": 20
+    }
+  },
+  {
+    "id": "12",
+    "image": "fig/12.png",
+    "name": "ぷにモブピンクゴールド",
+    "rarity": "SR",
+    "statsText": "HP +3 & MP +2",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "06",
+      "08"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 97,
+      "attack": 21,
+      "defense": 22,
+      "speed": 21
+    },
+    "sourceId": "12",
+    "dexNo": 12,
+    "displayNo": "No.012",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 97,
+      "attack": 21,
+      "defense": 22,
+      "speed": 21
+    }
+  },
+  {
+    "id": "13",
+    "image": "fig/13.png",
+    "name": "ぷにモブゴールド",
+    "rarity": "SR",
+    "statsText": "HP +4 & ATK +1",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "08"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 97,
+      "attack": 24,
+      "defense": 20,
+      "speed": 20
+    },
+    "sourceId": "13",
+    "dexNo": 13,
+    "displayNo": "No.013",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 97,
+      "attack": 24,
+      "defense": 20,
+      "speed": 20
+    }
+  },
+  {
+    "id": "14",
+    "image": "fig/14.png",
+    "name": "ぷにモブシルバーホワイト",
+    "rarity": "SR",
+    "statsText": "HP +8",
+    "traitText": "会心率+2%",
+    "tags": [
+      "01",
+      "08",
+      "28"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 21,
+      "defense": 23,
+      "speed": 20
+    },
+    "sourceId": "14",
+    "dexNo": 14,
+    "displayNo": "No.014",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 21,
+      "defense": 23,
+      "speed": 20
+    }
+  },
+  {
+    "id": "15",
+    "image": "fig/15.png",
+    "name": "ぷにモブハロウィン",
+    "rarity": "SR",
+    "statsText": "MND +4",
+    "traitText": "無し",
+    "tags": [
+      "01",
+      "07",
+      "09"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 97,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    },
+    "sourceId": "15",
+    "dexNo": 15,
+    "displayNo": "No.015",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 97,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    }
+  },
+  {
+    "id": "16",
+    "image": "fig/16.png",
+    "name": "みかんちゃん",
+    "rarity": "MOB",
+    "statsText": "HP.MP +15 & DEF +10",
+    "traitText": "必殺技CT-1ターン & ダメージ軽減+5%",
+    "tags": [
+      "08",
+      "10",
+      "13",
+      "23",
+      "27",
+      "28",
+      "30",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 160,
+      "attack": 27,
+      "defense": 48,
+      "speed": 25
+    },
+    "sourceId": "16",
+    "dexNo": 16,
+    "displayNo": "No.016",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 160,
+      "attack": 27,
+      "defense": 48,
+      "speed": 25
+    }
+  },
+  {
+    "id": "17",
+    "image": "fig/17.png",
+    "name": "/////",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "水属性耐性 +2%",
+    "tags": [
+      "02",
+      "09",
+      "10",
+      "17"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "17",
+    "dexNo": 17,
+    "displayNo": "No.017",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "18",
+    "image": "fig/18.png",
+    "name": "モブクラシックグリーン",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "毒耐性 +1%",
+    "tags": [
+      "02",
+      "10",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "18",
+    "dexNo": 18,
+    "displayNo": "No.018",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "19",
+    "image": "fig/19.png",
+    "name": "モブクラシックピンク",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "ダメージ軽減 +1%",
+    "tags": [
+      "06",
+      "10",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "19",
+    "dexNo": 19,
+    "displayNo": "No.019",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "20",
+    "image": "fig/20.png",
+    "name": "モブクラシックオレンジ",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "マヒ耐性 +1%",
+    "tags": [
+      "07",
+      "10",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "20",
+    "dexNo": 20,
+    "displayNo": "No.020",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "21",
+    "image": "fig/21.png",
+    "name": "モブクラシックレッド",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "やけど耐性 +1%",
+    "tags": [
+      "03",
+      "10",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    },
+    "sourceId": "21",
+    "dexNo": 21,
+    "displayNo": "No.021",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    }
+  },
+  {
+    "id": "22",
+    "image": "fig/22.png",
+    "name": "モブメシ どら焼き",
+    "rarity": "SSR",
+    "statsText": "DEF +5",
+    "traitText": "眠り耐性 +5%",
+    "tags": [
+      "10",
+      "18",
+      "29",
+      "30"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 116,
+      "attack": 20,
+      "defense": 34,
+      "speed": 20
+    },
+    "sourceId": "22",
+    "dexNo": 22,
+    "displayNo": "No.022",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 116,
+      "attack": 20,
+      "defense": 34,
+      "speed": 20
+    }
+  },
+  {
+    "id": "23",
+    "image": "fig/23.png",
+    "name": "モブメシ ピザ",
+    "rarity": "SSR",
+    "statsText": "ATK +4",
+    "traitText": "やけど耐性 +5%",
+    "tags": [
+      "07",
+      "10",
+      "18",
+      "29"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 113,
+      "attack": 31,
+      "defense": 23,
+      "speed": 20
+    },
+    "sourceId": "23",
+    "dexNo": 23,
+    "displayNo": "No.023",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 113,
+      "attack": 31,
+      "defense": 23,
+      "speed": 20
+    }
+  },
+  {
+    "id": "24",
+    "image": "fig/24.png",
+    "name": "モブメシ 肉まん",
+    "rarity": "SSR",
+    "statsText": "HP +10",
+    "traitText": "マヒ耐性 +5%",
+    "tags": [
+      "10",
+      "18",
+      "28",
+      "29"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 116,
+      "attack": 23,
+      "defense": 28,
+      "speed": 23
+    },
+    "sourceId": "24",
+    "dexNo": 24,
+    "displayNo": "No.024",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 116,
+      "attack": 23,
+      "defense": 28,
+      "speed": 23
+    }
+  },
+  {
+    "id": "25",
+    "image": "fig/25.png",
+    "name": "モブメシ パンケーキ",
+    "rarity": "SSR",
+    "statsText": "ATK +2 & DEF +3",
+    "traitText": "眠り耐性 +5%",
+    "tags": [
+      "04",
+      "10",
+      "18",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 115,
+      "attack": 25,
+      "defense": 28,
+      "speed": 21
+    },
+    "sourceId": "25",
+    "dexNo": 25,
+    "displayNo": "No.025",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 115,
+      "attack": 25,
+      "defense": 28,
+      "speed": 21
+    }
+  },
+  {
+    "id": "26",
+    "image": "fig/26.png",
+    "name": "モブKART VR",
+    "rarity": "SSR",
+    "statsText": "SPD +3 & MND +2",
+    "traitText": "ネオン街の戦闘で全ステータス+5%",
+    "tags": [
+      "08",
+      "10",
+      "22",
+      "36"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 19,
+      "defense": 25,
+      "speed": 30
+    },
+    "sourceId": "26",
+    "dexNo": 26,
+    "displayNo": "No.026",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 19,
+      "defense": 25,
+      "speed": 30
+    }
+  },
+  {
+    "id": "27",
+    "image": "fig/27.png",
+    "name": "モブKART ゴールド",
+    "rarity": "SSR",
+    "statsText": "SPD +3 & MND +2",
+    "traitText": "戦闘獲得コイン +5%",
+    "tags": [
+      "08",
+      "10",
+      "22",
+      "39"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 19,
+      "defense": 26,
+      "speed": 29
+    },
+    "sourceId": "27",
+    "dexNo": 27,
+    "displayNo": "No.027",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 19,
+      "defense": 26,
+      "speed": 29
+    }
+  },
+  {
+    "id": "28",
+    "image": "fig/28.png",
+    "name": "モブKART ブラック",
+    "rarity": "SSR",
+    "statsText": "SPD +3 & MND +2",
+    "traitText": "HP30以下でDFE +10",
+    "tags": [
+      "09",
+      "22",
+      "26",
+      "36",
+      "37"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 21,
+      "defense": 24,
+      "speed": 29
+    },
+    "sourceId": "28",
+    "dexNo": 28,
+    "displayNo": "No.028",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 21,
+      "defense": 24,
+      "speed": 29
+    }
+  },
+  {
+    "id": "29",
+    "image": "fig/29.png",
+    "name": "モブKART 中華店主",
+    "rarity": "SSR",
+    "statsText": "SPD +3 & MND +2",
+    "traitText": "やけど耐性 +5%",
+    "tags": [
+      "03",
+      "18",
+      "22",
+      "32"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 114,
+      "attack": 21,
+      "defense": 25,
+      "speed": 28
+    },
+    "sourceId": "29",
+    "dexNo": 29,
+    "displayNo": "No.029",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 114,
+      "attack": 21,
+      "defense": 25,
+      "speed": 28
+    }
+  },
+  {
+    "id": "30",
+    "image": "fig/30.png",
+    "name": "モブKART ヴィラン",
+    "rarity": "SSR",
+    "statsText": "SPD +3 & MND +2",
+    "traitText": "光属性耐性 +5%",
+    "tags": [
+      "09",
+      "22",
+      "25",
+      "26",
+      "32",
+      "37",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 21,
+      "defense": 25,
+      "speed": 28
+    },
+    "sourceId": "30",
+    "dexNo": 30,
+    "displayNo": "No.030",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 21,
+      "defense": 25,
+      "speed": 28
+    }
+  },
+  {
+    "id": "31",
+    "image": "fig/31.png",
+    "name": "モブKART ファイヤー",
+    "rarity": "SSR",
+    "statsText": "SPD +3 & MND +2",
+    "traitText": "火属性耐性 +3%",
+    "tags": [
+      "03",
+      "22",
+      "26",
+      "32"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 114,
+      "attack": 21,
+      "defense": 25,
+      "speed": 28
+    },
+    "sourceId": "31",
+    "dexNo": 31,
+    "displayNo": "No.031",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 114,
+      "attack": 21,
+      "defense": 25,
+      "speed": 28
+    }
+  },
+  {
+    "id": "32",
+    "image": "fig/32.png",
+    "name": "PB2 オンラインロゴ",
+    "rarity": "SR",
+    "statsText": "HP +10 & MAG +2",
+    "traitText": "無し",
+    "tags": [
+      "11",
+      "12",
+      "19",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 99,
+      "attack": 25,
+      "defense": 21,
+      "speed": 18
+    },
+    "sourceId": "32",
+    "dexNo": 32,
+    "displayNo": "No.032",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 99,
+      "attack": 25,
+      "defense": 21,
+      "speed": 18
+    }
+  },
+  {
+    "id": "33",
+    "image": "fig/33.png",
+    "name": "PB2 PB2 Vol.60ロゴ",
+    "rarity": "SR",
+    "statsText": "MP +10 & MAG +2",
+    "traitText": "無し",
+    "tags": [
+      "11",
+      "12",
+      "19",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 1,
+      "hp": 96,
+      "attack": 25,
+      "defense": 20,
+      "speed": 19
+    },
+    "sourceId": "33",
+    "dexNo": 33,
+    "displayNo": "No.033",
+    "mobPiece": {
+      "cost": 1,
+      "hp": 96,
+      "attack": 25,
+      "defense": 20,
+      "speed": 19
+    }
+  },
+  {
+    "id": "34",
+    "image": "fig/34.png",
+    "name": "PB2 Vol.62 マスコット",
+    "rarity": "SSR",
+    "statsText": "ATK +2 & MAG +2",
+    "traitText": "会心率+2%",
+    "tags": [
+      "04",
+      "11",
+      "27",
+      "31",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    },
+    "sourceId": "34",
+    "dexNo": 34,
+    "displayNo": "No.034",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    }
+  },
+  {
+    "id": "35",
+    "image": "fig/35.png",
+    "name": "PB2 Vol.63 マスコット",
+    "rarity": "SSR",
+    "statsText": "SPD +2 & MND +2",
+    "traitText": "会心率+2%",
+    "tags": [
+      "07",
+      "11",
+      "12",
+      "27",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 23,
+      "defense": 25,
+      "speed": 26
+    },
+    "sourceId": "35",
+    "dexNo": 35,
+    "displayNo": "No.035",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 23,
+      "defense": 25,
+      "speed": 26
+    }
+  },
+  {
+    "id": "36",
+    "image": "fig/36.png",
+    "name": "PB2 Vol.63 マスコットⅡ",
+    "rarity": "SSR",
+    "statsText": "SPD +2 & MAG +2",
+    "traitText": "会心率+2%",
+    "tags": [
+      "07",
+      "11",
+      "12",
+      "27",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 27,
+      "defense": 20,
+      "speed": 27
+    },
+    "sourceId": "36",
+    "dexNo": 36,
+    "displayNo": "No.036",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 27,
+      "defense": 20,
+      "speed": 27
+    }
+  },
+  {
+    "id": "37",
+    "image": "fig/37.png",
+    "name": "PB2 Vol.63 マスコットⅢ",
+    "rarity": "SSR",
+    "statsText": "DEF +2 & MND +2",
+    "traitText": "会心率+2%",
+    "tags": [
+      "07",
+      "11",
+      "12",
+      "19",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    },
+    "sourceId": "37",
+    "dexNo": 37,
+    "displayNo": "No.037",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    }
+  },
+  {
+    "id": "38",
+    "image": "fig/38.png",
+    "name": "PB2 クッションモブ",
+    "rarity": "SSR",
+    "statsText": "HP +10 & MAG +1",
+    "traitText": "ダメージ軽減+2%",
+    "tags": [
+      "06",
+      "10",
+      "11",
+      "19",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    },
+    "sourceId": "38",
+    "dexNo": 38,
+    "displayNo": "No.038",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    }
+  },
+  {
+    "id": "39",
+    "image": "fig/39.png",
+    "name": "PB2 CB 20th ロゴ",
+    "rarity": "UR",
+    "statsText": "HP+10 & ATK +2 & MAG +2 & MND +2",
+    "traitText": "獲得経験値+10%",
+    "tags": [
+      "04",
+      "11",
+      "12",
+      "19",
+      "30",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 133,
+      "attack": 33,
+      "defense": 29,
+      "speed": 24
+    },
+    "sourceId": "39",
+    "dexNo": 39,
+    "displayNo": "No.039",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 133,
+      "attack": 33,
+      "defense": 29,
+      "speed": 24
+    }
+  },
+  {
+    "id": "40",
+    "image": "fig/40.png",
+    "name": "MOB SHOT PET モブコドラ",
+    "rarity": "SSR",
+    "statsText": "ATK +2 & MP +10",
+    "traitText": "火属性魔法与ダメージ+7%",
+    "tags": [
+      "03",
+      "10",
+      "14",
+      "38"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 30,
+      "defense": 21,
+      "speed": 23
+    },
+    "sourceId": "40",
+    "dexNo": 40,
+    "displayNo": "No.040",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 30,
+      "defense": 21,
+      "speed": 23
+    }
+  },
+  {
+    "id": "41",
+    "image": "fig/41.png",
+    "name": "MOB SHOT PET イルカエル",
+    "rarity": "SSR",
+    "statsText": "SPD +2 & MP +10",
+    "traitText": "水属性魔法与ダメージ+7%",
+    "tags": [
+      "10",
+      "14",
+      "27",
+      "31"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 21,
+      "defense": 23,
+      "speed": 30
+    },
+    "sourceId": "41",
+    "dexNo": 41,
+    "displayNo": "No.041",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 21,
+      "defense": 23,
+      "speed": 30
+    }
+  },
+  {
+    "id": "42",
+    "image": "fig/42.png",
+    "name": "MOB SHOT PET モブネロ",
+    "rarity": "SSR",
+    "statsText": "SPD +5",
+    "traitText": "命中率+10% & 会心率+1%",
+    "tags": [
+      "14",
+      "29",
+      "34",
+      "36"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 110,
+      "attack": 22,
+      "defense": 19,
+      "speed": 33
+    },
+    "sourceId": "42",
+    "dexNo": 42,
+    "displayNo": "No.042",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 110,
+      "attack": 22,
+      "defense": 19,
+      "speed": 33
+    }
+  },
+  {
+    "id": "43",
+    "image": "fig/43.png",
+    "name": "MOB SHOT PET モブトン",
+    "rarity": "SSR",
+    "statsText": "ATK +3",
+    "traitText": "水属性ダメージ軽減+5%",
+    "tags": [
+      "09",
+      "14",
+      "31",
+      "34",
+      "36",
+      "45"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 29,
+      "defense": 23,
+      "speed": 22
+    },
+    "sourceId": "43",
+    "dexNo": 43,
+    "displayNo": "No.043",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 29,
+      "defense": 23,
+      "speed": 22
+    }
+  },
+  {
+    "id": "44",
+    "image": "fig/44.png",
+    "name": "MOB SHOT PET モブデンデン",
+    "rarity": "UR",
+    "statsText": "ATK +2 & SPD +2 & MND +2",
+    "traitText": "雷耐性+10% & 雷属性魔法与ダメージ+5%",
+    "tags": [
+      "04",
+      "13",
+      "14",
+      "24",
+      "27",
+      "34",
+      "40",
+      "43",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 29,
+      "defense": 28,
+      "speed": 29
+    },
+    "sourceId": "44",
+    "dexNo": 44,
+    "displayNo": "No.044",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 29,
+      "defense": 28,
+      "speed": 29
+    }
+  },
+  {
+    "id": "45",
+    "image": "fig/45.png",
+    "name": "MOB SHOT SOUL モブスライム",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MND +2 & MAG +1",
+    "traitText": "水属性耐性+8%",
+    "tags": [
+      "02",
+      "09",
+      "14",
+      "23",
+      "41"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 22,
+      "defense": 31,
+      "speed": 21
+    },
+    "sourceId": "45",
+    "dexNo": 45,
+    "displayNo": "No.045",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 22,
+      "defense": 31,
+      "speed": 21
+    }
+  },
+  {
+    "id": "46",
+    "image": "fig/46.png",
+    "name": "MOB SHOT SOUL モブロック",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MND +2",
+    "traitText": "地属性耐性+10%",
+    "tags": [
+      "09",
+      "14",
+      "23",
+      "29",
+      "41"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 20,
+      "defense": 32,
+      "speed": 22
+    },
+    "sourceId": "46",
+    "dexNo": 46,
+    "displayNo": "No.046",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 20,
+      "defense": 32,
+      "speed": 22
+    }
+  },
+  {
+    "id": "47",
+    "image": "fig/47.png",
+    "name": "MOB SHOT SOUL モブテツ",
+    "rarity": "UR",
+    "statsText": "ATK +5 & SPD +5",
+    "traitText": "会心率+5% & マヒ耐性+10%",
+    "tags": [
+      "14",
+      "23",
+      "24",
+      "27",
+      "28",
+      "29",
+      "36",
+      "40",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 130,
+      "attack": 31,
+      "defense": 23,
+      "speed": 32
+    },
+    "sourceId": "47",
+    "dexNo": 47,
+    "displayNo": "No.047",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 130,
+      "attack": 31,
+      "defense": 23,
+      "speed": 32
+    }
+  },
+  {
+    "id": "48",
+    "image": "fig/48.png",
+    "name": "MOB SHOT SOUL モブガーディアン",
+    "rarity": "SSR",
+    "statsText": "DEF +5 & MND +1",
+    "traitText": "ダメージ軽減+2%",
+    "tags": [
+      "09",
+      "14",
+      "23",
+      "25",
+      "29",
+      "39",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 32,
+      "speed": 21
+    },
+    "sourceId": "48",
+    "dexNo": 48,
+    "displayNo": "No.048",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 32,
+      "speed": 21
+    }
+  },
+  {
+    "id": "49",
+    "image": "fig/49.png",
+    "name": "MOB SHOT SOUL ミラモブ",
+    "rarity": "UR",
+    "statsText": "DEF+3 & MP +15 & MND +2",
+    "traitText": "闇属性耐性+10 & 回避率+3%",
+    "tags": [
+      "05",
+      "09",
+      "14",
+      "23",
+      "25",
+      "32",
+      "37",
+      "42",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 133,
+      "attack": 25,
+      "defense": 36,
+      "speed": 25
+    },
+    "sourceId": "49",
+    "dexNo": 49,
+    "displayNo": "No.049",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 133,
+      "attack": 25,
+      "defense": 36,
+      "speed": 25
+    }
+  },
+  {
+    "id": "50",
+    "image": "fig/50.png",
+    "name": "MOB SHOT SOUL モブホーク",
+    "rarity": "SSR",
+    "statsText": "ATK +2 & SPD +2 & MND +2",
+    "traitText": "風属性耐性+10%",
+    "tags": [
+      "04",
+      "09",
+      "14",
+      "23",
+      "25",
+      "41",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 25,
+      "defense": 24,
+      "speed": 25
+    },
+    "sourceId": "50",
+    "dexNo": 50,
+    "displayNo": "No.050",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 25,
+      "defense": 24,
+      "speed": 25
+    }
+  },
+  {
+    "id": "51",
+    "image": "fig/51.png",
+    "name": "MOB SHOT SOUL モブドラゴン",
+    "rarity": "UR",
+    "statsText": "ATK +3 & DEF +3 & MND +2",
+    "traitText": "火属性耐性+10% & 会心率+3%",
+    "tags": [
+      "03",
+      "09",
+      "14",
+      "23",
+      "25",
+      "35",
+      "38",
+      "47",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 31,
+      "defense": 32,
+      "speed": 23
+    },
+    "sourceId": "51",
+    "dexNo": 51,
+    "displayNo": "No.051",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 31,
+      "defense": 32,
+      "speed": 23
+    }
+  },
+  {
+    "id": "52",
+    "image": "fig/52.png",
+    "name": "スケボーネコクー",
+    "rarity": "SSR",
+    "statsText": "ATK +2 & SPD +3",
+    "traitText": "通常攻撃の与ダメージ+5%",
+    "tags": [
+      "10",
+      "16",
+      "27",
+      "31",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 25,
+      "defense": 21,
+      "speed": 28
+    },
+    "sourceId": "52",
+    "dexNo": 52,
+    "displayNo": "No.052",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 25,
+      "defense": 21,
+      "speed": 28
+    }
+  },
+  {
+    "id": "53",
+    "image": "fig/53.png",
+    "name": "レコードネコクー",
+    "rarity": "SSR",
+    "statsText": "MAG +3 & MND +2",
+    "traitText": "魔法攻撃の与ダメージ+5%",
+    "tags": [
+      "10",
+      "12",
+      "16",
+      "27",
+      "31",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    },
+    "sourceId": "53",
+    "dexNo": 53,
+    "displayNo": "No.053",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    }
+  },
+  {
+    "id": "54",
+    "image": "fig/54.png",
+    "name": "おやすみネコクー",
+    "rarity": "SSR",
+    "statsText": "HP+15",
+    "traitText": "回復量+10%",
+    "tags": [
+      "10",
+      "16",
+      "27",
+      "31",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 23,
+      "defense": 28,
+      "speed": 23
+    },
+    "sourceId": "54",
+    "dexNo": 54,
+    "displayNo": "No.054",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 23,
+      "defense": 28,
+      "speed": 23
+    }
+  },
+  {
+    "id": "55",
+    "image": "fig/55.png",
+    "name": "どら焼きネコクー",
+    "rarity": "UR",
+    "statsText": "DEF +5 & MND +5",
+    "traitText": "回復量+10% & 水属性耐性+10%",
+    "tags": [
+      "10",
+      "16",
+      "18",
+      "27",
+      "30",
+      "31",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 135,
+      "attack": 22,
+      "defense": 42,
+      "speed": 22
+    },
+    "sourceId": "55",
+    "dexNo": 55,
+    "displayNo": "No.055",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 135,
+      "attack": 22,
+      "defense": 42,
+      "speed": 22
+    }
+  },
+  {
+    "id": "56",
+    "image": "fig/56.png",
+    "name": "モブKART 実況モブ",
+    "rarity": "SSR",
+    "statsText": "SPD +4 & MND +1",
+    "traitText": "雷属性耐性 +4%",
+    "tags": [
+      "04",
+      "19",
+      "22",
+      "36"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 113,
+      "attack": 19,
+      "defense": 24,
+      "speed": 31
+    },
+    "sourceId": "56",
+    "dexNo": 56,
+    "displayNo": "No.056",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 113,
+      "attack": 19,
+      "defense": 24,
+      "speed": 31
+    }
+  },
+  {
+    "id": "57",
+    "image": "fig/57.png",
+    "name": "モブソフトクリーム",
+    "rarity": "SSR",
+    "statsText": "MP +15",
+    "traitText": "全属性耐性 +1%",
+    "tags": [
+      "18",
+      "27",
+      "28",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 114,
+      "attack": 24,
+      "defense": 27,
+      "speed": 23
+    },
+    "sourceId": "57",
+    "dexNo": 57,
+    "displayNo": "No.057",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 114,
+      "attack": 24,
+      "defense": 27,
+      "speed": 23
+    }
+  },
+  {
+    "id": "58",
+    "image": "fig/58.png",
+    "name": "CBロゴ",
+    "rarity": "MOB",
+    "statsText": "SPD +5 & MND +5",
+    "traitText": "全属性耐性 +3% & 会心率 +3%",
+    "tags": [
+      "10",
+      "11",
+      "12",
+      "19",
+      "23",
+      "29",
+      "30",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 152,
+      "attack": 27,
+      "defense": 36,
+      "speed": 37
+    },
+    "sourceId": "58",
+    "dexNo": 58,
+    "displayNo": "No.058",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 152,
+      "attack": 27,
+      "defense": 36,
+      "speed": 37
+    }
+  },
+  {
+    "id": "59",
+    "image": "fig/59.png",
+    "name": "モブDJ 選曲",
+    "rarity": "SSR",
+    "statsText": "ATK.DEF.SPD +2",
+    "traitText": "MP消費 -2%",
+    "tags": [
+      "05",
+      "10",
+      "12",
+      "27"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 25,
+      "defense": 24,
+      "speed": 25
+    },
+    "sourceId": "59",
+    "dexNo": 59,
+    "displayNo": "No.059",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 25,
+      "defense": 24,
+      "speed": 25
+    }
+  },
+  {
+    "id": "60",
+    "image": "fig/60.png",
+    "name": "モブDJ ハンズアップ",
+    "rarity": "SSR",
+    "statsText": "MND.MAG +2",
+    "traitText": "魔法与ダメージ+3%",
+    "tags": [
+      "05",
+      "10",
+      "12",
+      "27"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    },
+    "sourceId": "60",
+    "dexNo": 60,
+    "displayNo": "No.060",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 112,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    }
+  },
+  {
+    "id": "61",
+    "image": "fig/61.png",
+    "name": "MOB BR プレイヤー",
+    "rarity": "SSR",
+    "statsText": "SPD.MND +2 & HP +10",
+    "traitText": "命中率+3%",
+    "tags": [
+      "05",
+      "10",
+      "20",
+      "36"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 115,
+      "attack": 20,
+      "defense": 26,
+      "speed": 28
+    },
+    "sourceId": "61",
+    "dexNo": 61,
+    "displayNo": "No.061",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 115,
+      "attack": 20,
+      "defense": 26,
+      "speed": 28
+    }
+  },
+  {
+    "id": "62",
+    "image": "fig/62.png",
+    "name": "モブゴースト",
+    "rarity": "SR",
+    "statsText": "SPD.MND +2",
+    "traitText": "命中率+3%",
+    "tags": [
+      "09",
+      "23",
+      "28"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 17,
+      "defense": 23,
+      "speed": 24
+    },
+    "sourceId": "62",
+    "dexNo": 62,
+    "displayNo": "No.062",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 17,
+      "defense": 23,
+      "speed": 24
+    }
+  },
+  {
+    "id": "63",
+    "image": "fig/63.png",
+    "name": "メニュー 冒険日記",
+    "rarity": "SR",
+    "statsText": "SPD.MND +2",
+    "traitText": "探索レアアイテム率 +0.5%",
+    "tags": [
+      "05",
+      "10",
+      "20"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 18,
+      "defense": 22,
+      "speed": 24
+    },
+    "sourceId": "63",
+    "dexNo": 63,
+    "displayNo": "No.063",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 18,
+      "defense": 22,
+      "speed": 24
+    }
+  },
+  {
+    "id": "64",
+    "image": "fig/64.png",
+    "name": "メニュー バトルプログラム",
+    "rarity": "SR",
+    "statsText": "ATK.DEF +2",
+    "traitText": "回避率+0.5%",
+    "tags": [
+      "06",
+      "15",
+      "36"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 22,
+      "defense": 22,
+      "speed": 20
+    },
+    "sourceId": "64",
+    "dexNo": 64,
+    "displayNo": "No.064",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 22,
+      "defense": 22,
+      "speed": 20
+    }
+  },
+  {
+    "id": "65",
+    "image": "fig/65.png",
+    "name": "メニュー ゴールドレコード",
+    "rarity": "SR",
+    "statsText": "HP +10",
+    "traitText": "コイン獲得量 +0.5%",
+    "tags": [
+      "06",
+      "08",
+      "15"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 21,
+      "defense": 23,
+      "speed": 20
+    },
+    "sourceId": "65",
+    "dexNo": 65,
+    "displayNo": "No.065",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 21,
+      "defense": 23,
+      "speed": 20
+    }
+  },
+  {
+    "id": "66",
+    "image": "fig/66.png",
+    "name": "メニュー 経験値レコード",
+    "rarity": "SR",
+    "statsText": "MP +10",
+    "traitText": "経験値獲得量 +0.5%",
+    "tags": [
+      "06",
+      "15",
+      "36"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 21,
+      "defense": 20,
+      "speed": 23
+    },
+    "sourceId": "66",
+    "dexNo": 66,
+    "displayNo": "No.066",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 21,
+      "defense": 20,
+      "speed": 23
+    }
+  },
+  {
+    "id": "67",
+    "image": "fig/67.png",
+    "name": "メニュー ボスレコード",
+    "rarity": "SR",
+    "statsText": "MAG.MND +2",
+    "traitText": "状態異常全耐性 +0.3%",
+    "tags": [
+      "06",
+      "15",
+      "25"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 23,
+      "defense": 23,
+      "speed": 18
+    },
+    "sourceId": "67",
+    "dexNo": 67,
+    "displayNo": "No.067",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 23,
+      "defense": 23,
+      "speed": 18
+    }
+  },
+  {
+    "id": "68",
+    "image": "fig/68.png",
+    "name": "メニュー ドリンクセット",
+    "rarity": "SR",
+    "statsText": "HP +10",
+    "traitText": "回復量 +0.5%",
+    "tags": [
+      "06",
+      "15",
+      "18"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 20,
+      "defense": 24,
+      "speed": 20
+    },
+    "sourceId": "68",
+    "dexNo": 68,
+    "displayNo": "No.068",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 20,
+      "defense": 24,
+      "speed": 20
+    }
+  },
+  {
+    "id": "69",
+    "image": "fig/69.png",
+    "name": "メニュー 椅子で休む",
+    "rarity": "SR",
+    "statsText": "MP +10",
+    "traitText": "回復量 +0.5%",
+    "tags": [
+      "06",
+      "15",
+      "33"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 21,
+      "defense": 23,
+      "speed": 20
+    },
+    "sourceId": "69",
+    "dexNo": 69,
+    "displayNo": "No.069",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 21,
+      "defense": 23,
+      "speed": 20
+    }
+  },
+  {
+    "id": "70",
+    "image": "fig/70.png",
+    "name": "酒場の看板娘 モブイルカエル",
+    "rarity": "UR",
+    "statsText": "SPD +3 & DEF +3 & MND +2",
+    "traitText": "水属性耐性+10% & 会心率+2%",
+    "tags": [
+      "06",
+      "13",
+      "15",
+      "18",
+      "27",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 23,
+      "defense": 33,
+      "speed": 30
+    },
+    "sourceId": "70",
+    "dexNo": 70,
+    "displayNo": "No.070",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 23,
+      "defense": 33,
+      "speed": 30
+    }
+  },
+  {
+    "id": "71",
+    "image": "fig/71.png",
+    "name": "鍛冶屋の職人 モブゴンゾー",
+    "rarity": "UR",
+    "statsText": "ATK +5 & DEF +3",
+    "traitText": "地属性耐性+10% & 会心率+2%",
+    "tags": [
+      "03",
+      "13",
+      "15",
+      "35",
+      "36",
+      "39",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 33,
+      "defense": 30,
+      "speed": 23
+    },
+    "sourceId": "71",
+    "dexNo": 71,
+    "displayNo": "No.071",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 33,
+      "defense": 30,
+      "speed": 23
+    }
+  },
+  {
+    "id": "72",
+    "image": "fig/72.png",
+    "name": "優しき熱血コーチ モブコーチ",
+    "rarity": "UR",
+    "statsText": "HP +20 & DEF +3 & MND +2",
+    "traitText": "雷属性耐性+10% & 会心率+2%",
+    "tags": [
+      "08",
+      "13",
+      "15",
+      "28",
+      "29",
+      "31",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 39,
+      "speed": 23
+    },
+    "sourceId": "72",
+    "dexNo": 72,
+    "displayNo": "No.072",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 39,
+      "speed": 23
+    }
+  },
+  {
+    "id": "73",
+    "image": "fig/73.png",
+    "name": "宿舎の癒し モブミータ",
+    "rarity": "UR",
+    "statsText": "MP +20 & DEF +3 & MND +2",
+    "traitText": "無属性耐性+10% & 会心率+2%",
+    "tags": [
+      "08",
+      "13",
+      "15",
+      "27",
+      "29",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 133,
+      "attack": 26,
+      "defense": 37,
+      "speed": 23
+    },
+    "sourceId": "73",
+    "dexNo": 73,
+    "displayNo": "No.073",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 133,
+      "attack": 26,
+      "defense": 37,
+      "speed": 23
+    }
+  },
+  {
+    "id": "74",
+    "image": "fig/74.png",
+    "name": "頼りになる店主 モブマテリア",
+    "rarity": "UR",
+    "statsText": "MAG +3 & DEF +3 & SPD +2",
+    "traitText": "光.闇属性耐性+8% & 会心率+2%",
+    "tags": [
+      "05",
+      "13",
+      "15",
+      "23",
+      "36",
+      "37",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 29,
+      "defense": 29,
+      "speed": 28
+    },
+    "sourceId": "74",
+    "dexNo": 74,
+    "displayNo": "No.074",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 29,
+      "defense": 29,
+      "speed": 28
+    }
+  },
+  {
+    "id": "75",
+    "image": "fig/75.png",
+    "name": "メニュー 王の間",
+    "rarity": "SR",
+    "statsText": "DEF.MND +2",
+    "traitText": "状態異常全耐性 +0.3%",
+    "tags": [
+      "02",
+      "09",
+      "15"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "75",
+    "dexNo": 75,
+    "displayNo": "No.075",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "76",
+    "image": "fig/76.png",
+    "name": "メニュー MOB SHOP",
+    "rarity": "SR",
+    "statsText": "MAG.MND +2",
+    "traitText": "マヒ耐性 +5%",
+    "tags": [
+      "02",
+      "09",
+      "15"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 22,
+      "defense": 24,
+      "speed": 18
+    },
+    "sourceId": "76",
+    "dexNo": 76,
+    "displayNo": "No.076",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 22,
+      "defense": 24,
+      "speed": 18
+    }
+  },
+  {
+    "id": "77",
+    "image": "fig/77.png",
+    "name": "メニュー 宿舎",
+    "rarity": "SR",
+    "statsText": "HP+10.MND +2",
+    "traitText": "眠り耐性 +5%",
+    "tags": [
+      "02",
+      "09",
+      "15"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 101,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    },
+    "sourceId": "77",
+    "dexNo": 77,
+    "displayNo": "No.077",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 101,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    }
+  },
+  {
+    "id": "78",
+    "image": "fig/78.png",
+    "name": "メニュー レコードの間",
+    "rarity": "SR",
+    "statsText": "MP+10.MND +2",
+    "traitText": "回避率 +0.1%",
+    "tags": [
+      "02",
+      "09",
+      "15"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 19,
+      "defense": 25,
+      "speed": 20
+    },
+    "sourceId": "78",
+    "dexNo": 78,
+    "displayNo": "No.078",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 19,
+      "defense": 25,
+      "speed": 20
+    }
+  },
+  {
+    "id": "79",
+    "image": "fig/79.png",
+    "name": "モブキングダムの王様 モブスライムキング",
+    "rarity": "SSR",
+    "statsText": "DEF +5 & MND +1",
+    "traitText": "ダメージ軽減+2%",
+    "tags": [
+      "02",
+      "09",
+      "13",
+      "17",
+      "30",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 20,
+      "defense": 34,
+      "speed": 20
+    },
+    "sourceId": "79",
+    "dexNo": 79,
+    "displayNo": "No.079",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 20,
+      "defense": 34,
+      "speed": 20
+    }
+  },
+  {
+    "id": "80",
+    "image": "fig/80.png",
+    "name": "王様の右腕 モブライトアーム",
+    "rarity": "SSR",
+    "statsText": "ATK +5 & MND +1",
+    "traitText": "通常攻撃与ダメージ+4%",
+    "tags": [
+      "02",
+      "09",
+      "13",
+      "17",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 24,
+      "speed": 19
+    },
+    "sourceId": "80",
+    "dexNo": 80,
+    "displayNo": "No.080",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 24,
+      "speed": 19
+    }
+  },
+  {
+    "id": "81",
+    "image": "fig/81.png",
+    "name": "MOB PARTY マスコット",
+    "rarity": "SSR",
+    "statsText": "SPD.MND +2 & HP +10",
+    "traitText": "命中率+3%",
+    "tags": [
+      "05",
+      "10",
+      "12",
+      "20",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 21,
+      "defense": 26,
+      "speed": 27
+    },
+    "sourceId": "81",
+    "dexNo": 81,
+    "displayNo": "No.081",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 21,
+      "defense": 26,
+      "speed": 27
+    }
+  },
+  {
+    "id": "82",
+    "image": "fig/82.png",
+    "name": "読みかけの本を読もう",
+    "rarity": "SSR",
+    "statsText": "SPD.MND +2 & HP +10",
+    "traitText": "命中率+3%",
+    "tags": [
+      "05",
+      "10",
+      "20",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 19,
+      "defense": 27,
+      "speed": 28
+    },
+    "sourceId": "82",
+    "dexNo": 82,
+    "displayNo": "No.082",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 19,
+      "defense": 27,
+      "speed": 28
+    }
+  },
+  {
+    "id": "83",
+    "image": "fig/83.png",
+    "name": "モブ三味線",
+    "rarity": "SSR",
+    "statsText": "SPD.MND +2 & HP +10",
+    "traitText": "命中率+3%",
+    "tags": [
+      "05",
+      "10",
+      "12",
+      "20",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 21,
+      "defense": 26,
+      "speed": 27
+    },
+    "sourceId": "83",
+    "dexNo": 83,
+    "displayNo": "No.083",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 21,
+      "defense": 26,
+      "speed": 27
+    }
+  },
+  {
+    "id": "84",
+    "image": "fig/84.png",
+    "name": "MOB SHOT リリス四姉妹ソウル 赤",
+    "rarity": "SSR",
+    "statsText": "MAG.MND +2 & MP +10",
+    "traitText": "火属性耐性+5% & 魔法ダメージ軽減+2%",
+    "tags": [
+      "03",
+      "09",
+      "23",
+      "27",
+      "37",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 27,
+      "defense": 26,
+      "speed": 21
+    },
+    "sourceId": "84",
+    "dexNo": 84,
+    "displayNo": "No.084",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 27,
+      "defense": 26,
+      "speed": 21
+    }
+  },
+  {
+    "id": "85",
+    "image": "fig/85.png",
+    "name": "MOB SHOT リリス四姉妹ソウル 黄",
+    "rarity": "SSR",
+    "statsText": "MAG.ATK +2 & MP +10",
+    "traitText": "雷属性耐性+5% & 魔法ダメージ軽減+2%",
+    "tags": [
+      "04",
+      "09",
+      "23",
+      "27",
+      "37",
+      "50",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 31,
+      "defense": 21,
+      "speed": 22
+    },
+    "sourceId": "85",
+    "dexNo": 85,
+    "displayNo": "No.085",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 31,
+      "defense": 21,
+      "speed": 22
+    }
+  },
+  {
+    "id": "86",
+    "image": "fig/86.png",
+    "name": "MOB SHOT リリス四姉妹ソウル 青",
+    "rarity": "SSR",
+    "statsText": "MAG.DEF +2 & MP +10",
+    "traitText": "水属性耐性+5% & 魔法ダメージ軽減+2%",
+    "tags": [
+      "09",
+      "23",
+      "27",
+      "31",
+      "37",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    },
+    "sourceId": "86",
+    "dexNo": 86,
+    "displayNo": "No.086",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    }
+  },
+  {
+    "id": "87",
+    "image": "fig/87.png",
+    "name": "MOB SHOT リリス四姉妹ソウル 白",
+    "rarity": "SSR",
+    "statsText": "MAG +5 & MP +10",
+    "traitText": "光属性耐性+5% & 魔法ダメージ軽減+2%",
+    "tags": [
+      "09",
+      "23",
+      "27",
+      "28",
+      "37",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    },
+    "sourceId": "87",
+    "dexNo": 87,
+    "displayNo": "No.087",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    }
+  },
+  {
+    "id": "185",
+    "image": "fig/88.png",
+    "name": "新入りフィギュア売り モブメープル",
+    "rarity": "UR",
+    "statsText": "HP +20 & DEF +3 & MAG +2",
+    "traitText": "獲得経験値+10% & 会心率+2%",
+    "tags": [
+      "06",
+      "08",
+      "13",
+      "27",
+      "29",
+      "37",
+      "40",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 136,
+      "attack": 29,
+      "defense": 33,
+      "speed": 24
+    },
+    "sourceId": "185",
+    "dexNo": 88,
+    "displayNo": "No.088",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 136,
+      "attack": 29,
+      "defense": 33,
+      "speed": 24
+    }
+  },
+  {
+    "id": "186",
+    "image": "fig/89.png",
+    "name": "PB2 15th ロゴレコード",
+    "rarity": "SSR",
+    "statsText": "HP+10 & ATK +1 & MAG +1 & MND +1",
+    "traitText": "獲得経験値+5%",
+    "tags": [
+      "11",
+      "12",
+      "19",
+      "30",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    },
+    "sourceId": "186",
+    "dexNo": 89,
+    "displayNo": "No.089",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    }
+  },
+  {
+    "id": "187",
+    "image": "fig/90.png",
+    "name": "PB2 Vol.40 ロゴレコード",
+    "rarity": "SSR",
+    "statsText": "HP+10 & ATK +1 & MAG +1 & MND +1",
+    "traitText": "獲得経験値+5%",
+    "tags": [
+      "11",
+      "12",
+      "19",
+      "30",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    },
+    "sourceId": "187",
+    "dexNo": 90,
+    "displayNo": "No.090",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    }
+  },
+  {
+    "id": "188",
+    "image": "fig/91.png",
+    "name": "MOB ARTIST イエローレコード",
+    "rarity": "SSR",
+    "statsText": "HP+10 & ATK +1 & MAG +1 & MND +1",
+    "traitText": "獲得経験値+5%",
+    "tags": [
+      "04",
+      "11",
+      "12",
+      "19",
+      "30",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 27,
+      "defense": 25,
+      "speed": 22
+    },
+    "sourceId": "188",
+    "dexNo": 91,
+    "displayNo": "No.091",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 27,
+      "defense": 25,
+      "speed": 22
+    }
+  },
+  {
+    "id": "189",
+    "image": "fig/92.png",
+    "name": "MOB ARTIST ミントレコード",
+    "rarity": "SSR",
+    "statsText": "HP+10 & ATK +1 & MAG +1 & MND +1",
+    "traitText": "獲得経験値+5%",
+    "tags": [
+      "11",
+      "12",
+      "19",
+      "31",
+      "33",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    },
+    "sourceId": "189",
+    "dexNo": 92,
+    "displayNo": "No.092",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    }
+  },
+  {
+    "id": "88",
+    "image": "figene/01.png",
+    "name": "スライム",
+    "rarity": "SSR",
+    "statsText": "DEF +5",
+    "traitText": "水属性耐性 +5%",
+    "tags": [
+      "02",
+      "09",
+      "10",
+      "17",
+      "41"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 20,
+      "defense": 34,
+      "speed": 20
+    },
+    "sourceId": "88",
+    "dexNo": 93,
+    "displayNo": "No.093",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 20,
+      "defense": 34,
+      "speed": 20
+    }
+  },
+  {
+    "id": "89",
+    "image": "figene/02.png",
+    "name": "モブロック",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "地属性耐性 +3%",
+    "tags": [
+      "09",
+      "39",
+      "41"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "89",
+    "dexNo": 94,
+    "displayNo": "No.094",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "90",
+    "image": "figene/03.png",
+    "name": "モブテンデビ",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "09",
+      "27",
+      "39",
+      "41",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 18,
+      "defense": 20,
+      "speed": 26
+    },
+    "sourceId": "90",
+    "dexNo": 95,
+    "displayNo": "No.095",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 18,
+      "defense": 20,
+      "speed": 26
+    }
+  },
+  {
+    "id": "91",
+    "image": "figene/04.png",
+    "name": "モブジョーロ",
+    "rarity": "SR",
+    "statsText": "ATK +3",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "09",
+      "34",
+      "39",
+      "41"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 26,
+      "defense": 20,
+      "speed": 18
+    },
+    "sourceId": "91",
+    "dexNo": 96,
+    "displayNo": "No.096",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 26,
+      "defense": 20,
+      "speed": 18
+    }
+  },
+  {
+    "id": "92",
+    "image": "figene/05.png",
+    "name": "モブイワキリ",
+    "rarity": "SSR",
+    "statsText": "DEF +3",
+    "traitText": "雷属性耐性 +5%",
+    "tags": [
+      "09",
+      "32",
+      "35",
+      "41",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    },
+    "sourceId": "92",
+    "dexNo": 97,
+    "displayNo": "No.097",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    }
+  },
+  {
+    "id": "93",
+    "image": "figene/06.png",
+    "name": "モブサバンナ",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "地属性与ダメージ +3%",
+    "tags": [
+      "04",
+      "09",
+      "36",
+      "41"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 18,
+      "defense": 18,
+      "speed": 28
+    },
+    "sourceId": "93",
+    "dexNo": 98,
+    "displayNo": "No.098",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 18,
+      "defense": 18,
+      "speed": 28
+    }
+  },
+  {
+    "id": "94",
+    "image": "figene/07.png",
+    "name": "モブメラケロ",
+    "rarity": "SSR",
+    "statsText": "ATK+3 & DEF +3",
+    "traitText": "火属性与ダメージ +5%",
+    "tags": [
+      "03",
+      "32",
+      "34",
+      "40",
+      "41"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "94",
+    "dexNo": 99,
+    "displayNo": "No.099",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "95",
+    "image": "figene/08.png",
+    "name": "モブケロキング",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MND +3",
+    "traitText": "水属性与ダメージ +5%",
+    "tags": [
+      "02",
+      "09",
+      "32",
+      "34",
+      "41",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 21,
+      "defense": 33,
+      "speed": 20
+    },
+    "sourceId": "95",
+    "dexNo": 100,
+    "displayNo": "No.100",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 21,
+      "defense": 33,
+      "speed": 20
+    }
+  },
+  {
+    "id": "96",
+    "image": "figene/09.png",
+    "name": "モブツルガンナー",
+    "rarity": "SSR",
+    "statsText": "SPD +5",
+    "traitText": "命中率 +5%",
+    "tags": [
+      "02",
+      "09",
+      "32",
+      "36",
+      "41"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 20,
+      "defense": 21,
+      "speed": 33
+    },
+    "sourceId": "96",
+    "dexNo": 101,
+    "displayNo": "No.101",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 20,
+      "defense": 21,
+      "speed": 33
+    }
+  },
+  {
+    "id": "97",
+    "image": "figene/10.png",
+    "name": "モブミイラ",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "混乱耐性 +5%",
+    "tags": [
+      "09",
+      "28",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "97",
+    "dexNo": 102,
+    "displayNo": "No.102",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "98",
+    "image": "figene/11.png",
+    "name": "モブネコミイラ",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "回避率 +2%",
+    "tags": [
+      "09",
+      "27",
+      "28",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 95,
+      "attack": 18,
+      "defense": 19,
+      "speed": 27
+    },
+    "sourceId": "98",
+    "dexNo": 103,
+    "displayNo": "No.103",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 95,
+      "attack": 18,
+      "defense": 19,
+      "speed": 27
+    }
+  },
+  {
+    "id": "99",
+    "image": "figene/12.png",
+    "name": "モブデスヘッド",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MAG +3%",
+    "traitText": "闇属性耐性 +5%",
+    "tags": [
+      "09",
+      "29",
+      "32",
+      "37",
+      "42",
+      "50",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    },
+    "sourceId": "99",
+    "dexNo": 104,
+    "displayNo": "No.104",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    }
+  },
+  {
+    "id": "100",
+    "image": "figene/13.png",
+    "name": "モブポイズン",
+    "rarity": "SR",
+    "statsText": "MND +3",
+    "traitText": "毒耐性 +3%",
+    "tags": [
+      "09",
+      "29",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    },
+    "sourceId": "100",
+    "dexNo": 105,
+    "displayNo": "No.105",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    }
+  },
+  {
+    "id": "101",
+    "image": "figene/14.png",
+    "name": "モブアドベンチャー",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "ひるみ耐性 +3%",
+    "tags": [
+      "03",
+      "09",
+      "27",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 20,
+      "defense": 26,
+      "speed": 18
+    },
+    "sourceId": "101",
+    "dexNo": 106,
+    "displayNo": "No.106",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 20,
+      "defense": 26,
+      "speed": 18
+    }
+  },
+  {
+    "id": "102",
+    "image": "figene/15.png",
+    "name": "モブスナトカゲ",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "地属性耐性 +3%",
+    "tags": [
+      "09",
+      "36",
+      "42",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 19,
+      "defense": 19,
+      "speed": 26
+    },
+    "sourceId": "102",
+    "dexNo": 107,
+    "displayNo": "No.107",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 19,
+      "defense": 19,
+      "speed": 26
+    }
+  },
+  {
+    "id": "103",
+    "image": "figene/16.png",
+    "name": "モブツインソウル",
+    "rarity": "SSR",
+    "statsText": "MP +15",
+    "traitText": "風属性耐性 +3% & 雷属性耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "23",
+      "37",
+      "20",
+      "42",
+      "50",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 26,
+      "defense": 23,
+      "speed": 25
+    },
+    "sourceId": "103",
+    "dexNo": 108,
+    "displayNo": "No.108",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 26,
+      "defense": 23,
+      "speed": 25
+    }
+  },
+  {
+    "id": "104",
+    "image": "figene/17.png",
+    "name": "モブミラバスター",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MND +3",
+    "traitText": "砂漠での与ダメージ +7%",
+    "tags": [
+      "09",
+      "23",
+      "26",
+      "32",
+      "36",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 20,
+      "defense": 33,
+      "speed": 21
+    },
+    "sourceId": "104",
+    "dexNo": 109,
+    "displayNo": "No.109",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 20,
+      "defense": 33,
+      "speed": 21
+    }
+  },
+  {
+    "id": "105",
+    "image": "figene/18.png",
+    "name": "モブヒトデ",
+    "rarity": "SR",
+    "statsText": "ATK +3",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "09",
+      "36",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 25,
+      "defense": 19,
+      "speed": 20
+    },
+    "sourceId": "105",
+    "dexNo": 110,
+    "displayNo": "No.110",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 25,
+      "defense": 19,
+      "speed": 20
+    }
+  },
+  {
+    "id": "106",
+    "image": "figene/19.png",
+    "name": "モブナイフ",
+    "rarity": "SR",
+    "statsText": "ATK +3",
+    "traitText": "混乱耐性 +3%",
+    "tags": [
+      "09",
+      "26",
+      "43",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 27,
+      "defense": 19,
+      "speed": 18
+    },
+    "sourceId": "106",
+    "dexNo": 111,
+    "displayNo": "No.111",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 27,
+      "defense": 19,
+      "speed": 18
+    }
+  },
+  {
+    "id": "107",
+    "image": "figene/20.png",
+    "name": "モブダンサー",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "混乱耐性 +3%",
+    "tags": [
+      "09",
+      "12",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 19,
+      "defense": 19,
+      "speed": 26
+    },
+    "sourceId": "107",
+    "dexNo": 112,
+    "displayNo": "No.112",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 19,
+      "defense": 19,
+      "speed": 26
+    }
+  },
+  {
+    "id": "108",
+    "image": "figene/21.png",
+    "name": "モブヌルブルー",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "地属性耐性 +3%",
+    "tags": [
+      "09",
+      "31",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 18,
+      "defense": 20,
+      "speed": 26
+    },
+    "sourceId": "108",
+    "dexNo": 113,
+    "displayNo": "No.113",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 18,
+      "defense": 20,
+      "speed": 26
+    }
+  },
+  {
+    "id": "109",
+    "image": "figene/22.png",
+    "name": "モブバイオリン",
+    "rarity": "SSR",
+    "statsText": "MND +3 & DEF +3",
+    "traitText": "眠り耐性 +5%",
+    "tags": [
+      "09",
+      "26",
+      "29",
+      "33",
+      "36",
+      "37",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 32,
+      "speed": 21
+    },
+    "sourceId": "109",
+    "dexNo": 114,
+    "displayNo": "No.114",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 32,
+      "speed": 21
+    }
+  },
+  {
+    "id": "110",
+    "image": "figene/23.png",
+    "name": "モブラプチー",
+    "rarity": "SSR",
+    "statsText": "SPD +3 & DEF +3",
+    "traitText": "魔法ダメージ軽減 +3%",
+    "tags": [
+      "09",
+      "31",
+      "32",
+      "40",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 19,
+      "defense": 28,
+      "speed": 27
+    },
+    "sourceId": "110",
+    "dexNo": 115,
+    "displayNo": "No.115",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 19,
+      "defense": 28,
+      "speed": 27
+    }
+  },
+  {
+    "id": "111",
+    "image": "figene/24.png",
+    "name": "モブティラ",
+    "rarity": "SSR",
+    "statsText": "ATK +3 & MND +3",
+    "traitText": "物理ダメージ軽減 +3%",
+    "tags": [
+      "03",
+      "09",
+      "32",
+      "40",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "111",
+    "dexNo": 116,
+    "displayNo": "No.116",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "112",
+    "image": "figene/25.png",
+    "name": "モブクウカイ",
+    "rarity": "SSR",
+    "statsText": "MAG +3 & MND +3",
+    "traitText": "全属性耐性 +3%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "26",
+      "37",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "112",
+    "dexNo": 117,
+    "displayNo": "No.117",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "113",
+    "image": "figene/26.png",
+    "name": "モブアクイ",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MP+10",
+    "traitText": "闇属性耐性 +5%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "26",
+      "43",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 21,
+      "defense": 30,
+      "speed": 23
+    },
+    "sourceId": "113",
+    "dexNo": 118,
+    "displayNo": "No.118",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 21,
+      "defense": 30,
+      "speed": 23
+    }
+  },
+  {
+    "id": "114",
+    "image": "figene/27.png",
+    "name": "モブシツイ",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MP+10",
+    "traitText": "闇属性与ダメージ +3%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "26",
+      "43",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 21,
+      "defense": 30,
+      "speed": 23
+    },
+    "sourceId": "114",
+    "dexNo": 119,
+    "displayNo": "No.119",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 21,
+      "defense": 30,
+      "speed": 23
+    }
+  },
+  {
+    "id": "115",
+    "image": "figene/28.png",
+    "name": "モブヤマイ",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MP+10",
+    "traitText": "闇属性魔法消費MP -10%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "26",
+      "43",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 21,
+      "defense": 30,
+      "speed": 23
+    },
+    "sourceId": "115",
+    "dexNo": 120,
+    "displayNo": "No.120",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 21,
+      "defense": 30,
+      "speed": 23
+    }
+  },
+  {
+    "id": "116",
+    "image": "figene/29.png",
+    "name": "モブネオントカゲ",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "会心率 +1%",
+    "tags": [
+      "08",
+      "09",
+      "36",
+      "44",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 95,
+      "attack": 20,
+      "defense": 18,
+      "speed": 26
+    },
+    "sourceId": "116",
+    "dexNo": 121,
+    "displayNo": "No.121",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 95,
+      "attack": 20,
+      "defense": 18,
+      "speed": 26
+    }
+  },
+  {
+    "id": "117",
+    "image": "figene/30.png",
+    "name": "モブカイロ",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "会心率 +1%",
+    "tags": [
+      "05",
+      "09",
+      "34",
+      "44"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 20,
+      "defense": 25,
+      "speed": 19
+    },
+    "sourceId": "117",
+    "dexNo": 122,
+    "displayNo": "No.122",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 20,
+      "defense": 25,
+      "speed": 19
+    }
+  },
+  {
+    "id": "118",
+    "image": "figene/31.png",
+    "name": "モブバンケン",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "光属性耐性 +5%",
+    "tags": [
+      "09",
+      "27",
+      "33",
+      "44"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 18,
+      "defense": 20,
+      "speed": 26
+    },
+    "sourceId": "118",
+    "dexNo": 123,
+    "displayNo": "No.123",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 18,
+      "defense": 20,
+      "speed": 26
+    }
+  },
+  {
+    "id": "119",
+    "image": "figene/32.png",
+    "name": "モブスラトレーナー",
+    "rarity": "SSR",
+    "statsText": "ATK +3 & MP+10",
+    "traitText": "会心率 +2%",
+    "tags": [
+      "02",
+      "09",
+      "17",
+      "35",
+      "44"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    },
+    "sourceId": "119",
+    "dexNo": 124,
+    "displayNo": "No.124",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    }
+  },
+  {
+    "id": "120",
+    "image": "figene/33.png",
+    "name": "モブエネチェイサー",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & HP+10",
+    "traitText": "命中率 +3%",
+    "tags": [
+      "09",
+      "29",
+      "32",
+      "35",
+      "44"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 30,
+      "speed": 23
+    },
+    "sourceId": "120",
+    "dexNo": 125,
+    "displayNo": "No.125",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 30,
+      "speed": 23
+    }
+  },
+  {
+    "id": "121",
+    "image": "figene/34.png",
+    "name": "モブパレットレオン",
+    "rarity": "SSR",
+    "statsText": "SPD +3 & MP+10",
+    "traitText": "毒耐性 +10%",
+    "tags": [
+      "08",
+      "09",
+      "29",
+      "36",
+      "44",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 22,
+      "defense": 21,
+      "speed": 31
+    },
+    "sourceId": "121",
+    "dexNo": 126,
+    "displayNo": "No.126",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 22,
+      "defense": 21,
+      "speed": 31
+    }
+  },
+  {
+    "id": "122",
+    "image": "figene/35.png",
+    "name": "モブコドラ",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & HP+10",
+    "traitText": "火属性耐性 +5%",
+    "tags": [
+      "09",
+      "27",
+      "38",
+      "40",
+      "44"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 20,
+      "defense": 31,
+      "speed": 23
+    },
+    "sourceId": "122",
+    "dexNo": 127,
+    "displayNo": "No.127",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 20,
+      "defense": 31,
+      "speed": 23
+    }
+  },
+  {
+    "id": "123",
+    "image": "figene/36.png",
+    "name": "モブネオクマ",
+    "rarity": "SSR",
+    "statsText": "ATK +3 & MP+10",
+    "traitText": "火属性耐性 +3%",
+    "tags": [
+      "09",
+      "27",
+      "36",
+      "40",
+      "44"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    },
+    "sourceId": "123",
+    "dexNo": 128,
+    "displayNo": "No.128",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    }
+  },
+  {
+    "id": "124",
+    "image": "figene/37.png",
+    "name": "モブジンベエ",
+    "rarity": "SR",
+    "statsText": "ATK +3",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "09",
+      "31",
+      "36",
+      "40",
+      "45",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 25,
+      "defense": 20,
+      "speed": 19
+    },
+    "sourceId": "124",
+    "dexNo": 129,
+    "displayNo": "No.129",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 25,
+      "defense": 20,
+      "speed": 19
+    }
+  },
+  {
+    "id": "125",
+    "image": "figene/38.png",
+    "name": "モブネッシー",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "09",
+      "31",
+      "39",
+      "40",
+      "45",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    },
+    "sourceId": "125",
+    "dexNo": 130,
+    "displayNo": "No.130",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    }
+  },
+  {
+    "id": "126",
+    "image": "figene/39.png",
+    "name": "モブバブルドクター",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "09",
+      "31",
+      "36",
+      "40",
+      "45"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "126",
+    "dexNo": 131,
+    "displayNo": "No.131",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "127",
+    "image": "figene/40.png",
+    "name": "モブシーガード",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "09",
+      "28",
+      "31",
+      "40",
+      "45"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "127",
+    "dexNo": 132,
+    "displayNo": "No.132",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "128",
+    "image": "figene/41.png",
+    "name": "モブアビスナイト",
+    "rarity": "SSR",
+    "statsText": "ATK +3 DEF +3",
+    "traitText": "水属性与ダメージ +5%",
+    "tags": [
+      "09",
+      "31",
+      "36",
+      "40",
+      "45"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    },
+    "sourceId": "128",
+    "dexNo": 133,
+    "displayNo": "No.133",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    }
+  },
+  {
+    "id": "129",
+    "image": "figene/42.png",
+    "name": "モブジョーンズ",
+    "rarity": "SSR",
+    "statsText": "ATK +3 DEF +3",
+    "traitText": "水属性与ダメージ +5%",
+    "tags": [
+      "09",
+      "31",
+      "32",
+      "35",
+      "40",
+      "45",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "129",
+    "dexNo": 134,
+    "displayNo": "No.134",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "130",
+    "image": "figene/43.png",
+    "name": "モブウェイブ",
+    "rarity": "SSR",
+    "statsText": "MAG +3 MND +3",
+    "traitText": "水属性魔法与ダメージ +10%",
+    "tags": [
+      "09",
+      "31",
+      "36",
+      "37",
+      "40",
+      "45"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 27,
+      "defense": 26,
+      "speed": 21
+    },
+    "sourceId": "130",
+    "dexNo": 135,
+    "displayNo": "No.135",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 27,
+      "defense": 26,
+      "speed": 21
+    }
+  },
+  {
+    "id": "131",
+    "image": "figene/44.png",
+    "name": "モブヒトデヤリ",
+    "rarity": "SR",
+    "statsText": "ATK +3",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "09",
+      "31",
+      "36",
+      "40",
+      "45"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 25,
+      "defense": 20,
+      "speed": 19
+    },
+    "sourceId": "131",
+    "dexNo": 136,
+    "displayNo": "No.136",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 97,
+      "attack": 25,
+      "defense": 20,
+      "speed": 19
+    }
+  },
+  {
+    "id": "132",
+    "image": "figene/45.png",
+    "name": "モブウォリアー",
+    "rarity": "SR",
+    "statsText": "MAG +3",
+    "traitText": "地属性魔法与ダメージ +3%",
+    "tags": [
+      "09",
+      "26",
+      "32",
+      "37",
+      "46",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 26,
+      "defense": 20,
+      "speed": 18
+    },
+    "sourceId": "132",
+    "dexNo": 137,
+    "displayNo": "No.137",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 26,
+      "defense": 20,
+      "speed": 18
+    }
+  },
+  {
+    "id": "133",
+    "image": "figene/46.png",
+    "name": "モブキバ",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "地属性物理与ダメージ +3%",
+    "tags": [
+      "07",
+      "09",
+      "26",
+      "32",
+      "36",
+      "46"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 18,
+      "defense": 19,
+      "speed": 27
+    },
+    "sourceId": "133",
+    "dexNo": 138,
+    "displayNo": "No.138",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 18,
+      "defense": 19,
+      "speed": 27
+    }
+  },
+  {
+    "id": "134",
+    "image": "figene/47.png",
+    "name": "モブククリ",
+    "rarity": "SSR",
+    "statsText": "SPD +3",
+    "traitText": "毒耐性 +10%",
+    "tags": [
+      "02",
+      "09",
+      "26",
+      "32",
+      "36",
+      "46"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 20,
+      "defense": 23,
+      "speed": 31
+    },
+    "sourceId": "134",
+    "dexNo": 139,
+    "displayNo": "No.139",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 20,
+      "defense": 23,
+      "speed": 31
+    }
+  },
+  {
+    "id": "135",
+    "image": "figene/48.png",
+    "name": "モブタフネス",
+    "rarity": "SSR",
+    "statsText": "HP +15",
+    "traitText": "物理ダメージ軽減 +3%",
+    "tags": [
+      "09",
+      "26",
+      "32",
+      "35",
+      "39",
+      "46"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 24,
+      "defense": 28,
+      "speed": 22
+    },
+    "sourceId": "135",
+    "dexNo": 140,
+    "displayNo": "No.140",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 24,
+      "defense": 28,
+      "speed": 22
+    }
+  },
+  {
+    "id": "136",
+    "image": "figene/49.png",
+    "name": "モブヒスイ",
+    "rarity": "SSR",
+    "statsText": "MP +10",
+    "traitText": "魔法ダメージ軽減 +3%",
+    "tags": [
+      "05",
+      "09",
+      "26",
+      "32",
+      "37",
+      "46"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 26,
+      "defense": 26,
+      "speed": 22
+    },
+    "sourceId": "136",
+    "dexNo": 141,
+    "displayNo": "No.141",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 26,
+      "defense": 26,
+      "speed": 22
+    }
+  },
+  {
+    "id": "137",
+    "image": "figene/50.png",
+    "name": "モブリュウゴウ",
+    "rarity": "SSR",
+    "statsText": "ATK +5",
+    "traitText": "火属性与ダメージ +5%",
+    "tags": [
+      "09",
+      "26",
+      "32",
+      "35",
+      "38",
+      "46",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 33,
+      "defense": 21,
+      "speed": 20
+    },
+    "sourceId": "137",
+    "dexNo": 142,
+    "displayNo": "No.142",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 33,
+      "defense": 21,
+      "speed": 20
+    }
+  },
+  {
+    "id": "138",
+    "image": "figene/51.png",
+    "name": "モブマグトカゲ",
+    "rarity": "SR",
+    "statsText": "ATK +3",
+    "traitText": "火属性与ダメージ +3%",
+    "tags": [
+      "03",
+      "09",
+      "38",
+      "47",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 28,
+      "defense": 18,
+      "speed": 18
+    },
+    "sourceId": "138",
+    "dexNo": 143,
+    "displayNo": "No.143",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 28,
+      "defense": 18,
+      "speed": 18
+    }
+  },
+  {
+    "id": "139",
+    "image": "figene/52.png",
+    "name": "モブヒートロック",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "火属性ダメージ軽減 +3%",
+    "tags": [
+      "03",
+      "09",
+      "39",
+      "47"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    },
+    "sourceId": "139",
+    "dexNo": 144,
+    "displayNo": "No.144",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 99,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    }
+  },
+  {
+    "id": "140",
+    "image": "figene/53.png",
+    "name": "モブヒノデビ",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "回避率 +1%",
+    "tags": [
+      "03",
+      "09",
+      "27",
+      "47",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 95,
+      "attack": 19,
+      "defense": 18,
+      "speed": 27
+    },
+    "sourceId": "140",
+    "dexNo": 145,
+    "displayNo": "No.145",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 95,
+      "attack": 19,
+      "defense": 18,
+      "speed": 27
+    }
+  },
+  {
+    "id": "141",
+    "image": "figene/54.png",
+    "name": "モブボムスロー",
+    "rarity": "SR",
+    "statsText": "ATK +3",
+    "traitText": "火属性与ダメージ +3%",
+    "tags": [
+      "03",
+      "09",
+      "35",
+      "47"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 28,
+      "defense": 18,
+      "speed": 18
+    },
+    "sourceId": "141",
+    "dexNo": 146,
+    "displayNo": "No.146",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 28,
+      "defense": 18,
+      "speed": 18
+    }
+  },
+  {
+    "id": "142",
+    "image": "figene/55.png",
+    "name": "モブホノテイル",
+    "rarity": "SSR",
+    "statsText": "ATK +5",
+    "traitText": "火属性与ダメージ +5%",
+    "tags": [
+      "03",
+      "09",
+      "27",
+      "37",
+      "47"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 34,
+      "defense": 20,
+      "speed": 20
+    },
+    "sourceId": "142",
+    "dexNo": 147,
+    "displayNo": "No.147",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 34,
+      "defense": 20,
+      "speed": 20
+    }
+  },
+  {
+    "id": "143",
+    "image": "figene/56.png",
+    "name": "モブヒノタビ",
+    "rarity": "SSR",
+    "statsText": "MAG +5",
+    "traitText": "火属性魔法与ダメージ +10%",
+    "tags": [
+      "03",
+      "09",
+      "32",
+      "37",
+      "47"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 32,
+      "defense": 22,
+      "speed": 20
+    },
+    "sourceId": "143",
+    "dexNo": 148,
+    "displayNo": "No.148",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 32,
+      "defense": 22,
+      "speed": 20
+    }
+  },
+  {
+    "id": "144",
+    "image": "figene/57.png",
+    "name": "モブブリザード",
+    "rarity": "SSR",
+    "statsText": "DEF +5",
+    "traitText": "水属性ダメージ軽減 +5%",
+    "tags": [
+      "09",
+      "31",
+      "32",
+      "36",
+      "40",
+      "47"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 32,
+      "speed": 21
+    },
+    "sourceId": "144",
+    "dexNo": 149,
+    "displayNo": "No.149",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 32,
+      "speed": 21
+    }
+  },
+  {
+    "id": "145",
+    "image": "figene/58.png",
+    "name": "モブフレイム",
+    "rarity": "SSR",
+    "statsText": "ATK +5",
+    "traitText": "火属性与ダメージ +5%",
+    "tags": [
+      "03",
+      "09",
+      "32",
+      "36",
+      "40",
+      "47"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 32,
+      "defense": 21,
+      "speed": 21
+    },
+    "sourceId": "145",
+    "dexNo": 150,
+    "displayNo": "No.150",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 32,
+      "defense": 21,
+      "speed": 21
+    }
+  },
+  {
+    "id": "146",
+    "image": "figene/59.png",
+    "name": "モブフレザード",
+    "rarity": "SSR",
+    "statsText": "ATK +3 & DEF +3%",
+    "traitText": "火属性と水属性の与ダメージ +3%",
+    "tags": [
+      "03",
+      "09",
+      "27",
+      "31",
+      "32",
+      "35",
+      "47"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "146",
+    "dexNo": 151,
+    "displayNo": "No.151",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "147",
+    "image": "figene/60.png",
+    "name": "モブマグバスター",
+    "rarity": "SSR",
+    "statsText": "ATK +5",
+    "traitText": "火属性与ダメージ +3% & 会心率1%",
+    "tags": [
+      "03",
+      "09",
+      "26",
+      "32",
+      "35",
+      "39",
+      "47"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 33,
+      "defense": 21,
+      "speed": 20
+    },
+    "sourceId": "147",
+    "dexNo": 152,
+    "displayNo": "No.152",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 111,
+      "attack": 33,
+      "defense": 21,
+      "speed": 20
+    }
+  },
+  {
+    "id": "148",
+    "image": "figene/61.png",
+    "name": "モブヨーガンスライム",
+    "rarity": "SSR",
+    "statsText": "DEF +5",
+    "traitText": "物理ダメージ軽減 +3% & 会心率1%",
+    "tags": [
+      "03",
+      "09",
+      "17",
+      "32",
+      "39",
+      "47",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 22,
+      "defense": 31,
+      "speed": 21
+    },
+    "sourceId": "148",
+    "dexNo": 153,
+    "displayNo": "No.153",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 22,
+      "defense": 31,
+      "speed": 21
+    }
+  },
+  {
+    "id": "149",
+    "image": "figene/62.png",
+    "name": "モブピコダーク",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "闇属性耐性 +3% & 回避率1%",
+    "tags": [
+      "05",
+      "09",
+      "27",
+      "37",
+      "48"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 19,
+      "defense": 26,
+      "speed": 19
+    },
+    "sourceId": "149",
+    "dexNo": 154,
+    "displayNo": "No.154",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 98,
+      "attack": 19,
+      "defense": 26,
+      "speed": 19
+    }
+  },
+  {
+    "id": "150",
+    "image": "figene/63.png",
+    "name": "モブデビルスライム",
+    "rarity": "SR",
+    "statsText": "MND +3",
+    "traitText": "闇属性与えダメージ +3% & 回避率1%",
+    "tags": [
+      "02",
+      "09",
+      "17",
+      "27",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 19,
+      "defense": 25,
+      "speed": 20
+    },
+    "sourceId": "150",
+    "dexNo": 155,
+    "displayNo": "No.155",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 96,
+      "attack": 19,
+      "defense": 25,
+      "speed": 20
+    }
+  },
+  {
+    "id": "151",
+    "image": "figene/64.png",
+    "name": "モブプニライダー",
+    "rarity": "SR",
+    "statsText": "ATK +3",
+    "traitText": "会心率 ＋1% & 回避率 +1%",
+    "tags": [
+      "02",
+      "09",
+      "17",
+      "27",
+      "40",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 95,
+      "attack": 25,
+      "defense": 19,
+      "speed": 20
+    },
+    "sourceId": "151",
+    "dexNo": 156,
+    "displayNo": "No.156",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 95,
+      "attack": 25,
+      "defense": 19,
+      "speed": 20
+    }
+  },
+  {
+    "id": "152",
+    "image": "figene/65.png",
+    "name": "モブミニブック",
+    "rarity": "SSR",
+    "statsText": "MND +5",
+    "traitText": "魔法会心率 ＋3%",
+    "tags": [
+      "08",
+      "09",
+      "27",
+      "33",
+      "37",
+      "48"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    },
+    "sourceId": "152",
+    "dexNo": 157,
+    "displayNo": "No.157",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    }
+  },
+  {
+    "id": "153",
+    "image": "figene/66.png",
+    "name": "モブコクピット",
+    "rarity": "SSR",
+    "statsText": "DEF +5",
+    "traitText": "物理ダメージ軽減 ＋3%",
+    "tags": [
+      "05",
+      "09",
+      "36",
+      "39",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 20,
+      "defense": 33,
+      "speed": 21
+    },
+    "sourceId": "153",
+    "dexNo": 158,
+    "displayNo": "No.158",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 20,
+      "defense": 33,
+      "speed": 21
+    }
+  },
+  {
+    "id": "154",
+    "image": "figene/67.png",
+    "name": "モブアサシン",
+    "rarity": "SSR",
+    "statsText": "SPD +5",
+    "traitText": "魔法会心率 ＋3%",
+    "tags": [
+      "02",
+      "09",
+      "26",
+      "34",
+      "35",
+      "48"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 110,
+      "attack": 22,
+      "defense": 21,
+      "speed": 31
+    },
+    "sourceId": "154",
+    "dexNo": 159,
+    "displayNo": "No.159",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 110,
+      "attack": 22,
+      "defense": 21,
+      "speed": 31
+    }
+  },
+  {
+    "id": "155",
+    "image": "figene/68.png",
+    "name": "モブヘルシャドウ",
+    "rarity": "SSR",
+    "statsText": "ATK +5",
+    "traitText": "火属性ダメージ軽減 +10%",
+    "tags": [
+      "03",
+      "09",
+      "23",
+      "26",
+      "36",
+      "48"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    },
+    "sourceId": "155",
+    "dexNo": 160,
+    "displayNo": "No.160",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    }
+  },
+  {
+    "id": "156",
+    "image": "figene/69.png",
+    "name": "モブミラヘルド",
+    "rarity": "SSR",
+    "statsText": "ATK +5 % SPD +3",
+    "traitText": "火属性会心率 ＋7%",
+    "tags": [
+      "03",
+      "09",
+      "23",
+      "26",
+      "32",
+      "36",
+      "48",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 110,
+      "attack": 29,
+      "defense": 19,
+      "speed": 26
+    },
+    "sourceId": "156",
+    "dexNo": 161,
+    "displayNo": "No.161",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 110,
+      "attack": 29,
+      "defense": 19,
+      "speed": 26
+    }
+  },
+  {
+    "id": "157",
+    "image": "figene/70.png",
+    "name": "モブキラウィッチ",
+    "rarity": "SSR",
+    "statsText": "MND +5 & MP+7",
+    "traitText": "魔法会心率 ＋3%",
+    "tags": [
+      "05",
+      "09",
+      "27",
+      "32",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 23,
+      "defense": 30,
+      "speed": 21
+    },
+    "sourceId": "157",
+    "dexNo": 162,
+    "displayNo": "No.162",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 23,
+      "defense": 30,
+      "speed": 21
+    }
+  },
+  {
+    "id": "158",
+    "image": "figene/71.png",
+    "name": "モブララウィッチ",
+    "rarity": "SSR",
+    "statsText": "MND +5 & MP +7",
+    "traitText": "魔法会心率 ＋3%",
+    "tags": [
+      "03",
+      "09",
+      "27",
+      "32",
+      "37",
+      "40",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 23,
+      "defense": 30,
+      "speed": 21
+    },
+    "sourceId": "158",
+    "dexNo": 163,
+    "displayNo": "No.163",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 23,
+      "defense": 30,
+      "speed": 21
+    }
+  },
+  {
+    "id": "202",
+    "image": "figene/72.png",
+    "name": "グラディモブ",
+    "rarity": "SSR",
+    "statsText": "MND +5 & SPD +7",
+    "traitText": "銃装備時、会心率 ＋5% & 命中率+80%",
+    "tags": [
+      "03",
+      "09",
+      "29",
+      "32",
+      "34",
+      "36",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 20,
+      "defense": 25,
+      "speed": 29
+    },
+    "sourceId": "202",
+    "dexNo": 164,
+    "displayNo": "No.164",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 20,
+      "defense": 25,
+      "speed": 29
+    }
+  },
+  {
+    "id": "159",
+    "image": "figboss/01.png",
+    "name": "モブホーク",
+    "rarity": "SSR",
+    "statsText": "ATK +2 & SPD +2 & MND +2",
+    "traitText": "風属性耐性+10%",
+    "tags": [
+      "04",
+      "09",
+      "25",
+      "32",
+      "34",
+      "41",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 25,
+      "defense": 24,
+      "speed": 25
+    },
+    "sourceId": "159",
+    "dexNo": 165,
+    "displayNo": "No.165",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 25,
+      "defense": 24,
+      "speed": 25
+    }
+  },
+  {
+    "id": "160",
+    "image": "figboss/02.png",
+    "name": "モブホークⅡ",
+    "rarity": "UR",
+    "statsText": "ATK +2 & SPD +2 & MND +2",
+    "traitText": "風属性耐性+10%",
+    "tags": [
+      "04",
+      "09",
+      "25",
+      "26",
+      "32",
+      "34",
+      "41",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 29,
+      "defense": 28,
+      "speed": 29
+    },
+    "sourceId": "160",
+    "dexNo": 166,
+    "displayNo": "No.166",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 29,
+      "defense": 28,
+      "speed": 29
+    }
+  },
+  {
+    "id": "161",
+    "image": "figboss/03.png",
+    "name": "ミラモブ",
+    "rarity": "SSR",
+    "statsText": "MAG+3 & MP +15",
+    "traitText": "闇属性耐性+10 & 回避率+3%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "25",
+      "37",
+      "42",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 21,
+      "speed": 23
+    },
+    "sourceId": "161",
+    "dexNo": 167,
+    "displayNo": "No.167",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 21,
+      "speed": 23
+    }
+  },
+  {
+    "id": "162",
+    "image": "figboss/04.png",
+    "name": "ミラモブⅡ",
+    "rarity": "UR",
+    "statsText": "MAG+3 & MP +15 & MND +3",
+    "traitText": "毒耐性+20 & 回避率+3%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "25",
+      "36",
+      "37",
+      "42",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 131,
+      "attack": 31,
+      "defense": 30,
+      "speed": 25
+    },
+    "sourceId": "162",
+    "dexNo": 168,
+    "displayNo": "No.168",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 131,
+      "attack": 31,
+      "defense": 30,
+      "speed": 25
+    }
+  },
+  {
+    "id": "163",
+    "image": "figboss/05.png",
+    "name": "モブガーディアン",
+    "rarity": "SSR",
+    "statsText": "DEF +5 & MND +1",
+    "traitText": "ダメージ軽減+2%",
+    "tags": [
+      "09",
+      "25",
+      "32",
+      "35",
+      "39",
+      "40",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 34,
+      "speed": 19
+    },
+    "sourceId": "163",
+    "dexNo": 169,
+    "displayNo": "No.169",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 116,
+      "attack": 21,
+      "defense": 34,
+      "speed": 19
+    }
+  },
+  {
+    "id": "164",
+    "image": "figboss/06.png",
+    "name": "モブガーディアンⅡ",
+    "rarity": "UR",
+    "statsText": "DEF +5 & HP +20",
+    "traitText": "ダメージ軽減+3%",
+    "tags": [
+      "09",
+      "25",
+      "26",
+      "29",
+      "32",
+      "35",
+      "39",
+      "40",
+      "43"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 25,
+      "defense": 39,
+      "speed": 22
+    },
+    "sourceId": "164",
+    "dexNo": 170,
+    "displayNo": "No.170",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 25,
+      "defense": 39,
+      "speed": 22
+    }
+  },
+  {
+    "id": "165",
+    "image": "figboss/07.png",
+    "name": "モブネオンバルス",
+    "rarity": "UR",
+    "statsText": "MAG +5 & HP +20",
+    "traitText": "光属性耐性 +10% & 会心率 +1%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "31",
+      "32",
+      "36",
+      "44",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 136,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    },
+    "sourceId": "165",
+    "dexNo": 171,
+    "displayNo": "No.171",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 136,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    }
+  },
+  {
+    "id": "166",
+    "image": "figboss/08.png",
+    "name": "モブエース",
+    "rarity": "UR",
+    "statsText": "MAG +5 & HP +20",
+    "traitText": "光属性与ダメージ +5% & 回避率 +1%",
+    "tags": [
+      "05",
+      "08",
+      "09",
+      "25",
+      "32",
+      "34",
+      "36",
+      "44",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 134,
+      "attack": 34,
+      "defense": 27,
+      "speed": 25
+    },
+    "sourceId": "166",
+    "dexNo": 172,
+    "displayNo": "No.172",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 134,
+      "attack": 34,
+      "defense": 27,
+      "speed": 25
+    }
+  },
+  {
+    "id": "167",
+    "image": "figboss/09.png",
+    "name": "モブドラゴン",
+    "rarity": "SSR",
+    "statsText": "ATK +3 & DEF +3 & MND +2",
+    "traitText": "火属性耐性+10% & 会心率+3%",
+    "tags": [
+      "03",
+      "09",
+      "25",
+      "32",
+      "35",
+      "38",
+      "47",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 26,
+      "defense": 28,
+      "speed": 20
+    },
+    "sourceId": "167",
+    "dexNo": 173,
+    "displayNo": "No.173",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 26,
+      "defense": 28,
+      "speed": 20
+    }
+  },
+  {
+    "id": "168",
+    "image": "figboss/10.png",
+    "name": "モブドラゴンⅡ",
+    "rarity": "UR",
+    "statsText": "ATK +3 & DEF +3 & MND +2",
+    "traitText": "火属性耐性+10% & 会心率+3%",
+    "tags": [
+      "03",
+      "09",
+      "25",
+      "32",
+      "34",
+      "35",
+      "38",
+      "47",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 30,
+      "defense": 33,
+      "speed": 23
+    },
+    "sourceId": "168",
+    "dexNo": 174,
+    "displayNo": "No.174",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 132,
+      "attack": 30,
+      "defense": 33,
+      "speed": 23
+    }
+  },
+  {
+    "id": "169",
+    "image": "figboss/11.png",
+    "name": "モブギドラ",
+    "rarity": "MOB",
+    "statsText": "ATK +3 & DEF +3 & MND +2",
+    "traitText": "火属性耐性+10% & 会心率+3%",
+    "tags": [
+      "03",
+      "09",
+      "25",
+      "30",
+      "32",
+      "34",
+      "35",
+      "36",
+      "38",
+      "47",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 152,
+      "attack": 35,
+      "defense": 38,
+      "speed": 27
+    },
+    "sourceId": "169",
+    "dexNo": 175,
+    "displayNo": "No.175",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 152,
+      "attack": 35,
+      "defense": 38,
+      "speed": 27
+    }
+  },
+  {
+    "id": "170",
+    "image": "figboss/12.png",
+    "name": "ミラモブファラオ",
+    "rarity": "MOB",
+    "statsText": "MAG+5 & MP +15 & MND +3",
+    "traitText": "全属性耐性+8 & 回避率+3%",
+    "tags": [
+      "08",
+      "09",
+      "23",
+      "25",
+      "30",
+      "32",
+      "36",
+      "37",
+      "42",
+      "49",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 151,
+      "attack": 38,
+      "defense": 34,
+      "speed": 28
+    },
+    "sourceId": "170",
+    "dexNo": 176,
+    "displayNo": "No.176",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 151,
+      "attack": 38,
+      "defense": 34,
+      "speed": 28
+    }
+  },
+  {
+    "id": "171",
+    "image": "figboss/13.png",
+    "name": "モブデーバフ",
+    "rarity": "SSR",
+    "statsText": "MAG+3 & MP +15",
+    "traitText": "状態異常耐性+3 & 闇属性耐性 +3%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "25",
+      "29",
+      "37",
+      "46"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    },
+    "sourceId": "171",
+    "dexNo": 177,
+    "displayNo": "No.177",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    }
+  },
+  {
+    "id": "172",
+    "image": "figboss/14.png",
+    "name": "モブデーバフ第二形態",
+    "rarity": "UR",
+    "statsText": "MAG+5 & MP +20",
+    "traitText": "状態異常耐性+5 & 闇属性耐性 +5%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "25",
+      "29",
+      "30",
+      "32",
+      "37",
+      "46"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 131,
+      "attack": 37,
+      "defense": 26,
+      "speed": 23
+    },
+    "sourceId": "172",
+    "dexNo": 178,
+    "displayNo": "No.178",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 131,
+      "attack": 37,
+      "defense": 26,
+      "speed": 23
+    }
+  },
+  {
+    "id": "173",
+    "image": "figboss/15.png",
+    "name": "モブバーサク",
+    "rarity": "SSR",
+    "statsText": "ATK+3 & HP +15",
+    "traitText": "物理属性ダメージ軽減 +3& & 闇属性耐性 +3%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "25",
+      "29",
+      "35",
+      "46",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 117,
+      "attack": 30,
+      "defense": 24,
+      "speed": 20
+    },
+    "sourceId": "173",
+    "dexNo": 179,
+    "displayNo": "No.179",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 117,
+      "attack": 30,
+      "defense": 24,
+      "speed": 20
+    }
+  },
+  {
+    "id": "174",
+    "image": "figboss/16.png",
+    "name": "モブバーサク第二形態",
+    "rarity": "UR",
+    "statsText": "ATK+5 & HP +25",
+    "traitText": "物理属性ダメージ軽減 +3& & 闇属性耐性 +3%",
+    "tags": [
+      "05",
+      "09",
+      "23",
+      "25",
+      "29",
+      "32",
+      "36",
+      "46",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    },
+    "sourceId": "174",
+    "dexNo": 180,
+    "displayNo": "No.180",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    }
+  },
+  {
+    "id": "175",
+    "image": "figboss/17.png",
+    "name": "モブウミデンデン",
+    "rarity": "UR",
+    "statsText": "ATK+5 & SPD +8 & MND +5",
+    "traitText": "雷属性与ダメージ +5& & 雷属性耐性 +10%",
+    "tags": [
+      "08",
+      "09",
+      "23",
+      "25",
+      "29",
+      "30",
+      "35",
+      "43",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 131,
+      "attack": 28,
+      "defense": 27,
+      "speed": 31
+    },
+    "sourceId": "175",
+    "dexNo": 181,
+    "displayNo": "No.181",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 131,
+      "attack": 28,
+      "defense": 27,
+      "speed": 31
+    }
+  },
+  {
+    "id": "176",
+    "image": "figboss/18.png",
+    "name": "モブネオマスター",
+    "rarity": "UR",
+    "statsText": "DEF +5 & HP +20",
+    "traitText": "光属性与ダメージ +5% & 会心率 +1%",
+    "tags": [
+      "05",
+      "08",
+      "09",
+      "25",
+      "30",
+      "36",
+      "37",
+      "40",
+      "44",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 25,
+      "defense": 37,
+      "speed": 24
+    },
+    "sourceId": "176",
+    "dexNo": 182,
+    "displayNo": "No.182",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 25,
+      "defense": 37,
+      "speed": 24
+    }
+  },
+  {
+    "id": "177",
+    "image": "figboss/19.png",
+    "name": "モブヘルリリス",
+    "rarity": "SSR",
+    "statsText": "MAG +3 & MP +15",
+    "traitText": "火属性耐性 +10% & 魔法会心率 +1%",
+    "tags": [
+      "03",
+      "23",
+      "26",
+      "27",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    },
+    "sourceId": "177",
+    "dexNo": 183,
+    "displayNo": "No.183",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    }
+  },
+  {
+    "id": "178",
+    "image": "figboss/20.png",
+    "name": "モブキリンリリス",
+    "rarity": "SSR",
+    "statsText": "MAG +3 & MP +15",
+    "traitText": "雷属性耐性 +10% & 魔法会心率 +1%",
+    "tags": [
+      "04",
+      "23",
+      "26",
+      "27",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    },
+    "sourceId": "178",
+    "dexNo": 184,
+    "displayNo": "No.184",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    }
+  },
+  {
+    "id": "179",
+    "image": "figboss/21.png",
+    "name": "モブリヴァリリス",
+    "rarity": "SSR",
+    "statsText": "MAG +3 & MP +15",
+    "traitText": "水属性耐性 +10% & 魔法会心率 +1%",
+    "tags": [
+      "23",
+      "26",
+      "27",
+      "31",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    },
+    "sourceId": "179",
+    "dexNo": 185,
+    "displayNo": "No.185",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    }
+  },
+  {
+    "id": "180",
+    "image": "figboss/22.png",
+    "name": "モブクフリリス",
+    "rarity": "SSR",
+    "statsText": "MAG +3 & MP +15",
+    "traitText": "光属性耐性 +10% & 魔法会心率 +1%",
+    "tags": [
+      "23",
+      "26",
+      "27",
+      "28",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    },
+    "sourceId": "180",
+    "dexNo": 186,
+    "displayNo": "No.186",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 30,
+      "defense": 22,
+      "speed": 22
+    }
+  },
+  {
+    "id": "181",
+    "image": "figboss/23.png",
+    "name": "覚醒モブヘルリリス",
+    "rarity": "SSR",
+    "statsText": "MAG +5 & MP +20",
+    "traitText": "火属性耐性 +15% & 魔法会心率 +3%",
+    "tags": [
+      "03",
+      "23",
+      "26",
+      "27",
+      "32",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    },
+    "sourceId": "181",
+    "dexNo": 187,
+    "displayNo": "No.187",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    }
+  },
+  {
+    "id": "182",
+    "image": "figboss/24.png",
+    "name": "覚醒モブキリンリリス",
+    "rarity": "SSR",
+    "statsText": "MAG +5 & MP +20",
+    "traitText": "雷属性耐性 +15% & 魔法会心率 +3%",
+    "tags": [
+      "04",
+      "23",
+      "26",
+      "27",
+      "32",
+      "37",
+      "48",
+      "50",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    },
+    "sourceId": "182",
+    "dexNo": 188,
+    "displayNo": "No.188",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    }
+  },
+  {
+    "id": "183",
+    "image": "figboss/25.png",
+    "name": "覚醒モブリヴァリリス",
+    "rarity": "SSR",
+    "statsText": "MAG +5 & MP +20",
+    "traitText": "水属性耐性 +15% & 魔法会心率 +3%",
+    "tags": [
+      "23",
+      "26",
+      "27",
+      "31",
+      "32",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    },
+    "sourceId": "183",
+    "dexNo": 189,
+    "displayNo": "No.189",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    }
+  },
+  {
+    "id": "184",
+    "image": "figboss/26.png",
+    "name": "覚醒モブクフリリス",
+    "rarity": "SSR",
+    "statsText": "MAG +5 & MP +20",
+    "traitText": "光属性耐性 +15% & 魔法会心率 +3%",
+    "tags": [
+      "23",
+      "26",
+      "27",
+      "28",
+      "32",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    },
+    "sourceId": "184",
+    "dexNo": 190,
+    "displayNo": "No.190",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 31,
+      "defense": 22,
+      "speed": 21
+    }
+  },
+  {
+    "id": "203",
+    "image": "figboss/27.png",
+    "name": "モブミラナイト",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MND +3",
+    "traitText": "砂漠での与ダメージ +7%",
+    "tags": [
+      "09",
+      "23",
+      "26",
+      "31",
+      "32",
+      "42",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 21,
+      "defense": 33,
+      "speed": 20
+    },
+    "sourceId": "203",
+    "dexNo": 191,
+    "displayNo": "No.191",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 114,
+      "attack": 21,
+      "defense": 33,
+      "speed": 20
+    }
+  },
+  {
+    "id": "204",
+    "image": "figboss/28.png",
+    "name": "モブミラアース",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & ATK +3",
+    "traitText": "砂漠での会心率 +7%",
+    "tags": [
+      "02",
+      "09",
+      "23",
+      "26",
+      "32",
+      "35",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "204",
+    "dexNo": 192,
+    "displayNo": "No.192",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "205",
+    "image": "figboss/29.png",
+    "name": "モブミラタイム",
+    "rarity": "SSR",
+    "statsText": "DEF +3 & MAG +3",
+    "traitText": "砂漠での魔法与ダメージ +10%",
+    "tags": [
+      "04",
+      "09",
+      "23",
+      "26",
+      "32",
+      "37",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    },
+    "sourceId": "205",
+    "dexNo": 193,
+    "displayNo": "No.193",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    }
+  },
+  {
+    "id": "206",
+    "image": "figboss/30.png",
+    "name": "モブミラカラミ",
+    "rarity": "SSR",
+    "statsText": "DEF +3",
+    "traitText": "砂漠でのダメージ軽減 +10%",
+    "tags": [
+      "03",
+      "09",
+      "23",
+      "26",
+      "32",
+      "37",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    },
+    "sourceId": "206",
+    "dexNo": 194,
+    "displayNo": "No.194",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 115,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    }
+  },
+  {
+    "id": "207",
+    "image": "figboss/31.png",
+    "name": "モブリリス",
+    "rarity": "UR",
+    "statsText": "MAG +5 & MND +5 MP +25",
+    "traitText": "魔法会心率 +5% & 全体攻撃の威力+10%",
+    "tags": [
+      "05",
+      "23",
+      "25",
+      "26",
+      "27",
+      "30",
+      "34",
+      "36",
+      "37",
+      "48",
+      "50"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 130,
+      "attack": 32,
+      "defense": 31,
+      "speed": 23
+    },
+    "sourceId": "207",
+    "dexNo": 195,
+    "displayNo": "No.195",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 130,
+      "attack": 32,
+      "defense": 31,
+      "speed": 23
+    }
+  },
+  {
+    "id": "208",
+    "image": "figboss/32.png",
+    "name": "モブ閻魔",
+    "rarity": "UR",
+    "statsText": "ATK +5 & DEF +5 HP +25",
+    "traitText": "火属性与ダメージ+10% & 状態異常耐性+5%",
+    "tags": [
+      "03",
+      "25",
+      "30",
+      "32",
+      "34",
+      "36",
+      "48",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 31,
+      "defense": 33,
+      "speed": 22
+    },
+    "sourceId": "208",
+    "dexNo": 196,
+    "displayNo": "No.196",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 31,
+      "defense": 33,
+      "speed": 22
+    }
+  },
+  {
+    "id": "209",
+    "image": "figboss/33.png",
+    "name": "モブ閻魔第二形態",
+    "rarity": "UR",
+    "statsText": "ATK +5 & SPD +5 HP +25",
+    "traitText": "火属性ダメージ軽減+15% & 状態異常耐性+5%",
+    "tags": [
+      "03",
+      "23",
+      "25",
+      "30",
+      "32",
+      "34",
+      "36",
+      "48",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 30,
+      "defense": 25,
+      "speed": 31
+    },
+    "sourceId": "209",
+    "dexNo": 197,
+    "displayNo": "No.197",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 30,
+      "defense": 25,
+      "speed": 31
+    }
+  },
+  {
+    "id": "210",
+    "image": "figboss/34.png",
+    "name": "モブ閻魔第最終形態",
+    "rarity": "UR",
+    "statsText": "ATK +10 & HP +25",
+    "traitText": "会心率+5% & 状態異常耐性+5%",
+    "tags": [
+      "03",
+      "23",
+      "25",
+      "30",
+      "32",
+      "34",
+      "36",
+      "48",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 38,
+      "defense": 26,
+      "speed": 22
+    },
+    "sourceId": "210",
+    "dexNo": 198,
+    "displayNo": "No.198",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 38,
+      "defense": 26,
+      "speed": 22
+    }
+  },
+  {
+    "id": "211",
+    "image": "figboss/35.png",
+    "name": "モブ怪人幹部青",
+    "rarity": "SSR",
+    "statsText": "ATK +3 & DEF +3",
+    "traitText": "水属性会心率+4%",
+    "tags": [
+      "26",
+      "29",
+      "31",
+      "32",
+      "34",
+      "42",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "211",
+    "dexNo": 199,
+    "displayNo": "No.199",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "212",
+    "image": "figboss/36.png",
+    "name": "モブ怪人幹部赤",
+    "rarity": "SSR",
+    "statsText": "ATK +3 & DEF +3",
+    "traitText": "火属性会心率+4%",
+    "tags": [
+      "02",
+      "26",
+      "29",
+      "32",
+      "34",
+      "42",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "212",
+    "dexNo": 200,
+    "displayNo": "No.200",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "213",
+    "image": "figboss/37.png",
+    "name": "モブ怪人幹部青変身",
+    "rarity": "SSR",
+    "statsText": "ATK +4 & DEF +3",
+    "traitText": "水属性会心率+7%",
+    "tags": [
+      "26",
+      "29",
+      "31",
+      "32",
+      "34",
+      "35",
+      "42",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 29,
+      "defense": 27,
+      "speed": 18
+    },
+    "sourceId": "213",
+    "dexNo": 201,
+    "displayNo": "No.201",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 112,
+      "attack": 29,
+      "defense": 27,
+      "speed": 18
+    }
+  },
+  {
+    "id": "214",
+    "image": "figboss/38.png",
+    "name": "モブ怪人幹部赤変身",
+    "rarity": "SSR",
+    "statsText": "ATK +3 & DEF +4",
+    "traitText": "火属性会心率+7%",
+    "tags": [
+      "02",
+      "26",
+      "29",
+      "32",
+      "34",
+      "35",
+      "42",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 27,
+      "defense": 28,
+      "speed": 19
+    },
+    "sourceId": "214",
+    "dexNo": 202,
+    "displayNo": "No.202",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 113,
+      "attack": 27,
+      "defense": 28,
+      "speed": 19
+    }
+  },
+  {
+    "id": "215",
+    "image": "figboss/39.png",
+    "name": "モブナビ",
+    "rarity": "UR",
+    "statsText": "MAG +5 & MND +5 & HP +30",
+    "traitText": "物理ダメージ軽減 +7%",
+    "tags": [
+      "08",
+      "25",
+      "28",
+      "30",
+      "32",
+      "33",
+      "36",
+      "37",
+      "52"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 31,
+      "defense": 33,
+      "speed": 22
+    },
+    "sourceId": "215",
+    "dexNo": 203,
+    "displayNo": "No.203",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 31,
+      "defense": 33,
+      "speed": 22
+    }
+  },
+  {
+    "id": "216",
+    "image": "figboss/40.png",
+    "name": "モブナビマスター",
+    "rarity": "MOB",
+    "statsText": "MAG +5 & MND +5 & HP +30 & MP +30",
+    "traitText": "魔法与ダメージ +7%",
+    "tags": [
+      "08",
+      "25",
+      "28",
+      "30",
+      "32",
+      "33",
+      "36",
+      "37",
+      "39",
+      "52"
+    ],
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 160,
+      "attack": 37,
+      "defense": 37,
+      "speed": 26
+    },
+    "sourceId": "216",
+    "dexNo": 204,
+    "displayNo": "No.204",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 160,
+      "attack": 37,
+      "defense": 37,
+      "speed": 26
+    }
+  },
+  {
+    "id": "217",
+    "image": "figboss/41.png",
+    "name": "モブ怪人のボス",
+    "rarity": "MOB",
+    "statsText": "ATK +5 & DEF +5 & HP +30",
+    "traitText": "特技会心率 +10%",
+    "tags": [
+      "10",
+      "13",
+      "24",
+      "25",
+      "26",
+      "29",
+      "30",
+      "32",
+      "34",
+      "35",
+      "39",
+      "40",
+      "51",
+      "52"
+    ],
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 159,
+      "attack": 37,
+      "defense": 39,
+      "speed": 24
+    },
+    "sourceId": "217",
+    "dexNo": 205,
+    "displayNo": "No.205",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 159,
+      "attack": 37,
+      "defense": 39,
+      "speed": 24
+    }
+  },
+  {
+    "id": "218",
+    "image": "figboss/42.png",
+    "name": "ウルモブリリス",
+    "rarity": "MOB",
+    "statsText": "MAG +10 & DEF +5 & MND +10",
+    "traitText": "闇魔法会心率 +20%",
+    "tags": [
+      "09",
+      "23",
+      "25",
+      "26",
+      "29",
+      "30",
+      "32",
+      "34",
+      "35",
+      "37",
+      "39",
+      "48",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 154,
+      "attack": 37,
+      "defense": 40,
+      "speed": 23
+    },
+    "sourceId": "218",
+    "dexNo": 206,
+    "displayNo": "No.206",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 154,
+      "attack": 37,
+      "defense": 40,
+      "speed": 23
+    }
+  },
+  {
+    "id": "219",
+    "image": "figboss/43.png",
+    "name": "モブネプチューン",
+    "rarity": "UR",
+    "statsText": "ATK +5 & HP +20",
+    "traitText": "水属性耐性 +10% & 会心率 3%",
+    "tags": [
+      "04",
+      "09",
+      "25",
+      "30",
+      "31",
+      "32",
+      "34",
+      "36",
+      "40",
+      "45"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 136,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    },
+    "sourceId": "219",
+    "dexNo": 207,
+    "displayNo": "No.207",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 136,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    }
+  },
+  {
+    "id": "190",
+    "image": "figplay/001.png",
+    "name": "モブ勇者",
+    "rarity": "UR",
+    "statsText": "MND+8 & HP +30",
+    "traitText": "状態異常耐性+10 & 闇属性ダメージ軽減 +5%",
+    "tags": [
+      "08",
+      "23",
+      "24",
+      "30",
+      "34",
+      "40",
+      "49",
+      "51",
+      "52"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 40,
+      "speed": 22
+    },
+    "sourceId": "190",
+    "dexNo": 208,
+    "displayNo": "No.208",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 40,
+      "speed": 22
+    }
+  },
+  {
+    "id": "191",
+    "image": "figplay/002.png",
+    "name": "モブピンク",
+    "rarity": "UR",
+    "statsText": "DEF+5 & HP +20",
+    "traitText": "ひるみ耐性+20% & ダメージ軽減 +5%",
+    "tags": [
+      "06",
+      "13",
+      "24",
+      "27",
+      "33",
+      "34",
+      "39",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 25,
+      "defense": 39,
+      "speed": 22
+    },
+    "sourceId": "191",
+    "dexNo": 209,
+    "displayNo": "No.209",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 25,
+      "defense": 39,
+      "speed": 22
+    }
+  },
+  {
+    "id": "192",
+    "image": "figplay/003.png",
+    "name": "モブデザート",
+    "rarity": "UR",
+    "statsText": "ATK+7 & HP +15",
+    "traitText": "毒耐性+20 & 地属性与ダメージ +10%",
+    "tags": [
+      "06",
+      "13",
+      "24",
+      "27",
+      "33",
+      "34",
+      "39",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 135,
+      "attack": 38,
+      "defense": 26,
+      "speed": 22
+    },
+    "sourceId": "192",
+    "dexNo": 210,
+    "displayNo": "No.210",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 135,
+      "attack": 38,
+      "defense": 26,
+      "speed": 22
+    }
+  },
+  {
+    "id": "193",
+    "image": "figplay/004.png",
+    "name": "モブデンデン",
+    "rarity": "UR",
+    "statsText": "SPD+7 & HP +15",
+    "traitText": "マヒ耐性+20 & 雷属性与ダメージ +10%",
+    "tags": [
+      "06",
+      "13",
+      "24",
+      "27",
+      "33",
+      "34",
+      "39",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 135,
+      "attack": 23,
+      "defense": 26,
+      "speed": 37
+    },
+    "sourceId": "193",
+    "dexNo": 211,
+    "displayNo": "No.211",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 135,
+      "attack": 23,
+      "defense": 26,
+      "speed": 37
+    }
+  },
+  {
+    "id": "194",
+    "image": "figplay/005.png",
+    "name": "モブニョロ",
+    "rarity": "UR",
+    "statsText": "MND+7 & HP +15",
+    "traitText": "やけど耐性+20 & 火属性与ダメージ +10%",
+    "tags": [
+      "06",
+      "13",
+      "24",
+      "27",
+      "33",
+      "34",
+      "39",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 40,
+      "speed": 22
+    },
+    "sourceId": "194",
+    "dexNo": 212,
+    "displayNo": "No.212",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 40,
+      "speed": 22
+    }
+  },
+  {
+    "id": "195",
+    "image": "figplay/006.png",
+    "name": "モブマニー",
+    "rarity": "UR",
+    "statsText": "MAG+7 & HP +15 & MP +15",
+    "traitText": "混乱耐性+20 & 光属性与ダメージ +10%",
+    "tags": [
+      "06",
+      "13",
+      "24",
+      "27",
+      "33",
+      "34",
+      "39",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 135,
+      "attack": 37,
+      "defense": 27,
+      "speed": 22
+    },
+    "sourceId": "195",
+    "dexNo": 213,
+    "displayNo": "No.213",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 135,
+      "attack": 37,
+      "defense": 27,
+      "speed": 22
+    }
+  },
+  {
+    "id": "196",
+    "image": "figplay/007.png",
+    "name": "モブネコクー",
+    "rarity": "UR",
+    "statsText": "ATK+5 & DEF +3 & HP +15",
+    "traitText": "眠り耐性+20 & 水属性与ダメージ +10%",
+    "tags": [
+      "06",
+      "13",
+      "24",
+      "27",
+      "33",
+      "34",
+      "39",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 33,
+      "defense": 32,
+      "speed": 21
+    },
+    "sourceId": "196",
+    "dexNo": 214,
+    "displayNo": "No.214",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 33,
+      "defense": 32,
+      "speed": 21
+    }
+  },
+  {
+    "id": "197",
+    "image": "figplay/008.png",
+    "name": "モブジェシー",
+    "rarity": "UR",
+    "statsText": "SPD+5 & DEF +3 & HP +15",
+    "traitText": "回避率+3 & 通常攻撃与ダメージ +10%",
+    "tags": [
+      "06",
+      "13",
+      "24",
+      "27",
+      "33",
+      "34",
+      "36",
+      "40",
+      "44",
+      "51"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 134,
+      "attack": 23,
+      "defense": 30,
+      "speed": 33
+    },
+    "sourceId": "197",
+    "dexNo": 215,
+    "displayNo": "No.215",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 134,
+      "attack": 23,
+      "defense": 30,
+      "speed": 33
+    }
+  },
+  {
+    "id": "198",
+    "image": "figplay/009.png",
+    "name": "モブテツ",
+    "rarity": "UR",
+    "statsText": "ATK +8 & MND +8",
+    "traitText": "ひるみ耐性+20 & 会心率 +3%",
+    "tags": [
+      "13",
+      "24",
+      "27",
+      "28",
+      "29",
+      "34",
+      "35",
+      "40",
+      "41",
+      "49"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 133,
+      "attack": 34,
+      "defense": 32,
+      "speed": 20
+    },
+    "sourceId": "198",
+    "dexNo": 216,
+    "displayNo": "No.216",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 133,
+      "attack": 34,
+      "defense": 32,
+      "speed": 20
+    }
+  },
+  {
+    "id": "199",
+    "image": "figplay/010.png",
+    "name": "モブリーロ",
+    "rarity": "UR",
+    "statsText": "MND+8 & HP +30",
+    "traitText": "会心率+3% & 風属性与ダメージ +10%",
+    "tags": [
+      "13",
+      "23",
+      "24",
+      "28",
+      "29",
+      "30",
+      "36",
+      "37",
+      "40",
+      "42"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 38,
+      "speed": 24
+    },
+    "sourceId": "199",
+    "dexNo": 217,
+    "displayNo": "No.217",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 38,
+      "speed": 24
+    }
+  },
+  {
+    "id": "200",
+    "image": "figplay/011.png",
+    "name": "モブあのヒーロー",
+    "rarity": "MOB",
+    "statsText": "ATK +5 & DEF +5 & SPD +10 & MND+10 & HP +30",
+    "traitText": "全属性与ダメージ +10% & 全属性耐性 +10",
+    "tags": [
+      "05",
+      "08",
+      "24",
+      "30",
+      "34",
+      "35",
+      "36",
+      "39",
+      "40",
+      "50",
+      "51",
+      "52"
+    ],
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 160,
+      "attack": 30,
+      "defense": 36,
+      "speed": 34
+    },
+    "sourceId": "200",
+    "dexNo": 218,
+    "displayNo": "No.218",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 160,
+      "attack": 30,
+      "defense": 36,
+      "speed": 34
+    }
+  },
+  {
+    "id": "201",
+    "image": "figplay/012.png",
+    "name": "モブピンク",
+    "rarity": "UR",
+    "statsText": "MND+8 & HP +30",
+    "traitText": "マヒ耐性+20 & 雷属性与ダメージ +10%",
+    "tags": [
+      "06",
+      "13",
+      "24",
+      "27",
+      "33",
+      "34",
+      "39",
+      "40"
+    ],
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 40,
+      "speed": 22
+    },
+    "sourceId": "201",
+    "dexNo": 219,
+    "displayNo": "No.219",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 24,
+      "defense": 40,
+      "speed": 22
+    }
+  },
+  {
+    "id": "spboss001",
+    "image": "spbossfig/001.png",
+    "name": "モブ怪人のボス 超合金",
+    "rarity": "MOB",
+    "statsText": "",
+    "traitText": "特技会心率 +7%",
+    "tags": [
+      "08",
+      "10",
+      "13",
+      "24",
+      "25",
+      "26",
+      "30",
+      "32",
+      "34",
+      "35",
+      "39",
+      "40",
+      "51",
+      "52",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 5,
+      "hp": 160,
+      "attack": 37,
+      "defense": 39,
+      "speed": 24
+    },
+    "sourceId": "spboss001",
+    "dexNo": 220,
+    "displayNo": "No.220",
+    "mobPiece": {
+      "cost": 5,
+      "hp": 160,
+      "attack": 37,
+      "defense": 39,
+      "speed": 24
+    }
+  },
+  {
+    "id": "spboss002",
+    "image": "spbossfig/002.png",
+    "name": "モブドラゴン 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "火属性耐性+7% & 会心率+2%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "32",
+      "35",
+      "38",
+      "47",
+      "50",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 26,
+      "defense": 28,
+      "speed": 20
+    },
+    "sourceId": "spboss002",
+    "dexNo": 221,
+    "displayNo": "No.221",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 26,
+      "defense": 28,
+      "speed": 20
+    }
+  },
+  {
+    "id": "spboss003",
+    "image": "spbossfig/003.png",
+    "name": "モブドラゴンⅡ超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "火属性耐性+7% & 会心率+2%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "32",
+      "34",
+      "35",
+      "38",
+      "47",
+      "50",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 30,
+      "defense": 33,
+      "speed": 23
+    },
+    "sourceId": "spboss003",
+    "dexNo": 222,
+    "displayNo": "No.222",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 30,
+      "defense": 33,
+      "speed": 23
+    }
+  },
+  {
+    "id": "spboss004",
+    "image": "spbossfig/004.png",
+    "name": "モブガーディアン 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "ダメージ軽減+2%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "32",
+      "35",
+      "39",
+      "40",
+      "43",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 120,
+      "attack": 21,
+      "defense": 34,
+      "speed": 19
+    },
+    "sourceId": "spboss004",
+    "dexNo": 223,
+    "displayNo": "No.223",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 120,
+      "attack": 21,
+      "defense": 34,
+      "speed": 19
+    }
+  },
+  {
+    "id": "spboss005",
+    "image": "spbossfig/005.png",
+    "name": "モブガーディアンⅡ超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "ダメージ軽減+3%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "26",
+      "32",
+      "35",
+      "39",
+      "40",
+      "43",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 25,
+      "defense": 39,
+      "speed": 22
+    },
+    "sourceId": "spboss005",
+    "dexNo": 224,
+    "displayNo": "No.224",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 25,
+      "defense": 39,
+      "speed": 22
+    }
+  },
+  {
+    "id": "spboss006",
+    "image": "spbossfig/006.png",
+    "name": "ミラモブ 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "闇属性耐性+7 & 回避率+3%",
+    "tags": [
+      "08",
+      "09",
+      "23",
+      "25",
+      "37",
+      "42",
+      "50",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 30,
+      "defense": 21,
+      "speed": 23
+    },
+    "sourceId": "spboss006",
+    "dexNo": 225,
+    "displayNo": "No.225",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 30,
+      "defense": 21,
+      "speed": 23
+    }
+  },
+  {
+    "id": "spboss007",
+    "image": "spbossfig/007.png",
+    "name": "ミラモブⅡ超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "毒耐性+15 & 回避率+2%",
+    "tags": [
+      "08",
+      "09",
+      "23",
+      "25",
+      "36",
+      "37",
+      "42",
+      "50",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 31,
+      "defense": 30,
+      "speed": 25
+    },
+    "sourceId": "spboss007",
+    "dexNo": 226,
+    "displayNo": "No.226",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 31,
+      "defense": 30,
+      "speed": 25
+    }
+  },
+  {
+    "id": "spboss008",
+    "image": "spbossfig/008.png",
+    "name": "モブホーク超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "風属性耐性+7%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "32",
+      "34",
+      "41",
+      "50",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 25,
+      "defense": 24,
+      "speed": 25
+    },
+    "sourceId": "spboss008",
+    "dexNo": 227,
+    "displayNo": "No.227",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 25,
+      "defense": 24,
+      "speed": 25
+    }
+  },
+  {
+    "id": "spboss009",
+    "image": "spbossfig/009.png",
+    "name": "モブホークⅡ超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "風属性耐性+7%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "26",
+      "32",
+      "34",
+      "41",
+      "50",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 29,
+      "defense": 28,
+      "speed": 29
+    },
+    "sourceId": "spboss009",
+    "dexNo": 228,
+    "displayNo": "No.228",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 29,
+      "defense": 28,
+      "speed": 29
+    }
+  },
+  {
+    "id": "spboss010",
+    "image": "spbossfig/010.png",
+    "name": "モブネオンバルス超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "光属性耐性 +8% & 会心率 +1%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "32",
+      "36",
+      "44",
+      "50",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    },
+    "sourceId": "spboss010",
+    "dexNo": 229,
+    "displayNo": "No.229",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    }
+  },
+  {
+    "id": "spboss011",
+    "image": "spbossfig/011.png",
+    "name": "モブネプチューン 超合金 超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "水属性耐性 +8% & 会心率 2%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "30",
+      "32",
+      "34",
+      "36",
+      "40",
+      "45",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    },
+    "sourceId": "spboss011",
+    "dexNo": 230,
+    "displayNo": "No.230",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 35,
+      "defense": 27,
+      "speed": 24
+    }
+  },
+  {
+    "id": "spboss012",
+    "image": "spbossfig/012.png",
+    "name": "モブエース 超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "光属性与ダメージ +3% & 回避率 +2%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "32",
+      "34",
+      "36",
+      "44",
+      "51",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 34,
+      "defense": 27,
+      "speed": 25
+    },
+    "sourceId": "spboss012",
+    "dexNo": 231,
+    "displayNo": "No.231",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 34,
+      "defense": 27,
+      "speed": 25
+    }
+  },
+  {
+    "id": "spboss013",
+    "image": "spbossfig/013.png",
+    "name": "モブネオマスター 超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "光属性与ダメージ +5% & 会心率 +1%",
+    "tags": [
+      "08",
+      "09",
+      "25",
+      "30",
+      "36",
+      "37",
+      "40",
+      "44",
+      "50",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 25,
+      "defense": 37,
+      "speed": 24
+    },
+    "sourceId": "spboss013",
+    "dexNo": 232,
+    "displayNo": "No.232",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 138,
+      "attack": 25,
+      "defense": 37,
+      "speed": 24
+    }
+  },
+  {
+    "id": "spboss014",
+    "image": "spbossfig/014.png",
+    "name": "モブウミデンデン 超合金",
+    "rarity": "UR",
+    "statsText": "",
+    "traitText": "雷属性与ダメージ +3& & 雷属性耐性 +8%",
+    "tags": [
+      "08",
+      "09",
+      "23",
+      "25",
+      "29",
+      "30",
+      "35",
+      "43",
+      "51",
+      "53",
+      "54"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 28,
+      "defense": 27,
+      "speed": 31
+    },
+    "sourceId": "spboss014",
+    "dexNo": 233,
+    "displayNo": "No.233",
+    "mobPiece": {
+      "cost": 4,
+      "hp": 137,
+      "attack": 28,
+      "defense": 27,
+      "speed": 31
+    }
+  },
+  {
+    "id": "spboss015",
+    "image": "spbossfig/015.png",
+    "name": "モブタフネス 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "物理ダメージ軽減 +2%",
+    "tags": [
+      "08",
+      "09",
+      "26",
+      "32",
+      "35",
+      "39",
+      "46",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 24,
+      "defense": 28,
+      "speed": 22
+    },
+    "sourceId": "spboss015",
+    "dexNo": 234,
+    "displayNo": "No.234",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 24,
+      "defense": 28,
+      "speed": 22
+    }
+  },
+  {
+    "id": "spboss016",
+    "image": "spbossfig/016.png",
+    "name": "モブククリ 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "毒耐性 +8%",
+    "tags": [
+      "08",
+      "09",
+      "26",
+      "32",
+      "36",
+      "46",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 20,
+      "defense": 23,
+      "speed": 31
+    },
+    "sourceId": "spboss016",
+    "dexNo": 235,
+    "displayNo": "No.235",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 20,
+      "defense": 23,
+      "speed": 31
+    }
+  },
+  {
+    "id": "spboss017",
+    "image": "spbossfig/017.png",
+    "name": "モブヒスイ 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "魔法ダメージ軽減 +2%",
+    "tags": [
+      "08",
+      "09",
+      "26",
+      "32",
+      "37",
+      "46",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 26,
+      "defense": 26,
+      "speed": 22
+    },
+    "sourceId": "spboss017",
+    "dexNo": 236,
+    "displayNo": "No.236",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 26,
+      "defense": 26,
+      "speed": 22
+    }
+  },
+  {
+    "id": "spboss018",
+    "image": "spbossfig/018.png",
+    "name": "モブリュウゴウ 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "火属性与ダメージ +3%",
+    "tags": [
+      "08",
+      "09",
+      "26",
+      "32",
+      "35",
+      "38",
+      "46",
+      "49",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 117,
+      "attack": 33,
+      "defense": 21,
+      "speed": 20
+    },
+    "sourceId": "spboss018",
+    "dexNo": 237,
+    "displayNo": "No.237",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 117,
+      "attack": 33,
+      "defense": 21,
+      "speed": 20
+    }
+  },
+  {
+    "id": "spboss019",
+    "image": "spbossfig/019.png",
+    "name": "酒場の看板娘 モブイルカエル 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "水属性耐性+8% & 会心率+2%",
+    "tags": [
+      "08",
+      "13",
+      "15",
+      "18",
+      "27",
+      "33",
+      "40",
+      "55"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 20,
+      "defense": 28,
+      "speed": 26
+    },
+    "sourceId": "spboss019",
+    "dexNo": 238,
+    "displayNo": "No.238",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 20,
+      "defense": 28,
+      "speed": 26
+    }
+  },
+  {
+    "id": "spboss020",
+    "image": "spbossfig/020.png",
+    "name": "鍛冶屋の職人 モブゴンゾー 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "地属性耐性+8% & 会心率+2%",
+    "tags": [
+      "08",
+      "13",
+      "15",
+      "35",
+      "36",
+      "39",
+      "40",
+      "53",
+      "55"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    },
+    "sourceId": "spboss020",
+    "dexNo": 239,
+    "displayNo": "No.239",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 28,
+      "defense": 26,
+      "speed": 20
+    }
+  },
+  {
+    "id": "spboss021",
+    "image": "spbossfig/021.png",
+    "name": "新入りフィギュア売り モブメープル 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "獲得経験値+8% & 会心率+2%",
+    "tags": [
+      "08",
+      "13",
+      "27",
+      "37",
+      "40",
+      "50",
+      "53",
+      "55"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 25,
+      "defense": 28,
+      "speed": 21
+    },
+    "sourceId": "spboss021",
+    "dexNo": 240,
+    "displayNo": "No.240",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 25,
+      "defense": 28,
+      "speed": 21
+    }
+  },
+  {
+    "id": "spboss022",
+    "image": "spbossfig/022.png",
+    "name": "優しき熱血コーチ モブコーチ 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "雷属性耐性+8% & 会心率+2%",
+    "tags": [
+      "08",
+      "13",
+      "15",
+      "31",
+      "40",
+      "53",
+      "55"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 120,
+      "attack": 21,
+      "defense": 33,
+      "speed": 20
+    },
+    "sourceId": "spboss022",
+    "dexNo": 241,
+    "displayNo": "No.241",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 120,
+      "attack": 21,
+      "defense": 33,
+      "speed": 20
+    }
+  },
+  {
+    "id": "spboss023",
+    "image": "spbossfig/023.png",
+    "name": "モブアビスナイト 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "水属性与ダメージ +5%",
+    "tags": [
+      "08",
+      "09",
+      "36",
+      "40",
+      "45",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    },
+    "sourceId": "spboss023",
+    "dexNo": 242,
+    "displayNo": "No.242",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 26,
+      "defense": 27,
+      "speed": 21
+    }
+  },
+  {
+    "id": "spboss024",
+    "image": "spbossfig/024.png",
+    "name": "モブネッシー 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "39",
+      "40",
+      "45",
+      "51",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    },
+    "sourceId": "spboss024",
+    "dexNo": 243,
+    "displayNo": "No.243",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 19,
+      "defense": 27,
+      "speed": 18
+    }
+  },
+  {
+    "id": "spboss025",
+    "image": "spbossfig/025.png",
+    "name": "モブジョーンズ 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "水属性与ダメージ +5%",
+    "tags": [
+      "08",
+      "09",
+      "32",
+      "35",
+      "40",
+      "45",
+      "49",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    },
+    "sourceId": "spboss025",
+    "dexNo": 244,
+    "displayNo": "No.244",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 28,
+      "defense": 27,
+      "speed": 19
+    }
+  },
+  {
+    "id": "spboss026",
+    "image": "spbossfig/026.png",
+    "name": "モブジンベエ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "36",
+      "40",
+      "45",
+      "49",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 25,
+      "defense": 20,
+      "speed": 19
+    },
+    "sourceId": "spboss026",
+    "dexNo": 245,
+    "displayNo": "No.245",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 25,
+      "defense": 20,
+      "speed": 19
+    }
+  },
+  {
+    "id": "spboss027",
+    "image": "spbossfig/027.png",
+    "name": "スライム 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "水属性耐性 +5%",
+    "tags": [
+      "08",
+      "09",
+      "10",
+      "17",
+      "41",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 20,
+      "defense": 34,
+      "speed": 20
+    },
+    "sourceId": "spboss027",
+    "dexNo": 246,
+    "displayNo": "No.246",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 119,
+      "attack": 20,
+      "defense": 34,
+      "speed": 20
+    }
+  },
+  {
+    "id": "spboss028",
+    "image": "spbossfig/028.png",
+    "name": "モブテンデビ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "27",
+      "39",
+      "41",
+      "50",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 18,
+      "defense": 20,
+      "speed": 26
+    },
+    "sourceId": "spboss028",
+    "dexNo": 247,
+    "displayNo": "No.247",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 18,
+      "defense": 20,
+      "speed": 26
+    }
+  },
+  {
+    "id": "spboss029",
+    "image": "spbossfig/029.png",
+    "name": "モブジョーロ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "水属性耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "34",
+      "39",
+      "41",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 26,
+      "defense": 20,
+      "speed": 18
+    },
+    "sourceId": "spboss029",
+    "dexNo": 248,
+    "displayNo": "No.248",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 26,
+      "defense": 20,
+      "speed": 18
+    }
+  },
+  {
+    "id": "spboss030",
+    "image": "spbossfig/030.png",
+    "name": "モブロック 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "地属性耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "39",
+      "41",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "spboss030",
+    "dexNo": 249,
+    "displayNo": "No.249",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "spboss031",
+    "image": "spbossfig/031.png",
+    "name": "モブピコダーク 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "闇属性耐性 +3% & 回避率1%",
+    "tags": [
+      "08",
+      "09",
+      "27",
+      "37",
+      "48",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 19,
+      "defense": 26,
+      "speed": 19
+    },
+    "sourceId": "spboss031",
+    "dexNo": 250,
+    "displayNo": "No.250",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 19,
+      "defense": 26,
+      "speed": 19
+    }
+  },
+  {
+    "id": "spboss032",
+    "image": "spbossfig/032.png",
+    "name": "モブデビルスライム 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "闇属性与えダメージ +3% & 回避率1%",
+    "tags": [
+      "08",
+      "09",
+      "17",
+      "27",
+      "37",
+      "48",
+      "50",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 19,
+      "defense": 25,
+      "speed": 20
+    },
+    "sourceId": "spboss032",
+    "dexNo": 251,
+    "displayNo": "No.251",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 19,
+      "defense": 25,
+      "speed": 20
+    }
+  },
+  {
+    "id": "spboss033",
+    "image": "spbossfig/033.png",
+    "name": "モブミニブック 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "魔法会心率 ＋3%",
+    "tags": [
+      "08",
+      "09",
+      "27",
+      "33",
+      "37",
+      "48",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    },
+    "sourceId": "spboss033",
+    "dexNo": 252,
+    "displayNo": "No.252",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 23,
+      "defense": 31,
+      "speed": 20
+    }
+  },
+  {
+    "id": "spboss034",
+    "image": "spbossfig/034.png",
+    "name": "モブアサシン 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "魔法会心率 ＋3%",
+    "tags": [
+      "08",
+      "09",
+      "26",
+      "34",
+      "35",
+      "48",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 117,
+      "attack": 22,
+      "defense": 21,
+      "speed": 31
+    },
+    "sourceId": "spboss034",
+    "dexNo": 253,
+    "displayNo": "No.253",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 117,
+      "attack": 22,
+      "defense": 21,
+      "speed": 31
+    }
+  },
+  {
+    "id": "spboss035",
+    "image": "spbossfig/035.png",
+    "name": "モブヒノデビ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "回避率 +1%",
+    "tags": [
+      "08",
+      "09",
+      "27",
+      "47",
+      "50",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 101,
+      "attack": 19,
+      "defense": 18,
+      "speed": 27
+    },
+    "sourceId": "spboss035",
+    "dexNo": 254,
+    "displayNo": "No.254",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 101,
+      "attack": 19,
+      "defense": 18,
+      "speed": 27
+    }
+  },
+  {
+    "id": "spboss036",
+    "image": "spbossfig/036.png",
+    "name": "モブマグトカゲ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "火属性与ダメージ +3%",
+    "tags": [
+      "08",
+      "09",
+      "38",
+      "47",
+      "49",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 28,
+      "defense": 18,
+      "speed": 18
+    },
+    "sourceId": "spboss036",
+    "dexNo": 255,
+    "displayNo": "No.255",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 28,
+      "defense": 18,
+      "speed": 18
+    }
+  },
+  {
+    "id": "spboss037",
+    "image": "spbossfig/037.png",
+    "name": "モブマグゴーレム 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "火属性ダメージ軽減 +3%",
+    "tags": [
+      "08",
+      "09",
+      "35",
+      "39",
+      "47",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 104,
+      "attack": 24,
+      "defense": 26,
+      "speed": 14
+    },
+    "sourceId": "spboss037",
+    "dexNo": 256,
+    "displayNo": "No.256",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 104,
+      "attack": 24,
+      "defense": 26,
+      "speed": 14
+    }
+  },
+  {
+    "id": "spboss038",
+    "image": "spbossfig/038.png",
+    "name": "モブヨーガンスライム 超合金",
+    "rarity": "SSR",
+    "statsText": "",
+    "traitText": "物理ダメージ軽減 +3% & 会心率1%",
+    "tags": [
+      "08",
+      "09",
+      "17",
+      "32",
+      "39",
+      "47",
+      "50",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 22,
+      "defense": 31,
+      "speed": 21
+    },
+    "sourceId": "spboss038",
+    "dexNo": 257,
+    "displayNo": "No.257",
+    "mobPiece": {
+      "cost": 3,
+      "hp": 118,
+      "attack": 22,
+      "defense": 31,
+      "speed": 21
+    }
+  },
+  {
+    "id": "spboss039",
+    "image": "spbossfig/039.png",
+    "name": "モブダンサー 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "混乱耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "12",
+      "43",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 19,
+      "defense": 19,
+      "speed": 26
+    },
+    "sourceId": "spboss039",
+    "dexNo": 258,
+    "displayNo": "No.258",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 19,
+      "defense": 19,
+      "speed": 26
+    }
+  },
+  {
+    "id": "spboss040",
+    "image": "spbossfig/040.png",
+    "name": "モブナイフ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "混乱耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "26",
+      "43",
+      "49",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 27,
+      "defense": 19,
+      "speed": 18
+    },
+    "sourceId": "spboss040",
+    "dexNo": 259,
+    "displayNo": "No.259",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 27,
+      "defense": 19,
+      "speed": 18
+    }
+  },
+  {
+    "id": "spboss041",
+    "image": "spbossfig/041.png",
+    "name": "モブナーガ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "回避率 +1%",
+    "tags": [
+      "08",
+      "09",
+      "36",
+      "44",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 17,
+      "defense": 17,
+      "speed": 30
+    },
+    "sourceId": "spboss041",
+    "dexNo": 260,
+    "displayNo": "No.260",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 102,
+      "attack": 17,
+      "defense": 17,
+      "speed": 30
+    }
+  },
+  {
+    "id": "spboss042",
+    "image": "spbossfig/042.png",
+    "name": "モブネオントカゲ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "会心率 +1%",
+    "tags": [
+      "08",
+      "09",
+      "36",
+      "49",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 101,
+      "attack": 20,
+      "defense": 18,
+      "speed": 26
+    },
+    "sourceId": "spboss042",
+    "dexNo": 261,
+    "displayNo": "No.261",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 101,
+      "attack": 20,
+      "defense": 18,
+      "speed": 26
+    }
+  },
+  {
+    "id": "spboss043",
+    "image": "spbossfig/043.png",
+    "name": "モブミイラ 超合金",
+    "rarity": "SR",
+    "statsText": "",
+    "traitText": "混乱耐性 +5%",
+    "tags": [
+      "08",
+      "09",
+      "42",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    },
+    "sourceId": "spboss043",
+    "dexNo": 262,
+    "displayNo": "No.262",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 18,
+      "defense": 28,
+      "speed": 18
+    }
+  },
+  {
+    "id": "spboss044",
+    "image": "spbossfig/044.png",
+    "name": "モブアドベンチャー 超合金",
+    "rarity": "SR",
+    "statsText": "DEF +3",
+    "traitText": "ひるみ耐性 +3%",
+    "tags": [
+      "08",
+      "09",
+      "27",
+      "42",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 20,
+      "defense": 26,
+      "speed": 18
+    },
+    "sourceId": "spboss044",
+    "dexNo": 263,
+    "displayNo": "No.263",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 103,
+      "attack": 20,
+      "defense": 26,
+      "speed": 18
+    }
+  },
+  {
+    "id": "spboss045",
+    "image": "spbossfig/045.png",
+    "name": "モブギミック超合金 超合金",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "回避率 +2%",
+    "tags": [
+      "08",
+      "09",
+      "39",
+      "42",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 104,
+      "attack": 17,
+      "defense": 30,
+      "speed": 17
+    },
+    "sourceId": "spboss045",
+    "dexNo": 264,
+    "displayNo": "No.264",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 104,
+      "attack": 17,
+      "defense": 30,
+      "speed": 17
+    }
+  },
+  {
+    "id": "spboss046",
+    "image": "spbossfig/046.png",
+    "name": "モブネコミイラ 超合金",
+    "rarity": "SR",
+    "statsText": "SPD +3",
+    "traitText": "回避率 +2%",
+    "tags": [
+      "08",
+      "09",
+      "27",
+      "42",
+      "53"
+    ],
+    "bossLimitedV116": true,
+    "mobPieceV115": {
+      "cost": 2,
+      "hp": 101,
+      "attack": 18,
+      "defense": 19,
+      "speed": 27
+    },
+    "sourceId": "spboss046",
+    "dexNo": 265,
+    "displayNo": "No.265",
+    "mobPiece": {
+      "cost": 2,
+      "hp": 101,
+      "attack": 18,
+      "defense": 19,
+      "speed": 27
+    }
+  }
+]
