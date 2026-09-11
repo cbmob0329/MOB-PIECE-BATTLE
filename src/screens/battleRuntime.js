@@ -13,6 +13,16 @@ const stat=(f,k)=>Number(f?.mobPiece?.[k]??f?.mobPieceV115?.[k]??0);
 const reduced=()=>document.documentElement.classList.contains('reduce-motion')||matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wait=ms=>sleep(reduced()?Math.min(45,ms):ms);
 const tagsMap=new Map(tags.map(t=>[String(t.id),t]));
+const assetPath=path=>`${import.meta.env?.BASE_URL??'./'}${path}`;
+const PIECE_SKILL_FX=[
+  ['skill/01.png','skill/02.png','skill/03.png','skill/04.png'],
+  ['skill/17.png','skill/18.png','skill/19.png','skill/17.png'],
+  ['skill/29.png','skill/30.png','skill/31.png','skill/30.png'],
+  ['skill/39.png','skill/40.png','skill/41.png','skill/42.png'],
+  ['skill/49.png','skill/50.png','skill/51.png','skill/52.png'],
+  ['skill/54.png','skill/55.png','skill/57.png','skill/58.png'],
+  ['skill/65.png','skill/66.png','skill/67.png','skill/68.png']
+];
 
 function art(id,cls=''){
   const f=byId.get(id);if(!f)return '<span class="battle-art-missing">?</span>';
@@ -28,7 +38,10 @@ async function preloadBattleArt(ids,timeout=1800){
 function score(match){return `<div class="mpb-match-score"><span>YOU <b>${match.pWins}</b></span><em>BATTLE ${match.round}<small>2 WINS</small></em><span>CPU <b>${match.cWins}</b></span></div>`;}
 function lifeBar(label,value,max,side){return `<div class="mpb-team-life ${side}"><span>${label}</span><div><i style="width:${pct(value,max)}%"></i></div><b>${Math.max(0,Math.round(value))} / ${Math.max(1,Math.round(max))}</b></div>`;}
 function activeTags(hand){const t=tagEffects(hand,byId,tagsMap);return `<div class="mpb-active-tags">${t.lines.length?t.lines.map(x=>`<span>${esc(x)}</span>`).join(''):'<span>タグ共鳴なし</span>'}</div>`;}
-function totalStats(label,st,side){return `<div class="mpb-total-stats ${side}"><b>${label}</b><span>HP <strong>${st.hp}</strong></span><span>ATK <strong>${st.attack}</strong></span><span>DEF <strong>${st.defense}</strong></span><span>SPD <strong>${st.speed}</strong></span></div>`;}
+function totalStats(label,st,side,prev=null){
+  const row=(key,title)=>`<span>${title} <strong data-total-stat="${key}" class="${prev&&Number(prev[key])!==Number(st[key])?'changed':''}">${st[key]}</strong></span>`;
+  return `<div class="mpb-total-stats ${side}"><b>${label}</b>${row('hp','HP')}${row('attack','ATK')}${row('defense','DEF')}${row('speed','SPD')}</div>`;
+}
 
 function createOverlay(){
   const shell=document.querySelector('.game-shell')||document.body;let ov=shell.querySelector('.mpb-battle-overlay');
@@ -56,25 +69,35 @@ async function drawIntro(ov,match,request){
   await wait(BATTLE_TIMING.drawHold);
 }
 
-function actionDrawer(match,selected){
-  if(selected==null)return '';
-  const f=byId.get(match.pHand[selected]),isBoosted=match.boostIndex===selected;
-  const boostLabel=isBoosted?'BOOST ACTIVE':match.pieceBoostUsed?'BOOST使用済み':'PIECE BOOST +15%';
-  return `<div class="mpb-piece-actions"><div><small>SELECTED</small><b>${esc(f?.name||'')}</b><span>${isBoosted?'このBATTLEのみ全能力+15%':selected===2?'現在 CENTER':'3番へ移動すると CENTER'}</span></div><div class="mpb-position-buttons">${[0,1,2,3,4].map(i=>`<button data-move-to="${i}" ${i===selected?'disabled':''}>${i+1}${i===2?'<small>C</small>':''}</button>`).join('')}</div><div class="mpb-action-buttons"><button class="mpb-boost" data-boost="${selected}" ${match.pieceBoostUsed?'disabled':''}>${boostLabel}</button><button class="mpb-exchange" data-exchange="${selected}" ${match.exchanged||isBoosted?'disabled':''}>${match.exchanged?'交換済み':isBoosted?'BOOST中は交換不可':'この1体を交換'}</button></div></div>`;
+function tagNames(f){return (f?.tags||[]).map(id=>tagsMap.get(String(id))?.name).filter(Boolean);}
+function readyDetailMarkup(match,index){
+  const f=byId.get(match.pHand[index]),rows=fighterRows(match.pHand,match.cHand,'player',2,byId,tagsMap,match.boostIndex),row=rows[index],names=tagNames(f),boosted=match.boostIndex===index;
+  return `<div class="mpb-figure-detail-modal" data-ready-detail><div class="mpb-figure-detail-sheet"><button class="mpb-detail-close" data-detail-close aria-label="閉じる">×</button><div class="mpb-detail-hero">${art(f?.sourceId||match.pHand[index])}</div><small>${esc(f?.displayNo||'')} · ${esc(f?.rarity||'')} · COST ${stat(f,'cost')}</small><h3>${esc(f?.name||'')}</h3><div class="mpb-detail-stats"><span>HP <b>${row.maxHp}</b><small>BASE ${stat(f,'hp')}</small></span><span>ATK <b>${row.atk}</b><small>BASE ${stat(f,'attack')}</small></span><span>DEF <b>${row.def}</b><small>BASE ${stat(f,'defense')}</small></span><span>SPD <b>${row.spd}</b><small>BASE ${stat(f,'speed')}</small></span></div><div class="mpb-detail-tags"><b>TAG</b>${names.length?names.map(x=>`<span>${esc(x)}</span>`).join(''):'<span>タグなし</span>'}</div><p>${index===2?'CENTER：全能力+25%':''}${boosted?'　PIECE BOOST：全能力+15%':''}</p><div class="mpb-detail-actions"><button data-detail-boost="${index}" ${match.pieceBoostUsed?'disabled':''}>${boosted?'BOOST ACTIVE':match.pieceBoostUsed?'BOOST使用済み':'PIECE BOOST'}</button><button data-detail-exchange="${index}" ${match.exchanged||boosted?'disabled':''}>${match.exchanged?'交換済み':boosted?'BOOST中は交換不可':'この1体を交換'}</button></div></div></div>`;
 }
 
 async function readyPhase(ov,match,request){
-  let selected=null;
   return new Promise(resolve=>{
-    const paint=(flashIndex=null)=>{
+    const paint=(flashIndex=null,prevPlayerStats=null)=>{
       const {p,c}=readyStats(match);
-      ov.innerHTML=`<section class="mpb-battle-panel ready-phase">${score(match)}<div class="mpb-opponent-label compact"><small>OPPONENT</small><b>${esc(request.opponentName||'CPU')} · RANK ${esc(request.cpuRank||'—')}</b></div>${lifeBar('CPU LIFE',c.hp,c.hp,'cpu')}<div class="mpb-cpu-hand">${match.cHand.map((id,i)=>cpuCard(id,i,match.cCenter)).join('')}</div>${totalStats('CPU',c,'cpu')}${activeTags(match.cHand)}<div class="mpb-center-rule"><span>CENTER BONUS</span><b>3番のフィギュア 全能力 +25%</b><small>並び替え・交換後の総合値を確認してBATTLE</small></div>${totalStats('PLAYER',p,'player')}${activeTags(match.pHand)}<div class="mpb-player-hand">${match.pHand.map((id,i)=>playerCard(id,i,selected===i,match.boostIndex===i)).join('')}</div>${actionDrawer(match,selected)}<div class="mpb-ready-command"><button data-start-fight class="mpb-primary">BATTLE</button><button data-quit-fight>対戦をやめる</button></div></section>`;
+      ov.innerHTML=`<section class="mpb-battle-panel ready-phase">${score(match)}<div class="mpb-opponent-label compact"><small>OPPONENT</small><b>${esc(request.opponentName||'CPU')} · RANK ${esc(request.cpuRank||'—')}</b></div>${lifeBar('CPU LIFE',c.hp,c.hp,'cpu')}<div class="mpb-cpu-hand">${match.cHand.map((id,i)=>cpuCard(id,i,match.cCenter)).join('')}</div>${totalStats('CPU',c,'cpu')}${activeTags(match.cHand)}<div class="mpb-center-rule"><span>CENTER BONUS</span><b>3番のフィギュア 全能力 +25%</b><small>ドラッグして5体の位置を入れ替え / タップで詳細</small></div>${totalStats('PLAYER',p,'player',prevPlayerStats)}${activeTags(match.pHand)}<div class="mpb-player-hand">${match.pHand.map((id,i)=>playerCard(id,i,false,match.boostIndex===i)).join('')}</div><div class="mpb-drag-guide">つかんで移動：配置入れ替え　／　タップ：ステータス・タグ</div><div class="mpb-ready-command"><button data-start-fight class="mpb-primary">BATTLE</button><button data-quit-fight>対戦をやめる</button></div></section>`;
       bindImageFallback(ov);
       if(flashIndex!=null){const el=ov.querySelector(`[data-ready-card="${flashIndex}"]`);el?.classList.add('just-drawn');setTimeout(()=>el?.classList.remove('just-drawn'),450);}
-      ov.querySelectorAll('[data-ready-card]').forEach(b=>b.onclick=()=>{selected=Number(b.dataset.readyCard);paint();});
-      ov.querySelectorAll('[data-move-to]').forEach(b=>b.onclick=()=>{if(selected==null)return;const to=Number(b.dataset.moveTo),from=selected;if(movePlayerCard(match,from,to)){selected=to;paint();}});
-      ov.querySelector('[data-exchange]')?.addEventListener('click',()=>{if(selected==null||match.exchanged)return;const i=selected;if(exchangePlayer(match,i)){paint(i);}});
-      ov.querySelector('[data-boost]')?.addEventListener('click',()=>{if(selected==null||match.pieceBoostUsed)return;const i=selected;if(!activatePieceBoost(match,i))return;paint(i);const panel=ov.querySelector('.ready-phase'),fx=document.createElement('div');fx.className='mpb-boost-burst';fx.innerHTML='<small>MOB PIECE</small><strong>PIECE BOOST!</strong><span>ALL STATS +15%</span>';panel?.appendChild(fx);setTimeout(()=>fx.remove(),reduced()?120:850);});
+      const openDetail=i=>{
+        ov.querySelector('.ready-phase')?.insertAdjacentHTML('beforeend',readyDetailMarkup(match,i));bindImageFallback(ov);
+        const detail=ov.querySelector('[data-ready-detail]');
+        detail?.querySelector('[data-detail-close]')?.addEventListener('click',()=>detail.remove());
+        detail?.addEventListener('click',e=>{if(e.target===detail)detail.remove();});
+        detail?.querySelector('[data-detail-exchange]')?.addEventListener('click',()=>{if(match.exchanged)return;const prev=readyStats(match).p;if(exchangePlayer(match,i))paint(i,prev);});
+        detail?.querySelector('[data-detail-boost]')?.addEventListener('click',()=>{if(match.pieceBoostUsed)return;const prev=readyStats(match).p;if(!activatePieceBoost(match,i))return;paint(i,prev);const panel=ov.querySelector('.ready-phase'),fx=document.createElement('div');fx.className='mpb-boost-burst';fx.innerHTML='<small>MOB PIECE</small><strong>PIECE BOOST!</strong><span>ALL STATS +15%</span>';panel?.appendChild(fx);setTimeout(()=>fx.remove(),reduced()?120:850);});
+      };
+      ov.querySelectorAll('[data-ready-card]').forEach(card=>{
+        let sx=0,sy=0,drag=false,pointerId=null;
+        card.addEventListener('pointerdown',e=>{if(e.button!=null&&e.button!==0)return;pointerId=e.pointerId;sx=e.clientX;sy=e.clientY;drag=false;card.setPointerCapture?.(pointerId);card.classList.add('pressed');});
+        card.addEventListener('pointermove',e=>{if(pointerId!==e.pointerId)return;const dx=e.clientX-sx,dy=e.clientY-sy;if(!drag&&Math.hypot(dx,dy)>9){drag=true;card.classList.add('dragging');}if(drag){card.style.setProperty('--drag-x',`${dx}px`);card.style.setProperty('--drag-y',`${dy}px`);}});
+        const finish=e=>{if(pointerId!==e.pointerId)return;card.releasePointerCapture?.(pointerId);card.classList.remove('pressed');const from=Number(card.dataset.readyCard);if(drag){const target=document.elementsFromPoint(e.clientX,e.clientY).map(el=>el.closest?.('[data-ready-card]')).find(el=>el&&el!==card);const to=target?Number(target.dataset.readyCard):from;card.classList.remove('dragging');card.style.removeProperty('--drag-x');card.style.removeProperty('--drag-y');if(Number.isInteger(to)&&to!==from){const prev=readyStats(match).p;if(movePlayerCard(match,from,to))paint(null,prev);}else card.animate?.([{transform:'scale(1.05)'},{transform:'scale(1)'}],{duration:140});}else openDetail(from);pointerId=null;};
+        card.addEventListener('pointerup',finish);card.addEventListener('pointercancel',e=>{if(pointerId===e.pointerId){card.classList.remove('pressed','dragging');card.style.removeProperty('--drag-x');card.style.removeProperty('--drag-y');pointerId=null;}});
+        card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDetail(Number(card.dataset.readyCard));}});
+      });
       ov.querySelector('[data-start-fight]').onclick=()=>resolve({action:'fight'});
       ov.querySelector('[data-quit-fight]').onclick=()=>resolve({action:'quit'});
     };
@@ -85,25 +108,29 @@ async function readyPhase(ov,match,request){
 function fighterMarkup(row){return `<div class="mpb-fighter ${row.side} pos-${row.index} ${row.boosted?'boosted':''}" data-fighter="${row.key}"><div class="mpb-fighter-art">${art(row.id)}</div><div class="mpb-fighter-hp"><i style="width:100%"></i></div><small>${esc(row.f?.name||'')}</small></div>`;}
 function updateFighter(arena,row){const el=arena.querySelector(`[data-fighter="${row.key}"]`);if(!el)return;const bar=el.querySelector('.mpb-fighter-hp i');if(bar)bar.style.width=`${pct(row.hp,row.maxHp)}%`;el.classList.toggle('ko',row.hp<=0);}
 function setTeamLife(ov,side,value,max){const wrap=ov.querySelector(`.mpb-team-life.${side}`);if(!wrap)return;wrap.querySelector('i').style.width=`${pct(value,max)}%`;wrap.querySelector('b').textContent=`${Math.max(0,Math.round(value))} / ${Math.max(1,Math.round(max))}`;}
-function spawnImpact(arena,target,powerHit,crit,damage){
-  const host=arena.getBoundingClientRect(),r=target.getBoundingClientRect(),fx=document.createElement('div');fx.className=`mpb-impact ${powerHit?'power':''} ${crit?'critical':''}`;fx.style.left=`${r.left-host.left+r.width/2}px`;fx.style.top=`${r.top-host.top+r.height/2}px`;fx.innerHTML=`<i></i><i></i><i></i><b>${damage}</b>${crit?'<strong>CRITICAL!</strong>':''}`;arena.appendChild(fx);setTimeout(()=>fx.remove(),reduced()?80:520);
+function playPieceSkillFx(arena,target,seed=0){
+  if(!arena||!target)return;const host=arena.getBoundingClientRect(),r=target.getBoundingClientRect(),frames=PIECE_SKILL_FX[Math.abs(seed)%PIECE_SKILL_FX.length],fx=document.createElement('img');fx.className='mpb-skill-fx';fx.style.left=`${r.left-host.left+r.width/2}px`;fx.style.top=`${r.top-host.top+r.height/2}px`;let i=0;fx.onerror=()=>fx.remove();fx.src=assetPath(frames[0]);arena.appendChild(fx);const timer=setInterval(()=>{i++;if(i>=frames.length){clearInterval(timer);setTimeout(()=>fx.remove(),70);return;}fx.src=assetPath(frames[i]);},55);
 }
+function spawnImpact(arena,target,powerHit,crit,damage){
+  const host=arena.getBoundingClientRect(),r=target.getBoundingClientRect(),fx=document.createElement('div');fx.className=`mpb-impact ${powerHit?'power':''} ${crit?'critical':''}`;fx.style.left=`${r.left-host.left+r.width/2}px`;fx.style.top=`${r.top-host.top+r.height/2}px`;fx.innerHTML=`<svg viewBox="0 0 180 130" aria-hidden="true"><path d="M23 83C1 67 10 42 34 43C26 19 55 7 69 27C80 3 112 8 114 34C139 17 158 39 148 59C177 58 183 89 158 101C157 125 124 130 109 110C89 132 59 123 58 105C35 122 10 105 23 83Z"/><path class="in" d="M54 73C46 55 66 43 79 56C88 39 112 49 109 68C130 67 134 91 115 96C101 110 82 100 80 88C64 98 49 89 54 73Z"/></svg>${Array.from({length:8},(_,i)=>`<i style="--a:${i*45}deg;--d:${46+(i%3)*12}px">${i%3?'☆':'★'}</i>`).join('')}<b>${damage}</b>${crit?'<strong>CRITICAL!</strong>':''}`;arena.appendChild(fx);setTimeout(()=>fx.remove(),reduced()?80:600);
+}
+
 async function animateStrike(arena,a,d,{powerHit,crit,ko,damage}){
   const ae=arena.querySelector(`[data-fighter="${a.key}"]`),de=arena.querySelector(`[data-fighter="${d.key}"]`);if(!ae||!de)return wait(50);
   const ra=ae.getBoundingClientRect(),rd=de.getBoundingClientRect(),dx=(rd.left+rd.width/2)-(ra.left+ra.width/2),dy=(rd.top+rd.height/2)-(ra.top+ra.height/2),dur=powerHit?BATTLE_TIMING.powerStrike:BATTLE_TIMING.normalStrike;
   if(!reduced())ae.animate([{transform:'translate(0,0) rotate(0) scale(1)'},{offset:.52,transform:`translate(${dx*.72}px,${dy*.72}px) rotate(${powerHit?18:7}deg) scale(${powerHit?1.24:1.12})`},{offset:.66,transform:`translate(${dx*.78}px,${dy*.78}px) rotate(${powerHit?-12:-5}deg) scale(1.06)`},{transform:'translate(0,0) rotate(0) scale(1)'}],{duration:dur,easing:'cubic-bezier(.18,.84,.25,1)'});
-  await wait(Math.round(dur*.5));spawnImpact(arena,de,powerHit,crit,damage);
+  await wait(Math.round(dur*.5));if(powerHit)playPieceSkillFx(arena,de,a.index+(a.side==='cpu'?3:0));spawnImpact(arena,de,powerHit,crit,damage);
   if(!reduced()){
     const fly=(d.side==='cpu'?1:-1)*(70+Math.random()*85),rot=(Math.random()>.5?1:-1)*(ko?720:300);
     de.animate([{transform:'translate(0,0) rotate(0) scale(1)'},{offset:.45,transform:`translate(${fly}px,${-28-Math.random()*65}px) rotate(${rot}deg) scale(${ko ? .65 : .88})`},{transform:ko?`translate(${fly*1.55}px,${-90-Math.random()*60}px) rotate(${rot*1.6}deg) scale(.35)`:'translate(0,0) rotate(0) scale(1)'}],{duration:ko?BATTLE_TIMING.ko:285,easing:'cubic-bezier(.12,.8,.25,1)',fill:ko?'forwards':'none'});
   }
-  arena.classList.add('hit-shake');setTimeout(()=>arena.classList.remove('hit-shake'),90);await wait(Math.round(dur*.5));
+  await wait(Math.round(dur*.5));
 }
 
 async function combatPhase(ov,match,request){
   const pRows=fighterRows(match.pHand,match.cHand,'player',2,byId,tagsMap,match.boostIndex),cRows=fighterRows(match.cHand,match.pHand,'cpu',match.cCenter,byId,tagsMap),rows=[...pRows,...cRows];
   const p=teamStats(pRows,match.pHand,byId,tagsMap),c=teamStats(cRows,match.cHand,byId,tagsMap);let pLife=p.hp,cLife=c.hp;
-  ov.innerHTML=`<section class="mpb-battle-panel fight-phase">${score(match)}${lifeBar('CPU LIFE',cLife,c.hp,'cpu')}<div class="mpb-fight-summary top">${totalStats('CPU',c,'cpu')}${activeTags(match.cHand)}</div><div class="mpb-arena"><div class="mpb-arena-ring"></div>${cRows.map(fighterMarkup).join('')}${pRows.map(fighterMarkup).join('')}<strong class="mpb-start-call">集合中…</strong><small class="mpb-auto-label">AUTO BATTLE</small></div><div class="mpb-fight-summary bottom">${totalStats('PLAYER',p,'player')}${activeTags(match.pHand)}</div>${lifeBar('PLAYER LIFE',pLife,p.hp,'player')}</section>`;
+  ov.innerHTML=`<section class="mpb-battle-panel fight-phase">${score(match)}${lifeBar('CPU LIFE',cLife,c.hp,'cpu')}<div class="mpb-fight-summary top">${totalStats('CPU',c,'cpu')}${activeTags(match.cHand)}</div><div class="mpb-arena"><div class="mpb-arena-ring"></div>${cRows.map(fighterMarkup).join('')}${pRows.map(fighterMarkup).join('')}<strong class="mpb-start-call">集合中…</strong></div><div class="mpb-fight-summary bottom">${totalStats('PLAYER',p,'player')}${activeTags(match.pHand)}</div>${lifeBar('PLAYER LIFE',pLife,p.hp,'player')}</section>`;
   bindImageFallback(ov);const arena=ov.querySelector('.mpb-arena'),call=ov.querySelector('.mpb-start-call');arena.classList.add('gathering');await wait(BATTLE_TIMING.gather);call.textContent='START!';arena.classList.add('start-flash');await wait(BATTLE_TIMING.startFlash);call.remove();arena.classList.remove('gathering','start-flash');arena.classList.add('combat');
   let steps=0;
   while(pRows.some(x=>x.hp>0)&&cRows.some(x=>x.hp>0)&&steps<320){

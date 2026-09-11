@@ -42,9 +42,9 @@ export const CPU_THEMES = Object.freeze([
 ]);
 
 export const BATTLE_TIMING = Object.freeze({
-  drawStep:120, drawHold:280, gather:600, startFlash:420,
-  normalStrike:190, powerStrike:255, ko:470, betweenActionsMin:20,
-  betweenActionsMax:60, roundResult:1050, nextRound:700
+  drawStep:105, drawHold:230, gather:520, startFlash:340,
+  normalStrike:165, powerStrike:220, ko:420, betweenActionsMin:12,
+  betweenActionsMax:40, roundResult:900, nextRound:600
 });
 
 export const TAG_EFFECT_CAPS = Object.freeze({

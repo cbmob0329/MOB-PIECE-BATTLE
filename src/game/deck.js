@@ -6,3 +6,35 @@ export function validateDeck(ids, byId, owned = null) {
  if(ids.length>25)errors.push('編成は25体までです'); if(cost>80)errors.push('TOTAL COSTは80までです');
  return {cost,count:ids.length,errors:[...new Set(errors)],valid:ids.length===25&&errors.length===0};
 }
+
+
+// 所持フィギュアだけから、COST80・重複上限・所持数を守って25体を自動編成する。
+// 高レア固定ではなく、MOB PIECEの総合力とCOST効率を合わせて評価する。
+export function autoBuildDeck(figures, owned = {}) {
+ const candidates=[];
+ for(const f of figures||[]){
+  if(!f||f.pending||!f.mobPiece)continue;
+  const own=Math.max(0,Math.trunc(Number(owned[f.sourceId]||0)));
+  const cap=Math.min(own,RULES.duplicateCaps[f.rarity]||1);
+  if(cap<=0)continue;
+  const s=f.mobPiece;
+  const power=Number(s.attack||0)+Number(s.defense||0)*.78+Number(s.hp||0)*.22+Number(s.speed||0)*.42;
+  const cost=Math.max(1,Number(s.cost||1));
+  // 強さを主軸にしつつ、COST効率も少し加点。
+  const score=power+(power/cost)*.20;
+  for(let i=0;i<cap;i++)candidates.push({id:f.sourceId,cost,score,rarity:f.rarity});
+ }
+ if(candidates.length<RULES.deckSize)return {deck:[],error:`所持フィギュアが${RULES.deckSize}体分必要です`};
+ candidates.sort((a,b)=>b.score-a.score||a.cost-b.cost);
+ const chosen=[];let cost=0;
+ while(chosen.length<RULES.deckSize){
+  const remain=RULES.deckSize-chosen.length-1;
+  // 残り枠を最低COSTで埋められる余地を残しながら最強候補を選ぶ。
+  const remainingCosts=candidates.map(x=>x.cost).sort((a,b)=>a-b);
+  const minReserve=remainingCosts.slice(0,remain).reduce((n,v)=>n+v,0);
+  const idx=candidates.findIndex(x=>cost+x.cost+minReserve<=RULES.maxCost);
+  if(idx<0)return {deck:[],error:'所持フィギュアではCOST80以内に25体を自動編成できません'};
+  const [pick]=candidates.splice(idx,1);chosen.push(pick.id);cost+=pick.cost;
+ }
+ return {deck:chosen,cost,error:null};
+}

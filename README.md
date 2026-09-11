@@ -119,3 +119,21 @@ HOME右上「展示を変更」または左右の棚から、後ろに飾る4体
 ### 画像について
 
 今後の受け渡しZIPには画像データを含めない。画像はGitHub側の既存素材を維持し、コード内の既存パスを参照する。
+
+## v3 Deck / Battle usability update
+
+- Empty deck slots open an owned-figure picker.
+- Added automatic deck building from owned figures, respecting COST 80, duplicate caps, and owned counts.
+- Added clear-deck utility.
+- READY hand supports pointer/touch drag-and-drop swapping.
+- Normal tap opens battle-effective stats, base stats, tags, PIECE BOOST and exchange controls.
+- Team total stats animate when placement changes their values.
+- DRAW layout is vertically centered for better phone readability.
+- Arena corner geometry no longer clips opponent figures.
+- Player and CPU formations are slightly closer.
+- Arena/screen impact shake removed; individual figure hit/KO motion remains.
+- Restored MOB STORY-style cartoon impact smoke and skill-frame animation (`skill/*.png`, referenced only; assets are not bundled).
+- Battle tempo increased modestly.
+- Removed the central `AUTO BATTLE` label.
+
+Image assets are intentionally NOT included in this archive. Existing GitHub assets are expected to remain in place.
