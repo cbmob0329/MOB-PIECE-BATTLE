@@ -1,3 +1,4 @@
+@import url('./competition.css');
 @import url('./gacha.css');
 @import url('./cartoon.css');
 @import url('./reset.css');
@@ -8,3 +9,4 @@
 
 .shelf.left-shelf{left:8px}.shelf.right-shelf{right:8px}.showroom .shelf{width:84px;padding:8px 3px}.showroom .shelf-piece{width:32px}.showroom .shelf-piece img{width:32px;max-width:32px}.showroom .edition{z-index:4}
 .test-wallet{display:block;width:calc(100% - 36px);margin:0 18px 15px;padding:11px 8px;background:#f5d88b;border:2px dashed #193b39;border-radius:8px;font-size:11px;font-weight:800}.wallet>span{min-width:65px;gap:4px}.wallet .mob-currency{font-size:7px!important}.summon-title h2,.cue-cut h2{overflow-wrap:anywhere}
+.season-mini{font-size:7px!important;color:#7d8875;margin-top:2px!important;white-space:nowrap}.wallet>span:first-child{min-width:78px}.wallet>span:first-child b{max-width:54px;overflow:hidden;text-overflow:ellipsis}.mode:nth-child(3){background:#f0d47f;border-color:#c6a84f}.mode:nth-child(3) small{color:#725d1e}
