@@ -12,10 +12,15 @@ export const QUALIFIER_REWARDS = Object.freeze({
   S:{coins:10000,diamonds:12}, SS:{coins:12000,diamonds:15}
 });
 
-// ユーザー指定値のみ確定。E〜Sは今後の決定まで報酬を捏造しない。
+// F/SSはユーザー指定。中間ランクは段階的に価値が上がるよう調整。
 export const RANK_UP_REWARDS = Object.freeze({
   F:{runnerUp:{coins:5000,diamonds:10},winner:{coins:10000,diamonds:30}},
-  E:null,D:null,C:null,B:null,A:null,S:null,
+  E:{runnerUp:{coins:8000,diamonds:20},winner:{coins:15000,diamonds:45}},
+  D:{runnerUp:{coins:12000,diamonds:30},winner:{coins:22000,diamonds:60}},
+  C:{runnerUp:{coins:18000,diamonds:45},winner:{coins:32000,diamonds:85}},
+  B:{runnerUp:{coins:25000,diamonds:65},winner:{coins:45000,diamonds:120}},
+  A:{runnerUp:{coins:33000,diamonds:90},winner:{coins:62000,diamonds:170}},
+  S:{runnerUp:{coins:42000,diamonds:120},winner:{coins:80000,diamonds:230}},
   SS:{runnerUp:{coins:50000,diamonds:150},winner:{coins:100000,diamonds:300}}
 });
 

@@ -100,7 +100,9 @@ export function chooseRankUpTournament(profile,participate){
   normalizeCompetition(profile);const d=profile.competition.date;if(!isRankUpWeek(d.month,d.week)||isPlayerMaster(profile))throw new Error('現在はランクアップトーナメント開催週ではありません。');
   if(currentRankUp(profile))return currentRankUp(profile);
   const key=weekKey(d);const state={key,year:d.year,month:d.month,rankAtEntry:profile.rank,status:participate?'active':'skipped',round:0,entrants:tournamentEntrants(profile,key),opponents:[],results:[],reward:null,rankAfter:profile.rank};
-  state.opponents=[0,1,2].map(i=>state.entrants[1+Math.floor(unit(`${key}:opp:${i}`)*7)]||state.entrants[i+1]);
+  // 8人トーナメントなので、PLAYERが勝ち進んだ場合の3対戦相手は重複させない。
+  // CPU側ブラケットの細部は裏で処理しつつ、プレイヤーには準々決勝→準決勝→決勝の異なる相手を提示する。
+  state.opponents=state.entrants.slice(1).sort((a,b)=>unit(`${key}:opp-seq:${a}`)-unit(`${key}:opp-seq:${b}`)).slice(0,3);
   profile.competition.rankUpCurrent=state;
   if(!participate)profile.competition.rankUpHistory.push(clone(state));
   return state;
