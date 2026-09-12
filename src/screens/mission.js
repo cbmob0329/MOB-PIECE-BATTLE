@@ -1,0 +1,8 @@
+import {allMissionStates} from '../game/missions.js';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function missionScreen(c){
+  const states=allMissionStates(c.profile,{figures:c.figures,byId:c.byId});
+  const complete=states.filter(x=>x.complete&&!x.claimed).length,claimed=states.filter(x=>x.claimed).length;
+  const categories=[...new Set(states.map(x=>x.category))];
+  return `<section class="library mission-page"><div class="page-heading"><span class="eyebrow">PLAY · COLLECT · ACHIEVE</span><h1>MISSION</h1><p>対戦・収集・大会。遊んだ記録がそのまま報酬になる。</p></div><div class="mission-summary"><span><small>CLAIMABLE</small><b>${complete}</b></span><span><small>COMPLETE</small><b>${claimed}/${states.length}</b></span></div>${categories.map(cat=>`<section class="mission-group"><h2>${esc(cat)}</h2><div class="mission-list">${states.filter(x=>x.category===cat).map(m=>{const pct=Math.min(100,Math.round(m.progress/Math.max(1,m.target)*100));return `<article class="mission-card ${m.claimed?'claimed':m.complete?'ready':''}"><div><small>${esc(m.category)}</small><b>${esc(m.title)}</b><p>${esc(m.description)}</p></div><div class="mission-progress"><span><i style="width:${pct}%"></i></span><b>${Math.min(m.progress,m.target)} / ${m.target}</b></div><div class="mission-reward"><span>${m.reward.coins.toLocaleString('ja-JP')} COIN</span><span>${m.reward.diamonds} DIAMOND</span></div><button data-mission-claim="${m.id}" ${m.complete&&!m.claimed?'':'disabled'}>${m.claimed?'受取済み':m.complete?'受け取る':'挑戦中'}</button></article>`;}).join('')}</div></section>`).join('')}</section>`;
+}

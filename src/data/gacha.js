@@ -2,8 +2,8 @@ import {figures} from './catalog.js';
 export const RARITY_RANK=Object.freeze({R:1,SR:2,SSR:3,UR:4,MOB:5});
 export const RATES=Object.freeze({R:50,SR:30,SSR:15,UR:4.5,MOB:.5});
 export const TEN_LAST_RATES=Object.freeze({SR:67,SSR:25,UR:7,MOB:1});
-export const OWN_CAP=Object.freeze({R:9,SR:6,SSR:4,UR:2,MOB:1});
-export const OVERFLOW_RUBY=Object.freeze({R:1,SR:2,SSR:5,UR:15,MOB:50});
+export const OWN_CAP=Object.freeze({R:15,SR:12,SSR:7,UR:4,MOB:2});
+export const OVERFLOW_RUBY=Object.freeze({R:1,SR:3,SSR:5,UR:12,MOB:30});
 const range=(dir,a,b)=>Array.from({length:b-a+1},(_,i)=>`${dir}/${String(a+i).padStart(2,'0')}.png`);
 const common=range('fig',1,25);
 // Initial, unconditionally available banners. Story unlocks remain hidden.

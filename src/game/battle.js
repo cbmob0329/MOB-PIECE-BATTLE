@@ -115,7 +115,7 @@ export function buildCpuDeck(figures,mode,key){
 }
 
 export function createMatch({playerDeck,cpuDeck,cpuAi=0,context={}}){
-  return {pDeck:shuffle(playerDeck),cDeck:shuffle(cpuDeck),pPos:0,cPos:0,pDiscard:[],cDiscard:[],pWins:0,cWins:0,round:0,center:2,cCenter:2,exchanged:false,cpuExchanged:false,pieceBoostUsed:false,boostIndex:-1,cpuAi,context,history:[]};
+  return {playerDeckOriginal:[...playerDeck],cpuDeckOriginal:[...cpuDeck],pDeck:shuffle(playerDeck),cDeck:shuffle(cpuDeck),pPos:0,cPos:0,pDiscard:[],cDiscard:[],pWins:0,cWins:0,round:0,center:2,cCenter:2,exchanged:false,cpuExchanged:false,pieceBoostUsed:false,boostIndex:-1,cpuAi,context,history:[]};
 }
 function draw(match,side){const deck=match[`${side}Deck`],posKey=`${side}Pos`,discard=match[`${side}Discard`];if(match[posKey]>=deck.length){if(!discard.length)return randomItem(deck);match[`${side}Deck`]=shuffle(discard.splice(0));match[posKey]=0;}return match[`${side}Deck`][match[posKey]++];}
 

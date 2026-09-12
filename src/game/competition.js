@@ -18,6 +18,7 @@ function baseCompetition(){return {
   masterHolder:null,
   masterSinceYear:null,
   autoMasterBonuses:[],
+  seasonHistory:[],
   notices:[]
 };}
 
@@ -26,7 +27,7 @@ export function normalizeCompetition(profile){
   profile.rank=RANKS.includes(profile.rank)?profile.rank:'F';
   profile.competition={...baseCompetition(),...(profile.competition||{})};
   profile.competition.date={...baseCompetition().date,...(profile.competition.date||{})};
-  for(const k of ['qualifierHistory','rankUpHistory','autoMasterBonuses','notices'])if(!Array.isArray(profile.competition[k]))profile.competition[k]=[];
+  for(const k of ['qualifierHistory','rankUpHistory','autoMasterBonuses','seasonHistory','notices'])if(!Array.isArray(profile.competition[k]))profile.competition[k]=[];
   return profile;
 }
 
@@ -194,10 +195,24 @@ export function canAdvanceWeek(profile){
 
 export function advanceWeek(profile){
   const check=canAdvanceWeek(profile);if(!check.ok)throw new Error(check.reason);const d=profile.competition.date;
-  if(d.month===12&&d.week===4){d.year++;d.month=1;d.week=1;profile.competition.leaguePoints=0;profile.competition.rankUpCurrent=null;profile.competition.leagueFinal=null;profile.competition.masterChallenge=null;}
+  if(d.month===12&&d.week===4){archiveSeason(profile);d.year++;d.month=1;d.week=1;profile.competition.leaguePoints=0;profile.competition.rankUpCurrent=null;profile.competition.leagueFinal=null;profile.competition.masterChallenge=null;}
   else if(d.week===4){d.month++;d.week=1;profile.competition.rankUpCurrent=null;}
   else d.week++;
   syncCompetition(profile);return d;
+}
+
+
+function competitorName(profile,id){
+  if(!id)return '—';if(id==='PLAYER')return 'PLAYER';
+  const lf=profile.competition.leagueFinal;const fromFinal=lf?.finalists?.find(x=>x.id===id);if(fromFinal)return fromFinal.name;
+  const m=String(id).match(/^CPU_(\d+)$/);if(m)return cpuName(Math.max(0,Number(m[1])-1));return String(id);
+}
+export function archiveSeason(profile){
+  normalizeCompetition(profile);const year=profile.competition.date.year;
+  if(profile.competition.seasonHistory.some(x=>x.year===year))return profile.competition.seasonHistory.find(x=>x.year===year);
+  const lf=profile.competition.leagueFinal;const table=lf?leagueTable(lf):[];const mc=profile.competition.masterChallenge;
+  const row={year,leagueChampion:lf?.champion?{id:lf.champion.id,name:lf.champion.name,wins:lf.champion.wins,losses:lf.champion.losses}:null,leagueTable:table.map(x=>({id:x.id,name:x.name,rank:x.rank,wins:x.wins,losses:x.losses,battleDiff:x.battleDiff,position:x.position})),masterHolder:profile.competition.masterHolder?{id:profile.competition.masterHolder,name:competitorName(profile,profile.competition.masterHolder)}:null,masterChallenge:mc?{defender:mc.defender,defenderName:competitorName(profile,mc.defender),challenger:mc.challenger,challengerName:competitorName(profile,mc.challenger),defenderWins:mc.defenderWins,challengerWins:mc.challengerWins,winner:mc.winner,winnerName:competitorName(profile,mc.winner)}:null};
+  profile.competition.seasonHistory.push(row);return row;
 }
 
 export function dismissCompetitionNotice(profile){return profile.competition.notices.shift()||null;}

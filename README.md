@@ -62,7 +62,7 @@ FREE BATTLE / RANK MATCH / MOBリーグ予選 / ランクアップトーナメ�
 レア度が存在しないバナーでは元コードどおり残る重みを正規化し、その実効確率を画面に表示。
 元のレア度抽選後のピックアップ分岐55%＋通常プール45%も保持。
 ガチャ001にはURが存在しないため、UR以上確定時の対象はMOBになります。
-所持上限・変換は古いテキストではなくv115を採用（docs/GACHA.md）。
+独立版の所持上限・超過ルビー変換はユーザー確定仕様を採用（R15/SR12/SSR7/UR4/MOB2、超過時はR1/SR3/SSR5/UR12/MOB30ルビー）。元v115値は移植参考のみ。
 
 確定演出は抽選後の結果にのみ連動。演出操作・スキップ・プレビューは抽選率を変えません。
 保存成功後に演出開始。途中リロード時も前回結果から確認でき、再付与しません。
@@ -137,3 +137,33 @@ HOME右上「展示を変更」または左右の棚から、後ろに飾る4体
 - Removed the central `AUTO BATTLE` label.
 
 Image assets are intentionally NOT included in this archive. Existing GitHub assets are expected to remain in place.
+
+## v4 COLLECTION / MISSION / RECORD UPDATE
+
+今回追加した独立版の基盤機能：
+
+- 5デッキ保存（DECK 1〜5）と即時切り替え
+- フィギュア所持上限
+  - R 15 / SR 12 / SSR 7 / UR 4 / MOB 2
+- 所持上限超過時の自動ルビー変換
+  - R 1 / SR 3 / SSR 5 / UR 12 / MOB 30
+- ガチャ結果に LIMIT OVER → RUBY CONVERT の専用演出・ナレーション表示
+- 図鑑強化
+  - No.連番、所持率、レア度別収集率、所持/未所持、未所持シルエット
+  - 所持済みは能力・タグ・出場数・勝利数を表示
+- MISSION実装
+  - 対戦回数、勝利数、収集数、ガチャ回数、上限超過変換、MOBリーグ、ランクアップ大会等
+  - 報酬は 1,000 COIN + 1 DIAMOND 〜 100,000 COIN + 100 DIAMOND
+- BATTLE HISTORY実装
+  - 勝敗、スコア、対戦相手、プレイヤー/CPUデッキ、各BATTLEの5体、PIECE BOOSTを保存
+  - 画面表示は直近200試合、累計ミッション用カウンターは別途保持
+- フィギュア別戦績
+  - 出場回数、ラウンド勝利、使用時の対戦勝利
+- HALL OF FAME実装
+  - シーズン終了時にMOBリーグ王者、MOB MASTER、MASTER MATCH、最終順位を永久記録
+- 今後プレイヤー/CPUキャラクターを増やせるID+表示名形式を維持
+
+### 画像ファイルについて
+
+この配布ZIPには PNG / JPG / JPEG / WebP / GIF を含めていません。
+画像はGitHub側の既存素材パスを参照する前提です。

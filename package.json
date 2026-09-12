@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node scripts/rules-check.mjs && node scripts/gacha-rules-check.mjs && node scripts/competition-rules-check.mjs && node scripts/battle-rules-check.mjs",
+    "test": "node scripts/rules-check.mjs && node scripts/gacha-rules-check.mjs && node scripts/competition-rules-check.mjs && node scripts/battle-rules-check.mjs && node scripts/v4-features-check.mjs",
     "test:gacha": "node scripts/gacha-browser-check.mjs",
     "assets:index": "node scripts/index-assets.mjs"
   },

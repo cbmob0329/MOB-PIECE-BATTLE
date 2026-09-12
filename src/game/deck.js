@@ -38,3 +38,16 @@ export function autoBuildDeck(figures, owned = {}) {
  }
  return {deck:chosen,cost,error:null};
 }
+
+export const DECK_SLOT_COUNT=5;
+export function normalizeDeckPresets(profile){
+ if(!Array.isArray(profile.deckPresets))profile.deckPresets=Array.from({length:DECK_SLOT_COUNT},()=>[]);
+ while(profile.deckPresets.length<DECK_SLOT_COUNT)profile.deckPresets.push([]);
+ profile.deckPresets=profile.deckPresets.slice(0,DECK_SLOT_COUNT).map(x=>Array.isArray(x)?x:[]);
+ profile.activeDeckSlot=Math.max(0,Math.min(DECK_SLOT_COUNT-1,Math.trunc(Number(profile.activeDeckSlot)||0)));
+ if(!Array.isArray(profile.deck))profile.deck=[];
+ profile.deckPresets[profile.activeDeckSlot]=[...profile.deck];
+ return profile;
+}
+export function saveActiveDeck(profile){normalizeDeckPresets(profile);profile.deckPresets[profile.activeDeckSlot]=[...profile.deck];return profile;}
+export function switchDeckSlot(profile,index){normalizeDeckPresets(profile);saveActiveDeck(profile);const next=Math.max(0,Math.min(DECK_SLOT_COUNT-1,Math.trunc(Number(index)||0)));profile.activeDeckSlot=next;profile.deck=[...(profile.deckPresets[next]||[])];return profile.deck;}

@@ -142,7 +142,7 @@ async function combatPhase(ov,match,request){
   if(pRows.some(x=>x.hp>0)&&cRows.some(x=>x.hp>0)){
     const pp=aliveHp(pRows)/Math.max(1,p.hp),cc=aliveHp(cRows)/Math.max(1,c.hp),losers=pp>=cc?cRows:pRows;for(const x of losers){x.hp=0;updateFighter(arena,x);}pLife=aliveHp(pRows);cLife=aliveHp(cRows);setTeamLife(ov,'player',pLife,p.hp);setTeamLife(ov,'cpu',cLife,c.hp);
   }
-  await wait(420);const won=cLife<=0;if(won)match.pWins++;else match.cWins++;match.history.push({round:match.round,won,pLife,cLife});match.pDiscard.push(...match.pHand);match.cDiscard.push(...match.cHand);return won;
+  await wait(420);const won=cLife<=0;if(won)match.pWins++;else match.cWins++;match.history.push({round:match.round,won,pLife,cLife,pHand:[...match.pHand],cHand:[...match.cHand],boostId:match.boostIndex>=0?match.pHand[match.boostIndex]:null,centerId:match.pHand[2],cpuCenterId:match.cHand[match.cCenter]});match.pDiscard.push(...match.pHand);match.cDiscard.push(...match.cHand);return won;
 }
 
 async function roundResult(ov,match,won){
