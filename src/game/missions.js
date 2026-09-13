@@ -4,7 +4,7 @@ import {validateDeck} from './deck.js';
 export function normalizeMissions(profile){
   if(!profile.missions||typeof profile.missions!=='object')profile.missions={};
   if(!Array.isArray(profile.missions.claimed))profile.missions.claimed=[];
-  return profile.missions;
+  return profile;
 }
 const history=p=>Array.isArray(p.battleHistory)?p.battleHistory:[];
 const countMode=(p,prefix)=>history(p).filter(x=>String(x.mode||'').startsWith(prefix)).length;
