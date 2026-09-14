@@ -1,16 +1,16 @@
 const BASE = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL) ? import.meta.env.BASE_URL : './';
-const VERSION = '6.0.0';
+const VERSION = '6.1.0';
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 export const MENU_ASSETS = Object.freeze({
   home:'001', figure:'002', gacha:'003', battle:'004', shop:'005', calendar:'006', mission:'007',
   partner:'008', history:'009', boss:'010', freeBattle:'011', rankTournament:'012', mobLeague:'013',
-  nextWeek:'014', quest:'015', towerDefense:'016', original:'017'
+  nextWeek:'014', quest:'015', towerDefense:'016', original:'017', player:'018', settings:'019', collection:'020'
 });
 
 export const ICON_ASSETS = Object.freeze({
   coin:'001', diamond:'002', ruby:'003', rank:'004', win:'005', loss:'006', rarity:'007', tag:'008',
-  field:'009', specialFigure:'010', originalFigure:'011', skillFigure:'012', status:'013', pickup:'014'
+  field:'009', specialFigure:'010', originalFigure:'011', skillFigure:'012', status:'013', pickup:'014', deck:'015'
 });
 
 export const RANK_ASSETS = Object.freeze({
@@ -50,8 +50,8 @@ export function preloadUrls(urls, onProgress) {
 }
 
 export function criticalUiUrls(profile, centerImage) {
-  const menuKeys = ['home','figure','gacha','battle','shop','calendar','mission','history','nextWeek'];
-  const iconKeys = ['coin','diamond','ruby','rank'];
+  const menuKeys = ['home','figure','gacha','battle','shop','calendar','mission','history','nextWeek','player','settings','collection'];
+  const iconKeys = ['coin','diamond','ruby','rank','deck'];
   const rankKey = profile?.competition?.masterHolder === 'PLAYER' ? 'MOB_MASTER' : profile?.rank;
   return [
     ...menuKeys.map(k => uiAssetUrl('menu', MENU_ASSETS[k])),

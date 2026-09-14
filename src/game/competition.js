@@ -1,7 +1,7 @@
 import {
   RANKS,QUALIFIER_POINTS,QUALIFIER_REWARDS,RANK_UP_REWARDS,WEEKLY_RANK_REWARDS,MASTER_BONUS,MASTER_PRIZE,
   CPU_NAMES,TOP8,isQualifierWeek,isRankUpWeek,weekKey,nextRank
-} from '../data/competition.js?v=6.0.0';
+} from '../data/competition.js?v=6.1.0';
 
 const hash=(s)=>{let h=2166136261;for(const ch of String(s)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;};
 const unit=(s)=>(hash(s)%100000)/100000;

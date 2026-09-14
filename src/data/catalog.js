@@ -1,5 +1,5 @@
-import figures from './figures_master_v170.js?v=6.0.0';
-import tags from './tags_master_v170.js?v=6.0.0';
+import figures from './figures_master_v170.js?v=6.1.0';
+import tags from './tags_master_v170.js?v=6.1.0';
 export { figures, tags };
 export const byId = new Map(figures.map(f => [f.sourceId, f]));
 export const imagePath = f => {

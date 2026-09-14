@@ -1,5 +1,5 @@
-import {poolFor,pickupsFor,mainPickupFor,ratesFor,RARITY_RANK} from '../data/gacha.js?v=6.0.0';
-import {acquireFigure,ensureGachaStats} from './inventory.js?v=6.0.0';
+import {poolFor,pickupsFor,mainPickupFor,ratesFor,RARITY_RANK} from '../data/gacha.js?v=6.1.0';
+import {acquireFigure,ensureGachaStats} from './inventory.js?v=6.1.0';
 export function randomUnit(){const a=new Uint32Array(1);globalThis.crypto.getRandomValues(a);return a[0]/4294967296;}
 export function rollFigure(banner,guaranteed=false,rng=randomUnit){const pool=poolFor(banner);if(!pool.length)throw new Error('排出対象がありません');let n=rng();const rates=Object.entries(ratesFor(banner,guaranteed));let rarity=rates.at(-1)[0];for(const [r,p] of rates){n-=p;if(n<0){rarity=r;break;}}const same=pool.filter(f=>f.rarity===rarity);const picks=pickupsFor(banner).filter(f=>f.rarity===rarity);const bucket=picks.length&&rng()<.55?picks:same;return bucket[Math.min(bucket.length-1,Math.floor(rng()*bucket.length))];}
 // Cues are chosen AFTER the draw. A guarantee never changes or overstates the result.
