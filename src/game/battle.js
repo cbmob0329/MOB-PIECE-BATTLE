@@ -1,8 +1,9 @@
-import {RULES,validateDeck} from './deck.js';
+import {RULES,validateDeck} from './deck.js?v=6.0.0';
+import {weekKey} from '../data/competition.js?v=6.0.0';
 import {
   RANKS,CPU_CONFIG,CPU_THEMES,TAG_EFFECT_CAPS,RARITY_POWER_HIT,RARITY_VALUE,
-  FREE_BATTLE,RANK_MATCH_REWARDS
-} from '../data/battle.js';
+  FREE_BATTLE,RANDOM_MATCH
+} from '../data/battle.js?v=6.0.0';
 
 const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
 const randomItem=a=>a[Math.floor(Math.random()*a.length)];
@@ -11,33 +12,32 @@ const rankIndex=r=>Math.max(0,RANKS.indexOf(r));
 
 export function normalizeBattleProgress(profile){
   if(!RANKS.includes(profile.rank))profile.rank='F';
-  profile.rankPoints=clamp(Number.isFinite(Number(profile.rankPoints))?Math.trunc(Number(profile.rankPoints)):0,0,5);
   if(!RANKS.includes(profile.highestRank)||rankIndex(profile.highestRank)<rankIndex(profile.rank))profile.highestRank=profile.rank;
   if(!profile.battleHistory||!Array.isArray(profile.battleHistory))profile.battleHistory=[];
   return profile;
 }
 
-export function updateRankMatch(profile,won){
-  normalizeBattleProgress(profile);
-  let i=rankIndex(profile.rank),pts=profile.rankPoints,promoted=false,demoted=false;
-  if(won){
-    pts++;
-    if(pts>=5){if(i<RANKS.length-1){i++;pts=0;promoted=true;}else pts=5;}
-  }else if(pts>0)pts--;
-  else if(i>0){i--;pts=3;demoted=true;}
-  profile.rank=RANKS[i];profile.rankPoints=pts;
-  if(rankIndex(profile.rank)>rankIndex(profile.highestRank))profile.highestRank=profile.rank;
-  return {tier:profile.rank,points:pts,promoted,demoted};
-}
 
 export function unlocks(profile){normalizeBattleProgress(profile);const h=rankIndex(profile.highestRank);return {hard:h>=rankIndex('C'),inferno:h>=rankIndex('A')};}
 
 export function battleReward(profile,mode,key,won){
   if(!won)return {coins:0,diamonds:0};
-  const spec=mode==='rank'?(RANK_MATCH_REWARDS[key]||RANK_MATCH_REWARDS.F):(FREE_BATTLE[key]||FREE_BATTLE.easy);
+  const spec=FREE_BATTLE[key]||FREE_BATTLE.easy;
   const reward={coins:Number(spec.coins)||0,diamonds:Number(spec.diamonds)||0};
   profile.coins=(Number(profile.coins)||0)+reward.coins;profile.diamonds=(Number(profile.diamonds)||0)+reward.diamonds;
   return reward;
+}
+
+export function randomMatchStatus(profile){
+  const key=weekKey(profile.competition?.date||{year:1,month:1,week:1});
+  const state=profile.randomMatch&&profile.randomMatch.key===key?profile.randomMatch:{key,played:0,wins:0};
+  return {key,played:Math.max(0,Math.min(RANDOM_MATCH.weeklyLimit,Number(state.played)||0)),wins:Math.max(0,Number(state.wins)||0),remaining:Math.max(0,RANDOM_MATCH.weeklyLimit-(Number(state.played)||0)),limit:RANDOM_MATCH.weeklyLimit};
+}
+export function recordRandomMatch(profile,won){
+  const current=randomMatchStatus(profile);if(current.played>=RANDOM_MATCH.weeklyLimit)throw new Error('今週のランダムマッチ3回は終了しています。');
+  const next={key:current.key,played:current.played+1,wins:current.wins+(won?1:0)};profile.randomMatch=next;
+  const reward=won?{...RANDOM_MATCH.winReward}:{coins:0,diamonds:0};if(won){profile.coins=(Number(profile.coins)||0)+reward.coins;profile.diamonds=(Number(profile.diamonds)||0)+reward.diamonds;}
+  return {...next,reward,remaining:Math.max(0,RANDOM_MATCH.weeklyLimit-next.played)};
 }
 
 export function deckPlayable(ids,byId,owned,{ignoreOwnership=false}={}){

@@ -1,13 +1,13 @@
 {
   "name": "mob-piece-battle-home",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node scripts/startup-profile-check.mjs && node scripts/rules-check.mjs && node scripts/gacha-rules-check.mjs && node scripts/competition-rules-check.mjs && node scripts/battle-rules-check.mjs && node scripts/v4-features-check.mjs",
+    "test": "node scripts/startup-profile-check.mjs && node scripts/rules-check.mjs && node scripts/gacha-rules-check.mjs && node scripts/competition-rules-check.mjs && node scripts/battle-rules-check.mjs && node scripts/v4-features-check.mjs && node scripts/v5-features-check.mjs && node scripts/v5-ui-render-check.mjs && node scripts/v6-assets-check.mjs",
     "test:gacha": "node scripts/gacha-browser-check.mjs",
     "assets:index": "node scripts/index-assets.mjs"
   },

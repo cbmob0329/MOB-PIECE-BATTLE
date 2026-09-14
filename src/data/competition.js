@@ -12,6 +12,18 @@ export const QUALIFIER_REWARDS = Object.freeze({
   S:{coins:10000,diamonds:12}, SS:{coins:12000,diamonds:15}
 });
 
+// 毎週のランク報酬。MOB MASTERは既存の王者特典を使用するため対象外。
+export const WEEKLY_RANK_REWARDS = Object.freeze({
+  F:{coins:3000,diamonds:10},
+  E:{coins:4000,diamonds:12},
+  D:{coins:5000,diamonds:15},
+  C:{coins:7000,diamonds:18},
+  B:{coins:9000,diamonds:22},
+  A:{coins:12000,diamonds:26},
+  S:{coins:16000,diamonds:32},
+  SS:{coins:20000,diamonds:40}
+});
+
 // F/SSはユーザー指定。中間ランクは段階的に価値が上がるよう調整。
 export const RANK_UP_REWARDS = Object.freeze({
   F:{runnerUp:{coins:5000,diamonds:10},winner:{coins:10000,diamonds:30}},
@@ -47,3 +59,9 @@ export function isQualifierWeek(month,week){return month<=11&&QUALIFIER_WEEKS.in
 export function isRankUpWeek(month,week){return RANK_UP_MONTHS.includes(month)&&week===RANK_UP_WEEK;}
 export function weekKey({year,month,week}){return `${year}-${String(month).padStart(2,'0')}-${week}`;}
 export function labelDate({year,month,week}){return `${year}年目 ${month}月 第${week}週`;}
+export function nextDate(date){
+  const d={year:Number(date?.year)||1,month:Number(date?.month)||1,week:Number(date?.week)||1};
+  if(d.month===12&&d.week===4)return {year:d.year+1,month:1,week:1};
+  if(d.week===4)return {year:d.year,month:d.month+1,week:1};
+  return {year:d.year,month:d.month,week:d.week+1};
+}

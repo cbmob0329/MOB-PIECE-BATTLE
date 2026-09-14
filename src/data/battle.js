@@ -1,4 +1,4 @@
-import {RANKS} from './competition.js';
+import {RANKS} from './competition.js?v=6.0.0';
 
 export {RANKS};
 
@@ -9,11 +9,7 @@ export const FREE_BATTLE = Object.freeze({
   inferno:{label:'INFERNO',coins:5000,diamonds:1,unlockRank:'A'}
 });
 
-export const RANK_MATCH_REWARDS = Object.freeze({
-  F:{coins:1000,diamonds:3}, E:{coins:1500,diamonds:3}, D:{coins:2000,diamonds:3},
-  C:{coins:3000,diamonds:3}, B:{coins:4000,diamonds:3}, A:{coins:5000,diamonds:3},
-  S:{coins:7000,diamonds:3}, SS:{coins:10000,diamonds:3}
-});
+export const RANDOM_MATCH = Object.freeze({weeklyLimit:3,winReward:{coins:3000,diamonds:10}});
 
 export const CPU_CONFIG = Object.freeze({
   free:{

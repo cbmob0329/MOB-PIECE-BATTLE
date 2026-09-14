@@ -1,5 +1,5 @@
-import {MISSIONS} from '../data/missions.js';
-import {validateDeck} from './deck.js';
+import {MISSIONS} from '../data/missions.js?v=6.0.0';
+import {validateDeck} from './deck.js?v=6.0.0';
 
 export function normalizeMissions(profile){
   if(!profile.missions||typeof profile.missions!=='object')profile.missions={};
@@ -30,3 +30,4 @@ export function metricValue(profile,metric,{figures=[],byId=null}={}){
 export function missionState(profile,mission,ctx){normalizeMissions(profile);const progress=metricValue(profile,mission.metric,ctx),claimed=profile.missions.claimed.includes(mission.id);return {...mission,progress,complete:progress>=mission.target,claimed};}
 export function allMissionStates(profile,ctx){return MISSIONS.map(m=>missionState(profile,m,ctx));}
 export function claimMission(profile,id,ctx){normalizeMissions(profile);const mission=MISSIONS.find(m=>m.id===id);if(!mission)throw new Error('ミッションが見つかりません。');const state=missionState(profile,mission,ctx);if(state.claimed)throw new Error('受け取り済みです。');if(!state.complete)throw new Error('まだ達成していません。');profile.coins=(Number(profile.coins)||0)+mission.reward.coins;profile.diamonds=(Number(profile.diamonds)||0)+mission.reward.diamonds;profile.missions.claimed.push(id);return mission.reward;}
+export function claimAllMissions(profile,ctx){normalizeMissions(profile);const ready=allMissionStates(profile,ctx).filter(x=>x.complete&&!x.claimed);if(!ready.length)throw new Error('受け取れるミッション報酬はありません。');const total={coins:0,diamonds:0,count:ready.length};for(const m of ready){profile.coins=(Number(profile.coins)||0)+m.reward.coins;profile.diamonds=(Number(profile.diamonds)||0)+m.reward.diamonds;profile.missions.claimed.push(m.id);total.coins+=m.reward.coins;total.diamonds+=m.reward.diamonds;}return total;}

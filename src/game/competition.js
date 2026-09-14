@@ -1,7 +1,7 @@
 import {
-  RANKS,QUALIFIER_POINTS,QUALIFIER_REWARDS,RANK_UP_REWARDS,MASTER_BONUS,MASTER_PRIZE,
+  RANKS,QUALIFIER_POINTS,QUALIFIER_REWARDS,RANK_UP_REWARDS,WEEKLY_RANK_REWARDS,MASTER_BONUS,MASTER_PRIZE,
   CPU_NAMES,TOP8,isQualifierWeek,isRankUpWeek,weekKey,nextRank
-} from '../data/competition.js';
+} from '../data/competition.js?v=6.0.0';
 
 const hash=(s)=>{let h=2166136261;for(const ch of String(s)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;};
 const unit=(s)=>(hash(s)%100000)/100000;
@@ -18,6 +18,7 @@ function baseCompetition(){return {
   masterHolder:null,
   masterSinceYear:null,
   autoMasterBonuses:[],
+  weeklyRankBonuses:[],
   seasonHistory:[],
   notices:[]
 };}
@@ -27,7 +28,7 @@ export function normalizeCompetition(profile){
   profile.rank=RANKS.includes(profile.rank)?profile.rank:'F';
   profile.competition={...baseCompetition(),...(profile.competition||{})};
   profile.competition.date={...baseCompetition().date,...(profile.competition.date||{})};
-  for(const k of ['qualifierHistory','rankUpHistory','autoMasterBonuses','seasonHistory','notices'])if(!Array.isArray(profile.competition[k]))profile.competition[k]=[];
+  for(const k of ['qualifierHistory','rankUpHistory','autoMasterBonuses','weeklyRankBonuses','seasonHistory','notices'])if(!Array.isArray(profile.competition[k]))profile.competition[k]=[];
   return profile;
 }
 
@@ -117,6 +118,7 @@ export function recordRankUpResult(profile,won){
   if(round<2){t.round++;return t;}
   t.status='finished';t.reward=RANK_UP_REWARDS[t.rankAtEntry]?.winner||null;award(profile,t.reward);
   if(t.rankAtEntry!=='SS')profile.rank=nextRank(t.rankAtEntry);
+  if(!RANKS.includes(profile.highestRank)||RANKS.indexOf(profile.rank)>RANKS.indexOf(profile.highestRank))profile.highestRank=profile.rank;
   t.rankAfter=profile.rank;profile.competition.rankUpHistory.push(clone(t));return t;
 }
 
@@ -170,13 +172,18 @@ export function recordMasterChallengeResult(profile,playerWon,battleFor=2,battle
 }
 function finishMasterChallenge(profile,mc){
   profile.competition.masterHolder=mc.winner;profile.competition.masterSinceYear=mc.year;mc.awarded=true;
-  if(mc.winner==='PLAYER'){award(profile,MASTER_PRIZE);profile.rank='SS';profile.competition.notices.push({type:'master',title:'MOB MASTER',body:'MOB MASTER決定戦を制した！',coins:MASTER_PRIZE.coins,diamonds:MASTER_PRIZE.diamonds});}
-  else if(mc.defender==='PLAYER'||mc.challenger==='PLAYER')profile.rank='SS';
+  // MOB MASTERは称号。通常ランクの昇格・降格はランクアップトーナメントだけで行う。
+  if(mc.winner==='PLAYER'){award(profile,MASTER_PRIZE);profile.competition.notices.push({type:'master',title:'MOB MASTER',body:'MOB MASTER決定戦を制した！',coins:MASTER_PRIZE.coins,diamonds:MASTER_PRIZE.diamonds});}
 }
 function autoResolveMasterChallenge(profile){const mc=ensureMasterChallenge(profile);if(!mc||mc.winner||mc.defender==='PLAYER'||mc.challenger==='PLAYER')return false;for(let i=0;i<5&&mc.defenderWins<3&&mc.challengerWins<3;i++){if(unit(`master:${mc.year}:${i}:${mc.defender}:${mc.challenger}`)<.5)mc.defenderWins++;else mc.challengerWins++;}mc.winner=mc.defenderWins>=3?mc.defender:mc.challenger;finishMasterChallenge(profile,mc);return true;}
 
 export function syncCompetition(profile){
   normalizeCompetition(profile);let changed=false;const d=profile.competition.date;const key=weekKey(d);
+  if(!isPlayerMaster(profile)&&!profile.competition.weeklyRankBonuses.includes(key)){
+    const rw=WEEKLY_RANK_REWARDS[profile.rank]||WEEKLY_RANK_REWARDS.F;
+    profile.competition.weeklyRankBonuses.push(key);award(profile,rw);
+    profile.competition.notices.push({type:'weekly-rank',title:`RANK ${profile.rank} WEEKLY BONUS`,body:`${d.month}月 第${d.week}週 ランク報酬`,coins:rw.coins,diamonds:rw.diamonds});changed=true;
+  }
   if(isPlayerMaster(profile)&&isQualifierWeek(d.month,d.week)&&!profile.competition.autoMasterBonuses.includes(key)){
     profile.competition.autoMasterBonuses.push(key);award(profile,MASTER_BONUS);profile.competition.notices.push({type:'bonus',title:'MOB MASTER BONUS',body:`${d.month}月 第${d.week}週 王者特典`,coins:MASTER_BONUS.coins,diamonds:MASTER_BONUS.diamonds});changed=true;
   }
@@ -213,6 +220,42 @@ export function archiveSeason(profile){
   const lf=profile.competition.leagueFinal;const table=lf?leagueTable(lf):[];const mc=profile.competition.masterChallenge;
   const row={year,leagueChampion:lf?.champion?{id:lf.champion.id,name:lf.champion.name,wins:lf.champion.wins,losses:lf.champion.losses}:null,leagueTable:table.map(x=>({id:x.id,name:x.name,rank:x.rank,wins:x.wins,losses:x.losses,battleDiff:x.battleDiff,position:x.position})),masterHolder:profile.competition.masterHolder?{id:profile.competition.masterHolder,name:competitorName(profile,profile.competition.masterHolder)}:null,masterChallenge:mc?{defender:mc.defender,defenderName:competitorName(profile,mc.defender),challenger:mc.challenger,challengerName:competitorName(profile,mc.challenger),defenderWins:mc.defenderWins,challengerWins:mc.challengerWins,winner:mc.winner,winnerName:competitorName(profile,mc.winner)}:null};
   profile.competition.seasonHistory.push(row);return row;
+}
+
+
+function testBackup(profile){
+  if(profile.testCompetitionBackup)return;
+  profile.testCompetitionBackup={rank:profile.rank,highestRank:profile.highestRank,competition:clone(profile.competition)};
+}
+export function testEnterRankUpTournament(profile,rank='F'){
+  normalizeCompetition(profile);testBackup(profile);profile.rank=RANKS.includes(rank)?rank:'F';profile.highestRank=profile.rank;
+  profile.competition.date={year:Math.max(1,Number(profile.competition.date.year)||1),month:4,week:2};
+  profile.competition.rankUpCurrent=null;return chooseRankUpTournament(profile,true);
+}
+export function testEnterLeague(profile){
+  normalizeCompetition(profile);testBackup(profile);const year=Math.max(1,Number(profile.competition.date.year)||1);
+  if(profile.competition.masterHolder==='PLAYER')profile.competition.masterHolder='CPU_01';
+  profile.competition.date={year,month:12,week:1};profile.competition.leaguePoints=999999;profile.competition.leagueFinal=null;profile.competition.masterChallenge=null;
+  return ensureLeagueFinal(profile);
+}
+export function testEnterMasterMatch(profile){
+  normalizeCompetition(profile);testBackup(profile);const year=Math.max(2,Number(profile.competition.date.year)||2);
+  profile.rank='SS';profile.highestRank='SS';profile.competition.masterHolder='CPU_01';profile.competition.masterSinceYear=Math.max(1,year-1);
+  profile.competition.date={year,month:12,week:3};
+  profile.competition.leagueFinal={key:`Y${year}`,year,finalists:[
+    {id:'PLAYER',name:'PLAYER',rank:'SS',qualifierPoints:999999,isPlayer:true},
+    {id:'CPU_01',name:cpuName(0),rank:'SS',qualifierPoints:900,isPlayer:false},
+    {id:'CPU_02',name:cpuName(1),rank:'SS',qualifierPoints:850,isPlayer:false},
+    {id:'CPU_03',name:cpuName(2),rank:'S',qualifierPoints:800,isPlayer:false},
+    {id:'CPU_04',name:cpuName(3),rank:'S',qualifierPoints:750,isPlayer:false},
+    {id:'CPU_05',name:cpuName(4),rank:'A',qualifierPoints:700,isPlayer:false},
+    {id:'CPU_06',name:cpuName(5),rank:'A',qualifierPoints:650,isPlayer:false},
+    {id:'CPU_07',name:cpuName(6),rank:'B',qualifierPoints:600,isPlayer:false}
+  ],playerResults:[],champion:{id:'PLAYER',name:'PLAYER',rank:'SS',wins:7,losses:0,battleDiff:10,qualifierPoints:999999},awarded:false};
+  profile.competition.masterChallenge=null;return ensureMasterChallenge(profile);
+}
+export function restoreCompetitionFromTest(profile){
+  const b=profile.testCompetitionBackup;if(!b)return false;profile.rank=b.rank;profile.highestRank=b.highestRank;profile.competition=clone(b.competition);delete profile.testCompetitionBackup;return true;
 }
 
 export function dismissCompetitionNotice(profile){return profile.competition.notices.shift()||null;}

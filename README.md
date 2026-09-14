@@ -1,4 +1,4 @@
-# MOB PIECE BATTLE v4.1 BOOT FIX
+# MOB PIECE BATTLE v5.0 WEEK / RANDOM / DEX UPDATE
 
 ## 2026-09-13 起動不具合修正
 - v4でMISSION正規化処理がプロフィール全体ではなく `missions` オブジェクトだけを返してしまい、HOME描画前にプロフィール情報が失われて画面が背景色だけになる不具合を修正。
@@ -30,7 +30,7 @@ ES Modulesを使用するため、index.htmlのダブルクリックではなく
 - 初回のみウェルカムギフト50ダイヤ。v1のセンター・編成を保持してv2へ移行。
 
 ガチャによる入手・所持数・ルビー変換に加え、v170最終系を基準にした個別5vs5バトルを実装済みです。
-FREE BATTLE / RANK MATCH / MOBリーグ予選 / ランクアップトーナメント / MOBリーグ本戦 / MOB MASTER決定戦は、同じ本戦バトルエンジンを使用します。
+FREE BATTLE / RANDOM MATCH / MOBリーグ予選 / ランクアップトーナメント / MOBリーグ本戦 / MOB MASTER決定戦は、同じ本戦バトルエンジンを使用します。
 通常プレイでは戦闘開始時に25体・COST80・同一フィギュア上限・所持数を検証します。`test-settings.js` が有効な開発中のみ所有境界を無視して動作確認できます。
 原仕様の「総合値だけ比較する簡易戦闘」には戻さず、フィギュア1体ずつのHP・ATK・DEF・SPDと行動順を使う5vs5戦闘です。
 
@@ -106,11 +106,11 @@ HOME右上「展示を変更」または左右の棚から、後ろに飾る4体
 - レア度ごとの「強打」確率とSPD依存のCRITICALを実装。これはフィギュア固有スキルではなく、戦闘共通の強打演出。
 - 演出：5体DRAW、READY、CENTER/交換/BOOST、`集合中… → START!`、攻撃突進、ヒット、ダメージ数字、CRITICAL、被弾、KO吹き飛び、ラウンド結果、次BATTLE、最終リザルト。
 - FREE BATTLE報酬：EASY 1,000/1、HARD 3,000/1、INFERNO 5,000/1（COIN/DIAMOND）。
-- RANK MATCH勝利報酬：F 1,000/3、E 1,500/3、D 2,000/3、C 3,000/3、B 4,000/3、A 5,000/3、S 7,000/3、SS 10,000/3。
+- RANDOM MATCH：1週間3回まで。勝利時 3,000 COIN / 10 DIAMOND。ランク変動なし。
 
 ## 年間大会システム（今回追加）
 
-- 1か月4週、1年48週で進行。大会画面の `NEXT WEEK` で週を進める。
+- 1か月4週、1年48週で進行。週は自動では進まず、HOMEの「週を進める」→確認「はい / いいえ」でのみ進行。
 - 1〜11月の第1週・第3週はMOBリーグ予選。PLAYERは同ランクCPUと2試合。
 - 予選ポイント：F +1/-1、E +2/-1、D +3/-1、C +4/-2、B +5/-2、A +6/-2、S +8/-3、SS +12/-3。
 - 予選1勝報酬：F 1000/1、E 1500/2、D 2000/3、C 3000/5、B 5000/7、A 8000/10、S 10000/12、SS 12000/15（COIN/DIAMOND）。
@@ -175,3 +175,46 @@ Image assets are intentionally NOT included in this archive. Existing GitHub ass
 
 この配布ZIPには PNG / JPG / JPEG / WebP / GIF を含めていません。
 画像はGitHub側の既存素材パスを参照する前提です。
+
+## v4.2 BOOT / SAFARI FIX
+
+- iPhone/Safari等で背景色だけ表示される起動停止を防ぐため、JSON Module Import Attributes (`with { type: 'json' }`) を使用しない構成へ変更しました。
+- フィギュア/タグ/召喚メッセージのマスターデータは通常のJavaScript Moduleとして読み込みます。
+- 起動時にHOME用センターフィギュアが不正でも公開済みフィギュアへ自動フォールバックします。
+- 起動に失敗した場合、無地背景のまま停止せず、画面上に起動エラー内容を表示します。
+- v4.2用のキャッシュバスターを追加しました。
+- v4までの5デッキ、所持上限/ルビー変換、MISSION、図鑑、対戦履歴、HALL OF FAME、大会、5vs5バトルは保持しています。
+- 画像ファイルはZIPに含みません。GitHub側の既存画像を参照する前提です。
+
+
+## v5.0 WEEK / RANDOM MATCH / DEX / BATTLE MENU UPDATE
+
+- HOMEの「何年目 / 何月 / 第何週」を大型表示へ変更。
+- 週は完全手動進行。HOMEの「週を進める」から必ず確認ダイアログを表示。
+- MOBリーグ予選、ランクアップ大会の参加選択、TOP8入り後の12月MOBリーグ、MOB MASTER決定戦など、未完了の重要イベントがある場合は週送りをロック。
+- 毎週ランク報酬（MOB MASTER除外。既存王者特典を保持）：
+  - F 3,000 / 10
+  - E 4,000 / 12
+  - D 5,000 / 15
+  - C 7,000 / 18
+  - B 9,000 / 22
+  - A 12,000 / 26
+  - S 16,000 / 32
+  - SS 20,000 / 40
+  （COIN / DIAMOND）
+- RANK MATCHを削除。通常ランクはランクアップトーナメント優勝時のみ昇格。
+- RANDOM MATCH実装：週3回、同ランクCPU、勝利時3,000 COIN + 10 DIAMOND。敗北時報酬なし。
+- FIGURE図鑑に検索、所持/未所持、レア度、タグ絞り込み、図鑑No./名前/レア度/COST/HP/ATK/DEF/SPD/所持数/勝利数の並び替えを追加。
+- BATTLEメニューをスマホゲーム向けに再構成。RANDOM MATCHを週回数・報酬つき大型カード、FREE BATTLEを3難易度タイル、大会を大型導線に変更し軽い演出を追加。
+- TEST MODEに好きなランクのランクアップトーナメント、MOBリーグ、MOB MASTER決定戦への直接移動を追加。
+- MOB MASTERは称号として扱い、MASTER決定戦では通常ランクを変更しない。
+- 配布ZIPには画像を含めない。GitHub側の既存画像を参照する。
+
+## v6 UI素材適用
+- `menu/001.png`〜`menu/017.png`、`icon/001.png`〜`icon/014.png`、`rank/001.png`〜`rank/014.png` をGitHub側から参照します。
+- 画像ファイル自体は更新ZIPに同梱しません。
+- HOME、BATTLE、FIGURE、GACHA、MISSION、HISTORY、CALENDAR、ランク/レア度/通貨表示へ新素材を適用しています。
+- MISSIONは達成済みを上部へ表示し、一括受け取りに対応。
+- HISTORYはFREE / RANDOM / MOB LEAGUE / RANK TOURNAMENT / MOB MASTERで絞り込み可能。
+- CALENDARはYEAR / MONTH表示を切り替え可能。
+- 起動時と画像が多い画面でローディングUIを表示します。

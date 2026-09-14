@@ -9,7 +9,7 @@ globalThis.localStorage={
 
 const {profile}=await import('../src/game/profile.js');
 const {byId}=await import('../src/data/catalog.js');
-assert.equal(profile.version,4,'profile.version must survive normalization');
+assert.equal(profile.version,5,'profile.version must survive normalization');
 assert.equal(profile.rank,'F','default rank must survive normalization');
 assert.ok(Array.isArray(profile.deck),'profile.deck must exist');
 assert.equal(profile.deckPresets.length,5,'five deck slots must exist');

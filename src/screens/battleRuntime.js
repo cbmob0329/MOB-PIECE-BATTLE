@@ -1,10 +1,10 @@
-import {figures,byId,tags,imagePath} from '../data/catalog.js';
-import {RULES} from '../game/deck.js';
+import {figures,byId,tags,imagePath} from '../data/catalog.js?v=6.0.0';
+import {RULES} from '../game/deck.js?v=6.0.0';
 import {
   deckPlayable,buildCpuDeck,createMatch,nextRound,exchangePlayer,movePlayerCard,activatePieceBoost,
   fighterRows,teamStats,tagEffects,pickTarget,hitDamage,powerHitChance,critChance,aliveHp
-} from '../game/battle.js';
-import {BATTLE_TIMING} from '../data/battle.js';
+} from '../game/battle.js?v=6.0.0';
+import {BATTLE_TIMING} from '../data/battle.js?v=6.0.0';
 
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -152,7 +152,7 @@ async function roundResult(ov,match,won){
   return done;
 }
 
-function metadataMarkup(meta){if(!meta)return '';const reward=meta.reward;return `${meta.rankResult?`<div class="mpb-final-rank"><small>RANK MATCH</small><b>RANK ${esc(meta.rankResult.tier)}</b><span>${meta.rankResult.points}/5 POINT</span>${meta.rankResult.promoted?'<strong>RANK UP!</strong>':meta.rankResult.demoted?'<strong>RANK DOWN</strong>':''}</div>`:''}${meta.message?`<p class="mpb-final-message">${esc(meta.message)}</p>`:''}${reward?`<div class="mpb-final-reward"><small>REWARD</small><b>${Number(reward.coins||0).toLocaleString('ja-JP')} COIN</b><b>${Number(reward.diamonds||0).toLocaleString('ja-JP')} DIAMOND</b></div>`:''}`;}
+function metadataMarkup(meta){if(!meta)return '';const reward=meta.reward;return `${meta.message?`<p class="mpb-final-message">${esc(meta.message)}</p>`:''}${reward?`<div class="mpb-final-reward"><small>REWARD</small><b>${Number(reward.coins||0).toLocaleString('ja-JP')} COIN</b><b>${Number(reward.diamonds||0).toLocaleString('ja-JP')} DIAMOND</b></div>`:''}`;}
 async function finalResult(ov,match,won,request,onResolved){
   const result={won,battleFor:match.pWins,battleAgainst:match.cWins,match,context:request.context||null};let meta=null;
   if(onResolved)meta=await onResolved(result);

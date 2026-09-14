@@ -1,6 +1,24 @@
 import assert from 'node:assert/strict';
-import {normalizeCompetition,recordQualifierResult,advanceWeek,chooseRankUpTournament,recordRankUpResult,syncCompetition,isPlayerMaster} from '../src/game/competition.js';
-import {QUALIFIER_POINTS,QUALIFIER_REWARDS,RANK_UP_REWARDS,MASTER_BONUS} from '../src/data/competition.js';
+import {normalizeCompetition,recordQualifierResult,advanceWeek,chooseRankUpTournament,recordRankUpResult,syncCompetition,isPlayerMaster,canAdvanceWeek,testEnterRankUpTournament,testEnterLeague,testEnterMasterMatch,restoreCompetitionFromTest} from '../src/game/competition.js';
+import {QUALIFIER_POINTS,QUALIFIER_REWARDS,RANK_UP_REWARDS,WEEKLY_RANK_REWARDS,MASTER_BONUS} from '../src/data/competition.js';
+
+const weekly=normalizeCompetition({coins:0,diamonds:0,rank:'F'});
+syncCompetition(weekly);
+assert.deepEqual(WEEKLY_RANK_REWARDS.F,{coins:3000,diamonds:10});
+assert.equal(weekly.coins,3000);assert.equal(weekly.diamonds,10);
+syncCompetition(weekly);assert.equal(weekly.coins,3000,'weekly reward must not duplicate');
+
+const gate=normalizeCompetition({coins:0,diamonds:0,rank:'F'});
+assert.equal(canAdvanceWeek(gate).ok,false,'unfinished qualifier must block week advance');
+recordQualifierResult(gate,true);recordQualifierResult(gate,true);
+assert.equal(canAdvanceWeek(gate).ok,true,'finished qualifier must allow week advance');
+
+const tm=normalizeCompetition({coins:0,diamonds:0,rank:'D',highestRank:'D',competition:{date:{year:1,month:2,week:4}}});
+testEnterRankUpTournament(tm,'A');assert.equal(tm.rank,'A');assert.equal(tm.competition.date.month,4);assert.equal(tm.competition.date.week,2);
+restoreCompetitionFromTest(tm);assert.equal(tm.rank,'D');
+testEnterLeague(tm);assert.equal(tm.competition.date.month,12);assert.equal(tm.competition.date.week,1);assert.ok(tm.competition.leagueFinal.finalists.some(x=>x.id==='PLAYER'));assert.equal(canAdvanceWeek(tm).ok,false,'TOP8 player must finish December league matches before week advance');
+restoreCompetitionFromTest(tm);testEnterMasterMatch(tm);assert.equal(tm.competition.date.week,3);assert.ok(tm.competition.masterChallenge);assert.equal(canAdvanceWeek(tm).ok,false,'player MOB MASTER match must block week advance');
+restoreCompetitionFromTest(tm);
 
 const p=normalizeCompetition({coins:0,diamonds:0,rank:'F'});
 assert.deepEqual(p.competition.date,{year:1,month:1,week:1});
