@@ -1,10 +1,10 @@
-import {figures,byId,tags,imagePath} from '../data/catalog.js?v=6.1.1';
-import {RULES} from '../game/deck.js?v=6.1.1';
+import {figures,byId,tags,imagePath} from '../data/catalog.js?v=7.2.0';
+import {RULES} from '../game/deck.js?v=7.2.0';
 import {
   deckPlayable,buildCpuDeck,createMatch,nextRound,exchangePlayer,movePlayerCard,activatePieceBoost,
   fighterRows,teamStats,tagEffects,pickTarget,hitDamage,powerHitChance,critChance,aliveHp
-} from '../game/battle.js?v=6.1.1';
-import {BATTLE_TIMING} from '../data/battle.js?v=6.1.1';
+} from '../game/battle.js?v=7.2.0';
+import {BATTLE_TIMING} from '../data/battle.js?v=7.2.0';
 
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -127,10 +127,15 @@ async function animateStrike(arena,a,d,{powerHit,crit,ko,damage}){
   await wait(Math.round(dur*.5));
 }
 
+function arenaBoardMarkup(){
+  const cpu=Array.from({length:5},(_,i)=>`<span class="mpb-board-slot cpu pos-${i}"></span>`).join('');
+  const player=Array.from({length:5},(_,i)=>`<span class="mpb-board-slot player pos-${i}"></span>`).join('');
+  return `<div class="mpb-arena-backdrop" aria-hidden="true"><span class="mpb-board-audience"></span><span class="mpb-board-lights"></span><div class="mpb-stage-board">${cpu}${player}</div></div>`;
+}
 async function combatPhase(ov,match,request){
   const pRows=fighterRows(match.pHand,match.cHand,'player',2,byId,tagsMap,match.boostIndex),cRows=fighterRows(match.cHand,match.pHand,'cpu',match.cCenter,byId,tagsMap),rows=[...pRows,...cRows];
   const p=teamStats(pRows,match.pHand,byId,tagsMap),c=teamStats(cRows,match.cHand,byId,tagsMap);let pLife=p.hp,cLife=c.hp;
-  ov.innerHTML=`<section class="mpb-battle-panel fight-phase">${score(match)}${lifeBar('CPU LIFE',cLife,c.hp,'cpu')}<div class="mpb-fight-summary top">${totalStats('CPU',c,'cpu')}${activeTags(match.cHand)}</div><div class="mpb-arena"><div class="mpb-arena-ring"></div>${cRows.map(fighterMarkup).join('')}${pRows.map(fighterMarkup).join('')}<strong class="mpb-start-call">集合中…</strong></div><div class="mpb-fight-summary bottom">${totalStats('PLAYER',p,'player')}${activeTags(match.pHand)}</div>${lifeBar('PLAYER LIFE',pLife,p.hp,'player')}</section>`;
+  ov.innerHTML=`<section class="mpb-battle-panel fight-phase">${score(match)}${lifeBar('CPU LIFE',cLife,c.hp,'cpu')}<div class="mpb-fight-summary top">${totalStats('CPU',c,'cpu')}${activeTags(match.cHand)}</div><div class="mpb-arena">${arenaBoardMarkup()}<div class="mpb-arena-ring"></div>${cRows.map(fighterMarkup).join('')}${pRows.map(fighterMarkup).join('')}<strong class="mpb-start-call">集合中…</strong></div><div class="mpb-fight-summary bottom">${totalStats('PLAYER',p,'player')}${activeTags(match.pHand)}</div>${lifeBar('PLAYER LIFE',pLife,p.hp,'player')}</section>`;
   bindImageFallback(ov);const arena=ov.querySelector('.mpb-arena'),call=ov.querySelector('.mpb-start-call');arena.classList.add('gathering');await wait(BATTLE_TIMING.gather);call.textContent='START!';arena.classList.add('start-flash');await wait(BATTLE_TIMING.startFlash);call.remove();arena.classList.remove('gathering','start-flash');arena.classList.add('combat');
   let steps=0;
   while(pRows.some(x=>x.hp>0)&&cRows.some(x=>x.hp>0)&&steps<320){

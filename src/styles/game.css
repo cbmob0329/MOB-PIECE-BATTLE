@@ -90,7 +90,7 @@ nav{height:calc(78px + env(safe-area-inset-bottom));padding-top:4px}nav button{g
 
 @media(max-width:350px){.wallet-v6>span{width:36px;grid-template-columns:15px 1fr;padding:2px}.wallet-v6 .wallet-art{width:15px;height:15px}.player-rank-line i{display:none}.home-menu-grid{grid-template-columns:repeat(2,1fr)}.battle-mode-visual-card.free-mode{grid-template-columns:92px 1fr}.battle-mode-content{padding:9px 7px}.battle-annual-grid{grid-template-columns:1fr}.asset-page-heading{grid-template-columns:68px 1fr}.asset-page-heading>.menu-art{width:68px;height:68px}.calendar-year-month{grid-template-columns:48px 1fr}}
 
-/* v6.1.1 menu / profile / settings refinements */
+/* v7.2.0 menu / profile / settings refinements */
 .topbar{height:calc(96px + env(safe-area-inset-top));padding-top:calc(10px + env(safe-area-inset-top));align-items:flex-start}
 .player{align-items:flex-start;gap:8px}
 .player-copy{display:grid;gap:2px;min-width:0}
@@ -164,7 +164,7 @@ nav{height:calc(78px + env(safe-area-inset-bottom));padding-top:4px}nav button{g
 }
 
 
-/* v6.1.1 - menu icons only + DECK visual size normalization */
+/* v7.2.0 - menu icons only + DECK visual size normalization */
 .home-menu-tile{
   min-height:0!important;
   aspect-ratio:1/1.12;
@@ -204,4 +204,130 @@ nav .nav-art{min-height:42px;display:grid;place-items:center;overflow:visible}
 @media(max-width:350px){
   .bottom-menu-icon-art{width:37px!important;height:37px!important}
   .nav-art .bottom-menu-icon-art .ui-asset{transform:scale(1.36)}
+}
+
+/* v7.2.0 - icon size normalization (home menu + bottom nav) */
+.home-menu-shelf-row{
+  align-items:stretch;
+}
+.home-menu-tile{
+  min-height:126px!important;
+  aspect-ratio:1/1.02!important;
+  padding:8px 6px 10px!important;
+  border-radius:18px 18px 14px 14px;
+}
+.home-menu-tile>span:not(.home-menu-visual){
+  display:none!important;
+}
+.home-menu-visual{
+  width:100%;
+  height:100%;
+  min-height:0;
+  display:grid;
+  place-items:center;
+}
+.home-menu-visual>.ui-asset-frame,
+.home-menu-visual>.menu-art,
+.home-menu-visual>.icon-art{
+  width:100%;
+  height:100%;
+  display:grid;
+  place-items:center;
+}
+.home-menu-visual .ui-asset-fallback{
+  font-size:7px;
+}
+.home-menu-tile .home-menu-art,
+.home-menu-tile .deck-menu-art{
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:auto!important;
+  padding:0!important;
+  background:transparent!important;
+}
+.home-menu-tile .ui-asset{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transform:scale(1.06);
+  transform-origin:center bottom;
+}
+.home-menu-tile.menu-battle .ui-asset,
+.home-menu-tile.menu-figure .ui-asset,
+.home-menu-tile.menu-gacha .ui-asset,
+.home-menu-tile.menu-player .ui-asset,
+.home-menu-tile.menu-settings .ui-asset,
+.home-menu-tile.menu-collection .ui-asset,
+.home-menu-tile.menu-mission .ui-asset,
+.home-menu-tile.menu-calendar .ui-asset,
+.home-menu-tile.menu-history .ui-asset,
+.home-menu-tile.menu-shop .ui-asset{
+  transform:scale(1.06);
+}
+.home-menu-tile.menu-deck .ui-asset{
+  transform:scale(1.18)!important;
+}
+.home-menu-tile.future .ui-asset{
+  transform:scale(1.03);
+}
+
+nav{
+  padding-left:10px;
+  padding-right:10px;
+  gap:2px;
+}
+nav .nav-button{
+  min-width:0;
+}
+nav button>.nav-art{
+  width:54px;
+  height:54px;
+  min-height:54px;
+  display:grid;
+  place-items:center;
+  overflow:visible;
+}
+nav .nav-art>.ui-asset-frame,
+nav .nav-art>.menu-art,
+nav .nav-art>.icon-art,
+nav .nav-art>.bottom-menu-art,
+nav .nav-art>.bottom-menu-icon-art{
+  width:100%!important;
+  height:100%!important;
+  display:grid;
+  place-items:center;
+}
+nav .nav-art .ui-asset{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transform:scale(1.04);
+  transform-origin:center bottom;
+}
+nav .nav-home-art .ui-asset,
+nav .nav-figure-art .ui-asset,
+nav .nav-battle-art .ui-asset,
+nav .nav-gacha-art .ui-asset{
+  transform:scale(1.04);
+}
+nav .nav-deck-art .ui-asset{
+  transform:scale(1.20)!important;
+}
+nav .active:before{
+  inset:2px 5px;
+  border-radius:14px;
+}
+@media(max-width:350px){
+  .home-menu-tile{
+    min-height:118px!important;
+    padding:7px 5px 8px!important;
+  }
+  nav button>.nav-art{
+    width:48px;
+    height:48px;
+    min-height:48px;
+  }
+  nav .nav-deck-art .ui-asset{
+    transform:scale(1.16)!important;
+  }
 }

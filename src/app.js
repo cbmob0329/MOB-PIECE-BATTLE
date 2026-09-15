@@ -1,30 +1,30 @@
-import './namespace.js?v=6.1.1';
-import {displayScreen} from './screens/display.js?v=6.1.1';
-import {calendarScreen} from './screens/calendar.js?v=6.1.1';
-import {menuArt,iconArt,rankArt,criticalUiUrls,preloadUrls} from './components/uiAssets.js?v=6.1.1';
-import {usableFigure,OWN_CAP} from './data/gacha.js?v=6.1.1';
-import {gachaScreen,initGacha,bindGacha,handleGacha} from './screens/gacha.js?v=6.1.1';
-import './components/icons.js?v=6.1.1';
-import {figures, tags, byId, imagePath, modes} from './data/catalog.js?v=6.1.1';
-import {profile,saveProfile,storageAvailable} from './game/profile.js?v=6.1.1';
-import {validateDeck,autoBuildDeck,switchDeckSlot} from './game/deck.js?v=6.1.1';
-import {homeScreen} from './screens/showroom.js?v=6.1.1';
-import {collectionScreen,deckScreen,battleScreen,infoScreen} from './screens/library.js?v=6.1.1';
-import {competitionScreen} from './screens/competition.js?v=6.1.1';
-import {missionScreen} from './screens/mission.js?v=6.1.1';
-import {historyScreen,hallOfFameScreen} from './screens/records.js?v=6.1.1';
+import './namespace.js?v=7.2.0';
+import {displayScreen} from './screens/display.js?v=7.2.0';
+import {calendarScreen} from './screens/calendar.js?v=7.2.0';
+import {menuArt,iconArt,rankArt,criticalUiUrls,preloadUrls} from './components/uiAssets.js?v=7.2.0';
+import {usableFigure,OWN_CAP} from './data/gacha.js?v=7.2.0';
+import {gachaScreen,initGacha,bindGacha,handleGacha} from './screens/gacha.js?v=7.2.0';
+import './components/icons.js?v=7.2.0';
+import {figures, tags, byId, imagePath, modes} from './data/catalog.js?v=7.2.0';
+import {profile,saveProfile,storageAvailable} from './game/profile.js?v=7.2.0';
+import {validateDeck,autoBuildDeck,switchDeckSlot} from './game/deck.js?v=7.2.0';
+import {homeScreen} from './screens/showroom.js?v=7.2.0';
+import {collectionScreen,deckScreen,battleScreen,infoScreen} from './screens/library.js?v=7.2.0';
+import {competitionScreen} from './screens/competition.js?v=7.2.0';
+import {missionScreen} from './screens/mission.js?v=7.2.0';
+import {historyScreen,hallOfFameScreen} from './screens/records.js?v=7.2.0';
 import {
   syncCompetition,recordQualifierResult,chooseRankUpTournament,recordRankUpResult,
   recordLeagueFinalResult,recordMasterChallengeResult,advanceWeek,dismissCompetitionNotice,
   getCompetitionNotice,isPlayerMaster,ensureQualifier,currentRankUp,currentLeagueMatches,getMasterChallenge,getLeagueFinal,
   testEnterRankUpTournament,testEnterLeague,testEnterMasterMatch,restoreCompetitionFromTest
-} from './game/competition.js?v=6.1.1';
-import {labelDate,MASTER_PRIZE,CPU_NAMES,RANKS} from './data/competition.js?v=6.1.1';
-import {launchBattle} from './screens/battleRuntime.js?v=6.1.1';
-import {battleReward,normalizeBattleProgress,randomMatchStatus,recordRandomMatch} from './game/battle.js?v=6.1.1';
-import {testSettings} from './data/test-settings.js?v=6.1.1';
-import {claimMission,claimAllMissions} from './game/missions.js?v=6.1.1';
-import {applyBattleFigureRecords,enrichedHistoryRow,figureRecord} from './game/records.js?v=6.1.1';
+} from './game/competition.js?v=7.2.0';
+import {labelDate,MASTER_PRIZE,CPU_NAMES,RANKS} from './data/competition.js?v=7.2.0';
+import {launchBattle} from './screens/battleRuntime.js?v=7.2.0';
+import {battleReward,normalizeBattleProgress,randomMatchStatus,recordRandomMatch} from './game/battle.js?v=7.2.0';
+import {testSettings} from './data/test-settings.js?v=7.2.0';
+import {claimMission,claimAllMissions} from './game/missions.js?v=7.2.0';
+import {applyBattleFigureRecords,enrichedHistoryRow,figureRecord} from './game/records.js?v=7.2.0';
 
 export const icon=window.MPB.components.icon;
 export const art=(f,cls='')=>{if(!f)return `<span class="missing ${cls}">画像準備中</span>`;return `<img class="${cls}" src="${imagePath(f)}" alt="${String(f.name||'FIGURE').replace(/"/g,'&quot;')}" loading="lazy"><span class="missing" hidden>画像準備中<br>${f.displayNo||''}</span>`;};
@@ -56,7 +56,7 @@ function render({preserveScroll=false}={}){
   const master=isPlayerMaster(profile);const rankKey=master?'MOB_MASTER':profile.rank;
   const avatarFigure=byId.get(profile.avatarId)||byId.get(profile.centerId)||figures.find(f=>!f.pending);
   const avatarMarkup=avatarFigure?`<span class="avatar avatar-figure">${art(avatarFigure,'top-avatar-art')}</span>`:`<span class="avatar">M<span>01</span></span>`;
-  app.innerHTML=`<div class="game-shell"><header class="topbar"><button class="player" data-go="player">${avatarMarkup}<span class="player-copy"><b>PLAYER</b><small class="season-mini">${labelDate(profile.competition.date)}</small><small class="player-rank-line">${iconArt('rank','top-rank-symbol','RANK')}${rankArt(rankKey,'top-rank-art',rankKey)}<i>${master?'MOB MASTER':'CHALLENGER'}</i></small></span></button><div class="wallet wallet-v6"><span title="${Number(profile.coins||0).toLocaleString('ja-JP')} COIN">${iconArt('coin','wallet-art','COIN')}<b>${compact(profile.coins)}</b></span><span title="${Number(profile.diamonds||0).toLocaleString('ja-JP')} DIAMOND">${iconArt('diamond','wallet-art','DIAMOND')}<b>${profile.diamonds}</b></span><span title="${Number(profile.rubies||0).toLocaleString('ja-JP')} RUBY">${iconArt('ruby','wallet-art','RUBY')}<b>${profile.rubies}</b></span></div><button class="settings" data-go="settings" aria-label="設定">${menuArt('settings','top-settings-art','SETTINGS')}</button></header><main id="main">${page}</main><nav aria-label="メインナビゲーション">${nav.map(([id,ic,label,menuKey])=>{const active=route===id||(battleRoute&&id==='battle');const artMarkup=id==='deck'?iconArt('deck','bottom-menu-icon-art',label):(menuKey?menuArt(menuKey,'bottom-menu-art',label):icon(ic));return `<button data-go="${id}" class="${active?'active':''}" ${active?'aria-current="page"':''} aria-label="${label}"><span class="nav-art">${artMarkup}</span>${active?'<i></i>':''}</button>`;}).join('')}</nav><div class="screen-loader" data-screen-loader hidden><div><b>MOB PIECE BATTLE</b><span></span><small>IMAGE LOADING...</small></div></div><div class="toast" role="status"></div>${noticeMarkup()}</div>`;
+  app.innerHTML=`<div class="game-shell"><header class="topbar"><button class="player" data-go="player">${avatarMarkup}<span class="player-copy"><b>PLAYER</b><small class="season-mini">${labelDate(profile.competition.date)}</small><small class="player-rank-line">${iconArt('rank','top-rank-symbol','RANK')}${rankArt(rankKey,'top-rank-art',rankKey)}<i>${master?'MOB MASTER':'CHALLENGER'}</i></small></span></button><div class="wallet wallet-v6"><span title="${Number(profile.coins||0).toLocaleString('ja-JP')} COIN">${iconArt('coin','wallet-art','COIN')}<b>${compact(profile.coins)}</b></span><span title="${Number(profile.diamonds||0).toLocaleString('ja-JP')} DIAMOND">${iconArt('diamond','wallet-art','DIAMOND')}<b>${profile.diamonds}</b></span><span title="${Number(profile.rubies||0).toLocaleString('ja-JP')} RUBY">${iconArt('ruby','wallet-art','RUBY')}<b>${profile.rubies}</b></span></div><button class="settings" data-go="settings" aria-label="設定">${menuArt('settings','top-settings-art','SETTINGS')}</button></header><main id="main">${page}</main><nav aria-label="メインナビゲーション">${nav.map(([id,ic,label,menuKey])=>{const active=route===id||(battleRoute&&id==='battle');const artMarkup=id==='deck'?iconArt('deck','bottom-menu-icon-art',label):(menuKey?menuArt(menuKey,'bottom-menu-art',label):icon(ic));return `<button data-go="${id}" class="nav-button nav-${id} ${active?'active':''}" ${active?'aria-current="page"':''} aria-label="${label}"><span class="nav-art nav-${id}-art">${artMarkup}</span>${active?'<i></i>':''}</button>`;}).join('')}</nav><div class="screen-loader" data-screen-loader hidden><div><b>MOB PIECE BATTLE</b><span></span><small>IMAGE LOADING...</small></div></div><div class="toast" role="status"></div>${noticeMarkup()}</div>`;
   if(route==='gacha')bindGacha();
   app.querySelector('#main').scrollTop=scroll;
   if(focused)app.querySelector('[data-add="'+focused+'"]')?.focus({preventScroll:true});

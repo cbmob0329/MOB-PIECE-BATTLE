@@ -1,6 +1,6 @@
-import {QUALIFIER_POINTS,QUALIFIER_REWARDS,RANK_UP_REWARDS,WEEKLY_RANK_REWARDS,MASTER_BONUS,MASTER_PRIZE,RANKS,isQualifierWeek,isRankUpWeek,labelDate} from '../data/competition.js?v=6.1.1';
+import {QUALIFIER_POINTS,QUALIFIER_REWARDS,RANK_UP_REWARDS,WEEKLY_RANK_REWARDS,MASTER_BONUS,MASTER_PRIZE,RANKS,isQualifierWeek,isRankUpWeek,labelDate} from '../data/competition.js?v=7.2.0';
 
-import {isPlayerMaster,currentQualifier,currentRankUp,leagueStandings,currentLeagueMatches,leagueFinalTable,getLeagueFinal,getMasterChallenge} from '../game/competition.js?v=6.1.1';
+import {isPlayerMaster,currentQualifier,currentRankUp,leagueStandings,currentLeagueMatches,leagueFinalTable,getLeagueFinal,getMasterChallenge} from '../game/competition.js?v=7.2.0';
 
 const money=n=>Number(n||0).toLocaleString('ja-JP');
 const reward=(r)=>r?`${money(r.coins)} COIN / ${money(r.diamonds)} DIAMOND`:'報酬設定待ち';
