@@ -1,10 +1,10 @@
-import {figures,byId,tags,imagePath} from '../data/catalog.js?v=6.1.0';
-import {RULES} from '../game/deck.js?v=6.1.0';
+import {figures,byId,tags,imagePath} from '../data/catalog.js?v=6.1.1';
+import {RULES} from '../game/deck.js?v=6.1.1';
 import {
   deckPlayable,buildCpuDeck,createMatch,nextRound,exchangePlayer,movePlayerCard,activatePieceBoost,
   fighterRows,teamStats,tagEffects,pickTarget,hitDamage,powerHitChance,critChance,aliveHp
-} from '../game/battle.js?v=6.1.0';
-import {BATTLE_TIMING} from '../data/battle.js?v=6.1.0';
+} from '../game/battle.js?v=6.1.1';
+import {BATTLE_TIMING} from '../data/battle.js?v=6.1.1';
 
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));

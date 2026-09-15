@@ -21,6 +21,7 @@ const dex=collectionScreen(ctx,'','ALL','ALL','DEX_ASC','ALL');
 assert.ok(dex.includes('figure-sort'));assert.ok(dex.includes('figure-tag-filter'));assert.ok(dex.includes('名前順'));
 const battle=battleScreen(ctx);
 assert.ok(battle.includes('RANDOM MATCH'));assert.ok(battle.includes('3,000 COIN + 10 DIAMOND'));assert.ok(!battle.includes('RANK MATCH'));
+profile.testMode=true;
 const comp=competitionScreen(ctx);
 assert.ok(comp.includes('TEST MODE'));assert.ok(comp.includes('WEEKLY RANK REWARD'));
 console.log('v5 UI render ok');

@@ -1,9 +1,9 @@
-import {RULES,validateDeck} from './deck.js?v=6.1.0';
-import {weekKey} from '../data/competition.js?v=6.1.0';
+import {RULES,validateDeck} from './deck.js?v=6.1.1';
+import {weekKey} from '../data/competition.js?v=6.1.1';
 import {
   RANKS,CPU_CONFIG,CPU_THEMES,TAG_EFFECT_CAPS,RARITY_POWER_HIT,RARITY_VALUE,
   FREE_BATTLE,RANDOM_MATCH
-} from '../data/battle.js?v=6.1.0';
+} from '../data/battle.js?v=6.1.1';
 
 const clamp=(n,a,b)=>Math.min(b,Math.max(a,n));
 const randomItem=a=>a[Math.floor(Math.random()*a.length)];

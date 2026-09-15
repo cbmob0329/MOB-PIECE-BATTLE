@@ -1,9 +1,9 @@
-import summonMessages from '../data/summon_messages.js?v=6.1.0';
-import {testSettings} from '../data/test-settings.js?v=6.1.0';
-import {banners,poolFor,pickupsFor,mainPickupFor,figureRate,ratesFor,OWN_CAP,OVERFLOW_RUBY,RARITY_RANK} from '../data/gacha.js?v=6.1.0';
-import {prepareDraw,welcomeGift} from '../game/gacha.js?v=6.1.0';
-import {commitProfile,saveProfile} from '../game/profile.js?v=6.1.0';
-import {playSummon} from '../components/summon.js?v=6.1.0';
+import summonMessages from '../data/summon_messages.js?v=6.1.1';
+import {testSettings} from '../data/test-settings.js?v=6.1.1';
+import {banners,poolFor,pickupsFor,mainPickupFor,figureRate,ratesFor,OWN_CAP,OVERFLOW_RUBY,RARITY_RANK} from '../data/gacha.js?v=6.1.1';
+import {prepareDraw,welcomeGift} from '../game/gacha.js?v=6.1.1';
+import {commitProfile,saveProfile} from '../game/profile.js?v=6.1.1';
+import {playSummon} from '../components/summon.js?v=6.1.1';
 let ctx,refresh,notify,dialog,cleanup,returnFocus;let busy=false;
 const gachaArt=f=>ctx.art(f).replace('loading="lazy"','loading="eager"');
 const percent=n=>`${(n*100).toFixed(3)}%`;

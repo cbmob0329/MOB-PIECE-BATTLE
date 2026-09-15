@@ -1,4 +1,4 @@
-import {isQualifierWeek,isRankUpWeek} from '../data/competition.js?v=6.1.0';
+import {isQualifierWeek,isRankUpWeek} from '../data/competition.js?v=6.1.1';
 
 const monthName = n => `${n}月`;
 const eventLabel = (year,month,week) => {

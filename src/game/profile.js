@@ -1,10 +1,10 @@
-import {testSettings} from '../data/test-settings.js?v=6.1.0';
-import {byId} from '../data/catalog.js?v=6.1.0';
-import {validateDeck} from './deck.js?v=6.1.0';
-import {OWN_CAP} from '../data/gacha.js?v=6.1.0';
-import {normalizeCompetition} from './competition.js?v=6.1.0';
-import {normalizeBattleProgress} from './battle.js?v=6.1.0';
-import {normalizeMissions} from './missions.js?v=6.1.0';
+import {testSettings} from '../data/test-settings.js?v=6.1.1';
+import {byId} from '../data/catalog.js?v=6.1.1';
+import {validateDeck} from './deck.js?v=6.1.1';
+import {OWN_CAP} from '../data/gacha.js?v=6.1.1';
+import {normalizeCompetition} from './competition.js?v=6.1.1';
+import {normalizeBattleProgress} from './battle.js?v=6.1.1';
+import {normalizeMissions} from './missions.js?v=6.1.1';
 const key='mob-piece-battle:profile:v1'; // Keep the key so old profiles migrate in place.
 const DECK_SLOTS=5;
 const emptyDecks=()=>Array.from({length:DECK_SLOTS},()=>[]);

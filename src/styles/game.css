@@ -90,7 +90,7 @@ nav{height:calc(78px + env(safe-area-inset-bottom));padding-top:4px}nav button{g
 
 @media(max-width:350px){.wallet-v6>span{width:36px;grid-template-columns:15px 1fr;padding:2px}.wallet-v6 .wallet-art{width:15px;height:15px}.player-rank-line i{display:none}.home-menu-grid{grid-template-columns:repeat(2,1fr)}.battle-mode-visual-card.free-mode{grid-template-columns:92px 1fr}.battle-mode-content{padding:9px 7px}.battle-annual-grid{grid-template-columns:1fr}.asset-page-heading{grid-template-columns:68px 1fr}.asset-page-heading>.menu-art{width:68px;height:68px}.calendar-year-month{grid-template-columns:48px 1fr}}
 
-/* v6.1.0 menu / profile / settings refinements */
+/* v6.1.1 menu / profile / settings refinements */
 .topbar{height:calc(96px + env(safe-area-inset-top));padding-top:calc(10px + env(safe-area-inset-top));align-items:flex-start}
 .player{align-items:flex-start;gap:8px}
 .player-copy{display:grid;gap:2px;min-width:0}
@@ -161,4 +161,47 @@ nav{height:calc(78px + env(safe-area-inset-bottom));padding-top:4px}nav button{g
   .home-menu-shelf-row{grid-template-columns:repeat(2,minmax(0,1fr))}
   .home-menu-shelf-row.compact{grid-template-columns:repeat(2,minmax(0,1fr))}
   .player-avatar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+
+/* v6.1.1 - menu icons only + DECK visual size normalization */
+.home-menu-tile{
+  min-height:0!important;
+  aspect-ratio:1/1.12;
+  padding:4px!important;
+  display:grid!important;
+  place-items:center!important;
+  justify-content:stretch!important;
+}
+.home-menu-tile>.home-menu-art{
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:auto!important;
+}
+.home-menu-tile>span:not(.ui-asset-frame){display:none!important}
+.home-menu-tile .deck-menu-art{
+  padding:0!important;
+  background:transparent!important;
+  overflow:visible;
+  transform:scale(1.22);
+}
+.home-menu-tile .deck-menu-art .ui-asset{
+  transform:scale(1.10);
+  transform-origin:center;
+}
+.bottom-menu-icon-art{
+  width:41px!important;
+  height:41px!important;
+  overflow:visible;
+}
+.nav-art .bottom-menu-icon-art .ui-asset{
+  transform:scale(1.42);
+  transform-origin:center;
+}
+nav .nav-art{min-height:42px;display:grid;place-items:center;overflow:visible}
+.deck-status-art{overflow:visible}
+.deck-status-art .ui-asset{transform:scale(1.20);transform-origin:center}
+@media(max-width:350px){
+  .bottom-menu-icon-art{width:37px!important;height:37px!important}
+  .nav-art .bottom-menu-icon-art .ui-asset{transform:scale(1.36)}
 }

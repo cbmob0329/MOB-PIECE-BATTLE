@@ -1,5 +1,5 @@
-import {MISSIONS} from '../data/missions.js?v=6.1.0';
-import {validateDeck} from './deck.js?v=6.1.0';
+import {MISSIONS} from '../data/missions.js?v=6.1.1';
+import {validateDeck} from './deck.js?v=6.1.1';
 
 export function normalizeMissions(profile){
   if(!profile.missions||typeof profile.missions!=='object')profile.missions={};
