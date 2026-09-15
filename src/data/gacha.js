@@ -1,4 +1,4 @@
-import {figures} from './catalog.js?v=7.2.0';
+import {figures} from './catalog.js?v=7.3.0';
 export const RARITY_RANK=Object.freeze({R:1,SR:2,SSR:3,UR:4,MOB:5});
 export const RATES=Object.freeze({R:50,SR:30,SSR:15,UR:4.5,MOB:.5});
 export const TEN_LAST_RATES=Object.freeze({SR:67,SSR:25,UR:7,MOB:1});

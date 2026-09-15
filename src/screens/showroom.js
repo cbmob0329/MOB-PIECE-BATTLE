@@ -1,7 +1,7 @@
-import {labelDate,nextDate,WEEKLY_RANK_REWARDS} from '../data/competition.js?v=7.2.0';
-import {canAdvanceWeek,isPlayerMaster} from '../game/competition.js?v=7.2.0';
+import {labelDate,nextDate,WEEKLY_RANK_REWARDS} from '../data/competition.js?v=7.3.0';
+import {canAdvanceWeek,isPlayerMaster} from '../game/competition.js?v=7.3.0';
 
-const menuTile=(art,label,sub,route,extra='')=>`<button class="home-menu-tile menu-${route} ${extra}" data-go="${route}" aria-label="${label}${sub?'・'+sub:''}"><span class="home-menu-visual">${art}</span></button>`;
+const menuTile=(art,label,sub,route,extra='')=>`<button class="home-menu-tile ${extra}" data-go="${route}" aria-label="${label}${sub?'・'+sub:''}">${art}</button>`;
 const shelfRow=(items,extra='')=>`<div class="home-menu-shelf-row ${extra}"><i class="home-shelf-board" aria-hidden="true"></i>${items.join('')}</div>`;
 
 export function homeScreen({figures,byId,profile,icon,art,menuArt,iconArt}){

@@ -90,7 +90,7 @@ nav{height:calc(78px + env(safe-area-inset-bottom));padding-top:4px}nav button{g
 
 @media(max-width:350px){.wallet-v6>span{width:36px;grid-template-columns:15px 1fr;padding:2px}.wallet-v6 .wallet-art{width:15px;height:15px}.player-rank-line i{display:none}.home-menu-grid{grid-template-columns:repeat(2,1fr)}.battle-mode-visual-card.free-mode{grid-template-columns:92px 1fr}.battle-mode-content{padding:9px 7px}.battle-annual-grid{grid-template-columns:1fr}.asset-page-heading{grid-template-columns:68px 1fr}.asset-page-heading>.menu-art{width:68px;height:68px}.calendar-year-month{grid-template-columns:48px 1fr}}
 
-/* v7.2.0 menu / profile / settings refinements */
+/* v7.3.0 menu / profile / settings refinements */
 .topbar{height:calc(96px + env(safe-area-inset-top));padding-top:calc(10px + env(safe-area-inset-top));align-items:flex-start}
 .player{align-items:flex-start;gap:8px}
 .player-copy{display:grid;gap:2px;min-width:0}
@@ -164,7 +164,11 @@ nav{height:calc(78px + env(safe-area-inset-bottom));padding-top:4px}nav button{g
 }
 
 
-/* v7.2.0 - menu icons only + DECK visual size normalization */
+/* v7.3.0 - stable icon normalization without changing battle / draw layouts */
+/* All HOME menu rows keep the same 4-column width, so the 3-item row no longer enlarges its icons. */
+.home-menu-shelf-row.compact{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+}
 .home-menu-tile{
   min-height:0!important;
   aspect-ratio:1/1.12;
@@ -177,157 +181,72 @@ nav{height:calc(78px + env(safe-area-inset-bottom));padding-top:4px}nav button{g
   width:100%!important;
   height:100%!important;
   aspect-ratio:auto!important;
+  display:grid!important;
+  place-items:center!important;
+}
+.home-menu-tile>.home-menu-art>.ui-asset,
+.home-menu-tile>.home-menu-art .ui-asset{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  transform:none!important;
 }
 .home-menu-tile>span:not(.ui-asset-frame){display:none!important}
+/* DECK uses icon/015.png, but its frame now matches the menu images instead of being enlarged. */
 .home-menu-tile .deck-menu-art{
+  width:100%!important;
+  height:100%!important;
   padding:0!important;
   background:transparent!important;
-  overflow:visible;
-  transform:scale(1.22);
+  overflow:hidden!important;
+  transform:none!important;
+  display:grid!important;
+  place-items:center!important;
 }
 .home-menu-tile .deck-menu-art .ui-asset{
-  transform:scale(1.10);
-  transform-origin:center;
-}
-.bottom-menu-icon-art{
-  width:41px!important;
-  height:41px!important;
-  overflow:visible;
-}
-.nav-art .bottom-menu-icon-art .ui-asset{
-  transform:scale(1.42);
-  transform-origin:center;
-}
-nav .nav-art{min-height:42px;display:grid;place-items:center;overflow:visible}
-.deck-status-art{overflow:visible}
-.deck-status-art .ui-asset{transform:scale(1.20);transform-origin:center}
-@media(max-width:350px){
-  .bottom-menu-icon-art{width:37px!important;height:37px!important}
-  .nav-art .bottom-menu-icon-art .ui-asset{transform:scale(1.36)}
-}
-
-/* v7.2.0 - icon size normalization (home menu + bottom nav) */
-.home-menu-shelf-row{
-  align-items:stretch;
-}
-.home-menu-tile{
-  min-height:126px!important;
-  aspect-ratio:1/1.02!important;
-  padding:8px 6px 10px!important;
-  border-radius:18px 18px 14px 14px;
-}
-.home-menu-tile>span:not(.home-menu-visual){
-  display:none!important;
-}
-.home-menu-visual{
-  width:100%;
-  height:100%;
-  min-height:0;
-  display:grid;
-  place-items:center;
-}
-.home-menu-visual>.ui-asset-frame,
-.home-menu-visual>.menu-art,
-.home-menu-visual>.icon-art{
-  width:100%;
-  height:100%;
-  display:grid;
-  place-items:center;
-}
-.home-menu-visual .ui-asset-fallback{
-  font-size:7px;
-}
-.home-menu-tile .home-menu-art,
-.home-menu-tile .deck-menu-art{
   width:100%!important;
   height:100%!important;
-  aspect-ratio:auto!important;
-  padding:0!important;
-  background:transparent!important;
+  object-fit:contain!important;
+  transform:scale(1.04)!important;
+  transform-origin:center!important;
 }
-.home-menu-tile .ui-asset{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  transform:scale(1.06);
-  transform-origin:center bottom;
-}
-.home-menu-tile.menu-battle .ui-asset,
-.home-menu-tile.menu-figure .ui-asset,
-.home-menu-tile.menu-gacha .ui-asset,
-.home-menu-tile.menu-player .ui-asset,
-.home-menu-tile.menu-settings .ui-asset,
-.home-menu-tile.menu-collection .ui-asset,
-.home-menu-tile.menu-mission .ui-asset,
-.home-menu-tile.menu-calendar .ui-asset,
-.home-menu-tile.menu-history .ui-asset,
-.home-menu-tile.menu-shop .ui-asset{
-  transform:scale(1.06);
-}
-.home-menu-tile.menu-deck .ui-asset{
-  transform:scale(1.18)!important;
-}
-.home-menu-tile.future .ui-asset{
-  transform:scale(1.03);
-}
-
-nav{
-  padding-left:10px;
-  padding-right:10px;
-  gap:2px;
-}
-nav .nav-button{
-  min-width:0;
-}
+/* Bottom navigation: HOME / FIGURE / DECK / BATTLE / GACHA all share the exact same visual box. */
 nav button>.nav-art{
-  width:54px;
-  height:54px;
-  min-height:54px;
-  display:grid;
-  place-items:center;
-  overflow:visible;
+  width:46px!important;
+  height:46px!important;
+  min-height:46px!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
 }
-nav .nav-art>.ui-asset-frame,
-nav .nav-art>.menu-art,
-nav .nav-art>.icon-art,
-nav .nav-art>.bottom-menu-art,
-nav .nav-art>.bottom-menu-icon-art{
+nav button>.nav-art>.bottom-menu-art,
+nav button>.nav-art>.bottom-menu-icon-art{
+  width:46px!important;
+  height:46px!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+}
+nav button>.nav-art .ui-asset{
   width:100%!important;
   height:100%!important;
-  display:grid;
-  place-items:center;
+  object-fit:contain!important;
+  transform:none!important;
 }
-nav .nav-art .ui-asset{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  transform:scale(1.04);
-  transform-origin:center bottom;
+nav button>.nav-art>.bottom-menu-icon-art .ui-asset{
+  transform:scale(1.04)!important;
+  transform-origin:center!important;
 }
-nav .nav-home-art .ui-asset,
-nav .nav-figure-art .ui-asset,
-nav .nav-battle-art .ui-asset,
-nav .nav-gacha-art .ui-asset{
-  transform:scale(1.04);
-}
-nav .nav-deck-art .ui-asset{
-  transform:scale(1.20)!important;
-}
-nav .active:before{
-  inset:2px 5px;
-  border-radius:14px;
-}
+/* Small DECK counter icon is kept modest so it does not dominate the row. */
+.deck-status-art{overflow:hidden!important}
+.deck-status-art .ui-asset{transform:none!important;object-fit:contain!important}
 @media(max-width:350px){
-  .home-menu-tile{
-    min-height:118px!important;
-    padding:7px 5px 8px!important;
-  }
-  nav button>.nav-art{
-    width:48px;
-    height:48px;
-    min-height:48px;
-  }
-  nav .nav-deck-art .ui-asset{
-    transform:scale(1.16)!important;
+  .home-menu-shelf-row.compact{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  nav button>.nav-art,
+  nav button>.nav-art>.bottom-menu-art,
+  nav button>.nav-art>.bottom-menu-icon-art{
+    width:42px!important;
+    height:42px!important;
+    min-height:42px!important;
   }
 }

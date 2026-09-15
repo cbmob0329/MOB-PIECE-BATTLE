@@ -1,8 +1,8 @@
-import {validateDeck,RULES,DECK_SLOT_COUNT} from '../game/deck.js?v=7.2.0';
-import {unlocks,normalizeBattleProgress,randomMatchStatus} from '../game/battle.js?v=7.2.0';
-import {FREE_BATTLE,RANDOM_MATCH} from '../data/battle.js?v=7.2.0';
-import {labelDate} from '../data/competition.js?v=7.2.0';
-import {figureRecord} from '../game/records.js?v=7.2.0';
+import {validateDeck,RULES,DECK_SLOT_COUNT} from '../game/deck.js?v=7.3.0';
+import {unlocks,normalizeBattleProgress,randomMatchStatus} from '../game/battle.js?v=7.3.0';
+import {FREE_BATTLE,RANDOM_MATCH} from '../data/battle.js?v=7.3.0';
+import {labelDate} from '../data/competition.js?v=7.3.0';
+import {figureRecord} from '../game/records.js?v=7.3.0';
 
 const heading=(en,ja)=>`<div class="page-heading"><span class="eyebrow">MOB PIECE BATTLE</span><h1>${en}</h1><p>${ja}</p></div>`;
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

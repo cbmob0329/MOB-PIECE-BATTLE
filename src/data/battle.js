@@ -1,4 +1,4 @@
-import {RANKS} from './competition.js?v=7.2.0';
+import {RANKS} from './competition.js?v=7.3.0';
 
 export {RANKS};
 

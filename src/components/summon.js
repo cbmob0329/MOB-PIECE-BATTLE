@@ -1,4 +1,4 @@
-import messages from '../data/summon_messages.js?v=7.2.0';
+import messages from '../data/summon_messages.js?v=7.3.0';
 const escapeText=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const text=Object.fromEntries(Object.entries(messages).filter(([,v])=>typeof v==='string').map(([k,v])=>[k,escapeText(v)]));
 // A self-contained scene: motion is cancellable and never mutates draw results.

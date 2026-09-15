@@ -1,4 +1,4 @@
-import {allMissionStates} from '../game/missions.js?v=7.2.0';
+import {allMissionStates} from '../game/missions.js?v=7.3.0';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const card=m=>{const pct=Math.min(100,Math.round(m.progress/Math.max(1,m.target)*100));return `<article class="mission-card ${m.claimed?'claimed':m.complete?'ready':''}"><div><small>${esc(m.category)}</small><b>${esc(m.title)}</b><p>${esc(m.description)}</p></div><div class="mission-progress"><span><i style="width:${pct}%"></i></span><b>${Math.min(m.progress,m.target)} / ${m.target}</b></div><div class="mission-reward"><span>${m.reward.coins.toLocaleString('ja-JP')} COIN</span><span>${m.reward.diamonds} DIAMOND</span></div><button data-mission-claim="${m.id}" ${m.complete&&!m.claimed?'':'disabled'}>${m.claimed?'受取済み':m.complete?'受け取る':'挑戦中'}</button></article>`;};
 export function missionScreen(c){
