@@ -55,7 +55,7 @@ export function tagEffects(hand,byId,tags){
     lines.push(`${tag.name} ${n>=3?'3種類':'2種類'}：${spec.label}`);
   }
   for(const [k,cap] of Object.entries(TAG_EFFECT_CAPS)){
-    if(!(k in effects))continue;const v=Number(effects[k]||0);effects[k]=cap<0?Math.max(cap,Math.min(0,v)):Math.min(cap,Math.max(0,v));
+    if(!(k in effects))continue;const v=Number(effects[k]||0);effects[k]=cap<0?Math.max(cap,Math.min(0,v)):Math.min(cap,Math.max(k==='centerDefensePct'?-cap:0,v));
   }
   return {effects,lines};
 }

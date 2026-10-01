@@ -4,3 +4,6 @@
 /* v4 collection-limit conversion presentation */
 .limit-convert-callout{margin:10px 0 14px;padding:13px 12px;border:3px solid #193b39;border-radius:14px;background:#f2c95e;box-shadow:0 5px 0 #193b39;text-align:center;animation:limitConvertPop .55s cubic-bezier(.2,.9,.25,1)}
 .limit-convert-callout small{display:block;font-size:7px;font-weight:950;letter-spacing:.15em}.limit-convert-callout strong{display:block;font-size:24px;line-height:1;margin:5px 0}.limit-convert-callout p{font-size:10px;line-height:1.7;margin:0}.limit-convert-callout p b{font-size:15px}.result-tile.converted{animation:convertedPulse .65s ease both}.result-tile.converted .ruby-converted{font-weight:950;color:#8f3f88}@keyframes limitConvertPop{0%{transform:scale(.72) rotate(-3deg);opacity:0}65%{transform:scale(1.06) rotate(1deg)}100%{transform:scale(1);opacity:1}}@keyframes convertedPulse{45%{transform:scale(1.05)}}
+/* Keep every banner selector reachable when the collection grows. */
+.gacha-page .carousel-controls>div{flex:1;min-width:0;overflow-x:auto;scrollbar-width:thin}
+.gacha-page .carousel-controls>div button{flex:0 0 18px}

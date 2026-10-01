@@ -218,3 +218,12 @@ Image assets are intentionally NOT included in this archive. Existing GitHub ass
 - HISTORYはFREE / RANDOM / MOB LEAGUE / RANK TOURNAMENT / MOB MASTERで絞り込み可能。
 - CALENDARはYEAR / MONTH表示を切り替え可能。
 - 起動時と画像が多い画面でローディングUIを表示します。
+# MOB-QUEST content import (2026-10-01)
+
+- Imported the v218 figure catalog plus v237 Mint and v247 Macaron additions: 341 registered figures, including 76 new entries. The 14 legacy entries without images remain saved by ID but are unavailable for draws/decks.
+- Imported 82 tag definitions and all 22 updated banner lineups. All banners are available in this standalone game, which has no Quest story unlock state. Missing banner art uses its featured figure.
+- Added ruby exchange with Quest prices (R 10 / SR 50 / SSR 100 / UR 300 / MOB 500), a performance confirmation, balance checks, ownership caps and transactional saving.
+- Existing figure IDs, dex numbers and battle stats are preserved. New figures use the existing rarity's average stats. Existing draw probabilities, SR+ tenth draw, inventory caps and summon presentation are retained.
+- Quest SOUL, adjacency and RPG traits are retained as reference data; those combat systems are not activated here. Added tags apply the stat modifiers supported by this battle engine, and the displayed battle labels describe only those modifiers.
+- `node scripts/import-mob-quest.mjs` reads the sibling MOB-QUEST folder and writes only here. Run `node scripts/index-assets.mjs` afterward. The source repository is never modified.
+- `node scripts/quest-import-check.mjs` checks save compatibility, assets and exchange boundaries. `pnpm test:quest-ui` checks browser flows; install Playwright or set `PLAYWRIGHT_PATH`, and start the local Vite server first.

@@ -13,9 +13,11 @@
     "pieceThree": {
       "label": "ライフ100%UP",
       "effects": {
-        "lifePct": 1.0
+        "lifePct": 1
       }
-    }
+    },
+    "questPieceTwo": "ライフ 50%UP",
+    "questPieceThree": "ライフ 100%アップ"
   },
   {
     "id": "02",
@@ -33,7 +35,9 @@
       "effects": {
         "defensePct": 0.6
       }
-    }
+    },
+    "questPieceTwo": "ディフェンス 30%UP",
+    "questPieceThree": "ディフェンス 60%アップ"
   },
   {
     "id": "03",
@@ -51,7 +55,9 @@
       "effects": {
         "attackPct": 0.6
       }
-    }
+    },
+    "questPieceTwo": "アタック 30%UP",
+    "questPieceThree": "アタック 60%アップ"
   },
   {
     "id": "04",
@@ -61,7 +67,7 @@
     "pieceTwo": {
       "label": "センターキャラライフ100%UP",
       "effects": {
-        "centerLifePct": 1.0
+        "centerLifePct": 1
       }
     },
     "pieceThree": {
@@ -69,7 +75,9 @@
       "effects": {
         "centerLifePct": 1.5
       }
-    }
+    },
+    "questPieceTwo": "センターキャラライフ 100%アップ",
+    "questPieceThree": "センターキャラライフ 150%アップ"
   },
   {
     "id": "05",
@@ -87,7 +95,9 @@
       "effects": {
         "enemyAttackPct": -0.3
       }
-    }
+    },
+    "questPieceTwo": "相手アタック 20%ダウン",
+    "questPieceThree": "相手アタック 30%ダウン"
   },
   {
     "id": "06",
@@ -105,7 +115,9 @@
       "effects": {
         "enemyDefensePct": -0.3
       }
-    }
+    },
+    "questPieceTwo": "相手ディフェンス 20%ダウン",
+    "questPieceThree": "相手ディフェンス 30%ダウン"
   },
   {
     "id": "07",
@@ -123,7 +135,9 @@
       "effects": {
         "enemyAttackPct": -0.3
       }
-    }
+    },
+    "questPieceTwo": "相手アタック 20%ダウン",
+    "questPieceThree": "相手アタック 30%ダウン"
   },
   {
     "id": "08",
@@ -141,7 +155,9 @@
       "effects": {
         "enemyAttackPct": -0.3
       }
-    }
+    },
+    "questPieceTwo": "相手アタック 20%ダウン",
+    "questPieceThree": "相手アタック 30%ダウン"
   },
   {
     "id": "09",
@@ -159,13 +175,15 @@
       "effects": {
         "attackPct": 0.35
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+20%",
+    "questPieceThree": "味方全体アタック+35% & ライフ+20%"
   },
   {
     "id": "10",
     "name": "マスコット",
-    "two": "戦闘獲得経験値 & 戦闘獲得コイン +3%",
-    "three": "戦闘獲得経験値 & 戦闘獲得コイン +5%",
+    "two": "戦闘獲得経験値 & 戦闘獲得コイン +5%",
+    "three": "戦闘獲得経験値 & 戦闘獲得コイン +10%",
     "pieceTwo": {
       "label": "ライフ25%UP",
       "effects": {
@@ -177,7 +195,9 @@
       "effects": {
         "lifePct": 0.45
       }
-    }
+    },
+    "questPieceTwo": "味方全体ライフ+25% & ディフェンス+10%",
+    "questPieceThree": "味方全体ライフ+40% & ディフェンス+20%"
   },
   {
     "id": "11",
@@ -195,7 +215,9 @@
       "effects": {
         "centerAttackPct": 0.7
       }
-    }
+    },
+    "questPieceTwo": "センターフィギュアのアタック+50%",
+    "questPieceThree": "センターフィギュアのアタック+80% & スピード+20%"
   },
   {
     "id": "12",
@@ -213,7 +235,9 @@
       "effects": {
         "attackPct": 0.45
       }
-    }
+    },
+    "questPieceTwo": "味方全体スピード+25% & アタック+10%",
+    "questPieceThree": "味方全体スピード+40% & アタック+20%"
   },
   {
     "id": "13",
@@ -231,7 +255,9 @@
       "effects": {
         "defensePct": 0.45
       }
-    }
+    },
+    "questPieceTwo": "味方全体ディフェンス+25%",
+    "questPieceThree": "味方全体ディフェンス+40% & ライフ+20%"
   },
   {
     "id": "14",
@@ -249,7 +275,9 @@
       "effects": {
         "centerAttackPct": 0.55
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+20% & スピード+20%",
+    "questPieceThree": "味方全体アタック+35% & スピード+30%"
   },
   {
     "id": "15",
@@ -267,7 +295,9 @@
       "effects": {
         "defensePct": 0.35
       }
-    }
+    },
+    "questPieceTwo": "味方全体のSOUL獲得量+1",
+    "questPieceThree": "味方全体のSOUL獲得量+2"
   },
   {
     "id": "16",
@@ -285,7 +315,9 @@
       "effects": {
         "centerDefensePct": 0.7
       }
-    }
+    },
+    "questPieceTwo": "味方全体ディフェンス+20% & スピード+15%",
+    "questPieceThree": "味方全体ディフェンス+30% & スピード+25%"
   },
   {
     "id": "17",
@@ -303,7 +335,9 @@
       "effects": {
         "lifePct": 0.55
       }
-    }
+    },
+    "questPieceTwo": "味方全体ライフ+40%",
+    "questPieceThree": "味方全体ライフ+60% & ディフェンス+15%"
   },
   {
     "id": "18",
@@ -321,7 +355,9 @@
       "effects": {
         "lifePct": 0.65
       }
-    }
+    },
+    "questPieceTwo": "味方全体ライフ+25% & アタック+10%",
+    "questPieceThree": "味方全体ライフ+40% & アタック+20%"
   },
   {
     "id": "19",
@@ -339,7 +375,9 @@
       "effects": {
         "defensePct": 0.5
       }
-    }
+    },
+    "questPieceTwo": "味方全体の全ステータス+10%",
+    "questPieceThree": "味方全体の全ステータス+20%"
   },
   {
     "id": "20",
@@ -357,7 +395,9 @@
       "effects": {
         "centerAttackPct": 0.8
       }
-    }
+    },
+    "questPieceTwo": "味方全体スピード+30% & アタック+15%",
+    "questPieceThree": "味方全体スピード+45% & アタック+25%"
   },
   {
     "id": "21",
@@ -377,7 +417,9 @@
         "attackPct": 0.25,
         "defensePct": 0.25
       }
-    }
+    },
+    "questPieceTwo": "味方全体スピード+20% & ディフェンス+15%",
+    "questPieceThree": "味方全体スピード+35% & ディフェンス+25% & ライフ+10%"
   },
   {
     "id": "22",
@@ -395,7 +437,9 @@
       "effects": {
         "centerAttackPct": 0.6
       }
-    }
+    },
+    "questPieceTwo": "味方全体スピード+40%",
+    "questPieceThree": "味方全体スピード+60% & アタック+15%"
   },
   {
     "id": "23",
@@ -413,7 +457,9 @@
       "effects": {
         "defensePct": 0.4
       }
-    }
+    },
+    "questPieceTwo": "ソウルタグを持つすべての味方フィギュアのSOUL獲得量+1",
+    "questPieceThree": "SOUL獲得量+2 & フィギュアスキルの数値効果+10%"
   },
   {
     "id": "24",
@@ -433,7 +479,9 @@
         "attackPct": 0.35,
         "defensePct": 0.35
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+25% & ディフェンス+25%",
+    "questPieceThree": "味方全体アタック+40% & ディフェンス+40% & ライフ+20%"
   },
   {
     "id": "25",
@@ -451,7 +499,9 @@
       "effects": {
         "attackPct": 0.55
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+30%",
+    "questPieceThree": "味方全体アタック+50% & 相手全体ディフェンス-10%"
   },
   {
     "id": "26",
@@ -469,7 +519,9 @@
       "effects": {
         "enemyDefensePct": -0.25
       }
-    }
+    },
+    "questPieceTwo": "相手全体ディフェンス-20%",
+    "questPieceThree": "相手全体ディフェンス-30% & アタック-10%"
   },
   {
     "id": "27",
@@ -487,7 +539,9 @@
       "effects": {
         "lifePct": 0.5
       }
-    }
+    },
+    "questPieceTwo": "味方全体ライフ+25% & スピード+10%",
+    "questPieceThree": "味方全体ライフ+40% & スピード+20%"
   },
   {
     "id": "28",
@@ -505,7 +559,9 @@
       "effects": {
         "defensePct": 0.4
       }
-    }
+    },
+    "questPieceTwo": "味方全体ディフェンス+25%",
+    "questPieceThree": "味方全体ディフェンス+40% & ライフ+20%"
   },
   {
     "id": "29",
@@ -523,12 +579,14 @@
       "effects": {
         "enemyAttackPct": -0.25
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+25% & ディフェンス+10%",
+    "questPieceThree": "味方全体アタック+40% & ディフェンス+20%"
   },
   {
     "id": "30",
     "name": "伝説",
-    "two": "必殺技ダメージ+10%",
+    "two": "必殺技ダメージ+10%、",
     "three": "必殺技ダメージ+10% & CT-1",
     "pieceTwo": {
       "label": "センターアタック60%UP",
@@ -539,9 +597,11 @@
     "pieceThree": {
       "label": "センターアタック100%UP",
       "effects": {
-        "centerAttackPct": 1.0
+        "centerAttackPct": 1
       }
-    }
+    },
+    "questPieceTwo": "味方全体の全ステータス+15%",
+    "questPieceThree": "味方全体の全ステータス+25%"
   },
   {
     "id": "31",
@@ -559,7 +619,9 @@
       "effects": {
         "defensePct": 0.5
       }
-    }
+    },
+    "questPieceTwo": "味方全体ディフェンス+20% & スピード+15%",
+    "questPieceThree": "味方全体ディフェンス+35% & スピード+25%"
   },
   {
     "id": "32",
@@ -579,7 +641,9 @@
         "attackPct": 0.25,
         "defensePct": 0.4
       }
-    }
+    },
+    "questPieceTwo": "味方全体ライフ+25% & ディフェンス+25%",
+    "questPieceThree": "味方全体ライフ+40% & ディフェンス+40%"
   },
   {
     "id": "33",
@@ -599,7 +663,9 @@
         "lifePct": 0.35,
         "defensePct": 0.35
       }
-    }
+    },
+    "questPieceTwo": "相手全体スピード-20% & 味方全体ディフェンス+10%",
+    "questPieceThree": "相手全体スピード-30% & 味方全体ディフェンス+20%"
   },
   {
     "id": "34",
@@ -617,7 +683,9 @@
       "effects": {
         "attackPct": 0.45
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+25% & スピード+15%",
+    "questPieceThree": "味方全体アタック+40% & スピード+25%"
   },
   {
     "id": "35",
@@ -635,7 +703,9 @@
       "effects": {
         "attackPct": 0.65
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+40%",
+    "questPieceThree": "味方全体アタック+60%"
   },
   {
     "id": "36",
@@ -653,7 +723,9 @@
       "effects": {
         "centerDefensePct": 0.55
       }
-    }
+    },
+    "questPieceTwo": "味方全体スピード+25% & 相手全体スピード-10%",
+    "questPieceThree": "味方全体スピード+40% & 相手全体スピード-20%"
   },
   {
     "id": "37",
@@ -671,7 +743,9 @@
       "effects": {
         "attackPct": 0.55
       }
-    }
+    },
+    "questPieceTwo": "フィギュアスキルの数値効果+15%",
+    "questPieceThree": "フィギュアスキルの数値効果+25% & 味方全体のSOUL獲得量+1"
   },
   {
     "id": "38",
@@ -689,7 +763,9 @@
       "effects": {
         "centerAttackPct": 0.85
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+30% & ライフ+20%",
+    "questPieceThree": "味方全体アタック+45% & ライフ+35%"
   },
   {
     "id": "39",
@@ -707,7 +783,9 @@
       "effects": {
         "defensePct": 0.75
       }
-    }
+    },
+    "questPieceTwo": "味方全体ディフェンス+40%",
+    "questPieceThree": "味方全体ディフェンス+60% & ライフ+20%"
   },
   {
     "id": "40",
@@ -727,7 +805,9 @@
         "lifePct": 0.45,
         "attackPct": 0.25
       }
-    }
+    },
+    "questPieceTwo": "味方全体の全ステータス+10%",
+    "questPieceThree": "味方全体の全ステータス+20%"
   },
   {
     "id": "41",
@@ -745,13 +825,15 @@
       "effects": {
         "defensePct": 0.35
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+15% & スピード+15%",
+    "questPieceThree": "味方全体アタック+25% & スピード+25% & ライフ+10%"
   },
   {
     "id": "42",
     "name": "砂漠",
     "two": "砂漠エリアでのみステータス10%アップ",
-    "three": "砂漠エリアでのみステータス10%アップ & ダメージ軽減10%",
+    "three": "砂漠エリアでのみステータス10%アップ & ダメージ軽減10%]",
     "pieceTwo": {
       "label": "アタック20%UP",
       "effects": {
@@ -763,7 +845,9 @@
       "effects": {
         "attackPct": 0.35
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+15% & ディフェンス+15%",
+    "questPieceThree": "味方全体アタック+25% & ディフェンス+25% & ライフ+10%"
   },
   {
     "id": "43",
@@ -781,7 +865,9 @@
       "effects": {
         "lifePct": 0.45
       }
-    }
+    },
+    "questPieceTwo": "味方全体ライフ+25% & スピード+10%",
+    "questPieceThree": "味方全体ライフ+40% & スピード+20%"
   },
   {
     "id": "44",
@@ -799,7 +885,9 @@
       "effects": {
         "centerAttackPct": 0.5
       }
-    }
+    },
+    "questPieceTwo": "味方全体スピード+25% & アタック+10%",
+    "questPieceThree": "味方全体スピード+40% & アタック+20%"
   },
   {
     "id": "45",
@@ -817,7 +905,9 @@
       "effects": {
         "defensePct": 0.45
       }
-    }
+    },
+    "questPieceTwo": "味方全体ディフェンス+25% & ライフ+20%",
+    "questPieceThree": "味方全体ディフェンス+40% & ライフ+30%"
   },
   {
     "id": "46",
@@ -835,7 +925,9 @@
       "effects": {
         "attackPct": 0.45
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+25% & ディフェンス+10%",
+    "questPieceThree": "味方全体アタック+40% & ディフェンス+20%"
   },
   {
     "id": "47",
@@ -853,7 +945,9 @@
       "effects": {
         "attackPct": 0.55
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+30%",
+    "questPieceThree": "味方全体アタック+50% & 相手全体ディフェンス-10%"
   },
   {
     "id": "48",
@@ -871,7 +965,9 @@
       "effects": {
         "enemyDefensePct": -0.3
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+20% & ディフェンス+20% & 相手全体アタック-10%",
+    "questPieceThree": "味方全体アタック+30% & ディフェンス+30% & 相手全体アタック-20%"
   },
   {
     "id": "49",
@@ -889,7 +985,9 @@
       "effects": {
         "centerAttackPct": 0.75
       }
-    }
+    },
+    "questPieceTwo": "味方全体アタック+30% & スピード+15%",
+    "questPieceThree": "味方全体アタック+50% & スピード+25% & 相手センターフィギュアのディフェンス-15%"
   },
   {
     "id": "50",
@@ -907,7 +1005,9 @@
       "effects": {
         "centerDefensePct": 0.7
       }
-    }
+    },
+    "questPieceTwo": "味方全体スピード+30% & 相手全体スピード-10%",
+    "questPieceThree": "味方全体スピード+45% & 相手全体スピード-20%"
   },
   {
     "id": "51",
@@ -925,7 +1025,9 @@
       "effects": {
         "attackPct": 0.5
       }
-    }
+    },
+    "questPieceTwo": "味方全体スピード+25% & アタック+15%",
+    "questPieceThree": "味方全体スピード+40% & アタック+25% & 相手センターフィギュアのスピード-20%"
   },
   {
     "id": "52",
@@ -945,6 +1047,671 @@
         "centerAttackPct": 0.6,
         "centerDefensePct": 0.6
       }
-    }
+    },
+    "questPieceTwo": "味方全体の全ステータス+15%",
+    "questPieceThree": "味方全体の全ステータス+25%"
+  },
+  {
+    "id": "53",
+    "name": "イベントボス",
+    "pieceTwo": {
+      "effects": {
+        "defensePct": 0.25,
+        "attackPct": 0.15
+      },
+      "label": "DEF +25% / ATK +15%"
+    },
+    "pieceThree": {
+      "effects": {
+        "defensePct": 0.4,
+        "attackPct": 0.25
+      },
+      "label": "DEF +40% / ATK +25%"
+    },
+    "two": "ひるみ耐性 +15% & 混乱耐性 +15% & 会心ダメージ軽減+5%",
+    "three": "ひるみ耐性 +25% & 混乱耐性 +25% & 会心ダメージ軽減+10%",
+    "questPieceTwo": "味方全体ディフェンス+25% & アタック+15%",
+    "questPieceThree": "味方全体ディフェンス+40% & アタック+25%"
+  },
+  {
+    "id": "54",
+    "name": "ピラミッド",
+    "pieceTwo": {
+      "effects": {
+        "enemySpeedPct": -0.15,
+        "defensePct": 0.2
+      },
+      "label": "相手SPD -15% / DEF +20%"
+    },
+    "pieceThree": {
+      "effects": {
+        "enemySpeedPct": -0.25,
+        "defensePct": 0.35
+      },
+      "label": "相手SPD -25% / DEF +35%"
+    },
+    "two": "毒耐性+40% & 会心ダメージ軽減+5%",
+    "three": "毒耐性+60% & 会心ダメージ軽減+10%",
+    "questPieceTwo": "相手全体スピード-15% & 味方全体ディフェンス+20%",
+    "questPieceThree": "相手全体スピード-25% & 味方全体ディフェンス+35%"
+  },
+  {
+    "id": "55",
+    "name": "スピードスター",
+    "pieceTwo": {
+      "effects": {
+        "speedPct": 0.4
+      },
+      "label": "SPD +40%"
+    },
+    "pieceThree": {
+      "effects": {
+        "speedPct": 0.6,
+        "enemySpeedPct": -0.1
+      },
+      "label": "SPD +60% / 相手SPD -10%"
+    },
+    "two": "SPD+10 & 回避率+3% & 全体攻撃回避率+5%",
+    "three": "SPD+15 & 回避率+5% & 全体攻撃回避率+8%",
+    "questPieceTwo": "味方全体スピード+40%",
+    "questPieceThree": "味方全体スピード+60% & 相手全体スピード-10%"
+  },
+  {
+    "id": "56",
+    "name": "火炎",
+    "pieceTwo": {
+      "effects": {
+        "attackPct": 0.3,
+        "enemyDefensePct": -0.1
+      },
+      "label": "ATK +30% / 相手DEF -10%"
+    },
+    "pieceThree": {
+      "effects": {
+        "attackPct": 0.5,
+        "enemyDefensePct": -0.2
+      },
+      "label": "ATK +50% / 相手DEF -20%"
+    },
+    "two": "全体攻撃与ダメージ +10%",
+    "three": "全体攻撃与ダメージ +20%",
+    "questPieceTwo": "味方全体アタック+30% & 相手全体ディフェンス-10%",
+    "questPieceThree": "味方全体アタック+50% & 相手全体ディフェンス-20%"
+  },
+  {
+    "id": "57",
+    "name": "不気味なオーラ",
+    "pieceTwo": {
+      "effects": {
+        "enemyAttackPct": -0.15,
+        "enemySpeedPct": -0.15
+      },
+      "label": "相手ATK -15% / 相手SPD -15%"
+    },
+    "pieceThree": {
+      "effects": {
+        "enemyAttackPct": -0.25,
+        "enemySpeedPct": -0.25
+      },
+      "label": "相手ATK -25% / 相手SPD -25%"
+    },
+    "two": "状態異常耐性 +15% & 与状態異常確率+10%",
+    "three": "状態異常耐性 +30% & 与状態異常確率+30%",
+    "questPieceTwo": "相手全体アタック-15% & スピード-15%",
+    "questPieceThree": "相手全体アタック-25% & スピード-25%"
+  },
+  {
+    "id": "58",
+    "name": "特殊能力",
+    "pieceTwo": {
+      "effects": {},
+      "label": "このバトルでの能力補正なし"
+    },
+    "pieceThree": {
+      "effects": {},
+      "label": "このバトルでの能力補正なし"
+    },
+    "two": "必殺技CT-1 & 消費MP-10%",
+    "three": "必殺技CT-1 & 消費MP-20% &魔法与ダメージ+10%",
+    "questPieceTwo": "味方全体のSOUL獲得量+1 & フィギュアスキルの数値効果+10%",
+    "questPieceThree": "味方全体のSOUL獲得量+2 & フィギュアスキルの数値効果+20%"
+  },
+  {
+    "id": "59",
+    "name": "影の実力者",
+    "pieceTwo": {
+      "effects": {
+        "centerAttackPct": 0.4,
+        "centerSpeedPct": 0.2
+      },
+      "label": "センターATK +40% / センターSPD +20%"
+    },
+    "pieceThree": {
+      "effects": {
+        "centerAttackPct": 0.7,
+        "centerSpeedPct": 0.3
+      },
+      "label": "センターATK +70% / センターSPD +30%"
+    },
+    "two": "必殺技ダメージ+10% & 会心ダメージ+10%",
+    "three": "必殺技ダメージ+15% & 会心ダメージ+15%",
+    "questPieceTwo": "センターフィギュアのアタック+40% & スピード+20%",
+    "questPieceThree": "センターフィギュアのアタック+70% & スピード+30%"
+  },
+  {
+    "id": "60",
+    "name": "遠距離攻撃",
+    "pieceTwo": {
+      "effects": {
+        "attackPct": 0.25,
+        "speedPct": 0.1
+      },
+      "label": "ATK +25% / SPD +10%"
+    },
+    "pieceThree": {
+      "effects": {
+        "attackPct": 0.4
+      },
+      "label": "ATK +40%"
+    },
+    "two": "命中率+20% & ダメージ軽減無視確率 +20%",
+    "three": "命中率+30% & ダメージ軽減無視確率 +30%",
+    "questPieceTwo": "味方全体アタック+25% & スピード+10%",
+    "questPieceThree": "味方全体アタック+40% & 相手センターフィギュアのディフェンス-20%"
+  },
+  {
+    "id": "61",
+    "name": "超合金",
+    "pieceTwo": {
+      "effects": {
+        "defensePct": 0.3,
+        "lifePct": 0.2
+      },
+      "label": "DEF +30% / HP +20%"
+    },
+    "pieceThree": {
+      "effects": {
+        "defensePct": 0.45,
+        "lifePct": 0.3
+      },
+      "label": "DEF +45% / HP +30%"
+    },
+    "two": "ダメージ軽減+5% & 消費MP-10%",
+    "three": "ダメージ軽減+7% & 消費MP-20%",
+    "questPieceTwo": "味方全体ディフェンス+30% & ライフ+20%",
+    "questPieceThree": "味方全体ディフェンス+45% & ライフ+30%"
+  },
+  {
+    "id": "62",
+    "name": "超合金ボス",
+    "pieceTwo": {
+      "effects": {
+        "attackPct": 0.25,
+        "defensePct": 0.25
+      },
+      "label": "ATK +25% / DEF +25%"
+    },
+    "pieceThree": {
+      "effects": {
+        "attackPct": 0.4,
+        "defensePct": 0.4
+      },
+      "label": "ATK +40% / DEF +40%"
+    },
+    "two": "与ダメージ+2% & ダメージ軽減+2%",
+    "three": "与ダメージ+7% & ダメージ軽減+3%",
+    "questPieceTwo": "味方全体アタック+25% & ディフェンス+25%",
+    "questPieceThree": "味方全体アタック+40% & ディフェンス+40%"
+  },
+  {
+    "id": "63",
+    "name": "超合金ヒーロー",
+    "pieceTwo": {
+      "effects": {
+        "speedPct": 0.2,
+        "defensePct": 0.2,
+        "lifePct": 0.15
+      },
+      "label": "SPD +20% / DEF +20% / HP +15%"
+    },
+    "pieceThree": {
+      "effects": {
+        "speedPct": 0.35,
+        "defensePct": 0.3,
+        "lifePct": 0.25
+      },
+      "label": "SPD +35% / DEF +30% / HP +25%"
+    },
+    "two": "SPD +5 & MND＋5",
+    "three": "SPD+10 & MND+10 & HP+30",
+    "questPieceTwo": "味方全体スピード+20% & ディフェンス+20% & ライフ+15%",
+    "questPieceThree": "味方全体スピード+35% & ディフェンス+30% & ライフ+25%"
+  },
+  {
+    "id": "64",
+    "name": "メタリック",
+    "pieceTwo": {
+      "effects": {
+        "defensePct": 0.3
+      },
+      "label": "DEF +30%"
+    },
+    "pieceThree": {
+      "effects": {
+        "defensePct": 0.45,
+        "enemyAttackPct": -0.1
+      },
+      "label": "DEF +45% / 相手ATK -10%"
+    },
+    "two": "魔法ダメージ軽減+2%",
+    "three": "魔法ダメージ軽減+4%",
+    "questPieceTwo": "味方全体ディフェンス+30%",
+    "questPieceThree": "味方全体ディフェンス+45% & 相手全体アタック-10%"
+  },
+  {
+    "id": "65",
+    "name": "スイーツ",
+    "pieceTwo": {
+      "effects": {
+        "lifePct": 0.3
+      },
+      "label": "HP +30%"
+    },
+    "pieceThree": {
+      "effects": {
+        "lifePct": 0.5,
+        "attackPct": 0.15
+      },
+      "label": "HP +50% / ATK +15%"
+    },
+    "two": "MND+5 & HP+30",
+    "three": "MND + 10 & HP+50",
+    "questPieceTwo": "味方全体ライフ+30%",
+    "questPieceThree": "味方全体ライフ+50% & アタック+15%"
+  },
+  {
+    "id": "66",
+    "name": "伝統",
+    "pieceTwo": {
+      "effects": {
+        "defensePct": 0.2
+      },
+      "label": "DEF +20%"
+    },
+    "pieceThree": {
+      "effects": {
+        "defensePct": 0.3
+      },
+      "label": "DEF +30%"
+    },
+    "two": "状態異常耐性+10% & 特殊効果発動率+3%(パッシブ、武器特性など)",
+    "three": "状態異常耐性+20% & 特殊効果発動率+5%(パッシブ、武器特性など)",
+    "questPieceTwo": "味方全体ディフェンス+20% & 能力ダウン効果を10%軽減",
+    "questPieceThree": "味方全体ディフェンス+30% & 能力ダウン効果を20%軽減"
+  },
+  {
+    "id": "67",
+    "name": "もちもち",
+    "pieceTwo": {
+      "effects": {
+        "lifePct": 0.35,
+        "defensePct": 0.15
+      },
+      "label": "HP +35% / DEF +15%"
+    },
+    "pieceThree": {
+      "effects": {
+        "lifePct": 0.55,
+        "defensePct": 0.25
+      },
+      "label": "HP +55% / DEF +25%"
+    },
+    "two": "DEF+5 & 物理ダメージ軽減+5%",
+    "three": "DEF+10 & 物理ダメージ軽減+8%",
+    "questPieceTwo": "味方全体ライフ+35% & ディフェンス+15%",
+    "questPieceThree": "味方全体ライフ+55% & ディフェンス+25%"
+  },
+  {
+    "id": "68",
+    "name": "怪獣",
+    "pieceTwo": {
+      "effects": {
+        "attackPct": 0.35,
+        "lifePct": 0.25
+      },
+      "label": "ATK +35% / HP +25%"
+    },
+    "pieceThree": {
+      "effects": {
+        "attackPct": 0.55,
+        "lifePct": 0.4
+      },
+      "label": "ATK +55% / HP +40%"
+    },
+    "two": "ATK+10 & HP +30",
+    "three": "ATK+20 & HP+50",
+    "questPieceTwo": "味方全体アタック+35% & ライフ+25%",
+    "questPieceThree": "味方全体アタック+55% & ライフ+40%"
+  },
+  {
+    "id": "69",
+    "name": "ミニマム",
+    "pieceTwo": {
+      "effects": {
+        "speedPct": 0.3,
+        "enemyAttackPct": -0.1
+      },
+      "label": "SPD +30% / 相手ATK -10%"
+    },
+    "pieceThree": {
+      "effects": {
+        "speedPct": 0.45,
+        "enemyAttackPct": -0.2
+      },
+      "label": "SPD +45% / 相手ATK -20%"
+    },
+    "two": "回避率+3% & SPD+5",
+    "three": "回避率+5% & SPD+10",
+    "questPieceTwo": "味方全体スピード+30% & 相手全体アタック-10%",
+    "questPieceThree": "味方全体スピード+45% & 相手全体アタック-20%"
+  },
+  {
+    "id": "70",
+    "name": "職人",
+    "pieceTwo": {
+      "effects": {
+        "centerAttackPct": 0.25,
+        "centerDefensePct": 0.25,
+        "centerSpeedPct": 0.25
+      },
+      "label": "センターATK +25% / センターDEF +25% / センターSPD +25%"
+    },
+    "pieceThree": {
+      "effects": {
+        "centerAttackPct": 0.4,
+        "centerDefensePct": 0.4,
+        "centerSpeedPct": 0.4
+      },
+      "label": "センターATK +40% / センターDEF +40% / センターSPD +40%"
+    },
+    "two": "会心率、回避率+3% & MP+10",
+    "three": "会心率、回避率+5% & MP+30",
+    "questPieceTwo": "センターフィギュアのアタック・ディフェンス・スピード+25%",
+    "questPieceThree": "センターフィギュアのアタック・ディフェンス・スピード+40%"
+  },
+  {
+    "id": "71",
+    "name": "強力な爪",
+    "pieceTwo": {
+      "effects": {
+        "attackPct": 0.35
+      },
+      "label": "ATK +35%"
+    },
+    "pieceThree": {
+      "effects": {
+        "attackPct": 0.5,
+        "enemyDefensePct": -0.15
+      },
+      "label": "ATK +50% / 相手DEF -15%"
+    },
+    "two": "会心率+5%",
+    "three": "会心率+7%",
+    "questPieceTwo": "味方全体アタック+35%",
+    "questPieceThree": "味方全体アタック+50% & 相手全体ディフェンス-15%"
+  },
+  {
+    "id": "72",
+    "name": "リスペクト",
+    "pieceTwo": {
+      "effects": {
+        "lifePct": 0.1,
+        "attackPct": 0.1,
+        "defensePct": 0.1,
+        "speedPct": 0.1
+      },
+      "label": "HP +10% / ATK +10% / DEF +10% / SPD +10%"
+    },
+    "pieceThree": {
+      "effects": {
+        "lifePct": 0.3,
+        "attackPct": 0.2,
+        "defensePct": 0.2,
+        "speedPct": 0.2
+      },
+      "label": "HP +30% / ATK +20% / DEF +20% / SPD +20%"
+    },
+    "two": "HP&MP +15",
+    "three": "HP&MP +30",
+    "questPieceTwo": "味方全体の全ステータス+10%",
+    "questPieceThree": "味方全体の全ステータス+20% & ライフ+10%"
+  },
+  {
+    "id": "73",
+    "name": "変身",
+    "pieceTwo": {
+      "effects": {
+        "attackPct": 0.2,
+        "defensePct": 0.2,
+        "speedPct": 0.2
+      },
+      "label": "ATK +20% / DEF +20% / SPD +20%"
+    },
+    "pieceThree": {
+      "effects": {
+        "attackPct": 0.35,
+        "defensePct": 0.35,
+        "speedPct": 0.35
+      },
+      "label": "ATK +35% / DEF +35% / SPD +35%"
+    },
+    "two": "ATK、DEF、SPD +5",
+    "three": "ATK、DEF、SPD +10",
+    "questPieceTwo": "味方全体アタック・ディフェンス・スピード+20%",
+    "questPieceThree": "味方全体アタック・ディフェンス・スピード+35%"
+  },
+  {
+    "id": "74",
+    "name": "リーダー気質",
+    "pieceTwo": {
+      "effects": {
+        "centerLifePct": 0.4,
+        "centerAttackPct": 0.4,
+        "centerDefensePct": 0.4,
+        "centerSpeedPct": 0.4
+      },
+      "label": "センターHP +40% / センターATK +40% / センターDEF +40% / センターSPD +40%"
+    },
+    "pieceThree": {
+      "effects": {
+        "centerLifePct": 0.6,
+        "centerAttackPct": 0.6,
+        "centerDefensePct": 0.6,
+        "centerSpeedPct": 0.6
+      },
+      "label": "センターHP +60% / センターATK +60% / センターDEF +60% / センターSPD +60%"
+    },
+    "two": "状態異常耐性+10%",
+    "three": "状態異常耐性+20%",
+    "questPieceTwo": "センターフィギュアの全ステータス+40%",
+    "questPieceThree": "センターフィギュアの全ステータス+60% & 他の味方フィギュアの全ステータス+10%"
+  },
+  {
+    "id": "75",
+    "name": "風の如く",
+    "pieceTwo": {
+      "effects": {
+        "speedPct": 0.35,
+        "attackPct": 0.1
+      },
+      "label": "SPD +35% / ATK +10%"
+    },
+    "pieceThree": {
+      "effects": {
+        "speedPct": 0.55,
+        "attackPct": 0.2
+      },
+      "label": "SPD +55% / ATK +20%"
+    },
+    "two": "SPD+12",
+    "three": "SPD+20",
+    "questPieceTwo": "味方全体スピード+35% & アタック+10%",
+    "questPieceThree": "味方全体スピード+55% & アタック+20%"
+  },
+  {
+    "id": "76",
+    "name": "波の如く",
+    "pieceTwo": {
+      "effects": {
+        "defensePct": 0.25,
+        "speedPct": 0.15
+      },
+      "label": "DEF +25% / SPD +15%"
+    },
+    "pieceThree": {
+      "effects": {
+        "defensePct": 0.4,
+        "speedPct": 0.25
+      },
+      "label": "DEF +40% / SPD +25%"
+    },
+    "two": "MND+12",
+    "three": "MND+20",
+    "questPieceTwo": "味方全体ディフェンス+25% & スピード+15%",
+    "questPieceThree": "味方全体ディフェンス+40% & スピード+25%"
+  },
+  {
+    "id": "77",
+    "name": "大地の力",
+    "pieceTwo": {
+      "effects": {
+        "lifePct": 0.4,
+        "defensePct": 0.15
+      },
+      "label": "HP +40% / DEF +15%"
+    },
+    "pieceThree": {
+      "effects": {
+        "lifePct": 0.6,
+        "defensePct": 0.25
+      },
+      "label": "HP +60% / DEF +25%"
+    },
+    "two": "HP+35",
+    "three": "HP+60",
+    "questPieceTwo": "味方全体ライフ+40% & ディフェンス+15%",
+    "questPieceThree": "味方全体ライフ+60% & ディフェンス+25%"
+  },
+  {
+    "id": "78",
+    "name": "団結力",
+    "pieceTwo": {
+      "effects": {
+        "lifePct": 0.12,
+        "attackPct": 0.12,
+        "defensePct": 0.12,
+        "speedPct": 0.12
+      },
+      "label": "HP +12% / ATK +12% / DEF +12% / SPD +12%"
+    },
+    "pieceThree": {
+      "effects": {
+        "lifePct": 0.22,
+        "attackPct": 0.22,
+        "defensePct": 0.22,
+        "speedPct": 0.22
+      },
+      "label": "HP +22% / ATK +22% / DEF +22% / SPD +22%"
+    },
+    "two": "獲得経験値+10%",
+    "three": "獲得経験値+15%",
+    "questPieceTwo": "味方全体の全ステータス+12%",
+    "questPieceThree": "味方全体の全ステータス+22%"
+  },
+  {
+    "id": "79",
+    "name": "閃光",
+    "pieceTwo": {
+      "effects": {
+        "attackPct": 0.25,
+        "speedPct": 0.25
+      },
+      "label": "ATK +25% / SPD +25%"
+    },
+    "pieceThree": {
+      "effects": {
+        "attackPct": 0.4,
+        "speedPct": 0.4
+      },
+      "label": "ATK +40% / SPD +40%"
+    },
+    "two": "光属性 & 雷属性　与ダメージ +10% &",
+    "three": "光属性 & 雷属性 与ダメージ +15%",
+    "questPieceTwo": "味方全体アタック+25% & スピード+25%",
+    "questPieceThree": "味方全体アタック+40% & スピード+40%"
+  },
+  {
+    "id": "80",
+    "name": "水の極意",
+    "pieceTwo": {
+      "effects": {
+        "defensePct": 0.25,
+        "attackPct": 0.15
+      },
+      "label": "DEF +25% / ATK +15%"
+    },
+    "pieceThree": {
+      "effects": {
+        "defensePct": 0.4,
+        "attackPct": 0.25
+      },
+      "label": "DEF +40% / ATK +25%"
+    },
+    "two": "水属性与ダメージ、火属性ダメージ軽減+5%",
+    "three": "水属性与ダメージ、火属性ダメージ軽減+5%",
+    "questPieceTwo": "味方全体ディフェンス+25% & アタック+15%",
+    "questPieceThree": "味方全体ディフェンス+40% & アタック+25%"
+  },
+  {
+    "id": "81",
+    "name": "ロマン",
+    "pieceTwo": {
+      "effects": {
+        "centerAttackPct": 0.6,
+        "centerDefensePct": -0.15
+      },
+      "label": "センターATK +60% / センターDEF -15%"
+    },
+    "pieceThree": {
+      "effects": {
+        "centerAttackPct": 1,
+        "centerDefensePct": -0.2
+      },
+      "label": "センターATK +100% / センターDEF -20%"
+    },
+    "two": "通常攻撃会心率+6%",
+    "three": "通常攻撃会心率+9%",
+    "questPieceTwo": "センターフィギュアのアタック+60% & ディフェンス-15%",
+    "questPieceThree": "センターフィギュアのアタック+100% & ディフェンス-20%"
+  },
+  {
+    "id": "82",
+    "name": "機械の力",
+    "pieceTwo": {
+      "effects": {
+        "defensePct": 0.2
+      },
+      "label": "DEF +20%"
+    },
+    "pieceThree": {
+      "effects": {
+        "defensePct": 0.35
+      },
+      "label": "DEF +35%"
+    },
+    "two": "デバフ軽減+20%",
+    "three": "デバフ軽減+30%",
+    "questPieceTwo": "味方全体ディフェンス+20% & 能力ダウン効果を20%軽減",
+    "questPieceThree": "味方全体ディフェンス+35% & 能力ダウン効果を40%軽減"
   }
 ]

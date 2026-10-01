@@ -4,16 +4,11 @@ export const RATES=Object.freeze({R:50,SR:30,SSR:15,UR:4.5,MOB:.5});
 export const TEN_LAST_RATES=Object.freeze({SR:67,SSR:25,UR:7,MOB:1});
 export const OWN_CAP=Object.freeze({R:15,SR:12,SSR:7,UR:4,MOB:2});
 export const OVERFLOW_RUBY=Object.freeze({R:1,SR:3,SSR:5,UR:12,MOB:30});
-const range=(dir,a,b)=>Array.from({length:b-a+1},(_,i)=>`${dir}/${String(a+i).padStart(2,'0')}.png`);
-const common=range('fig',1,25);
-// Initial, unconditionally available banners. Story unlocks remain hidden.
-export const banners=[
- {id:'001',name:'みかんちゃんピックアップ',subtitle:'小さな主役、大きなきらめき。',extra:[],pickup:['fig/16.png'],color:'#e6b34b'},
- {id:'002',name:'MOB GAME コラボ',subtitle:'あの仲間たちが、ピースになって集結。',extra:[...range('fig',26,31),...range('fig',40,51),'fig/56.png','fig/61.png','fig/62.png',...range('fig',84,87)],color:'#91c9a8'},
- {id:'003',name:'PB2 & CB Memory コラボ',subtitle:'思い出と、新しい出会いを。',extra:[...range('fig',32,39),...range('fig',52,55),...range('fig',57,60),...range('fig',81,83),...range('fig',89,92)],color:'#b5a2e7'},
- {id:'004',name:'頼もしい仲間ピックアップ',subtitle:'まだ見ぬチームの可能性。',extra:[...range('fig',63,80),'fig/88.png'],color:'#8fbfda'},
- {id:'005',name:'草原＆砂漠ガチャ',subtitle:'広い世界から、小さな冒険者たち。',extra:[...range('figene',1,6),...range('figene',10,14)],color:'#c9d18d'}
-];
+import questBanners from './quest-banners.js';
+const common=Array.from({length:25},(_,i)=>'fig/'+String(i+1).padStart(2,'0')+'.png');
+// This standalone battle game has no Quest story progression: all banners are available.
+export const banners=questBanners;
+export const RUBY_COST=Object.freeze({R:10,SR:50,SSR:100,UR:300,MOB:500});
 export const usableFigure=f=>!!(f&&!f.pending&&f.name&&!/^\/+$/u.test(f.name)&&f.image);
 export function poolFor(banner){const paths=new Set([...common,...banner.extra]);return figures.filter(f=>paths.has(f.image)&&usableFigure(f));}
 export function pickupsFor(banner){const pool=poolFor(banner);const explicit=pool.filter(f=>banner.pickup?.includes(f.image));return explicit.length?explicit:[...pool].sort((a,b)=>RARITY_RANK[b.rarity]-RARITY_RANK[a.rarity]).slice(0,3);}
