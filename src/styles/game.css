@@ -216,6 +216,7 @@ nav button>.nav-art{
   height:46px!important;
   min-height:46px!important;
   display:grid!important;
+  grid-template: minmax(0,1fr) / minmax(0,1fr);
   place-items:center!important;
   overflow:hidden!important;
 }
@@ -224,17 +225,22 @@ nav button>.nav-art>.bottom-menu-icon-art{
   width:46px!important;
   height:46px!important;
   display:grid!important;
+  grid-template: minmax(0,1fr) / minmax(0,1fr);
   place-items:center!important;
   overflow:hidden!important;
 }
 nav button>.nav-art .ui-asset{
   width:100%!important;
   height:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:100%!important;
+  max-height:100%!important;
   object-fit:contain!important;
   transform:none!important;
 }
 nav button>.nav-art>.bottom-menu-icon-art .ui-asset{
-  transform:scale(1.04)!important;
+  transform:none!important;
   transform-origin:center!important;
 }
 /* Small DECK counter icon is kept modest so it does not dominate the row. */
