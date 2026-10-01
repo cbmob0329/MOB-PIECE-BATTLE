@@ -1,22 +1,65 @@
 import messages from '../data/summon_messages.js?v=7.3.0';
-const escapeText=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const text=Object.fromEntries(Object.entries(messages).filter(([,v])=>typeof v==='string').map(([k,v])=>[k,escapeText(v)]));
-// A self-contained scene: motion is cancellable and never mutates draw results.
-export function playSummon(dialog,{cue,hero,art,reduced,preview,onFinish}){
- const cueText=messages.cues[cue];const copy=cueText.map(escapeText);
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clamp=x=>Math.min(1,Math.max(0,x));
+const ease=x=>1-Math.pow(1-clamp(x),3);
+// Visuals never mutate the already-committed draw.
+export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,onFinish}){
+ const copy=messages.cues[cue]||messages.cues.normal,t=Object.fromEntries(Object.entries(messages).map(([k,v])=>[k,typeof v==='string'?esc(v):v]));
+ const palette=({normal:['#b8e66d','#244c3d'],ssr:['#c2abff','#553597'],pickup:['#ffaf81','#ab403d'],allSSR:['#ffe476','#705011']})[cue]||['#b8e66d','#244c3d'];
  dialog.classList.add('cinema-dialog');
- dialog.innerHTML=`<section class="summon-scene cue-${cue}" data-phase="ready"><canvas class="summon-sky" aria-hidden="true"></canvas><header><span>${text.brand} <small>${preview?text.previewHeader:text.header}</small></span><button data-skip>${text.skip}</button></header><div class="summon-title"><small>${text.eyebrow}</small><h2>${text.title}</h2></div><div class="summon-core" aria-hidden="true"><div class="core-shell"><img class="gacha-core-image" src="${import.meta.env?.BASE_URL??'./'}icon/gacha.png" alt="MOB"><span class="core-fallback" hidden>${text.mob}</span></div><div class="impact-lines"></div>${Array.from({length:12},(_,i)=>`<b class="mob-glyph" style="--i:${i};--x:${Math.cos(i/12*Math.PI*2)*140}px;--y:${Math.sin(i/12*Math.PI*2)*160}px;--c:${['#8ad9e2','#ffcb61','#eb81aa'][i%3]}">${text.mob}</b>`).join('')}</div><div class="summon-comet" aria-hidden="true"><b>${text.mob}</b></div><div class="summon-gate" aria-hidden="true"><i></i><i></i></div><div class="cue-cut"><small>${text.cutLabel}</small><h2>${copy[0]}</h2><p>${copy[1]}</p>${cue==='pickup'?'<span class="destiny-seal">${text.seal}<span>${text.sealLabel}</span></span>':''}</div><div class="summon-reveal rarity-${hero.rarity}"><span class="reveal-rarity">${hero.rarity}</span><div class="reveal-art">${art(hero)}</div><small>${hero.displayNo}</small><h2>${hero.name}</h2><p>${preview?text.previewResult: text.result}</p></div><footer><p class="scene-caption" aria-live="polite">${text.ready}</p><button class="release-button" data-release>${text.release} <span>${text.releaseEnglish}</span></button><button class="release-button" data-finish hidden>${preview?text.closePreview:text.showResult} →</button><small>${reduced?text.reduced:text.hint}</small></footer></section>`;
- const coreImage=dialog.querySelector('.gacha-core-image');coreImage.onerror=()=>{coreImage.hidden=true;dialog.querySelector('.core-fallback').hidden=false;};
- const scene=dialog.querySelector('.summon-scene');const canvas=dialog.querySelector('canvas');const context=canvas.getContext('2d');let disposed=false;let raf;let started=false;const timers=[];let phase='ready';let born=performance.now();
- const colors={normal:'#193b39',chance:'#8c459c',ultra:'#c06b23',pickup:'#c74840'};
- function finish(){if(disposed)return;cleanup();onFinish();}
- function cleanup(){disposed=true;cancelAnimationFrame(raf);timers.forEach(clearTimeout);dialog.classList.remove('cinema-dialog');}
- const particles=Array.from({length:65},(_,i)=>({x:(i*0.6180339)%1,y:(i*0.38197)%1,r:i%4===0?1.7:.8}));
- function paint(now){if(disposed||!dialog.open)return;const rect=canvas.getBoundingClientRect();const w=rect.width,h=rect.height;const scale=Math.min(devicePixelRatio,2);if(canvas.width!==Math.round(w*scale)||canvas.height!==Math.round(h*scale)){canvas.width=Math.round(w*scale);canvas.height=Math.round(h*scale);}context.setTransform(scale,0,0,scale,0,0);context.clearRect(0,0,w,h);context.fillStyle=colors[cue];context.strokeStyle=colors[cue];const elapsed=(now-born)/1000;
- for(const p of particles){const travel=phase==='flight'?elapsed*.3:elapsed*.016;const x=(p.x+(reduced?0:travel))%1*w,y=(p.y+(reduced?0:travel*.8))%1*h;context.globalAlpha=.2+p.r*.22;context.beginPath();if(phase==='flight'&&!reduced){context.moveTo(x,y);context.lineTo(x-32,y-70);context.stroke();}else{context.fillRect(x,y,p.r*2,p.r*3);}}
- if(phase==='reveal'&&!reduced){for(let i=0;i<(cue==='normal'?10:38);i++){const t=(elapsed*.32+i*.075)%1;context.globalAlpha=1-t;context.fillStyle=['#f6cc6b','#d8eef2','#cfabd8'][i%3];context.fillRect((i*.618%1)*w,t*h,3+i%3,7);}}
- context.globalAlpha=1;raf=requestAnimationFrame(paint);}
- function setPhase(next,label){phase=next;scene.dataset.phase=next;born=performance.now();dialog.querySelector('.scene-caption').textContent=label;}
- function start(){if(started)return;started=true;dialog.querySelector('[data-release]').hidden=true;dialog.querySelector('.summon-title').hidden=true;setPhase('gather',messages.gather);const sequence=reduced?[[350,'cue',cueText[1]],[1900,'reveal',messages.reveal]]:[[1500,'flight',messages.flight],[3000,'cue',cueText[1]],[5700,'reveal',messages.reveal]];for(const [ms,p,label] of sequence)timers.push(setTimeout(()=>{if(disposed)return;setPhase(p,label);if(p==='reveal'){dialog.querySelector('[data-finish]').hidden=false;dialog.querySelector('[data-finish]').focus({preventScroll:true});}},ms));}
- dialog.querySelector('[data-release]').onclick=start;dialog.querySelector('[data-finish]').onclick=finish;dialog.querySelector('[data-skip]').onclick=finish;dialog.querySelector('[data-release]').focus();raf=requestAnimationFrame(paint);return cleanup;
+ dialog.innerHTML='<section class="figure-lab lab-'+cue+'" data-phase="ready" style="--lab-accent:'+palette[0]+';--lab-ink:'+palette[1]+'">'+
+ '<canvas class="lab-canvas" aria-hidden="true"></canvas><header><b>'+t.brand+'<small>'+(preview?t.previewHeader:t.header)+'</small></b><button data-skip>'+t.skip+'</button></header>'+
+ '<div class="lab-heading"><small>'+t.eyebrow+'</small><h2>'+t.title+'</h2></div>'+
+ '<div class="lab-core" aria-hidden="true"><div class="lab-core-ring"></div><img src="'+(import.meta.env?.BASE_URL??'./')+'icon/gacha.png" alt=""><b hidden>'+t.mob+'</b><span>＋</span><span>＋</span></div><div class="lab-platform" aria-hidden="true"></div>'+
+ '<div class="lab-cue"><small>'+t.cutLabel+'</small><h2>'+esc(copy[0])+'</h2><p>'+esc(copy[1])+'</p></div>'+
+ (cue==='pickup'?'<div class="lab-stamp"><b>'+t.seal+'</b><span>'+t.sealLabel+'</span></div>':'')+
+ '<div class="lab-progress" aria-hidden="true"><i></i><i></i><i></i><span>01 → 02 → 03</span></div>'+
+ '<div class="lab-reveal"><span>'+esc(hero.rarity)+'</span><div>'+art(hero)+'</div><small>'+esc(hero.displayNo)+'</small><h2>'+esc(hero.name)+'</h2><p>'+(preview?t.previewResult:t.result)+'</p></div>'+
+ (cue==='allSSR'?'<div class="lab-parade">'+figures.map((f,i)=>'<span style="--i:'+i+'">'+art(f)+'<b>'+esc(f.rarity)+'</b></span>').join('')+'</div>':'')+
+ '<footer><p class="scene-caption" aria-live="polite">'+t.ready+'</p><button data-release>'+t.release+'<small>'+t.releaseEnglish+'</small></button><button data-finish hidden>'+(preview?t.closePreview:t.showResult)+' →</button><small>'+(reduced?t.reduced:t.hint)+'</small></footer></section>';
+ const scene=dialog.querySelector('.figure-lab'),canvas=scene.querySelector('canvas'),ctx=canvas.getContext('2d');
+ const core=scene.querySelector('.lab-core img');core.onerror=()=>{core.hidden=true;core.nextElementSibling.hidden=false;};
+ const sprite=new Image();sprite.src=new URL(hero.image,document.baseURI).href;
+ let disposed=false,started=false,raf=0,phase='ready',born=performance.now();const timers=[];
+ const cleanup=()=>{if(disposed)return;disposed=true;cancelAnimationFrame(raf);timers.forEach(clearTimeout);sprite.onload=sprite.onerror=null;dialog.classList.remove('cinema-dialog');};
+ const finish=()=>{if(disposed)return;cleanup();onFinish();};
+ function setPhase(next,label){phase=next;born=performance.now();scene.dataset.phase=next;scene.querySelector('.scene-caption').textContent=label;
+  if(next==='reveal'){scene.querySelector('[data-finish]').hidden=false;scene.querySelector('[data-finish]').focus({preventScroll:true});}
+ }
+ function paint(now){
+  if(disposed||!dialog.open)return;
+  const {width:w,height:h}=canvas.getBoundingClientRect(),scale=Math.min(devicePixelRatio||1,2);
+  if(canvas.width!==Math.round(w*scale)||canvas.height!==Math.round(h*scale)){canvas.width=Math.round(w*scale);canvas.height=Math.round(h*scale);}
+  ctx.setTransform(scale,0,0,scale,0,0);ctx.clearRect(0,0,w,h);const elapsed=(now-born)/1000,cx=w/2,cy=h*.46;
+  if(!reduced)for(let i=0;i<24;i++){
+   const a=i*2.399+elapsed*(phase==='gather'?1.8:.15),r=(phase==='gather'?Math.max(20,180-elapsed*90):145)+i%4*10;
+   ctx.save();ctx.translate(cx+Math.cos(a)*r,cy+Math.sin(a)*r*.8);ctx.rotate(a);ctx.fillStyle=i%3?palette[0]:palette[1];ctx.globalAlpha=phase==='reveal'?.16:.6;ctx.fillRect(-3,-3,6+i%4,6+i%4);ctx.restore();
+  }
+  if(['outline','assemble','ink'].includes(phase)&&sprite.complete&&sprite.naturalWidth){
+   const size=Math.min(w*.77,h*.4,320),ratio=Math.min(size/sprite.naturalWidth,size/sprite.naturalHeight),dw=sprite.naturalWidth*ratio,dh=sprite.naturalHeight*ratio,x=cx-dw/2,y=cy-dh/2;
+   ctx.save();ctx.filter='brightness(0)';ctx.globalAlpha=.10;ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
+   if(phase==='outline'){
+    ctx.save();ctx.filter='brightness(0)';ctx.globalAlpha=.48;ctx.drawImage(sprite,x,y,dw,dh);ctx.globalCompositeOperation='destination-out';ctx.globalAlpha=.8;ctx.drawImage(sprite,x+2,y+2,dw-4,dh-4);ctx.restore();
+    ctx.strokeStyle=palette[1];ctx.lineWidth=2;ctx.setLineDash([5,7]);ctx.strokeRect(x-12,y-12,dw+24,dh+24);ctx.setLineDash([]);
+   }else if(phase==='assemble'){
+    const cols=8,rows=10;
+    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+     const n=j*cols+i,delay=((rows-1-j)*cols+i)/80*.65,p=reduced?1:ease((elapsed/2.1-delay)/.35),a=n*2.399;
+     if(p<=0)continue;const tw=dw/cols,th=dh/rows,tx=x+(i+.5)*tw,ty=y+(j+.5)*th;
+     ctx.save();ctx.translate(tx+Math.cos(a)*(1-p)*w*.65,ty+Math.sin(a)*(1-p)*h*.5);ctx.rotate((1-p)*(n%2?2:-2));ctx.globalAlpha=Math.min(1,p*2);ctx.filter='saturate(.1)';ctx.drawImage(sprite,i*sprite.naturalWidth/cols,j*sprite.naturalHeight/rows,sprite.naturalWidth/cols,sprite.naturalHeight/rows,-tw/2,-th/2,tw+.5,th+.5);ctx.restore();
+    }
+   }else{
+    const p=reduced?1:clamp(elapsed/1.6);ctx.save();ctx.filter='grayscale(1)';ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
+    ctx.save();ctx.beginPath();ctx.rect(x-8,y+dh*(1-p),dw+16,dh*p+8);ctx.clip();ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
+    ctx.strokeStyle=palette[1];ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x-10,y+dh*(1-p));ctx.lineTo(x+dw+10,y+dh*(1-p));ctx.stroke();
+    if(cue==='ssr'||cue==='allSSR'){ctx.strokeStyle=palette[0];ctx.lineWidth=3;ctx.strokeRect(x-18,y-18,dw+36,dh+36);}
+   }
+  }
+  raf=requestAnimationFrame(paint);
+ }
+ function start(){if(started)return;started=true;scene.querySelector('[data-release]').hidden=true;setPhase('gather',messages.gather);
+  const timeline=reduced?[[200,'cue',copy[1]],[700,'assemble',messages.assembly],[1100,'ink',messages.ink],[1600,'reveal',messages.reveal]]:[[1050,'cue',copy[1]],[2500,'outline',messages.flight],[3400,'assemble',messages.assembly],[5700,'ink',messages.ink],[7600,'reveal',messages.reveal]];
+  for(const [ms,p,label] of timeline)timers.push(setTimeout(()=>{if(!disposed)setPhase(p,label);},ms));
+ }
+ scene.querySelector('[data-release]').onclick=start;scene.querySelector('[data-finish]').onclick=finish;scene.querySelector('[data-skip]').onclick=finish;scene.querySelector('[data-release]').focus({preventScroll:true});raf=requestAnimationFrame(paint);return cleanup;
 }

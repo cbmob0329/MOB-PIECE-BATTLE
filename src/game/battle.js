@@ -1,3 +1,4 @@
+import {applyAdjacency} from './figure-skills.js?v=7.3.0';
 import {RULES,validateDeck} from './deck.js?v=7.3.0';
 import {weekKey} from '../data/competition.js?v=7.3.0';
 import {
@@ -64,7 +65,7 @@ function effect(e,...keys){for(const k of keys)if(e[k]!=null)return Number(e[k])
 
 export function fighterRows(hand,enemyHand,side,centerIndex,byId,tags,boostIndex=-1){
   const own=tagEffects(hand,byId,tags).effects,opp=tagEffects(enemyHand,byId,tags).effects;
-  return hand.map((id,i)=>{
+  return applyAdjacency(hand.map((id,i)=>{
     const f=byId.get(id),s=f?.mobPiece||f?.mobPieceV115||{hp:1,attack:1,defense:1,speed:1};
     const center=i===centerIndex?1.25:1,boost=i===boostIndex?1.15:1;
     let hp=s.hp*center*boost*(1+effect(own,'lifePct','hpPct'));
@@ -78,7 +79,7 @@ export function fighterRows(hand,enemyHand,side,centerIndex,byId,tags,boostIndex
     atk*=Math.max(.2,1+effect(opp,'enemyAttackPct'));def*=Math.max(.2,1+effect(opp,'enemyDefensePct'));spd*=Math.max(.2,1+effect(opp,'enemySpeedPct'));
     const maxHp=Math.max(25,Math.round(hp));
     return {key:`${side}-${i}`,side,index:i,id,f,maxHp,hp:maxHp,atk:Math.max(1,Math.round(atk)),def:Math.max(1,Math.round(def)),spd:Math.max(1,Math.round(spd)),boosted:i===boostIndex,nextAt:Math.random()*8};
-  });
+  }),hand,byId,tags);
 }
 
 export function teamStats(rows,hand,byId,tags){

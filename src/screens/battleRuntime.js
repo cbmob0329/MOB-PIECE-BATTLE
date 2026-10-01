@@ -1,3 +1,5 @@
+import {adjacencyPairs,soulSpec,eligibleSouls,activateSouls} from '../game/figure-skills.js?v=7.3.0';
+import {figureSkillInfo} from '../components/figure-skill-info.js?v=7.3.0';
 import {figures,byId,tags,imagePath} from '../data/catalog.js?v=7.3.0';
 import {RULES} from '../game/deck.js?v=7.3.0';
 import {
@@ -37,7 +39,7 @@ async function preloadBattleArt(ids,timeout=1800){
 }
 function score(match){return `<div class="mpb-match-score"><span>YOU <b>${match.pWins}</b></span><em>BATTLE ${match.round}<small>2 WINS</small></em><span>CPU <b>${match.cWins}</b></span></div>`;}
 function lifeBar(label,value,max,side){return `<div class="mpb-team-life ${side}"><span>${label}</span><div><i style="width:${pct(value,max)}%"></i></div><b>${Math.max(0,Math.round(value))} / ${Math.max(1,Math.round(max))}</b></div>`;}
-function activeTags(hand){const t=tagEffects(hand,byId,tagsMap);return `<div class="mpb-active-tags">${t.lines.length?t.lines.map(x=>`<span>${esc(x)}</span>`).join(''):'<span>タグ共鳴なし</span>'}</div>`;}
+function activeTags(hand){const t=tagEffects(hand,byId,tagsMap);t.lines.push(...adjacencyPairs(hand,byId,tagsMap).map(p=>`隣接 ${p.left+1}↔${p.right+1}：${p.name}`));return `<div class="mpb-active-tags">${t.lines.length?t.lines.map(x=>`<span>${esc(x)}</span>`).join(''):'<span>タグ共鳴なし</span>'}</div>`;}
 function totalStats(label,st,side,prev=null){
   const row=(key,title)=>`<span>${title} <strong data-total-stat="${key}" class="${prev&&Number(prev[key])!==Number(st[key])?'changed':''}">${st[key]}</strong></span>`;
   return `<div class="mpb-total-stats ${side}"><b>${label}</b>${row('hp','HP')}${row('attack','ATK')}${row('defense','DEF')}${row('speed','SPD')}</div>`;
@@ -72,7 +74,7 @@ async function drawIntro(ov,match,request){
 function tagNames(f){return (f?.tags||[]).map(id=>tagsMap.get(String(id))?.name).filter(Boolean);}
 function readyDetailMarkup(match,index){
   const f=byId.get(match.pHand[index]),rows=fighterRows(match.pHand,match.cHand,'player',2,byId,tagsMap,match.boostIndex),row=rows[index],names=tagNames(f),boosted=match.boostIndex===index;
-  return `<div class="mpb-figure-detail-modal" data-ready-detail><div class="mpb-figure-detail-sheet"><button class="mpb-detail-close" data-detail-close aria-label="閉じる">×</button><div class="mpb-detail-hero">${art(f?.sourceId||match.pHand[index])}</div><small>${esc(f?.displayNo||'')} · ${esc(f?.rarity||'')} · COST ${stat(f,'cost')}</small><h3>${esc(f?.name||'')}</h3><div class="mpb-detail-stats"><span>HP <b>${row.maxHp}</b><small>BASE ${stat(f,'hp')}</small></span><span>ATK <b>${row.atk}</b><small>BASE ${stat(f,'attack')}</small></span><span>DEF <b>${row.def}</b><small>BASE ${stat(f,'defense')}</small></span><span>SPD <b>${row.spd}</b><small>BASE ${stat(f,'speed')}</small></span></div><div class="mpb-detail-tags"><b>TAG</b>${names.length?names.map(x=>`<span>${esc(x)}</span>`).join(''):'<span>タグなし</span>'}</div><p>${index===2?'CENTER：全能力+25%':''}${boosted?'　PIECE BOOST：全能力+15%':''}</p><div class="mpb-detail-actions"><button data-detail-boost="${index}" ${match.pieceBoostUsed?'disabled':''}>${boosted?'BOOST ACTIVE':match.pieceBoostUsed?'BOOST使用済み':'PIECE BOOST'}</button><button data-detail-exchange="${index}" ${match.exchanged||boosted?'disabled':''}>${match.exchanged?'交換済み':boosted?'BOOST中は交換不可':'この1体を交換'}</button></div></div></div>`;
+  return `<div class="mpb-figure-detail-modal" data-ready-detail><div class="mpb-figure-detail-sheet"><button class="mpb-detail-close" data-detail-close aria-label="閉じる">×</button><div class="mpb-detail-hero">${art(f?.sourceId||match.pHand[index])}</div><small>${esc(f?.displayNo||'')} · ${esc(f?.rarity||'')} · COST ${stat(f,'cost')}</small><h3>${esc(f?.name||'')}</h3><div class="mpb-detail-stats"><span>HP <b>${row.maxHp}</b><small>BASE ${stat(f,'hp')}</small></span><span>ATK <b>${row.atk}</b><small>BASE ${stat(f,'attack')}</small></span><span>DEF <b>${row.def}</b><small>BASE ${stat(f,'defense')}</small></span><span>SPD <b>${row.spd}</b><small>BASE ${stat(f,'speed')}</small></span></div><div class="mpb-detail-tags"><b>TAG</b>${names.length?names.map(x=>`<span>${esc(x)}</span>`).join(''):'<span>タグなし</span>'}</div><p>${index===2?'CENTER：全能力+25%':''}${boosted?'　PIECE BOOST：全能力+15%':''}</p>${figureSkillInfo(f)}<div class="mpb-detail-actions"><button data-detail-boost="${index}" ${match.pieceBoostUsed?'disabled':''}>${boosted?'BOOST ACTIVE':match.pieceBoostUsed?'BOOST使用済み':'PIECE BOOST'}</button><button data-detail-exchange="${index}" ${match.exchanged||boosted?'disabled':''}>${match.exchanged?'交換済み':boosted?'BOOST中は交換不可':'この1体を交換'}</button></div></div></div>`;
 }
 
 async function readyPhase(ov,match,request){
@@ -127,11 +129,30 @@ async function animateStrike(arena,a,d,{powerHit,crit,ko,damage}){
   await wait(Math.round(dur*.5));
 }
 
+
+async function soulPhase(ov,match,pRows,cRows){
+ const eligible=eligibleSouls(pRows,match.soulUsed?.player||[]);
+ let chosen=[];
+ if(eligible.length){
+  ov.innerHTML=`<section class="mpb-battle-panel soul-picker">${score(match)}<small>FIGURE SOUL</small><h2>スキルを選ぼう</h2><p>このラウンドに発動するフィギュアを最大2体。<br>同じフィギュアは1対戦に1回だけ使えます。</p><div class="soul-options">${eligible.map(r=>{const s=soulSpec(r.f,match.pHand,byId,tags);return `<button data-soul-choice="${r.index}" aria-pressed="false">${art(r.id)}<span><small>SOUL ${s.count} / STAGE ${s.tier}</small><b>${esc(s.name)}</b><em>${esc(s.text)}</em></span></button>`;}).join('')}</div><p data-soul-count aria-live="polite">0 / 2体を選択</p><button class="mpb-primary" data-soul-confirm>発動せずに開始</button></section>`;
+  bindImageFallback(ov);
+  await new Promise(resolve=>{
+   ov.querySelectorAll('[data-soul-choice]').forEach(btn=>btn.onclick=()=>{const r=eligible.find(r=>r.index===+btn.dataset.soulChoice);if(chosen.includes(r))chosen=chosen.filter(x=>x!==r);else if(chosen.length<2)chosen.push(r);btn.setAttribute('aria-pressed',String(chosen.includes(r)));ov.querySelector('[data-soul-count]').textContent=chosen.length+' / 2体を選択';ov.querySelector('[data-soul-confirm]').textContent=chosen.length?'選んだスキルを発動':'発動せずに開始';});
+   ov.querySelector('[data-soul-confirm]').onclick=resolve;
+  });
+ }
+ const events=[...activateSouls(match,'player',chosen,pRows,cRows,match.pHand,byId,tags),...activateSouls(match,'cpu',eligibleSouls(cRows,match.soulUsed?.cpu||[]).slice(0,2),cRows,pRows,match.cHand,byId,tags)];
+ for(const event of events){
+  ov.innerHTML=`<section class="mpb-battle-panel soul-cutin"><small>${event.side==='player'?'PLAYER':'CPU'} · SOUL ${event.count}</small><div>${art(event.id)}</div><h2>${esc(event.name)}</h2><p>${esc(event.text)}</p></section>`;bindImageFallback(ov);await wait(1300);
+ }
+ match.roundSoulEvents=events;
+}
 async function combatPhase(ov,match,request){
   const pRows=fighterRows(match.pHand,match.cHand,'player',2,byId,tagsMap,match.boostIndex),cRows=fighterRows(match.cHand,match.pHand,'cpu',match.cCenter,byId,tagsMap),rows=[...pRows,...cRows];
-  const p=teamStats(pRows,match.pHand,byId,tagsMap),c=teamStats(cRows,match.cHand,byId,tagsMap);let pLife=p.hp,cLife=c.hp;
+  await soulPhase(ov,match,pRows,cRows);
+  const p=teamStats(pRows,match.pHand,byId,tagsMap),c=teamStats(cRows,match.cHand,byId,tagsMap);let pLife=aliveHp(pRows),cLife=aliveHp(cRows);
   ov.innerHTML=`<section class="mpb-battle-panel fight-phase">${score(match)}${lifeBar('CPU LIFE',cLife,c.hp,'cpu')}<div class="mpb-fight-summary top">${totalStats('CPU',c,'cpu')}${activeTags(match.cHand)}</div><div class="mpb-arena"><div class="mpb-arena-ring"></div>${cRows.map(fighterMarkup).join('')}${pRows.map(fighterMarkup).join('')}<strong class="mpb-start-call">集合中…</strong></div><div class="mpb-fight-summary bottom">${totalStats('PLAYER',p,'player')}${activeTags(match.pHand)}</div>${lifeBar('PLAYER LIFE',pLife,p.hp,'player')}</section>`;
-  bindImageFallback(ov);const arena=ov.querySelector('.mpb-arena'),call=ov.querySelector('.mpb-start-call');arena.classList.add('gathering');await wait(BATTLE_TIMING.gather);call.textContent='START!';arena.classList.add('start-flash');await wait(BATTLE_TIMING.startFlash);call.remove();arena.classList.remove('gathering','start-flash');arena.classList.add('combat');
+  bindImageFallback(ov);const arena=ov.querySelector('.mpb-arena'),call=ov.querySelector('.mpb-start-call');rows.forEach(r=>updateFighter(arena,r));arena.classList.add('gathering');await wait(BATTLE_TIMING.gather);call.textContent='START!';arena.classList.add('start-flash');await wait(BATTLE_TIMING.startFlash);call.remove();arena.classList.remove('gathering','start-flash');arena.classList.add('combat');
   let steps=0;
   while(pRows.some(x=>x.hp>0)&&cRows.some(x=>x.hp>0)&&steps<320){
     steps++;const actors=rows.filter(x=>x.hp>0),a=actors.reduce((best,x)=>!best||x.nextAt<best.nextAt?x:best,null);if(!a)break;const enemies=a.side==='player'?cRows:pRows,d=pickTarget(enemies);if(!d)break;
@@ -142,7 +163,7 @@ async function combatPhase(ov,match,request){
   if(pRows.some(x=>x.hp>0)&&cRows.some(x=>x.hp>0)){
     const pp=aliveHp(pRows)/Math.max(1,p.hp),cc=aliveHp(cRows)/Math.max(1,c.hp),losers=pp>=cc?cRows:pRows;for(const x of losers){x.hp=0;updateFighter(arena,x);}pLife=aliveHp(pRows);cLife=aliveHp(cRows);setTeamLife(ov,'player',pLife,p.hp);setTeamLife(ov,'cpu',cLife,c.hp);
   }
-  await wait(420);const won=cLife<=0;if(won)match.pWins++;else match.cWins++;match.history.push({round:match.round,won,pLife,cLife,pHand:[...match.pHand],cHand:[...match.cHand],boostId:match.boostIndex>=0?match.pHand[match.boostIndex]:null,centerId:match.pHand[2],cpuCenterId:match.cHand[match.cCenter]});match.pDiscard.push(...match.pHand);match.cDiscard.push(...match.cHand);return won;
+  await wait(420);const won=cLife<=0;if(won)match.pWins++;else match.cWins++;match.history.push({round:match.round,won,soulEvents:match.roundSoulEvents,pLife,cLife,pHand:[...match.pHand],cHand:[...match.cHand],boostId:match.boostIndex>=0?match.pHand[match.boostIndex]:null,centerId:match.pHand[2],cpuCenterId:match.cHand[match.cCenter]});match.pDiscard.push(...match.pHand);match.cDiscard.push(...match.cHand);return won;
 }
 
 async function roundResult(ov,match,won){

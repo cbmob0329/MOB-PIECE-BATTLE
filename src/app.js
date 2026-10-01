@@ -1,3 +1,4 @@
+import {figureSkillInfo} from './components/figure-skill-info.js?v=7.3.0';
 import './namespace.js?v=7.3.0';
 import {displayScreen} from './screens/display.js?v=7.3.0';
 import {calendarScreen} from './screens/calendar.js?v=7.3.0';
@@ -114,7 +115,7 @@ function openFigureInfo(id){
   const f=byId.get(id);if(!f)return;const owned=profile.owned?.[id]||0,rec=figureRecord(profile,id),known=owned>0;
   const names=(f.tags||[]).map(t=>tags.find(x=>String(x.id)===String(t))?.name).filter(Boolean);
   const dlg=document.createElement('dialog');dlg.className='figure-dex-dialog';
-  dlg.innerHTML=`<section><button class="figure-dex-close" aria-label="閉じる">×</button><div class="figure-dex-hero ${known?'':'locked'}">${art(f)}</div><div class="figure-info-badges">${rankArt(f.rarity,'figure-info-rank',f.rarity)}${iconArt('status','figure-info-status','STATUS')}</div><small>${f.displayNo} · ${f.rarity} · COST ${f.mobPiece.cost}</small><h2>${known?f.name:'？？？'}</h2><p class="figure-dex-owned">所持 ${owned} / 出場 ${rec.appearances} / 対戦勝利 ${rec.matchWins}</p>${known?`<div class="figure-dex-stats"><span>HP<b>${f.mobPiece.hp}</b></span><span>ATK<b>${f.mobPiece.attack}</b></span><span>DEF<b>${f.mobPiece.defense}</b></span><span>SPD<b>${f.mobPiece.speed}</b></span></div><h3>${iconArt('tag','figure-info-tag','TAG')} TAG</h3><div class="figure-dex-tags">${names.length?names.map(x=>`<span>${x}</span>`).join(''):'<span>タグなし</span>'}</div><p class="figure-dex-note">ラウンド勝利 ${rec.roundWins} · このフィギュアを使った対戦勝利 ${rec.matchWins}</p>`:'<p class="notice">まだ所持していないフィギュアです。入手すると名前・能力・タグ・戦績が開放されます。</p>'}</section>`;
+  dlg.innerHTML=`<section><button class="figure-dex-close" aria-label="閉じる">×</button><div class="figure-dex-hero ${known?'':'locked'}">${art(f)}</div><div class="figure-info-badges">${rankArt(f.rarity,'figure-info-rank',f.rarity)}${iconArt('status','figure-info-status','STATUS')}</div><small>${f.displayNo} · ${f.rarity} · COST ${f.mobPiece.cost}</small><h2>${known?f.name:'？？？'}</h2><p class="figure-dex-owned">所持 ${owned} / 出場 ${rec.appearances} / 対戦勝利 ${rec.matchWins}</p>${known?`<div class="figure-dex-stats"><span>HP<b>${f.mobPiece.hp}</b></span><span>ATK<b>${f.mobPiece.attack}</b></span><span>DEF<b>${f.mobPiece.defense}</b></span><span>SPD<b>${f.mobPiece.speed}</b></span></div><h3>${iconArt('tag','figure-info-tag','TAG')} TAG</h3><div class="figure-dex-tags">${names.length?names.map(x=>`<span>${x}</span>`).join(''):'<span>タグなし</span>'}</div>${figureSkillInfo(f)}<p class="figure-dex-note">ラウンド勝利 ${rec.roundWins} · このフィギュアを使った対戦勝利 ${rec.matchWins}</p>`:'<p class="notice">まだ所持していないフィギュアです。入手すると名前・能力・タグ・戦績が開放されます。</p>'}</section>`;
   document.body.appendChild(dlg);dlg.showModal();const close=()=>{dlg.close();dlg.remove();};dlg.querySelector('.figure-dex-close').onclick=close;dlg.addEventListener('click',e=>{if(e.target===dlg)close();});dlg.addEventListener('cancel',e=>{e.preventDefault();close();});
 }
 
@@ -125,7 +126,7 @@ function setRank(rank){
 }
 function grantAllFigures(){
   profile.owned=profile.owned||{};
-  figures.filter(f=>!f.pending).forEach(f=>{profile.owned[f.sourceId]=OWN_CAP[f.rarity]||1;});
+  figures.filter(f=>!f.pending).forEach(f=>{profile.owned[f.sourceId]=Math.max(profile.owned[f.sourceId]||0,OWN_CAP[f.rarity]||1);});
   if(!profile.centerId||!byId.has(profile.centerId))profile.centerId=figures.find(f=>!f.pending)?.sourceId||'01';
   if(!profile.avatarId||!byId.has(profile.avatarId))profile.avatarId=profile.centerId;
 }
@@ -154,12 +155,13 @@ if(b.hasAttribute('data-clear-deck')){if(!profile.deck.length){toast('デッキ�
 if(b.dataset.testAction){
   try{
     const action=b.dataset.testAction;
-    if(action==='toggle-mode'){profile.testMode=!profile.testMode;if(profile.testMode){profile.coins=testSettings.maxCurrency;profile.diamonds=testSettings.maxCurrency;profile.rubies=testSettings.maxCurrency;}persist();render();toast(`TEST MODE ${profile.testMode?'ON':'OFF'}`);return;}
+    if(action==='toggle-mode'){profile.testMode=!profile.testMode;if(!profile.testMode)for(const [id,n] of Object.entries(profile.owned)){const f=byId.get(id);if(f)profile.owned[id]=Math.min(n,OWN_CAP[f.rarity]);}if(profile.testMode){profile.coins=testSettings.maxCurrency;profile.diamonds=testSettings.maxCurrency;profile.rubies=testSettings.maxCurrency;}persist();render();toast(`TEST MODE ${profile.testMode?'ON':'OFF'}`);return;}
     if(!profile.testMode)throw new Error('先にTEST MODEをONにしてください。');
     if(action==='coins-max')profile.coins=testSettings.maxCurrency;
     else if(action==='diamonds-max')profile.diamonds=testSettings.maxCurrency;
     else if(action==='rubies-max')profile.rubies=testSettings.maxCurrency;
     else if(action==='figures-max')grantAllFigures();
+    else if(action==='figure-25'){const id=document.querySelector('#test-figure-select')?.value;const f=byId.get(id);if(!f||f.pending)throw new Error('フィギュアを選んでください。');profile.owned[id]=25;profile.testFigureId=id;}
     persist();render({preserveScroll:true});toast('テスト用データを適用しました');
   }catch(err){toast(err.message);}return;
 }

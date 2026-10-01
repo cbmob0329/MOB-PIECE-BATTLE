@@ -224,6 +224,9 @@ Image assets are intentionally NOT included in this archive. Existing GitHub ass
 - Imported 82 tag definitions and all 22 updated banner lineups. All banners are available in this standalone game, which has no Quest story unlock state. Missing banner art uses its featured figure.
 - Added ruby exchange with Quest prices (R 10 / SR 50 / SSR 100 / UR 300 / MOB 500), a performance confirmation, balance checks, ownership caps and transactional saving.
 - Existing figure IDs, dex numbers and battle stats are preserved. New figures use the existing rarity's average stats. Existing draw probabilities, SR+ tenth draw, inventory caps and summon presentation are retained.
-- Quest SOUL, adjacency and RPG traits are retained as reference data; those combat systems are not activated here. Added tags apply the stat modifiers supported by this battle engine, and the displayed battle labels describe only those modifiers.
+- Quest SOUL and adjacency are now active in the individual 5v5 battle; RPG equipment traits remain reference data. Added tags apply the stat modifiers supported by this battle engine, and the displayed battle labels describe only those modifiers.
 - `node scripts/import-mob-quest.mjs` reads the sibling MOB-QUEST folder and writes only here. Run `node scripts/index-assets.mjs` afterward. The source repository is never modified.
 - `node scripts/quest-import-check.mjs` checks save compatibility, assets and exchange boundaries. `pnpm test:quest-ui` checks browser flows; install Playwright or set `PLAYWRIGHT_PATH`, and start the local Vite server first.
+
+形成ガチャ4演出、指定確率、テスト所持操作、SOULスキル・隣接連携の詳細は [FIGURE_FORMATION_AND_SOUL](docs/FIGURE_FORMATION_AND_SOUL.md) を参照。
+演出文言の編集元は src/data/summon-messages.json。開発中の保存で自動反映され、ビルド時も同期されます。
