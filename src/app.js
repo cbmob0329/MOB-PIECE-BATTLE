@@ -1,3 +1,5 @@
+import {handleDeckAssist} from './screens/soulDeckAssist.js';
+import {applyStarter} from './game/soul-starters.js';
 import {battleCustomizeScreen} from './screens/battleCustomize.js';
 import {setBattleStyle} from './data/battle-style.js';
 import {figureSkillInfo} from './components/figure-skill-info.js?v=7.3.0';
@@ -135,8 +137,10 @@ function grantAllFigures(){
 
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
 if(b.dataset.battleCube||b.dataset.battleMat){setBattleStyle(profile,b.dataset.battleCube?'cube':'mat',b.dataset.battleCube||b.dataset.battleMat);persist();render({preserveScroll:true});toast('バトルデザインを変更しました');return;}
+if(handleDeckAssist(b,ctx,{render,persist,toast}))return;
 if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}
 if(b.hasAttribute('data-soul-filter')){profile.soulDeckFilter=b.dataset.soulFilter;persist();render({preserveScroll:true});return;}
+if(b.hasAttribute('data-soul-starter')&&testSettings.enabled){try{applyStarter(profile,b.dataset.soulStarter);persist();render({preserveScroll:true});toast('テスト用スターターデッキをセットしました');}catch(err){toast(err.message);}return;}
 if(['data-soul-add','data-soul-remove','data-soul-auto','data-soul-clear'].some(a=>b.hasAttribute(a))){try{let deck=[...ensureSoulDecks(profile)];if(b.hasAttribute('data-soul-add'))deck.push(b.dataset.soulAdd);if(b.hasAttribute('data-soul-remove'))deck.splice(Number(b.dataset.soulRemove),1);if(b.hasAttribute('data-soul-auto'))deck=autoSoulDeck(profile.owned);if(b.hasAttribute('data-soul-clear'))deck=[];const check=validateSoulDeck(deck,profile.owned);if(check.errors.length)throw Error(check.errors[0]);setSoulDeck(profile,deck);persist();render({preserveScroll:true});}catch(err){toast(err.message);}return;}
 if(b.hasAttribute('data-week-open')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=false;return;}
 if(b.hasAttribute('data-week-close')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=true;return;}
