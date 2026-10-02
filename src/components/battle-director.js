@@ -29,7 +29,7 @@ export function createBattleDirector(root,{profile,style}){
  const skip=()=>{stopped++;animation?.finish();root.querySelector('.duel-fx')?.replaceChildren();};
  async function run(events){const token=++stopped,host=root.querySelector('.duel-fx');if(!host)return;root.classList.add('fx-running');
   try{for(const event of groupPresentationEvents(events)){if(token!==stopped)break;const p=presentation(event);if(!p)continue;
-   const duration=reduced()?120:Math.round(p.time*(style.fast?.5:1)*(event.side===1?.7:1));
+   const duration=reduced()?220:Math.round(p.time*1.3*(style.fast?.5:1)*(event.side===1?.85:1));
    host.innerHTML=`<div class="battle-cue cue-${p.kind}" data-cue="${event.type}" style="--cue-time:${duration}ms"><div class="fx-rays"></div>${p.body}<div class="fx-title"><strong>${p.title}</strong><span>${esc(p.sub)}</span></div></div><button class="fx-skip" data-fx-skip>演出をスキップ ›</button>`;
    host.classList.toggle('motion-reduced',!!reduced());beat(event.type);const el=host.querySelector('.battle-cue');
    animation=el.animate([{opacity:0},{opacity:1,offset:.12},{opacity:1,offset:.88},{opacity:0}],{duration,fill:'both'});

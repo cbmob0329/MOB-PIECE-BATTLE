@@ -14,8 +14,8 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
  '<div class="lab-cue"><small>'+t.cutLabel+'</small><h2>'+esc(copy[0])+'</h2><p>'+esc(copy[1])+'</p></div>'+
  (cue==='pickup'?'<div class="lab-stamp"><b>'+t.seal+'</b><span>'+t.sealLabel+'</span></div>':'')+
  '<div class="lab-progress" aria-hidden="true"><i></i><i></i><i></i><span>01 → 02 → 03</span></div>'+
- '<div class="lab-reveal"><span>'+esc(hero.rarity)+'</span><div>'+art(hero)+'</div><small>'+esc(hero.displayNo)+'</small><h2>'+esc(hero.name)+'</h2><p>'+(preview?t.previewResult:t.result)+'</p></div>'+
- (cue==='allSSR'?'<div class="lab-parade">'+figures.map((f,i)=>'<span style="--i:'+i+'">'+art(f)+'<b>'+esc(f.rarity)+'</b></span>').join('')+'</div>':'')+
+ '<div class="lab-reveal" hidden></div>'+
+ '<div class="lab-parade" hidden></div>'+
  '<footer><p class="scene-caption" aria-live="polite">'+t.ready+'</p><button data-release>'+t.release+'<small>'+t.releaseEnglish+'</small></button><button data-finish hidden>'+(preview?t.closePreview:t.showResult)+' →</button><small>'+(reduced?t.reduced:t.hint)+'</small></footer></section>';
  const scene=dialog.querySelector('.figure-lab'),canvas=scene.querySelector('canvas'),ctx=canvas.getContext('2d');
  const core=scene.querySelector('.lab-core img');core.onerror=()=>{core.hidden=true;core.nextElementSibling.hidden=false;};
@@ -24,7 +24,7 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
  const cleanup=()=>{if(disposed)return;disposed=true;cancelAnimationFrame(raf);timers.forEach(clearTimeout);sprite.onload=sprite.onerror=null;dialog.classList.remove('cinema-dialog');};
  const finish=()=>{if(disposed)return;cleanup();onFinish();};
  function setPhase(next,label){phase=next;born=performance.now();scene.dataset.phase=next;scene.querySelector('.scene-caption').textContent=label;
-  if(next==='reveal'){scene.querySelector('[data-finish]').hidden=false;scene.querySelector('[data-finish]').focus({preventScroll:true});}
+  if(next==='reveal'){const reveal=scene.querySelector('.lab-reveal');reveal.innerHTML='<span>'+esc(hero.rarity)+'</span><div>'+art(hero)+'</div><small>'+esc(hero.displayNo)+'</small><h2>'+esc(hero.name)+'</h2><p>'+(preview?t.previewResult:t.result)+'</p>';reveal.hidden=false;if(cue==='allSSR'){const parade=scene.querySelector('.lab-parade');parade.innerHTML=figures.map((f,i)=>'<span style="--i:'+i+'">'+art(f)+'<b>'+esc(f.rarity)+'</b></span>').join('');parade.hidden=false;}scene.querySelector('[data-finish]').hidden=false;scene.querySelector('[data-finish]').focus({preventScroll:true});}
  }
  function paint(now){
   if(disposed||!dialog.open)return;
@@ -43,12 +43,12 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
    }else if(phase==='assemble'){
     const cols=8,rows=10;
     for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
-     const n=j*cols+i,delay=((rows-1-j)*cols+i)/80*.65,p=reduced?1:ease((elapsed/2.1-delay)/.35),a=n*2.399;
+     const n=j*cols+i,delay=((rows-1-j)*cols+i)/80*.65,p=reduced?1:ease((elapsed/2.8-delay)/.35),a=n*2.399;
      if(p<=0)continue;const tw=dw/cols,th=dh/rows,tx=x+(i+.5)*tw,ty=y+(j+.5)*th;
-     ctx.save();ctx.translate(tx+Math.cos(a)*(1-p)*w*.65,ty+Math.sin(a)*(1-p)*h*.5);ctx.rotate((1-p)*(n%2?2:-2));ctx.globalAlpha=.18*Math.min(1,p*2);ctx.filter='brightness(0)';ctx.drawImage(sprite,i*sprite.naturalWidth/cols,j*sprite.naturalHeight/rows,sprite.naturalWidth/cols,sprite.naturalHeight/rows,-tw/2,-th/2,tw,th);ctx.restore();
+     ctx.save();ctx.translate(tx+Math.cos(a)*(1-p)*w*.65,ty+Math.sin(a)*(1-p)*h*.5);ctx.rotate((1-p)*(n%2?2:-2));ctx.globalAlpha=Math.min(1,p*2);ctx.filter='grayscale(1) brightness(1.6) contrast(.7)';ctx.drawImage(sprite,i*sprite.naturalWidth/cols,j*sprite.naturalHeight/rows,sprite.naturalWidth/cols,sprite.naturalHeight/rows,-tw/2,-th/2,tw,th);ctx.restore();
     }
    }else{
-    const p=reduced?1:clamp(elapsed/1.6);ctx.save();ctx.filter='brightness(0)';ctx.globalAlpha=.18;ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
+    const p=reduced?1:clamp(elapsed/2.3);ctx.save();ctx.filter='grayscale(1) brightness(1.6) contrast(.7)';ctx.globalAlpha=1;ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
     ctx.save();ctx.beginPath();ctx.rect(x-8,y+dh*(1-p),dw+16,dh*p+8);ctx.clip();ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
     ctx.strokeStyle=palette[1];ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x-10,y+dh*(1-p));ctx.lineTo(x+dw+10,y+dh*(1-p));ctx.stroke();
     if(cue==='ssr'||cue==='allSSR'){ctx.strokeStyle=palette[0];ctx.lineWidth=3;ctx.strokeRect(x-18,y-18,dw+36,dh+36);}
@@ -56,8 +56,10 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
   }
   raf=requestAnimationFrame(paint);
  }
- function start(){if(started)return;started=true;scene.querySelector('[data-release]').hidden=true;setPhase('gather',messages.gather);
-  const timeline=reduced?[[200,'cue',copy[1]],[700,'outline',messages.flight],[1200,'assemble',messages.assembly],[1700,'ink',messages.ink],[2200,'reveal',messages.reveal]]:[[1050,'cue',copy[1]],[2500,'outline',messages.flight],[3400,'assemble',messages.assembly],[5700,'ink',messages.ink],[7600,'reveal',messages.reveal]];
+ async function start(){if(started)return;started=true;scene.querySelector('[data-release]').hidden=true;scene.querySelector('.scene-caption').textContent='フィギュアの素材を準備中…';
+  try{await sprite.decode();}catch{if(!disposed){started=false;scene.querySelector('[data-release]').hidden=false;scene.querySelector('.scene-caption').textContent='素材を読み込めませんでした。もう一度タップするか、スキップで結果を確認できます。';}return;}
+  if(disposed)return;setPhase('gather',messages.gather);
+  const timeline=reduced?[[300,'cue',copy[1]],[1000,'outline',messages.flight],[1900,'assemble',messages.assembly],[2800,'ink',messages.ink],[3800,'reveal',messages.reveal]]:[[1350,'cue',copy[1]],[3100,'outline',messages.flight],[4500,'assemble',messages.assembly],[7500,'ink',messages.ink],[10200,'reveal',messages.reveal]];
   for(const [ms,p,label] of timeline)timers.push(setTimeout(()=>{if(!disposed)setPhase(p,label);},ms));
  }
  scene.querySelector('[data-release]').onclick=start;scene.querySelector('[data-finish]').onclick=finish;scene.querySelector('[data-skip]').onclick=finish;scene.querySelector('[data-release]').focus({preventScroll:true});raf=requestAnimationFrame(paint);return cleanup;

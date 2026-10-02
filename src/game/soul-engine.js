@@ -172,7 +172,7 @@ function resolveCombat(s,event){
  const ignore=has(a,'ignoreDef')||has(d,'ignoreDefOnTarget');
  const def=Math.max(0,info(d).def+d.permanentDef+(ignore?values(d,'def').filter(v=>v<0).reduce((a,b)=>a+b,0):sum(d,'def'))+sum(d,'defUntilAttack')+(ignore?0:event.combatDef||0));
  const destroyed=atk>def||(atk===def&&has(d,'equalKill'));
- if(!destroyed){log(s,info(d).name+'が防御 · ダメージ0');emit(s,'guard',{side:1-event.side,id:d.id,label:'ガード！',atk,def});afterCombat(s,event,false);return;}
+ if(!destroyed){const loss=def>atk?Math.min(10,stats(d).def):0;d.permanentDef-=loss;log(s,info(d).name+'が防御 · ダメージ0'+(loss?' / DEF −'+loss:''));emit(s,'guard',{side:1-event.side,id:d.id,label:loss?'ガード！ DEF −'+loss:'ガード！',atk,def,defLoss:loss,remainingDef:stats(d).def});afterCombat(s,event,false);return;}
  const difference=Math.max(0,atk-def);let damage=difference+(difference>=Number(value(a,'threshold')||0)?Number(value(a,'damageBonus')||0):0);
  const shield=enemy.teamEffects.findIndex(e=>e.key==='damageShield'&&e.starts<=s.turn&&e.until>=s.turn);
  if(event.noDamage||shield>=0){damage=0;if(!event.noDamage&&shield>=0)enemy.teamEffects.splice(shield,1);}
@@ -198,7 +198,9 @@ export function moveAfterAttack(s,side,uid,slot){
  if(m.mode==='unattacked'&&(!other||other.uid===uid||other.attacks>0))fail('まだ攻撃していない別の味方を選んでください');
  const i=p.field.indexOf(f);[p.field[i],p.field[slot]]=[p.field[slot],p.field[i]];s.moveChoice=null;log(s,info(f).name+'の位置を変更');
 }
-export function endTurn(s,side){if(s.winner!==null||s.pending||s.active!==side||s.phase!=='battle')fail('対応完了後、バトルフェイズから終了できます');emit(s,'end',{side});s.moveChoice=null;s.active=1-side;startTurn(s);}
+export function canEndTurn(s,side){return s.winner===null&&!s.pending&&s.active===side&&(s.phase==='battle'||(s.turn===1&&side===0&&s.phase==='main'));}
+export function endTurn(s,side){if(!canEndTurn(s,side))fail('対応完了後、バトルフェイズから終了できます（先攻1ターン目はメインから終了可能）');emit(s,'end',{side});s.moveChoice=null;s.active=1-side;startTurn(s);}
+export function fusionReadyUids(s,side){const ready=new Set(),field=live(s,side);for(let i=0;i<field.length;i++)for(let j=i+1;j<field.length;j++)if(fusionOptions(s,side,[field[i].uid,field[j].uid]).length){ready.add(field[i].uid);ready.add(field[j].uid);}return ready;}
 export function cpuOptions(s,side,uid){const o={};for(const c of skillChoices(s,side,uid,o))o[c.key]=(c.choices.find(x=>x.value!=='-1')||c.choices[0])?.value;return o;}
 export function cpuRespond(s){if(!s.pending||s.pending.side===1)return;for(const f of reactionOptions(s,1)){try{useSkill(s,1,f.uid,cpuOptions(s,1,f.uid));return;}catch{}}passReaction(s,1);}
 export function cpuMain(s){
