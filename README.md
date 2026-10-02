@@ -1,6 +1,6 @@
-## 現行ルール：SOUL FUSION（2026-10-02）
+## 現行ルール：MOB SOUL BATTLE 確定マスター v1（2026-10-02）
 
-今回のユーザー指定により独立版は45体デッキ・3枠・ライフ400・ATK対DEFへ更新しました。現在の仕様・原典・保存方針は [SOUL_RULESET.md](docs/SOUL_RULESET.md)、全327体の性能は [HTML一覧](figure-catalog.html) を参照してください。以下の旧バージョンの戦闘説明は履歴です。
+ユーザー提供の確定JSONを導入しました（シード231・ミドル74・MOBソウル22）。45体デッキ・3枠・ライフ400・ATK対DEF、対応スキルと特殊融合10ペアに対応しています。現在の仕様・原典・保存方針は [SOUL_RULESET.md](docs/SOUL_RULESET.md)、全327体の性能は [HTML一覧](figure-catalog.html) を参照してください。以下の旧バージョンの戦闘説明は履歴です。
 
 # MOB PIECE BATTLE v5.0 WEEK / RANDOM / DEX UPDATE
 

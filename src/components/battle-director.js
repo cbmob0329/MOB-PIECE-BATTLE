@@ -1,0 +1,40 @@
+import {soulById} from '../game/soul-battle.js';
+import {cubeMarkup} from './battle-art.js';
+import {esc} from '../screens/soulLibrary.js';
+const image=id=>{const f=soulById.get(id);return f?`<img src="${esc(f.image)}" alt="${esc(f.name)}">`:'';};
+export function groupPresentationEvents(events){const out=[];for(const e of events){const last=out.at(-1);if(e.type==='draw'&&last?.type==='draw'&&last.side===e.side){last.count++;last.ids.push(e.id);}else out.push({...e,...(e.type==='draw'?{count:1,ids:[e.id]}:{})});}return out;}
+export function createBattleDirector(root,{profile,style}){
+ let stopped=0,animation=null,context=null;
+ const reduced=()=>profile.reducedMotion||matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const particles=()=>`<div class="fx-particles" aria-hidden="true">${Array.from({length:18},(_,i)=>`<i style="--i:${i};--angle:${i*20}deg"></i>`).join('')}</div>`;
+ const forming=(id,special=false)=>`<div class="fx-form ${special?'special':''}"><i class="fx-platform"></i><i class="fx-ring"></i><i class="fx-ring second"></i><div class="fx-hologram" style="--figure:url('${soulById.get(id)?.image||''}')"></div><div class="fx-body">${image(id)}</div><i class="fx-scan"></i>${particles()}</div>`;
+ const beat=(type)=>{if(!style.sound)return;try{context??=new AudioContext();context.resume();const t=context.currentTime;[0,.06,.12].forEach((delay,i)=>{const o=context.createOscillator(),gain=context.createGain();o.type='triangle';o.frequency.setValueAtTime((type==='hit'?150:type==='fusion'?330:440)*(1+i*.5),t+delay);gain.gain.setValueAtTime(.0001,t+delay);gain.gain.exponentialRampToValueAtTime(.035,t+delay+.015);gain.gain.exponentialRampToValueAtTime(.0001,t+delay+.14);o.connect(gain);gain.connect(context.destination);o.start(t+delay);o.stop(t+delay+.16);});}catch{}};
+ function presentation(e){
+  const f=soulById.get(e.id),name=f?.name||'';
+  if(e.type==='start')return {time:1100,kind:'start',title:'BATTLE START',sub:'小さなフィギュア、大きなバトル。',body:`<div class="fx-vs"><div>${image(e.playerId)}<b>PLAYER</b><small>LIFE 400</small></div><strong>VS</strong><div>${image(e.enemyId)}<b>${esc(e.enemyName)}</b><small>LIFE 400</small></div></div>`};
+  if(e.type==='turn')return {time:380,kind:'phase',title:e.side===0?'YOUR TURN':'ENEMY TURN',sub:'TURN '+e.turn,body:''};
+  if(e.type==='draw')return {time:550,kind:'draw',title:'ドロー！',sub:(e.side===0?'手札に':'相手が')+e.count+'体',body:`<div class="fx-draw">${cubeMarkup(e.side===0?style.cube.id:'shadow')}<div class="fx-draw-cards">${e.ids.slice(0,5).map((id,i)=>`<span style="--i:${i}">${e.side===0?image(id):'✦'}</span>`).join('')}</div></div>`};
+  if(e.type==='summon')return {time:850,kind:'summon',title:'召喚！',sub:name,body:forming(e.id)+`<div class="fx-stats">ATK <b>${e.atk}</b><span>DEF <b>${e.def}</b></span></div>`};
+  if(e.type==='fusion')return {time:e.special?1900:1450,kind:'fusion'+(e.special?' mob':''),title:e.special?'MOB SOUL FUSION':'SOUL FUSION',sub:name,body:`<div class="fx-materials">${e.materialIds.map((id,i)=>`<div style="--i:${i}">${image(id)}</div>`).join('')}</div>${forming(e.id,e.special)}<div class="fx-stats">ATK <b>${e.atk}</b><span>DEF <b>${e.def}</b></span></div>${e.special?'<div class="fx-bonus">SPECIAL PAIR · ATK +20 / DEF +20</div>':''}`};
+  if(e.type==='skill')return {time:650,kind:'skill',title:esc(e.name),sub:'SOUL SKILL',body:`<div class="fx-skill-portrait">${image(e.id)}${particles()}</div>`};
+  if(e.type==='attack')return {time:650,kind:'attack '+(e.attackType==='魔法'?'magic':'physical'),title:`ATK ${e.atk} <small>VS</small> DEF ${e.def}`,sub:'アタック！',body:`<div class="fx-combat"><div class="fx-attacker">${image(e.id)}</div><i class="fx-projectile"></i><i class="fx-impact"></i><div class="fx-defender">${image(e.targetId)}</div></div>`};
+  if(e.type==='hit')return {time:460,kind:'hit',title:e.damage?'HIT!':'DAMAGE ZERO',sub:e.damage?'相手LIFEへ！':'ライフダメージなし',body:`<div class="fx-damage">${e.damage?'−'+e.damage:'0'}</div><i class="fx-energy" style="--direction:${e.side===0?'120px':'-120px'}"></i>${particles()}`};
+  if(e.type==='defeat')return {time:480,kind:'defeat',title:'撃破！',sub:name,body:`<div class="fx-break">${image(e.id)}${particles()}</div>`};
+  if(e.type==='guard')return {time:420,kind:'guard',title:esc(e.label||'ガード！'),sub:'DEFENSE',body:`<div class="fx-shield">${image(e.id)}<i></i></div>`};
+  if(e.type==='battle')return {time:380,kind:'phase',title:'BATTLE PHASE',sub:e.side===0?'攻撃するフィギュアを選ぼう！':'相手のバトルフェイズ',body:''};
+  if(e.type==='end')return {time:300,kind:'phase',title:'TURN END',sub:'次のソウルへ、バトンを。',body:''};
+  if(e.type==='result')return {time:1100,kind:'result '+(e.side===0?'win':'lose'),title:e.side===0?'VICTORY!':'DEFEAT',sub:esc(e.reason),body:`<div class="fx-result-emblem">${e.side===0?'♛':'◆'}</div>${particles()}`};
+  return null;
+ }
+ const skip=()=>{stopped++;animation?.finish();root.querySelector('.duel-fx')?.replaceChildren();};
+ async function run(events){const token=++stopped,host=root.querySelector('.duel-fx');if(!host)return;root.classList.add('fx-running');
+  try{for(const event of groupPresentationEvents(events)){if(token!==stopped)break;const p=presentation(event);if(!p)continue;
+   const duration=reduced()?120:Math.round(p.time*(style.fast?.5:1)*(event.side===1?.7:1));
+   host.innerHTML=`<div class="battle-cue cue-${p.kind}" data-cue="${event.type}" style="--cue-time:${duration}ms"><div class="fx-rays"></div>${p.body}<div class="fx-title"><strong>${p.title}</strong><span>${esc(p.sub)}</span></div></div><button class="fx-skip" data-fx-skip>演出をスキップ ›</button>`;
+   host.classList.toggle('motion-reduced',!!reduced());beat(event.type);const el=host.querySelector('.battle-cue');
+   animation=el.animate([{opacity:0},{opacity:1,offset:.12},{opacity:1,offset:.88},{opacity:0}],{duration,fill:'both'});
+   await animation.finished.catch(()=>{});
+  }}finally{host.replaceChildren();animation=null;root.classList.remove('fx-running');}
+ }
+ return {run,skip,destroy(){skip();context?.close().catch(()=>{});}};
+}

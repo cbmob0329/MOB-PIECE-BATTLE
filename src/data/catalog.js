@@ -1,5 +1,8 @@
-import figures from './figures_master_v170.js?v=7.3.0';
+import sourceFigures from './figures_master_v170.js?v=7.3.0';
+import soulCatalog from './soul-catalog.js';
 import tags from './tags_master_v170.js?v=7.3.0';
+const masterNames=new Map(soulCatalog.figures.map(f=>[f.id,f.name]));
+const figures=sourceFigures.map(f=>masterNames.has(f.sourceId)?{...f,name:masterNames.get(f.sourceId)}:f);
 export { figures, tags };
 export const byId = new Map(figures.map(f => [f.sourceId, f]));
 export const imagePath = f => {

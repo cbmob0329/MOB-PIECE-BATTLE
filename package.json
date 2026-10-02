@@ -14,7 +14,7 @@
     "predev": "node scripts/sync-summon-messages.mjs",
     "prebuild": "node scripts/sync-summon-messages.mjs",
     "copy:sync": "node scripts/sync-summon-messages.mjs",
-    "data:soul": "node scripts/build-soul-catalog.mjs && node scripts/export-soul-html.mjs",
+    "data:soul": "node scripts/import-soul-master.mjs && node scripts/export-soul-html.mjs",
     "test:soul": "node scripts/soul-rules-check.mjs"
   },
   "devDependencies": {

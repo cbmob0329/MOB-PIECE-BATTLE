@@ -1,0 +1,13 @@
+{
+  "source": "handoff/soul-v1/MOB_SOUL_BATTLE_全327体マスターデータ_v1.json",
+  "sha256": "eb6c1c5b85ae16c2b807760f41ee0e741a0c41bd06dfe3dcc6fddda583f7578a",
+  "count": 327,
+  "classes": {
+    "シードソウル": 231,
+    "MOBソウル": 22,
+    "ミドルソウル": 74
+  },
+  "recipes": 202,
+  "special": 10,
+  "skillPrograms": 102
+}

@@ -1,3 +1,5 @@
+import {battleCustomizeScreen} from './screens/battleCustomize.js';
+import {setBattleStyle} from './data/battle-style.js';
 import {figureSkillInfo} from './components/figure-skill-info.js?v=7.3.0';
 import './namespace.js?v=7.3.0';
 import {displayScreen} from './screens/display.js?v=7.3.0';
@@ -22,7 +24,7 @@ import {
   testEnterRankUpTournament,testEnterLeague,testEnterMasterMatch,restoreCompetitionFromTest
 } from './game/competition.js?v=7.3.0';
 import {labelDate,MASTER_PRIZE,CPU_NAMES,RANKS} from './data/competition.js?v=7.3.0';
-import {launchBattle} from './screens/soulRuntime.js';
+import {launchBattle} from './screens/soulDuelRuntime.js';
 import {battleReward,normalizeBattleProgress,randomMatchStatus,recordRandomMatch} from './game/battle.js?v=7.3.0';
 import {testSettings} from './data/test-settings.js?v=7.3.0';
 import {claimMission,claimAllMissions} from './game/missions.js?v=7.3.0';
@@ -53,7 +55,7 @@ function render({preserveScroll=false}={}){
   const focused=preserveScroll?document.activeElement?.getAttribute('data-add'):null;
   const route=location.hash.slice(1)||'home';
   document.documentElement.classList.toggle('reduce-motion',profile.reducedMotion);
-  const page=route==='home'?homeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag):route==='deck'?deckScreen(ctx):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
+  const page=route==='home'?homeScreen(ctx):route==='battle-style'?battleCustomizeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag):route==='deck'?deckScreen(ctx):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
   const battleRoute=['battle','tournament','rankTournament','mobLeague'].includes(route);
   const master=isPlayerMaster(profile);const rankKey=master?'MOB_MASTER':profile.rank;
   const avatarFigure=byId.get(profile.avatarId)||byId.get(profile.centerId)||figures.find(f=>!f.pending);
@@ -132,6 +134,7 @@ function grantAllFigures(){
 }
 
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
+if(b.dataset.battleCube||b.dataset.battleMat){setBattleStyle(profile,b.dataset.battleCube?'cube':'mat',b.dataset.battleCube||b.dataset.battleMat);persist();render({preserveScroll:true});toast('バトルデザインを変更しました');return;}
 if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}
 if(b.hasAttribute('data-soul-filter')){profile.soulDeckFilter=b.dataset.soulFilter;persist();render({preserveScroll:true});return;}
 if(['data-soul-add','data-soul-remove','data-soul-auto','data-soul-clear'].some(a=>b.hasAttribute(a))){try{let deck=[...ensureSoulDecks(profile)];if(b.hasAttribute('data-soul-add'))deck.push(b.dataset.soulAdd);if(b.hasAttribute('data-soul-remove'))deck.splice(Number(b.dataset.soulRemove),1);if(b.hasAttribute('data-soul-auto'))deck=autoSoulDeck(profile.owned);if(b.hasAttribute('data-soul-clear'))deck=[];const check=validateSoulDeck(deck,profile.owned);if(check.errors.length)throw Error(check.errors[0]);setSoulDeck(profile,deck);persist();render({preserveScroll:true});}catch(err){toast(err.message);}return;}
