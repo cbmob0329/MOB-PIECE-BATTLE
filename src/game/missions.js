@@ -1,5 +1,5 @@
 import {MISSIONS} from '../data/missions.js?v=7.3.0';
-import {validateDeck} from './deck.js?v=7.3.0';
+import {validateSoulDeck,ensureSoulDecks} from './soul-battle.js';
 
 export function normalizeMissions(profile){
   if(!profile.missions||typeof profile.missions!=='object')profile.missions={};
@@ -13,7 +13,7 @@ const countModeWins=(p,prefix)=>history(p).filter(x=>String(x.mode||'').startsWi
 export function metricValue(profile,metric,{figures=[],byId=null}={}){
   const h=history(profile);
   switch(metric){
-    case 'deckReady': return byId&&validateDeck(profile.deck||[],byId,profile.owned||{}).valid?1:0;
+    case 'deckReady': return validateSoulDeck(ensureSoulDecks(profile),profile.owned||{}).valid?1:0;
     case 'battles': return Number(profile.battleStats?.battles??h.length);
     case 'wins': return Number(profile.battleStats?.wins??h.filter(x=>x.won).length);
     case 'uniqueOwned': return figures.filter(f=>!f.pending&&(profile.owned?.[f.sourceId]||0)>0).length;

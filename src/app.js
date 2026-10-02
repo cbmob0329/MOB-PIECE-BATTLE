@@ -8,9 +8,10 @@ import {gachaScreen,initGacha,bindGacha,handleGacha} from './screens/gacha.js?v=
 import './components/icons.js?v=7.3.0';
 import {figures, tags, byId, imagePath, modes} from './data/catalog.js?v=7.3.0';
 import {profile,saveProfile,storageAvailable} from './game/profile.js?v=7.3.0';
-import {validateDeck,autoBuildDeck,switchDeckSlot} from './game/deck.js?v=7.3.0';
 import {homeScreen} from './screens/showroom.js?v=7.3.0';
-import {collectionScreen,deckScreen,battleScreen,infoScreen} from './screens/library.js?v=7.3.0';
+import {infoScreen} from './screens/library.js?v=7.3.0';
+import {collectionScreen,deckScreen,battleScreen,soulInfo} from './screens/soulLibrary.js';
+import {ensureSoulDecks,setSoulDeck,validateSoulDeck,autoSoulDeck} from './game/soul-battle.js';
 import {competitionScreen} from './screens/competition.js?v=7.3.0';
 import {missionScreen} from './screens/mission.js?v=7.3.0';
 import {historyScreen,hallOfFameScreen} from './screens/records.js?v=7.3.0';
@@ -21,7 +22,7 @@ import {
   testEnterRankUpTournament,testEnterLeague,testEnterMasterMatch,restoreCompetitionFromTest
 } from './game/competition.js?v=7.3.0';
 import {labelDate,MASTER_PRIZE,CPU_NAMES,RANKS} from './data/competition.js?v=7.3.0';
-import {launchBattle} from './screens/battleRuntime.js?v=7.3.0';
+import {launchBattle} from './screens/soulRuntime.js';
 import {battleReward,normalizeBattleProgress,randomMatchStatus,recordRandomMatch} from './game/battle.js?v=7.3.0';
 import {testSettings} from './data/test-settings.js?v=7.3.0';
 import {claimMission,claimAllMissions} from './game/missions.js?v=7.3.0';
@@ -112,11 +113,10 @@ async function startBattleFromUi(spec){
 }
 
 function openFigureInfo(id){
-  const f=byId.get(id);if(!f)return;const owned=profile.owned?.[id]||0,rec=figureRecord(profile,id),known=owned>0;
-  const names=(f.tags||[]).map(t=>tags.find(x=>String(x.id)===String(t))?.name).filter(Boolean);
-  const dlg=document.createElement('dialog');dlg.className='figure-dex-dialog';
-  dlg.innerHTML=`<section><button class="figure-dex-close" aria-label="閉じる">×</button><div class="figure-dex-hero ${known?'':'locked'}">${art(f)}</div><div class="figure-info-badges">${rankArt(f.rarity,'figure-info-rank',f.rarity)}${iconArt('status','figure-info-status','STATUS')}</div><small>${f.displayNo} · ${f.rarity} · COST ${f.mobPiece.cost}</small><h2>${known?f.name:'？？？'}</h2><p class="figure-dex-owned">所持 ${owned} / 出場 ${rec.appearances} / 対戦勝利 ${rec.matchWins}</p>${known?`<div class="figure-dex-stats"><span>HP<b>${f.mobPiece.hp}</b></span><span>ATK<b>${f.mobPiece.attack}</b></span><span>DEF<b>${f.mobPiece.defense}</b></span><span>SPD<b>${f.mobPiece.speed}</b></span></div><h3>${iconArt('tag','figure-info-tag','TAG')} TAG</h3><div class="figure-dex-tags">${names.length?names.map(x=>`<span>${x}</span>`).join(''):'<span>タグなし</span>'}</div>${figureSkillInfo(f)}<p class="figure-dex-note">ラウンド勝利 ${rec.roundWins} · このフィギュアを使った対戦勝利 ${rec.matchWins}</p>`:'<p class="notice">まだ所持していないフィギュアです。入手すると名前・能力・タグ・戦績が開放されます。</p>'}</section>`;
-  document.body.appendChild(dlg);dlg.showModal();const close=()=>{dlg.close();dlg.remove();};dlg.querySelector('.figure-dex-close').onclick=close;dlg.addEventListener('click',e=>{if(e.target===dlg)close();});dlg.addEventListener('cancel',e=>{e.preventDefault();close();});
+ const f=byId.get(id);if(!f)return;
+ const dlg=document.createElement('dialog');dlg.className='figure-dex-dialog';
+ dlg.innerHTML='<section><button class="figure-dex-close" aria-label="閉じる">×</button><div class="figure-dex-hero">'+art(f)+'</div><h2>'+f.name+'</h2><p>所持 '+(profile.owned[id]||0)+'</p>'+soulInfo(f)+'</section>';
+ document.body.appendChild(dlg);dlg.showModal();const close=()=>{dlg.close();dlg.remove();};dlg.querySelector('.figure-dex-close').onclick=close;dlg.addEventListener('click',e=>{if(e.target===dlg)close();});dlg.addEventListener('cancel',e=>{e.preventDefault();close();});
 }
 
 function setRank(rank){
@@ -132,6 +132,9 @@ function grantAllFigures(){
 }
 
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
+if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}
+if(b.hasAttribute('data-soul-filter')){profile.soulDeckFilter=b.dataset.soulFilter;persist();render({preserveScroll:true});return;}
+if(['data-soul-add','data-soul-remove','data-soul-auto','data-soul-clear'].some(a=>b.hasAttribute(a))){try{let deck=[...ensureSoulDecks(profile)];if(b.hasAttribute('data-soul-add'))deck.push(b.dataset.soulAdd);if(b.hasAttribute('data-soul-remove'))deck.splice(Number(b.dataset.soulRemove),1);if(b.hasAttribute('data-soul-auto'))deck=autoSoulDeck(profile.owned);if(b.hasAttribute('data-soul-clear'))deck=[];const check=validateSoulDeck(deck,profile.owned);if(check.errors.length)throw Error(check.errors[0]);setSoulDeck(profile,deck);persist();render({preserveScroll:true});}catch(err){toast(err.message);}return;}
 if(b.hasAttribute('data-week-open')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=false;return;}
 if(b.hasAttribute('data-week-close')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=true;return;}
 if(b.hasAttribute('data-week-confirm')){try{advanceWeek(profile);persist();render();}catch(err){toast(err.message);}return;}
@@ -141,17 +144,11 @@ if(b.dataset.historyFilter){historyFilter=b.dataset.historyFilter;render({preser
 if(b.dataset.calendarView){calendarView=b.dataset.calendarView;render({preserveScroll:true});return;}
 if(b.dataset.calendarMonth){calendarMonth=Number(b.dataset.calendarMonth);calendarView='month';render({preserveScroll:true});return;}
 if(b.dataset.calendarOpenMonth){calendarMonth=Number(b.dataset.calendarOpenMonth);calendarView='month';render();return;}
-if(b.dataset.openDeckPicker!==undefined){const picker=app.querySelector('[data-deck-picker]');if(picker)picker.hidden=false;return;}
-if(b.dataset.closeDeckPicker!==undefined){const picker=app.querySelector('[data-deck-picker]');if(picker)picker.hidden=true;return;}
-if(b.dataset.deckSlot!==undefined){switchDeckSlot(profile,Number(b.dataset.deckSlot));persist();render();toast(`DECK ${profile.activeDeckSlot+1} に切り替えました`);return;}
 if(b.dataset.collectionStatus){collectionStatus=b.dataset.collectionStatus;render();return;}
 if(b.dataset.figureInfo){openFigureInfo(b.dataset.figureInfo);return;}
 if(b.dataset.playerAvatar){profile.avatarId=b.dataset.playerAvatar;persist();render({preserveScroll:true});toast('プレイヤーアバターを変更しました');return;}
 if(b.hasAttribute('data-mission-claim-all')){try{const reward=claimAllMissions(profile,{figures,byId});persist();render();toast(`MISSION ALL CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND · ${reward.count}件`);}catch(err){toast(err.message);}return;}
 if(b.dataset.missionClaim){try{const reward=claimMission(profile,b.dataset.missionClaim,{figures,byId});persist();render();toast(`MISSION CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND`);}catch(err){toast(err.message);}return;}
-if(b.dataset.pickFigure){const next=[...profile.deck,b.dataset.pickFigure];const result=validateDeck(next,byId,profile.owned);if(result.errors.length){toast(result.errors[0]);return;}profile.deck=next;persist();render({preserveScroll:true});setTimeout(()=>{const picker=app.querySelector('[data-deck-picker]');if(picker)picker.hidden=false;},0);return;}
-if(b.hasAttribute('data-auto-deck')){const built=autoBuildDeck(figures,profile.owned);if(built.error){toast(built.error);return;}profile.deck=built.deck;persist();render();toast(`おまかせ編成：25体 / COST ${built.cost}`);return;}
-if(b.hasAttribute('data-clear-deck')){if(!profile.deck.length){toast('デッキは空です');return;}profile.deck=[];persist();render();toast('デッキを空にしました');return;}
 if(b.dataset.testAction){
   try{
     const action=b.dataset.testAction;
@@ -166,7 +163,7 @@ if(b.dataset.testAction){
   }catch(err){toast(err.message);}return;
 }
 if(b.dataset.testRank){try{if(!profile.testMode)throw new Error('先にTEST MODEをONにしてください。');setRank(b.dataset.testRank);persist();render({preserveScroll:true});toast(`テストランクを ${b.dataset.testRank} に変更しました`);}catch(err){toast(err.message);}return;}
-if(b.dataset.comp&&competitionAction(b.dataset.comp))return;if(b.dataset.compBattle){await startBattleFromUi(b.dataset.compBattle);return;}if(b.dataset.battleStart){await startBattleFromUi(b.dataset.battleStart);return;}handleGacha(b);if(b.dataset.editShelf!==undefined)displaySlot=Number(b.dataset.editShelf);if(b.dataset.go){location.hash=b.dataset.go;return;}if(b.dataset.displaySlot!==undefined){displaySlot=Number(b.dataset.displaySlot);render({preserveScroll:true});}if(b.dataset.displayFigure){const f=byId.get(b.dataset.displayFigure);if(!usableFigure(f))return;profile.displayIds[displaySlot]=f.sourceId;persist();render({preserveScroll:true});toast('展示フィギュアを変更しました');}if(b.dataset.center){profile.centerId=b.dataset.center;persist();render();toast('センターフィギュアを変更しました');}if(b.dataset.filter){rarity=b.dataset.filter;render();}if(b.dataset.add){const next=[...profile.deck,b.dataset.add];const result=validateDeck(next,byId,profile.owned);if(result.errors.length){toast(result.errors[0]);return;}profile.deck=next;persist();render({preserveScroll:true});}if(b.dataset.remove!==undefined){profile.deck.splice(Number(b.dataset.remove),1);persist();render({preserveScroll:true});}if(b.dataset.action==='motion'){profile.reducedMotion=!profile.reducedMotion;persist();render();}if(b.dataset.action==='center-next'){const released=figures.filter(f=>!f.pending);profile.centerId=released[(released.findIndex(f=>f.sourceId===profile.centerId)+1)%released.length].sourceId;persist();render();}if(b.dataset.mode){const mode=modes.find(m=>m.id===b.dataset.mode);if(mode?.id==='tournament'){location.hash='tournament';return;}if(mode?.id==='random'){await startBattleFromUi('random');return;}if(mode?.id==='free'){await startBattleFromUi('free:easy');return;}toast(`${mode.label}：${mode.status}`);}});
+if(b.dataset.comp&&competitionAction(b.dataset.comp))return;if(b.dataset.compBattle){await startBattleFromUi(b.dataset.compBattle);return;}if(b.dataset.battleStart){await startBattleFromUi(b.dataset.battleStart);return;}handleGacha(b);if(b.dataset.editShelf!==undefined)displaySlot=Number(b.dataset.editShelf);if(b.dataset.go){location.hash=b.dataset.go;return;}if(b.dataset.displaySlot!==undefined){displaySlot=Number(b.dataset.displaySlot);render({preserveScroll:true});}if(b.dataset.displayFigure){const f=byId.get(b.dataset.displayFigure);if(!usableFigure(f))return;profile.displayIds[displaySlot]=f.sourceId;persist();render({preserveScroll:true});toast('展示フィギュアを変更しました');}if(b.dataset.center){profile.centerId=b.dataset.center;persist();render();toast('センターフィギュアを変更しました');}if(b.dataset.filter){rarity=b.dataset.filter;render();}if(b.dataset.action==='motion'){profile.reducedMotion=!profile.reducedMotion;persist();render();}if(b.dataset.action==='center-next'){const released=figures.filter(f=>!f.pending);profile.centerId=released[(released.findIndex(f=>f.sourceId===profile.centerId)+1)%released.length].sourceId;persist();render();}if(b.dataset.mode){const mode=modes.find(m=>m.id===b.dataset.mode);if(mode?.id==='tournament'){location.hash='tournament';return;}if(mode?.id==='random'){await startBattleFromUi('random');return;}if(mode?.id==='free'){await startBattleFromUi('free:easy');return;}toast(`${mode.label}：${mode.status}`);}});
 app.addEventListener('input',e=>{if(e.target.id==='display-search'){displayQuery=e.target.value;const start=e.target.selectionStart;render({preserveScroll:true});const input=document.querySelector('#display-search');input.focus({preventScroll:true});input.setSelectionRange(start,start);}if(e.target.id==='figure-search'){query=e.target.value;const start=e.target.selectionStart;render();const input=document.querySelector('#figure-search');input.focus();input.setSelectionRange(start,start);}});
 app.addEventListener('change',e=>{if(e.target.id==='figure-sort'){collectionSort=e.target.value;render({preserveScroll:true});}if(e.target.id==='figure-tag-filter'){collectionTag=e.target.value;render({preserveScroll:true});}});
 async function boot(){try{initGacha(ctx,render,toast);const center=byId.get(profile.centerId)||figures.find(f=>!f.pending);const centerImage=center?imagePath(center):null;await preloadUrls(criticalUiUrls(profile,centerImage),(done,total)=>window.mpbBootProgress?.(done,total,'UI / FIGURE'));window.addEventListener('hashchange',()=>{try{render();}catch(err){showBootError(err);}});render();document.documentElement.dataset.mpbReady='1';window.dispatchEvent(new CustomEvent('mpb:ready'));if(!storageAvailable)toast('ブラウザ保存を利用できません');}catch(err){showBootError(err);}}

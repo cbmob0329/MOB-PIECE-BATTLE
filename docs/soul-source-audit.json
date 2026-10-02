@@ -1,0 +1,42 @@
+{
+  "builtAt": "2026-10-02T01:34:35.552Z",
+  "sourceRoot": "D:/GitHub/MOB-QUEST/",
+  "snapshot": {
+    "path": "D:/MOB-QUEST-データ/game-data-20260929/current-data.json",
+    "version": "v248",
+    "sha256": "11aa9928dab91de3839087852922879bfd894ba830abffe93f7358eefb7975bb"
+  },
+  "files": [
+    {
+      "path": "js/figure-catalog-v218.json",
+      "sha256": "275969c4a7ae2942e8a591cc7118035fe95c08bba739349421230ab12710dc64"
+    },
+    {
+      "path": "js/mint-figures-v237.json",
+      "sha256": "cf2a21eab3ce949c66ee560c18b236341a371815b1693bd9c5bd0b68f6be641f"
+    },
+    {
+      "path": "js/macaron-figures-v247.json",
+      "sha256": "5a7f4591fd440bad030887aa83f60b94a6bafddcaa45f0cd7b22f03930fcf6c7"
+    },
+    {
+      "path": "js/boss-hp-v249.js",
+      "sha256": "ac679d4a0642c0160e9527b4bd4f4edf0d5b98cc7be34f739b5ea34d50e86bb5"
+    },
+    {
+      "path": "js/boss-edits-v250.js",
+      "sha256": "d8a94f74041616a843278b3534e53257e5b5b925c88bc134beccb7af684fcd0b"
+    },
+    {
+      "path": "js/finale-combat-v248.js",
+      "sha256": "07de9e89bfd05976577caa55db706b31e1b4848570bdc70aa866f4d45df52c47"
+    },
+    {
+      "path": "js/figures-v220.js",
+      "sha256": "f7133c1ad4644c4a424ff8ccecf9935b578812bdfb684847434968b221d9dc3e"
+    }
+  ],
+  "figures": 327,
+  "matchedActors": 168,
+  "limitations": "専用モンスターが無いロゴ・コラボ・合金フィギュアも、原典のフィギュア能力・特性・タグから設計。原典に無い属性や戦闘履歴は推測しない。v249のHP倍率は新作にHPが無いためATK/DEFへ転写しない。"
+}

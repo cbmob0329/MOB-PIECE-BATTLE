@@ -37,19 +37,18 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
   }
   if(['outline','assemble','ink'].includes(phase)&&sprite.complete&&sprite.naturalWidth){
    const size=Math.min(w*.77,h*.4,320),ratio=Math.min(size/sprite.naturalWidth,size/sprite.naturalHeight),dw=sprite.naturalWidth*ratio,dh=sprite.naturalHeight*ratio,x=cx-dw/2,y=cy-dh/2;
-   ctx.save();ctx.filter='brightness(0)';ctx.globalAlpha=.10;ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
    if(phase==='outline'){
-    ctx.save();ctx.filter='brightness(0)';ctx.globalAlpha=.48;ctx.drawImage(sprite,x,y,dw,dh);ctx.globalCompositeOperation='destination-out';ctx.globalAlpha=.8;ctx.drawImage(sprite,x+2,y+2,dw-4,dh-4);ctx.restore();
+    ctx.save();ctx.filter='brightness(0)';ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
     ctx.strokeStyle=palette[1];ctx.lineWidth=2;ctx.setLineDash([5,7]);ctx.strokeRect(x-12,y-12,dw+24,dh+24);ctx.setLineDash([]);
    }else if(phase==='assemble'){
     const cols=8,rows=10;
     for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
      const n=j*cols+i,delay=((rows-1-j)*cols+i)/80*.65,p=reduced?1:ease((elapsed/2.1-delay)/.35),a=n*2.399;
      if(p<=0)continue;const tw=dw/cols,th=dh/rows,tx=x+(i+.5)*tw,ty=y+(j+.5)*th;
-     ctx.save();ctx.translate(tx+Math.cos(a)*(1-p)*w*.65,ty+Math.sin(a)*(1-p)*h*.5);ctx.rotate((1-p)*(n%2?2:-2));ctx.globalAlpha=Math.min(1,p*2);ctx.filter='saturate(.1)';ctx.drawImage(sprite,i*sprite.naturalWidth/cols,j*sprite.naturalHeight/rows,sprite.naturalWidth/cols,sprite.naturalHeight/rows,-tw/2,-th/2,tw+.5,th+.5);ctx.restore();
+     ctx.save();ctx.translate(tx+Math.cos(a)*(1-p)*w*.65,ty+Math.sin(a)*(1-p)*h*.5);ctx.rotate((1-p)*(n%2?2:-2));ctx.globalAlpha=.18*Math.min(1,p*2);ctx.filter='brightness(0)';ctx.drawImage(sprite,i*sprite.naturalWidth/cols,j*sprite.naturalHeight/rows,sprite.naturalWidth/cols,sprite.naturalHeight/rows,-tw/2,-th/2,tw,th);ctx.restore();
     }
    }else{
-    const p=reduced?1:clamp(elapsed/1.6);ctx.save();ctx.filter='grayscale(1)';ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
+    const p=reduced?1:clamp(elapsed/1.6);ctx.save();ctx.filter='brightness(0)';ctx.globalAlpha=.18;ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
     ctx.save();ctx.beginPath();ctx.rect(x-8,y+dh*(1-p),dw+16,dh*p+8);ctx.clip();ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
     ctx.strokeStyle=palette[1];ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x-10,y+dh*(1-p));ctx.lineTo(x+dw+10,y+dh*(1-p));ctx.stroke();
     if(cue==='ssr'||cue==='allSSR'){ctx.strokeStyle=palette[0];ctx.lineWidth=3;ctx.strokeRect(x-18,y-18,dw+36,dh+36);}
@@ -58,7 +57,7 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
   raf=requestAnimationFrame(paint);
  }
  function start(){if(started)return;started=true;scene.querySelector('[data-release]').hidden=true;setPhase('gather',messages.gather);
-  const timeline=reduced?[[200,'cue',copy[1]],[700,'assemble',messages.assembly],[1100,'ink',messages.ink],[1600,'reveal',messages.reveal]]:[[1050,'cue',copy[1]],[2500,'outline',messages.flight],[3400,'assemble',messages.assembly],[5700,'ink',messages.ink],[7600,'reveal',messages.reveal]];
+  const timeline=reduced?[[200,'cue',copy[1]],[700,'outline',messages.flight],[1200,'assemble',messages.assembly],[1700,'ink',messages.ink],[2200,'reveal',messages.reveal]]:[[1050,'cue',copy[1]],[2500,'outline',messages.flight],[3400,'assemble',messages.assembly],[5700,'ink',messages.ink],[7600,'reveal',messages.reveal]];
   for(const [ms,p,label] of timeline)timers.push(setTimeout(()=>{if(!disposed)setPhase(p,label);},ms));
  }
  scene.querySelector('[data-release]').onclick=start;scene.querySelector('[data-finish]').onclick=finish;scene.querySelector('[data-skip]').onclick=finish;scene.querySelector('[data-release]').focus({preventScroll:true});raf=requestAnimationFrame(paint);return cleanup;

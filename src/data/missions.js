@@ -1,5 +1,5 @@
 export const MISSIONS = Object.freeze([
-  {id:'deck_ready',category:'DECK',title:'25 PIECES',description:'有効な25体デッキを1つ完成させる',metric:'deckReady',target:1,reward:{coins:3000,diamonds:3}},
+  {id:'deck_ready',category:'DECK',title:'45 SOULS',description:'有効な45体ソウルデッキを1つ完成させる',metric:'deckReady',target:1,reward:{coins:3000,diamonds:3}},
 
   {id:'battle_001',category:'BATTLE',title:'はじめての対戦',description:'対戦を1回プレイ',metric:'battles',target:1,reward:{coins:1000,diamonds:1}},
   {id:'battle_005',category:'BATTLE',title:'バトルスタート',description:'対戦を5回プレイ',metric:'battles',target:5,reward:{coins:3000,diamonds:3}},
