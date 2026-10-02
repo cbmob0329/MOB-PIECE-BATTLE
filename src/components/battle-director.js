@@ -7,7 +7,7 @@ export function createBattleDirector(root,{profile,style}){
  let stopped=0,animation=null,context=null;
  const reduced=()=>profile.reducedMotion||matchMedia('(prefers-reduced-motion: reduce)').matches;
  const particles=()=>`<div class="fx-particles" aria-hidden="true">${Array.from({length:18},(_,i)=>`<i style="--i:${i};--angle:${i*20}deg"></i>`).join('')}</div>`;
- const forming=(id,special=false)=>`<div class="fx-form ${special?'special':''}"><i class="fx-platform"></i><i class="fx-ring"></i><i class="fx-ring second"></i><div class="fx-hologram" style="--figure:url('${soulById.get(id)?.image||''}')"></div><div class="fx-body">${image(id)}</div><i class="fx-scan"></i>${particles()}</div>`;
+ const forming=(id,special=false)=>`<div class="fx-form ${special?'special':''}"><i class="fx-platform"></i><i class="fx-ring"></i><i class="fx-ring second"></i><div class="fx-hologram" style="--figure:url('${new URL(soulById.get(id)?.image||'',document.baseURI).href}')"></div><div class="fx-body">${image(id)}</div><i class="fx-scan"></i>${particles()}</div>`;
  const beat=(type)=>{if(!style.sound)return;try{context??=new AudioContext();context.resume();const t=context.currentTime;[0,.06,.12].forEach((delay,i)=>{const o=context.createOscillator(),gain=context.createGain();o.type='triangle';o.frequency.setValueAtTime((type==='hit'?150:type==='fusion'?330:440)*(1+i*.5),t+delay);gain.gain.setValueAtTime(.0001,t+delay);gain.gain.exponentialRampToValueAtTime(.035,t+delay+.015);gain.gain.exponentialRampToValueAtTime(.0001,t+delay+.14);o.connect(gain);gain.connect(context.destination);o.start(t+delay);o.stop(t+delay+.16);});}catch{}};
  function presentation(e){
   const f=soulById.get(e.id),name=f?.name||'';
