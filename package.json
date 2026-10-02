@@ -16,7 +16,9 @@
     "copy:sync": "node scripts/sync-summon-messages.mjs",
     "data:soul": "node scripts/import-soul-master.mjs && node scripts/export-soul-html.mjs",
     "test:soul": "node scripts/soul-rules-check.mjs",
-    "test:soul-ui": "node scripts/soul-update-browser.mjs"
+    "test:soul-ui": "node scripts/soul-update-browser.mjs",
+    "test:deck-assist": "node scripts/deck-assist-check.mjs",
+    "test:deck-ui": "node scripts/deck-assist-browser.mjs"
   },
   "devDependencies": {
     "vite": "^7.1.5"

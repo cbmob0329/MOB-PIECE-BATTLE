@@ -1,3 +1,4 @@
+import {handleDeckAssist} from './screens/soulDeckAssist.js';
 import {applyStarter} from './game/soul-starters.js';
 import {battleCustomizeScreen} from './screens/battleCustomize.js';
 import {setBattleStyle} from './data/battle-style.js';
@@ -136,6 +137,7 @@ function grantAllFigures(){
 
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
 if(b.dataset.battleCube||b.dataset.battleMat){setBattleStyle(profile,b.dataset.battleCube?'cube':'mat',b.dataset.battleCube||b.dataset.battleMat);persist();render({preserveScroll:true});toast('バトルデザインを変更しました');return;}
+if(handleDeckAssist(b,ctx,{render,persist,toast}))return;
 if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}
 if(b.hasAttribute('data-soul-filter')){profile.soulDeckFilter=b.dataset.soulFilter;persist();render({preserveScroll:true});return;}
 if(b.hasAttribute('data-soul-starter')&&testSettings.enabled){try{applyStarter(profile,b.dataset.soulStarter);persist();render({preserveScroll:true});toast('テスト用スターターデッキをセットしました');}catch(err){toast(err.message);}return;}
