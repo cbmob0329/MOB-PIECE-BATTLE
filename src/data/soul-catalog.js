@@ -1,4 +1,4 @@
-// Imported verbatim from the approved v1 master; do not rebalance here.
+// Imported from the v1 master with user-approved soul-overrides.js; edit the source/override, not generated data.
 export default {
   "version": "master-v1",
   "meta": {
@@ -27556,9 +27556,9 @@ export default {
       "soulSkill": {
         "name": "クイーンロック",
         "timing": "own-main",
-        "effect": "味方全体のATK+30。さらにMUSICまたは団結力タグを持つ味方は、このターン攻撃対象を自由に変更できる。",
+        "effect": "このターン、味方全体のATK+30。さらにMUSICまたは団結力タグを持つ味方はATK+20（合計ATK+50、両タグを持つ場合も追加は1回）。",
         "timingLabel": "自分メイン",
-        "description": "味方全体のATK+30。さらにMUSICまたは団結力タグを持つ味方は、このターン攻撃対象を自由に変更できる。",
+        "description": "このターン、味方全体のATK+30。さらにMUSICまたは団結力タグを持つ味方はATK+20（合計ATK+50、両タグを持つ場合も追加は1回）。",
         "program": 96,
         "sourceText": "味方全体のATK+30。さらにMUSICまたは団結力タグを持つ味方は、このターン攻撃対象を自由に変更できる。"
       },

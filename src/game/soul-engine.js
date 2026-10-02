@@ -1,11 +1,12 @@
 import {soulFigures,soulById,recipes,validateSoulDeck} from './soul-battle.js';
 import programs from './soul-skill-programs.js';
+import {soulOverrides} from '../data/soul-overrides.js';
 const fail=m=>{throw Error(m);};
 const log=(s,t)=>{s.log.push(t);s.log=s.log.slice(-100);};
 // Presentation events observe the rules; they never decide a battle outcome.
 const emit=(s,type,data={})=>{s.events??=[];s.eventSerial=(s.eventSerial||0)+1;s.events.push({seq:s.eventSerial,type,...data});s.events=s.events.slice(-180);};
 const info=p=>soulById.get(p.id);
-export const skillPlan=p=>programs[info(p).soulSkill.program];
+export const skillPlan=p=>soulOverrides[p.id]?.plan||programs[info(p).soulSkill.program];
 const live=(s,side)=>s.players[side].field.filter(Boolean);
 const piece=(s,side,uid)=>live(s,side).find(p=>p.uid===uid)||fail('フィールドのフィギュアを選んでください');
 const effect=(p,key,value,until)=>p.effects.push({key,value,until});
@@ -45,15 +46,25 @@ export function summon(s,side,index,slot){main(s,side);return place(s,side,index
 const matches=(p,m)=>m.id?p.id===m.id:m.tag?currentTags(p).includes(m.tag):has(p,'wildAttribute')||attribute(p)===m.attribute;
 export function fusionOptions(s,side,uids){
  if(s.winner!==null||s.pending||s.phase!=='main'||s.active!==side||uids.length!==2||uids[0]===uids[1])return [];
- const pair=uids.map(uid=>live(s,side).find(p=>p.uid===uid));
+ if(uids.every(ref=>typeof ref==='object'))return [];
+ const pair=uids.map(ref=>fusionMaterial(s,side,ref));
  if(pair.some(p=>!p||has(p,'fusionLock')||(has(p,'attackOrFuse')&&p.attacks>0)||(p.skillTurn===s.turn&&!has(p,'wildAttribute'))))return [];
  return recipes.filter(r=>s.players[side].reserve.includes(r.target)&&(r.special||pair.every(p=>info(p).soulClass===r.fromClass))&&((matches(pair[0],r.materials[0])&&matches(pair[1],r.materials[1]))||(matches(pair[1],r.materials[0])&&matches(pair[0],r.materials[1]))));
 }
+// Existing numeric references identify field instances; hand references identify a copy by index.
+export function fusionMaterial(s,side,ref){
+ if(typeof ref==='number')return live(s,side).find(p=>p.uid===ref);
+ const p=s.players[side],i=ref?.handIndex,id=p.hand[i];
+ if(!Number.isInteger(i)||i<0||!id)return null;
+ return {id,handIndex:i,effects:[],attacks:0,skillTurn:p.handBonuses.find(b=>b.index===i)?.skillTurn??-1};
+}
+export function fusionPairs(s,side){const field=live(s,side).map(f=>f.uid),out=[];for(let i=0;i<field.length;i++){for(let j=i+1;j<field.length;j++)out.push([field[i],field[j]]);for(let j=0;j<s.players[side].hand.length;j++)out.push([field[i],{handIndex:j}]);}return out;}
 function remove(s,side,f,destroyed=false){const p=s.players[side],i=p.field.findIndex(x=>x?.uid===f.uid);if(i<0)return;p.field[i]=null;p.grave.push(f.id);if(destroyed){p.destroyed.push(f.id);emit(s,'defeat',{side,id:f.id,uid:f.uid,slot:i});}}
 function bounce(s,side,f,def=0){const p=s.players[side];p.field[p.field.findIndex(x=>x?.uid===f.uid)]=null;p.handBonuses.push({id:f.id,index:p.hand.length,def,skillTurn:f.skillTurn,direct:!!def});p.hand.push(f.id);}
 export function fuse(s,side,uids,recipeId){
  main(s,side);const r=fusionOptions(s,side,uids).find(r=>r.id===recipeId);if(!r)fail('この素材ではフュージョンできません');
- const p=s.players[side],slot=p.field.findIndex(f=>f?.uid===uids[0]),materialIds=uids.map(uid=>piece(s,side,uid).id);for(const uid of uids)remove(s,side,piece(s,side,uid));
+ const p=s.players[side],fieldUid=uids.find(ref=>typeof ref==='number'),slot=p.field.findIndex(f=>f?.uid===fieldUid),materialIds=uids.map(ref=>fusionMaterial(s,side,ref).id);
+ for(const ref of uids){if(typeof ref==='number')remove(s,side,piece(s,side,ref));else{const {id}=takeHand(p,ref.handIndex);p.grave.push(id);p.used.push(id);}}
  p.reserve.splice(p.reserve.indexOf(r.target),1);p.used.push(r.target);const f=instance(s,r.target);p.field[slot]=f;
  if(r.special){f.mobFusion=true;f.permanentAtk=r.bonusATK;f.permanentDef=r.bonusDEF;s.fusionBanner={serial:f.uid,name:info(f).name,special:true};}
  else s.fusionBanner={serial:f.uid,name:info(f).name,special:false};
@@ -116,6 +127,7 @@ function applySkill(s,side,f,o){
   for(const k of ['skillLock','fusionLock','attackOrFuse','skipBattle','lastAttack'])if(q[k]){effect(t,k,true,expiresNextOpponent(s,side));if(k==='skillLock'&&q.duration!=='next-opponent')t.effects.at(-1).starts=s.turn+1;}
   if(q.addTag)effect(t,'addTag',o.tag,s.turn);if(q.removeTag)effect(t,'removeTag',o.tag,s.turn);
   if(q.musicFreedom&&currentTags(t).some(t=>['12','78'].includes(t)))effect(t,'pierceGuard',true,s.turn);
+  if(q.musicAtk&&currentTags(t).some(tag=>['12','78'].includes(tag)))effect(t,'atk',q.musicAtk,s.turn);
  }
  if(q.casterEach)effect(f,'eachTarget',true,s.turn);if(q.casterDamage)effect(f,'damageBonus',q.casterDamage,s.turn);
  for(const key of ['debuffShield','damageShield','teamSurvive'])if(q[key])p.teamEffects.push({key,value:q[key],until:key==='teamSurvive'?s.turn:expiresNextOpponent(s,side),starts:key==='teamSurvive'||q.shieldNow?s.turn:s.turn+1});
@@ -124,7 +136,7 @@ function applySkill(s,side,f,o){
  if(q.search){const id=p.deck.splice(Number(o.deckIndex),1)[0],back=takeHand(p,Number(o.handIndex)).id;p.deck.push(back);p.hand.push(id);}
  if(q.returnSelf){const slot=p.field.indexOf(f);bounce(s,side,f);if(q.replaceSeed&&Number(o.handIndex)>=0)place(s,side,Number(o.handIndex),slot);}
  if(q.fusionBonus)p.fusionBonus={...q.fusionBonus,expires:q.fusionBonus.turnOnly?s.turn:Infinity};
- if(q.revealFusion){const found=[];for(const a of live(s,side))for(const b of live(s,side))if(a.uid<b.uid)found.push(...fusionOptions(s,side,[a.uid,b.uid]));p.revealed=[...new Set(found.map(r=>r.target))];p.revealTurn=s.turn;}
+ if(q.revealFusion){const found=fusionPairs(s,side).flatMap(pair=>fusionOptions(s,side,pair));p.revealed=[...new Set(found.map(r=>r.target))];p.revealTurn=s.turn;}
 }
 export function passReaction(s,side){
  const pending=s.pending;if(!pending||side===pending.side)fail('対応の確認待ちではありません');s.pending=null;
@@ -204,7 +216,7 @@ export function cpuRespond(s){if(!s.pending||s.pending.side===1)return;for(const
 export function cpuMain(s){
  main(s,1);const p=s.players[1];let actions=0;
  while(actions++<20){while(p.hand.some((id,i)=>canSummonHand(s,1,i))&&p.field.includes(null))summon(s,1,p.hand.findIndex((id,i)=>canSummonHand(s,1,i)),p.field.indexOf(null));let best=null;
-  for(const a of live(s,1))for(const b of live(s,1)){if(a.uid>=b.uid)continue;for(const r of fusionOptions(s,1,[a.uid,b.uid])){const f=soulById.get(r.target),score=f.atk+f.def+(r.special?40:0);if(!best||score>best.score)best={r,uids:[a.uid,b.uid],score};}}
+  for(const uids of fusionPairs(s,1))for(const r of fusionOptions(s,1,uids)){const f=soulById.get(r.target),score=f.atk+f.def+(r.special?40:0);if(!best||score>best.score)best={r,uids,score};}
   if(!best)break;fuse(s,1,best.uids,best.r.id);
  }
  for(const f of live(s,1).filter(f=>canSkill(s,1,f.uid)).sort((a,b)=>stats(b).atk-stats(a).atk)){try{useSkill(s,1,f.uid,cpuOptions(s,1,f.uid));break;}catch{}}

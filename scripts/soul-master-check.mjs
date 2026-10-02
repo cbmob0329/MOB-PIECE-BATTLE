@@ -66,4 +66,22 @@ test('CPUの空き枠・全難度・対応窓を含む対戦は決着し決定�
  const run=()=>{const s=fresh();for(let turn=0;turn<90&&s.winner===null;turn++){const side=s.active,p=s.players[side];if(side===1)g.cpuMain(s);else{while(p.hand.some((id,i)=>g.canSummonHand(s,0,i))&&p.field.includes(null))g.summon(s,0,p.hand.findIndex((id,i)=>g.canSummonHand(s,0,i)),p.field.indexOf(null));}resolve(s);if(s.winner!==null)break;g.beginBattle(s,side);for(let step=0;step<25&&s.winner===null;step++){let pair=null;for(const a of p.field.filter(Boolean))for(const d of s.players[1-side].field.filter(Boolean))if(!pair&&g.canAttack(s,side,a,d))pair=[a,d];if(!pair)break;g.attack(s,side,pair[0].uid,pair[1].uid);resolve(s);}if(s.winner===null)g.endTurn(s,side);}assert.notEqual(s.winner,null);return s;};assert.deepEqual(run(),run());
  for(const rarities of [['R','SR','SSR'],['R','SR','SSR','UR'],['R','SR','SSR','UR','MOB']])assert.ok(g.validateSoulDeck(g.autoSoulDeck(Object.fromEntries(figures.map(f=>[f.id,f.soulClass==='mob'||rarities.includes(f.rarity)?5:0])))).valid);
 });
+
+test('全202レシピで手札×場と場×手札、満員でも場の素材位置に融合',()=>{
+ for(const r of c.recipes)for(const reverse of [false,true]){const s=fresh(),p=s.players[0];const fs=r.materials.map(m=>figures.find(f=>(r.special||f.soulClass===r.fromClass)&&(m.id?f.id===m.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute)));const left=put(s,0,seed,0),a=put(s,0,fs[0],1),right=put(s,0,seed,2);p.hand=[fs[1].id,fs[1].id];p.handBonuses=[{index:1,id:fs[1].id,def:30,skillTurn:-1,direct:true}];p.reserve=[r.target];const pair=[a.uid,{handIndex:0}];if(reverse)pair.reverse();assert.ok(g.fusionOptions(s,0,pair).some(x=>x.id===r.id));g.fuse(s,0,pair,r.id);assert.equal(p.field[1].id,r.target);assert.equal(p.field[0],left);assert.equal(p.field[2],right);assert.deepEqual(p.hand,[fs[1].id]);assert.equal(p.handBonuses[0].index,0);assert.equal(p.grave.length,2);assert.equal(p.destroyed.length,0);assert.equal(p.reserve.length,0);assert.equal(g.stats(p.field[1]).atk,byId.get(r.target).atk+(r.special?20:0));assert.deepEqual(s.events.at(-1).materialIds,reverse?[fs[1].id,fs[0].id]:fs.map(f=>f.id));}
+});
+test('手札×手札・不正素材・スキル使用後・融合封印・フェイズ外を拒否し状態不変',()=>{
+ const s=fresh(),p=s.players[0],r=c.recipes.find(r=>!r.special&&r.materials.every(m=>m.attribute==='火')),fire=figures.find(f=>f.soulClass==='seed'&&f.attribute==='火'),a=put(s,0,fire);p.hand=[fire.id,fire.id];p.reserve=[r.target];
+ const reject=pair=>{const before=structuredClone(s);assert.deepEqual(g.fusionOptions(s,0,pair),[]);assert.throws(()=>g.fuse(s,0,pair,r.id));assert.deepEqual(s,before);};
+ reject([{handIndex:0},{handIndex:1}]);reject([a.uid,{handIndex:-1}]);reject([a.uid,{handIndex:99}]);reject([a.uid,a.uid]);
+ a.skillTurn=s.turn;reject([a.uid,{handIndex:0}]);a.skillTurn=-1;a.effects.push({key:'fusionLock',value:true,until:s.turn});reject([a.uid,{handIndex:0}]);a.effects=[];
+ p.handBonuses=[{index:0,id:fire.id,skillTurn:s.turn}];reject([a.uid,{handIndex:0}]);p.handBonuses=[];
+ g.beginBattle(s,0);reject([a.uid,{handIndex:0}]);
+});
+test('クイーンロックは全員+30、該当タグ+20を一度だけ、相手と次ターンには影響なし',()=>{
+ const s=fresh(),queen=byId.get('mq:eventfig/59'),a=put(s,0,queen),plain=figures.find(f=>!f.tags.some(t=>['12','78'].includes(t))),b=put(s,0,plain,1),d=put(s,0,plain,2),enemy=put(s,1,plain);d.effects.push({key:'addTag',value:'12',until:s.turn},{key:'addTag',value:'78',until:s.turn});cast(s,0,a);
+ assert.equal(g.stats(b).atk,plain.atk+30);assert.equal(g.stats(d).atk,plain.atk+50);assert.equal(g.stats(enemy).atk,plain.atk);assert.equal(g.stats(a).atk,queen.atk+(queen.tags.some(t=>['12','78'].includes(t))?50:30));assert.ok(!d.effects.some(e=>e.key==='pierceGuard'));assert.ok(s.players[0].skillUsed);assert.match(queen.soulSkill.description,/合計ATK\+50/);
+ g.beginBattle(s,0);g.endTurn(s,0);assert.equal(g.stats(b).atk,plain.atk);assert.equal(g.stats(d).atk,plain.atk);
+});
+
 console.log(count+' master checks passed');

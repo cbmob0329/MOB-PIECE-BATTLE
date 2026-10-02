@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import legacy from '../src/data/figures_master_v170.js';
 import skillTexts from '../src/data/soul-skill-texts.js';
+import {soulOverrides} from '../src/data/soul-overrides.js';
 const path='handoff/soul-v1/MOB_SOUL_BATTLE_全327体マスターデータ_v1.json';
 const bytes=fs.readFileSync(path),master=JSON.parse(bytes);
 const classes={'シードソウル':'seed','ミドルソウル':'middle','MOBソウル':'mob'};
@@ -20,6 +21,7 @@ const figures=master.records.map(r=>{
   source:{figureFile:r.sourceFile,rarity:r.rarity,statsText:r.sourceBasis.statusEffect,traitText:r.sourceBasis.trait,soul:{text:r.sourceBasis.accessorySkillEffect},decision:r.sourceBasis.classReason,basis:r.sourceBasis},
   master:r,fusionMaterials:[],fusionTargets:[]};
 });
+for(const f of figures){const override=soulOverrides[f.id];if(override)Object.assign(f.soulSkill,{effect:override.effect,description:override.effect});}
 const recipes=[];
 for(const f of figures){
  const r=f.master;
@@ -31,6 +33,6 @@ for(const r of recipes){if(r.materials.some(m=>!Object.values(m)[0]))throw Error
 for(const f of figures){f.fusionMaterials=recipes.filter(r=>r.target===f.id);f.fusionTargets=[...new Set(recipes.filter(r=>(r.special||r.fromClass===f.soulClass)&&r.materials.some(m=>matches(f,m))).map(r=>r.target))];delete f.master;}
 if(figures.length!==327||new Set(figures.map(f=>f.id)).size!==327)throw Error('Invalid figure identities');
 const data={version:'master-v1',meta:master.meta,rules:master.rules,figures,recipes,tags:Object.entries(master.tagMap).map(([id,name])=>({id,name}))};
-fs.writeFileSync('src/data/soul-catalog.js','// Imported verbatim from the approved v1 master; do not rebalance here.\nexport default '+JSON.stringify(data,null,2)+';\n');
+fs.writeFileSync('src/data/soul-catalog.js','// Imported from the v1 master with user-approved soul-overrides.js; edit the source/override, not generated data.\nexport default '+JSON.stringify(data,null,2)+';\n');
 fs.writeFileSync('docs/soul-master-audit.json',JSON.stringify({source:path,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),count:figures.length,classes:master.meta.countsBySoulClass,recipes:recipes.length,special:recipes.filter(r=>r.special).length,skillPrograms:skillTexts.length},null,2)+'\n');
 console.log('Imported',figures.length,'figures;',recipes.length,'recipes;',skillTexts.length,'exact skill programs');
