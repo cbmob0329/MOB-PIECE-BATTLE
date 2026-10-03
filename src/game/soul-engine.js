@@ -29,9 +29,14 @@ export function startTurn(s){
  const p=s.players[s.active];while(p.hand.length<5&&s.winner===null)draw(s,s.active);
  if(s.winner===null){s.phase='main';log(s,`TURN ${s.turn} · ${p.name}のメインフェイズ`);}
 }
-export function createSoulBattle(decks,names=['PLAYER','CPU']){
+function shuffled(ids,random){
+ const deck=[...ids];
+ for(let i=deck.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];}
+ return deck;
+}
+export function createSoulBattle(decks,names=['PLAYER','CPU'],{random=Math.random}={}){
  for(const d of decks)if(!validateSoulDeck(d).valid)fail('45体（30 / 10 / 5）のデッキが必要です');
- const s={version:2,active:0,turn:0,phase:'draw',winner:null,reason:'',serial:0,log:[],pending:null,players:decks.map((d,i)=>({name:names[i],life:400,original:[...d],deck:d.filter(id=>soulById.get(id).soulClass==='seed'),reserve:d.filter(id=>soulById.get(id).soulClass!=='seed'),hand:[],used:[],field:[null,null,null],grave:[],destroyed:[],skillUsed:false,teamEffects:[],handBonuses:[],fusionBonus:null,revealed:[]}))};startTurn(s);return s;
+ const s={version:2,active:0,turn:0,phase:'draw',winner:null,reason:'',serial:0,log:[],pending:null,players:decks.map((d,i)=>({name:names[i],life:400,original:[...d],deck:shuffled(d.filter(id=>soulById.get(id).soulClass==='seed'),random),reserve:d.filter(id=>soulById.get(id).soulClass!=='seed'),hand:[],used:[],field:[null,null,null],grave:[],destroyed:[],skillUsed:false,teamEffects:[],handBonuses:[],fusionBonus:null,revealed:[]}))};startTurn(s);return s;
 }
 export const canSummonHand=(s,side,index)=>{const p=s.players[side],id=p.hand[index];return !!id&&(soulById.get(id).soulClass==='seed'||p.handBonuses.some(b=>b.index===index&&b.direct));};
 function takeHand(p,index){const bonus=p.handBonuses.find(b=>b.index===index);p.handBonuses=p.handBonuses.filter(b=>b.index!==index);for(const b of p.handBonuses)if(b.index>index)b.index--;return {id:p.hand.splice(index,1)[0],bonus};}

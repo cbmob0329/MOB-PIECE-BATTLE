@@ -8,12 +8,12 @@ for(const theme of soulStarters){
  const saved=structuredClone(profile);applyStarter(profile,theme.id);assert.deepEqual(profile,saved);
  for(const id of new Set(deck))assert.ok(deck.filter(x=>x===id).length<=OWN_CAP[g.soulById.get(id).rarity]);
  assert.ok(deck.filter(id=>g.soulById.get(id).tags.includes(theme.tag)).length>=40);
- const s=g.createSoulBattle([deck,deck]);assert.ok(g.canEndTurn(s,0));g.summon(s,0,0,0);g.summon(s,0,0,1);
+ const s=g.createSoulBattle([deck,deck],undefined,{random:()=>0.999999});assert.ok(g.canEndTurn(s,0));g.summon(s,0,0,0);g.summon(s,0,0,1);
  assert.equal(g.fusionReadyUids(s,0).size,2);const a=s.players[0].field[0];a.skillTurn=s.turn;assert.equal(g.fusionReadyUids(s,0).size,0);a.skillTurn=-1;
  g.endTurn(s,0);assert.equal(s.turn,2);assert.equal(s.active,1);assert.ok(!g.canEndTurn(s,1));assert.throws(()=>g.endTurn(s,1));assert.equal(g.fusionReadyUids(s,0).size,0);
 }
 const deck=starterDeck('grassland');
-function fight(delta){const s=g.createSoulBattle([deck,deck]);const a=g.summon(s,0,0,0);g.endTurn(s,0);const d=g.summon(s,1,0,0);g.beginBattle(s,1);g.endTurn(s,1);a.permanentAtk=g.stats(d).def+delta-g.stats(a).atk;g.beginBattle(s,0);const before=g.stats(d).def;g.attack(s,0,a.uid,d.uid);while(s.pending)g.passReaction(s,1-s.pending.side);return {s,a,d,before};}
+function fight(delta){const s=g.createSoulBattle([deck,deck],undefined,{random:()=>0.999999});const a=g.summon(s,0,0,0);g.endTurn(s,0);const d=g.summon(s,1,0,0);g.beginBattle(s,1);g.endTurn(s,1);a.permanentAtk=g.stats(d).def+delta-g.stats(a).atk;g.beginBattle(s,0);const before=g.stats(d).def;g.attack(s,0,a.uid,d.uid);while(s.pending)g.passReaction(s,1-s.pending.side);return {s,a,d,before};}
 const guarded=fight(-1);assert.equal(guarded.s.players[1].field[0],guarded.d);assert.equal(guarded.s.players[1].life,400);assert.equal(g.stats(guarded.d).def,guarded.before-10);g.endTurn(guarded.s,0);assert.equal(g.stats(guarded.d).def,guarded.before-10);
 const equal=fight(0);assert.equal(g.stats(equal.d).def,equal.before);assert.equal(equal.s.players[1].field[0],equal.d);
 const hit=fight(1);assert.equal(hit.s.players[1].field[0],null);assert.equal(hit.s.players[1].life,399);

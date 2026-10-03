@@ -20,7 +20,7 @@ export function handleDeckAssist(button,c,{render,persist,toast}){
  function preview(deck,warnings=[],title='この編成を反映しますか？'){
   const before=countIds(original),after=countIds(deck),added={},removed={};for(const fid of new Set([...original,...deck])){const n=(after[fid]||0)-(before[fid]||0);if(n>0)added[fid]=n;if(n<0)removed[fid]=-n;}
   const check=validateSoulDeck(deck,profile.owned);pending=[...deck];
-  shell(title,`<p>DECK ${slot+1} · シード ${check.counts.seed}/30 · ミドル ${check.counts.middle}/10 · MOB ${check.counts.mob}/5</p><strong>${check.valid?'45体の編成が完成':'編成途中として保存します'}</strong>${warnings.map(w=>`<p class="assist-warning">${esc(w)}</p>`).join('')}<h3>追加</h3>${Object.keys(added).length?cards(added):'<p>追加なし</p>'}<h3>外れるフィギュア</h3>${Object.keys(removed).length?cards(removed):'<p>なし</p>'}<p>所持数は変わりません。シードは表示順にドローされます。</p><div class="assist-actions"><button data-assist-close>キャンセル</button><button data-assist-apply>この編成を反映</button></div>`);
+  shell(title,`<p>DECK ${slot+1} · シード ${check.counts.seed}/30 · ミドル ${check.counts.middle}/10 · MOB ${check.counts.mob}/5</p><strong>${check.valid?'45体の編成が完成':'編成途中として保存します'}</strong>${warnings.map(w=>`<p class="assist-warning">${esc(w)}</p>`).join('')}<h3>追加</h3>${Object.keys(added).length?cards(added):'<p>追加なし</p>'}<h3>外れるフィギュア</h3>${Object.keys(removed).length?cards(removed):'<p>なし</p>'}<p>所持数は変わりません。山札は対戦開始時にシャッフルされます。</p><div class="assist-actions"><button data-assist-close>キャンセル</button><button data-assist-apply>この編成を反映</button></div>`);
  }
  function recommend(){
   const f=soulById.get(id);if(!f)throw Error('フィギュアが見つかりません');routes=fusionRecommendations(id,profile.owned,original);

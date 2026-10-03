@@ -10,7 +10,7 @@ let count=0;const test=(name,fn)=>{fn();console.log('PASS '+name);count++;};
 const {soulFigures:figures,soulById:byId}=g;
 const own=Object.fromEntries(figures.map(f=>[f.id,25])),deck=g.autoSoulDeck(own);
 const find=n=>figures.find(f=>f.soulSkill.program===n),seed=figures.find(f=>f.soulClass==='seed'),mid=figures.find(f=>f.soulClass==='middle'),mob=figures.find(f=>f.soulClass==='mob');
-const fresh=()=>g.createSoulBattle([deck,deck]);
+const fresh=()=>g.createSoulBattle([deck,deck],undefined,{random:()=>0.999999});
 // Isolated field fixtures use real imported figures; integration cases below use legal summons.
 function put(s,side,f,slot=0){const p={uid:++s.serial,id:f.id,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],lastTarget:null,extra:0,mobFusion:false,permanentAtk:0,permanentDef:0};s.players[side].field[slot]=p;return p;}
 const choose=(s,side,f)=>g.cpuOptions(s,side,f.uid);
