@@ -1,5 +1,6 @@
 // Imported from the v1 master with user-approved soul-overrides.js; edit the source/override, not generated data.
-export default {
+import {extendPieceCatalog} from './piece-catalog.js';
+const base = {
   "version": "master-v1",
   "meta": {
     "version": "1.0",
@@ -35932,3 +35933,4 @@ export default {
     }
   ]
 };
+export default extendPieceCatalog(base);

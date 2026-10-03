@@ -1,0 +1,882 @@
+{
+  "version": 1,
+  "source": "追加用フィギュア/追加用フィギュア.txt",
+  "tags": [
+    {
+      "id": "piece-daily",
+      "name": "モブライフ"
+    },
+    {
+      "id": "piece-bakery",
+      "name": "パンとおやつ"
+    },
+    {
+      "id": "piece-bell",
+      "name": "ヒーローベル"
+    },
+    {
+      "id": "piece-boxer",
+      "name": "ボクサー"
+    },
+    {
+      "id": "piece-object",
+      "name": "モブオブジェ"
+    },
+    {
+      "id": "piece-soldier",
+      "name": "モブ兵士"
+    },
+    {
+      "id": "piece-main",
+      "name": "ピースメイン"
+    }
+  ],
+  "records": [
+    {
+      "number": "002",
+      "id": "piece:002",
+      "name": "チルタイムモブくん",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "atk": 60,
+      "def": 80,
+      "series": "daily",
+      "program": 32,
+      "skillName": "ひと息ブレイク",
+      "tags": [
+        "piece-main",
+        "piece-daily",
+        "33"
+      ]
+    },
+    {
+      "number": "003",
+      "id": "piece:003",
+      "name": "グラフィティモブくん",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "atk": 80,
+      "def": 60,
+      "series": "daily",
+      "program": 70,
+      "skillName": "カラースプレー",
+      "tags": [
+        "piece-main",
+        "piece-daily",
+        "70"
+      ]
+    },
+    {
+      "number": "004",
+      "id": "piece:004",
+      "name": "わたあめモブくん",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "atk": 50,
+      "def": 80,
+      "series": "bakery",
+      "program": 11,
+      "skillName": "ふわふわケア",
+      "tags": [
+        "piece-main",
+        "piece-bakery",
+        "65"
+      ]
+    },
+    {
+      "number": "005",
+      "id": "piece:005",
+      "name": "パーティーモブくん",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "atk": 70,
+      "def": 70,
+      "series": "daily",
+      "program": 18,
+      "skillName": "パーティーエール",
+      "tags": [
+        "piece-main",
+        "piece-daily",
+        "78"
+      ]
+    },
+    {
+      "number": "006",
+      "id": "piece:006",
+      "name": "ミュージックくん",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "風",
+      "atk": 80,
+      "def": 80,
+      "series": "daily",
+      "program": 97,
+      "skillName": "リズムセッション",
+      "tags": [
+        "piece-main",
+        "piece-daily",
+        "12"
+      ]
+    },
+    {
+      "number": "007",
+      "id": "piece:007",
+      "name": "ゲーミングモブくん",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "atk": 90,
+      "def": 70,
+      "series": "daily",
+      "program": 92,
+      "skillName": "ルートサーチ",
+      "tags": [
+        "piece-main",
+        "piece-daily",
+        "36"
+      ]
+    },
+    {
+      "number": "008",
+      "id": "piece:008",
+      "name": "どら焼きモブくん",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "atk": 60,
+      "def": 80,
+      "series": "bakery",
+      "program": 26,
+      "skillName": "どら焼き休憩",
+      "tags": [
+        "piece-main",
+        "piece-bakery",
+        "65"
+      ]
+    },
+    {
+      "number": "009",
+      "id": "piece:009",
+      "name": "モブくんとみかんちゃん",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "光",
+      "atk": 70,
+      "def": 90,
+      "series": "daily",
+      "program": 4,
+      "skillName": "なかよしガード",
+      "tags": [
+        "piece-main",
+        "piece-daily",
+        "40"
+      ]
+    },
+    {
+      "number": "010",
+      "id": "piece:010",
+      "name": "モブラプサンタ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "水",
+      "atk": 80,
+      "def": 90,
+      "series": "bell",
+      "program": 20,
+      "skillName": "サンタガード",
+      "tags": [
+        "piece-main",
+        "piece-bell",
+        "38"
+      ]
+    },
+    {
+      "number": "011",
+      "id": "piece:011",
+      "name": "モブベルマージョ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "atk": 150,
+      "def": 150,
+      "series": "bell",
+      "program": 57,
+      "skillName": "ベルサイレンス",
+      "tags": [
+        "piece-main",
+        "piece-bell",
+        "37"
+      ]
+    },
+    {
+      "number": "012",
+      "id": "piece:012",
+      "name": "モブトナッチ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "atk": 70,
+      "def": 80,
+      "series": "bell",
+      "program": 7,
+      "skillName": "トナカイステップ",
+      "tags": [
+        "piece-main",
+        "piece-bell",
+        "55"
+      ]
+    },
+    {
+      "number": "013",
+      "id": "piece:013",
+      "name": "モブバッジサンタ",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "闇",
+      "atk": 220,
+      "def": 210,
+      "series": "bell",
+      "program": 87,
+      "skillName": "ホーリーベル",
+      "tags": [
+        "piece-main",
+        "piece-bell",
+        "37"
+      ]
+    },
+    {
+      "number": "014",
+      "id": "piece:014",
+      "name": "モブコッペパン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "atk": 60,
+      "def": 90,
+      "series": "bakery",
+      "program": 0,
+      "skillName": "焼きたてコッペ",
+      "tags": [
+        "piece-main",
+        "piece-bakery",
+        "70"
+      ]
+    },
+    {
+      "number": "015",
+      "id": "piece:015",
+      "name": "モブやきそばパン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "火",
+      "atk": 80,
+      "def": 60,
+      "series": "bakery",
+      "program": 17,
+      "skillName": "ソースチャージ",
+      "tags": [
+        "piece-main",
+        "piece-bakery",
+        "18"
+      ]
+    },
+    {
+      "number": "016",
+      "id": "piece:016",
+      "name": "クロワッサン",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "風",
+      "atk": 80,
+      "def": 80,
+      "series": "bakery",
+      "program": 62,
+      "skillName": "焼き重ねサポート",
+      "tags": [
+        "piece-main",
+        "piece-bakery",
+        "18"
+      ]
+    },
+    {
+      "number": "017",
+      "id": "piece:017",
+      "name": "モブ食パン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "atk": 60,
+      "def": 80,
+      "series": "bakery",
+      "program": 12,
+      "skillName": "ふんわりガード",
+      "tags": [
+        "piece-main",
+        "piece-bakery",
+        "18"
+      ]
+    },
+    {
+      "number": "018",
+      "id": "piece:018",
+      "name": "モブオレンジバッティング",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "atk": 100,
+      "def": 60,
+      "series": "boxer",
+      "program": 101,
+      "skillName": "バッティングブロー",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "07"
+      ]
+    },
+    {
+      "number": "019",
+      "id": "piece:019",
+      "name": "モブパープルダッキング",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "atk": 70,
+      "def": 100,
+      "series": "boxer",
+      "program": 7,
+      "skillName": "ダッキング",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "05"
+      ]
+    },
+    {
+      "number": "020",
+      "id": "piece:020",
+      "name": "モブファングステップ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "風",
+      "atk": 160,
+      "def": 120,
+      "series": "boxer",
+      "program": 47,
+      "skillName": "ファングステップ",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "55"
+      ]
+    },
+    {
+      "number": "021",
+      "id": "piece:021",
+      "name": "モブギラチャンピオン",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "水",
+      "atk": 150,
+      "def": 150,
+      "series": "boxer",
+      "program": 49,
+      "skillName": "ギラブレイク",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "31"
+      ]
+    },
+    {
+      "number": "022",
+      "id": "piece:022",
+      "name": "モブパープルストーン",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "地",
+      "atk": 120,
+      "def": 170,
+      "series": "pb2",
+      "program": 33,
+      "skillName": "ストーンシールド",
+      "tags": [
+        "piece-main",
+        "11",
+        "05"
+      ]
+    },
+    {
+      "number": "023",
+      "id": "piece:023",
+      "name": "モブイエローレコード",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "atk": 80,
+      "def": 80,
+      "series": "pb2",
+      "program": 56,
+      "skillName": "レコードリンク",
+      "tags": [
+        "piece-main",
+        "11",
+        "12"
+      ]
+    },
+    {
+      "number": "024",
+      "id": "piece:024",
+      "name": "モブブルークラウド",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "風",
+      "atk": 70,
+      "def": 90,
+      "series": "pb2",
+      "program": 71,
+      "skillName": "クラウドブースト",
+      "tags": [
+        "piece-main",
+        "11",
+        "50"
+      ]
+    },
+    {
+      "number": "025",
+      "id": "piece:025",
+      "name": "モブレッドファイヤ",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "火",
+      "atk": 230,
+      "def": 190,
+      "series": "pb2",
+      "program": 88,
+      "skillName": "PB2ファイヤバースト",
+      "tags": [
+        "piece-main",
+        "11",
+        "56"
+      ]
+    },
+    {
+      "number": "026",
+      "id": "piece:026",
+      "name": "モブグリーンバルーン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "atk": 30,
+      "def": 80,
+      "series": "object",
+      "program": 82,
+      "skillName": "グリーンリターン",
+      "tags": [
+        "piece-main",
+        "piece-object",
+        "50"
+      ]
+    },
+    {
+      "number": "027",
+      "id": "piece:027",
+      "name": "モブピンクバルーン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "atk": 30,
+      "def": 80,
+      "series": "object",
+      "program": 11,
+      "skillName": "ピンクヒール",
+      "tags": [
+        "piece-main",
+        "piece-object",
+        "50"
+      ]
+    },
+    {
+      "number": "028",
+      "id": "piece:028",
+      "name": "モブブルーバルーン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "atk": 30,
+      "def": 90,
+      "series": "object",
+      "program": 62,
+      "skillName": "ブルーアシスト",
+      "tags": [
+        "piece-main",
+        "piece-object",
+        "50"
+      ]
+    },
+    {
+      "number": "029",
+      "id": "piece:029",
+      "name": "モブイエローバルーン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "atk": 40,
+      "def": 70,
+      "series": "object",
+      "program": 97,
+      "skillName": "イエローエール",
+      "tags": [
+        "piece-main",
+        "piece-object",
+        "50"
+      ]
+    },
+    {
+      "number": "031",
+      "id": "piece:031",
+      "name": "モブアカイシ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "atk": 80,
+      "def": 60,
+      "series": "soldier",
+      "program": 16,
+      "skillName": "ストーンスロー",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "60"
+      ]
+    },
+    {
+      "number": "032",
+      "id": "piece:032",
+      "name": "モブアカナイト",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "atk": 90,
+      "def": 90,
+      "series": "soldier",
+      "program": 20,
+      "skillName": "アカナイトガード",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "39"
+      ]
+    },
+    {
+      "number": "033",
+      "id": "piece:033",
+      "name": "モブパプオノ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "atk": 90,
+      "def": 50,
+      "series": "soldier",
+      "program": 35,
+      "skillName": "アックスブレイク",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "49"
+      ]
+    },
+    {
+      "number": "034",
+      "id": "piece:034",
+      "name": "モブパプマジック",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "atk": 160,
+      "def": 120,
+      "series": "soldier",
+      "program": 53,
+      "skillName": "パープルシール",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "37"
+      ]
+    },
+    {
+      "number": "035",
+      "id": "piece:035",
+      "name": "モブパプヤリ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "atk": 100,
+      "def": 70,
+      "series": "soldier",
+      "program": 21,
+      "skillName": "スピアスラスト",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "49"
+      ]
+    },
+    {
+      "number": "036",
+      "id": "piece:036",
+      "name": "モブパプソルジャー",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "atk": 140,
+      "def": 160,
+      "series": "soldier",
+      "program": 63,
+      "skillName": "パープルガード",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "39"
+      ]
+    },
+    {
+      "number": "037",
+      "id": "piece:037",
+      "name": "モブグリコン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "atk": 80,
+      "def": 70,
+      "series": "soldier",
+      "program": 17,
+      "skillName": "グリーンハンマー",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "34"
+      ]
+    },
+    {
+      "number": "038",
+      "id": "piece:038",
+      "name": "モブグリヒーラー",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "地",
+      "atk": 100,
+      "def": 160,
+      "series": "soldier",
+      "program": 26,
+      "skillName": "グリーンサンクチュアリ",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "39"
+      ]
+    },
+    {
+      "number": "039",
+      "id": "piece:039",
+      "name": "モブリードナイト",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "光",
+      "atk": 210,
+      "def": 230,
+      "series": "soldier",
+      "program": 44,
+      "skillName": "リーダーオーダー",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "74"
+      ]
+    },
+    {
+      "number": "040",
+      "id": "piece:040",
+      "name": "モブダマフレイム",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "火",
+      "atk": 170,
+      "def": 110,
+      "series": "soldier",
+      "program": 66,
+      "skillName": "フレイムオーブ",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "56"
+      ]
+    },
+    {
+      "number": "041",
+      "id": "piece:041",
+      "name": "モブアカアーチャー",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "atk": 110,
+      "def": 70,
+      "series": "soldier",
+      "program": 50,
+      "skillName": "フレイムアロー",
+      "tags": [
+        "piece-main",
+        "piece-soldier",
+        "60"
+      ]
+    },
+    {
+      "number": "042",
+      "id": "piece:042",
+      "name": "モブレッドストレート",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "火",
+      "atk": 90,
+      "def": 50,
+      "series": "boxer",
+      "program": 17,
+      "skillName": "レッドストレート",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "03"
+      ]
+    },
+    {
+      "number": "043",
+      "id": "piece:043",
+      "name": "モブイエロージャブ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "atk": 80,
+      "def": 60,
+      "series": "boxer",
+      "program": 30,
+      "skillName": "イエロージャブ",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "04"
+      ]
+    },
+    {
+      "number": "044",
+      "id": "piece:044",
+      "name": "モブブルーストレート",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "atk": 80,
+      "def": 70,
+      "series": "boxer",
+      "program": 16,
+      "skillName": "ブルーストレート",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "31"
+      ]
+    },
+    {
+      "number": "045",
+      "id": "piece:045",
+      "name": "モブグリーンアッパー",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "atk": 90,
+      "def": 50,
+      "series": "boxer",
+      "program": 35,
+      "skillName": "グリーンアッパー",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "02"
+      ]
+    },
+    {
+      "number": "046",
+      "id": "piece:046",
+      "name": "モブレッドスマッシュ",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "火",
+      "atk": 150,
+      "def": 110,
+      "series": "boxer",
+      "program": 25,
+      "skillName": "レッドスマッシュ",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "35"
+      ]
+    },
+    {
+      "number": "047",
+      "id": "piece:047",
+      "name": "モブパープルガゼル",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "atk": 140,
+      "def": 120,
+      "series": "boxer",
+      "program": 42,
+      "skillName": "ガゼルコンビネーション",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "55"
+      ]
+    },
+    {
+      "number": "048",
+      "id": "piece:048",
+      "name": "モブシルバーショットガン",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "光",
+      "atk": 160,
+      "def": 130,
+      "series": "boxer",
+      "program": 3,
+      "skillName": "シルバーショットガン",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "64"
+      ]
+    },
+    {
+      "number": "049",
+      "id": "piece:049",
+      "name": "モブゴールデンチャンピオン",
+      "rarity": "SSR",
+      "soulClass": "mob",
+      "attribute": "光",
+      "atk": 210,
+      "def": 200,
+      "series": "boxer",
+      "program": 78,
+      "skillName": "ゴールデンフィニッシュ",
+      "tags": [
+        "piece-main",
+        "piece-boxer",
+        "08"
+      ]
+    }
+  ]
+}

@@ -1,13 +1,14 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import c from '../src/data/soul-catalog.js';
+import allCatalog from '../src/data/soul-catalog.js';
+const c={...allCatalog,figures:allCatalog.figures.filter(f=>!f.id.startsWith('piece:')),recipes:allCatalog.recipes.filter(r=>!r.id.startsWith('PIECE-'))};
 import texts from '../src/data/soul-skill-texts.js';
 import plans from '../src/game/soul-skill-programs.js';
 import legacy from '../src/data/figures_master_v170.js';
 import * as g from '../src/game/soul-battle.js';
 const master=JSON.parse(fs.readFileSync('handoff/soul-v1/MOB_SOUL_BATTLE_全327体マスターデータ_v1.json'));
 let count=0;const test=(name,fn)=>{fn();console.log('PASS '+name);count++;};
-const {soulFigures:figures,soulById:byId}=g;
+const figures=c.figures,byId=g.soulById;
 const own=Object.fromEntries(figures.map(f=>[f.id,25])),deck=g.autoSoulDeck(own);
 const find=n=>figures.find(f=>f.soulSkill.program===n),seed=figures.find(f=>f.soulClass==='seed'),mid=figures.find(f=>f.soulClass==='middle'),mob=figures.find(f=>f.soulClass==='mob');
 const fresh=()=>g.createSoulBattle([deck,deck],undefined,{random:()=>0.999999});
