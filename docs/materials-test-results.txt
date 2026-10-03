@@ -1,0 +1,17 @@
+node scripts/source-check.mjs PASS
+node scripts/startup-profile-check.mjs PASS
+node scripts/rules-check.mjs PASS
+node scripts/gacha-rules-check.mjs PASS
+node scripts/competition-rules-check.mjs PASS
+node scripts/battle-rules-check.mjs PASS
+node scripts/v4-features-check.mjs PASS
+node scripts/v5-features-check.mjs PASS
+node scripts/v5-ui-render-check.mjs PASS
+node scripts/v6-assets-check.mjs PASS
+node scripts/quest-import-check.mjs PASS
+node scripts/formation-skills-check.mjs PASS
+node scripts/soul-rules-check.mjs PASS
+node scripts/soul-update-check.mjs PASS
+node scripts/soul-shuffle-check.mjs PASS
+node scripts/piece47-check.mjs PASS
+node scripts/materials-check.mjs PASS

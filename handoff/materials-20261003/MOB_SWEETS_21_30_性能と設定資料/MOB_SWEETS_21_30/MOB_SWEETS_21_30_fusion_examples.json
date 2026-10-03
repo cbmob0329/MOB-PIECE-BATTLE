@@ -1,0 +1,706 @@
+{
+  "meta": {
+    "checkedAt": "2026-10-03T09:38:36.953Z",
+    "checkedDate": "2026-10-03",
+    "catalogFigureCount": 327,
+    "catalogRecipeCount": 202,
+    "existingCatalogTargetListsRecomputed": 327,
+    "verifiedProposedRecipeMatches": 232,
+    "actualFusionExecutions": 464,
+    "negativeEdgeChecks": 51,
+    "method": "保存済み実エンジンの隔離検証。全候補レシピを既存パートナーと場×場/場×手札で実行。ライブ変更・実戦バランステストではない。",
+    "explanation": "fusionTargetsは条件に合い得る候補。相方、対象の控えデッキ登録、合法な場/手札素材、素材個体の当ターンのスキル未使用、素材化禁止がないこと等が必要。保証された召喚先ではない。"
+  },
+  "examples": [
+    {
+      "figureId": "SWEET21",
+      "figureName": "かりんとうアクロバット",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "93",
+      "targetName": "モブサバンナ",
+      "recipeId": "MSB-109-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET21",
+      "figureName": "かりんとうアクロバット",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "120",
+      "targetName": "モブエネチェイサー",
+      "recipeId": "MSB-136-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET21",
+      "figureName": "かりんとうアクロバット",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "135",
+      "targetName": "モブタフネス",
+      "recipeId": "MSB-150-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET22",
+      "figureName": "きびだんご旅人",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "93",
+      "targetName": "モブサバンナ",
+      "recipeId": "MSB-109-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET22",
+      "figureName": "きびだんご旅人",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "120",
+      "targetName": "モブエネチェイサー",
+      "recipeId": "MSB-136-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET22",
+      "figureName": "きびだんご旅人",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "135",
+      "targetName": "モブタフネス",
+      "recipeId": "MSB-150-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET23",
+      "figureName": "ビスケット彫刻家",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "93",
+      "targetName": "モブサバンナ",
+      "recipeId": "MSB-109-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET23",
+      "figureName": "ビスケット彫刻家",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "120",
+      "targetName": "モブエネチェイサー",
+      "recipeId": "MSB-136-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET23",
+      "figureName": "ビスケット彫刻家",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "135",
+      "targetName": "モブタフネス",
+      "recipeId": "MSB-150-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET24",
+      "figureName": "ポン菓子屋台番",
+      "partner": {
+        "id": "50",
+        "name": "MOB SHOT SOUL モブホーク"
+      },
+      "targetId": "96",
+      "targetName": "モブツルガンナー",
+      "recipeId": "MSB-112-normal-0",
+      "label": "風属性 × 風属性",
+      "conditions": [
+        {
+          "attribute": "風"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET24",
+      "figureName": "ポン菓子屋台番",
+      "partner": {
+        "id": "50",
+        "name": "MOB SHOT SOUL モブホーク"
+      },
+      "targetId": "134",
+      "targetName": "モブククリ",
+      "recipeId": "MSB-149-normal-0",
+      "label": "風属性 × 風属性",
+      "conditions": [
+        {
+          "attribute": "風"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET24",
+      "figureName": "ポン菓子屋台番",
+      "partner": {
+        "id": "50",
+        "name": "MOB SHOT SOUL モブホーク"
+      },
+      "targetId": "159",
+      "targetName": "モブホーク",
+      "recipeId": "MSB-175-normal-0",
+      "label": "風属性 × 風属性",
+      "conditions": [
+        {
+          "attribute": "風"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET25",
+      "figureName": "ミルク飴マジシャン",
+      "partner": {
+        "id": "05",
+        "name": "ぷにモブパープル"
+      },
+      "targetId": "99",
+      "targetName": "モブデスヘッド",
+      "recipeId": "MSB-115-normal-1",
+      "label": "闇属性 × 魔法使いタグ",
+      "conditions": [
+        {
+          "attribute": "闇"
+        },
+        {
+          "tag": "37"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET25",
+      "figureName": "ミルク飴マジシャン",
+      "partner": {
+        "id": "04",
+        "name": "ぷにモブイエロー"
+      },
+      "targetId": "103",
+      "targetName": "モブツインソウル",
+      "recipeId": "MSB-119-normal-1",
+      "label": "雷属性 × 魔法使いタグ",
+      "conditions": [
+        {
+          "attribute": "雷"
+        },
+        {
+          "tag": "37"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET25",
+      "figureName": "ミルク飴マジシャン",
+      "partner": {
+        "id": "05",
+        "name": "ぷにモブパープル"
+      },
+      "targetId": "109",
+      "targetName": "モブバイオリン",
+      "recipeId": "MSB-125-normal-1",
+      "label": "闇属性 × 魔法使いタグ",
+      "conditions": [
+        {
+          "attribute": "闇"
+        },
+        {
+          "tag": "37"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET26",
+      "figureName": "水あめ職人",
+      "partner": {
+        "id": "09",
+        "name": "ぷにモブブルー"
+      },
+      "targetId": "95",
+      "targetName": "モブケロキング",
+      "recipeId": "MSB-111-normal-0",
+      "label": "水属性 × 水属性",
+      "conditions": [
+        {
+          "attribute": "水"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET26",
+      "figureName": "水あめ職人",
+      "partner": {
+        "id": "09",
+        "name": "ぷにモブブルー"
+      },
+      "targetId": "110",
+      "targetName": "モブラプチー",
+      "recipeId": "MSB-126-normal-0",
+      "label": "水属性 × 水属性",
+      "conditions": [
+        {
+          "attribute": "水"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET26",
+      "figureName": "水あめ職人",
+      "partner": {
+        "id": "09",
+        "name": "ぷにモブブルー"
+      },
+      "targetId": "119",
+      "targetName": "モブスラトレーナー",
+      "recipeId": "MSB-135-normal-0",
+      "label": "水属性 × 水属性",
+      "conditions": [
+        {
+          "attribute": "水"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET27",
+      "figureName": "あんず棒スケーター",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "93",
+      "targetName": "モブサバンナ",
+      "recipeId": "MSB-109-normal-1",
+      "label": "地属性 × スピードスタータグ",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "tag": "55"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET27",
+      "figureName": "あんず棒スケーター",
+      "partner": {
+        "id": "09",
+        "name": "ぷにモブブルー"
+      },
+      "targetId": "95",
+      "targetName": "モブケロキング",
+      "recipeId": "MSB-111-normal-0",
+      "label": "水属性 × 水属性",
+      "conditions": [
+        {
+          "attribute": "水"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET27",
+      "figureName": "あんず棒スケーター",
+      "partner": {
+        "id": "09",
+        "name": "ぷにモブブルー"
+      },
+      "targetId": "110",
+      "targetName": "モブラプチー",
+      "recipeId": "MSB-126-normal-0",
+      "label": "水属性 × 水属性",
+      "conditions": [
+        {
+          "attribute": "水"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET28",
+      "figureName": "梅ジャム絵師",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "93",
+      "targetName": "モブサバンナ",
+      "recipeId": "MSB-109-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET28",
+      "figureName": "梅ジャム絵師",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "120",
+      "targetName": "モブエネチェイサー",
+      "recipeId": "MSB-136-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET28",
+      "figureName": "梅ジャム絵師",
+      "partner": {
+        "id": "01",
+        "name": "ぷにモブグリーン"
+      },
+      "targetId": "135",
+      "targetName": "モブタフネス",
+      "recipeId": "MSB-150-normal-0",
+      "label": "地属性 × 地属性",
+      "conditions": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET29",
+      "figureName": "渦巻きキャンディ指揮者",
+      "partner": {
+        "id": "04",
+        "name": "ぷにモブイエロー"
+      },
+      "targetId": "92",
+      "targetName": "モブイワキリ",
+      "recipeId": "MSB-108-normal-0",
+      "label": "雷属性 × 雷属性",
+      "conditions": [
+        {
+          "attribute": "雷"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET29",
+      "figureName": "渦巻きキャンディ指揮者",
+      "partner": {
+        "id": "05",
+        "name": "ぷにモブパープル"
+      },
+      "targetId": "99",
+      "targetName": "モブデスヘッド",
+      "recipeId": "MSB-115-normal-1",
+      "label": "闇属性 × 魔法使いタグ",
+      "conditions": [
+        {
+          "attribute": "闇"
+        },
+        {
+          "tag": "37"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET29",
+      "figureName": "渦巻きキャンディ指揮者",
+      "partner": {
+        "id": "04",
+        "name": "ぷにモブイエロー"
+      },
+      "targetId": "103",
+      "targetName": "モブツインソウル",
+      "recipeId": "MSB-119-normal-0",
+      "label": "雷属性 × 雷属性",
+      "conditions": [
+        {
+          "attribute": "雷"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET30",
+      "figureName": "たい焼き船長",
+      "partner": {
+        "id": "02",
+        "name": "ぷにモブレッド"
+      },
+      "targetId": "94",
+      "targetName": "モブメラケロ",
+      "recipeId": "MSB-110-normal-0",
+      "label": "火属性 × 火属性",
+      "conditions": [
+        {
+          "attribute": "火"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET30",
+      "figureName": "たい焼き船長",
+      "partner": {
+        "id": "02",
+        "name": "ぷにモブレッド"
+      },
+      "targetId": "107",
+      "targetName": "モブダンサー",
+      "recipeId": "MSB-123-normal-0",
+      "label": "火属性 × 火属性",
+      "conditions": [
+        {
+          "attribute": "火"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    },
+    {
+      "figureId": "SWEET30",
+      "figureName": "たい焼き船長",
+      "partner": {
+        "id": "02",
+        "name": "ぷにモブレッド"
+      },
+      "targetId": "111",
+      "targetName": "モブティラ",
+      "recipeId": "MSB-127-normal-0",
+      "label": "火属性 × 火属性",
+      "conditions": [
+        {
+          "attribute": "火"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "actualEngineVerified": true,
+      "fieldFieldExecutionVerified": true,
+      "fieldHandExecutionVerified": true
+    }
+  ]
+}

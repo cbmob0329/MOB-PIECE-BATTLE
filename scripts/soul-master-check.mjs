@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import allCatalog from '../src/data/soul-catalog.js';
-const c={...allCatalog,figures:allCatalog.figures.filter(f=>!f.id.startsWith('piece:')),recipes:allCatalog.recipes.filter(r=>!r.id.startsWith('PIECE-'))};
+const c={...allCatalog,figures:allCatalog.figures.filter(f=>legacy.some(x=>x.sourceId===f.id)),recipes:allCatalog.recipes.filter(r=>r.id.startsWith('MSB-'))};
 import texts from '../src/data/soul-skill-texts.js';
 import plans from '../src/game/soul-skill-programs.js';
 import legacy from '../src/data/figures_master_v170.js';

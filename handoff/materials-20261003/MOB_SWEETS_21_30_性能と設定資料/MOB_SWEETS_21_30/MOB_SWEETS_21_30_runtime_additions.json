@@ -1,0 +1,691 @@
+{
+  "meta": {
+    "title": "MOB PIECE BATTLE レトロお菓子 21–30",
+    "setId": "MOB_SWEETS_21_30",
+    "checkedDate": "2026-10-03",
+    "rarityCounts": {
+      "R": 6,
+      "SR": 2,
+      "SSR": 1,
+      "UR": 1
+    },
+    "status": "新規デザインと追加用データ案。公開ゲームへの追加は未実施。統合作業が必要。",
+    "ids": "SWEET21〜30 / MOB-SWEET-021〜030。既存SWEET01〜10を上書きしない。導入前にライブデータのID重複確認が必要。",
+    "schema": "保存済み実ゲームソースのseed/ATK/DEF/tag/skill契約。追加差分。全体置換用ではない。",
+    "sources": [
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/#battle",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/data/soul-catalog.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/game/soul-engine.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/game/soul-skill-programs.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/data/soul-skill-texts.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/scripts/import-soul-master.mjs"
+    ],
+    "balance": "同レア度シードの実在スキルを使用し、ATK/DEFと合計は既存範囲内。保存済み実エンジンの隔離検証であり、公開ゲームの実戦バランステストではない。実戦テスト未実施。",
+    "sourceSnapshot": "既存制作時に取得されたソースを改変せずコピーして検証。この作業ではライブの最新版との再照合はしていない。"
+  },
+  "figures": [
+    {
+      "id": "SWEET21",
+      "uid": "MOB-SWEET-021",
+      "name": "かりんとうアクロバット",
+      "image": "sweetfig/SWEET21.png",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "連続攻撃",
+      "atk": 75,
+      "def": 65,
+      "tags": [
+        "65",
+        "29",
+        "75"
+      ],
+      "soulSkill": {
+        "name": "黒糖三段とび",
+        "timing": "own-main",
+        "effect": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "timingLabel": "自分メイン",
+        "description": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "program": 3,
+        "sourceText": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "R",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "黒糖三段とび",
+          "accessorySkillEffect": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "93",
+        "120",
+        "135",
+        "163",
+        "171",
+        "173",
+        "204"
+      ]
+    },
+    {
+      "id": "SWEET22",
+      "uid": "MOB-SWEET-022",
+      "name": "きびだんご旅人",
+      "image": "sweetfig/SWEET22.png",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "手札交代・展開",
+      "atk": 70,
+      "def": 60,
+      "tags": [
+        "65",
+        "29",
+        "66"
+      ],
+      "soulSkill": {
+        "name": "おとも交代だんご",
+        "timing": "own-main",
+        "effect": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。",
+        "timingLabel": "自分メイン",
+        "description": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。",
+        "program": 2,
+        "sourceText": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "R",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "おとも交代だんご",
+          "accessorySkillEffect": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "93",
+        "120",
+        "135",
+        "163",
+        "171",
+        "173",
+        "204"
+      ]
+    },
+    {
+      "id": "SWEET23",
+      "uid": "MOB-SWEET-023",
+      "name": "ビスケット彫刻家",
+      "image": "sweetfig/SWEET23.png",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "守護",
+      "atk": 65,
+      "def": 75,
+      "tags": [
+        "65",
+        "29",
+        "36"
+      ],
+      "soulSkill": {
+        "name": "どうぶつ型の守り壁",
+        "timing": "attack-response",
+        "effect": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。",
+        "timingLabel": "相手攻撃宣言時",
+        "description": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。",
+        "program": 20,
+        "sourceText": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "R",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "どうぶつ型の守り壁",
+          "accessorySkillEffect": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "93",
+        "120",
+        "135",
+        "163",
+        "171",
+        "173",
+        "204"
+      ]
+    },
+    {
+      "id": "SWEET24",
+      "uid": "MOB-SWEET-024",
+      "name": "ポン菓子屋台番",
+      "image": "sweetfig/SWEET24.png",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "魔法",
+      "role": "回復・手札補充",
+      "atk": 60,
+      "def": 70,
+      "tags": [
+        "65",
+        "29",
+        "18"
+      ],
+      "soulSkill": {
+        "name": "ポンッと補充便",
+        "timing": "own-main",
+        "effect": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。",
+        "timingLabel": "自分メイン",
+        "description": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。",
+        "program": 32,
+        "sourceText": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "R",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "ポンッと補充便",
+          "accessorySkillEffect": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "96",
+        "134",
+        "159",
+        "mq:eventfig/20",
+        "mq:eventfig/44"
+      ]
+    },
+    {
+      "id": "SWEET25",
+      "uid": "MOB-SWEET-025",
+      "name": "ミルク飴マジシャン",
+      "image": "sweetfig/SWEET25.png",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "回復・一度生存支援",
+      "atk": 65,
+      "def": 65,
+      "tags": [
+        "65",
+        "29",
+        "37"
+      ],
+      "soulSkill": {
+        "name": "白飴のおまじない",
+        "timing": "own-main",
+        "effect": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+        "timingLabel": "自分メイン",
+        "description": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+        "program": 4,
+        "sourceText": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "R",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "白飴のおまじない",
+          "accessorySkillEffect": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "99",
+        "103",
+        "109",
+        "112",
+        "121",
+        "130",
+        "136",
+        "142",
+        "143",
+        "157",
+        "158",
+        "161",
+        "165",
+        "171",
+        "176",
+        "177",
+        "178",
+        "179",
+        "180",
+        "205",
+        "206",
+        "207",
+        "215",
+        "mq:eventfig/03",
+        "mq:eventfig/45",
+        "mq:eventfig/53"
+      ]
+    },
+    {
+      "id": "SWEET26",
+      "uid": "MOB-SWEET-026",
+      "name": "水あめ職人",
+      "image": "sweetfig/SWEET26.png",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "魔法",
+      "role": "全体DEF・DEF低下対策",
+      "atk": 70,
+      "def": 70,
+      "tags": [
+        "65",
+        "29",
+        "70"
+      ],
+      "soulSkill": {
+        "name": "糸引くあめの薄衣",
+        "timing": "own-main",
+        "effect": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+        "timingLabel": "自分メイン",
+        "description": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+        "program": 33,
+        "sourceText": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "R",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "糸引くあめの薄衣",
+          "accessorySkillEffect": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "95",
+        "110",
+        "119",
+        "128",
+        "129",
+        "130",
+        "144",
+        "146",
+        "179",
+        "203",
+        "211",
+        "219",
+        "mq:eventfig/43"
+      ]
+    },
+    {
+      "id": "SWEET27",
+      "uid": "MOB-SWEET-027",
+      "name": "あんず棒スケーター",
+      "image": "sweetfig/SWEET27.png",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "物理",
+      "role": "2連撃",
+      "atk": 110,
+      "def": 110,
+      "tags": [
+        "65",
+        "29",
+        "55",
+        "75",
+        "27"
+      ],
+      "soulSkill": {
+        "name": "ひやあんずダブルラン",
+        "timing": "own-main",
+        "effect": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "timingLabel": "自分メイン",
+        "description": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "program": 42,
+        "sourceText": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "SR",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "ひやあんずダブルラン",
+          "accessorySkillEffect": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "93",
+        "95",
+        "110",
+        "119",
+        "128",
+        "129",
+        "130",
+        "144",
+        "146",
+        "202",
+        "159",
+        "179",
+        "203",
+        "211",
+        "219",
+        "mq:eventfig/43",
+        "mq:eventfig/54"
+      ]
+    },
+    {
+      "id": "SWEET28",
+      "uid": "MOB-SWEET-028",
+      "name": "梅ジャム絵師",
+      "image": "sweetfig/SWEET28.png",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "魔法",
+      "role": "DEF低下・素材化封じ",
+      "atk": 95,
+      "def": 125,
+      "tags": [
+        "65",
+        "29",
+        "70",
+        "36",
+        "66"
+      ],
+      "soulSkill": {
+        "name": "梅色ぬりどめ",
+        "timing": "own-main",
+        "effect": "相手1体のDEF-20。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。",
+        "timingLabel": "自分メイン",
+        "description": "相手1体のDEF-20。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。",
+        "program": 23,
+        "sourceText": "相手1体のDEF-20。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "SR",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "相手1体のDEF-20。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "梅色ぬりどめ",
+          "accessorySkillEffect": "相手1体のDEF-20。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "93",
+        "120",
+        "135",
+        "163",
+        "171",
+        "173",
+        "204"
+      ]
+    },
+    {
+      "id": "SWEET29",
+      "uid": "MOB-SWEET-029",
+      "name": "渦巻きキャンディ指揮者",
+      "image": "sweetfig/SWEET29.png",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "attackType": "魔法",
+      "role": "味方攻撃支援・守護突破",
+      "atk": 125,
+      "def": 150,
+      "tags": [
+        "65",
+        "29",
+        "12",
+        "37",
+        "58",
+        "74",
+        "78"
+      ],
+      "soulSkill": {
+        "name": "うずまき突撃序曲",
+        "timing": "own-main",
+        "effect": "味方1体のATK+20。その味方はこのターン守護効果を無視して攻撃対象を選べる。",
+        "timingLabel": "自分メイン",
+        "description": "味方1体のATK+20。その味方はこのターン守護効果を無視して攻撃対象を選べる。",
+        "program": 97,
+        "sourceText": "味方1体のATK+20。その味方はこのターン守護効果を無視して攻撃対象を選べる。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "SSR",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "味方1体のATK+20。その味方はこのターン守護効果を無視して攻撃対象を選べる。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "うずまき突撃序曲",
+          "accessorySkillEffect": "味方1体のATK+20。その味方はこのターン守護効果を無視して攻撃対象を選べる。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "92",
+        "99",
+        "103",
+        "104",
+        "109",
+        "112",
+        "130",
+        "136",
+        "142",
+        "143",
+        "157",
+        "158",
+        "161",
+        "165",
+        "171",
+        "175",
+        "176",
+        "177",
+        "178",
+        "179",
+        "180",
+        "205",
+        "206",
+        "207",
+        "215",
+        "mq:eventfig/29",
+        "mq:eventfig/45",
+        "mq:eventfig/48",
+        "mq:eventfig/53"
+      ]
+    },
+    {
+      "id": "SWEET30",
+      "uid": "MOB-SWEET-030",
+      "name": "たい焼き船長",
+      "image": "sweetfig/SWEET30.png",
+      "rarity": "UR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "複数体攻撃・撃破連鎖",
+      "atk": 145,
+      "def": 155,
+      "tags": [
+        "65",
+        "29",
+        "18",
+        "34",
+        "66",
+        "70",
+        "74",
+        "78",
+        "81"
+      ],
+      "soulSkill": {
+        "name": "黄金たいの進軍",
+        "timing": "own-main",
+        "effect": "このターン相手フィールド全員へ1回ずつ攻撃できる。1体撃破するたび、残っている相手全体のDEF-10。",
+        "timingLabel": "自分メイン",
+        "description": "このターン相手フィールド全員へ1回ずつ攻撃できる。1体撃破するたび、残っている相手全体のDEF-10。",
+        "program": 68,
+        "sourceText": "このターン相手フィールド全員へ1回ずつ攻撃できる。1体撃破するたび、残っている相手全体のDEF-10。"
+      },
+      "source": {
+        "figureFile": "MOB_SWEETS_21_30_designs.json",
+        "rarity": "UR",
+        "statsText": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "traitText": "",
+        "soul": {
+          "text": "このターン相手フィールド全員へ1回ずつ攻撃できる。1体撃破するたび、残っている相手全体のDEF-10。"
+        },
+        "decision": "新規レトロお菓子シリーズの直接召喚用シードソウル",
+        "basis": {
+          "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+          "trait": "",
+          "accessorySkillName": "黄金たいの進軍",
+          "accessorySkillEffect": "このターン相手フィールド全員へ1回ずつ攻撃できる。1体撃破するたび、残っている相手全体のDEF-10。",
+          "mobPieceSkills": {},
+          "v248": {
+            "技一覧": []
+          },
+          "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [
+        "94",
+        "107",
+        "111",
+        "137",
+        "138",
+        "139",
+        "142",
+        "143",
+        "145",
+        "146",
+        "147",
+        "148",
+        "158",
+        "202",
+        "167",
+        "177",
+        "206",
+        "208",
+        "212",
+        "mq:eventfig/23",
+        "mq:eventfig/53"
+      ]
+    }
+  ]
+}

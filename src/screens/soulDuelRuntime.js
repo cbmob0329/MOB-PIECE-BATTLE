@@ -1,3 +1,4 @@
+import {selectCpuStarter} from '../game/piece-starters.js';
 import * as g from '../game/soul-battle.js';
 import catalog from '../data/soul-catalog.js';
 import {battleStyle,setBattleStyle} from '../data/battle-style.js';
@@ -9,9 +10,7 @@ const art=f=>f?`<img src="${esc(f.image)}" alt="${esc(f.name)}" draggable="false
 const colors={'火':'#ff915b','水':'#64bcff','雷':'#ffe66e','地':'#dcac77','風':'#9ee895','光':'#ffe5a0','闇':'#c897ff','無':'#d2e2f7'};
 export async function launchBattle({profile,request,onResolved,saveProfile}){
  const deck=[...g.ensureSoulDecks(profile)],check=g.validateSoulDeck(deck,profile.owned);if(!check.valid)throw Error(check.errors[0]||'45体（シード30・ミドル10・MOB5）のデッキを完成させてください');
- const strength=request.difficulty==='easy'?1:request.difficulty==='hard'?3:2;
- const cpuOwned=Object.fromEntries(figures.map(f=>[f.id,(f.soulClass==='mob'||(strength===1?['R','SR','SSR']:strength===2?['R','SR','SSR','UR']:['R','SR','SSR','UR','MOB']).includes(f.rarity))?5:0]));
- const cpuDeck=g.autoSoulDeck(cpuOwned),state=g.createSoulBattle([deck,cpuDeck],['PLAYER',request.opponentName||'CPU']),style=battleStyle(profile);
+ const enemy=selectCpuStarter(request.difficulty),cpuDeck=enemy.deck,state=g.createSoulBattle([deck,cpuDeck],['PLAYER',request.opponentName||enemy.name]),style=battleStyle(profile);
  const dialog=document.createElement('dialog');dialog.className='soul-battle-dialog duel-dialog';dialog.setAttribute('aria-label','MOB SOUL BATTLE');document.body.append(dialog);dialog.showModal();
  let selected=null,hand=null,materials=[],sheet=null,skillValues={},busy=false,settled=false,meta=null,eventCursor=0,cpuPrepared=0,closed=false,message='',suppressClick=false,drag=null,resolveDone;
  const done=new Promise(resolve=>{resolveDone=resolve;});

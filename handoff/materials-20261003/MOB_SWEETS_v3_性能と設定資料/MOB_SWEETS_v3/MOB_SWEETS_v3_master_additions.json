@@ -1,0 +1,519 @@
+{
+  "meta": {
+    "title": "MOB PIECE BATTLE レトロお菓子 v3 アクション改訂版",
+    "setId": "MOB_SWEETS_01_10",
+    "checkedDate": "2026-10-03",
+    "rarityCounts": {
+      "R": 6,
+      "SR": 2,
+      "SSR": 1,
+      "UR": 1
+    },
+    "status": "新規デザインと追加用データ案。公開ゲームへの追加は未実施。",
+    "ids": "SWEET01〜10とMOB-SWEET-001〜010は提案ID。導入前に重複確認。",
+    "schema": "現行MOB SOUL BATTLEのseed/ATK/DEF/tag/skill契約。全体置換用ではない。",
+    "sources": [
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/#battle",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/data/soul-catalog.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/game/soul-engine.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/game/soul-skill-programs.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/data/soul-skill-texts.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/scripts/import-soul-master.mjs"
+    ],
+    "balance": "同レア度シードの実在スキルを使用し、ATK/DEFは既存範囲内。隔離エンジン検証と実戦バランステストは別。実戦テスト未実施。",
+    "revision": "v3",
+    "revisionDate": "2026-10-03",
+    "visualDirection": "承認済みラムネを基準にした、黒顔・金の丸メガネと大きなお菓子。各体固有の動作、帽子、簡素な衣装、テーマ台座。",
+    "revisionScope": "SWEET01フィギュアは承認済み画像の同一バイト。残り19画像と造形・テーマ文を改訂。全ゲーム性能はv2および初版から変更なし。"
+  },
+  "records": [
+    {
+      "uid": "MOB-SWEET-001",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET01",
+      "name": "モブラムネクーリエ",
+      "imagePath": "sweetfig/SWEET01.png",
+      "rarity": "R",
+      "soulClass": "シードソウル",
+      "attribute": "水",
+      "attackType": "魔法",
+      "role": "回復・手札補充",
+      "ATK": 60,
+      "DEF": 75,
+      "gameTagIds": [
+        "65",
+        "55",
+        "80"
+      ],
+      "gameTags": [
+        "スイーツ",
+        "スピードスター",
+        "水の極意"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "シュワッと補給便",
+        "timing": "自分メイン",
+        "effect": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "シュワッと補給便",
+        "accessorySkillEffect": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-002",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET02",
+      "name": "モブキャラメルフォージ",
+      "imagePath": "sweetfig/SWEET02.png",
+      "rarity": "R",
+      "soulClass": "シードソウル",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "攻撃・突破",
+      "ATK": 80,
+      "DEF": 60,
+      "gameTagIds": [
+        "65",
+        "70",
+        "35"
+      ],
+      "gameTags": [
+        "スイーツ",
+        "職人",
+        "破壊力"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "とろけるハンマーブレイク",
+        "timing": "自分メイン",
+        "effect": "このターンATK+20。攻撃対象変更・守護効果を無視して任意の相手を攻撃できる。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "とろけるハンマーブレイク",
+        "accessorySkillEffect": "このターンATK+20。攻撃対象変更・守護効果を無視して任意の相手を攻撃できる。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-003",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET03",
+      "name": "モブコンペイトスター",
+      "imagePath": "sweetfig/SWEET03.png",
+      "rarity": "R",
+      "soulClass": "シードソウル",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "回復・生存支援",
+      "ATK": 60,
+      "DEF": 70,
+      "gameTagIds": [
+        "65",
+        "37",
+        "50"
+      ],
+      "gameTags": [
+        "スイーツ",
+        "魔法使い",
+        "浮遊"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "ほしつぶのおまもり",
+        "timing": "自分メイン",
+        "effect": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "ほしつぶのおまもり",
+        "accessorySkillEffect": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-004",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET04",
+      "name": "モブセンベイガード",
+      "imagePath": "sweetfig/SWEET04.png",
+      "rarity": "R",
+      "soulClass": "シードソウル",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "守護",
+      "ATK": 60,
+      "DEF": 80,
+      "gameTagIds": [
+        "18",
+        "66",
+        "39"
+      ],
+      "gameTags": [
+        "美味しい食べ物",
+        "伝統",
+        "鉄壁"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "こんがり甲羅ガード",
+        "timing": "相手攻撃宣言時",
+        "effect": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "こんがり甲羅ガード",
+        "accessorySkillEffect": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-005",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET05",
+      "name": "モブウエハースミューズ",
+      "imagePath": "sweetfig/SWEET05.png",
+      "rarity": "R",
+      "soulClass": "シードソウル",
+      "attribute": "雷",
+      "attackType": "魔法",
+      "role": "防御支援・妨害対策",
+      "ATK": 70,
+      "DEF": 65,
+      "gameTagIds": [
+        "65",
+        "12",
+        "82"
+      ],
+      "gameTags": [
+        "スイーツ",
+        "MUSIC",
+        "機械の力"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "ミルフィーユの和音",
+        "timing": "自分メイン",
+        "effect": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "ミルフィーユの和音",
+        "accessorySkillEffect": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-006",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET06",
+      "name": "モブドロップタンブラー",
+      "imagePath": "sweetfig/SWEET06.png",
+      "rarity": "R",
+      "soulClass": "シードソウル",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "連続攻撃",
+      "ATK": 75,
+      "DEF": 60,
+      "gameTagIds": [
+        "65",
+        "27",
+        "55"
+      ],
+      "gameTags": [
+        "スイーツ",
+        "キュート",
+        "スピードスター"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "カラコロトリプル",
+        "timing": "自分メイン",
+        "effect": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "カラコロトリプル",
+        "accessorySkillEffect": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-007",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET07",
+      "name": "モブショココイン船長",
+      "imagePath": "sweetfig/SWEET07.png",
+      "rarity": "SR",
+      "soulClass": "シードソウル",
+      "attribute": "闇",
+      "attackType": "物理",
+      "role": "複数体攻撃",
+      "ATK": 115,
+      "DEF": 100,
+      "gameTagIds": [
+        "65",
+        "34",
+        "49",
+        "74",
+        "81"
+      ],
+      "gameTags": [
+        "スイーツ",
+        "勇猛果敢",
+        "斬撃",
+        "リーダー気質",
+        "ロマン"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "コインショコラ航路",
+        "timing": "自分メイン",
+        "effect": "このターン、相手フィールドの各フィギュアへ1回ずつ攻撃できる。2体目以降への攻撃時ATK+10。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "コインショコラ航路",
+        "accessorySkillEffect": "このターン、相手フィールドの各フィギュアへ1回ずつ攻撃できる。2体目以降への攻撃時ATK+10。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-008",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET08",
+      "name": "モブモナカオニパティシエ",
+      "imagePath": "sweetfig/SWEET08.png",
+      "rarity": "SR",
+      "soulClass": "シードソウル",
+      "attribute": "地",
+      "attackType": "魔法",
+      "role": "全体回復支援",
+      "ATK": 100,
+      "DEF": 120,
+      "gameTagIds": [
+        "18",
+        "65",
+        "66",
+        "70",
+        "78"
+      ],
+      "gameTags": [
+        "美味しい食べ物",
+        "スイーツ",
+        "伝統",
+        "職人",
+        "団結力"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "あんこサンドのひと休み",
+        "timing": "自分メイン",
+        "effect": "自分ライフを20回復し、味方全体のDEF+20。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "あんこサンドのひと休み",
+        "accessorySkillEffect": "自分ライフを20回復し、味方全体のDEF+20。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-009",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET09",
+      "name": "モブゼリールミナリス",
+      "imagePath": "sweetfig/SWEET09.png",
+      "rarity": "SSR",
+      "soulClass": "シードソウル",
+      "attribute": "水",
+      "attackType": "魔法",
+      "role": "回復・低下解除",
+      "ATK": 130,
+      "DEF": 150,
+      "gameTagIds": [
+        "65",
+        "67",
+        "37",
+        "80",
+        "08",
+        "40",
+        "27"
+      ],
+      "gameTags": [
+        "スイーツ",
+        "もちもち",
+        "魔法使い",
+        "水の極意",
+        "輝き",
+        "絆",
+        "キュート"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "七色ゼリーリペア",
+        "timing": "自分メイン",
+        "effect": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "七色ゼリーリペア",
+        "accessorySkillEffect": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    },
+    {
+      "uid": "MOB-SWEET-010",
+      "sourceGroup": "retro-sweets-original",
+      "sourceFile": "MOB_SWEETS_v3_designs.json",
+      "sourceFigureId": "SWEET10",
+      "name": "モブワタアメ雲龍王",
+      "imagePath": "sweetfig/SWEET10.png",
+      "rarity": "UR",
+      "soulClass": "シードソウル",
+      "attribute": "光",
+      "attackType": "複合",
+      "role": "守護・ライフ保護",
+      "ATK": 140,
+      "DEF": 150,
+      "gameTagIds": [
+        "65",
+        "30",
+        "38",
+        "39",
+        "50",
+        "74",
+        "78",
+        "79",
+        "81"
+      ],
+      "gameTags": [
+        "スイーツ",
+        "伝説",
+        "ドラゴン",
+        "鉄壁",
+        "浮遊",
+        "リーダー気質",
+        "団結力",
+        "閃光",
+        "ロマン"
+      ],
+      "sourceTagIds": [],
+      "sourceTags": [],
+      "sourceAdjacentTagIds": [],
+      "soulSkill": {
+        "name": "わたぐもの王護",
+        "timing": "相手攻撃宣言時",
+        "effect": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+40。差分ライフダメージは0。"
+      },
+      "fusionRecipes": [],
+      "mobSoulFusion": null,
+      "sourceBasis": {
+        "statusEffect": "新規オリジナル。現行ATK/DEFは本仕様で設計。",
+        "trait": "",
+        "accessorySkillName": "わたぐもの王護",
+        "accessorySkillEffect": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+40。差分ライフダメージは0。",
+        "mobPieceSkills": {},
+        "v248": {
+          "技一覧": []
+        },
+        "classReason": "新規レトロお菓子シリーズの直接召喚用シードソウル"
+      }
+    }
+  ]
+}

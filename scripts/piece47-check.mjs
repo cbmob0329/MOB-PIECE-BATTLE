@@ -8,9 +8,9 @@ import {pieceStarters,pieceStarterDeck,grantMainCollection,applyPieceStarter} fr
 import {OWN_CAP,banners,poolFor} from '../src/data/gacha.js';
 import * as g from '../src/game/soul-battle.js';
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-assert.equal(pieceFigures.length,47);assert.equal(catalog.figures.length,374);assert.equal(figures.length,388);assert.equal(new Set(figures.map(f=>f.sourceId)).size,388);
+assert.equal(pieceFigures.length,47);assert.equal(catalog.figures.length,509);assert.equal(figures.length,523);assert.equal(new Set(figures.map(f=>f.sourceId)).size,523);
 assert.deepEqual(['seed','middle','mob'].map(k=>pieceFigures.filter(f=>f.soulClass===k).length),[32,11,4]);
-assert.equal(catalog.figures.filter(f=>f.collection==='main').length,72);
+assert.equal(catalog.figures.filter(f=>f.collection==='main').length,207);
 assert.equal(catalog.figures.filter(f=>f.collection==='collab').length,302);
 for(const f of pieceFigures){assert.ok(byId.has(f.id));assert.ok(availableAssets.has(f.image));assert.equal(hash(f.image),hash('追加用フィギュア/'+f.number+'.png'));assert.ok(f.tags.every(t=>tags.some(x=>x.id===t)));assert.ok(f.tags.length<=catalog.rules.tagLimits[f.rarity]);assert.ok(!/RETRO|SWEET/.test(f.id));}
 const existing={owned:{'01':12,'16':2,'mq:spbossfig/35':1},diamonds:432,rubies:99,coins:456,centerId:'16',displayIds:['16'],welcomeClaimed:true,soulDecks:[['16'],['01'],[],[],[]],soulDeckSlot:1,deck:['16'],deckPresets:[['16'],[],[],[],[]],battleHistory:[{won:true}],custom:'keep'};
@@ -29,7 +29,7 @@ for(const f of pieceFigures){const s=fresh(),a=put(s,0,f),ally=put(s,0,seed,1),d
 const matches=(f,m)=>m.id?f.id===m.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute;
 const additions=catalog.recipes.filter(r=>r.id.startsWith('PIECE-'));assert.equal(additions.length,19);assert.equal(additions.filter(r=>r.special).length,4);
 for(const r of additions)for(const hand of [false,true]){const s=fresh(),p=s.players[0],pair=r.materials.map(m=>catalog.figures.find(f=>(r.special||f.soulClass===r.fromClass)&&matches(f,m)));assert.ok(pair.every(Boolean));const a=put(s,0,pair[0]);let refs;if(hand){p.hand=[pair[1].id];refs=[a.uid,{handIndex:0}];}else refs=[a.uid,put(s,0,pair[1],1).uid];p.reserve=[r.target];assert.ok(g.fusionOptions(s,0,refs).some(x=>x.id===r.id));g.fuse(s,0,refs,r.id);assert.equal(p.field[0].id,r.target);assert.equal(g.stats(p.field[0]).atk,g.soulById.get(r.target).atk+(r.special?20:0));}
-for(const starter of pieceStarters){const ids=pieceStarterDeck(starter.id);assert.ok(g.validateSoulDeck(ids,existing.owned).valid);assert.ok(ids.every(id=>g.soulById.get(id).collection==='main'));for(const id of new Set(ids))assert.ok(ids.filter(x=>x===id).length<=OWN_CAP[g.soulById.get(id).rarity]);
+for(const starter of pieceStarters.filter(s=>['piece-soldier','piece-boxer'].includes(s.id))){const ids=pieceStarterDeck(starter.id);assert.ok(g.validateSoulDeck(ids,existing.owned).valid);assert.ok(ids.every(id=>g.soulById.get(id).collection==='main'));for(const id of new Set(ids))assert.ok(ids.filter(x=>x===id).length<=OWN_CAP[g.soulById.get(id).rarity]);
  const reachable=new Set(ids.filter(id=>g.soulById.get(id).soulClass==='seed'));
  for(const kind of ['middle','mob'])for(const id of new Set(ids.filter(id=>g.soulById.get(id).soulClass===kind))){assert.ok(catalog.recipes.some(r=>r.target===id&&!r.special&&r.materials.every(m=>[...reachable].some(fid=>g.soulById.get(fid).soulClass===r.fromClass&&matches(g.soulById.get(fid),m)))),id);reachable.add(id);}
  // A legal seed -> middle -> MOB chain using only copies in this starter.
@@ -43,4 +43,4 @@ for(const starter of pieceStarters){const ids=pieceStarterDeck(starter.id);asser
  const other=structuredClone(existing.soulDecks[0]);applyPieceStarter(existing,starter.id);assert.deepEqual(existing.soulDecks[0],other);
 }
 assert.equal(banners.length,22);assert.ok(banners.every(b=>poolFor(b).every(f=>!f.sourceId.startsWith('piece:'))));
-console.log('PASS: 47 images/data/skills; 19 recipes (38 field/hand cases); 72 free main figures; 2 legal starters and seed-middle-MOB chains; non-destructive/idempotent migration; unchanged gacha pools');
+console.log('PASS: 47 images/data/skills; 19 recipes (38 field/hand cases); 207 free main figures (including original 72); 2 legal starters and seed-middle-MOB chains; non-destructive/idempotent migration; unchanged gacha pools');

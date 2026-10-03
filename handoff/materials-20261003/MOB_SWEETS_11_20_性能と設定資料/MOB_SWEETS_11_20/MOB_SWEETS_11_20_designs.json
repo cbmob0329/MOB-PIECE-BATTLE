@@ -1,0 +1,1393 @@
+{
+  "meta": {
+    "title": "MOB PIECE BATTLE レトロお菓子 11–20",
+    "setId": "MOB_SWEETS_11_20",
+    "checkedDate": "2026-10-03",
+    "rarityCounts": {
+      "R": 6,
+      "SR": 2,
+      "SSR": 1,
+      "UR": 1
+    },
+    "status": "新規デザインと追加用データ案。公開ゲームへの追加は未実施。統合作業が必要。",
+    "ids": "SWEET11〜20 / MOB-SWEET-011〜020。既存SWEET01〜10を上書きしない。導入前にライブデータのID重複確認が必要。",
+    "schema": "保存済み実ゲームソースのseed/ATK/DEF/tag/skill契約。追加差分。全体置換用ではない。",
+    "sources": [
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/#battle",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/data/soul-catalog.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/game/soul-engine.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/game/soul-skill-programs.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/src/data/soul-skill-texts.js",
+      "https://cbmob0329.github.io/MOB-PIECE-BATTLE/scripts/import-soul-master.mjs"
+    ],
+    "balance": "同レア度シードの実在スキルを使用し、ATK/DEFと合計は既存範囲内。保存済み実エンジンの隔離検証であり、公開ゲームの実戦バランステストではない。実戦テスト未実施。",
+    "sourceSnapshot": "既存制作時に取得されたソースを改変せずコピーして検証。この作業ではライブの最新版との再照合はしていない。"
+  },
+  "figures": [
+    {
+      "proposalId": "SWEET11",
+      "uid": "MOB-SWEET-011",
+      "name": "ふがしバウンダー",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "攻撃後移動",
+      "ATK": 70,
+      "DEF": 65,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "55",
+          "name": "スピードスター"
+        }
+      ],
+      "genre": "ふ菓子",
+      "skill": "さくふわポールジャンプ",
+      "soulSkill": {
+        "name": "さくふわポールジャンプ",
+        "timing": "own-main",
+        "effect": "このターンATK+20。攻撃後、自分フィールド内の位置を自由に変更できる。",
+        "timingLabel": "自分メイン",
+        "description": "このターンATK+20。攻撃後、自分フィールド内の位置を自由に変更できる。",
+        "program": 30,
+        "sourceText": "このターンATK+20。攻撃後、自分フィールド内の位置を自由に変更できる。"
+      },
+      "description": "黒いMOBの棒高跳び選手。ミントのスポーツパーカと白ミントのハイカット。両足を左にたたみ、両手で巨大なふ菓子を握って跳躍する。",
+      "usage": "このターンATK90。攻撃の解決後に自陣の好きな枠へ移動でき、味方がいる枠とは位置を交換できる。",
+      "weakness": "移動だけでは追加攻撃にならない。ATK強化は当ターン限り。次の攻撃やターン終了で未使用の移動権は消える。",
+      "art": "巨大全長の黒糖ふ菓子を斜めに突く空中ポーズ。切り口はクリームの麩生地。ミント縁の台座に小さなふ菓子の切片。",
+      "image": "images/figures/SWEET11.png",
+      "pixelImage": "images/pixels/SWEET11_pixel.png",
+      "referenceFigure": {
+        "id": "63",
+        "name": "メニュー 冒険日記",
+        "rarity": "R",
+        "soulClass": "seed",
+        "atk": 60,
+        "def": 75,
+        "program": 30
+      },
+      "fusionTargetIds": [
+        "93",
+        "96",
+        "134",
+        "202",
+        "159",
+        "219",
+        "mq:eventfig/20",
+        "mq:eventfig/44",
+        "mq:eventfig/54"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET11",
+        "name": "ふがしバウンダー",
+        "motif": "ふ菓子",
+        "rarity": "R",
+        "visualCategory": "スポーツ",
+        "headgear": "黒糖ブラウンのキャットイヤービーニー、ミントの折り返し",
+        "palette": [
+          "ブラック",
+          "黒糖ブラウン",
+          "ミント",
+          "クリーム",
+          "ゴールド"
+        ],
+        "description": "黒いMOBの棒高跳び選手。ミントのスポーツパーカと白ミントのハイカット。両足を左にたたみ、両手で巨大なふ菓子を握って跳躍する。",
+        "art": "巨大全長の黒糖ふ菓子を斜めに突く空中ポーズ。切り口はクリームの麩生地。ミント縁の台座に小さなふ菓子の切片。",
+        "figurePrompt": "Use case: stylized-concept. Asset: one finished collectible MOB sweets mascot figure illustration with a food-theme display pedestal, isolated with actual transparent background. Use the supplied reference image strictly for the APPROVED visual language and species identity, not its candy, clothing, pose, or composition. Same ultra-cute squat mostly BLACK chibi mascot: huge smooth round black head, no mouth and no nose, gigantic perfectly round GOLD glasses with black lenses/eyes and one white sparkle each, tiny soft mitten hands and short limbs, no realistic fur. Wear the concept's specified hat. Thick clean black outline, bold flat clean cel-cartoon shapes with small sharply bounded highlight/shadow accents, polished vector-like illustration, not 3D render, no gradients/no texture noise. Preserve the BLACK face and limbs regardless of outfit colors. The sweet must be the centerpiece, at least as large as the head. Dynamic action clearly involves the actual sweet. Base must be a designed shallow food-theme collectible display stand, with centered gold rectangular plaque bearing EXACT uppercase black text \"MOB\" (M O B), no other text or logos. Entire figure, sweet, and base fit with generous transparent padding, square canvas. No background, ground plane, gray cast shadow, watermark, additional characters, insects, crustaceans, photorealism, fur, cloned reference pose.\nNew distinct design SWEET11, ふがしバウンダー. A pole-vaulting fu-gashi athlete: tiny brown cat-ear sports beanie with mint folded cuff, short mint sleeveless sports hoodie, black shorts, white/mint high-top sneakers. Hang diagonally in MID-VAULT, BOTH tiny feet lifted and tucked toward upper right, both black hands firmly gripping one huge chunky dark-brown fu-gashi sweet like a vaulting pole angled from lower left to upper right. Sweet is a THICK square-section long bar, twice head height, clearly crispy black-sugar-coated Japanese wheat-gluten snack, with dark brown faceted sugary cel-shaded crust and one cream cartoon porous cut end with just a few big simple holes, NOT a wooden stick and no realistic grain. Character's head faces viewer with a cheerful inquisitive tilt. Composition must differ entirely from standing ramune reference. Designed low brown-and-cream cut-fu pedestal underneath, mint rim, central MOB plaque. Main sweet pole meets pedestal so the vault reads clearly; all parts visible.",
+        "pixelPrompt": "Use case: style-transfer / identity-preserve. Create ONE finished retro pixel-art sprite from the supplied finished figure. Match the EXACT same character identity, black head and limbs, huge round gold glasses, hat, clothing colors/accessories, physical action and pose, orientation, candy count and main candy shape. IMPORTANT REMOVE THE ENTIRE DISPLAY PEDESTAL, the MOB plaque, any base-only candy pieces and all lettering; keep the actual character-held candy/prop and the character. No ground/platform/base beneath the feet or object, no shadow. True transparent PNG background. Draw authentic coarse crisp hand-placed-looking pixel art, a deliberately low-resolution roughly 160–200px game sprite represented as a larger pixel-art master with obvious square pixels, hard stair-stepped contours, consistent pixel clusters, limited palette 3–4 shades per material, solid black pixel outline, sharp no antialiasing look, no smooth vector edges, no gradients or fuzzy texture. No mouths or noses. Full uncropped sprite with transparent padding. This is one standalone sprite, not a sprite sheet, no text whatsoever.\nPreserve SWEET11: brown cat-ear mint-cuff beanie, mint sleeveless hoodie, black shorts, mint/white sneakers, BOTH feet suspended tucked toward left, both hands gripping the long thick dark-brown fu-gashi pole angled lower-left to upper-right with cream porous cut end at top. Simplify the sugar coating to a small number of clean brown pixel clusters; no photographic texture. Remove all three small cut snack pieces and the mint pedestal at the bottom completely; retain the ONE long vaulting fu bar itself.",
+        "generation": {
+          "tool": "built-in image_gen",
+          "oneCallPerImage": true,
+          "figureReference": "/workspace/scratch/f7102a0fad56/MOB_sweets_reference_sample/output/SWEET01_ramune_reference_sample.png",
+          "pixelReference": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET11.png",
+          "figureOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-f47229ba-b0eb-4b66-8826-6f780e69e57e.png",
+          "pixelOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-4c705a1e-db65-400d-b39e-0e06751ff16a.png",
+          "figureFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET11.png",
+          "pixelFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/pixels/SWEET11_pixel.png",
+          "imageEditsOutsideImagegen": false,
+          "pixelFormat": "high-resolution coarse pixel-art master; no claim of normalized pixel grid"
+        },
+        "qa": {
+          "status": "visually_passed",
+          "visualSummary": "Suspended pole-vault silhouette with tucked feet; one long dark brown fu bar; cream porous cut face. Figure MOB exact; pixel removes mint base and extra snack segments.",
+          "blackChibiGoldGlasses": true,
+          "mouthlessNoseless": true,
+          "distinctPose": true,
+          "mainSweetAtLeastHeadSize": true,
+          "figureHasMOBPlaque": true,
+          "pixelPedestalFree": true,
+          "transparentPNG": true,
+          "technicalManifest": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/qa/alpha_manifest_11_17.json",
+          "caveat": "Pixel assets are generated high-resolution pixel-art masters, not certified normalized-grid sprites."
+        },
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "大きなふ菓子を跳び箱の竿にして駄菓子屋を駆ける曲芸師。黒い小さな体をしならせ、着地する場所まで軽やかに選ぶ。",
+      "visualCategory": "スポーツ",
+      "headgear": "黒糖ブラウンのキャットイヤービーニー、ミントの折り返し",
+      "palette": [
+        "ブラック",
+        "黒糖ブラウン",
+        "ミント",
+        "クリーム",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET12",
+      "uid": "MOB-SWEET-012",
+      "name": "きなこスラッガー",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "連続攻撃",
+      "ATK": 80,
+      "DEF": 60,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "35",
+          "name": "破壊力"
+        }
+      ],
+      "genre": "きなこ棒",
+      "skill": "きなこ五段スイング",
+      "soulSkill": {
+        "name": "きなこ五段スイング",
+        "timing": "own-main",
+        "effect": "このターン最大5回攻撃できる。攻撃するたび、このターン中ATK+10（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "timingLabel": "自分メイン",
+        "description": "このターン最大5回攻撃できる。攻撃するたび、このターン中ATK+10（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "program": 5,
+        "sourceText": "このターン最大5回攻撃できる。攻撃するたび、このターン中ATK+10（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+      },
+      "description": "黒いMOBの小さな野球選手。コーラルのユニフォームと黒いクロップドパンツ。全身をひねり、巨大なきなこ棒で力強いフルスイングをする。",
+      "usage": "最大5回攻撃。各攻撃宣言でATK90、100、110、120、130へ累積上昇し、同じ相手を続けて狙える。",
+      "weakness": "攻撃をキャンセルされても回数を消費し、累積上昇は進む。ダイレクトアタック不可。DEF60で返しの守りは薄い。",
+      "art": "幅広い踏み込みの打撃姿勢。巨大な粉ベージュのきなこ棒と少数の欠片。ホームベース型の菓子台座。",
+      "image": "images/figures/SWEET12.png",
+      "pixelImage": "images/pixels/SWEET12_pixel.png",
+      "referenceFigure": {
+        "id": "66",
+        "name": "メニュー 経験値レコード",
+        "rarity": "R",
+        "soulClass": "seed",
+        "atk": 60,
+        "def": 80,
+        "program": 5
+      },
+      "fusionTargetIds": [
+        "93",
+        "120",
+        "135",
+        "163",
+        "171",
+        "173",
+        "204"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET12",
+        "name": "きなこスラッガー",
+        "motif": "きなこ棒",
+        "rarity": "R",
+        "visualCategory": "スポーツ",
+        "headgear": "クリームの縫い目が入ったコーラルレッドの野球帽",
+        "palette": [
+          "ブラック",
+          "コーラルレッド",
+          "きなこベージュ",
+          "クリーム",
+          "ゴールド"
+        ],
+        "description": "黒いMOBの小さな野球選手。コーラルのユニフォームと黒いクロップドパンツ。全身をひねり、巨大なきなこ棒で力強いフルスイングをする。",
+        "art": "幅広い踏み込みの打撃姿勢。巨大な粉ベージュのきなこ棒と少数の欠片。ホームベース型の菓子台座。",
+        "figurePrompt": "Use case: stylized-concept. Asset: one finished collectible MOB sweets mascot figure illustration with a food-theme display pedestal, isolated with actual transparent background. Use the supplied reference image strictly for the APPROVED visual language and species identity, not its candy, clothing, pose, or composition. Same ultra-cute squat mostly BLACK chibi mascot: huge smooth round black head, no mouth and no nose, gigantic perfectly round GOLD glasses with black lenses/eyes and one white sparkle each, tiny soft mitten hands and short limbs, no realistic fur. Wear the concept's specified hat. Thick clean black outline, bold flat clean cel-cartoon shapes with small sharply bounded highlight/shadow accents, polished vector-like illustration, not 3D render, no gradients/no texture noise. Preserve the BLACK face and limbs regardless of outfit colors. The sweet must be the centerpiece, at least as large as the head. Dynamic action clearly involves the actual sweet. Base must be a designed shallow food-theme collectible display stand, with centered gold rectangular plaque bearing EXACT uppercase black text \"MOB\" (M O B), no other text or logos. Entire figure, sweet, and base fit with generous transparent padding, square canvas. No background, ground plane, gray cast shadow, watermark, additional characters, insects, crustaceans, photorealism, fur, cloned reference pose.\nNew distinct SWEET12, きなこスラッガー. Energetic baseball batter, coral-red soft baseball cap with a short brim and cream seams (plain, no logo), short coral/cream baseball jersey and black cropped pants with thin cream side stripe, black sneakers with coral soles. Very large black head and tiny body. Wide athletic split stance with one foot pivoting up on toes; torso twisted in an unmistakable strong batting follow-through. Both little hands hold one enormous long fat beige KINAKO-BO snack at its narrow end, swinging across upper right. It must read as a giant Japanese roasted soybean flour candy bar, blunt cylindrical/irregular four-sided pale powder-beige shape, at least 1.7x head height, with a smooth dark tan cut face and just a few tiny tan dot accents indicating powder, NOT wooden baseball bat. Face remains visible left of snack. A few simple beige crumb diamonds and one curved motion swoosh follow the swing. Pedestal: low cream diamond-shaped home-plate-like sweet board with brown sugar edge, coral stripe, centered gold MOB plaque. Contrast with reference: grounded wide baseball swing, no lifted marching pose.",
+        "pixelPrompt": "Use case: style-transfer / identity-preserve. Create ONE finished retro pixel-art sprite from the supplied finished figure. Match the EXACT same character identity, black head and limbs, huge round gold glasses, hat, clothing colors/accessories, physical action and pose, orientation, candy count and main candy shape. IMPORTANT REMOVE THE ENTIRE DISPLAY PEDESTAL, the MOB plaque, any base-only candy pieces and all lettering; keep the actual character-held candy/prop and the character. No ground/platform/base beneath the feet or object, no shadow. True transparent PNG background. Draw authentic coarse crisp hand-placed-looking pixel art, a deliberately low-resolution roughly 160–200px game sprite represented as a larger pixel-art master with obvious square pixels, hard stair-stepped contours, consistent pixel clusters, limited palette 3–4 shades per material, solid black pixel outline, sharp no antialiasing look, no smooth vector edges, no gradients or fuzzy texture. No mouths or noses. Full uncropped sprite with transparent padding. This is one standalone sprite, not a sprite sheet, no text whatsoever.\nPreserve SWEET12: coral-red cream-seamed baseball cap, coral/cream baseball jersey, black cropped pants with cream side stripe, coral/cream black sneakers; low wide batting split stance, both hands gripping enormous powder-beige kinako candy stick pointing upper right. Keep the visible cut face, few airborne crumb pieces and curved swing motion mark. Simplify powder into just several flat beige pixel clusters, no noise. Remove the diamond homeplate pedestal, plaque and all ground crumbs; do not remove airborne swing crumbs.",
+        "generation": {
+          "tool": "built-in image_gen",
+          "oneCallPerImage": true,
+          "figureReference": "/workspace/scratch/f7102a0fad56/MOB_sweets_reference_sample/output/SWEET01_ramune_reference_sample.png",
+          "pixelReference": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET12.png",
+          "figureOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-1a115259-f6af-4273-bf06-7f360d7dafde.png",
+          "pixelOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-61ed9a5b-759f-4cba-b920-7599b5262c75.png",
+          "figureFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET12.png",
+          "pixelFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/pixels/SWEET12_pixel.png",
+          "imageEditsOutsideImagegen": false,
+          "pixelFormat": "high-resolution coarse pixel-art master; no claim of normalized pixel grid"
+        },
+        "qa": {
+          "status": "visually_passed",
+          "visualSummary": "Wide batting stance, coral jersey and cap, enormous pale kinako stick with motion trail. Figure MOB exact; pixel removes homeplate base.",
+          "blackChibiGoldGlasses": true,
+          "mouthlessNoseless": true,
+          "distinctPose": true,
+          "mainSweetAtLeastHeadSize": true,
+          "figureHasMOBPlaque": true,
+          "pixelPedestalFree": true,
+          "transparentPNG": true,
+          "technicalManifest": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/qa/alpha_manifest_11_17.json",
+          "caveat": "Pixel assets are generated high-resolution pixel-art masters, not certified normalized-grid sprites."
+        },
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "きなこの粉を星のように散らす小さな打者。身長より大きなきなこ棒を振り抜き、甘い五連打で勝負を決めようとする。",
+      "visualCategory": "スポーツ",
+      "headgear": "クリームの縫い目が入ったコーラルレッドの野球帽",
+      "palette": [
+        "ブラック",
+        "コーラルレッド",
+        "きなこベージュ",
+        "クリーム",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET13",
+      "uid": "MOB-SWEET-013",
+      "name": "ピーピーローラー",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "魔法",
+      "role": "DEF低下・攻撃停止",
+      "ATK": 60,
+      "DEF": 80,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "12",
+          "name": "MUSIC"
+        }
+      ],
+      "genre": "口笛キャンディ",
+      "skill": "ピーピーストップサイン",
+      "soulSkill": {
+        "name": "ピーピーストップサイン",
+        "timing": "own-main",
+        "effect": "相手1体のDEF-20。そのフィギュアは次のバトルフェイズで攻撃できない。",
+        "timingLabel": "自分メイン",
+        "description": "相手1体のDEF-20。そのフィギュアは次のバトルフェイズで攻撃できない。",
+        "program": 6,
+        "sourceText": "相手1体のDEF-20。そのフィギュアは次のバトルフェイズで攻撃できない。"
+      },
+      "description": "口笛を吹かずに輪形キャンディを操る黒いMOBの大道芸人。青いベスト型の短いサロペット、白黒ストライプの短い袖、黄色いサスペンダー。大きな白い輪を両手で転がす。",
+      "usage": "相手1体のDEFを当ターン20下げ、次のバトルフェイズでの攻撃を止める。先に使って味方の突破を助ける。",
+      "weakness": "DEF低下は次の相手ターンへ持ち越さない。攻撃停止はフュージョン素材化を禁じないので、別の個体へ変わると逃れられる。",
+      "art": "片脚を後ろに長く出し、輪の左右を手で支える前傾姿勢。穴の大きな白い輪形キャンディ。白い輪と青の縁を使った浅い台座。",
+      "image": "images/figures/SWEET13.png",
+      "pixelImage": "images/pixels/SWEET13_pixel.png",
+      "referenceFigure": {
+        "id": "76",
+        "name": "メニュー MOB SHOP",
+        "rarity": "R",
+        "soulClass": "seed",
+        "atk": 60,
+        "def": 80,
+        "program": 6
+      },
+      "fusionTargetIds": [
+        "96",
+        "134",
+        "159",
+        "mq:eventfig/20",
+        "mq:eventfig/44"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET13",
+        "name": "ピーピーローラー",
+        "motif": "口笛キャンディ",
+        "rarity": "R",
+        "visualCategory": "パフォーマー",
+        "headgear": "青いポークパイ帽、黄色い帯",
+        "palette": [
+          "ブラック",
+          "スカイブルー",
+          "ホワイト",
+          "レモンイエロー",
+          "ゴールド"
+        ],
+        "description": "口笛を吹かずに輪形キャンディを操る黒いMOBの大道芸人。青いベスト型の短いサロペット、白黒ストライプの短い袖、黄色いサスペンダー。大きな白い輪を両手で転がす。",
+        "art": "片脚を後ろに長く出し、輪の左右を手で支える前傾姿勢。穴の大きな白い輪形キャンディ。白い輪と青の縁を使った浅い台座。",
+        "figurePrompt": "Use case: stylized-concept. Asset: one finished collectible MOB sweets mascot figure illustration with a food-theme display pedestal, isolated with actual transparent background. Use the supplied reference image strictly for the APPROVED visual language and species identity, not its candy, clothing, pose, or composition. Same ultra-cute squat mostly BLACK chibi mascot: huge smooth round black head, no mouth and no nose, gigantic perfectly round GOLD glasses with black lenses/eyes and one white sparkle each, tiny soft mitten hands and short limbs, no realistic fur. Wear the concept's specified hat. Thick clean black outline, bold flat clean cel-cartoon shapes with small sharply bounded highlight/shadow accents, polished vector-like illustration, not 3D render, no gradients/no texture noise. Preserve the BLACK face and limbs regardless of outfit colors. The sweet must be the centerpiece, at least as large as the head. Dynamic action clearly involves the actual sweet. Base must be a designed shallow food-theme collectible display stand, with centered gold rectangular plaque bearing EXACT uppercase black text \"MOB\" (M O B), no other text or logos. Entire figure, sweet, and base fit with generous transparent padding, square canvas. No background, ground plane, gray cast shadow, watermark, additional characters, insects, crustaceans, photorealism, fur, cloned reference pose.\nNew distinct SWEET13, ピーピーローラー. A tiny black street performer ROLLING one enormous WHITE whistle-candy donut ring in front of the body. Sweet white torus at least 1.3 times head diameter, with a large clear round open hole and one tiny side whistle vent; resembles a clean hard white Japanese whistle candy, NOT a fried donut or tire. Both small hands push the ring's upper-left rim and upper-right rim, head peeked above ring and leaned forward, one bent knee forward and the other leg stretched far behind on toes, active rolling crouch. Wear a small sky-blue pork-pie hat with lemon-yellow band, short blue vest, yellow suspenders, black-and-white short striped sleeves, small black/white shoes. Only gold glasses and white eye sparkles on black face, absolutely mouthless. Flat white candy shades of pale gray-blue, no speckle texture. Base is a white shallow ring-shaped display stand with a sky-blue outer edge and centered gold MOB plaque. A few crisp curved blue motion ticks make the roll playful. Important: performer rolling wheel action, not hugging a vertical candy bottle.",
+        "pixelPrompt": "Use case: style-transfer / identity-preserve. Create ONE finished retro pixel-art sprite from the supplied finished figure. Match the EXACT same character identity, black head and limbs, huge round gold glasses, hat, clothing colors/accessories, physical action and pose, orientation, candy count and main candy shape. IMPORTANT REMOVE THE ENTIRE DISPLAY PEDESTAL, the MOB plaque, any base-only candy pieces and all lettering; keep the actual character-held candy/prop and the character. No ground/platform/base beneath the feet or object, no shadow. True transparent PNG background. Draw authentic coarse crisp hand-placed-looking pixel art, a deliberately low-resolution roughly 160–200px game sprite represented as a larger pixel-art master with obvious square pixels, hard stair-stepped contours, consistent pixel clusters, limited palette 3–4 shades per material, solid black pixel outline, sharp no antialiasing look, no smooth vector edges, no gradients or fuzzy texture. No mouths or noses. Full uncropped sprite with transparent padding. This is one standalone sprite, not a sprite sheet, no text whatsoever.\nPreserve SWEET13 exactly: sky-blue pork-pie hat with yellow band, blue romper/vest and shorts with yellow suspenders, black-white striped short sleeves, black white sneakers. The giant white hard candy ring is rolled in front left, round open hole clearly transparent and small oval whistle vent on right side. Both hands press ring upper edge while performer leans from behind right; one leg bent forward, other extended backward. Keep blue curved motion ticks as coarse pixel marks. REMOVE whole white-and-blue pedestal and plaque, no platform.\nCRITICAL FRAMING CORRECTION: Produce a SQUARE transparent canvas. Scale entire sprite composition down to occupy at most 78 percent of both canvas width and height, centered. At least 10 percent fully transparent empty margin on ALL FOUR SIDES, particularly BELOW the candy ring and soles. Ring bottom and both shoe outlines must be complete and float above generous transparent space. Nothing can touch image borders. Entire white ring including complete black bottom outline, both complete shoes, hat and blue action marks all inside safe margin.",
+        "generation": {
+          "tool": "built-in image_gen",
+          "oneCallPerImage": true,
+          "figureReference": "/workspace/scratch/f7102a0fad56/MOB_sweets_reference_sample/output/SWEET01_ramune_reference_sample.png",
+          "pixelReference": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET13.png",
+          "figureOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-6ee32e8f-5a18-4eb3-8836-cdfb76e1313c.png",
+          "pixelOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-d5215dab-fb73-418d-bf06-537a53f80c1a.png",
+          "figureFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET13.png",
+          "pixelFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/pixels/SWEET13_pixel.png",
+          "imageEditsOutsideImagegen": false,
+          "pixelFormat": "high-resolution coarse pixel-art master; no claim of normalized pixel grid",
+          "discardedPixel": "/workspace/scratch/f7102a0fad56/generated_images/exec-35498bea-0fa6-4bdf-bfa9-c84b876ec0fc.png",
+          "initialPixelPrompt": "Use case: style-transfer / identity-preserve. Create ONE finished retro pixel-art sprite from the supplied finished figure. Match the EXACT same character identity, black head and limbs, huge round gold glasses, hat, clothing colors/accessories, physical action and pose, orientation, candy count and main candy shape. IMPORTANT REMOVE THE ENTIRE DISPLAY PEDESTAL, the MOB plaque, any base-only candy pieces and all lettering; keep the actual character-held candy/prop and the character. No ground/platform/base beneath the feet or object, no shadow. True transparent PNG background. Draw authentic coarse crisp hand-placed-looking pixel art, a deliberately low-resolution roughly 160–200px game sprite represented as a larger pixel-art master with obvious square pixels, hard stair-stepped contours, consistent pixel clusters, limited palette 3–4 shades per material, solid black pixel outline, sharp no antialiasing look, no smooth vector edges, no gradients or fuzzy texture. No mouths or noses. Full uncropped sprite with transparent padding. This is one standalone sprite, not a sprite sheet, no text whatsoever.\nPreserve SWEET13 exactly: sky-blue pork-pie hat with yellow band, blue romper/vest and shorts with yellow suspenders, black-white striped short sleeves, black white sneakers. The giant white hard candy ring is rolled in front left, round open hole clearly transparent and small oval whistle vent on right side. Both hands press ring upper edge while performer leans from behind right; one leg bent forward, other extended backward. Keep blue curved motion ticks as coarse pixel marks. REMOVE whole white-and-blue pedestal and plaque, no platform."
+        },
+        "qa": {
+          "status": "visually_passed",
+          "visualSummary": "Forward rolling pose, blue hat/suspenders, enormous white ring with open hole and side vent. Figure MOB exact; pixel retains candy ring but removes display base. Initial pixel touched bottom border; regenerated with visible transparent margin and complete bottom outline.",
+          "blackChibiGoldGlasses": true,
+          "mouthlessNoseless": true,
+          "distinctPose": true,
+          "mainSweetAtLeastHeadSize": true,
+          "figureHasMOBPlaque": true,
+          "pixelPedestalFree": true,
+          "transparentPNG": true,
+          "technicalManifest": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/qa/alpha_manifest_11_17.json",
+          "caveat": "Pixel assets are generated high-resolution pixel-art masters, not certified normalized-grid sprites."
+        },
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "大きな口笛キャンディを輪のように転がす音遊びの案内役。口を持たず、キャンディの穴を通る風で停止の合図を鳴らす。",
+      "visualCategory": "パフォーマー",
+      "headgear": "青いポークパイ帽、黄色い帯",
+      "palette": [
+        "ブラック",
+        "スカイブルー",
+        "ホワイト",
+        "レモンイエロー",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET14",
+      "uid": "MOB-SWEET-014",
+      "name": "バブルホッパー",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "攻撃無効・手札帰還",
+      "ATK": 75,
+      "DEF": 60,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "50",
+          "name": "浮遊"
+        }
+      ],
+      "genre": "風船ガム",
+      "skill": "ぷくっとエスケープ",
+      "soulSkill": {
+        "name": "ぷくっとエスケープ",
+        "timing": "attack-response",
+        "effect": "このフィギュアを手札へ戻し、その攻撃を終了する。",
+        "timingLabel": "相手攻撃宣言時",
+        "description": "このフィギュアを手札へ戻し、その攻撃を終了する。",
+        "program": 1,
+        "sourceText": "このフィギュアを手札へ戻し、その攻撃を終了する。"
+      },
+      "description": "黒いMOBのジャンプ好きな風船ガム使い。ライムの短いジャケットと黒いショーツ。大きなピンクのガム風船の細い伸び部分を手で引き、空中に跳び上がる。",
+      "usage": "相手の攻撃宣言に対応して自分を手札へ戻し、その攻撃を終了する。現行処理では、自分以外の味方が狙われた攻撃にも使える。",
+      "weakness": "場の1体を手札へ戻すため守りの頭数が減る。攻撃側の宣言済み回数は消費するが、残りの攻撃や別の相手の攻撃は止まらない。",
+      "art": "片腕を真上に伸ばし、片膝を上げてもう片脚を伸ばした上昇ポーズ。口は描かず、風船は手持ち。ピンクのガム渦とライム縁の浅い台座。",
+      "image": "images/figures/SWEET14.png",
+      "pixelImage": "images/pixels/SWEET14_pixel.png",
+      "referenceFigure": {
+        "id": "02",
+        "name": "ぷにモブレッド",
+        "rarity": "R",
+        "soulClass": "seed",
+        "atk": 80,
+        "def": 60,
+        "program": 1
+      },
+      "fusionTargetIds": [
+        "96",
+        "134",
+        "159",
+        "mq:eventfig/20",
+        "mq:eventfig/44"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET14",
+        "name": "バブルホッパー",
+        "motif": "風船ガム",
+        "rarity": "R",
+        "visualCategory": "ストリート",
+        "headgear": "ライムのキャットイヤーニット帽、ピンクの折り返し",
+        "palette": [
+          "ブラック",
+          "ライム",
+          "ピンク",
+          "ホワイト",
+          "ゴールド"
+        ],
+        "description": "黒いMOBのジャンプ好きな風船ガム使い。ライムの短いジャケットと黒いショーツ。大きなピンクのガム風船の細い伸び部分を手で引き、空中に跳び上がる。",
+        "art": "片腕を真上に伸ばし、片膝を上げてもう片脚を伸ばした上昇ポーズ。口は描かず、風船は手持ち。ピンクのガム渦とライム縁の浅い台座。",
+        "figurePrompt": "Use case: stylized-concept. Asset: one finished collectible MOB sweets mascot figure illustration with a food-theme display pedestal, isolated with actual transparent background. Use the supplied reference image strictly for the APPROVED visual language and species identity, not its candy, clothing, pose, or composition. Same ultra-cute squat mostly BLACK chibi mascot: huge smooth round black head, no mouth and no nose, gigantic perfectly round GOLD glasses with black lenses/eyes and one white sparkle each, tiny soft mitten hands and short limbs, no realistic fur. Wear the concept's specified hat. Thick clean black outline, bold flat clean cel-cartoon shapes with small sharply bounded highlight/shadow accents, polished vector-like illustration, not 3D render, no gradients/no texture noise. Preserve the BLACK face and limbs regardless of outfit colors. The sweet must be the centerpiece, at least as large as the head. Dynamic action clearly involves the actual sweet. Base must be a designed shallow food-theme collectible display stand, with centered gold rectangular plaque bearing EXACT uppercase black text \"MOB\" (M O B), no other text or logos. Entire figure, sweet, and base fit with generous transparent padding, square canvas. No background, ground plane, gray cast shadow, watermark, additional characters, insects, crustaceans, photorealism, fur, cloned reference pose.\nNew distinct SWEET14, バブルホッパー. A joyous black tiny bubble-gum jumper springing UPWARD, held aloft by one enormous perfectly round PINK BUBBLE-GUM balloon at the upper left, 1.5 times head width. Bubble is a saturated pink closed circle with pale pink simple thick highlight patches, not translucent glass; a narrow tapered stretchy pink gum strand descends directly from bubble into the character's raised black mitten hand. Absolutely no string tied to mouth and NO MOUTH anywhere. Character placed to the right under balloon, one arm extended up holding gum strand, other arm flung out to right, one knee bent high forward, other leg extended down/back: vertical leaping star-like gesture, not sitting or straddling. Wear a small LIME GREEN round-ear cat beanie with PINK turned-up cuff, cropped lime street jacket with pink zip, black shorts, lime-white chunky sneakers. Sweet is all one continuous gum balloon with hand-held gum stem. Figure base far below: shallow glossy pink gum-swirled platform with lime edge, centered gold MOB plaque. Two tiny pink gum bounce arcs below floating feet provide spring movement. Flat simple candy style, no realistic textures.",
+        "pixelPrompt": "Use case: style-transfer / identity-preserve. Create ONE finished retro pixel-art sprite from the supplied finished figure. Match the EXACT same character identity, black head and limbs, huge round gold glasses, hat, clothing colors/accessories, physical action and pose, orientation, candy count and main candy shape. IMPORTANT REMOVE THE ENTIRE DISPLAY PEDESTAL, the MOB plaque, any base-only candy pieces and all lettering; keep the actual character-held candy/prop and the character. No ground/platform/base beneath the feet or object, no shadow. True transparent PNG background. Draw authentic coarse crisp hand-placed-looking pixel art, a deliberately low-resolution roughly 160–200px game sprite represented as a larger pixel-art master with obvious square pixels, hard stair-stepped contours, consistent pixel clusters, limited palette 3–4 shades per material, solid black pixel outline, sharp no antialiasing look, no smooth vector edges, no gradients or fuzzy texture. No mouths or noses. Full uncropped sprite with transparent padding. This is one standalone sprite, not a sprite sheet, no text whatsoever.\nPreserve SWEET14 exactly: lime cat-ear beanie pink ribbed cuff, lime cropped jacket pink zip and cuffs, black shorts and lime-white sneakers; black gold-glasses face tilted. One enormous solid pink gum bubble floats upper left attached by short tapered pink gum stem to raised hand. Other arm out right, left knee up toward viewer, other leg kicked down right. Mouthless; no gum attached to face. Remove ENTIRE lime pedestal and pink gum puddle/splash directly on top of pedestal. Keep only character and its hand-held pink bubble. Don't leave any pink splash below the feet.",
+        "generation": {
+          "tool": "built-in image_gen",
+          "oneCallPerImage": true,
+          "figureReference": "/workspace/scratch/f7102a0fad56/MOB_sweets_reference_sample/output/SWEET01_ramune_reference_sample.png",
+          "pixelReference": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET14.png",
+          "figureOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-a5355419-2120-47a7-9ef7-3992a937f4a0.png",
+          "pixelOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-f75e788d-2e53-4f23-b750-a5444f14f0bb.png",
+          "figureFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET14.png",
+          "pixelFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/pixels/SWEET14_pixel.png",
+          "imageEditsOutsideImagegen": false,
+          "pixelFormat": "high-resolution coarse pixel-art master; no claim of normalized pixel grid"
+        },
+        "qa": {
+          "status": "visually_passed",
+          "visualSummary": "Airborne lime/pink jumper holds gum stem by hand; no mouth contact. Pink bubble larger than head. Figure MOB exact; pixel removes gum puddle/base.",
+          "blackChibiGoldGlasses": true,
+          "mouthlessNoseless": true,
+          "distinctPose": true,
+          "mainSweetAtLeastHeadSize": true,
+          "figureHasMOBPlaque": true,
+          "pixelPedestalFree": true,
+          "transparentPNG": true,
+          "technicalManifest": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/qa/alpha_manifest_11_17.json",
+          "caveat": "Pixel assets are generated high-resolution pixel-art masters, not certified normalized-grid sprites."
+        },
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "巨大なピンクのガム風船を握って空へ跳ぶ跳躍家。危ない合図を見つけると、ふわりと仲間の頭上へ抜けていく。",
+      "visualCategory": "ストリート",
+      "headgear": "ライムのキャットイヤーニット帽、ピンクの折り返し",
+      "palette": [
+        "ブラック",
+        "ライム",
+        "ピンク",
+        "ホワイト",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET15",
+      "uid": "MOB-SWEET-015",
+      "name": "むぎチョコスクーパー",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "魔法",
+      "role": "回復・撃破済み回収",
+      "ATK": 60,
+      "DEF": 75,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "69",
+          "name": "ミニマム"
+        }
+      ],
+      "genre": "麦チョコ",
+      "skill": "むぎつぶリサイクル",
+      "soulSkill": {
+        "name": "むぎつぶリサイクル",
+        "timing": "own-main",
+        "effect": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+        "timingLabel": "自分メイン",
+        "description": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+        "program": 0,
+        "sourceText": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。"
+      },
+      "description": "深くしゃがみ込んで巨大な麦チョコを量る黒いMOBの菓子店員。クリームの短いシャツ、オリーブのエプロン、小さな黒ブーツ。",
+      "usage": "ライフ20回復。撃破済みのシード1体をシードデッキの一番下へ戻す。回収対象がなくても回復だけ使える。",
+      "weakness": "手札へ即座に戻す効果ではない。素材として墓地へ行っただけの個体やミドル/MOBソウルは回収できない。回復上限400。",
+      "art": "大きな木色の計量スコップに、なめらかな丸長いチョココーティング麦粒を3粒。最も大きい粒は頭ほど大きく、先端の断面から淡い麦パフが見える。粒にコーヒー豆のような溝はない。麦粒の輪郭が連なる低い台座。",
+      "image": "images/figures/SWEET15.png",
+      "pixelImage": "images/pixels/SWEET15_pixel.png",
+      "referenceFigure": {
+        "id": "01",
+        "name": "ぷにモブグリーン",
+        "rarity": "R",
+        "soulClass": "seed",
+        "atk": 60,
+        "def": 80,
+        "program": 0
+      },
+      "fusionTargetIds": [
+        "93",
+        "120",
+        "135",
+        "163",
+        "171",
+        "173",
+        "204"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET15",
+        "name": "むぎチョコスクーパー",
+        "motif": "麦チョコ",
+        "rarity": "R",
+        "visualCategory": "仕事",
+        "headgear": "オリーブの作業用キャスケット",
+        "palette": [
+          "ブラック",
+          "オリーブ",
+          "チョコブラウン",
+          "クリーム",
+          "ゴールド"
+        ],
+        "description": "深くしゃがみ込んで巨大な麦チョコを量る黒いMOBの菓子店員。クリームの短いシャツ、オリーブのエプロン、小さな黒ブーツ。",
+        "art": "大きな木色の計量スコップに、なめらかな丸長いチョココーティング麦粒を3粒。最も大きい粒は頭ほど大きく、先端の断面から淡い麦パフが見える。粒にコーヒー豆のような溝はない。麦粒の輪郭が連なる低い台座。",
+        "figurePrompt": "Use case: stylized-concept. Asset: one finished collectible MOB sweets mascot figure illustration with a food-theme display pedestal, isolated with actual transparent background. Use the supplied reference image strictly for the APPROVED visual language and species identity, not its candy, clothing, pose, or composition. Same ultra-cute squat mostly BLACK chibi mascot: huge smooth round black head, no mouth and no nose, gigantic perfectly round GOLD glasses with black lenses/eyes and one white sparkle each, tiny soft mitten hands and short limbs, no realistic fur. Wear the concept's specified hat. Thick clean black outline, bold flat clean cel-cartoon shapes with small sharply bounded highlight/shadow accents, polished vector-like illustration, not 3D render, no gradients/no texture noise. Preserve the BLACK face and limbs regardless of outfit colors. The sweet must be the centerpiece, at least as large as the head. Dynamic action clearly involves the actual sweet. Base must be a designed shallow food-theme collectible display stand, with centered gold rectangular plaque bearing EXACT uppercase black text \"MOB\" (M O B), no other text or logos. Entire figure, sweet, and base fit with generous transparent padding, square canvas. No background, ground plane, gray cast shadow, watermark, additional characters, insects, crustaceans, photorealism, fur, cloned reference pose.\nNew distinct SWEET15, むぎチョコスクーパー. A black tiny dagashi shopkeeper in a VERY DEEP SQUAT, knees turned outward, head low and tilted to left, using both hands to lift a giant old-fashioned broad wooden SCOOP full of exactly THREE enormously enlarged chocolate-coated WHEAT GRAINS. ONE grain is as large as the character head, the other two a little smaller. The grain shapes are smooth dark-chocolate plump elongated ovals with subtle central wheat crease and rounded ends, NOT cocoa pods or beans or animal eggs; three simple clean cel highlights, no realistic textures. Scoop tilts upward to right so all three shiny chunky sweets visible, one black hand grips short handle left, other hand supports scoop underside right. Wear small OLIVE work newsboy cap with cream patch (no letters), short cream shirt, olive shop apron, black work boots with cream soles. Face mostly black and huge gold round glasses clearly visible above scoop. Low food-theme base shaped like a ring of abstract toasted wheat-grain segments in tan, chocolate-brown edge, centered gold MOB plaque. Make a distinctly compact crouched scooping silhouette with candy cluster to right, not standing carrying one bottle.",
+        "pixelPrompt": "Use case: style-transfer / identity-preserve. Create ONE finished retro pixel-art sprite from the supplied finished figure. Match the EXACT same character identity, black head and limbs, huge round gold glasses, hat, clothing colors/accessories, physical action and pose, orientation, candy count and main candy shape. IMPORTANT REMOVE THE ENTIRE DISPLAY PEDESTAL, the MOB plaque, any base-only candy pieces and all lettering; keep the actual character-held candy/prop and the character. No ground/platform/base beneath the feet or object, no shadow. True transparent PNG background. Draw authentic coarse crisp hand-placed-looking pixel art, a deliberately low-resolution roughly 160–200px game sprite represented as a larger pixel-art master with obvious square pixels, hard stair-stepped contours, consistent pixel clusters, limited palette 3–4 shades per material, solid black pixel outline, sharp no antialiasing look, no smooth vector edges, no gradients or fuzzy texture. No mouths or noses. Full uncropped sprite with transparent padding. This is one standalone sprite, not a sprite sheet, no text whatsoever.\nPreserve SWEET15 exactly: olive cream-patch newsboy cap, cream shirt olive apron, deep wide squat, black cream work boots, two hands lifting one broad wood-colored scoop containing EXACTLY THREE large smooth chocolate-coated wheat grains at right. Largest back grain has a small cut tip exposing ivory puffed wheat; keep that important detail as a few pale pixel shapes. Grain surfaces smooth with NO central line or coffee-bean crease. Remove entire oval brown display pedestal and all tan wheat kernels on that pedestal. Keep scoop and its three held chocolate grains.",
+        "generation": {
+          "tool": "built-in image_gen",
+          "oneCallPerImage": true,
+          "figureReference": "/workspace/scratch/f7102a0fad56/MOB_sweets_reference_sample/output/SWEET01_ramune_reference_sample.png",
+          "pixelReference": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET15.png",
+          "figureOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-ad62b60e-aaa5-41e8-a537-9fb56156e1bb.png",
+          "pixelOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-87e9fd90-1849-4da7-9cd1-6fbaa1579939.png",
+          "figureFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET15.png",
+          "pixelFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/pixels/SWEET15_pixel.png",
+          "imageEditsOutsideImagegen": false,
+          "pixelFormat": "high-resolution coarse pixel-art master; no claim of normalized pixel grid",
+          "revisionPrompt": "Use case: precise-object-edit. Edit the supplied figure: preserve its entire BLACK mascot, gold glasses, olive newsboy cap, cream shirt, olive apron, deep squat pose, wooden scoop, grain-theme base, exact MOB plaque, outline style and transparent background. Change ONLY the three chocolate sweets in the scoop. They must be recognizably oversized Japanese MUGI CHOCO, chocolate-coated puffed wheat: elongated plump small rice/wheat kernel forms, rounded slightly tapering ends, ratio about 2.3:1 length:width, asymmetric gently curved sides. Each is a SMOOTH uninterrupted chocolate-coated surface with NO CENTRAL CREASE, NO LINE, NO GROOVE, NO SPLIT. Do not look like coffee beans. Keep three kernels, one huge head-sized and two a little smaller, in exactly the scoop. Add one small bite-like cross-section at the TIP of the large back kernel revealing a light ivory airy puffed-grain inside as 2–3 simple cream shapes, so it reads as chocolate-covered wheat instead of solid chocolate or beans. No fine texture. Everything else unchanged. True transparent background.",
+          "discardedFigure": "/workspace/scratch/f7102a0fad56/generated_images/exec-aa9a1ef4-6985-4c79-ac7c-9cfff9c0e464.png"
+        },
+        "qa": {
+          "status": "visually_passed",
+          "visualSummary": "Deep squat olive shopkeeper, exactly three smooth chocolate wheat kernels in scoop, one with pale puffed wheat exposed. Coffee-bean-like creases corrected. Figure MOB exact; pixel removes wheat base.",
+          "blackChibiGoldGlasses": true,
+          "mouthlessNoseless": true,
+          "distinctPose": true,
+          "mainSweetAtLeastHeadSize": true,
+          "figureHasMOBPlaque": true,
+          "pixelPedestalFree": true,
+          "transparentPNG": true,
+          "technicalManifest": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/qa/alpha_manifest_11_17.json",
+          "caveat": "Pixel assets are generated high-resolution pixel-art masters, not certified normalized-grid sprites."
+        },
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "麦チョコの山を大きなスコップですくう駄菓子店員。こぼれた一粒も見逃さず、棚の奥へ大切に戻して次の出番を待つ。",
+      "visualCategory": "仕事",
+      "headgear": "オリーブの作業用キャスケット",
+      "palette": [
+        "ブラック",
+        "オリーブ",
+        "チョコブラウン",
+        "クリーム",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET16",
+      "uid": "MOB-SWEET-016",
+      "name": "ボーロバランサー",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "物理",
+      "role": "一撃生存",
+      "ATK": 65,
+      "DEF": 70,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "27",
+          "name": "キュート"
+        }
+      ],
+      "genre": "たまごボーロ",
+      "skill": "ころころ踏んばり",
+      "soulSkill": {
+        "name": "ころころ踏んばり",
+        "timing": "attack-response",
+        "effect": "このフィギュアが攻撃対象になった時、その攻撃による撃破を1回だけ無効にする。",
+        "timingLabel": "相手攻撃宣言時",
+        "description": "このフィギュアが攻撃対象になった時、その攻撃による撃破を1回だけ無効にする。",
+        "program": 31,
+        "sourceText": "このフィギュアが攻撃対象になった時、その攻撃による撃破を1回だけ無効にする。"
+      },
+      "description": "大きなたまごボーロを積み上げる黒いMOBのバランス芸人。ラベンダーの短いジャケットと白い小さな襟。横に曲げた膝と傾いた胴体で重心を取り、両手を違う高さへ伸ばす。",
+      "usage": "自分が攻撃対象になった時、その戦闘で撃破されても一度だけ場に残る。残したい素材や場の頭数を守る。",
+      "weakness": "ATKとDEFの差分ライフダメージは通常通り受ける。他の味方を守る対象変更ではなく、続く別の攻撃には再使用できない。",
+      "art": "淡黄の球形ボーロを縦に3個積む。最下段も十分巨大。片手は中段を支え、片手は最上段を載せる。割れた卵を抽象化した低い台座。",
+      "image": "images/figures/SWEET16.png",
+      "pixelImage": "images/pixels/SWEET16_pixel.png",
+      "referenceFigure": {
+        "id": "64",
+        "name": "メニュー バトルプログラム",
+        "rarity": "R",
+        "soulClass": "seed",
+        "atk": 60,
+        "def": 70,
+        "program": 31
+      },
+      "fusionTargetIds": [
+        "121",
+        "165",
+        "176",
+        "180",
+        "205",
+        "215",
+        "mq:eventfig/03"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET16",
+        "name": "ボーロバランサー",
+        "motif": "たまごボーロ",
+        "rarity": "R",
+        "visualCategory": "パフォーマー",
+        "headgear": "淡いラベンダーの丸いベレー帽",
+        "palette": [
+          "ブラック",
+          "ラベンダー",
+          "たまごイエロー",
+          "ホワイト",
+          "ゴールド"
+        ],
+        "description": "大きなたまごボーロを積み上げる黒いMOBのバランス芸人。ラベンダーの短いジャケットと白い小さな襟。横に曲げた膝と傾いた胴体で重心を取り、両手を違う高さへ伸ばす。",
+        "art": "淡黄の球形ボーロを縦に3個積む。最下段も十分巨大。片手は中段を支え、片手は最上段を載せる。割れた卵を抽象化した低い台座。",
+        "figurePrompt": "Use case: stylized-concept. Asset: one finished collectible MOB sweets mascot figure illustration with a food-theme display pedestal, isolated with actual transparent background. Use the supplied reference image strictly for the APPROVED visual language and species identity, not its candy, clothing, pose, or composition. Same ultra-cute squat mostly BLACK chibi mascot: huge smooth round black head, no mouth and no nose, gigantic perfectly round GOLD glasses with black lenses/eyes and one white sparkle each, tiny soft mitten hands and short limbs, no realistic fur. Wear the concept's specified hat. Thick clean black outline, bold flat clean cel-cartoon shapes with small sharply bounded highlight/shadow accents, polished vector-like illustration, not 3D render, no gradients/no texture noise. Preserve the BLACK face and limbs regardless of outfit colors. The sweet must be the centerpiece, at least as large as the head. Dynamic action clearly involves the actual sweet. Base must be a designed shallow food-theme collectible display stand, with centered gold rectangular plaque bearing EXACT uppercase black text \"MOB\" (M O B), no other text or logos. Entire figure, sweet, and base fit with generous transparent padding, square canvas. No background, ground plane, gray cast shadow, watermark, additional characters, insects, crustaceans, photorealism, fur, cloned reference pose.\nNew distinct SWEET16, ボーロバランサー. A tiny black circus-style balancing performer standing off to the LEFT of a tall wobbly stack of exactly THREE enormous pale-yellow TAMAGO BORO ball cookies. Each ball is head-sized, slightly domed round with a gently flat bottom, pale buttery yellow and a small toasted light-tan patch underneath, NOT eggs, not golf balls, no holes, no speckles. The stack is leaned slightly right with lowest ball on pedestal, middle offset left, top offset right; performer puts one mitten gently on top ball while other hand steadies the middle. Head tilted and face peeking from left of stack, torso bent sideways, knees bent and one foot tiptoeing outward to left, exaggerated careful balancing action. Wear small lavender beret with a little top stalk, lavender cropped artist jacket over white tiny collar, black pantaloons, lavender-white soft shoes. Keep face fully black, gold glasses. Low display base underneath styled like ivory cracked-eggshell scallops surrounding a pale-yellow center, lavender edge and centered gold MOB plaque. Clear three big round cookies, no extra sweets, flat clean colors.",
+        "pixelPrompt": "Use case: style-transfer / identity-preserve. Create ONE finished retro pixel-art sprite from the supplied finished figure. Match the EXACT same character identity, black head and limbs, huge round gold glasses, hat, clothing colors/accessories, physical action and pose, orientation, candy count and main candy shape. IMPORTANT REMOVE THE ENTIRE DISPLAY PEDESTAL, the MOB plaque, any base-only candy pieces and all lettering; keep the actual character-held candy/prop and the character. No ground/platform/base beneath the feet or object, no shadow. True transparent PNG background. Draw authentic coarse crisp hand-placed-looking pixel art, a deliberately low-resolution roughly 160–200px game sprite represented as a larger pixel-art master with obvious square pixels, hard stair-stepped contours, consistent pixel clusters, limited palette 3–4 shades per material, solid black pixel outline, sharp no antialiasing look, no smooth vector edges, no gradients or fuzzy texture. No mouths or noses. Full uncropped sprite with transparent padding. This is one standalone sprite, not a sprite sheet, no text whatsoever.\nPreserve SWEET16 exactly: lavender beret and short coat white collar, black pantaloons and lavender-white shoes, black face with gold glasses leaning left, one foot slightly lifted, one hand touching the topmost ball and other hand steadying the middle ball. Exactly THREE oversized pale yellow bolo cookie balls stacked vertically at right, each with flat pale tan baked patch at bottom. Keep all three spheres including bottom one; they are the principal sweet, not the display base. Remove all lavender and ivory eggshell scalloped pedestal and plaque beneath the balls and feet. No other base.",
+        "generation": {
+          "tool": "built-in image_gen",
+          "oneCallPerImage": true,
+          "figureReference": "/workspace/scratch/f7102a0fad56/MOB_sweets_reference_sample/output/SWEET01_ramune_reference_sample.png",
+          "pixelReference": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET16.png",
+          "figureOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-fee01c5e-a220-4ffc-a079-2a35089aba74.png",
+          "pixelOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-86ed1645-4c97-4705-8fa6-6822ba0ae23e.png",
+          "figureFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET16.png",
+          "pixelFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/pixels/SWEET16_pixel.png",
+          "imageEditsOutsideImagegen": false,
+          "pixelFormat": "high-resolution coarse pixel-art master; no claim of normalized pixel grid"
+        },
+        "qa": {
+          "status": "visually_passed",
+          "visualSummary": "Lavender beret performer leans and balances exactly three giant pale yellow bolo balls. Figure MOB exact; pixel retains all three cookies but removes ivory/lavender base.",
+          "blackChibiGoldGlasses": true,
+          "mouthlessNoseless": true,
+          "distinctPose": true,
+          "mainSweetAtLeastHeadSize": true,
+          "figureHasMOBPlaque": true,
+          "pixelPedestalFree": true,
+          "transparentPNG": true,
+          "technicalManifest": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/qa/alpha_manifest_11_17.json",
+          "caveat": "Pixel assets are generated high-resolution pixel-art masters, not certified normalized-grid sprites."
+        },
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "大きなたまごボーロを絶妙な角度で積み上げる平衡術師。崩れそうな足場でも金色の丸メガネを揺らさず、最後の一粒に立ち続ける。",
+      "visualCategory": "パフォーマー",
+      "headgear": "淡いラベンダーの丸いベレー帽",
+      "palette": [
+        "ブラック",
+        "ラベンダー",
+        "たまごイエロー",
+        "ホワイト",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET17",
+      "uid": "MOB-SWEET-017",
+      "name": "カステラフリッパー",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "大差撃破・ライフ打点",
+      "ATK": 120,
+      "DEF": 95,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "70",
+          "name": "職人"
+        },
+        {
+          "id": "36",
+          "name": "技術力"
+        },
+        {
+          "id": "56",
+          "name": "火炎"
+        }
+      ],
+      "genre": "ベビーカステラ",
+      "skill": "こんがり大返し",
+      "soulSkill": {
+        "name": "こんがり大返し",
+        "timing": "own-main",
+        "effect": "このターンATK+20。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。",
+        "timingLabel": "自分メイン",
+        "description": "このターンATK+20。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。",
+        "program": 35,
+        "sourceText": "このターンATK+20。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。"
+      },
+      "description": "大きなベビーカステラを小さなフライパンで返す黒いMOBの屋台料理人。短いクリームのコック服、オレンジのスカーフ。後ろにのけぞり片腕でフライパンを振り上げる。",
+      "usage": "このターンATK140。攻撃ATKが相手の実効DEFを30以上上回れば、差分ライフダメージをさらに20加える。",
+      "weakness": "差が29以下なら追加20はない。DEF上昇や守護を無視しない。DEF95なので反撃を受ける前に守る手段を用意したい。",
+      "art": "丸みある焼き色の巨大カステラ1個が頭より上に飛ぶ。菓子の底に淡い黄色の焼き面。カステラ型の浅い台座。",
+      "image": "images/figures/SWEET17.png",
+      "pixelImage": "images/pixels/SWEET17_pixel.png",
+      "referenceFigure": {
+        "id": "116",
+        "name": "モブネオントカゲ",
+        "rarity": "SR",
+        "soulClass": "seed",
+        "atk": 100,
+        "def": 90,
+        "program": 35
+      },
+      "fusionTargetIds": [
+        "94",
+        "107",
+        "111",
+        "137",
+        "138",
+        "139",
+        "142",
+        "143",
+        "145",
+        "146",
+        "147",
+        "148",
+        "158",
+        "202",
+        "167",
+        "177",
+        "206",
+        "208",
+        "212",
+        "mq:eventfig/23",
+        "mq:eventfig/53"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET17",
+        "name": "カステラフリッパー",
+        "motif": "ベビーカステラ",
+        "rarity": "SR",
+        "visualCategory": "仕事",
+        "headgear": "小さな白いコック帽、オレンジの帯",
+        "palette": [
+          "ブラック",
+          "クリーム",
+          "焼き色ゴールド",
+          "オレンジ",
+          "ゴールド"
+        ],
+        "description": "大きなベビーカステラを小さなフライパンで返す黒いMOBの屋台料理人。短いクリームのコック服、オレンジのスカーフ。後ろにのけぞり片腕でフライパンを振り上げる。",
+        "art": "丸みある焼き色の巨大カステラ1個が頭より上に飛ぶ。菓子の底に淡い黄色の焼き面。カステラ型の浅い台座。",
+        "figurePrompt": "Use case: stylized-concept. Asset: one finished collectible MOB sweets mascot figure illustration with a food-theme display pedestal, isolated with actual transparent background. Use the supplied reference image strictly for the APPROVED visual language and species identity, not its candy, clothing, pose, or composition. Same ultra-cute squat mostly BLACK chibi mascot: huge smooth round black head, no mouth and no nose, gigantic perfectly round GOLD glasses with black lenses/eyes and one white sparkle each, tiny soft mitten hands and short limbs, no realistic fur. Wear the concept's specified hat. Thick clean black outline, bold flat clean cel-cartoon shapes with small sharply bounded highlight/shadow accents, polished vector-like illustration, not 3D render, no gradients/no texture noise. Preserve the BLACK face and limbs regardless of outfit colors. The sweet must be the centerpiece, at least as large as the head. Dynamic action clearly involves the actual sweet. Base must be a designed shallow food-theme collectible display stand, with centered gold rectangular plaque bearing EXACT uppercase black text \"MOB\" (M O B), no other text or logos. Entire figure, sweet, and base fit with generous transparent padding, square canvas. No background, ground plane, gray cast shadow, watermark, additional characters, insects, crustaceans, photorealism, fur, cloned reference pose.\nNew distinct SWEET17, カステラフリッパー, SR chef. Tiny black festival chef in dramatic BACKWARD LEAN: short legs spread, one foot forward and one heel lifted behind, head angled up to watch a single ENORMOUS BABY CASTELLA cake being pan-flipped above the head at upper left. One arm extends forward-left with a small shallow black frying pan angled upward, other arm counterbalances backward right. Cake much larger than head, classic BABY CASTELLA rounded pillow/ball sponge cake, golden-brown outer baked shell, a light buttery yellow rounded bottom edge, one simple middle seam, smooth 2–3 cel shading areas only, NO grainy realism. The airborne cake is unmistakably ONE solid plump baby castella, not toast, bread slice, donut or stacked pancakes. A short curved golden motion arc connects small pan to floating cake. Wear white puffy small chef toque with orange band, short cream chef coat with two orange buttons, orange neck scarf and short waist apron, black/cream chef shoes. Base is a low golden baby-castella mold-shaped platform, amber rim, center exact MOB gold plaque. Full face black with gold glasses no mouth, cartoon dynamic flipping action.",
+        "pixelPrompt": "Use case: style-transfer / identity-preserve. Create ONE finished retro pixel-art sprite from the supplied finished figure. Match the EXACT same character identity, black head and limbs, huge round gold glasses, hat, clothing colors/accessories, physical action and pose, orientation, candy count and main candy shape. IMPORTANT REMOVE THE ENTIRE DISPLAY PEDESTAL, the MOB plaque, any base-only candy pieces and all lettering; keep the actual character-held candy/prop and the character. No ground/platform/base beneath the feet or object, no shadow. True transparent PNG background. Draw authentic coarse crisp hand-placed-looking pixel art, a deliberately low-resolution roughly 160–200px game sprite represented as a larger pixel-art master with obvious square pixels, hard stair-stepped contours, consistent pixel clusters, limited palette 3–4 shades per material, solid black pixel outline, sharp no antialiasing look, no smooth vector edges, no gradients or fuzzy texture. No mouths or noses. Full uncropped sprite with transparent padding. This is one standalone sprite, not a sprite sheet, no text whatsoever.\nPreserve SWEET17 exactly: white chef toque orange band, cream-orange small chef jacket, orange scarf and short apron, black-white shoes. Backward leaning running stance with left leg forward and right kicked back, one arm extends black frying pan to left, other arm balances right. One enormous golden rounded baby castella floats upper left over tiny pan, retain light yellow underside and warm golden brown upper dome, no filling. Keep short golden flip arc under cake as pixel marks. Remove entire golden display pedestal and all base-only cake mold bumps, no ground.",
+        "generation": {
+          "tool": "built-in image_gen",
+          "oneCallPerImage": true,
+          "figureReference": "/workspace/scratch/f7102a0fad56/MOB_sweets_reference_sample/output/SWEET01_ramune_reference_sample.png",
+          "pixelReference": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET17.png",
+          "figureOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-c92c3b2e-5649-4feb-9446-68e206889746.png",
+          "pixelOriginal": "/workspace/scratch/f7102a0fad56/generated_images/exec-e090a5e1-1bc0-4033-8f5f-85286caaa595.png",
+          "figureFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/figures/SWEET17.png",
+          "pixelFile": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/deliverable/images/pixels/SWEET17_pixel.png",
+          "imageEditsOutsideImagegen": false,
+          "pixelFormat": "high-resolution coarse pixel-art master; no claim of normalized pixel grid"
+        },
+        "qa": {
+          "status": "visually_passed",
+          "visualSummary": "Orange/cream chef flips one huge baby castella above tiny pan, counterbalancing arm and kicked-back foot. Figure MOB exact; pixel removes golden mold display base.",
+          "blackChibiGoldGlasses": true,
+          "mouthlessNoseless": true,
+          "distinctPose": true,
+          "mainSweetAtLeastHeadSize": true,
+          "figureHasMOBPlaque": true,
+          "pixelPedestalFree": true,
+          "transparentPNG": true,
+          "technicalManifest": "/workspace/scratch/f7102a0fad56/MOB_retro_sweets_11_30/batch_11_20/qa/alpha_manifest_11_17.json",
+          "caveat": "Pixel assets are generated high-resolution pixel-art masters, not certified normalized-grid sprites."
+        },
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "大粒のベビーカステラを鍋から高く返す菓子焼き師。黒い体をひねって熱い焼き目を見極め、ここぞの一振りで仕上げる。",
+      "visualCategory": "仕事",
+      "headgear": "小さな白いコック帽、オレンジの帯",
+      "palette": [
+        "ブラック",
+        "クリーム",
+        "焼き色ゴールド",
+        "オレンジ",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET18",
+      "uid": "MOB-SWEET-018",
+      "name": "ヌードルビート",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "attackType": "物理",
+      "role": "複数体攻撃・当ターンATK低下",
+      "ATK": 105,
+      "DEF": 115,
+      "tags": [
+        {
+          "id": "18",
+          "name": "美味しい食べ物"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "12",
+          "name": "MUSIC"
+        },
+        {
+          "id": "36",
+          "name": "技術力"
+        },
+        {
+          "id": "78",
+          "name": "団結力"
+        }
+      ],
+      "genre": "駄菓子ラーメン",
+      "skill": "パリパリ総奏",
+      "soulSkill": {
+        "name": "パリパリ総奏",
+        "timing": "own-main",
+        "effect": "相手フィールド全体のATKを-10。このターン、相手フィールド全員へ1回ずつ攻撃できる。",
+        "timingLabel": "自分メイン",
+        "description": "相手フィールド全体のATKを-10。このターン、相手フィールド全員へ1回ずつ攻撃できる。",
+        "program": 36,
+        "sourceText": "相手フィールド全体のATKを-10。このターン、相手フィールド全員へ1回ずつ攻撃できる。"
+      },
+      "description": "巨大なパリパリ駄菓子麺の塊を叩く黒いMOBのドラマー。ネイビーの短いジャケットとオレンジのリストバンド。両腕に高低差をつけ、2本の短いばちを振る。",
+      "usage": "相手全体のATKを当ターン10下げ、このターン相手の各個体へ1回ずつ攻撃できる。複数の低DEF相手を順番に狙う。",
+      "weakness": "同じ個体へ繰り返し攻撃はできない。ATK低下は次の相手ターンには消えるため、翌ターンの攻撃力を下げる守備効果としては使えない。",
+      "art": "器ではなく、乾いた巻き麺そのものの大きな巣状の円盤が主役。片膝を上げた低いドラム演奏ポーズ。麺の渦を簡単に表した低い台座。",
+      "image": "images/figures/SWEET18.png",
+      "pixelImage": "images/pixels/SWEET18_pixel.png",
+      "referenceFigure": {
+        "id": "83",
+        "name": "モブ三味線",
+        "rarity": "SR",
+        "soulClass": "seed",
+        "atk": 120,
+        "def": 100,
+        "program": 36
+      },
+      "fusionTargetIds": [
+        "92",
+        "103",
+        "175",
+        "178",
+        "mq:eventfig/29",
+        "mq:eventfig/48"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET18",
+        "name": "ヌードルビート",
+        "motif": "駄菓子ラーメン",
+        "rarity": "SR",
+        "visualCategory": "アーティスト",
+        "headgear": "ネイビーの後ろ向きキャップ、オレンジの縁",
+        "palette": [
+          "ブラック",
+          "ネイビー",
+          "麺ゴールド",
+          "オレンジ",
+          "ゴールド"
+        ],
+        "description": "巨大なパリパリ駄菓子麺の塊を叩く黒いMOBのドラマー。ネイビーの短いジャケットとオレンジのリストバンド。両腕に高低差をつけ、2本の短いばちを振る。",
+        "art": "器ではなく、乾いた巻き麺そのものの大きな巣状の円盤が主役。片膝を上げた低いドラム演奏ポーズ。麺の渦を簡単に表した低い台座。",
+        "figurePrompt": "Use case: stylized-concept. Create one polished full-body MOB sweets collectible figure illustration with a genuinely transparent background. The supplied approved ramune image is an anatomy/2D cel-cartoon STYLE reference only; invent a new character, outfit, action, giant sweet and themed display pedestal.\nHuge rounded MATTE BLACK mouthless/noseless face and huge circular GOLD eyeglass frames, black eye/lens interiors and one small round white eye highlight each. Tiny plump mostly-black body, stubby black mitten hands, very short limbs, large shoes, roughly two heads tall. Bold crisp black outlines, broad flat colorful shapes, controlled simple two-tone cel shading. No photography, no 3D material rendering, no furry animal, no human skin, no airbrush or gradients, no realistic food texture or noisy grain. Face/glasses fully visible. One enormous sweet with an expressive action, at least head-sized. Simple recognisable hat and clothes. Full character, prop and themed base comfortably inside canvas. Base front has a small gold plaque with exact black text MOB. No other lettering or branding. No background, scenery, cast shadow, particles, border, watermark, collage or extra character.\nヌードルビート, retro DAGASHI CRUNCHY RAMEN drummer. A navy backward baseball cap with orange rim, tiny cropped navy street jacket, orange wristbands, black shorts and black sneakers with ivory soles. Play an energetic compact low drummer pose with one bent knee lifted and both short arms at different heights, each hand grasping a short ivory drumstick. Both sticks point toward ONE GIANT GOLDEN-BROWN DRIED CRUNCHY NOODLE NEST directly in front of the mascot. No bowl and no drum hardware. The sweet noodle nest is a thick round puck built of broad flat wavy interwoven crunchy noodle ribbons, graphic loops, not hundreds of fine noodle strands. It should look unmistakably like a dry savory dagashi snack. Head and shoulders lean into the beat, with black face and full gold spectacles unobscured. Display pedestal is a separate lower flattened golden noodle swirl with navy rim and MOB plaque, beneath the main noodle puck and feet.",
+        "pixelPrompt": "Use case: style-transfer. Generate ONE standalone coarse retro pixel-art game sprite from the supplied locked matching figure. Preserve its exact identity, giant gold circular glasses, black mouthless/noseless face and short black limbs, hat, outfit, palette, gesture, sweet prop and overall silhouette. Transform all visible art into CHUNKY LOW-RESOLUTION PIXEL CLUSTERS with a consistent coarse conceptual square pixel grid, angular staircase edges, blocky black outlines, square highlights, 16–24 simple flat color clusters, no smooth curves, antialiasing, gradients, blur, texture, noise or tiny dots. High resolution PNG containing clearly visible square pixels is fine. Full character and interacted-with sweet must be complete with a transparent margin. Genuine transparent RGBA background. Remove the separate lower collectible display pedestal and MOB plaque completely. No platform, floor, ground, shadow, other letters, watermark, sprite sheet, extra character, or extra object. Keep navy backward cap with orange brim, cropped navy jacket with orange collar and cuffs, black shorts, chunky ivory/black shoes, raised bent knee and short ivory drumsticks held at different heights. KEEP the SINGLE enormous golden dry crunchy-noodle puck in front as the musical sweet prop. REMOVE ONLY the distinct LOWER navy-rimmed round display plinth and noodle decoration below the puck. The main noodle nest should have a few broad angular noodle clusters so it remains recognizable and easy to read; do not make a bowl or drum hardware.",
+        "generation": {
+          "tool": "built-in imagegen",
+          "referenceAnchor": "Approved SWEET01 ramune reference",
+          "figureSource": "/workspace/scratch/f7102a0fad56/generated_images/exec-a713b359-037f-472c-8775-348606349b6f.png",
+          "pixelSource": "/workspace/scratch/f7102a0fad56/generated_images/exec-668e2f17-22e5-487e-b989-2e2b71c6f9c7.png",
+          "pixelReferencedFigure": "/workspace/scratch/f7102a0fad56/generated_images/exec-a713b359-037f-472c-8775-348606349b6f.png",
+          "transparentBackground": true,
+          "pixelFormatNote": "High-resolution coarse pixel-art master; logical pixel grid not normalized."
+        },
+        "qa": {
+          "result": "PASS",
+          "visualReview": "Black mouthless face, gold round glasses, figure/prop/outfit matching verified. Figure has themed MOB base; pixel removes display base while preserving interacted-with sweet.",
+          "assets": {
+            "figure": {
+              "size": [
+                1145,
+                1374
+              ],
+              "mode": "RGBA",
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "visibleAlpha128BoundingBox": [
+                74,
+                30,
+                1104,
+                1366
+              ],
+              "visibleMargin": 8,
+              "sha256": "2b5ee3a4ccaec042ec25d2dd2562b4021a6ad435d3819b2d83e65978e0d04ec5"
+            },
+            "pixel": {
+              "size": [
+                1145,
+                1374
+              ],
+              "mode": "RGBA",
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "visibleAlpha128BoundingBox": [
+                58,
+                31,
+                1125,
+                1366
+              ],
+              "visibleMargin": 8,
+              "sha256": "f6a360aed22d444690cc69d69d3dcde6bd87cfe288efda7d1e05bbdedfa20782"
+            }
+          }
+        },
+        "image": "images/figures/SWEET18.png",
+        "pixelImage": "images/pixels/SWEET18_pixel.png",
+        "category": "アーティスト",
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "香ばしい駄菓子ラーメンの塊を太鼓にする小さな演奏家。両腕のスティックを交差させ、細い麺のリズムで場を一巡する。",
+      "visualCategory": "アーティスト",
+      "headgear": "ネイビーの後ろ向きキャップ、オレンジの縁",
+      "palette": [
+        "ブラック",
+        "ネイビー",
+        "麺ゴールド",
+        "オレンジ",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET19",
+      "uid": "MOB-SWEET-019",
+      "name": "ヨーグルクライマー",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "持続自己強化",
+      "ATK": 135,
+      "DEF": 145,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "34",
+          "name": "勇猛果敢"
+        },
+        {
+          "id": "36",
+          "name": "技術力"
+        },
+        {
+          "id": "67",
+          "name": "もちもち"
+        },
+        {
+          "id": "70",
+          "name": "職人"
+        },
+        {
+          "id": "81",
+          "name": "ロマン"
+        }
+      ],
+      "genre": "カップヨーグル",
+      "skill": "なめらか頂上アタック",
+      "soulSkill": {
+        "name": "なめらか頂上アタック",
+        "timing": "own-main",
+        "effect": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。",
+        "timingLabel": "自分メイン",
+        "description": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。",
+        "program": 17,
+        "sourceText": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。"
+      },
+      "description": "大きなカップ菓子を登る黒いMOBの探検家。ラベンダーのケープを揺らし、カップの縁につかまって白いクリームをすくう。",
+      "usage": "ATK155・DEF165へ強化し、次の相手ターン終了まで維持する。攻撃した後にも守備力を残せる。",
+      "weakness": "撃破無効やライフダメージ軽減はない。次の自分ターン開始には元の135/145へ戻り、別のスキルと同じターンには使えない。",
+      "art": "無地のミントとラベンダーの大きなカップ、淡い白クリームが渦状に盛り上がる。片足をカップ壁に掛けて登る姿。淡いクリーム渦の低い台座。",
+      "image": "images/figures/SWEET19.png",
+      "pixelImage": "images/pixels/SWEET19_pixel.png",
+      "referenceFigure": {
+        "id": "35",
+        "name": "PB2 Vol.63 マスコット",
+        "rarity": "SSR",
+        "soulClass": "seed",
+        "atk": 150,
+        "def": 140,
+        "program": 17
+      },
+      "fusionTargetIds": [
+        "93",
+        "120",
+        "135",
+        "163",
+        "171",
+        "173",
+        "204"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET19",
+        "name": "ヨーグルクライマー",
+        "motif": "カップヨーグル",
+        "rarity": "SSR",
+        "visualCategory": "RPG",
+        "headgear": "アイボリーの探検帽、ラベンダーの帯",
+        "palette": [
+          "ブラック",
+          "パステルミント",
+          "ラベンダー",
+          "アイボリー",
+          "ゴールド"
+        ],
+        "description": "大きなカップ菓子を登る黒いMOBの探検家。ラベンダーのケープを揺らし、カップの縁につかまって白いクリームをすくう。",
+        "art": "無地のミントとラベンダーの大きなカップ、淡い白クリームが渦状に盛り上がる。片足をカップ壁に掛けて登る姿。淡いクリーム渦の低い台座。",
+        "figurePrompt": "Use case: stylized-concept. Create one polished full-body MOB sweets collectible figure illustration with a genuinely transparent background. The supplied approved ramune image is an anatomy/2D cel-cartoon STYLE reference only; invent a new character, outfit, action, giant sweet and themed display pedestal.\nHuge rounded MATTE BLACK mouthless/noseless face and huge circular GOLD eyeglass frames, black eye/lens interiors and one small round white eye highlight each. Tiny plump mostly-black body, stubby black mitten hands, very short limbs, large shoes, roughly two heads tall. Bold crisp black outlines, broad flat colorful shapes, controlled simple two-tone cel shading. No photography, no 3D material rendering, no furry animal, no human skin, no airbrush or gradients, no realistic food texture or noisy grain. Face/glasses fully visible. One enormous sweet with an expressive action, at least head-sized. Simple recognisable hat and clothes. Full character, prop and themed base comfortably inside canvas. Base front has a small gold plaque with exact black text MOB. No other lettering or branding. No background, scenery, cast shadow, particles, border, watermark, collage or extra character.\nヨーグルクライマー, retro tiny-cup whipped-sweet explorer. Ivory pith-style explorer hat with lavender band, tiny lavender cape, short ivory explorer shirt over black body, chunky black boots. ONE GIANT PASTEL-MINT SWEET CUP with lavender lower band and a massive ivory whipped-cream spiral on top, entirely UNBRANDED with NO labels or writing. Cup resembles a miniature cheap nostalgic whipped-sweet cup enlarged to head size. Mascot CLIMBS the left outer wall, one black mitten tightly grasping the cup rim, one short boot braced against its side, the other knee lifted. Other hand raises a short ivory spoon with a large scoop of pale cream swirling above cup. Body diagonal, head peeks beside rim with full glasses uncovered. The action reads as climbing and scooping. Separate low cream-spiral display pedestal beneath cup with lavender edge and MOB plaque. Do not turn the sweet cup itself into the display base; they must be visibly separate.",
+        "pixelPrompt": "Use case: style-transfer. Generate ONE standalone coarse retro pixel-art game sprite from the supplied locked matching figure. Preserve its exact identity, giant gold circular glasses, black mouthless/noseless face and short black limbs, hat, outfit, palette, gesture, sweet prop and overall silhouette. Transform all visible art into CHUNKY LOW-RESOLUTION PIXEL CLUSTERS with a consistent coarse conceptual square pixel grid, angular staircase edges, blocky black outlines, square highlights, 16–24 simple flat color clusters, no smooth curves, antialiasing, gradients, blur, texture, noise or tiny dots. High resolution PNG containing clearly visible square pixels is fine. Full character and interacted-with sweet must be complete with a transparent margin. Genuine transparent RGBA background. Remove the separate lower collectible display pedestal and MOB plaque completely. No platform, floor, ground, shadow, other letters, watermark, sprite sheet, extra character, or extra object. Keep ivory explorer hat with lavender band, tiny ivory explorer outfit, lavender cape, black-and-ivory boots and black face with enormous gold spectacles. Keep exact climbing pose at the RIGHT side of the enormous mint-and-lavender sweet cup: one mitten grasps rim, one boot braced to cup wall, other leg down, other hand raises ivory spoon with large ivory cream scoop. KEEP entire cup and its enormous pale whipped-sweet spiral as an interacted-with prop. REMOVE the entire LOWER separate lavender-rimmed round pedestal and creamy puddle beneath the cup. No leftover oval/support/platform under the boot or cup.",
+        "generation": {
+          "tool": "built-in imagegen",
+          "referenceAnchor": "Approved SWEET01 ramune reference",
+          "figureSource": "/workspace/scratch/f7102a0fad56/generated_images/exec-4d805d9f-6399-4e41-a8c8-bf8598da6dc4.png",
+          "pixelSource": "/workspace/scratch/f7102a0fad56/generated_images/exec-27431469-e9d3-4261-859d-72121d0f9e80.png",
+          "pixelReferencedFigure": "/workspace/scratch/f7102a0fad56/generated_images/exec-4d805d9f-6399-4e41-a8c8-bf8598da6dc4.png",
+          "transparentBackground": true,
+          "pixelFormatNote": "High-resolution coarse pixel-art master; logical pixel grid not normalized."
+        },
+        "qa": {
+          "result": "PASS",
+          "visualReview": "Black mouthless face, gold round glasses, figure/prop/outfit matching verified. Figure has themed MOB base; pixel removes display base while preserving interacted-with sweet.",
+          "assets": {
+            "figure": {
+              "size": [
+                1145,
+                1374
+              ],
+              "mode": "RGBA",
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "visibleAlpha128BoundingBox": [
+                38,
+                17,
+                1082,
+                1356
+              ],
+              "visibleMargin": 17,
+              "sha256": "0441b35150e8833a23f41812e02d021039253827fcb5cdd438f4b2db01bb3ceb"
+            },
+            "pixel": {
+              "size": [
+                1145,
+                1374
+              ],
+              "mode": "RGBA",
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "visibleAlpha128BoundingBox": [
+                22,
+                18,
+                1131,
+                1365
+              ],
+              "visibleMargin": 9,
+              "sha256": "9bb9337ef0fe2768bde0f275012885f0848066f86e215721febd980c1f27362d"
+            }
+          }
+        },
+        "image": "images/figures/SWEET19.png",
+        "pixelImage": "images/pixels/SWEET19_pixel.png",
+        "category": "RPG",
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "大きなカップヨーグルを山に見立てる探検家。スプーンをピッケル代わりに、クリーム色の壁へ黒い小さな体をぐっと引き上げる。",
+      "visualCategory": "RPG",
+      "headgear": "アイボリーの探検帽、ラベンダーの帯",
+      "palette": [
+        "ブラック",
+        "パステルミント",
+        "ラベンダー",
+        "アイボリー",
+        "ゴールド"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    },
+    {
+      "proposalId": "SWEET20",
+      "uid": "MOB-SWEET-020",
+      "name": "りんごアメノツルギ",
+      "rarity": "UR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "守護突破・2連撃",
+      "ATK": 155,
+      "DEF": 130,
+      "tags": [
+        {
+          "id": "65",
+          "name": "スイーツ"
+        },
+        {
+          "id": "29",
+          "name": "ブラックカラー"
+        },
+        {
+          "id": "30",
+          "name": "伝説"
+        },
+        {
+          "id": "34",
+          "name": "勇猛果敢"
+        },
+        {
+          "id": "49",
+          "name": "斬撃"
+        },
+        {
+          "id": "66",
+          "name": "伝統"
+        },
+        {
+          "id": "74",
+          "name": "リーダー気質"
+        },
+        {
+          "id": "79",
+          "name": "閃光"
+        },
+        {
+          "id": "81",
+          "name": "ロマン"
+        }
+      ],
+      "genre": "りんご飴",
+      "skill": "紅飴二閃",
+      "soulSkill": {
+        "name": "紅飴二閃",
+        "timing": "own-main",
+        "effect": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。",
+        "timingLabel": "自分メイン",
+        "description": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。",
+        "program": 43,
+        "sourceText": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。"
+      },
+      "description": "大きなりんご飴を高く掲げる黒いMOBの祭り武者。紺の短い法被と赤い腰帯、金色の短い肩飾り、黒い足袋靴。低く広い構えで片腕にりんご飴を持ち、反対の腕を横へ伸ばす。",
+      "usage": "最大2回攻撃し、宣言ごとにATK175、195へ上がる。守護・攻撃対象変更を無視して狙う相手を選べる。",
+      "weakness": "DEFは無視しない。対象本人の攻撃無効や生存効果は防げず、無効にされた攻撃も回数を使う。現行エンジンにはダイレクトアタック操作がない。",
+      "art": "一本の木棒に刺さった巨大な赤いりんご飴を、武器のように斜め上へ掲げる。透明な飴は大きな白ハイライトのみ。赤い飴だまりと金の縁の低い台座。",
+      "image": "images/figures/SWEET20.png",
+      "pixelImage": "images/pixels/SWEET20_pixel.png",
+      "referenceFigure": {
+        "id": "197",
+        "name": "モブジェシー",
+        "rarity": "UR",
+        "soulClass": "seed",
+        "atk": 150,
+        "def": 150,
+        "program": 43
+      },
+      "fusionTargetIds": [
+        "94",
+        "96",
+        "107",
+        "111",
+        "121",
+        "128",
+        "129",
+        "137",
+        "138",
+        "139",
+        "142",
+        "143",
+        "145",
+        "146",
+        "147",
+        "148",
+        "158",
+        "202",
+        "167",
+        "173",
+        "177",
+        "203",
+        "206",
+        "208",
+        "211",
+        "212",
+        "mq:eventfig/23",
+        "mq:eventfig/53"
+      ],
+      "visualMetadataStatus": "final-art-linked",
+      "visualConcept": {
+        "id": "SWEET20",
+        "name": "りんごアメノツルギ",
+        "motif": "りんご飴",
+        "rarity": "UR",
+        "visualCategory": "和風RPG",
+        "headgear": "小さな紺の侍風折り帽、赤い結び帯",
+        "palette": [
+          "ブラック",
+          "りんごレッド",
+          "深紺",
+          "ゴールド",
+          "クリーム"
+        ],
+        "description": "大きなりんご飴を高く掲げる黒いMOBの祭り武者。紺の短い法被と赤い腰帯、金色の短い肩飾り、黒い足袋靴。低く広い構えで片腕にりんご飴を持ち、反対の腕を横へ伸ばす。",
+        "art": "一本の木棒に刺さった巨大な赤いりんご飴を、武器のように斜め上へ掲げる。透明な飴は大きな白ハイライトのみ。赤い飴だまりと金の縁の低い台座。",
+        "figurePrompt": "Use case: stylized-concept. Create one polished full-body MOB sweets collectible figure illustration with a genuinely transparent background. The supplied approved ramune image is an anatomy/2D cel-cartoon STYLE reference only; invent a new character, outfit, action, giant sweet and themed display pedestal.\nHuge rounded MATTE BLACK mouthless/noseless face and huge circular GOLD eyeglass frames, black eye/lens interiors and one small round white eye highlight each. Tiny plump mostly-black body, stubby black mitten hands, very short limbs, large shoes, roughly two heads tall. Bold crisp black outlines, broad flat colorful shapes, controlled simple two-tone cel shading. No photography, no 3D material rendering, no furry animal, no human skin, no airbrush or gradients, no realistic food texture or noisy grain. Face/glasses fully visible. One enormous sweet with an expressive action, at least head-sized. Simple recognisable hat and clothes. Full character, prop and themed base comfortably inside canvas. Base front has a small gold plaque with exact black text MOB. No other lettering or branding. No background, scenery, cast shadow, particles, border, watermark, collage or extra character.\nりんごアメノツルギ, CANDY APPLE festival warrior. A small angular deep navy folded samurai cap with red knotted band, a simple short navy happi coat with vermilion edging, tiny flat gold shoulder tabs, black body/shorts, red sash and black tabi shoes with ivory soles. A LOW WIDE POWER STANCE with one leg extended sideways, the other knee bent; short torso leans away as one raised black mitten holds the wooden stick of ONE ENORMOUS ROUND RED CANDY APPLE diagonally above the shoulder, and other arm extends opposite for balance. Red apple sweet is unmistakable: round apple silhouette with top dimple and small green leaf, thick crimson candy coating illustrated with two broad white cel highlights, on one thick ivory wooden skewer. NO sword blade and NO additional weapon. Giant apple dominates upper silhouette; face and full round spectacles remain uncovered. Separate display pedestal shaped like a flat vermilion candy puddle, deep navy edge and simple gold rim, front gold MOB plaque. Bold celebratory silhouette, no sparks, no extra apples.",
+        "pixelPrompt": "Use case: style-transfer. Generate ONE standalone coarse retro pixel-art game sprite from the supplied locked matching figure. Preserve its exact identity, giant gold circular glasses, black mouthless/noseless face and short black limbs, hat, outfit, palette, gesture, sweet prop and overall silhouette. Transform all visible art into CHUNKY LOW-RESOLUTION PIXEL CLUSTERS with a consistent coarse conceptual square pixel grid, angular staircase edges, blocky black outlines, square highlights, 16–24 simple flat color clusters, no smooth curves, antialiasing, gradients, blur, texture, noise or tiny dots. High resolution PNG containing clearly visible square pixels is fine. Full character and interacted-with sweet must be complete with a transparent margin. Genuine transparent RGBA background. Remove the separate lower collectible display pedestal and MOB plaque completely. No platform, floor, ground, shadow, other letters, watermark, sprite sheet, extra character, or extra object. Keep the exact powerful low wide stance: navy angular folded samurai hat with red knot, short deep navy happi with red edging and waist sash, tiny gold shoulder tabs, black trousers and black tabi shoes with ivory soles. Keep the ONE GIANT RED CANDY APPLE raised above the left shoulder on its thick wooden stick, its leaf and stem, and broad white pixel highlights. Other mitten arm extends opposite; one leg stretched sideways and the other bent. REMOVE ALL the separate lower red candy-puddle display base, navy rim, gold edging and MOB plaque; keep absolutely no puddle, ground or platform under the feet.",
+        "generation": {
+          "tool": "built-in imagegen",
+          "referenceAnchor": "Approved SWEET01 ramune reference",
+          "figureSource": "/workspace/scratch/f7102a0fad56/generated_images/exec-13cdc31e-2e9e-4ad0-bb76-eced24a56e0a.png",
+          "pixelSource": "/workspace/scratch/f7102a0fad56/generated_images/exec-f666e9c9-7031-482a-9865-14149748280f.png",
+          "pixelReferencedFigure": "/workspace/scratch/f7102a0fad56/generated_images/exec-13cdc31e-2e9e-4ad0-bb76-eced24a56e0a.png",
+          "transparentBackground": true,
+          "pixelFormatNote": "High-resolution coarse pixel-art master; logical pixel grid not normalized."
+        },
+        "qa": {
+          "result": "PASS",
+          "visualReview": "Black mouthless face, gold round glasses, figure/prop/outfit matching verified. Figure has themed MOB base; pixel removes display base while preserving interacted-with sweet.",
+          "assets": {
+            "figure": {
+              "size": [
+                1145,
+                1374
+              ],
+              "mode": "RGBA",
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "visibleAlpha128BoundingBox": [
+                17,
+                3,
+                1134,
+                1366
+              ],
+              "visibleMargin": 3,
+              "sha256": "4348ee0470745b9276ee46b1c5121a1bd1b39cc2c16d932e1bf458ff83b04bfe"
+            },
+            "pixel": {
+              "size": [
+                1312,
+                1199
+              ],
+              "mode": "RGBA",
+              "alphaExtrema": [
+                0,
+                255
+              ],
+              "visibleAlpha128BoundingBox": [
+                109,
+                11,
+                1249,
+                1189
+              ],
+              "visibleMargin": 10,
+              "sha256": "4438842f404bab275ee9a17c1c5791114840348957edffcf94179e454ac86874"
+            }
+          }
+        },
+        "image": "images/figures/SWEET20.png",
+        "pixelImage": "images/pixels/SWEET20_pixel.png",
+        "category": "和風RPG",
+        "metadataStatus": "final-art-linked"
+      },
+      "loreDescription": "巨大なりんご飴を祭りの宝刀のように掲げる小さな剣士。艶やかな赤い飴と金の丸メガネだけを光らせ、二筋の軌道で敵陣を割る。",
+      "visualCategory": "和風RPG",
+      "headgear": "小さな紺の侍風折り帽、赤い結び帯",
+      "palette": [
+        "ブラック",
+        "りんごレッド",
+        "深紺",
+        "ゴールド",
+        "クリーム"
+      ],
+      "visualMetadataSource": "concepts_11_20.json"
+    }
+  ]
+}
