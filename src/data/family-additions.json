@@ -1,0 +1,1321 @@
+{
+  "version": 1,
+  "figures": [
+    {
+      "id": "M4F_MIM_V01",
+      "uid": "M4F_MIM_V01",
+      "name": "モブミミックル・ヴォルト",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "無",
+      "attackType": "魔法",
+      "atk": 60,
+      "def": 80,
+      "tags": [
+        "family-MIM",
+        "mat-mouth"
+      ],
+      "family": "MIM",
+      "series": "family-MIM",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_MIM_V01.png",
+      "soulSkill": {
+        "name": "鍵穴の先読み",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "description": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "sourceText": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "program": 111
+      },
+      "source": {
+        "figureFile": "MOB_MIM_ミミックル_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 60 / DEF 80",
+        "traitText": "ミミックルの鍵工房・stage_v2",
+        "soul": {
+          "text": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "6066deb17489a54cf3fe09c49cd838154c1d376af2cd3b8105c83310f6310645",
+          "program": 111
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_MIM_V02",
+      "uid": "M4F_MIM_V02",
+      "name": "モブミミックル・スペード",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 65,
+      "def": 75,
+      "tags": [
+        "family-MIM",
+        "mat-mouth"
+      ],
+      "family": "MIM",
+      "series": "family-MIM",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_MIM_V02.png",
+      "soulSkill": {
+        "name": "忘れ物の鍵",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分の墓地からシード1体を手札へ戻す。",
+        "description": "自分の墓地からシード1体を手札へ戻す。",
+        "sourceText": "自分の墓地からシード1体を手札へ戻す。",
+        "program": 104
+      },
+      "source": {
+        "figureFile": "MOB_MIM_ミミックル_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 65 / DEF 75",
+        "traitText": "ミミックルの鍵工房・stage_v2",
+        "soul": {
+          "text": "自分の墓地からシード1体を手札へ戻す。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "2301d145095ebbf5767ca204411126843f4e4e2fad52c98be184e6734d176dd1",
+          "program": 104
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_MIM_V03",
+      "uid": "M4F_MIM_V03",
+      "name": "モブミミックル・クロック",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "魔法",
+      "atk": 70,
+      "def": 65,
+      "tags": [
+        "family-MIM",
+        "mat-mouth"
+      ],
+      "family": "MIM",
+      "series": "family-MIM",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_MIM_V03.png",
+      "soulSkill": {
+        "name": "からくりの引き出し",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "description": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "sourceText": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "program": 102
+      },
+      "source": {
+        "figureFile": "MOB_MIM_ミミックル_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 70 / DEF 65",
+        "traitText": "ミミックルの鍵工房・stage_v2",
+        "soul": {
+          "text": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "2f09d2cc216266b0a971074787a458ae4a9c2f5ab85cba45306556ec7c9ed57a",
+          "program": 102
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_MIM_M01",
+      "uid": "M4F_MIM_M01",
+      "name": "モブミミックル・ヴォルトスペード",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 125,
+      "def": 145,
+      "tags": [
+        "family-MIM",
+        "mat-mouth"
+      ],
+      "family": "MIM",
+      "series": "family-MIM",
+      "collection": "main",
+      "role": "支援",
+      "image": "piecefig/M4F_MIM_M01.png",
+      "soulSkill": {
+        "name": "ひみつの裏口",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "description": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "sourceText": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "program": 107
+      },
+      "source": {
+        "figureFile": "MOB_MIM_ミミックル_6体画像セット.zip",
+        "rarity": "SR",
+        "statsText": "ATK 125 / DEF 145",
+        "traitText": "ミミックルの鍵工房・stage_v2",
+        "soul": {
+          "text": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "4071b764eff9563f24fb4652b3006526d62e5dc2b748185ada5d46b4431bf106",
+          "program": 107
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_MIM_M02",
+      "uid": "M4F_MIM_M02",
+      "name": "モブミミックル・クロックスペード",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 130,
+      "def": 140,
+      "tags": [
+        "family-MIM",
+        "mat-mouth"
+      ],
+      "family": "MIM",
+      "series": "family-MIM",
+      "collection": "main",
+      "role": "支援",
+      "image": "piecefig/M4F_MIM_M02.png",
+      "soulSkill": {
+        "name": "封鍵の合図",
+        "timing": "skill-response",
+        "timingLabel": "相手スキル発動時",
+        "effect": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "description": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "sourceText": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "program": 109
+      },
+      "source": {
+        "figureFile": "MOB_MIM_ミミックル_6体画像セット.zip",
+        "rarity": "SSR",
+        "statsText": "ATK 130 / DEF 140",
+        "traitText": "ミミックルの鍵工房・stage_v2",
+        "soul": {
+          "text": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "8dacca62dab8ff8ba89c6478439e0173a1fd3ec882a2df3e2c94d082eed03377",
+          "program": 109
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_MIM_B01",
+      "uid": "M4F_MIM_B01",
+      "name": "モブミミックル・グランドキー",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 215,
+      "def": 215,
+      "tags": [
+        "family-MIM",
+        "mat-mouth"
+      ],
+      "family": "MIM",
+      "series": "family-MIM",
+      "collection": "main",
+      "role": "切り札",
+      "image": "piecefig/M4F_MIM_B01.png",
+      "soulSkill": {
+        "name": "宝庫のユニゾン",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "description": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "sourceText": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "program": 105
+      },
+      "source": {
+        "figureFile": "MOB_MIM_ミミックル_6体画像セット.zip",
+        "rarity": "UR",
+        "statsText": "ATK 215 / DEF 215",
+        "traitText": "ミミックルの鍵工房・stage_v2",
+        "soul": {
+          "text": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "ddcc23a92a56bd0ad2ec36b3ccfc1edcabd89526f30634e4351e655cde1c67f7",
+          "program": 105
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_SIL_V01",
+      "uid": "M4F_SIL_V01",
+      "name": "モブシルクラ・ムーン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 55,
+      "def": 85,
+      "tags": [
+        "family-SIL",
+        "mat-mouth"
+      ],
+      "family": "SIL",
+      "series": "family-SIL",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_SIL_V01.png",
+      "soulSkill": {
+        "name": "ほつれの手当て",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。",
+        "description": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。",
+        "sourceText": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。",
+        "program": 11
+      },
+      "source": {
+        "figureFile": "MOB_SIL_シルクラ_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 55 / DEF 85",
+        "traitText": "シルクラの彩扇座・stage_v2",
+        "soul": {
+          "text": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "de84c657d18b70069c92d40589114f00349b56c033909fff31df7140d58359c9",
+          "program": 11
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_SIL_V02",
+      "uid": "M4F_SIL_V02",
+      "name": "モブシルクラ・ローゼ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 60,
+      "def": 80,
+      "tags": [
+        "family-SIL",
+        "mat-mouth"
+      ],
+      "family": "SIL",
+      "series": "family-SIL",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_SIL_V02.png",
+      "soulSkill": {
+        "name": "花扇のおまもり",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+        "description": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+        "sourceText": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+        "program": 4
+      },
+      "source": {
+        "figureFile": "MOB_SIL_シルクラ_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 60 / DEF 80",
+        "traitText": "シルクラの彩扇座・stage_v2",
+        "soul": {
+          "text": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "ed18d60914d5f167a5d7a8d2fc54a9e47fded76e979b7026b39cf97925f178b9",
+          "program": 4
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_SIL_V03",
+      "uid": "M4F_SIL_V03",
+      "name": "モブシルクラ・ミスト",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 65,
+      "def": 75,
+      "tags": [
+        "family-SIL",
+        "mat-mouth"
+      ],
+      "family": "SIL",
+      "series": "family-SIL",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_SIL_V03.png",
+      "soulSkill": {
+        "name": "たゆたう身代わり",
+        "timing": "attack-response",
+        "timingLabel": "相手攻撃宣言時",
+        "effect": "攻撃対象を別の味方へ変更する。変更後の味方はその攻撃中DEF+20。",
+        "description": "攻撃対象を別の味方へ変更する。変更後の味方はその攻撃中DEF+20。",
+        "sourceText": "攻撃対象を別の味方へ変更する。変更後の味方はその攻撃中DEF+20。",
+        "program": 54
+      },
+      "source": {
+        "figureFile": "MOB_SIL_シルクラ_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 65 / DEF 75",
+        "traitText": "シルクラの彩扇座・stage_v2",
+        "soul": {
+          "text": "攻撃対象を別の味方へ変更する。変更後の味方はその攻撃中DEF+20。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "21fd371333c4a95268a5cb972dc94a85eca9fd349e7d1c6c9e733341c56d363d",
+          "program": 54
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_SIL_M01",
+      "uid": "M4F_SIL_M01",
+      "name": "モブシルクラ・ムーンローゼ",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 115,
+      "def": 160,
+      "tags": [
+        "family-SIL",
+        "mat-mouth"
+      ],
+      "family": "SIL",
+      "series": "family-SIL",
+      "collection": "main",
+      "role": "支援",
+      "image": "piecefig/M4F_SIL_M01.png",
+      "soulSkill": {
+        "name": "薄絹の結界",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "味方全体のDEF+20。次の相手ターン、最初に発生する差分ライフダメージを0にする。",
+        "description": "味方全体のDEF+20。次の相手ターン、最初に発生する差分ライフダメージを0にする。",
+        "sourceText": "味方全体のDEF+20。次の相手ターン、最初に発生する差分ライフダメージを0にする。",
+        "program": 22
+      },
+      "source": {
+        "figureFile": "MOB_SIL_シルクラ_6体画像セット.zip",
+        "rarity": "SR",
+        "statsText": "ATK 115 / DEF 160",
+        "traitText": "シルクラの彩扇座・stage_v2",
+        "soul": {
+          "text": "味方全体のDEF+20。次の相手ターン、最初に発生する差分ライフダメージを0にする。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "54b3ec484362da4c0e776f77b6d2cd8231eda1ef3f1409e2b95f4395fc4af107",
+          "program": 22
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_SIL_M02",
+      "uid": "M4F_SIL_M02",
+      "name": "モブシルクラ・ミストローゼ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 120,
+      "def": 155,
+      "tags": [
+        "family-SIL",
+        "mat-mouth"
+      ],
+      "family": "SIL",
+      "series": "family-SIL",
+      "collection": "main",
+      "role": "支援",
+      "image": "piecefig/M4F_SIL_M02.png",
+      "soulSkill": {
+        "name": "清流の羽衣",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+        "description": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+        "sourceText": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+        "program": 33
+      },
+      "source": {
+        "figureFile": "MOB_SIL_シルクラ_6体画像セット.zip",
+        "rarity": "SSR",
+        "statsText": "ATK 120 / DEF 155",
+        "traitText": "シルクラの彩扇座・stage_v2",
+        "soul": {
+          "text": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "2c928d6959d7df1c63f7cecd91aac8832d84505a5ec9ea0e68e0c70e1b73b095",
+          "program": 33
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_SIL_B01",
+      "uid": "M4F_SIL_B01",
+      "name": "モブシルクラ・オーロラ",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 205,
+      "def": 225,
+      "tags": [
+        "family-SIL",
+        "mat-mouth"
+      ],
+      "family": "SIL",
+      "series": "family-SIL",
+      "collection": "main",
+      "role": "切り札",
+      "image": "piecefig/M4F_SIL_B01.png",
+      "soulSkill": {
+        "name": "彩扇の大舞",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。",
+        "description": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。",
+        "sourceText": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。",
+        "program": 44
+      },
+      "source": {
+        "figureFile": "MOB_SIL_シルクラ_6体画像セット.zip",
+        "rarity": "UR",
+        "statsText": "ATK 205 / DEF 225",
+        "traitText": "シルクラの彩扇座・stage_v2",
+        "soul": {
+          "text": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "c0e3133bba6c03feb6c6afa12666735eeefc18b615a69b56e8ff54a8d26a8041",
+          "program": 44
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_NEO_V01",
+      "uid": "M4F_NEO_V01",
+      "name": "モブネオル・アーク",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "attackType": "物理",
+      "atk": 75,
+      "def": 65,
+      "tags": [
+        "family-NEO",
+        "mat-mouth"
+      ],
+      "family": "NEO",
+      "series": "family-NEO",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_NEO_V01.png",
+      "soulSkill": {
+        "name": "雷光アンテナ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分ライフを20消費し、このフィギュアと同じ属性を1つ以上持つシード1体をデッキから手札へ加える。",
+        "description": "自分ライフを20消費し、このフィギュアと同じ属性を1つ以上持つシード1体をデッキから手札へ加える。",
+        "sourceText": "自分ライフを20消費し、このフィギュアと同じ属性を1つ以上持つシード1体をデッキから手札へ加える。",
+        "program": 103
+      },
+      "source": {
+        "figureFile": "MOB_NEO_ネオル_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 75 / DEF 65",
+        "traitText": "ネオルの光刃隊・stage_v2",
+        "soul": {
+          "text": "自分ライフを20消費し、このフィギュアと同じ属性を1つ以上持つシード1体をデッキから手札へ加える。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "f52f93215c08b82303bf9136aaa0102a1d31d286d143645eb4f44077bfa0d9fc",
+          "program": 103
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_NEO_V02",
+      "uid": "M4F_NEO_V02",
+      "name": "モブネオル・ビート",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "attackType": "物理",
+      "atk": 70,
+      "def": 70,
+      "tags": [
+        "family-NEO",
+        "mat-mouth"
+      ],
+      "family": "NEO",
+      "series": "family-NEO",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_NEO_V02.png",
+      "soulSkill": {
+        "name": "パルスの切先",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "description": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "sourceText": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "program": 106
+      },
+      "source": {
+        "figureFile": "MOB_NEO_ネオル_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 70 / DEF 70",
+        "traitText": "ネオルの光刃隊・stage_v2",
+        "soul": {
+          "text": "相手1体のATK-10。相手ライフに20ダメージを与える。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "bf3eb3e1605a134de16048ea11dcc04390b0372393c230d65eece725e861a2dd",
+          "program": 106
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_NEO_V03",
+      "uid": "M4F_NEO_V03",
+      "name": "モブネオル・グラフ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 75,
+      "def": 60,
+      "tags": [
+        "family-NEO",
+        "mat-mouth"
+      ],
+      "family": "NEO",
+      "series": "family-NEO",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_NEO_V03.png",
+      "soulSkill": {
+        "name": "駆け抜ける合図",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。",
+        "description": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。",
+        "sourceText": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。",
+        "program": 27
+      },
+      "source": {
+        "figureFile": "MOB_NEO_ネオル_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 75 / DEF 60",
+        "traitText": "ネオルの光刃隊・stage_v2",
+        "soul": {
+          "text": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "ccc5a35e3bbb93191e4c0776718db3fc5b519867a2048d0088a5f10e4b421f68",
+          "program": 27
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_NEO_M01",
+      "uid": "M4F_NEO_M01",
+      "name": "モブネオル・アークビート",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "雷",
+      "attackType": "物理",
+      "atk": 150,
+      "def": 120,
+      "tags": [
+        "family-NEO",
+        "mat-mouth"
+      ],
+      "family": "NEO",
+      "series": "family-NEO",
+      "collection": "main",
+      "role": "支援",
+      "image": "piecefig/M4F_NEO_M01.png",
+      "soulSkill": {
+        "name": "双閃のステップ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "description": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "sourceText": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+        "program": 42
+      },
+      "source": {
+        "figureFile": "MOB_NEO_ネオル_6体画像セット.zip",
+        "rarity": "SR",
+        "statsText": "ATK 150 / DEF 120",
+        "traitText": "ネオルの光刃隊・stage_v2",
+        "soul": {
+          "text": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "7e1d70d46260105ac0ac8fb534267fa56a5dab2759f62abef901fbdbe28b8e41",
+          "program": 42
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_NEO_M02",
+      "uid": "M4F_NEO_M02",
+      "name": "モブネオル・ビートグラフ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 145,
+      "def": 125,
+      "tags": [
+        "family-NEO",
+        "mat-mouth"
+      ],
+      "family": "NEO",
+      "series": "family-NEO",
+      "collection": "main",
+      "role": "支援",
+      "image": "piecefig/M4F_NEO_M02.png",
+      "soulSkill": {
+        "name": "光刃のほころび",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のDEF-20。このターン、その相手への攻撃はDEF上昇効果を無視する。",
+        "description": "相手1体のDEF-20。このターン、その相手への攻撃はDEF上昇効果を無視する。",
+        "sourceText": "相手1体のDEF-20。このターン、その相手への攻撃はDEF上昇効果を無視する。",
+        "program": 16
+      },
+      "source": {
+        "figureFile": "MOB_NEO_ネオル_6体画像セット.zip",
+        "rarity": "SSR",
+        "statsText": "ATK 145 / DEF 125",
+        "traitText": "ネオルの光刃隊・stage_v2",
+        "soul": {
+          "text": "相手1体のDEF-20。このターン、その相手への攻撃はDEF上昇効果を無視する。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "cf77b212068cf2efbf44dc42544fce04c84875caa671a627bd191f342a5a20f1",
+          "program": 16
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_NEO_B01",
+      "uid": "M4F_NEO_B01",
+      "name": "モブネオル・スペクトラ",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "雷",
+      "attackType": "物理",
+      "atk": 235,
+      "def": 195,
+      "tags": [
+        "family-NEO",
+        "mat-mouth"
+      ],
+      "family": "NEO",
+      "series": "family-NEO",
+      "collection": "main",
+      "role": "切り札",
+      "image": "piecefig/M4F_NEO_B01.png",
+      "soulSkill": {
+        "name": "虹閃の二連",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。",
+        "description": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。",
+        "sourceText": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。",
+        "program": 43
+      },
+      "source": {
+        "figureFile": "MOB_NEO_ネオル_6体画像セット.zip",
+        "rarity": "UR",
+        "statsText": "ATK 235 / DEF 195",
+        "traitText": "ネオルの光刃隊・stage_v2",
+        "soul": {
+          "text": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "a532abe1296d88703c873ab123b522c1cb3b3f566e22e6f0fad7b40c8f45e01d",
+          "program": 43
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_DOK_V01",
+      "uid": "M4F_DOK_V01",
+      "name": "モブドクローネ・バサルト",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 60,
+      "def": 85,
+      "tags": [
+        "family-DOK",
+        "mat-mouth"
+      ],
+      "family": "DOK",
+      "series": "family-DOK",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_DOK_V01.png",
+      "soulSkill": {
+        "name": "石床の記憶",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+        "description": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+        "sourceText": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+        "program": 0
+      },
+      "source": {
+        "figureFile": "MOB_DOK_ドクローネ_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 60 / DEF 85",
+        "traitText": "ドクローネの石槌団・stage_v2",
+        "soul": {
+          "text": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "b183a6430af616495596233d9ccc33a74ac582e00c170d82b50890b83f1fc8d2",
+          "program": 0
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_DOK_V02",
+      "uid": "M4F_DOK_V02",
+      "name": "モブドクローネ・サンド",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 65,
+      "def": 80,
+      "tags": [
+        "family-DOK",
+        "mat-mouth"
+      ],
+      "family": "DOK",
+      "series": "family-DOK",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_DOK_V02.png",
+      "soulSkill": {
+        "name": "砂封じの刻印",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。",
+        "description": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。",
+        "sourceText": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。",
+        "program": 29
+      },
+      "source": {
+        "figureFile": "MOB_DOK_ドクローネ_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 65 / DEF 80",
+        "traitText": "ドクローネの石槌団・stage_v2",
+        "soul": {
+          "text": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "86fa45ce15e4b8cdae0012415d96264d2467c79041f4ea0239053d4269f3070b",
+          "program": 29
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_DOK_V03",
+      "uid": "M4F_DOK_V03",
+      "name": "モブドクローネ・ルーン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 70,
+      "def": 70,
+      "tags": [
+        "family-DOK",
+        "mat-mouth"
+      ],
+      "family": "DOK",
+      "series": "family-DOK",
+      "collection": "main",
+      "role": "連携",
+      "image": "piecefig/M4F_DOK_V03.png",
+      "soulSkill": {
+        "name": "無響の石槌",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手フィールド1体の属性をターン終了まで無属性として扱う。",
+        "description": "相手フィールド1体の属性をターン終了まで無属性として扱う。",
+        "sourceText": "相手フィールド1体の属性をターン終了まで無属性として扱う。",
+        "program": 15
+      },
+      "source": {
+        "figureFile": "MOB_DOK_ドクローネ_6体画像セット.zip",
+        "rarity": "R",
+        "statsText": "ATK 70 / DEF 70",
+        "traitText": "ドクローネの石槌団・stage_v2",
+        "soul": {
+          "text": "相手フィールド1体の属性をターン終了まで無属性として扱う。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "f4a6148244245aad239e4a80af82f71e41eddce63db91533596dd435e3443100",
+          "program": 15
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_DOK_M01",
+      "uid": "M4F_DOK_M01",
+      "name": "モブドクローネ・サンドバサルト",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 130,
+      "def": 150,
+      "tags": [
+        "family-DOK",
+        "mat-mouth"
+      ],
+      "family": "DOK",
+      "series": "family-DOK",
+      "collection": "main",
+      "role": "支援",
+      "image": "piecefig/M4F_DOK_M01.png",
+      "soulSkill": {
+        "name": "反響のかまえ",
+        "timing": "attack-response",
+        "timingLabel": "相手攻撃宣言時",
+        "effect": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "description": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "sourceText": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "program": 108
+      },
+      "source": {
+        "figureFile": "MOB_DOK_ドクローネ_6体画像セット.zip",
+        "rarity": "SR",
+        "statsText": "ATK 130 / DEF 150",
+        "traitText": "ドクローネの石槌団・stage_v2",
+        "soul": {
+          "text": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "437eb03d2247e032aba3cb7648f4acf9399f3c6957e4ba5cded130591fb8168e",
+          "program": 108
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_DOK_M02",
+      "uid": "M4F_DOK_M02",
+      "name": "モブドクローネ・サンドルーン",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 140,
+      "def": 140,
+      "tags": [
+        "family-DOK",
+        "mat-mouth"
+      ],
+      "family": "DOK",
+      "series": "family-DOK",
+      "collection": "main",
+      "role": "支援",
+      "image": "piecefig/M4F_DOK_M02.png",
+      "soulSkill": {
+        "name": "重石の足止め",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "description": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "sourceText": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "program": 110
+      },
+      "source": {
+        "figureFile": "MOB_DOK_ドクローネ_6体画像セット.zip",
+        "rarity": "SSR",
+        "statsText": "ATK 140 / DEF 140",
+        "traitText": "ドクローネの石槌団・stage_v2",
+        "soul": {
+          "text": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "2b9e2f44140fd79ecd214f81436336b24592bee7642c8cfbf814f84b146492bf",
+          "program": 110
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "M4F_DOK_B01",
+      "uid": "M4F_DOK_B01",
+      "name": "モブドクローネ・モノリス",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 225,
+      "def": 210,
+      "tags": [
+        "family-DOK",
+        "mat-mouth"
+      ],
+      "family": "DOK",
+      "series": "family-DOK",
+      "collection": "main",
+      "role": "切り札",
+      "image": "piecefig/M4F_DOK_B01.png",
+      "soulSkill": {
+        "name": "古城砕き",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手フィールド全体のDEF-30。このターン、相手フィールド全員へ1回ずつ攻撃できる。",
+        "description": "相手フィールド全体のDEF-30。このターン、相手フィールド全員へ1回ずつ攻撃できる。",
+        "sourceText": "相手フィールド全体のDEF-30。このターン、相手フィールド全員へ1回ずつ攻撃できる。",
+        "program": 52
+      },
+      "source": {
+        "figureFile": "MOB_DOK_ドクローネ_6体画像セット.zip",
+        "rarity": "UR",
+        "statsText": "ATK 225 / DEF 210",
+        "traitText": "ドクローネの石槌団・stage_v2",
+        "soul": {
+          "text": "相手フィールド全体のDEF-30。このターン、相手フィールド全員へ1回ずつ攻撃できる。"
+        },
+        "decision": "画像台帳のID・名称・階級を採用。性能資料未同梱のため既存実行効果を用いて設計。",
+        "basis": {
+          "artRevision": "stage_v2",
+          "sha256": "e807ae2408cded516e481785e09f87e0dee24a116be8abefbaeb9c4dfedcc23d",
+          "program": 52
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    }
+  ],
+  "tags": [
+    {
+      "id": "family-MIM",
+      "name": "ミミックルの鍵工房"
+    },
+    {
+      "id": "family-SIL",
+      "name": "シルクラの彩扇座"
+    },
+    {
+      "id": "family-NEO",
+      "name": "ネオルの光刃隊"
+    },
+    {
+      "id": "family-DOK",
+      "name": "ドクローネの石槌団"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "M4F-FUS-MIM-M01",
+      "target": "M4F_MIM_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "M4F_MIM_V01"
+        },
+        {
+          "id": "M4F_MIM_V02"
+        }
+      ],
+      "label": "モブミミックル・ヴォルト × モブミミックル・スペード",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-MIM-M02",
+      "target": "M4F_MIM_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "M4F_MIM_V02"
+        },
+        {
+          "id": "M4F_MIM_V03"
+        }
+      ],
+      "label": "モブミミックル・スペード × モブミミックル・クロック",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-MIM-B01",
+      "target": "M4F_MIM_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "M4F_MIM_M01"
+        },
+        {
+          "id": "M4F_MIM_M02"
+        }
+      ],
+      "label": "モブミミックル・ヴォルトスペード × モブミミックル・クロックスペード",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-SIL-M01",
+      "target": "M4F_SIL_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "M4F_SIL_V01"
+        },
+        {
+          "id": "M4F_SIL_V02"
+        }
+      ],
+      "label": "モブシルクラ・ムーン × モブシルクラ・ローゼ",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-SIL-M02",
+      "target": "M4F_SIL_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "M4F_SIL_V02"
+        },
+        {
+          "id": "M4F_SIL_V03"
+        }
+      ],
+      "label": "モブシルクラ・ローゼ × モブシルクラ・ミスト",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-SIL-B01",
+      "target": "M4F_SIL_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "M4F_SIL_M01"
+        },
+        {
+          "id": "M4F_SIL_M02"
+        }
+      ],
+      "label": "モブシルクラ・ムーンローゼ × モブシルクラ・ミストローゼ",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-NEO-M01",
+      "target": "M4F_NEO_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "M4F_NEO_V01"
+        },
+        {
+          "id": "M4F_NEO_V02"
+        }
+      ],
+      "label": "モブネオル・アーク × モブネオル・ビート",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-NEO-M02",
+      "target": "M4F_NEO_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "M4F_NEO_V02"
+        },
+        {
+          "id": "M4F_NEO_V03"
+        }
+      ],
+      "label": "モブネオル・ビート × モブネオル・グラフ",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-NEO-B01",
+      "target": "M4F_NEO_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "M4F_NEO_M01"
+        },
+        {
+          "id": "M4F_NEO_M02"
+        }
+      ],
+      "label": "モブネオル・アークビート × モブネオル・ビートグラフ",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-DOK-M01",
+      "target": "M4F_DOK_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "M4F_DOK_V01"
+        },
+        {
+          "id": "M4F_DOK_V02"
+        }
+      ],
+      "label": "モブドクローネ・バサルト × モブドクローネ・サンド",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-DOK-M02",
+      "target": "M4F_DOK_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "M4F_DOK_V02"
+        },
+        {
+          "id": "M4F_DOK_V03"
+        }
+      ],
+      "label": "モブドクローネ・サンド × モブドクローネ・ルーン",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    },
+    {
+      "id": "M4F-FUS-DOK-B01",
+      "target": "M4F_DOK_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "M4F_DOK_M01"
+        },
+        {
+          "id": "M4F_DOK_M02"
+        }
+      ],
+      "label": "モブドクローネ・サンドバサルト × モブドクローネ・サンドルーン",
+      "special": false,
+      "basis": "系列の指定2素材による通常融合"
+    }
+  ]
+}

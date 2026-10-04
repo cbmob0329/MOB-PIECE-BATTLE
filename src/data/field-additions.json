@@ -1,0 +1,79 @@
+[
+  {
+    "id": "field11-01_grassland",
+    "name": "草原",
+    "image": "battle-art/01_grassland.png",
+    "color": "#92bf59",
+    "description": "広い中央スペースと奥行きのある草原の舞台。"
+  },
+  {
+    "id": "field11-02_desert",
+    "name": "砂漠",
+    "image": "battle-art/02_desert.png",
+    "color": "#edbb66",
+    "description": "広い中央スペースと奥行きのある砂漠の舞台。"
+  },
+  {
+    "id": "field11-03_seaside_station",
+    "name": "海辺駅",
+    "image": "battle-art/03_seaside_station.png",
+    "color": "#6cbad0",
+    "description": "広い中央スペースと奥行きのある海辺駅の舞台。"
+  },
+  {
+    "id": "field11-04_magma",
+    "name": "マグマ",
+    "image": "battle-art/04_magma.png",
+    "color": "#f48956",
+    "description": "広い中央スペースと奥行きのあるマグマの舞台。"
+  },
+  {
+    "id": "field11-05_neon_district",
+    "name": "ネオン街",
+    "image": "battle-art/05_neon_district.png",
+    "color": "#9d80e8",
+    "description": "広い中央スペースと奥行きのあるネオン街の舞台。"
+  },
+  {
+    "id": "field11-06_tribal_village",
+    "name": "部族村",
+    "image": "battle-art/06_tribal_village.png",
+    "color": "#a9bc68",
+    "description": "広い中央スペースと奥行きのある部族村の舞台。"
+  },
+  {
+    "id": "field11-07_seabed",
+    "name": "海底",
+    "image": "battle-art/07_seabed.png",
+    "color": "#63c8c6",
+    "description": "広い中央スペースと奥行きのある海底の舞台。"
+  },
+  {
+    "id": "field11-08_demon_castle",
+    "name": "魔王城",
+    "image": "battle-art/08_demon_castle.png",
+    "color": "#a486c3",
+    "description": "広い中央スペースと奥行きのある魔王城の舞台。"
+  },
+  {
+    "id": "field11-09_denden",
+    "name": "デンデン",
+    "image": "battle-art/09_denden.png",
+    "color": "#eed45e",
+    "description": "広い中央スペースと奥行きのあるデンデンの舞台。"
+  },
+  {
+    "id": "field11-10_mob_pink",
+    "name": "モブピンク",
+    "image": "battle-art/10_mob_pink.png",
+    "color": "#efb4c2",
+    "description": "広い中央スペースと奥行きのあるモブピンクの舞台。"
+  },
+  {
+    "id": "field11-11_ozu_nagahama",
+    "name": "大洲長浜",
+    "image": "battle-art/11_ozu_nagahama.png",
+    "color": "#76bed0",
+    "description": "広い中央スペースと奥行きのある大洲長浜の舞台。"
+  }
+]

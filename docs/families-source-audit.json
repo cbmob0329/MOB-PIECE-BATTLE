@@ -1,0 +1,360 @@
+{
+  "figures": 24,
+  "updatedImages": 0,
+  "fields": 11,
+  "revision": "stage_v2",
+  "sources": [
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/01_grassland.png",
+      "sha256": "8898a7660d8c7ca5a385b0648564904eb23e59370f3c9f7f6bf4e333281b2ae4",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/02_desert.png",
+      "sha256": "2a1dd49fc3b700fae921d7269418165beca709a44a37042edef75458bdb10645",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/03_seaside_station.png",
+      "sha256": "641fbad60e1b5f0a98f8d81d28b78d53cc27df2e9bf0560f1e7d0ae5f09d2d9c",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/04_magma.png",
+      "sha256": "d6a1eea04dc382b8a7a4c5d3c816a04c54e9877b57396f6912ffbfa0baf73f41",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/05_neon_district.png",
+      "sha256": "c2a48b3e718e0a83c825ff37c010a5d8b7e26f7ea0f2421da9fb14ec37402b90",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/06_tribal_village.png",
+      "sha256": "e87e237814892cef628dd8e240acb1110037d7d8a1fc6a675722d724219f76f0",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/07_seabed.png",
+      "sha256": "2718ed1c1c5ddbc85d77befecb959d36d467019a37f963adb30166d1103ff96d",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/08_demon_castle.png",
+      "sha256": "7cde1e5b76a06c4d80b49c63c2029806c7b2bc72a95a2a173bef03d1e1694317",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/09_denden.png",
+      "sha256": "268cde8dc4931115b56e696da0a2d03cc6131258899aa4dd44e67d0625db641a",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/10_mob_pink.png",
+      "sha256": "4b0072043dff60a824156d4ab05419b03eecd10678eadfbdce58167ce7bfd63a",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_BATTLE_FIELDS11_PNG.zip",
+      "entry": "MOB_BATTLE_FIELDS11/png/11_ozu_nagahama.png",
+      "sha256": "9b396069af12dcd3278af873eb63f0d7fa963b4a19e19b1562f2a46c0c9d2290",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGB"
+    },
+    {
+      "zip": "MOB_DOK_ドクローネ_6体画像セット.zip",
+      "entry": "images/figures/M4F_DOK_V01_figure.png",
+      "sha256": "b183a6430af616495596233d9ccc33a74ac582e00c170d82b50890b83f1fc8d2",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_DOK_ドクローネ_6体画像セット.zip",
+      "entry": "images/figures/M4F_DOK_V02_figure.png",
+      "sha256": "86fa45ce15e4b8cdae0012415d96264d2467c79041f4ea0239053d4269f3070b",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_DOK_ドクローネ_6体画像セット.zip",
+      "entry": "images/figures/M4F_DOK_V03_figure.png",
+      "sha256": "f4a6148244245aad239e4a80af82f71e41eddce63db91533596dd435e3443100",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_DOK_ドクローネ_6体画像セット.zip",
+      "entry": "images/figures/M4F_DOK_M01_figure.png",
+      "sha256": "437eb03d2247e032aba3cb7648f4acf9399f3c6957e4ba5cded130591fb8168e",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_DOK_ドクローネ_6体画像セット.zip",
+      "entry": "images/figures/M4F_DOK_M02_figure.png",
+      "sha256": "2b9e2f44140fd79ecd214f81436336b24592bee7642c8cfbf814f84b146492bf",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_DOK_ドクローネ_6体画像セット.zip",
+      "entry": "images/figures/M4F_DOK_B01_figure.png",
+      "sha256": "e807ae2408cded516e481785e09f87e0dee24a116be8abefbaeb9c4dfedcc23d",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_MIM_ミミックル_6体画像セット.zip",
+      "entry": "images/figures/M4F_MIM_V01_figure.png",
+      "sha256": "6066deb17489a54cf3fe09c49cd838154c1d376af2cd3b8105c83310f6310645",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_MIM_ミミックル_6体画像セット.zip",
+      "entry": "images/figures/M4F_MIM_V02_figure.png",
+      "sha256": "2301d145095ebbf5767ca204411126843f4e4e2fad52c98be184e6734d176dd1",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_MIM_ミミックル_6体画像セット.zip",
+      "entry": "images/figures/M4F_MIM_V03_figure.png",
+      "sha256": "2f09d2cc216266b0a971074787a458ae4a9c2f5ab85cba45306556ec7c9ed57a",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_MIM_ミミックル_6体画像セット.zip",
+      "entry": "images/figures/M4F_MIM_M01_figure.png",
+      "sha256": "4071b764eff9563f24fb4652b3006526d62e5dc2b748185ada5d46b4431bf106",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_MIM_ミミックル_6体画像セット.zip",
+      "entry": "images/figures/M4F_MIM_M02_figure.png",
+      "sha256": "8dacca62dab8ff8ba89c6478439e0173a1fd3ec882a2df3e2c94d082eed03377",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_MIM_ミミックル_6体画像セット.zip",
+      "entry": "images/figures/M4F_MIM_B01_figure.png",
+      "sha256": "ddcc23a92a56bd0ad2ec36b3ccfc1edcabd89526f30634e4351e655cde1c67f7",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_NEO_ネオル_6体画像セット.zip",
+      "entry": "images/figures/M4F_NEO_V01_figure.png",
+      "sha256": "f52f93215c08b82303bf9136aaa0102a1d31d286d143645eb4f44077bfa0d9fc",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_NEO_ネオル_6体画像セット.zip",
+      "entry": "images/figures/M4F_NEO_V02_figure.png",
+      "sha256": "bf3eb3e1605a134de16048ea11dcc04390b0372393c230d65eece725e861a2dd",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_NEO_ネオル_6体画像セット.zip",
+      "entry": "images/figures/M4F_NEO_V03_figure.png",
+      "sha256": "ccc5a35e3bbb93191e4c0776718db3fc5b519867a2048d0088a5f10e4b421f68",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_NEO_ネオル_6体画像セット.zip",
+      "entry": "images/figures/M4F_NEO_M01_figure.png",
+      "sha256": "7e1d70d46260105ac0ac8fb534267fa56a5dab2759f62abef901fbdbe28b8e41",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_NEO_ネオル_6体画像セット.zip",
+      "entry": "images/figures/M4F_NEO_M02_figure.png",
+      "sha256": "cf77b212068cf2efbf44dc42544fce04c84875caa671a627bd191f342a5a20f1",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_NEO_ネオル_6体画像セット.zip",
+      "entry": "images/figures/M4F_NEO_B01_figure.png",
+      "sha256": "a532abe1296d88703c873ab123b522c1cb3b3f566e22e6f0fad7b40c8f45e01d",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_SIL_シルクラ_6体画像セット.zip",
+      "entry": "images/figures/M4F_SIL_V01_figure.png",
+      "sha256": "de84c657d18b70069c92d40589114f00349b56c033909fff31df7140d58359c9",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_SIL_シルクラ_6体画像セット.zip",
+      "entry": "images/figures/M4F_SIL_V02_figure.png",
+      "sha256": "ed18d60914d5f167a5d7a8d2fc54a9e47fded76e979b7026b39cf97925f178b9",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_SIL_シルクラ_6体画像セット.zip",
+      "entry": "images/figures/M4F_SIL_V03_figure.png",
+      "sha256": "21fd371333c4a95268a5cb972dc94a85eca9fd349e7d1c6c9e733341c56d363d",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_SIL_シルクラ_6体画像セット.zip",
+      "entry": "images/figures/M4F_SIL_M01_figure.png",
+      "sha256": "54b3ec484362da4c0e776f77b6d2cd8231eda1ef3f1409e2b95f4395fc4af107",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_SIL_シルクラ_6体画像セット.zip",
+      "entry": "images/figures/M4F_SIL_M02_figure.png",
+      "sha256": "2c928d6959d7df1c63f7cecd91aac8832d84505a5ec9ea0e68e0c70e1b73b095",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    },
+    {
+      "zip": "MOB_SIL_シルクラ_6体画像セット.zip",
+      "entry": "images/figures/M4F_SIL_B01_figure.png",
+      "sha256": "c0e3133bba6c03feb6c6afa12666735eeefc18b615a69b56e8ff54a8d26a8041",
+      "size": [
+        1254,
+        1254
+      ],
+      "alpha": "RGBA"
+    }
+  ],
+  "excluded": "pixels24 + original_reference_fixed4; CHILL LIFE untouched",
+  "performanceSource": "not included; existing programs mapped"
+}

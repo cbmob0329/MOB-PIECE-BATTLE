@@ -1,0 +1,173 @@
+{
+  "images": [
+    {
+      "id": "M4F_MIM_V01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_MIM_V02",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_MIM_V03",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_MIM_M01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_MIM_M02",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_MIM_B01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_SIL_V01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_SIL_V02",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_SIL_V03",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_SIL_M01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_SIL_M02",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_SIL_B01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_NEO_V01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_NEO_V02",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_NEO_V03",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_NEO_M01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_NEO_M02",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_NEO_B01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_DOK_V01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_DOK_V02",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_DOK_V03",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_DOK_M01",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_DOK_M02",
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "id": "M4F_DOK_B01",
+      "width": 1254,
+      "height": 1254
+    }
+  ],
+  "fields": [
+    "field11-01_grassland",
+    "field11-02_desert",
+    "field11-03_seaside_station",
+    "field11-04_magma",
+    "field11-05_neon_district",
+    "field11-06_tribal_village",
+    "field11-07_seabed",
+    "field11-08_demon_castle",
+    "field11-09_denden",
+    "field11-10_mob_pink",
+    "field11-11_ozu_nagahama"
+  ],
+  "screenshots": [
+    "docs/families-field-field11-01_grassland-390.png",
+    "docs/families-field-field11-02_desert-390.png",
+    "docs/families-field-field11-03_seaside_station-390.png",
+    "docs/families-field-field11-04_magma-390.png",
+    "docs/families-field-field11-05_neon_district-390.png",
+    "docs/families-field-field11-06_tribal_village-390.png",
+    "docs/families-field-field11-07_seabed-390.png",
+    "docs/families-field-field11-08_demon_castle-390.png",
+    "docs/families-field-field11-09_denden-390.png",
+    "docs/families-field-field11-10_mob_pink-390.png",
+    "docs/families-field-field11-11_ozu_nagahama-390.png",
+    "docs/families-field-field11-01_grassland-375.png",
+    "docs/families-field-field11-02_desert-375.png",
+    "docs/families-field-field11-03_seaside_station-375.png",
+    "docs/families-field-field11-04_magma-375.png",
+    "docs/families-field-field11-05_neon_district-375.png",
+    "docs/families-field-field11-06_tribal_village-375.png",
+    "docs/families-field-field11-07_seabed-375.png",
+    "docs/families-field-field11-08_demon_castle-375.png",
+    "docs/families-field-field11-09_denden-375.png",
+    "docs/families-field-field11-10_mob_pink-375.png",
+    "docs/families-field-field11-11_ozu_nagahama-375.png"
+  ],
+  "viewports": [
+    [
+      390,
+      844
+    ],
+    [
+      375,
+      667
+    ]
+  ],
+  "savePreserved": true,
+  "errors": []
+}

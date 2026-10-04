@@ -1,3 +1,4 @@
+import {prepareFamilyCollection} from './game/family-collection.js';
 import {prepareElementCollection} from './game/element-collection.js';
 import {release,initializeInitialRelease,prepareInitialChoice} from './game/initial-release.js';
 import {initialStarterScreen} from './screens/initialStarter.js';
@@ -148,6 +149,7 @@ if(b.dataset.battleCube||b.dataset.battleMat){setBattleStyle(profile,b.dataset.b
 if(handleDeckAssist(b,ctx,{render,persist,toast}))return;
 if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}
 if(b.hasAttribute('data-soul-filter')){profile.soulDeckFilter=b.dataset.soulFilter;persist();render({preserveScroll:true});return;}
+if(b.hasAttribute('data-family-claim')){try{const next=prepareFamilyCollection(profile);if(!commitProfile(next))throw Error('保存できませんでした。受け取りは未確定です。');sound.play('starter');render({preserveScroll:true});toast('4家族24種を受け取りました');}catch(err){toast(err.message,'error');}return;}
 if(b.hasAttribute('data-element-claim')){try{const next=prepareElementCollection(profile);if(!commitProfile(next))throw Error('保存できませんでした。受け取りは未確定です。');sound.play('starter');render({preserveScroll:true});toast('54種の仲間を受け取りました');}catch(err){toast(err.message,'error');}return;}
 if(b.dataset.initialReview){initialSelection=b.dataset.initialReview;render();return;}
   if(b.hasAttribute('data-initial-back')){initialSelection=null;render();return;}

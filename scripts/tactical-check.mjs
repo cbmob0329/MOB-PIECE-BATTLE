@@ -14,7 +14,7 @@ const cast=(s,side,ref)=>{g.useSkill(s,side,ref,g.cpuOptions(s,side,ref));resolv
 let count=0;const test=(n,fn)=>{fn();count++;console.log('PASS '+n);};
 test('Exactly selected 24 figures, final images, rarities/classes, source hashes and gated acquisition',()=>{
  const ids=[1,7,8,9,10,11,12,13,14,15,16,19,23,27,30,33,34,35,40,42,43,45,46,50].map(n=>'BFX'+String(n).padStart(3,'0'));
- assert.deepEqual(selected.figures.map(f=>f.id),ids);assert.equal(figures.length,587);assert.equal(new Set(figures.map(f=>f.id)).size,587);
+ assert.deepEqual(selected.figures.map(f=>f.id),ids);assert.equal(figures.length,611);assert.equal(new Set(figures.map(f=>f.id)).size,611);
  assert.deepEqual(['SR','SSR','UR','MOB'].map(r=>selected.figures.filter(f=>f.rarity===r).length),[12,6,4,2]);assert.deepEqual(['seed','middle','mob'].map(c=>selected.figures.filter(f=>f.soulClass===c).length),[15,7,2]);
  for(const f of selected.figures){assert.ok(fs.existsSync(f.image));assert.ok(!/pixel|ドット/.test(f.image));assert.ok(plans[f.soulSkill.program]);assert.ok(f.tags.length<=({R:3,SR:5,SSR:7,UR:9,MOB:12}[f.rarity]));}
  const audit=JSON.parse(fs.readFileSync('docs/selected-assets-audit.json'));assert.ok(audit);const raw=audit.figures;for(const row of raw){const h=crypto.createHash('sha256').update(fs.readFileSync('piecefig/'+row.id+'.png')).digest('hex');assert.equal(h,row.sha256||row.hash);}
