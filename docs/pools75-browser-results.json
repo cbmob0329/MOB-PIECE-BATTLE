@@ -1,0 +1,9 @@
+{
+  "banners": 3,
+  "figuresPerBanner": 75,
+  "decodedSlots": 225,
+  "exchangeSlots": 225,
+  "oldClaimedDeckRetained": true,
+  "historyAndCollectionsRetained": true,
+  "errors": []
+}

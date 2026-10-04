@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node scripts/source-check.mjs && node scripts/startup-profile-check.mjs && node scripts/rules-check.mjs && node scripts/gacha-rules-check.mjs && node scripts/competition-rules-check.mjs && node scripts/battle-rules-check.mjs && node scripts/v4-features-check.mjs && node scripts/v5-features-check.mjs && node scripts/v5-ui-render-check.mjs && node scripts/v6-assets-check.mjs && node scripts/quest-import-check.mjs && node scripts/formation-skills-check.mjs && node scripts/soul-rules-check.mjs && node scripts/soul-update-check.mjs && node scripts/soul-shuffle-check.mjs && node scripts/piece47-check.mjs && node scripts/materials-check.mjs && node scripts/audio-check.mjs && node scripts/tactical-check.mjs && node scripts/initial-release-check.mjs && node scripts/elements-check.mjs && node scripts/families-check.mjs",
+    "test": "node scripts/source-check.mjs && node scripts/startup-profile-check.mjs && node scripts/rules-check.mjs && node scripts/gacha-rules-check.mjs && node scripts/competition-rules-check.mjs && node scripts/battle-rules-check.mjs && node scripts/v4-features-check.mjs && node scripts/v5-features-check.mjs && node scripts/v5-ui-render-check.mjs && node scripts/v6-assets-check.mjs && node scripts/quest-import-check.mjs && node scripts/formation-skills-check.mjs && node scripts/soul-rules-check.mjs && node scripts/soul-update-check.mjs && node scripts/soul-shuffle-check.mjs && node scripts/piece47-check.mjs && node scripts/materials-check.mjs && node scripts/audio-check.mjs && node scripts/tactical-check.mjs && node scripts/initial-release-check.mjs && node scripts/elements-check.mjs && node scripts/families-check.mjs && node scripts/pools75-check.mjs",
     "test:gacha": "node scripts/gacha-browser-check.mjs",
     "assets:index": "node scripts/index-assets.mjs",
     "test:quest-ui": "node scripts/quest-browser-check.mjs",
@@ -30,7 +30,9 @@
     "test:elements": "node scripts/elements-check.mjs",
     "test:elements-ui": "node scripts/elements-browser.mjs",
     "test:families": "node scripts/families-check.mjs",
-    "test:families-ui": "node scripts/families-browser.mjs && node scripts/families-skill-browser.mjs"
+    "test:families-ui": "node scripts/families-browser.mjs && node scripts/families-skill-browser.mjs",
+    "test:pools75": "node scripts/pools75-check.mjs",
+    "test:pools75-ui": "node scripts/initial-release-browser.mjs && node scripts/pools75-browser.mjs"
   },
   "devDependencies": {
     "vite": "^7.1.5"

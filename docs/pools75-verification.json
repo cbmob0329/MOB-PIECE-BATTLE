@@ -1,0 +1,80 @@
+[
+  {
+    "id": "BFX-day",
+    "reachable": 75,
+    "unreachable": [],
+    "normalRarityRates": {
+      "R": 0.5,
+      "SR": 0.3,
+      "SSR": 0.15,
+      "UR": 0.045,
+      "MOB": 0.005
+    },
+    "singleActualRarityRates": {
+      "R": 0.4895000000000004,
+      "SR": 0.2937000000000001,
+      "SSR": 0.14759999999999998,
+      "UR": 0.04428,
+      "MOB": 0.024919999999999998
+    },
+    "tenthActualRarityRates": {
+      "R": 0,
+      "SR": 0.6559299999999998,
+      "SSR": 0.24549999999999994,
+      "UR": 0.06875500000000001,
+      "MOB": 0.029815000000000005
+    }
+  },
+  {
+    "id": "BFX-remix",
+    "reachable": 75,
+    "unreachable": [],
+    "normalRarityRates": {
+      "R": 0.5,
+      "SR": 0.3,
+      "SSR": 0.15,
+      "UR": 0.045,
+      "MOB": 0.005
+    },
+    "singleActualRarityRates": {
+      "R": 0.4895000000000004,
+      "SR": 0.2937,
+      "SSR": 0.1476,
+      "UR": 0.06428,
+      "MOB": 0.004919999999999999
+    },
+    "tenthActualRarityRates": {
+      "R": 0,
+      "SR": 0.65593,
+      "SSR": 0.24549999999999994,
+      "UR": 0.08875500000000003,
+      "MOB": 0.009814999999999999
+    }
+  },
+  {
+    "id": "BFX-night",
+    "reachable": 75,
+    "unreachable": [],
+    "normalRarityRates": {
+      "R": 0.5,
+      "SR": 0.3,
+      "SSR": 0.15,
+      "UR": 0.045,
+      "MOB": 0.005
+    },
+    "singleActualRarityRates": {
+      "R": 0.48949999999999977,
+      "SR": 0.2937,
+      "SSR": 0.14760000000000004,
+      "UR": 0.04428000000000001,
+      "MOB": 0.024919999999999998
+    },
+    "tenthActualRarityRates": {
+      "R": 0,
+      "SR": 0.65593,
+      "SSR": 0.24549999999999994,
+      "UR": 0.06875500000000002,
+      "MOB": 0.029815
+    }
+  }
+]

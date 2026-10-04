@@ -18,7 +18,7 @@ test('Exactly selected 24 figures, final images, rarities/classes, source hashes
  assert.deepEqual(['SR','SSR','UR','MOB'].map(r=>selected.figures.filter(f=>f.rarity===r).length),[12,6,4,2]);assert.deepEqual(['seed','middle','mob'].map(c=>selected.figures.filter(f=>f.soulClass===c).length),[15,7,2]);
  for(const f of selected.figures){assert.ok(fs.existsSync(f.image));assert.ok(!/pixel|ドット/.test(f.image));assert.ok(plans[f.soulSkill.program]);assert.ok(f.tags.length<=({R:3,SR:5,SSR:7,UR:9,MOB:12}[f.rarity]));}
  const audit=JSON.parse(fs.readFileSync('docs/selected-assets-audit.json'));assert.ok(audit);const raw=audit.figures;for(const row of raw){const h=crypto.createHash('sha256').update(fs.readFileSync('piecefig/'+row.id+'.png')).digest('hex');assert.equal(h,row.sha256||row.hash);}
- const banner=banners.find(b=>b.id==='BFX-day');assert.ok(banner);const pool=poolFor(banner);assert.equal(pool.length,50);assert.deepEqual(pool.filter(f=>f.id.startsWith('BFX')).map(f=>f.id).sort(),ids);assert.equal(banners.length,3);
+ const banner=banners.find(b=>b.id==='BFX-day');assert.ok(banner);const pool=poolFor(banner);assert.equal(pool.length,75);assert.deepEqual(pool.filter(f=>f.id.startsWith('BFX')).map(f=>f.id).sort(),ids);assert.equal(banners.length,3);
  const p={owned:{'01':12},diamonds:123,soulDecks:[['01'],[],[],[],[]],soulDeckSlot:0};grantMainCollection(p);assert.equal(p.diamonds,123);assert.deepEqual(p.soulDecks[0],['01']);for(const id of ids)assert.ok(!p.owned[id]);
 });
 test('All ten new programs from hand and field, both sides; costs, grave and events',()=>{

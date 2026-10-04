@@ -5,9 +5,9 @@ import {prepareDraw,exchangeFigure} from '../src/game/gacha.js';
 import * as g from '../src/game/soul-battle.js';
 const by=g.soulById;let suites=0;const test=(n,fn)=>{fn();console.log('PASS '+n);suites++;};
 const matches=(f,m)=>m.id?f.id===m.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute;
-test('3 pools of 50 registered figures; selected24 only; displayed rates sum to 100%; correct PU',()=>{
+test('3 pools of 75 registered figures; selected24 only; displayed rates sum to 100%; correct PU',()=>{
  assert.equal(banners.length,3);assert.equal(archivedBanners.length,23);assert.ok(banners.every(b=>!archivedBanners.some(old=>old.id===b.id)));const selected=g.soulFigures.filter(f=>f.id.startsWith('BFX')).map(f=>f.id);
- for(const b of banners){const pool=poolFor(b);assert.equal(pool.length,50);assert.equal(new Set(pool.map(f=>f.sourceId)).size,50);assert.deepEqual(pool.filter(f=>f.sourceId.startsWith('BFX')).map(f=>f.sourceId).sort(),selected);for(const r of ['R','SR','SSR','UR','MOB'])assert.ok(pool.some(f=>f.rarity===r));for(const id of [...b.pickupIds,...b.featuredIds])assert.ok(pool.some(f=>f.sourceId===id));if(b.image)assert.ok(fs.existsSync(b.image));else for(const id of b.featuredIds)assert.ok(fs.existsSync(by.get(id).image));
+ for(const b of banners){const pool=poolFor(b);assert.equal(pool.length,75);assert.equal(new Set(pool.map(f=>f.sourceId)).size,75);assert.deepEqual(pool.filter(f=>f.sourceId.startsWith('BFX')).map(f=>f.sourceId).sort(),selected);for(const r of ['R','SR','SSR','UR','MOB'])assert.ok(pool.some(f=>f.rarity===r));for(const id of [...b.pickupIds,...b.featuredIds])assert.ok(pool.some(f=>f.sourceId===id));if(b.image)assert.ok(fs.existsSync(b.image));else for(const id of b.featuredIds)assert.ok(fs.existsSync(by.get(id).image));
   for(const count of [1,10])for(let i=0;i<count;i++)assert.ok(Math.abs(pool.reduce((n,f)=>n+drawFigureRate(b,f,count,i),0)-1)<1e-10);for(const guarantee of [false,true,'SSR'])assert.ok(Math.abs(Object.values(ratesFor(b,guarantee)).reduce((a,b)=>a+b,0)-1)<1e-10);
  }
 });
