@@ -1,3 +1,5 @@
+import {release} from '../src/game/initial-release.js';
+import {revisedTexts} from '../src/data/tactical-skills.js';
 import assert from 'node:assert/strict';import fs from 'node:fs';import crypto from 'node:crypto';
 import data from '../src/data/materials-additions.json' with {type:'json'};
 import sourceAudit from '../docs/materials-source-audit.json' with {type:'json'};
@@ -6,10 +8,10 @@ import {figures,byId,tags} from '../src/data/catalog.js';
 import {pieceStarters,pieceStarterDeck,grantMainCollection,selectCpuStarter} from '../src/game/piece-starters.js';
 import {OWN_CAP} from '../src/data/gacha.js';import * as g from '../src/game/soul-battle.js';
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-assert.equal(data.figures.length,135);assert.equal(catalog.figures.length,509);assert.equal(figures.length,523);assert.equal(new Set(figures.map(f=>f.sourceId)).size,523);assert.equal(catalog.figures.filter(f=>f.collection==='main').length,207);assert.equal(catalog.figures.filter(f=>f.collection==='collab').length,302);
+assert.equal(data.figures.length,135);assert.equal(catalog.figures.length,587);assert.equal(figures.length,601);assert.equal(new Set(figures.map(f=>f.sourceId)).size,601);assert.equal(catalog.figures.filter(f=>f.collection==='main').length,285);assert.equal(catalog.figures.filter(f=>f.collection==='collab').length,302);
 assert.deepEqual(['seed','middle','mob'].map(k=>data.figures.filter(f=>f.soulClass===k).length),[117,12,6]);
-for(const f of data.figures){assert.ok(byId.has(f.id));assert.ok(f.tags.every(t=>tags.some(x=>x.id===t)));assert.ok(f.tags.length<=catalog.rules.tagLimits[f.rarity]);assert.equal(texts[f.soulSkill.program],f.soulSkill.timingLabel+' | '+f.soulSkill.sourceText);const src=sourceAudit.images.find(r=>r.name===f.id+'.png'||f.id.startsWith('MB')&&r.name.startsWith('MOB_No.'+f.id.slice(2)+'_'));assert.equal(hash(f.image),src.hash);}
-let supplied=0;for(const src of sourceAudit.sources.filter(r=>r.file.endsWith('runtime_additions.json'))){const original=JSON.parse(fs.readFileSync(src.file));for(const o of original.figures){const f=g.soulById.get(o.id);for(const k of ['id','uid','name','rarity','soulClass','attribute','attackType','role','atk','def','tags','soulSkill'])assert.deepEqual(f[k],o[k],o.id+' '+k);supplied++;}}
+for(const f of data.figures){assert.ok(byId.has(f.id));assert.ok(f.tags.every(t=>tags.some(x=>x.id===t)));assert.ok(f.tags.length<=catalog.rules.tagLimits[f.rarity]);assert.equal(texts[f.soulSkill.program],revisedTexts[f.soulSkill.program]||f.soulSkill.timingLabel+' | '+f.soulSkill.sourceText);const src=sourceAudit.images.find(r=>r.name===f.id+'.png'||f.id.startsWith('MB')&&r.name.startsWith('MOB_No.'+f.id.slice(2)+'_'));assert.equal(hash(f.image),src.hash);}
+let supplied=0;for(const src of sourceAudit.sources.filter(r=>r.file.endsWith('runtime_additions.json'))){const original=JSON.parse(fs.readFileSync(src.file));for(const o of original.figures){const f=g.soulById.get(o.id);for(const k of ['id','uid','name','rarity','soulClass','attribute','attackType','role','atk','def','tags','soulSkill'])assert.deepEqual(k==='soulSkill'&&revisedTexts[f.soulSkill.program]?{...f[k],description:o[k].description,effect:o[k].effect,sourceText:o[k].sourceText}:f[k],o[k],o.id+' '+k);supplied++;}}
 assert.equal(supplied,30);
 for(const src of sourceAudit.sources){assert.equal(hash(src.file),src.sha256);if(src.file.endsWith('fusion_examples.json')){for(const e of JSON.parse(fs.readFileSync(src.file)).examples||[]){const r=catalog.recipes.find(r=>r.id===e.recipeId);assert.ok(r,e.recipeId);assert.equal(r.target,e.targetId);}}}
 const freshProfile={owned:{}};grantMainCollection(freshProfile,{newProfile:true});assert.equal(freshProfile.pieceCollectionVersion,2);
@@ -44,6 +46,6 @@ for(const starter of pieceStarters){const ids=pieceStarterDeck(starter.id);asser
   for(let step=0;step<30&&s.winner===null;step++){let pair=null;for(const a of p.field.filter(Boolean))for(const d of s.players[1-side].field.filter(Boolean))if(!pair&&g.canAttack(s,side,a,d))pair=[a,d];if(!pair)break;g.attack(s,side,pair[0].uid,pair[1].uid);resolve(s);}if(s.winner===null)g.endTurn(s,side);
  }assert.notEqual(s.winner,null,'CPU did not finish '+starter.id);
 }
-for(const difficulty of ['easy','normal','hard'])for(const value of [0,.2,.5,.999999]){const enemy=selectCpuStarter(difficulty,()=>value);assert.ok(pieceStarters.some(s=>s.id===enemy.id));assert.deepEqual(enemy.deck,pieceStarterDeck(enemy.id));assert.ok(g.validateSoulDeck(enemy.deck).valid);}
-console.log('PASS: 135 images/IDs/skill executions; exact 30 supplied performances; 67 recipes x field/hand; all 10 balloon pairs; 11 legal starters and completed CPU matches; version-1 save migration preserved/idempotent; 207 main/302 collab');
+for(const difficulty of ['easy','normal','hard'])for(const value of [0,.2,.5,.999999]){const enemy=selectCpuStarter(difficulty,()=>value);assert.ok(release.starters.some(s=>s.id===enemy.id));assert.deepEqual(enemy.deck,release.starters.find(s=>s.id===enemy.id).deck);assert.ok(g.validateSoulDeck(enemy.deck).valid);}
+console.log('PASS: 135 images/IDs/skill executions; exact 30 supplied performances; 67 recipes x field/hand; all 10 balloon pairs; 11 legal starters and completed CPU matches; version-1 save migration preserved/idempotent; 231 main/302 collab; original 207 free, BFX24 acquired separately');
 

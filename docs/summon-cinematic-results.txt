@@ -1,0 +1,3 @@
+PASS actual paid 1/10 draw; repeated confirm/start/skip/finish; route/back/Escape; failed paid image; reduced motion phase order; allSSR ten results; saved results exactly once; zero page errors.
+Winner alpha identity: mismatch=0, opaque=333439, clear=231920; increasing chromatic pixels=[0,129539,204190].
+PASS Edge audio: 12 attributes x attack/skill/fusion; actual audio bus audible peak=0.8122114539146423 rms=0.1197901397875288; muted peak=0 rms=0; volume/mute reload; rapid-click suppression; simulated background recovery; starter; real summon/fusion/skill/forfeit; replay/route cleanup; unsupported Web Audio remains playable; no page errors. Physical Safari not tested.

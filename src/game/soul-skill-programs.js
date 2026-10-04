@@ -1,5 +1,7 @@
 // Explicit execution plans for the exact text keys in soul-skill-texts.js.
 // Values are copied from the master, never derived from figure names or sourceBasis.
+import {revisedPlans,newSkills} from '../data/tactical-skills.js';
+import {elementSkills} from '../data/element-skills.js';
 const programs=[];
 const set=(ids,p)=>ids.forEach(id=>{programs[id]=p;});
 set([0],{heal:20,recycle:true});
@@ -97,5 +99,7 @@ set([97,98],{target:'ally',atk:20,pierceGuard:true});
 set([99],{atk:20,firstKillChain:true});
 set([100],{cancelAttack:true});
 set([101],{atk:20,ignoreDef:true,damageBonus:10});
-if(programs.length!==102||programs.some(p=>!p))throw Error('Incomplete skill program table');
+for(const [id,plan]of Object.entries(revisedPlans))programs[Number(id)]=plan;for(const row of newSkills)programs[row.program]=row.plan;
+if(programs.length!==112||programs.some(p=>!p))throw Error('Incomplete skill program table');
+for(const s of elementSkills)programs[s.program]={element:true};
 export default programs;

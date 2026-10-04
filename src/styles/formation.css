@@ -16,3 +16,9 @@
 .figure-lab[data-phase=reveal] .lab-platform{display:none}
 
 
+
+/* Actual alpha silhouette, then unpainted assembly, then color. No rectangle stand-in. */
+.figure-lab:not([data-phase=ready]) .lab-core{display:none}.figure-lab[data-phase=gather],.figure-lab[data-phase=cue],.figure-lab[data-phase=outline]{background-image:radial-gradient(ellipse at 50% 46%,var(--lab-accent),#fff9e8 58%)}.figure-lab[data-phase=cue] .lab-cue{top:12%;transform:scale(.72)}.figure-lab .lab-stamp{right:3%;top:66%;width:58px;height:58px;opacity:.85}.figure-lab .lab-stamp b{font-size:22px;line-height:30px}.figure-lab .lab-stamp span{font-size:8px}
+
+.figure-lab[data-phase=gather],.figure-lab[data-phase=cue],.figure-lab[data-phase=outline]{background-image:radial-gradient(ellipse at 50% 46%,#344448,#101e29 68%);background-size:100% 100%;background-repeat:no-repeat;color:#fff7df}.figure-lab[data-phase=cue] .lab-cue h2,.figure-lab[data-phase=outline] .lab-cue h2{text-shadow:0 2px #071724}.figure-lab .lab-cue p{color:#203d34}
+.figure-lab header button{color:#203d34}.figure-lab[data-phase=gather] .scene-caption,.figure-lab[data-phase=cue] .scene-caption,.figure-lab[data-phase=outline] .scene-caption{color:#fff7df}

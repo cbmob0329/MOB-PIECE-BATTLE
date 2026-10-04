@@ -1,0 +1,6 @@
+initial-release-browser
+PASS Edge: 3 new choices; review/back/reload; failed-storage retry; selected45 only; exactly3 templates/pools; selected-only interim art; old saves and full slots preserved; no repeated claim or page errors
+audio-browser
+PASS Edge: 12 attributes x attack/skill/fusion; PCM through actual audio bus {"audible":{"peak":0.8122114539146423,"rms":0.1197901395378045},"muted":{"peak":0,"rms":0}}; volume/mute reload; rapid-click suppression; simulated background recovery; starter; real summon/fusion/skill/forfeit; replay/route cleanup; unsupported Web Audio remains playable; no page errors. Not a physical Safari test.
+tactical-browser
+PASS Edge mobile: all 24 images; hand skill cancel/consume/cost/grave; ally and enemy tap detail; full effect log and enemy overlay; no page errors

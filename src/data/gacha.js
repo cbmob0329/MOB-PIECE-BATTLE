@@ -7,11 +7,14 @@ export const OVERFLOW_RUBY=Object.freeze({R:1,SR:3,SSR:5,UR:12,MOB:30});
 import questBanners from './quest-banners.js';
 const common=Array.from({length:25},(_,i)=>'fig/'+String(i+1).padStart(2,'0')+'.png');
 // This standalone battle game has no Quest story progression: all banners are available.
-export const banners=questBanners;
+import selectedBanner from './selected-banner.json' with {type:'json'};
+import initialRelease from './initial-release.json' with {type:'json'};
+export const archivedBanners=[...questBanners,selectedBanner];
+export const banners=initialRelease.banners;
 export const RUBY_COST=Object.freeze({R:10,SR:50,SSR:100,UR:300,MOB:500});
 export const usableFigure=f=>!!(f&&!f.pending&&f.name&&!/^\/+$/u.test(f.name)&&f.image);
-export function poolFor(banner){const paths=new Set([...common,...banner.extra]);return figures.filter(f=>paths.has(f.image)&&usableFigure(f));}
-export function pickupsFor(banner){const pool=poolFor(banner);const explicit=pool.filter(f=>banner.pickup?.includes(f.image));return explicit.length?explicit:[...pool].sort((a,b)=>RARITY_RANK[b.rarity]-RARITY_RANK[a.rarity]).slice(0,3);}
+export function poolFor(banner){if(banner.figureIds){const ids=new Set(banner.figureIds);return figures.filter(f=>ids.has(f.sourceId)&&usableFigure(f));}const paths=new Set([...common,...banner.extra]);return figures.filter(f=>paths.has(f.image)&&usableFigure(f));}
+export function pickupsFor(banner){const pool=poolFor(banner);const explicit=banner.pickupIds?banner.pickupIds.map(id=>pool.find(f=>f.sourceId===id)).filter(Boolean):pool.filter(f=>banner.pickup?.includes(f.image));return explicit.length?explicit:[...pool].sort((a,b)=>RARITY_RANK[b.rarity]-RARITY_RANK[a.rarity]).slice(0,3);}
 export const mainPickupFor=banner=>pickupsFor(banner)[0];
 export const SPECIAL_RATES=Object.freeze({pickup:.02,allSSR:.001});
 export function ratesFor(banner,guaranteed=false){const pool=poolFor(banner);const entries=Object.entries(guaranteed==='SSR'?{SSR:15,UR:4.5,MOB:.5}:guaranteed?TEN_LAST_RATES:RATES).filter(([r])=>pool.some(f=>f.rarity===r));const total=entries.reduce((n,[,w])=>n+w,0);return Object.fromEntries(entries.map(([r,w])=>[r,w/total]));}

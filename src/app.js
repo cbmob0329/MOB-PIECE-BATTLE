@@ -1,5 +1,10 @@
+import {prepareElementCollection} from './game/element-collection.js';
+import {release,initializeInitialRelease,prepareInitialChoice} from './game/initial-release.js';
+import {initialStarterScreen} from './screens/initialStarter.js';
+import {sound} from './audio/audio.js';
+import {installSoundUi,soundGalleryScreen} from './audio/ui.js';
 import {handleDeckAssist} from './screens/soulDeckAssist.js';
-import {grantMainCollection,applyPieceStarter} from './game/piece-starters.js';
+import {applyPieceStarter} from './game/piece-starters.js';
 import {applyStarter} from './game/soul-starters.js';
 import {battleCustomizeScreen} from './screens/battleCustomize.js';
 import {setBattleStyle} from './data/battle-style.js';
@@ -12,7 +17,7 @@ import {usableFigure,OWN_CAP} from './data/gacha.js?v=7.3.0';
 import {gachaScreen,initGacha,bindGacha,handleGacha} from './screens/gacha.js?v=7.3.0';
 import './components/icons.js?v=7.3.0';
 import {figures, tags, byId, imagePath, modes} from './data/catalog.js?v=7.3.0';
-import {profile,saveProfile,storageAvailable,isNewProfile} from './game/profile.js?v=7.3.0';
+import {profile,saveProfile,commitProfile,storageAvailable,isNewProfile} from './game/profile.js?v=7.3.0';
 import {homeScreen} from './screens/showroom.js?v=7.3.0';
 import {infoScreen} from './screens/library.js?v=7.3.0';
 import {collectionScreen,deckScreen,battleScreen,soulInfo} from './screens/soulLibrary.js';
@@ -35,14 +40,16 @@ import {applyBattleFigureRecords,enrichedHistoryRow,figureRecord} from './game/r
 
 export const icon=window.MPB.components.icon;
 export const art=(f,cls='')=>{if(!f)return `<span class="missing ${cls}">画像準備中</span>`;return `<img class="${cls}" src="${imagePath(f)}" alt="${String(f.name||'FIGURE').replace(/"/g,'&quot;')}" loading="lazy"><span class="missing" hidden>画像準備中<br>${f.displayNo||''}</span>`;};
+installSoundUi(profile.battleStyle?.sound);
 export const ctx={figures,tags,byId,profile,icon,art,modes,menuArt,iconArt,rankArt};
+let initialSelection=null;
 let collectionGroup='main';let query='';let rarity='ALL';let collectionStatus='ALL';let collectionSort='DEX_ASC';let collectionTag='ALL';let displaySlot=0;let displayQuery='';let historyFilter='ALL';let calendarView='year';let calendarMonth=null;
 const app=document.querySelector('#app');
 if(!app)throw new Error('APP_ROOT_NOT_FOUND');
 const nav=[['home','home','HOME','home'],['figure','figure','FIGURE','figure'],['deck','deck','DECK','deck'],['battle','battle','BATTLE','battle'],['gacha','gacha','GACHA','gacha']];
 const compact=n=>{const v=Number(n||0);if(v>=1000000)return `${(v/1000000).toFixed(v>=10000000?0:1)}M`;if(v>=10000)return `${Math.floor(v/1000)}K`;return v.toLocaleString('ja-JP');};
 
-try{if(grantMainCollection(profile,{newProfile:isNewProfile}))saveProfile();normalizeBattleProgress(profile);if(syncCompetition(profile))saveProfile();}catch(err){console.error('[MPB] profile bootstrap failed',err);}
+try{if(initializeInitialRelease(profile,{newProfile:isNewProfile}))saveProfile();if(profile.initialChoice?.state==='pending')location.hash='initial-starter';normalizeBattleProgress(profile);if(syncCompetition(profile))saveProfile();}catch(err){console.error('[MPB] profile bootstrap failed',err);}
 
 function noticeMarkup(){const n=getCompetitionNotice(profile);if(!n)return '';const kicker=n.type==='weekly-rank'?'WEEKLY RANK REWARD':n.type==='bonus'?'MOB MASTER BONUS':'ANNUAL COMPETITION';return `<div class="competition-notice" role="dialog" aria-modal="true"><div class="competition-notice-card"><small>${kicker}</small><h2>${n.title}</h2><p>${n.body}</p><strong>${Number(n.coins||0).toLocaleString('ja-JP')} COIN<br>+ ${Number(n.diamonds||0).toLocaleString('ja-JP')} DIAMOND</strong><button data-comp="dismiss-notice">受け取る</button></div></div>`;}
 function settleScreenImages(){
@@ -58,12 +65,12 @@ function render({preserveScroll=false}={}){
   const focused=preserveScroll?document.activeElement?.getAttribute('data-add'):null;
   const route=location.hash.slice(1)||'home';
   document.documentElement.classList.toggle('reduce-motion',profile.reducedMotion);
-  const page=route==='home'?homeScreen(ctx):route==='battle-style'?battleCustomizeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup):route==='deck'?deckScreen(ctx):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
+  const page=route==='initial-starter'?initialStarterScreen(ctx,initialSelection):route==='sound'?soundGalleryScreen():route==='home'?homeScreen(ctx):route==='battle-style'?battleCustomizeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup):route==='deck'?deckScreen(ctx):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
   const battleRoute=['battle','tournament','rankTournament','mobLeague'].includes(route);
   const master=isPlayerMaster(profile);const rankKey=master?'MOB_MASTER':profile.rank;
   const avatarFigure=byId.get(profile.avatarId)||byId.get(profile.centerId)||figures.find(f=>!f.pending);
   const avatarMarkup=avatarFigure?`<span class="avatar avatar-figure">${art(avatarFigure,'top-avatar-art')}</span>`:`<span class="avatar">M<span>01</span></span>`;
-  app.innerHTML=`<div class="game-shell"><header class="topbar"><button class="player" data-go="player">${avatarMarkup}<span class="player-copy"><b>PLAYER</b><small class="season-mini">${labelDate(profile.competition.date)}</small><small class="player-rank-line">${iconArt('rank','top-rank-symbol','RANK')}${rankArt(rankKey,'top-rank-art',rankKey)}<i>${master?'MOB MASTER':'CHALLENGER'}</i></small></span></button><div class="wallet wallet-v6"><span title="${Number(profile.coins||0).toLocaleString('ja-JP')} COIN">${iconArt('coin','wallet-art','COIN')}<b>${compact(profile.coins)}</b></span><span title="${Number(profile.diamonds||0).toLocaleString('ja-JP')} DIAMOND">${iconArt('diamond','wallet-art','DIAMOND')}<b>${profile.diamonds}</b></span><span title="${Number(profile.rubies||0).toLocaleString('ja-JP')} RUBY">${iconArt('ruby','wallet-art','RUBY')}<b>${profile.rubies}</b></span></div><button class="settings" data-go="settings" aria-label="設定">${menuArt('settings','top-settings-art','SETTINGS')}</button></header><main id="main">${page}</main><nav aria-label="メインナビゲーション">${nav.map(([id,ic,label,menuKey])=>{const active=route===id||(battleRoute&&id==='battle');const artMarkup=id==='deck'?iconArt('deck','bottom-menu-icon-art',label):(menuKey?menuArt(menuKey,'bottom-menu-art',label):icon(ic));return `<button data-go="${id}" class="${active?'active':''}" ${active?'aria-current="page"':''} aria-label="${label}"><span class="nav-art">${artMarkup}</span>${active?'<i></i>':''}</button>`;}).join('')}</nav><div class="screen-loader" data-screen-loader hidden><div><b>MOB PIECE BATTLE</b><span></span><small>IMAGE LOADING...</small></div></div><div class="toast" role="status"></div>${noticeMarkup()}</div>`;
+  app.innerHTML=`<div class="game-shell"><header class="topbar"><button class="player" data-go="player">${avatarMarkup}<span class="player-copy"><b>PLAYER</b><small class="season-mini">${labelDate(profile.competition.date)}</small><small class="player-rank-line">${iconArt('rank','top-rank-symbol','RANK')}${rankArt(rankKey,'top-rank-art',rankKey)}<i>${master?'MOB MASTER':'CHALLENGER'}</i></small></span></button><div class="wallet wallet-v6"><span title="${Number(profile.coins||0).toLocaleString('ja-JP')} COIN">${iconArt('coin','wallet-art','COIN')}<b>${compact(profile.coins)}</b></span><span title="${Number(profile.diamonds||0).toLocaleString('ja-JP')} DIAMOND">${iconArt('diamond','wallet-art','DIAMOND')}<b>${profile.diamonds}</b></span><span title="${Number(profile.rubies||0).toLocaleString('ja-JP')} RUBY">${iconArt('ruby','wallet-art','RUBY')}<b>${profile.rubies}</b></span></div><button class="settings" data-go="settings" aria-label="設定">${menuArt('settings','top-settings-art','SETTINGS')}</button></header><main id="main">${route!=='initial-starter'&&profile.initialChoice?.state!=='claimed'?'<section class="initial-invite"><b>3つから1つ、スターターを受け取れます</b><button data-go="initial-starter">内容を見て選ぶ</button></section>':''}${page}</main><nav aria-label="メインナビゲーション">${nav.map(([id,ic,label,menuKey])=>{const active=route===id||(battleRoute&&id==='battle');const artMarkup=id==='deck'?iconArt('deck','bottom-menu-icon-art',label):(menuKey?menuArt(menuKey,'bottom-menu-art',label):icon(ic));return `<button data-go="${id}" class="${active?'active':''}" ${active?'aria-current="page"':''} aria-label="${label}"><span class="nav-art">${artMarkup}</span>${active?'<i></i>':''}</button>`;}).join('')}</nav><div class="screen-loader" data-screen-loader hidden><div><b>MOB PIECE BATTLE</b><span></span><small>IMAGE LOADING...</small></div></div><div class="toast" role="status"></div>${route==='initial-starter'?'':noticeMarkup()}</div>`;
   if(route==='gacha')bindGacha();
   app.querySelector('#main').scrollTop=scroll;
   if(focused)app.querySelector('[data-add="'+focused+'"]')?.focus({preventScroll:true});
@@ -72,12 +79,12 @@ function render({preserveScroll=false}={}){
   app.querySelectorAll('img').forEach(img=>{const fallback=()=>{img.hidden=true;if(img.nextElementSibling)img.nextElementSibling.hidden=false;};if(img.complete&&!img.naturalWidth)fallback();else img.addEventListener('error',fallback,{once:true});});
   settleScreenImages();
 }
-export function toast(msg){const el=app.querySelector('.toast');if(!el)return;el.textContent=msg;el.classList.add('visible');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('visible'),2400);}
+export function toast(msg,tone){if(tone==='error')sound.play('error');const el=app.querySelector('.toast');if(!el)return;el.textContent=msg;el.classList.add('visible');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('visible'),2400);}
 function persist(){if(!saveProfile())toast('この環境では保存できません。現在の画面内で保持します。');}
 function competitionAction(action){try{
   if(action==='dismiss-notice'){dismissCompetitionNotice(profile);persist();render();return true;}
   if(action==='cup-join'||action==='cup-skip'){chooseRankUpTournament(profile,action==='cup-join');persist();render();return true;}
-}catch(err){toast(err.message);return true;}return false;}
+}catch(err){toast(err.message,'error');return true;}return false;}
 
 let battleBusy=false;
 function recordHistory(result,request,extra={}){profile.battleHistory=Array.isArray(profile.battleHistory)?profile.battleHistory:[];profile.battleStats=profile.battleStats||{battles:0,wins:0,qualifierBattles:0,leagueBattles:0,rankUpWins:0,masterWins:0};profile.battleStats.battles++;if(result.won)profile.battleStats.wins++;if(String(extra.mode||'').startsWith('qualifier'))profile.battleStats.qualifierBattles++;if(String(extra.mode||'').startsWith('mob-league'))profile.battleStats.leagueBattles++;if(String(extra.mode||'').startsWith('rankup-tournament')&&result.won)profile.battleStats.rankUpWins++;if(String(extra.mode||'').startsWith('mob-master')&&result.won)profile.battleStats.masterWins++;applyBattleFigureRecords(profile,result);profile.battleHistory.push({...enrichedHistoryRow(result,request,extra),at:Date.now()});if(profile.battleHistory.length>200)profile.battleHistory.splice(0,profile.battleHistory.length-200);}
@@ -113,7 +120,7 @@ async function startBattleFromUi(spec){
       onResolved=result=>{const rr=recordRandomMatch(profile,result.won);recordHistory(result,request,{mode:'random',rank:profile.rank});persist();return {reward:result.won?rr.reward:null,message:`RANDOM MATCH ${result.won?'WIN':'LOSE'} · 今週 ${rr.played}/3`};};
     }else{const c=competitionBattleRequest(spec);request=c.request;onResolved=result=>{const meta=c.resolve(result);persist();return meta;};}
     const result=await launchBattle({profile,request,onResolved,saveProfile,testMode:testSettings.enabled&&profile.testMode});if(!result?.cancelled){syncCompetition(profile);persist();render();}
-  }catch(err){render();toast(err?.message||'バトルを開始できませんでした。');}
+  }catch(err){render();toast(err?.message||'バトルを開始できませんでした。','error');}
   finally{battleBusy=false;}
 }
 
@@ -141,13 +148,17 @@ if(b.dataset.battleCube||b.dataset.battleMat){setBattleStyle(profile,b.dataset.b
 if(handleDeckAssist(b,ctx,{render,persist,toast}))return;
 if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}
 if(b.hasAttribute('data-soul-filter')){profile.soulDeckFilter=b.dataset.soulFilter;persist();render({preserveScroll:true});return;}
-if(b.hasAttribute('data-piece-starter')){try{applyPieceStarter(profile,b.dataset.pieceStarter);persist();render({preserveScroll:true});toast('スターターをセットしました');}catch(err){toast(err.message);}return;}
-if(b.hasAttribute('data-soul-starter')&&testSettings.enabled){try{applyStarter(profile,b.dataset.soulStarter);persist();render({preserveScroll:true});toast('テスト用スターターデッキをセットしました');}catch(err){toast(err.message);}return;}
-if(['data-soul-add','data-soul-remove','data-soul-auto','data-soul-clear'].some(a=>b.hasAttribute(a))){try{let deck=[...ensureSoulDecks(profile)];if(b.hasAttribute('data-soul-add'))deck.push(b.dataset.soulAdd);if(b.hasAttribute('data-soul-remove'))deck.splice(Number(b.dataset.soulRemove),1);if(b.hasAttribute('data-soul-auto'))deck=autoSoulDeck(profile.owned);if(b.hasAttribute('data-soul-clear'))deck=[];const check=validateSoulDeck(deck,profile.owned);if(check.errors.length)throw Error(check.errors[0]);setSoulDeck(profile,deck);persist();render({preserveScroll:true});}catch(err){toast(err.message);}return;}
+if(b.hasAttribute('data-element-claim')){try{const next=prepareElementCollection(profile);if(!commitProfile(next))throw Error('保存できませんでした。受け取りは未確定です。');sound.play('starter');render({preserveScroll:true});toast('54種の仲間を受け取りました');}catch(err){toast(err.message,'error');}return;}
+if(b.dataset.initialReview){initialSelection=b.dataset.initialReview;render();return;}
+  if(b.hasAttribute('data-initial-back')){initialSelection=null;render();return;}
+  if(b.dataset.initialConfirm){try{const next=prepareInitialChoice(profile,b.dataset.initialConfirm);if(!commitProfile(next))throw Error('保存できませんでした。スターターは未受領です。もう一度お試しください。');initialSelection=null;sound.play('starter');location.hash='deck';render();toast(next.initialChoice.deckSlot<0?'所持品に追加しました。保存済みデッキは維持しています。':'スターターを受け取りました');}catch(err){toast(err.message,'error');}return;}
+  if(b.hasAttribute('data-piece-starter')){try{const starter=release.starters.find(s=>s.id===b.dataset.pieceStarter);if(!starter||!validateSoulDeck(starter.deck,profile.owned).valid)throw Error('必要なフィギュアの所持数が不足しています');setSoulDeck(profile,starter.deck);persist();render({preserveScroll:true});sound.play('starter');toast('スターターをセットしました');}catch(err){toast(err.message,'error');}return;}
+if(b.hasAttribute('data-soul-starter')&&testSettings.enabled){try{applyStarter(profile,b.dataset.soulStarter);persist();render({preserveScroll:true});sound.play('starter');toast('テスト用スターターデッキをセットしました');}catch(err){toast(err.message,'error');}return;}
+if(['data-soul-add','data-soul-remove','data-soul-auto','data-soul-clear'].some(a=>b.hasAttribute(a))){try{let deck=[...ensureSoulDecks(profile)];if(b.hasAttribute('data-soul-add'))deck.push(b.dataset.soulAdd);if(b.hasAttribute('data-soul-remove'))deck.splice(Number(b.dataset.soulRemove),1);if(b.hasAttribute('data-soul-auto'))deck=autoSoulDeck(profile.owned);if(b.hasAttribute('data-soul-clear'))deck=[];const check=validateSoulDeck(deck,profile.owned);if(check.errors.length)throw Error(check.errors[0]);setSoulDeck(profile,deck);persist();sound.play(b.hasAttribute('data-soul-add')?'deckAdd':b.hasAttribute('data-soul-remove')?'deckRemove':'deckArrange');render({preserveScroll:true});}catch(err){toast(err.message,'error');}return;}
 if(b.hasAttribute('data-week-open')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=false;return;}
 if(b.hasAttribute('data-week-close')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=true;return;}
-if(b.hasAttribute('data-week-confirm')){try{advanceWeek(profile);persist();render();}catch(err){toast(err.message);}return;}
-if(b.dataset.testComp){if(!profile.testMode){toast('TEST MODEをONにしてください。');return;}try{const v=b.dataset.testComp;if(v.startsWith('cup:'))testEnterRankUpTournament(profile,v.split(':')[1]);else if(v==='league')testEnterLeague(profile);else if(v==='master')testEnterMasterMatch(profile);else if(v==='restore'){if(!restoreCompetitionFromTest(profile))throw new Error('戻せるテスト前データがありません。');}persist();render();toast(v==='restore'?'通常の大会進行へ戻しました':'TEST MODEへ移動しました');}catch(err){toast(err.message);}return;}
+if(b.hasAttribute('data-week-confirm')){try{advanceWeek(profile);persist();render();}catch(err){toast(err.message,'error');}return;}
+if(b.dataset.testComp){if(!profile.testMode){toast('TEST MODEをONにしてください。');return;}try{const v=b.dataset.testComp;if(v.startsWith('cup:'))testEnterRankUpTournament(profile,v.split(':')[1]);else if(v==='league')testEnterLeague(profile);else if(v==='master')testEnterMasterMatch(profile);else if(v==='restore'){if(!restoreCompetitionFromTest(profile))throw new Error('戻せるテスト前データがありません。');}persist();render();toast(v==='restore'?'通常の大会進行へ戻しました':'TEST MODEへ移動しました');}catch(err){toast(err.message,'error');}return;}
 if(b.hasAttribute('data-collection-reset')){query='';rarity='ALL';collectionStatus='ALL';collectionSort='DEX_ASC';collectionTag='ALL';render();return;}
 if(b.dataset.historyFilter){historyFilter=b.dataset.historyFilter;render({preserveScroll:true});return;}
 if(b.dataset.calendarView){calendarView=b.dataset.calendarView;render({preserveScroll:true});return;}
@@ -156,8 +167,8 @@ if(b.dataset.calendarOpenMonth){calendarMonth=Number(b.dataset.calendarOpenMonth
 if(b.dataset.collectionStatus){collectionStatus=b.dataset.collectionStatus;render();return;}
 if(b.dataset.figureInfo){openFigureInfo(b.dataset.figureInfo);return;}
 if(b.dataset.playerAvatar){profile.avatarId=b.dataset.playerAvatar;persist();render({preserveScroll:true});toast('プレイヤーアバターを変更しました');return;}
-if(b.hasAttribute('data-mission-claim-all')){try{const reward=claimAllMissions(profile,{figures,byId});persist();render();toast(`MISSION ALL CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND · ${reward.count}件`);}catch(err){toast(err.message);}return;}
-if(b.dataset.missionClaim){try{const reward=claimMission(profile,b.dataset.missionClaim,{figures,byId});persist();render();toast(`MISSION CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND`);}catch(err){toast(err.message);}return;}
+if(b.hasAttribute('data-mission-claim-all')){try{const reward=claimAllMissions(profile,{figures,byId});persist();sound.play('reward');render();toast(`MISSION ALL CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND · ${reward.count}件`);}catch(err){toast(err.message,'error');}return;}
+if(b.dataset.missionClaim){try{const reward=claimMission(profile,b.dataset.missionClaim,{figures,byId});persist();sound.play('reward');render();toast(`MISSION CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND`);}catch(err){toast(err.message,'error');}return;}
 if(b.dataset.testAction){
   try{
     const action=b.dataset.testAction;
@@ -169,12 +180,12 @@ if(b.dataset.testAction){
     else if(action==='figures-max')grantAllFigures();
     else if(action==='figure-25'){const id=document.querySelector('#test-figure-select')?.value;const f=byId.get(id);if(!f||f.pending)throw new Error('フィギュアを選んでください。');profile.owned[id]=25;profile.testFigureId=id;}
     persist();render({preserveScroll:true});toast('テスト用データを適用しました');
-  }catch(err){toast(err.message);}return;
+  }catch(err){toast(err.message,'error');}return;
 }
-if(b.dataset.testRank){try{if(!profile.testMode)throw new Error('先にTEST MODEをONにしてください。');setRank(b.dataset.testRank);persist();render({preserveScroll:true});toast(`テストランクを ${b.dataset.testRank} に変更しました`);}catch(err){toast(err.message);}return;}
+if(b.dataset.testRank){try{if(!profile.testMode)throw new Error('先にTEST MODEをONにしてください。');setRank(b.dataset.testRank);persist();render({preserveScroll:true});toast(`テストランクを ${b.dataset.testRank} に変更しました`);}catch(err){toast(err.message,'error');}return;}
 if(b.dataset.comp&&competitionAction(b.dataset.comp))return;if(b.dataset.compBattle){await startBattleFromUi(b.dataset.compBattle);return;}if(b.dataset.battleStart){await startBattleFromUi(b.dataset.battleStart);return;}handleGacha(b);if(b.dataset.editShelf!==undefined)displaySlot=Number(b.dataset.editShelf);if(b.dataset.go){location.hash=b.dataset.go;return;}if(b.dataset.displaySlot!==undefined){displaySlot=Number(b.dataset.displaySlot);render({preserveScroll:true});}if(b.dataset.displayFigure){const f=byId.get(b.dataset.displayFigure);if(!usableFigure(f))return;profile.displayIds[displaySlot]=f.sourceId;persist();render({preserveScroll:true});toast('展示フィギュアを変更しました');}if(b.dataset.center){profile.centerId=b.dataset.center;persist();render();toast('センターフィギュアを変更しました');}if(b.dataset.filter){rarity=b.dataset.filter;render();}if(b.dataset.action==='motion'){profile.reducedMotion=!profile.reducedMotion;persist();render();}if(b.dataset.action==='center-next'){const released=figures.filter(f=>!f.pending);profile.centerId=released[(released.findIndex(f=>f.sourceId===profile.centerId)+1)%released.length].sourceId;persist();render();}if(b.dataset.mode){const mode=modes.find(m=>m.id===b.dataset.mode);if(mode?.id==='tournament'){location.hash='tournament';return;}if(mode?.id==='random'){await startBattleFromUi('random');return;}if(mode?.id==='free'){await startBattleFromUi('free:easy');return;}toast(`${mode.label}：${mode.status}`);}});
 app.addEventListener('input',e=>{if(e.target.id==='display-search'){displayQuery=e.target.value;const start=e.target.selectionStart;render({preserveScroll:true});const input=document.querySelector('#display-search');input.focus({preventScroll:true});input.setSelectionRange(start,start);}if(e.target.id==='figure-search'){query=e.target.value;const start=e.target.selectionStart;render();const input=document.querySelector('#figure-search');input.focus();input.setSelectionRange(start,start);}});
 app.addEventListener('change',e=>{if(e.target.id==='figure-collection'){collectionGroup=e.target.value;render({preserveScroll:true});}if(e.target.id==='figure-sort'){collectionSort=e.target.value;render({preserveScroll:true});}if(e.target.id==='figure-tag-filter'){collectionTag=e.target.value;render({preserveScroll:true});}});
-async function boot(){try{initGacha(ctx,render,toast);const center=byId.get(profile.centerId)||figures.find(f=>!f.pending);const centerImage=center?imagePath(center):null;await preloadUrls(criticalUiUrls(profile,centerImage),(done,total)=>window.mpbBootProgress?.(done,total,'UI / FIGURE'));window.addEventListener('hashchange',()=>{try{render();}catch(err){showBootError(err);}});render();document.documentElement.dataset.mpbReady='1';window.dispatchEvent(new CustomEvent('mpb:ready'));if(!storageAvailable)toast('ブラウザ保存を利用できません');}catch(err){showBootError(err);}}
+async function boot(){try{initGacha(ctx,render,toast);const center=byId.get(profile.centerId)||figures.find(f=>!f.pending);const centerImage=center?imagePath(center):null;await preloadUrls(criticalUiUrls(profile,centerImage),(done,total)=>window.mpbBootProgress?.(done,total,'UI / FIGURE'));window.addEventListener('hashchange',()=>{try{render();}catch(err){showBootError(err);}});render();document.documentElement.dataset.mpbReady='1';window.dispatchEvent(new CustomEvent('mpb:ready'));if(!storageAvailable)toast('ブラウザ保存を利用できません','error');}catch(err){showBootError(err);}}
 function showBootError(err){console.error('[MPB] boot error',err);document.documentElement.dataset.mpbReady='error';const msg=String(err?.message||err||'UNKNOWN_ERROR');app.innerHTML=`<div class="boot-error"><div><small>MOB PIECE BATTLE</small><h1>起動エラー</h1><p>ゲームの読み込みに失敗しました。</p><code>${msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</code><button onclick="location.reload()">再読み込み</button></div></div>`;}
 boot();

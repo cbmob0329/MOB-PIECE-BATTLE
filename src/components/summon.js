@@ -1,9 +1,12 @@
+import {makeSummonLayers,drawSummonFigure} from './summon-paint.js';
+import {sound} from '../audio/audio.js';
 import messages from '../data/summon_messages.js?v=7.3.0';
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clamp=x=>Math.min(1,Math.max(0,x));
 const ease=x=>1-Math.pow(1-clamp(x),3);
 // Visuals never mutate the already-committed draw.
 export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,onFinish}){
+ const audioScope=sound.beginScope('gacha');
  const copy=messages.cues[cue]||messages.cues.normal,t=Object.fromEntries(Object.entries(messages).map(([k,v])=>[k,typeof v==='string'?esc(v):v]));
  const palette=({normal:['#b8e66d','#244c3d'],ssr:['#c2abff','#553597'],pickup:['#ffaf81','#ab403d'],allSSR:['#ffe476','#705011']})[cue]||['#b8e66d','#244c3d'];
  dialog.classList.add('cinema-dialog');
@@ -19,11 +22,12 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
  '<footer><p class="scene-caption" aria-live="polite">'+t.ready+'</p><button data-release>'+t.release+'<small>'+t.releaseEnglish+'</small></button><button data-finish hidden>'+(preview?t.closePreview:t.showResult)+' →</button><small>'+(reduced?t.reduced:t.hint)+'</small></footer></section>';
  const scene=dialog.querySelector('.figure-lab'),canvas=scene.querySelector('canvas'),ctx=canvas.getContext('2d');
  const core=scene.querySelector('.lab-core img');core.onerror=()=>{core.hidden=true;core.nextElementSibling.hidden=false;};
- const sprite=new Image();sprite.src=new URL(hero.image,document.baseURI).href;
+ const sprite=new Image();const sourceUrl=new URL(hero.image,document.baseURI).href;sprite.src=sourceUrl;let layers=null;const rank=({R:1,SR:2,SSR:3,UR:4,MOB:5})[hero.rarity]||1;const intensity=1+(rank-1)*.22;scene.dataset.figureId=hero.sourceId||hero.id;scene.dataset.rarity=hero.rarity;
+ const durations=reduced?{assemble:1200,ink:1300}:{assemble:2700,ink:2800};
  let disposed=false,started=false,raf=0,phase='ready',born=performance.now();const timers=[];
- const cleanup=()=>{if(disposed)return;disposed=true;cancelAnimationFrame(raf);timers.forEach(clearTimeout);sprite.onload=sprite.onerror=null;dialog.classList.remove('cinema-dialog');};
+ const cleanup=()=>{if(disposed)return;disposed=true;sound.endScope(audioScope);cancelAnimationFrame(raf);timers.forEach(clearTimeout);sprite.onload=sprite.onerror=null;window.removeEventListener('hashchange',cleanup);dialog.removeEventListener('close',cleanup);dialog.classList.remove('cinema-dialog');};
  const finish=()=>{if(disposed)return;cleanup();onFinish();};
- function setPhase(next,label){phase=next;born=performance.now();scene.dataset.phase=next;scene.querySelector('.scene-caption').textContent=label;
+ function setPhase(next,label){const cueName={gather:'gachaGather',cue:'gachaCue',assemble:'gachaAssemble',ink:'gachaInk',reveal:'gachaReveal'}[next];if(cueName)sound.play(cueName,{scope:audioScope,eventId:next,strength:rank>=5||cue==='allSSR'?'large':rank>=3?'medium':'small',durationLimit:next==='ink'?durations.ink/1000:next==='assemble'?durations.assemble/1000:1.2});phase=next;born=performance.now();scene.dataset.phase=next;scene.querySelector('.scene-caption').textContent=label;const stageCopy=next==='assemble'?['02 / FORMATION','パーツを形成中']:next==='ink'?['03 / COLORING','色を重ねて完成へ']:['01 / SILHOUETTE','黒い影が光りだす'];scene.querySelector('.lab-cue small').textContent=stageCopy[0];scene.querySelector('.lab-cue h2').textContent=stageCopy[1];
   if(next==='reveal'){const reveal=scene.querySelector('.lab-reveal');reveal.innerHTML='<span>'+esc(hero.rarity)+'</span><div>'+art(hero)+'</div><small>'+esc(hero.displayNo)+'</small><h2>'+esc(hero.name)+'</h2><p>'+(preview?t.previewResult:t.result)+'</p>';reveal.hidden=false;if(cue==='allSSR'){const parade=scene.querySelector('.lab-parade');parade.innerHTML=figures.map((f,i)=>'<span style="--i:'+i+'">'+art(f)+'<b>'+esc(f.rarity)+'</b></span>').join('');parade.hidden=false;}scene.querySelector('[data-finish]').hidden=false;scene.querySelector('[data-finish]').focus({preventScroll:true});}
  }
  function paint(now){
@@ -35,32 +39,19 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
    const a=i*2.399+elapsed*(phase==='gather'?1.8:.15),r=(phase==='gather'?Math.max(20,180-elapsed*90):145)+i%4*10;
    ctx.save();ctx.translate(cx+Math.cos(a)*r,cy+Math.sin(a)*r*.8);ctx.rotate(a);ctx.fillStyle=i%3?palette[0]:palette[1];ctx.globalAlpha=phase==='reveal'?.16:.6;ctx.fillRect(-3,-3,6+i%4,6+i%4);ctx.restore();
   }
-  if(['outline','assemble','ink'].includes(phase)&&sprite.complete&&sprite.naturalWidth){
-   const size=Math.min(w*.77,h*.4,320),ratio=Math.min(size/sprite.naturalWidth,size/sprite.naturalHeight),dw=sprite.naturalWidth*ratio,dh=sprite.naturalHeight*ratio,x=cx-dw/2,y=cy-dh/2;
-   if(phase==='outline'){
-    ctx.save();ctx.filter='brightness(0)';ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
-    ctx.strokeStyle=palette[1];ctx.lineWidth=2;ctx.setLineDash([5,7]);ctx.strokeRect(x-12,y-12,dw+24,dh+24);ctx.setLineDash([]);
-   }else if(phase==='assemble'){
-    const cols=8,rows=10;
-    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
-     const n=j*cols+i,delay=((rows-1-j)*cols+i)/80*.65,p=reduced?1:ease((elapsed/2.8-delay)/.35),a=n*2.399;
-     if(p<=0)continue;const tw=dw/cols,th=dh/rows,tx=x+(i+.5)*tw,ty=y+(j+.5)*th;
-     ctx.save();ctx.translate(tx+Math.cos(a)*(1-p)*w*.65,ty+Math.sin(a)*(1-p)*h*.5);ctx.rotate((1-p)*(n%2?2:-2));ctx.globalAlpha=Math.min(1,p*2);ctx.filter='grayscale(1) brightness(1.6) contrast(.7)';ctx.drawImage(sprite,i*sprite.naturalWidth/cols,j*sprite.naturalHeight/rows,sprite.naturalWidth/cols,sprite.naturalHeight/rows,-tw/2,-th/2,tw,th);ctx.restore();
-    }
-   }else{
-    const p=reduced?1:clamp(elapsed/2.3);ctx.save();ctx.filter='grayscale(1) brightness(1.6) contrast(.7)';ctx.globalAlpha=1;ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
-    ctx.save();ctx.beginPath();ctx.rect(x-8,y+dh*(1-p),dw+16,dh*p+8);ctx.clip();ctx.drawImage(sprite,x,y,dw,dh);ctx.restore();
-    ctx.strokeStyle=palette[1];ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x-10,y+dh*(1-p));ctx.lineTo(x+dw+10,y+dh*(1-p));ctx.stroke();
-    if(cue==='ssr'||cue==='allSSR'){ctx.strokeStyle=palette[0];ctx.lineWidth=3;ctx.strokeRect(x-18,y-18,dw+36,dh+36);}
-   }
+  if(layers&&['gather','cue','outline','assemble','ink'].includes(phase)){
+   const size=Math.min(w*.8,h*.4,340),ratio=Math.min(size/layers.width,size/layers.height),dw=layers.width*ratio,dh=layers.height*ratio;
+   const progress=clamp(elapsed*1000/(durations[phase]||1600));scene.dataset.progress=progress.toFixed(3);
+   drawSummonFigure(ctx,layers,{phase,progress,x:cx-dw/2,y:cy-dh/2,width:dw,height:dh,accent:palette[0],intensity,reduced});
   }
   raf=requestAnimationFrame(paint);
  }
  async function start(){if(started)return;started=true;scene.querySelector('[data-release]').hidden=true;scene.querySelector('.scene-caption').textContent='フィギュアの素材を準備中…';
-  try{await sprite.decode();}catch{if(!disposed){started=false;scene.querySelector('[data-release]').hidden=false;scene.querySelector('.scene-caption').textContent='素材を読み込めませんでした。もう一度タップするか、スキップで結果を確認できます。';}return;}
-  if(disposed)return;setPhase('gather',messages.gather);
-  const timeline=reduced?[[300,'cue',copy[1]],[1000,'outline',messages.flight],[1900,'assemble',messages.assembly],[2800,'ink',messages.ink],[3800,'reveal',messages.reveal]]:[[1350,'cue',copy[1]],[3100,'outline',messages.flight],[4500,'assemble',messages.assembly],[7500,'ink',messages.ink],[10200,'reveal',messages.reveal]];
+  try{if(!sprite.complete||!sprite.naturalWidth)sprite.src=sourceUrl;await sprite.decode();if(!disposed)layers=makeSummonLayers(sprite);}catch{if(!disposed){sound.play('error');started=false;scene.querySelector('[data-release]').hidden=false;scene.querySelector('.scene-caption').textContent='素材を読み込めませんでした。もう一度タップするか、スキップで結果を確認できます。';}return;}
+  if(disposed)return;setPhase('gather','黒いシルエットが光をまとう…');
+  const timeline=reduced?[[120,'cue',copy[1]],[250,'outline','光る黒シルエット'],[1100,'assemble','輪郭にパーツが集まり、形が整う…'],[2300,'ink','塗装前の形に、色を重ねる…'],[3600,'reveal',messages.reveal]]:[[350,'cue',copy[1]],[650,'outline','光る黒シルエット'],[2300,'assemble','輪郭にパーツが集まり、形が整う…'],[5000,'ink','塗装前の形に、色を重ねる…'],[7800,'reveal',messages.reveal]];
   for(const [ms,p,label] of timeline)timers.push(setTimeout(()=>{if(!disposed)setPhase(p,label);},ms));
  }
+ window.addEventListener('hashchange',cleanup);dialog.addEventListener('close',cleanup);
  scene.querySelector('[data-release]').onclick=start;scene.querySelector('[data-finish]').onclick=finish;scene.querySelector('[data-skip]').onclick=finish;scene.querySelector('[data-release]').focus({preventScroll:true});raf=requestAnimationFrame(paint);return cleanup;
 }

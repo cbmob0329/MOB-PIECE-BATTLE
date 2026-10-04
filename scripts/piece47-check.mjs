@@ -1,3 +1,4 @@
+import {elementIds} from '../src/game/element-collection.js';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';import crypto from 'node:crypto';
 import catalog from '../src/data/soul-catalog.js';
@@ -5,12 +6,12 @@ import {figures,byId,tags} from '../src/data/catalog.js';
 import {availableAssets} from '../src/data/available-assets.js';
 import {pieceFigures} from '../src/data/piece-catalog.js';
 import {pieceStarters,pieceStarterDeck,grantMainCollection,applyPieceStarter} from '../src/game/piece-starters.js';
-import {OWN_CAP,banners,poolFor} from '../src/data/gacha.js';
+import {OWN_CAP,banners,archivedBanners,poolFor} from '../src/data/gacha.js';
 import * as g from '../src/game/soul-battle.js';
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-assert.equal(pieceFigures.length,47);assert.equal(catalog.figures.length,509);assert.equal(figures.length,523);assert.equal(new Set(figures.map(f=>f.sourceId)).size,523);
+assert.equal(pieceFigures.length,47);assert.equal(catalog.figures.length,587);assert.equal(figures.length,601);assert.equal(new Set(figures.map(f=>f.sourceId)).size,601);
 assert.deepEqual(['seed','middle','mob'].map(k=>pieceFigures.filter(f=>f.soulClass===k).length),[32,11,4]);
-assert.equal(catalog.figures.filter(f=>f.collection==='main').length,207);
+assert.equal(catalog.figures.filter(f=>f.collection==='main').length,285);
 assert.equal(catalog.figures.filter(f=>f.collection==='collab').length,302);
 for(const f of pieceFigures){assert.ok(byId.has(f.id));assert.ok(availableAssets.has(f.image));assert.equal(hash(f.image),hash('追加用フィギュア/'+f.number+'.png'));assert.ok(f.tags.every(t=>tags.some(x=>x.id===t)));assert.ok(f.tags.length<=catalog.rules.tagLimits[f.rarity]);assert.ok(!/RETRO|SWEET/.test(f.id));}
 const existing={owned:{'01':12,'16':2,'mq:spbossfig/35':1},diamonds:432,rubies:99,coins:456,centerId:'16',displayIds:['16'],welcomeClaimed:true,soulDecks:[['16'],['01'],[],[],[]],soulDeckSlot:1,deck:['16'],deckPresets:[['16'],[],[],[],[]],battleHistory:[{won:true}],custom:'keep'};
@@ -18,7 +19,7 @@ const before=structuredClone(existing);assert.equal(grantMainCollection(existing
 for(const [k,v]of Object.entries(before).filter(([k])=>k!=='owned'))assert.deepEqual(existing[k],v,k);
 for(const [k,v]of Object.entries(before.owned))assert.equal(existing.owned[k],v);
 const migrated=structuredClone(existing);assert.equal(grantMainCollection(existing),false);assert.deepEqual(existing,migrated);
-for(const f of catalog.figures.filter(f=>f.collection==='main'))assert.ok(existing.owned[f.id]>=1);
+for(const f of catalog.figures.filter(f=>f.collection==='main'&&!f.id.startsWith('BFX')&&!elementIds.has(f.id)))assert.ok(existing.owned[f.id]>=1);
 const newcomer={owned:{},diamonds:0};grantMainCollection(newcomer,{newProfile:true});assert.ok(g.validateSoulDeck(newcomer.soulDecks[0],newcomer.owned).valid);assert.equal(newcomer.diamonds,0);
 const deck=pieceStarterDeck(pieceStarters[0].id),fresh=()=>g.createSoulBattle([deck,deck],undefined,{random:()=>.999999});
 function put(s,side,f,slot=0){const p={uid:++s.serial,id:f.id,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],lastTarget:null,extra:0,mobFusion:false,permanentAtk:0,permanentDef:0};s.players[side].field[slot]=p;return p;}
@@ -42,5 +43,5 @@ for(const starter of pieceStarters.filter(s=>['piece-soldier','piece-boxer'].inc
  const refs=p.field.filter(Boolean).map(x=>x.uid);const r=g.fusionOptions(s,0,refs).find(r=>r.target===target);assert.ok(r);g.fuse(s,0,refs,r.id);assert.ok(p.field.some(x=>x?.id===target));
  const other=structuredClone(existing.soulDecks[0]);applyPieceStarter(existing,starter.id);assert.deepEqual(existing.soulDecks[0],other);
 }
-assert.equal(banners.length,22);assert.ok(banners.every(b=>poolFor(b).every(f=>!f.sourceId.startsWith('piece:'))));
+assert.equal(banners.length,3);assert.ok(archivedBanners.filter(b=>b.id!=='SELECTED-BFX').every(b=>poolFor(b).every(f=>!f.sourceId.startsWith('piece:'))));
 console.log('PASS: 47 images/data/skills; 19 recipes (38 field/hand cases); 207 free main figures (including original 72); 2 legal starters and seed-middle-MOB chains; non-destructive/idempotent migration; unchanged gacha pools');

@@ -1,3 +1,4 @@
+import {sound} from '../audio/audio.js';
 import {soulById,classNames,ensureSoulDecks,setSoulDeck,validateSoulDeck} from '../game/soul-battle.js';
 import {fusionRecommendations,planSoulDeck,addRoute,countIds} from '../game/soul-deck-assist.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -8,8 +9,8 @@ export function deckAssistMarkup(){return `<section class="deck-assist"><h2>融�
 export function handleDeckAssist(button,c,{render,persist,toast}){
  const id=button.dataset.soulRecommend,mode=button.dataset.deckPlan,isUndo=button.hasAttribute('data-deck-undo');if(!id&&!mode&&!isUndo)return false;
  const profile=c.profile,slot=profile.soulDeckSlot||0,original=[...ensureSoulDecks(profile)];
- const commit=deck=>{const errors=validateSoulDeck(deck,profile.owned).errors;if(errors.length)throw Error(errors[0]);undo.set(slot,{before:[...ensureSoulDecks(profile)],after:[...deck]});setSoulDeck(profile,deck);persist();render({preserveScroll:true});};
- if(isUndo){const prior=undo.get(slot);if(!prior||JSON.stringify(prior.after)!==JSON.stringify(original)){toast('戻せるアシスト編成がありません。編成後に手動変更した場合は戻せません。');return true;}try{const errors=validateSoulDeck(prior.before,profile.owned).errors;if(errors.length)throw Error(errors[0]);setSoulDeck(profile,prior.before);undo.delete(slot);persist();render({preserveScroll:true});toast('アシスト前の編成に戻しました');}catch(e){toast(e.message);}return true;}
+ const commit=deck=>{const errors=validateSoulDeck(deck,profile.owned).errors;if(errors.length)throw Error(errors[0]);undo.set(slot,{before:[...ensureSoulDecks(profile)],after:[...deck]});setSoulDeck(profile,deck);persist();sound.play('deckArrange');render({preserveScroll:true});};
+ if(isUndo){const prior=undo.get(slot);if(!prior||JSON.stringify(prior.after)!==JSON.stringify(original)){toast('戻せるアシスト編成がありません。編成後に手動変更した場合は戻せません。');return true;}try{const errors=validateSoulDeck(prior.before,profile.owned).errors;if(errors.length)throw Error(errors[0]);setSoulDeck(profile,prior.before);undo.delete(slot);persist();sound.play('deckArrange');render({preserveScroll:true});toast('アシスト前の編成に戻しました');}catch(e){toast(e.message,'error');}return true;}
  const dialog=document.createElement('dialog');dialog.className='deck-assist-dialog';dialog.setAttribute('aria-label',id?'おすすめシードと融合ルート':'アシスト編成の確認');document.body.append(dialog);
  const previousFocus=document.activeElement;const close=()=>{dialog.close();dialog.remove();window.removeEventListener('hashchange',close);if(previousFocus?.isConnected)previousFocus.focus();};
  window.addEventListener('hashchange',close);dialog.oncancel=e=>{e.preventDefault();close();};

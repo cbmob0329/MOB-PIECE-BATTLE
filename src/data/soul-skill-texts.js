@@ -1,5 +1,7 @@
+import {elementSkills} from './element-skills.js';
 // Exact v1 master text keys. Unknown text fails import; no inferred abilities.
-export default [
+import {revisedTexts,newSkills} from './tactical-skills.js';
+const texts=[
   "自分メイン | 自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
   "相手攻撃宣言時 | このフィギュアを手札へ戻し、その攻撃を終了する。",
   "自分メイン | このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。",
@@ -103,3 +105,7 @@ export default [
   "相手攻撃宣言時 | このフィギュアを対象にした攻撃を1回無効にする。",
   "自分メイン | このターンATK+20。相手のDEF上昇効果を無視し、撃破時の差分ライフダメージ+10。"
 ];
+
+export const originalSkillTexts=[...texts];
+for(const [id,text]of Object.entries(revisedTexts))texts[Number(id)]=text;for(const row of newSkills)texts[row.program]=row.text;for(const s of elementSkills)texts[s.program]='自分メイン | '+s.text;
+export default texts;

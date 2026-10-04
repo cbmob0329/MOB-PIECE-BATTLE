@@ -1,0 +1,2925 @@
+{
+  "version": 1,
+  "figures": [
+    {
+      "id": "ECL_S01",
+      "uid": "ELEMENT-ECL_S01",
+      "name": "モブヒバナ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "魔法",
+      "atk": 75,
+      "def": 65,
+      "tags": [
+        "mat-mouth",
+        "element-ECL"
+      ],
+      "role": "火属性の点火役",
+      "family": "ECL",
+      "series": "element-ECL",
+      "collection": "main",
+      "image": "piecefig/ECL_S01.png",
+      "soulSkill": {
+        "name": "ひとつぶの着火",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 112,
+        "effect": "味方の火属性1体のATKをこのターン30上げる。",
+        "description": "味方の火属性1体のATKをこのターン30上げる。",
+        "sourceText": "味方の火属性1体のATKをこのターン30上げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "R",
+        "statsText": "ATK 75 / DEF 65",
+        "traitText": "小さな炎を育てる見習い。",
+        "soul": {
+          "text": "味方の火属性1体のATKをこのターン30上げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "ECL",
+          "proposedEffect": "味方の火属性1体のATKをこのターン30上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "ECL_S02",
+      "uid": "ELEMENT-ECL_S02",
+      "name": "モブミカゲ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 60,
+      "def": 80,
+      "tags": [
+        "mat-mouth",
+        "element-ECL"
+      ],
+      "role": "月の弱体術",
+      "family": "ECL",
+      "series": "element-ECL",
+      "collection": "main",
+      "image": "piecefig/ECL_S02.png",
+      "soulSkill": {
+        "name": "三日月のまどろみ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 113,
+        "effect": "相手1体のATKを次の相手ターン終了まで20下げる。",
+        "description": "相手1体のATKを次の相手ターン終了まで20下げる。",
+        "sourceText": "相手1体のATKを次の相手ターン終了まで20下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "R",
+        "statsText": "ATK 60 / DEF 80",
+        "traitText": "三日月の短杖を持つ静かな魔導師。",
+        "soul": {
+          "text": "相手1体のATKを次の相手ターン終了まで20下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "ECL",
+          "proposedEffect": "相手1体のATKを次の相手ターン終了まで20下げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "ECL_S03",
+      "uid": "ELEMENT-ECL_S03",
+      "name": "モブタッセル",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "無",
+      "attackType": "魔法",
+      "atk": 65,
+      "def": 85,
+      "tags": [
+        "mat-mouth",
+        "element-ECL"
+      ],
+      "role": "手札を整える研究役",
+      "family": "ECL",
+      "series": "element-ECL",
+      "collection": "main",
+      "image": "piecefig/ECL_S03.png",
+      "soulSkill": {
+        "name": "ぱらり研究録",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 114,
+        "effect": "シードデッキから1体ドローする。場に魔法タイプの味方がいればライフ10回復。",
+        "description": "シードデッキから1体ドローする。場に魔法タイプの味方がいればライフ10回復。",
+        "sourceText": "シードデッキから1体ドローする。場に魔法タイプの味方がいればライフ10回復。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SR",
+        "statsText": "ATK 65 / DEF 85",
+        "traitText": "巻物と短い房飾りを携える研究好き。",
+        "soul": {
+          "text": "シードデッキから1体ドローする。場に魔法タイプの味方がいればライフ10回復。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "ECL",
+          "proposedEffect": "シードデッキから1体ドローする。味方に魔法タイプがいれば、自分ライフを10回復する。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "ECL_M01",
+      "uid": "ELEMENT-ECL_M01",
+      "name": "モブクレセント",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 125,
+      "def": 155,
+      "tags": [
+        "mat-mouth",
+        "element-ECL"
+      ],
+      "role": "魔法チームの守りと補給",
+      "family": "ECL",
+      "series": "element-ECL",
+      "collection": "main",
+      "image": "piecefig/ECL_M01.png",
+      "soulSkill": {
+        "name": "月読みの頁",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 115,
+        "effect": "魔法タイプの味方全体のDEFを次の相手ターン終了まで20上げる。場に火と闇の味方が揃えば1体ドロー。",
+        "description": "魔法タイプの味方全体のDEFを次の相手ターン終了まで20上げる。場に火と闇の味方が揃えば1体ドロー。",
+        "sourceText": "魔法タイプの味方全体のDEFを次の相手ターン終了まで20上げる。場に火と闇の味方が揃えば1体ドロー。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SR",
+        "statsText": "ATK 125 / DEF 155",
+        "traitText": "長杖と魔導書で術を組み立てる。",
+        "soul": {
+          "text": "魔法タイプの味方全体のDEFを次の相手ターン終了まで20上げる。場に火と闇の味方が揃えば1体ドロー。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "ECL",
+          "proposedEffect": "味方の魔法タイプ全体のDEFを次の相手ターン終了まで20上げる。味方に火属性と闇属性が両方いれば、シードデッキから1体ドローする。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "ECL_M02",
+      "uid": "ELEMENT-ECL_M02",
+      "name": "モブフレアベル",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "火",
+      "attackType": "魔法",
+      "atk": 160,
+      "def": 120,
+      "tags": [
+        "mat-mouth",
+        "element-ECL"
+      ],
+      "role": "炎で単体を崩す",
+      "family": "ECL",
+      "series": "element-ECL",
+      "collection": "main",
+      "image": "piecefig/ECL_M02.png",
+      "soulSkill": {
+        "name": "そでからフレア",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 116,
+        "effect": "相手1体のDEFをこのターン30下げる。場に火の味方がいればATKも20下げる。",
+        "description": "相手1体のDEFをこのターン30下げる。場に火の味方がいればATKも20下げる。",
+        "sourceText": "相手1体のDEFをこのターン30下げる。場に火の味方がいればATKも20下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SSR",
+        "statsText": "ATK 160 / DEF 120",
+        "traitText": "大きな袖から炎を放つ魔導師。",
+        "soul": {
+          "text": "相手1体のDEFをこのターン30下げる。場に火の味方がいればATKも20下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "ECL",
+          "proposedEffect": "相手1体のDEFをこのターン30下げる。味方に火属性がいれば、その相手のATKもこのターン20下げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "ECL_B01",
+      "uid": "ELEMENT-ECL_B01",
+      "name": "モブエクリプサ",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 210,
+      "def": 220,
+      "tags": [
+        "mat-mouth",
+        "element-ECL"
+      ],
+      "role": "月環で攻守を整える",
+      "family": "ECL",
+      "series": "element-ECL",
+      "collection": "main",
+      "image": "piecefig/ECL_B01.png",
+      "soulSkill": {
+        "name": "月環の大魔法",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 117,
+        "effect": "魔法タイプの味方全体のATKをこのターン30上げ、相手1体のATKを次の相手ターン終了まで30下げる。",
+        "description": "魔法タイプの味方全体のATKをこのターン30上げ、相手1体のATKを次の相手ターン終了まで30下げる。",
+        "sourceText": "魔法タイプの味方全体のATKをこのターン30上げ、相手1体のATKを次の相手ターン終了まで30下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "UR",
+        "statsText": "ATK 210 / DEF 220",
+        "traitText": "大帽と月環を広げる最高階級の術師。",
+        "soul": {
+          "text": "魔法タイプの味方全体のATKをこのターン30上げ、相手1体のATKを次の相手ターン終了まで30下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "ECL",
+          "proposedEffect": "味方の魔法タイプ全体のATKをこのターン30上げる。相手1体のATKを次の相手ターン終了まで30下げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "DUA_S01",
+      "uid": "ELEMENT-DUA_S01",
+      "name": "モブアカネ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 85,
+      "def": 55,
+      "tags": [
+        "mat-mouth",
+        "element-DUA"
+      ],
+      "role": "攻撃寄りの赤拳",
+      "family": "DUA",
+      "series": "element-DUA",
+      "collection": "main",
+      "image": "piecefig/DUA_S01.png",
+      "soulSkill": {
+        "name": "赤拳の勢い",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 118,
+        "effect": "味方1体のATKをこのターン20上げる。その味方の次の攻撃で撃破したらライフ10回復。",
+        "description": "味方1体のATKをこのターン20上げる。その味方の次の攻撃で撃破したらライフ10回復。",
+        "sourceText": "味方1体のATKをこのターン20上げる。その味方の次の攻撃で撃破したらライフ10回復。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "R",
+        "statsText": "ATK 85 / DEF 55",
+        "traitText": "紅縁の小さな白フードと赤グローブで、軽快なジャブを繰り出す。",
+        "soul": {
+          "text": "味方1体のATKをこのターン20上げる。その味方の次の攻撃で撃破したらライフ10回復。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "DUA",
+          "proposedEffect": "味方1体のATKをこのターン20上げる。その味方がこのターンに行う次の攻撃で相手を戦闘で撃破した場合、自分ライフを10回復する。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "DUA_S02",
+      "uid": "ELEMENT-DUA_S02",
+      "name": "モブアオビ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 55,
+      "def": 85,
+      "tags": [
+        "mat-mouth",
+        "element-DUA"
+      ],
+      "role": "防御寄りの青拳",
+      "family": "DUA",
+      "series": "element-DUA",
+      "collection": "main",
+      "image": "piecefig/DUA_S02.png",
+      "soulSkill": {
+        "name": "青拳ブロック",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 119,
+        "effect": "味方1体のDEFを次の相手ターン終了まで30上げる。水属性ならATK/DEF低下も解除。",
+        "description": "味方1体のDEFを次の相手ターン終了まで30上げる。水属性ならATK/DEF低下も解除。",
+        "sourceText": "味方1体のDEFを次の相手ターン終了まで30上げる。水属性ならATK/DEF低下も解除。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "R",
+        "statsText": "ATK 55 / DEF 85",
+        "traitText": "白スカーフと青いミットをまとい、低い姿勢で相手の一撃を受け止める。",
+        "soul": {
+          "text": "味方1体のDEFを次の相手ターン終了まで30上げる。水属性ならATK/DEF低下も解除。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "DUA",
+          "proposedEffect": "味方1体のDEFを次の相手ターン終了まで30上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "DUA_S03",
+      "uid": "ELEMENT-DUA_S03",
+      "name": "モブユラ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "魔法",
+      "atk": 70,
+      "def": 80,
+      "tags": [
+        "mat-mouth",
+        "element-DUA"
+      ],
+      "role": "攻守の不足を補うお守り",
+      "family": "DUA",
+      "series": "element-DUA",
+      "collection": "main",
+      "image": "piecefig/DUA_S03.png",
+      "soulSkill": {
+        "name": "双火のおまもり",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 120,
+        "effect": "味方1体のATKがDEFより高ければ次の相手ターン終了までDEF+20。それ以外はこのターンATK+20。",
+        "description": "味方1体のATKがDEFより高ければ次の相手ターン終了までDEF+20。それ以外はこのターンATK+20。",
+        "sourceText": "味方1体のATKがDEFより高ければ次の相手ターン終了までDEF+20。それ以外はこのターンATK+20。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SR",
+        "statsText": "ATK 70 / DEF 80",
+        "traitText": "赤青の左右非対称な装いで、掌に小さな双炎チャームを掲げる。",
+        "soul": {
+          "text": "味方1体のATKがDEFより高ければ次の相手ターン終了までDEF+20。それ以外はこのターンATK+20。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "DUA",
+          "proposedEffect": "味方1体を選ぶ。その味方の現在のATKがDEFより高ければ、DEFを次の相手ターン終了まで20上げる。それ以外なら、ATKをこのターン20上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "DUA_M01",
+      "uid": "ELEMENT-DUA_M01",
+      "name": "モブレッカ",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 175,
+      "def": 105,
+      "tags": [
+        "mat-mouth",
+        "element-DUA"
+      ],
+      "role": "防御強化を突破する赤拳",
+      "family": "DUA",
+      "series": "element-DUA",
+      "collection": "main",
+      "image": "piecefig/DUA_M01.png",
+      "soulSkill": {
+        "name": "紅蓮のぶちぬき",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 121,
+        "effect": "物理タイプの味方1体のATKをこのターン30上げ、DEF上昇を無視して攻撃する。",
+        "description": "物理タイプの味方1体のATKをこのターン30上げ、DEF上昇を無視して攻撃する。",
+        "sourceText": "物理タイプの味方1体のATKをこのターン30上げ、DEF上昇を無視して攻撃する。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SR",
+        "statsText": "ATK 175 / DEF 105",
+        "traitText": "赤い裏地のマントを広げ、大型の紅蓮拳を前方へ打ち出す。",
+        "soul": {
+          "text": "物理タイプの味方1体のATKをこのターン30上げ、DEF上昇を無視して攻撃する。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "DUA",
+          "proposedEffect": "味方の物理タイプ1体のATKをこのターン30上げる。その味方はこのターン、DEF上昇効果を無視して攻撃する。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "DUA_M02",
+      "uid": "ELEMENT-DUA_M02",
+      "name": "モブソウハ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 115,
+      "def": 165,
+      "tags": [
+        "mat-mouth",
+        "element-DUA"
+      ],
+      "role": "青拳で全体を守る",
+      "family": "DUA",
+      "series": "element-DUA",
+      "collection": "main",
+      "image": "piecefig/DUA_M02.png",
+      "soulSkill": {
+        "name": "蒼炎のかまえ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 122,
+        "effect": "味方全体のDEFを次の相手ターン終了まで20上げる。次の相手ターンの最初の正の差分ダメージを20軽減。",
+        "description": "味方全体のDEFを次の相手ターン終了まで20上げる。次の相手ターンの最初の正の差分ダメージを20軽減。",
+        "sourceText": "味方全体のDEFを次の相手ターン終了まで20上げる。次の相手ターンの最初の正の差分ダメージを20軽減。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SSR",
+        "statsText": "ATK 115 / DEF 165",
+        "traitText": "長い青マントを翻し、胸を守る大型青拳と掲げた赤拳を構える。",
+        "soul": {
+          "text": "味方全体のDEFを次の相手ターン終了まで20上げる。次の相手ターンの最初の正の差分ダメージを20軽減。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "DUA",
+          "proposedEffect": "味方全体のDEFを次の相手ターン終了まで20上げる。次の相手ターンに自分が受ける最初の差分ライフダメージを20減らす。減らした結果は0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "DUA_B01",
+      "uid": "ELEMENT-DUA_B01",
+      "name": "モブツインブレイズ",
+      "rarity": "MOB",
+      "soulClass": "mob",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 230,
+      "def": 200,
+      "tags": [
+        "mat-mouth",
+        "element-DUA"
+      ],
+      "role": "赤青の力を1体に託す",
+      "family": "DUA",
+      "series": "element-DUA",
+      "collection": "main",
+      "image": "piecefig/DUA_B01.png",
+      "soulSkill": {
+        "name": "二色の握りこぶし",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 123,
+        "effect": "物理タイプの味方1体のATK/DEFを次の相手ターン終了まで40上げ、このターン次に撃破した時ライフ30回復。",
+        "description": "物理タイプの味方1体のATK/DEFを次の相手ターン終了まで40上げ、このターン次に撃破した時ライフ30回復。",
+        "sourceText": "物理タイプの味方1体のATK/DEFを次の相手ターン終了まで40上げ、このターン次に撃破した時ライフ30回復。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "MOB",
+        "statsText": "ATK 230 / DEF 200",
+        "traitText": "双炎の紋章と左右の巨大な赤青拳を備え、白い大襟を広げて堂々と立つ。",
+        "soul": {
+          "text": "物理タイプの味方1体のATK/DEFを次の相手ターン終了まで40上げ、このターン次に撃破した時ライフ30回復。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "DUA",
+          "proposedEffect": "味方の物理タイプ1体のATKとDEFを次の相手ターン終了まで40上げる。その味方がこのターン次に相手を戦闘で撃破したとき、自分ライフを30回復する。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "GHO_S01",
+      "uid": "ELEMENT-GHO_S01",
+      "name": "モブスス",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 65,
+      "def": 75,
+      "tags": [
+        "element-GHO"
+      ],
+      "role": "小鎌で力を吸い取る",
+      "family": "GHO",
+      "series": "element-GHO",
+      "collection": "main",
+      "image": "piecefig/GHO_S01.png",
+      "soulSkill": {
+        "name": "こぼれ火あつめ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 124,
+        "effect": "相手1体のATKを次の相手ターン終了まで10下げ、ライフ10回復。",
+        "description": "相手1体のATKを次の相手ターン終了まで10下げ、ライフ10回復。",
+        "sourceText": "相手1体のATKを次の相手ターン終了まで10下げ、ライフ10回復。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "R",
+        "statsText": "ATK 65 / DEF 75",
+        "traitText": "小さな角と短い炭色の外套。三日月鎌を片手に、青緑の尾で静かに立つ。",
+        "soul": {
+          "text": "相手1体のATKを次の相手ターン終了まで10下げ、ライフ10回復。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "GHO",
+          "proposedEffect": "相手1体のATKを次の相手ターン終了まで10下げ、自分ライフを10回復する。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "GHO_S02",
+      "uid": "ELEMENT-GHO_S02",
+      "name": "モブユラギ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 50,
+      "def": 90,
+      "tags": [
+        "element-GHO"
+      ],
+      "role": "魂灯の回復役",
+      "family": "GHO",
+      "series": "element-GHO",
+      "collection": "main",
+      "image": "piecefig/GHO_S02.png",
+      "soulSkill": {
+        "name": "ちいさな灯守り",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 125,
+        "effect": "ライフ20回復。味方1体のDEFを次の相手ターン終了まで10上げる。光属性ならATK/DEF低下も解除。",
+        "description": "ライフ20回復。味方1体のDEFを次の相手ターン終了まで10上げる。光属性ならATK/DEF低下も解除。",
+        "sourceText": "ライフ20回復。味方1体のDEFを次の相手ターン終了まで10上げる。光属性ならATK/DEF低下も解除。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "R",
+        "statsText": "ATK 50 / DEF 90",
+        "traitText": "暗い青緑の外套に、小さな魂灯を抱く種。曲がる尾が段差のある台座へつながる。",
+        "soul": {
+          "text": "ライフ20回復。味方1体のDEFを次の相手ターン終了まで10上げる。光属性ならATK/DEF低下も解除。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "GHO",
+          "proposedEffect": "自分ライフを20回復する。味方1体のDEFを次の相手ターン終了まで10上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "GHO_S03",
+      "uid": "ELEMENT-GHO_S03",
+      "name": "モブハクロ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 85,
+      "def": 65,
+      "tags": [
+        "element-GHO"
+      ],
+      "role": "劣勢から守りを崩す",
+      "family": "GHO",
+      "series": "element-GHO",
+      "collection": "main",
+      "image": "piecefig/GHO_S03.png",
+      "soulSkill": {
+        "name": "白露の刈り跡",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 126,
+        "effect": "相手1体のDEFをこのターン20下げる。自分のライフが少ない場合は30下げる。",
+        "description": "相手1体のDEFをこのターン20下げる。自分のライフが少ない場合は30下げる。",
+        "sourceText": "相手1体のDEFをこのターン20下げる。自分のライフが少ない場合は30下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SR",
+        "statsText": "ATK 85 / DEF 65",
+        "traitText": "白い頭骨と紺色の羽織。小鎌を横に抱え、青い霊火の帯で斜めに浮かぶ。",
+        "soul": {
+          "text": "相手1体のDEFをこのターン20下げる。自分のライフが少ない場合は30下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "GHO",
+          "proposedEffect": "相手1体のDEFをこのターン20下げる。自分ライフが相手ライフより少なければ、その相手のDEFをこのターンさらに10下げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "GHO_M01",
+      "uid": "ELEMENT-GHO_M01",
+      "name": "モブカリオン",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 160,
+      "def": 120,
+      "tags": [
+        "element-GHO"
+      ],
+      "role": "狙った敵を刈り取る",
+      "family": "GHO",
+      "series": "element-GHO",
+      "collection": "main",
+      "image": "piecefig/GHO_M01.png",
+      "soulSkill": {
+        "name": "鎌先の道しるべ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 127,
+        "effect": "相手1体のDEFをこのターン30下げる。その相手がこのターン撃破されたらライフ20回復。",
+        "description": "相手1体のDEFをこのターン30下げる。その相手がこのターン撃破されたらライフ20回復。",
+        "sourceText": "相手1体のDEFをこのターン30下げる。その相手がこのターン撃破されたらライフ20回復。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SR",
+        "statsText": "ATK 160 / DEF 120",
+        "traitText": "後ろへ反る角と青緑の肩火を持つ中位種。大鎌を両手で構え、霊火の支柱が身体を支える。",
+        "soul": {
+          "text": "相手1体のDEFをこのターン30下げる。その相手がこのターン撃破されたらライフ20回復。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "GHO",
+          "proposedEffect": "相手1体のDEFをこのターン30下げる。その相手がこのターン次に戦闘で撃破されたとき、自分ライフを20回復する。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "GHO_M02",
+      "uid": "ELEMENT-GHO_M02",
+      "name": "モブトモリ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 120,
+      "def": 160,
+      "tags": [
+        "element-GHO"
+      ],
+      "role": "魂灯でシードを循環させる",
+      "family": "GHO",
+      "series": "element-GHO",
+      "collection": "main",
+      "image": "piecefig/GHO_M02.png",
+      "soulSkill": {
+        "name": "帰り道の魂灯",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 128,
+        "effect": "ライフ20回復。墓地のシードを最大2体選び、選んだ順にシードデッキの下へ戻す。",
+        "description": "ライフ20回復。墓地のシードを最大2体選び、選んだ順にシードデッキの下へ戻す。",
+        "sourceText": "ライフ20回復。墓地のシードを最大2体選び、選んだ順にシードデッキの下へ戻す。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SSR",
+        "statsText": "ATK 120 / DEF 160",
+        "traitText": "紫灰の外套と氷色の裏地を持つ中位種。片手に魂灯、片手に鎌を携えて傾く。",
+        "soul": {
+          "text": "ライフ20回復。墓地のシードを最大2体選び、選んだ順にシードデッキの下へ戻す。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "GHO",
+          "proposedEffect": "自分ライフを20回復する。自分の墓地のseedを最大2体選び、シードデッキの一番下へ好きな順で戻す。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "GHO_B01",
+      "uid": "ELEMENT-GHO_B01",
+      "name": "モブグリムヴェイル",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 205,
+      "def": 225,
+      "tags": [
+        "element-GHO"
+      ],
+      "role": "霊火の幕で消耗戦を制する",
+      "family": "GHO",
+      "series": "element-GHO",
+      "collection": "main",
+      "image": "piecefig/GHO_B01.png",
+      "soulSkill": {
+        "name": "終夜のヴェイル",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 129,
+        "effect": "相手全体のATKを次の相手ターン終了まで30下げる。発動前の墓地にシードが3体以上あればライフ30回復。",
+        "description": "相手全体のATKを次の相手ターン終了まで30下げる。発動前の墓地にシードが3体以上あればライフ30回復。",
+        "sourceText": "相手全体のATKを次の相手ターン終了まで30下げる。発動前の墓地にシードが3体以上あればライフ30回復。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "UR",
+        "statsText": "ATK 205 / DEF 225",
+        "traitText": "巨大な巻角と幅広の霊火襟を備えた最上位。幾重もの外套と大鎌、太い魂の尾で堂々と構える。",
+        "soul": {
+          "text": "相手全体のATKを次の相手ターン終了まで30下げる。発動前の墓地にシードが3体以上あればライフ30回復。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "GHO",
+          "proposedEffect": "相手全体のATKを次の相手ターン終了まで30下げる。自分の墓地にseedが3体以上あれば、自分ライフを30回復する。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "NIN_S01",
+      "uid": "ELEMENT-NIN_S01",
+      "name": "モブコハク",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 75,
+      "def": 65,
+      "tags": [
+        "element-NIN"
+      ],
+      "role": "苦無で突破口を開く",
+      "family": "NIN",
+      "series": "element-NIN",
+      "collection": "main",
+      "image": "piecefig/NIN_S01.png",
+      "soulSkill": {
+        "name": "くないの糸口",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 130,
+        "effect": "相手1体のDEFをこのターン20下げる。雷属性の相手にはさらに10下げる。",
+        "description": "相手1体のDEFをこのターン20下げる。雷属性の相手にはさらに10下げる。",
+        "sourceText": "相手1体のDEFをこのターン20下げる。雷属性の相手にはさらに10下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "R",
+        "statsText": "ATK 75 / DEF 65",
+        "traitText": "琥珀色の丸眼鏡。小さな苦無と手振りが特徴の軽装忍者。",
+        "soul": {
+          "text": "相手1体のDEFをこのターン20下げる。雷属性の相手にはさらに10下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "NIN",
+          "proposedEffect": "相手1体のDEFをこのターン20下げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "NIN_S02",
+      "uid": "ELEMENT-NIN_S02",
+      "name": "モブシロマキ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "無",
+      "attackType": "魔法",
+      "atk": 55,
+      "def": 85,
+      "tags": [
+        "element-NIN"
+      ],
+      "role": "巻物で不利を払う",
+      "family": "NIN",
+      "series": "element-NIN",
+      "collection": "main",
+      "image": "piecefig/NIN_S02.png",
+      "soulSkill": {
+        "name": "巻物の煙幕",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 131,
+        "effect": "味方1体のATK/DEF低下を解除し、DEFを次の相手ターン終了まで10上げる。",
+        "description": "味方1体のATK/DEF低下を解除し、DEFを次の相手ターン終了まで10上げる。",
+        "sourceText": "味方1体のATK/DEF低下を解除し、DEFを次の相手ターン終了まで10上げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "R",
+        "statsText": "ATK 55 / DEF 85",
+        "traitText": "白布を主役にした巻物使い。横向きの低い構え。",
+        "soul": {
+          "text": "味方1体のATK/DEF低下を解除し、DEFを次の相手ターン終了まで10上げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "NIN",
+          "proposedEffect": "味方1体に付いているATK/DEF低下効果を解除する。その味方のDEFを次の相手ターン終了まで10上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "NIN_S03",
+      "uid": "ELEMENT-NIN_S03",
+      "name": "モブスミネ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 80,
+      "def": 70,
+      "tags": [
+        "element-NIN"
+      ],
+      "role": "二枚の刃で味方を支える",
+      "family": "NIN",
+      "series": "element-NIN",
+      "collection": "main",
+      "image": "piecefig/NIN_S03.png",
+      "soulSkill": {
+        "name": "ふたつの刃",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 132,
+        "effect": "異なる味方2体までのATKをこのターン20上げる。",
+        "description": "異なる味方2体までのATKをこのターン20上げる。",
+        "sourceText": "異なる味方2体までのATKをこのターン20上げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SR",
+        "statsText": "ATK 80 / DEF 70",
+        "traitText": "青灰色の小さな襟巻きと二振りの三日月小刀。低く構える。",
+        "soul": {
+          "text": "異なる味方2体までのATKをこのターン20上げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "NIN",
+          "proposedEffect": "異なる味方2体までを選び、それぞれのATKをこのターン20上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "NIN_M01",
+      "uid": "ELEMENT-NIN_M01",
+      "name": "モブカゲヌイ",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 130,
+      "def": 150,
+      "tags": [
+        "element-NIN"
+      ],
+      "role": "太刀構えで攻勢を受け止める",
+      "family": "NIN",
+      "series": "element-NIN",
+      "collection": "main",
+      "image": "piecefig/NIN_M01.png",
+      "soulSkill": {
+        "name": "影縫いの太刀構え",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 133,
+        "effect": "味方1体のDEFを次の相手ターン終了まで30上げ、相手1体のATKを同じ期限まで20下げる。",
+        "description": "味方1体のDEFを次の相手ターン終了まで30上げ、相手1体のATKを同じ期限まで20下げる。",
+        "sourceText": "味方1体のDEFを次の相手ターン終了まで30上げ、相手1体のATKを同じ期限まで20下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SR",
+        "statsText": "ATK 130 / DEF 150",
+        "traitText": "二股の長い襟巻きと重ね装備。両手の長刀で守りを固める。",
+        "soul": {
+          "text": "味方1体のDEFを次の相手ターン終了まで30上げ、相手1体のATKを同じ期限まで20下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "NIN",
+          "proposedEffect": "味方1体のDEFを次の相手ターン終了まで30上げる。相手1体のATKを次の相手ターン終了まで20下げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "NIN_M02",
+      "uid": "ELEMENT-NIN_M02",
+      "name": "モブホネツバメ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 165,
+      "def": 115,
+      "tags": [
+        "element-NIN"
+      ],
+      "role": "異なる敵を斬る二刀役",
+      "family": "NIN",
+      "series": "element-NIN",
+      "collection": "main",
+      "image": "piecefig/NIN_M02.png",
+      "soulSkill": {
+        "name": "燕返しの二段",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 134,
+        "effect": "物理タイプの味方1体はこのターン最大2回、異なる相手に攻撃できる。",
+        "description": "物理タイプの味方1体はこのターン最大2回、異なる相手に攻撃できる。",
+        "sourceText": "物理タイプの味方1体はこのターン最大2回、異なる相手に攻撃できる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "SSR",
+        "statsText": "ATK 165 / DEF 115",
+        "traitText": "白黒の襟巻きを翻し、二刀で踏み込む。背の鞘が目印。",
+        "soul": {
+          "text": "物理タイプの味方1体はこのターン最大2回、異なる相手に攻撃できる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "NIN",
+          "proposedEffect": "味方の物理タイプ1体を選ぶ。その味方はこのターン最大2回攻撃できる。2回目は1回目とは異なる相手を選ぶ。この効果を受けた味方は、このターンダイレクトアタックできない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "NIN_B01",
+      "uid": "ELEMENT-NIN_B01",
+      "name": "モブオボロゼツ",
+      "rarity": "MOB",
+      "soulClass": "mob",
+      "attribute": "闇",
+      "attackType": "物理",
+      "atk": 240,
+      "def": 190,
+      "tags": [
+        "element-NIN"
+      ],
+      "role": "双刀で守護をかわす決定役",
+      "family": "NIN",
+      "series": "element-NIN",
+      "collection": "main",
+      "image": "piecefig/NIN_B01.png",
+      "soulSkill": {
+        "name": "朧双刃の決着",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 135,
+        "effect": "異なる物理タイプの味方2体までのATKをこのターン30上げ、守護を無視して攻撃対象を選べる。",
+        "description": "異なる物理タイプの味方2体までのATKをこのターン30上げ、守護を無視して攻撃対象を選べる。",
+        "sourceText": "異なる物理タイプの味方2体までのATKをこのターン30上げ、守護を無視して攻撃対象を選べる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET2_24体_性能と融合案.json",
+        "rarity": "MOB",
+        "statsText": "ATK 240 / DEF 190",
+        "traitText": "幾重もの大襟巻きと幅広の双刀。幼い体形のまま最上位の威容。",
+        "soul": {
+          "text": "異なる物理タイプの味方2体までのATKをこのターン30上げ、守護を無視して攻撃対象を選べる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "NIN",
+          "proposedEffect": "異なる味方の物理タイプ2体までを選び、それぞれのATKをこのターン30上げる。選んだ味方はこのターン、守護効果を無視して攻撃対象を選べる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "FRG_S01",
+      "uid": "ELEMENT-FRG_S01",
+      "name": "モブココル",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 65,
+      "def": 70,
+      "tags": [
+        "mat-mouth",
+        "element-FRG"
+      ],
+      "role": "火力準備",
+      "family": "FRG",
+      "series": "element-FRG",
+      "collection": "main",
+      "image": "piecefig/FRG_S01.png",
+      "soulSkill": {
+        "name": "炉種のひとすくい",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 136,
+        "effect": "味方1体のATKをこのターン15上げる。火属性なら20上げる。",
+        "description": "味方1体のATKをこのターン15上げる。火属性なら20上げる。",
+        "sourceText": "味方1体のATKをこのターン15上げる。火属性なら20上げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 65 / DEF 70",
+        "traitText": "小さな石炭スコップで炉を育てる、工房の見習い。",
+        "soul": {
+          "text": "味方1体のATKをこのターン15上げる。火属性なら20上げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "FRG",
+          "proposedEffect": "対象のATKを15上げる。対象が火属性なら上昇量は20。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "FRG_S02",
+      "uid": "ELEMENT-FRG_S02",
+      "name": "モブチック",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "無",
+      "attackType": "物理",
+      "atk": 55,
+      "def": 90,
+      "tags": [
+        "mat-mouth",
+        "element-FRG"
+      ],
+      "role": "修理・弱体解除",
+      "family": "FRG",
+      "series": "element-FRG",
+      "collection": "main",
+      "image": "piecefig/FRG_S02.png",
+      "soulSkill": {
+        "name": "ゆるみ直し",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 137,
+        "effect": "味方1体の一時的DEF低下を1件選んで解除する。",
+        "description": "味方1体の一時的DEF低下を1件選んで解除する。",
+        "sourceText": "味方1体の一時的DEF低下を1件選んで解除する。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 55 / DEF 90",
+        "traitText": "大きなレンチを両手で抱え、緩んだ歯車を見逃さない。",
+        "soul": {
+          "text": "味方1体の一時的DEF低下を1件選んで解除する。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "FRG",
+          "proposedEffect": "対象にかかっている一時的なDEF低下を1件選んで解除する。複数ある場合は使用者が選ぶ。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "FRG_S03",
+      "uid": "ELEMENT-FRG_S03",
+      "name": "モブプフ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 70,
+      "def": 60,
+      "tags": [
+        "mat-mouth",
+        "element-FRG"
+      ],
+      "role": "短期火力支援",
+      "family": "FRG",
+      "series": "element-FRG",
+      "collection": "main",
+      "image": "piecefig/FRG_S03.png",
+      "soulSkill": {
+        "name": "ふいごの追い風",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 138,
+        "effect": "味方1体のATK+25、DEF-10（このターン）。火属性の味方には風の助けで守護を無視する効果も付与。",
+        "description": "味方1体のATK+25、DEF-10（このターン）。火属性の味方には風の助けで守護を無視する効果も付与。",
+        "sourceText": "味方1体のATK+25、DEF-10（このターン）。火属性の味方には風の助けで守護を無視する効果も付与。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 70 / DEF 60",
+        "traitText": "赤茶のフードを揺らして、小さなふいごから熱を送り出す。",
+        "soul": {
+          "text": "味方1体のATK+25、DEF-10（このターン）。火属性の味方には風の助けで守護を無視する効果も付与。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "FRG",
+          "proposedEffect": "対象のATKを25上げ、DEFを10下げる。DEFは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "FRG_M01",
+      "uid": "ELEMENT-FRG_M01",
+      "name": "モブボルタ",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 125,
+      "def": 155,
+      "tags": [
+        "mat-mouth",
+        "element-FRG"
+      ],
+      "role": "前衛防護",
+      "family": "FRG",
+      "series": "element-FRG",
+      "collection": "main",
+      "image": "piecefig/FRG_M01.png",
+      "soulSkill": {
+        "name": "圧力鍛造",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 139,
+        "effect": "味方1体のDEFを次の相手ターン終了まで30上げる。炉心工房の仲間ならATKも10上げる。",
+        "description": "味方1体のDEFを次の相手ターン終了まで30上げる。炉心工房の仲間ならATKも10上げる。",
+        "sourceText": "味方1体のDEFを次の相手ターン終了まで30上げる。炉心工房の仲間ならATKも10上げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "SR",
+        "statsText": "ATK 125 / DEF 155",
+        "traitText": "鍛造槌と圧力盾で前線を支える、頑丈な炉心鍛冶。",
+        "soul": {
+          "text": "味方1体のDEFを次の相手ターン終了まで30上げる。炉心工房の仲間ならATKも10上げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "FRG",
+          "proposedEffect": "対象のDEFを30上げる。対象がFRGファミリーならATKも10上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "FRG_M02",
+      "uid": "ELEMENT-FRG_M02",
+      "name": "モブギアロ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "雷",
+      "attackType": "物理",
+      "atk": 135,
+      "def": 140,
+      "tags": [
+        "mat-mouth",
+        "element-FRG"
+      ],
+      "role": "機構調整・妨害",
+      "family": "FRG",
+      "series": "element-FRG",
+      "collection": "main",
+      "image": "piecefig/FRG_M02.png",
+      "soulSkill": {
+        "name": "クランプ再調整",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 140,
+        "effect": "相手1体の一時的ATK上昇を1件解除し、味方1体のDEFを次の相手ターン終了まで20上げる。",
+        "description": "相手1体の一時的ATK上昇を1件解除し、味方1体のDEFを次の相手ターン終了まで20上げる。",
+        "sourceText": "相手1体の一時的ATK上昇を1件解除し、味方1体のDEFを次の相手ターン終了まで20上げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "SSR",
+        "statsText": "ATK 135 / DEF 140",
+        "traitText": "緑青の装甲と可変クランプで、味方の機構を整える整備士。",
+        "soul": {
+          "text": "相手1体の一時的ATK上昇を1件解除し、味方1体のDEFを次の相手ターン終了まで20上げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "FRG",
+          "proposedEffect": "敵の一時的なATK上昇を1件解除し、味方のDEFを20上げる。解除対象がなければ使用不可。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "FRG_B01",
+      "uid": "ELEMENT-FRG_B01",
+      "name": "モブイグニス",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 240,
+      "def": 205,
+      "tags": [
+        "mat-mouth",
+        "element-FRG"
+      ],
+      "role": "炉砲・攻勢支援",
+      "family": "FRG",
+      "series": "element-FRG",
+      "collection": "main",
+      "image": "piecefig/FRG_B01.png",
+      "soulSkill": {
+        "name": "大炉心フルスロットル",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 141,
+        "effect": "相手1体のDEF-30、味方1体のATK+35（このターン）。",
+        "description": "相手1体のDEF-30、味方1体のATK+35（このターン）。",
+        "sourceText": "相手1体のDEF-30、味方1体のATK+35（このターン）。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "UR",
+        "statsText": "ATK 240 / DEF 205",
+        "traitText": "大炉心と双排気塔を備え、炉砲と機械指を操る工房の主。",
+        "soul": {
+          "text": "相手1体のDEF-30、味方1体のATK+35（このターン）。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "FRG",
+          "proposedEffect": "敵のDEFを30下げ、味方のATKを35上げる。DEFは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "CRY_S01",
+      "uid": "ELEMENT-CRY_S01",
+      "name": "モブアメル",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 55,
+      "def": 85,
+      "tags": [
+        "mat-mouth",
+        "element-CRY"
+      ],
+      "role": "視界・探索補助",
+      "family": "CRY",
+      "series": "element-CRY",
+      "collection": "main",
+      "image": "piecefig/CRY_S01.png",
+      "soulSkill": {
+        "name": "結晶灯の道しるべ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 142,
+        "effect": "シードデッキの上3体までを確認し、1体を一番上へ。残りの順番を保つ。ドローはしない。",
+        "description": "シードデッキの上3体までを確認し、1体を一番上へ。残りの順番を保つ。ドローはしない。",
+        "sourceText": "シードデッキの上3体までを確認し、1体を一番上へ。残りの順番を保つ。ドローはしない。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 55 / DEF 85",
+        "traitText": "小さな結晶灯を抱えて暗い坑道を案内する見習い。",
+        "soul": {
+          "text": "シードデッキの上3体までを確認し、1体を一番上へ。残りの順番を保つ。ドローはしない。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "CRY",
+          "proposedEffect": "山札の上から最大3枚を自分だけ確認する。1枚を一番上に置き、残りを元の相対順序でその下に戻す。カードは引かない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "CRY_S02",
+      "uid": "ELEMENT-CRY_S02",
+      "name": "モブフロー",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 50,
+      "def": 95,
+      "tags": [
+        "mat-mouth",
+        "element-CRY"
+      ],
+      "role": "保護・魔力補助",
+      "family": "CRY",
+      "series": "element-CRY",
+      "collection": "main",
+      "image": "piecefig/CRY_S02.png",
+      "soulSkill": {
+        "name": "欠片のぬくもり",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 143,
+        "effect": "味方1体のDEFを次の相手ターン終了まで20上げる。シードなら25。水属性ならATK/DEF低下も解除。",
+        "description": "味方1体のDEFを次の相手ターン終了まで20上げる。シードなら25。水属性ならATK/DEF低下も解除。",
+        "sourceText": "味方1体のDEFを次の相手ターン終了まで20上げる。シードなら25。水属性ならATK/DEF低下も解除。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 50 / DEF 95",
+        "traitText": "淡い鉱石の声を聞き、両手で欠片を大切に守る子。",
+        "soul": {
+          "text": "味方1体のDEFを次の相手ターン終了まで20上げる。シードなら25。水属性ならATK/DEF低下も解除。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "CRY",
+          "proposedEffect": "対象のDEFを20上げる。対象がseedなら上昇量は25。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "CRY_S03",
+      "uid": "ELEMENT-CRY_S03",
+      "name": "モブオニル",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 80,
+      "def": 55,
+      "tags": [
+        "mat-mouth",
+        "element-CRY"
+      ],
+      "role": "採集・弱点砕き",
+      "family": "CRY",
+      "series": "element-CRY",
+      "collection": "main",
+      "image": "piecefig/CRY_S03.png",
+      "soulSkill": {
+        "name": "黒曜のひと欠け",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 144,
+        "effect": "相手1体のDEFをこのターン15下げる。使用時にDEFがATKより高ければ25下げる。",
+        "description": "相手1体のDEFをこのターン15下げる。使用時にDEFがATKより高ければ25下げる。",
+        "sourceText": "相手1体のDEFをこのターン15下げる。使用時にDEFがATKより高ければ25下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 80 / DEF 55",
+        "traitText": "欠けた黒曜石を集めて道しるべを作る小さな採掘係。",
+        "soul": {
+          "text": "相手1体のDEFをこのターン15下げる。使用時にDEFがATKより高ければ25下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "CRY",
+          "proposedEffect": "対象のDEFを15下げる。使用時の対象DEFがATKより高い場合は25下げる。DEFは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "CRY_M01",
+      "uid": "ELEMENT-CRY_M01",
+      "name": "モブシオン",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 110,
+      "def": 170,
+      "tags": [
+        "mat-mouth",
+        "element-CRY"
+      ],
+      "role": "防御寄り魔法支援",
+      "family": "CRY",
+      "series": "element-CRY",
+      "collection": "main",
+      "image": "piecefig/CRY_M01.png",
+      "soulSkill": {
+        "name": "紫水晶の二重壁",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 145,
+        "effect": "味方1体のDEF+30。別の味方1体を追加で選びDEF+15（次の相手ターン終了まで）。",
+        "description": "味方1体のDEF+30。別の味方1体を追加で選びDEF+15（次の相手ターン終了まで）。",
+        "sourceText": "味方1体のDEF+30。別の味方1体を追加で選びDEF+15（次の相手ターン終了まで）。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "SR",
+        "statsText": "ATK 110 / DEF 170",
+        "traitText": "結晶盾で仲間を守り、紫水晶の杖で進む道を照らす番人。",
+        "soul": {
+          "text": "味方1体のDEF+30。別の味方1体を追加で選びDEF+15（次の相手ターン終了まで）。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "CRY",
+          "proposedEffect": "味方1体のDEFを30上げる。別の味方1体を追加で選び、そのDEFを15上げてもよい。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "CRY_M02",
+      "uid": "ELEMENT-CRY_M02",
+      "name": "モブラズリ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 165,
+      "def": 115,
+      "tags": [
+        "mat-mouth",
+        "element-CRY"
+      ],
+      "role": "結晶刃・突破",
+      "family": "CRY",
+      "series": "element-CRY",
+      "collection": "main",
+      "image": "piecefig/CRY_M02.png",
+      "soulSkill": {
+        "name": "蒼脈の切先",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 146,
+        "effect": "味方1体のATK+20、相手1体のDEF-20（このターン）。相手が地属性ならDEF-30。",
+        "description": "味方1体のATK+20、相手1体のDEF-20（このターン）。相手が地属性ならDEF-30。",
+        "sourceText": "味方1体のATK+20、相手1体のDEF-20（このターン）。相手が地属性ならDEF-30。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "SSR",
+        "statsText": "ATK 165 / DEF 115",
+        "traitText": "長い結晶刃を振るい、青い鉱脈を静かに守る戦士。",
+        "soul": {
+          "text": "味方1体のATK+20、相手1体のDEF-20（このターン）。相手が地属性ならDEF-30。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "CRY",
+          "proposedEffect": "味方のATKを20上げ、敵のDEFを20下げる。敵が地属性ならDEF低下量は30。DEFは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "CRY_B01",
+      "uid": "ELEMENT-CRY_B01",
+      "name": "モブオブシア",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 200,
+      "def": 240,
+      "tags": [
+        "mat-mouth",
+        "element-CRY"
+      ],
+      "role": "重装の範囲魔法・制圧",
+      "family": "CRY",
+      "series": "element-CRY",
+      "collection": "main",
+      "image": "piecefig/CRY_B01.png",
+      "soulSkill": {
+        "name": "双球・黒曜領域",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 147,
+        "effect": "異なる相手2体までのATK/DEFを次の相手ターン終了まで20下げる。",
+        "description": "異なる相手2体までのATK/DEFを次の相手ターン終了まで20下げる。",
+        "sourceText": "異なる相手2体までのATK/DEFを次の相手ターン終了まで20下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "UR",
+        "statsText": "ATK 200 / DEF 240",
+        "traitText": "両手に深紫の魔法球を宿す、黒曜石の重装守護者。",
+        "soul": {
+          "text": "異なる相手2体までのATK/DEFを次の相手ターン終了まで20下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "CRY",
+          "proposedEffect": "選んだ敵それぞれのATKとDEFを20ずつ下げる。1体しか選べない場合も使用可能。各値は0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RUN_S01",
+      "uid": "ELEMENT-RUN_S01",
+      "name": "モブルノ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 80,
+      "def": 60,
+      "tags": [
+        "mat-mouth",
+        "element-RUN"
+      ],
+      "role": "軽近接・探索",
+      "family": "RUN",
+      "series": "element-RUN",
+      "collection": "main",
+      "image": "piecefig/RUN_S01.png",
+      "soulSkill": {
+        "name": "欠け刃の狙い",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 148,
+        "effect": "相手1体のATKを次の相手ターン終了まで15下げる。使用時にATKがDEFより高ければ25下げる。",
+        "description": "相手1体のATKを次の相手ターン終了まで15下げる。使用時にATKがDEFより高ければ25下げる。",
+        "sourceText": "相手1体のATKを次の相手ターン終了まで15下げる。使用時にATKがDEFより高ければ25下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 80 / DEF 60",
+        "traitText": "小さな欠け刃を手に、はじめての遺跡巡りへ向かう見習い。",
+        "soul": {
+          "text": "相手1体のATKを次の相手ターン終了まで15下げる。使用時にATKがDEFより高ければ25下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "RUN",
+          "proposedEffect": "対象のATKを15下げる。使用時の対象ATKがDEFより高い場合は25下げる。ATKは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RUN_S02",
+      "uid": "ELEMENT-RUN_S02",
+      "name": "モブパピ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 55,
+      "def": 80,
+      "tags": [
+        "mat-mouth",
+        "element-RUN"
+      ],
+      "role": "刻印支援",
+      "family": "RUN",
+      "series": "element-RUN",
+      "collection": "main",
+      "image": "piecefig/RUN_S02.png",
+      "soulSkill": {
+        "name": "石板の転記",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 149,
+        "effect": "味方1体のATKかDEFを選んでこのターン20上げる。刻印遺跡の仲間ならもう一方も5上げる。",
+        "description": "味方1体のATKかDEFを選んでこのターン20上げる。刻印遺跡の仲間ならもう一方も5上げる。",
+        "sourceText": "味方1体のATKかDEFを選んでこのターン20上げる。刻印遺跡の仲間ならもう一方も5上げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 55 / DEF 80",
+        "traitText": "石板に古いルーンを写し取る、几帳面な小さな記録係。",
+        "soul": {
+          "text": "味方1体のATKかDEFを選んでこのターン20上げる。刻印遺跡の仲間ならもう一方も5上げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "RUN",
+          "proposedEffect": "ATKかDEFのどちらか一方を選んで20上げる。対象がRUNファミリーなら選ばなかった値も5上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RUN_S03",
+      "uid": "ELEMENT-RUN_S03",
+      "name": "モブトル",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 45,
+      "def": 105,
+      "tags": [
+        "mat-mouth",
+        "element-RUN"
+      ],
+      "role": "丸盾の守り",
+      "family": "RUN",
+      "series": "element-RUN",
+      "collection": "main",
+      "image": "piecefig/RUN_S03.png",
+      "soulSkill": {
+        "name": "丸盾の受け流し",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 150,
+        "effect": "相手1体のATK-10、味方1体のDEF+15（次の相手ターン終了まで）。地属性の味方ならDEFをさらに10上げる。",
+        "description": "相手1体のATK-10、味方1体のDEF+15（次の相手ターン終了まで）。地属性の味方ならDEFをさらに10上げる。",
+        "sourceText": "相手1体のATK-10、味方1体のDEF+15（次の相手ターン終了まで）。地属性の味方ならDEFをさらに10上げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 45 / DEF 105",
+        "traitText": "大きすぎる丸盾を抱え、仲間の一歩前に立つ守り役。",
+        "soul": {
+          "text": "相手1体のATK-10、味方1体のDEF+15（次の相手ターン終了まで）。地属性の味方ならDEFをさらに10上げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "RUN",
+          "proposedEffect": "敵のATKを10下げ、味方のDEFを15上げる。ATKは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RUN_M01",
+      "uid": "ELEMENT-RUN_M01",
+      "name": "モブヴァル",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 120,
+      "def": 165,
+      "tags": [
+        "mat-mouth",
+        "element-RUN"
+      ],
+      "role": "装甲門番",
+      "family": "RUN",
+      "series": "element-RUN",
+      "collection": "main",
+      "image": "piecefig/RUN_M01.png",
+      "soulSkill": {
+        "name": "門衛の攻守換装",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 151,
+        "effect": "味方1体を選ぶ。構え：ATK-15/DEF+45（次の相手ターン終了まで）。進撃：ATK+35/DEF-15（このターン）。",
+        "description": "味方1体を選ぶ。構え：ATK-15/DEF+45（次の相手ターン終了まで）。進撃：ATK+35/DEF-15（このターン）。",
+        "sourceText": "味方1体を選ぶ。構え：ATK-15/DEF+45（次の相手ターン終了まで）。進撃：ATK+35/DEF-15（このターン）。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "SR",
+        "statsText": "ATK 120 / DEF 165",
+        "traitText": "欠け刃とルーン盾を使い、遺跡の門を静かに守る装甲兵。",
+        "soul": {
+          "text": "味方1体を選ぶ。構え：ATK-15/DEF+45（次の相手ターン終了まで）。進撃：ATK+35/DEF-15（このターン）。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "RUN",
+          "proposedEffect": "「構え」を選び、ATKを15下げDEFを45上げる。または「進撃」を選び、DEFを15下げATKを35上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RUN_M02",
+      "uid": "ELEMENT-RUN_M02",
+      "name": "モブボルグ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "雷",
+      "attackType": "物理",
+      "atk": 175,
+      "def": 105,
+      "tags": [
+        "mat-mouth",
+        "element-RUN"
+      ],
+      "role": "双砲の破甲",
+      "family": "RUN",
+      "series": "element-RUN",
+      "collection": "main",
+      "image": "piecefig/RUN_M02.png",
+      "soulSkill": {
+        "name": "連装ルーン照射",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 152,
+        "effect": "相手1体のDEFを35下げるか、異なる相手2体のDEFを各20下げる（このターン）。",
+        "description": "相手1体のDEFを35下げるか、異なる相手2体のDEFを各20下げる（このターン）。",
+        "sourceText": "相手1体のDEFを35下げるか、異なる相手2体のDEFを各20下げる（このターン）。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "SSR",
+        "statsText": "ATK 175 / DEF 105",
+        "traitText": "腕のルーン砲に力をためて、重い一撃を放つ砲甲兵。",
+        "soul": {
+          "text": "相手1体のDEFを35下げるか、異なる相手2体のDEFを各20下げる（このターン）。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "RUN",
+          "proposedEffect": "敵1体のDEFを35下げるか、異なる敵2体のDEFをそれぞれ20下げる。DEFは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RUN_B01",
+      "uid": "ELEMENT-RUN_B01",
+      "name": "モブグラド",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "雷",
+      "attackType": "物理",
+      "atk": 255,
+      "def": 185,
+      "tags": [
+        "mat-mouth",
+        "element-RUN"
+      ],
+      "role": "巨刃と三連砲",
+      "family": "RUN",
+      "series": "element-RUN",
+      "collection": "main",
+      "image": "piecefig/RUN_B01.png",
+      "soulSkill": {
+        "name": "封門・三連刻印",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 153,
+        "effect": "相手全体のDEFをこのターン20下げる。その中の1体のATKを次の相手ターン終了まで30下げる。",
+        "description": "相手全体のDEFをこのターン20下げる。その中の1体のATKを次の相手ターン終了まで30下げる。",
+        "sourceText": "相手全体のDEFをこのターン20下げる。その中の1体のATKを次の相手ターン終了まで30下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "UR",
+        "statsText": "ATK 255 / DEF 185",
+        "traitText": "巨大な欠け刃と三連の腕砲を備え、封印の最前線に立つ重装騎士。",
+        "soul": {
+          "text": "相手全体のDEFをこのターン20下げる。その中の1体のATKを次の相手ターン終了まで30下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "RUN",
+          "proposedEffect": "選んだ敵のDEFを各20下げる。さらに、その中から1体を選んでATKを30下げる。各値は0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "SPI_S01",
+      "uid": "ELEMENT-SPI_S01",
+      "name": "モブトモリ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 50,
+      "def": 85,
+      "tags": [
+        "mat-mouth",
+        "element-SPI"
+      ],
+      "role": "霊灯の案内",
+      "family": "SPI",
+      "series": "element-SPI",
+      "collection": "main",
+      "image": "piecefig/SPI_S01.png",
+      "soulSkill": {
+        "name": "帰り路の灯",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 154,
+        "effect": "墓地から発動元と同名でないシード1体を手札へ戻す。",
+        "description": "墓地から発動元と同名でないシード1体を手札へ戻す。",
+        "sourceText": "墓地から発動元と同名でないシード1体を手札へ戻す。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 50 / DEF 85",
+        "traitText": "小さな霊火ランタンで、迷い道をそっと照らす案内見習い。",
+        "soul": {
+          "text": "墓地から発動元と同名でないシード1体を手札へ戻す。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "SPI",
+          "proposedEffect": "自分の墓地から、このカードと同名でないseedを1枚選び、手札に戻す。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "SPI_S02",
+      "uid": "ELEMENT-SPI_S02",
+      "name": "モブヌイ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "無",
+      "attackType": "魔法",
+      "atk": 45,
+      "def": 95,
+      "tags": [
+        "mat-mouth",
+        "element-SPI"
+      ],
+      "role": "霊糸の補修",
+      "family": "SPI",
+      "series": "element-SPI",
+      "collection": "main",
+      "image": "piecefig/SPI_S02.png",
+      "soulSkill": {
+        "name": "ほつれ結び",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 155,
+        "effect": "味方1体の一時的ATK低下を1件解除。魂灯仕立ての仲間ならDEF+10（次の相手ターン終了まで）。",
+        "description": "味方1体の一時的ATK低下を1件解除。魂灯仕立ての仲間ならDEF+10（次の相手ターン終了まで）。",
+        "sourceText": "味方1体の一時的ATK低下を1件解除。魂灯仕立ての仲間ならDEF+10（次の相手ターン終了まで）。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 45 / DEF 95",
+        "traitText": "青緑の糸巻きを抱え、ほころびと途切れた縁を縫い直す。",
+        "soul": {
+          "text": "味方1体の一時的ATK低下を1件解除。魂灯仕立ての仲間ならDEF+10（次の相手ターン終了まで）。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "SPI",
+          "proposedEffect": "対象の一時的なATK低下を1件解除する。対象がSPIファミリーならDEFも10上げる。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "SPI_S03",
+      "uid": "ELEMENT-SPI_S03",
+      "name": "モブヒソ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 65,
+      "def": 65,
+      "tags": [
+        "mat-mouth",
+        "element-SPI"
+      ],
+      "role": "気配感知・鎮静",
+      "family": "SPI",
+      "series": "element-SPI",
+      "collection": "main",
+      "image": "piecefig/SPI_S03.png",
+      "soulSkill": {
+        "name": "ささやきの鈴",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 156,
+        "effect": "相手1体のATKを次の相手ターン終了まで20下げる。一時的ATK上昇があれば30下げる。",
+        "description": "相手1体のATKを次の相手ターン終了まで20下げる。一時的ATK上昇があれば30下げる。",
+        "sourceText": "相手1体のATKを次の相手ターン終了まで20下げる。一時的ATK上昇があれば30下げる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "R",
+        "statsText": "ATK 65 / DEF 65",
+        "traitText": "木のラトルを耳元で振り、遠くのささやきを聞き取る。",
+        "soul": {
+          "text": "相手1体のATKを次の相手ターン終了まで20下げる。一時的ATK上昇があれば30下げる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "SPI",
+          "proposedEffect": "対象のATKを20下げる。使用時に対象へ一時的なATK上昇がある場合は低下量を30にする。ATKは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "SPI_M01",
+      "uid": "ELEMENT-SPI_M01",
+      "name": "モブユラギ",
+      "rarity": "SR",
+      "soulClass": "middle",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 115,
+      "def": 155,
+      "tags": [
+        "mat-mouth",
+        "element-SPI"
+      ],
+      "role": "霊火の鎮護",
+      "family": "SPI",
+      "series": "element-SPI",
+      "collection": "main",
+      "image": "piecefig/SPI_M01.png",
+      "soulSkill": {
+        "name": "綴じ本の鎮魂",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 157,
+        "effect": "墓地の魂灯仕立ての仲間1体をシードデッキ下へ戻し、味方1体のATK/DEF+20（次の相手ターン終了まで）。シードだけを戻せる。",
+        "description": "墓地の魂灯仕立ての仲間1体をシードデッキ下へ戻し、味方1体のATK/DEF+20（次の相手ターン終了まで）。シードだけを戻せる。",
+        "sourceText": "墓地の魂灯仕立ての仲間1体をシードデッキ下へ戻し、味方1体のATK/DEF+20（次の相手ターン終了まで）。シードだけを戻せる。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "SR",
+        "statsText": "ATK 115 / DEF 155",
+        "traitText": "霊火杖と綴じ本を携え、骨の外套で仲間を守る語り部。",
+        "soul": {
+          "text": "墓地の魂灯仕立ての仲間1体をシードデッキ下へ戻し、味方1体のATK/DEF+20（次の相手ターン終了まで）。シードだけを戻せる。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "SPI",
+          "proposedEffect": "墓地のSPIカード1枚を山札の一番下に戻し、味方1体のATK・DEFを各20上げる。使用中のこのカードは戻せない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "SPI_M02",
+      "uid": "ELEMENT-SPI_M02",
+      "name": "モブイトマ",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 135,
+      "def": 145,
+      "tags": [
+        "mat-mouth",
+        "element-SPI"
+      ],
+      "role": "糸操り・攻勢阻害",
+      "family": "SPI",
+      "series": "element-SPI",
+      "collection": "main",
+      "image": "piecefig/SPI_M02.png",
+      "soulSkill": {
+        "name": "操り糸の結び替え",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 158,
+        "effect": "相手1体のATK-30、味方1体のATK+15（次の相手ターン終了まで）。光と闇の味方が揃えばライフ10回復。",
+        "description": "相手1体のATK-30、味方1体のATK+15（次の相手ターン終了まで）。光と闇の味方が揃えばライフ10回復。",
+        "sourceText": "相手1体のATK-30、味方1体のATK+15（次の相手ターン終了まで）。光と闇の味方が揃えばライフ10回復。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "SSR",
+        "statsText": "ATK 135 / DEF 145",
+        "traitText": "糸付きの小さな霊人形を操り、相手の力を巧みに逸らす。",
+        "soul": {
+          "text": "相手1体のATK-30、味方1体のATK+15（次の相手ターン終了まで）。光と闇の味方が揃えばライフ10回復。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "SPI",
+          "proposedEffect": "敵のATKを30下げ、味方のATKを15上げる。敵のATKは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "SPI_B01",
+      "uid": "ELEMENT-SPI_B01",
+      "name": "モブネクロア",
+      "rarity": "UR",
+      "soulClass": "mob",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 210,
+      "def": 220,
+      "tags": [
+        "mat-mouth",
+        "element-SPI"
+      ],
+      "role": "霊火と糸の統率",
+      "family": "SPI",
+      "series": "element-SPI",
+      "collection": "main",
+      "image": "piecefig/SPI_B01.png",
+      "soulSkill": {
+        "name": "魂縫いの大儀式",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 159,
+        "effect": "墓地から発動元と同名でない魂灯仕立てのシードかミドル1体を手札へ戻す。相手を最大2体選びATK-25（次の相手ターン終了まで）。",
+        "description": "墓地から発動元と同名でない魂灯仕立てのシードかミドル1体を手札へ戻す。相手を最大2体選びATK-25（次の相手ターン終了まで）。",
+        "sourceText": "墓地から発動元と同名でない魂灯仕立てのシードかミドル1体を手札へ戻す。相手を最大2体選びATK-25（次の相手ターン終了まで）。"
+      },
+      "source": {
+        "figureFile": "MOB_SET3_performance_proposals.json",
+        "rarity": "UR",
+        "statsText": "ATK 210 / DEF 220",
+        "traitText": "霊火杖と操り糸を束ねる、継ぎ接ぎの装束をまとった導き手。",
+        "soul": {
+          "text": "墓地から発動元と同名でない魂灯仕立てのシードかミドル1体を手札へ戻す。相手を最大2体選びATK-25（次の相手ターン終了まで）。"
+        },
+        "decision": "現存する個別フィギュア画像のみ採用。提案を現行エンジンで実装・検証。",
+        "basis": {
+          "family": "SPI",
+          "proposedEffect": "墓地からこのカードと同名でないSPIのseedまたはmiddleを1枚手札に戻す。その後、異なる敵2体までのATKを各25下げる。ATKは0未満にならない。"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RETRO21",
+      "uid": "MOB-RETRO-021",
+      "name": "モブカセプル",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "無",
+      "attackType": "魔法",
+      "atk": 60,
+      "def": 80,
+      "tags": [
+        "72",
+        "12",
+        "69"
+      ],
+      "role": "回収・回復",
+      "series": "retro",
+      "collection": "main",
+      "image": "piecefig/RETRO21.png",
+      "soulSkill": {
+        "name": "リワインド・メモリー",
+        "program": 0,
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+        "description": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+        "sourceText": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。"
+      },
+      "source": {
+        "figureFile": "RETRO21_30_性能設計案.json",
+        "rarity": "R",
+        "statsText": "ATK 60 / DEF 80",
+        "traitText": "黒いぷるぷるボディにカセットをしまった、巻き戻し好きの小さなスライム。",
+        "soul": {
+          "text": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。"
+        },
+        "decision": "現存6画像だけ採用。既存実行プログラムへ対応。"
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RETRO23",
+      "uid": "MOB-RETRO-023",
+      "name": "モブフロッピット",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 70,
+      "def": 60,
+      "tags": [
+        "72",
+        "50",
+        "55"
+      ],
+      "role": "条件付き補充",
+      "series": "retro",
+      "collection": "main",
+      "image": "piecefig/RETRO23.png",
+      "soulSkill": {
+        "name": "フロッピー便",
+        "program": 27,
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。",
+        "description": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。",
+        "sourceText": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。"
+      },
+      "source": {
+        "figureFile": "RETRO21_30_性能設計案.json",
+        "rarity": "R",
+        "statsText": "ATK 70 / DEF 60",
+        "traitText": "データの小包を運ぶ、ねむそうな小さなコウモリ便。",
+        "soul": {
+          "text": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。"
+        },
+        "decision": "現存6画像だけ採用。既存実行プログラムへ対応。"
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RETRO24",
+      "uid": "MOB-RETRO-024",
+      "name": "モブブラウンゴ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 60,
+      "def": 80,
+      "tags": [
+        "72",
+        "50",
+        "82"
+      ],
+      "role": "タグ妨害",
+      "series": "retro",
+      "collection": "main",
+      "image": "piecefig/RETRO24.png",
+      "soulSkill": {
+        "name": "チャンネル・ミュート",
+        "program": 34,
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体の通常タグ1つをターン終了まで無効化する。",
+        "description": "相手1体の通常タグ1つをターン終了まで無効化する。",
+        "sourceText": "相手1体の通常タグ1つをターン終了まで無効化する。"
+      },
+      "source": {
+        "figureFile": "RETRO21_30_性能設計案.json",
+        "rarity": "R",
+        "statsText": "ATK 60 / DEF 80",
+        "traitText": "古いブラウン管から顔を出す、チャンネル渡りのテレビおばけ。",
+        "soul": {
+          "text": "相手1体の通常タグ1つをターン終了まで無効化する。"
+        },
+        "decision": "現存6画像だけ採用。既存実行プログラムへ対応。"
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RETRO25",
+      "uid": "MOB-RETRO-025",
+      "name": "モブポケパッド",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "attackType": "物理",
+      "atk": 75,
+      "def": 60,
+      "tags": [
+        "72",
+        "36",
+        "69"
+      ],
+      "role": "防御突破支援",
+      "series": "retro",
+      "collection": "main",
+      "image": "piecefig/RETRO25.png",
+      "soulSkill": {
+        "name": "パッド・ブレイク",
+        "program": 16,
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のDEF-20。このターン、その相手への攻撃はDEF上昇効果を無視する。",
+        "description": "相手1体のDEF-20。このターン、その相手への攻撃はDEF上昇効果を無視する。",
+        "sourceText": "相手1体のDEF-20。このターン、その相手への攻撃はDEF上昇効果を無視する。"
+      },
+      "source": {
+        "figureFile": "RETRO21_30_性能設計案.json",
+        "rarity": "R",
+        "statsText": "ATK 75 / DEF 60",
+        "traitText": "大きな携帯ゲームのリュックで旅をする、ちびサイズの斥候。",
+        "soul": {
+          "text": "相手1体のDEF-20。このターン、その相手への攻撃はDEF上昇効果を無視する。"
+        },
+        "decision": "現存6画像だけ採用。既存実行プログラムへ対応。"
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RETRO29",
+      "uid": "MOB-RETRO-029",
+      "name": "モブチューニャ",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 130,
+      "def": 150,
+      "tags": [
+        "72",
+        "37",
+        "58",
+        "36",
+        "81",
+        "69",
+        "40"
+      ],
+      "role": "スキル封じ",
+      "series": "retro",
+      "collection": "main",
+      "image": "piecefig/RETRO29.png",
+      "soulSkill": {
+        "name": "チューニング・ロック",
+        "program": 29,
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。",
+        "description": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。",
+        "sourceText": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+      },
+      "source": {
+        "figureFile": "RETRO21_30_性能設計案.json",
+        "rarity": "SSR",
+        "statsText": "ATK 130 / DEF 150",
+        "traitText": "大きな帽子と選局ダイヤルで、見えない電波を探るちび魔術師。",
+        "soul": {
+          "text": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+        },
+        "decision": "現存6画像だけ採用。既存実行プログラムへ対応。"
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "RETRO30",
+      "uid": "MOB-RETRO-030",
+      "name": "モブコンティニュー",
+      "rarity": "UR",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "attackType": "魔法",
+      "atk": 150,
+      "def": 150,
+      "tags": [
+        "72",
+        "30",
+        "34",
+        "69",
+        "78",
+        "82",
+        "40",
+        "58",
+        "81"
+      ],
+      "role": "全体強化・生存補助",
+      "series": "retro",
+      "collection": "main",
+      "image": "piecefig/RETRO30.png",
+      "soulSkill": {
+        "name": "ワンモア・コンティニュー",
+        "program": 44,
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。",
+        "description": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。",
+        "sourceText": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。"
+      },
+      "source": {
+        "figureFile": "RETRO21_30_性能設計案.json",
+        "rarity": "UR",
+        "statsText": "ATK 150 / DEF 150",
+        "traitText": "小さな体と大きな勇気で、何度でも挑戦するゲームセンターの竜。",
+        "soul": {
+          "text": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。"
+        },
+        "decision": "現存6画像だけ採用。既存実行プログラムへ対応。"
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    }
+  ],
+  "tags": [
+    {
+      "id": "element-ECL",
+      "name": "月環の魔帽"
+    },
+    {
+      "id": "element-DUA",
+      "name": "双炎拳"
+    },
+    {
+      "id": "element-GHO",
+      "name": "幽火の灯守"
+    },
+    {
+      "id": "element-NIN",
+      "name": "影縫い忍団"
+    },
+    {
+      "id": "element-FRG",
+      "name": "炉心工房"
+    },
+    {
+      "id": "element-CRY",
+      "name": "結晶灯の守人"
+    },
+    {
+      "id": "element-RUN",
+      "name": "刻印遺跡"
+    },
+    {
+      "id": "element-SPI",
+      "name": "魂灯仕立て"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "SET2_FUS_ECL_M01",
+      "target": "ECL_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "ECL_S02"
+        },
+        {
+          "id": "ECL_S03"
+        }
+      ],
+      "label": "モブミカゲ × モブタッセル",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブクレセント",
+      "targetClass": "middle",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_ECL_M02",
+      "target": "ECL_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "ECL_S01"
+        },
+        {
+          "id": "ECL_S02"
+        }
+      ],
+      "label": "モブヒバナ × モブミカゲ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブフレアベル",
+      "targetClass": "middle",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_ECL_B01",
+      "target": "ECL_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "ECL_M01"
+        },
+        {
+          "id": "ECL_M02"
+        }
+      ],
+      "label": "モブクレセント × モブフレアベル",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブエクリプサ",
+      "targetClass": "mob",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_DUA_M01",
+      "target": "DUA_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "DUA_S01"
+        },
+        {
+          "id": "DUA_S03"
+        }
+      ],
+      "label": "モブアカネ × モブユラ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブレッカ",
+      "targetClass": "middle",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_DUA_M02",
+      "target": "DUA_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "DUA_S02"
+        },
+        {
+          "id": "DUA_S03"
+        }
+      ],
+      "label": "モブアオビ × モブユラ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブソウハ",
+      "targetClass": "middle",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_DUA_B01",
+      "target": "DUA_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "DUA_M01"
+        },
+        {
+          "id": "DUA_M02"
+        }
+      ],
+      "label": "モブレッカ × モブソウハ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブツインブレイズ",
+      "targetClass": "mob",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_GHO_M01",
+      "target": "GHO_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "GHO_S01"
+        },
+        {
+          "id": "GHO_S03"
+        }
+      ],
+      "label": "モブスス × モブハクロ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブカリオン",
+      "targetClass": "middle",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_GHO_M02",
+      "target": "GHO_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "GHO_S01"
+        },
+        {
+          "id": "GHO_S02"
+        }
+      ],
+      "label": "モブスス × モブユラギ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブトモリ",
+      "targetClass": "middle",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_GHO_B01",
+      "target": "GHO_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "GHO_M01"
+        },
+        {
+          "id": "GHO_M02"
+        }
+      ],
+      "label": "モブカリオン × モブトモリ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブグリムヴェイル",
+      "targetClass": "mob",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_NIN_M01",
+      "target": "NIN_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "NIN_S01"
+        },
+        {
+          "id": "NIN_S02"
+        }
+      ],
+      "label": "モブコハク × モブシロマキ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブカゲヌイ",
+      "targetClass": "middle",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_NIN_M02",
+      "target": "NIN_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "NIN_S01"
+        },
+        {
+          "id": "NIN_S03"
+        }
+      ],
+      "label": "モブコハク × モブスミネ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブホネツバメ",
+      "targetClass": "middle",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET2_FUS_NIN_B01",
+      "target": "NIN_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "NIN_M01"
+        },
+        {
+          "id": "NIN_M02"
+        }
+      ],
+      "label": "モブカゲヌイ × モブホネツバメ",
+      "special": false,
+      "status": "implemented",
+      "targetName": "モブオボロゼツ",
+      "targetClass": "mob",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_FRG_M01",
+      "target": "FRG_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "FRG_S01"
+        },
+        {
+          "id": "FRG_S02"
+        }
+      ],
+      "label": "モブココル × モブチック",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_FRG_M02",
+      "target": "FRG_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "FRG_S02"
+        },
+        {
+          "id": "FRG_S03"
+        }
+      ],
+      "label": "モブチック × モブプフ",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_FRG_B01",
+      "target": "FRG_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "FRG_M01"
+        },
+        {
+          "id": "FRG_M02"
+        }
+      ],
+      "label": "モブボルタ × モブギアロ",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_CRY_M01",
+      "target": "CRY_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "CRY_S01"
+        },
+        {
+          "id": "CRY_S02"
+        }
+      ],
+      "label": "モブアメル × モブフロー",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_CRY_M02",
+      "target": "CRY_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "CRY_S02"
+        },
+        {
+          "id": "CRY_S03"
+        }
+      ],
+      "label": "モブフロー × モブオニル",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_CRY_B01",
+      "target": "CRY_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "CRY_M01"
+        },
+        {
+          "id": "CRY_M02"
+        }
+      ],
+      "label": "モブシオン × モブラズリ",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_RUN_M01",
+      "target": "RUN_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "RUN_S01"
+        },
+        {
+          "id": "RUN_S02"
+        }
+      ],
+      "label": "モブルノ × モブパピ",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_RUN_M02",
+      "target": "RUN_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "RUN_S02"
+        },
+        {
+          "id": "RUN_S03"
+        }
+      ],
+      "label": "モブパピ × モブトル",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_RUN_B01",
+      "target": "RUN_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "RUN_M01"
+        },
+        {
+          "id": "RUN_M02"
+        }
+      ],
+      "label": "モブヴァル × モブボルグ",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_SPI_M01",
+      "target": "SPI_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "SPI_S01"
+        },
+        {
+          "id": "SPI_S02"
+        }
+      ],
+      "label": "モブトモリ × モブヌイ",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_SPI_M02",
+      "target": "SPI_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "SPI_S02"
+        },
+        {
+          "id": "SPI_S03"
+        }
+      ],
+      "label": "モブヌイ × モブヒソ",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    },
+    {
+      "id": "SET3_SPI_B01",
+      "target": "SPI_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "SPI_M01"
+        },
+        {
+          "id": "SPI_M02"
+        }
+      ],
+      "label": "モブユラギ × モブイトマ",
+      "special": false,
+      "status": "implemented",
+      "basis": "系列の指定2素材による通常融合",
+      "bonusATK": 0,
+      "bonusDEF": 0
+    }
+  ]
+}

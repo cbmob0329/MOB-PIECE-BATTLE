@@ -1,0 +1,4 @@
+PASS Edge mobile: 54 PNGs; free claim storage failure/retry/rapid clicks/reload; old save/decks/currency preserved; acquisition labels; named family; hand skill cancel/confirm/grave/attribute buff/details; exactly3 banners; no page errors.
+PASS summon-cinematic: actual paid1/10; double confirmation/start/finish/skip; route/back/Escape; image failure; reduced motion; alpha mismatch0; increasing colors[0,129539,204190].
+PASS audio-browser: all12 attributes, mute/volume persistence, actual summon/fusion/skill audio and scope cleanup.
+PASS initial-release-browser: 3 choices/pools,45 cards, save rejection, old full slots, no repeated claim.

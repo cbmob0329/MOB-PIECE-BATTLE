@@ -1,0 +1,1409 @@
+{
+  "version": 1,
+  "meta": {
+    "source": "追加フィギュア2",
+    "accepted": 24,
+    "rejected": 26,
+    "selection": "Only piecefig images; never pixels"
+  },
+  "figures": [
+    {
+      "id": "BFX001",
+      "uid": "MOB-BFX-001",
+      "name": "モブカセットクレープ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "手札循環・テンポ",
+      "atk": 80,
+      "def": 100,
+      "tags": [
+        "bfx",
+        "bfx-day",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX001.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "リミックス・リロード",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "description": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "sourceText": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "program": 102
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_01of07/piecefig/BFX001.png",
+        "rarity": "SR",
+        "statsText": "ATK 80 / DEF 100",
+        "traitText": "カセット×クレープ×ローラースケート",
+        "soul": {
+          "text": "手札1体をデッキ下へ戻し、同じ属性を持つシードソウル1体をデッキから手札へ加える。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "カセット×クレープ×ローラースケート",
+          "intendedRole": "手札循環・テンポ",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "bd17e1caeeda0b5c323b27ee9d9dcc5e349fd4f2f4234ad860046e96c153151c",
+          "originalProgram": 38
+        }
+      }
+    },
+    {
+      "id": "BFX007",
+      "uid": "MOB-BFX-007",
+      "name": "モブソーダポケベル",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "魔法",
+      "role": "妨害・位置調整",
+      "atk": 80,
+      "def": 100,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX007.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "リフレクト・ポップ",
+        "timing": "attack-response",
+        "timingLabel": "相手攻撃宣言時",
+        "effect": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "description": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "sourceText": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "program": 108
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_01of07/piecefig/BFX007.png",
+        "rarity": "SR",
+        "statsText": "ATK 80 / DEF 100",
+        "traitText": "ポケベル×クリームソーダ×街の配達",
+        "soul": {
+          "text": "このフィギュアを対象にした攻撃を1回無効にし、自分フィールド内の位置を変更する。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "ポケベル×クリームソーダ×街の配達",
+          "intendedRole": "妨害・位置調整",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "6657dc7eb75ba24e608920f420467a8866f8e0f708060013b1a2af44b60f48c5",
+          "originalProgram": 7
+        }
+      }
+    },
+    {
+      "id": "BFX008",
+      "uid": "MOB-BFX-008",
+      "name": "モブワッフルキーボード",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "全体支援",
+      "atk": 70,
+      "def": 110,
+      "tags": [
+        "bfx",
+        "bfx-day",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX008.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "カラー・ユニゾン",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "description": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "sourceText": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "program": 105
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_01of07/piecefig/BFX008.png",
+        "rarity": "SR",
+        "statsText": "ATK 70 / DEF 110",
+        "traitText": "携帯キーボード×ワッフル×路上演奏",
+        "soul": {
+          "text": "味方全体のDEF+20。次の相手ターン、ATK/DEF低下効果を1回無効にする。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "携帯キーボード×ワッフル×路上演奏",
+          "intendedRole": "全体支援",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "a55ed0d5e571cad7e7be1fc402c00a01f686da3c574db6702eb247f87dfb3f8a",
+          "originalProgram": 12
+        }
+      }
+    },
+    {
+      "id": "BFX009",
+      "uid": "MOB-BFX-009",
+      "name": "モブキャンディアンテナ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "attackType": "魔法",
+      "role": "索敵・手札干渉",
+      "atk": 90,
+      "def": 90,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX009.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "同調アンテナ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分ライフを20消費し、このフィギュアと同じ属性を1つ以上持つシード1体をデッキから手札へ加える。",
+        "description": "自分ライフを20消費し、このフィギュアと同じ属性を1つ以上持つシード1体をデッキから手札へ加える。",
+        "sourceText": "自分ライフを20消費し、このフィギュアと同じ属性を1つ以上持つシード1体をデッキから手札へ加える。",
+        "program": 103
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_02of07/piecefig/BFX009.png",
+        "rarity": "SR",
+        "statsText": "ATK 90 / DEF 90",
+        "traitText": "テレビアンテナ×飴×ストリート放送",
+        "soul": {
+          "text": "相手1体の通常タグ1つをターン終了まで無効化する。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "テレビアンテナ×飴×ストリート放送",
+          "intendedRole": "索敵・手札干渉",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "035ef6134da75d2a875314423af57db6531a2dba4de492f69b6fb62341eedaf0",
+          "originalProgram": 34
+        }
+      }
+    },
+    {
+      "id": "BFX010",
+      "uid": "MOB-BFX-010",
+      "name": "モブパフェメトロノーム",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "魔法",
+      "role": "遅延・防御",
+      "atk": 70,
+      "def": 110,
+      "tags": [
+        "bfx",
+        "bfx-day",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX010.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "テンポ・ブレーキ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "description": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "sourceText": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "program": 110
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_02of07/piecefig/BFX010.png",
+        "rarity": "SR",
+        "statsText": "ATK 70 / DEF 110",
+        "traitText": "振り子時計×パフェ×リズム練習",
+        "soul": {
+          "text": "相手1体を選ぶ。そのフィギュアは次のバトルフェイズで最後にしか攻撃できない。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "振り子時計×パフェ×リズム練習",
+          "intendedRole": "遅延・防御",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "c79bddfedf9999c730bb5c183142e370cbbdadcd605b1240802e3838db2d744e",
+          "originalProgram": 28
+        }
+      }
+    },
+    {
+      "id": "BFX011",
+      "uid": "MOB-BFX-011",
+      "name": "モブジェリーポラロイド",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "対象選択・支援",
+      "atk": 80,
+      "def": 100,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX011.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "トップ・チューニング",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "description": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "sourceText": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "program": 111
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_02of07/piecefig/BFX011.png",
+        "rarity": "SR",
+        "statsText": "ATK 80 / DEF 100",
+        "traitText": "インスタントカメラ×ゼリー×街角撮影",
+        "soul": {
+          "text": "味方1体を選ぶ。その味方がこのターン撃破した場合、1体ドローする。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "インスタントカメラ×ゼリー×街角撮影",
+          "intendedRole": "対象選択・支援",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "74a6e2bd0f820bbb1bbd37aae095007162804c390770632a12494e8c0c8e9039",
+          "originalProgram": 27
+        }
+      }
+    },
+    {
+      "id": "BFX012",
+      "uid": "MOB-BFX-012",
+      "name": "モブマカロンケーブル",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "回避・循環",
+      "atk": 90,
+      "def": 90,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX012.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "おかえりセッション",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分の墓地からシード1体を手札へ戻す。",
+        "description": "自分の墓地からシード1体を手札へ戻す。",
+        "sourceText": "自分の墓地からシード1体を手札へ戻す。",
+        "program": 104
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_02of07/piecefig/BFX012.png",
+        "rarity": "SR",
+        "statsText": "ATK 90 / DEF 90",
+        "traitText": "コイルコード×マカロン×縄跳びダンス",
+        "soul": {
+          "text": "このフィギュアを手札へ戻し、その攻撃を終了する。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "コイルコード×マカロン×縄跳びダンス",
+          "intendedRole": "回避・循環",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "9dbc516ba98585248b69af8393c2f8229150564eb8d102ef6cf7fdf5650b3407",
+          "originalProgram": 1
+        }
+      }
+    },
+    {
+      "id": "BFX013",
+      "uid": "MOB-BFX-013",
+      "name": "モブトーストビート",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "連撃・自己強化",
+      "atk": 100,
+      "def": 80,
+      "tags": [
+        "bfx",
+        "bfx-day",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX013.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "ノイズ・スナップ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "description": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "sourceText": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "program": 106
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_02of07/piecefig/BFX013.png",
+        "rarity": "SR",
+        "statsText": "ATK 100 / DEF 80",
+        "traitText": "トースター×ハニートースト×ドラマー",
+        "soul": {
+          "text": "このターンATK+20。最初の攻撃で撃破した場合、別の相手1体へ追加攻撃できる。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "トースター×ハニートースト×ドラマー",
+          "intendedRole": "連撃・自己強化",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "5378769448d39ccbc668864239f25059dfbc652ee8df4df8a1f16d032c5175c2",
+          "originalProgram": 99
+        }
+      }
+    },
+    {
+      "id": "BFX014",
+      "uid": "MOB-BFX-014",
+      "name": "モブチェリーディスクマン",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "回収・補給",
+      "atk": 80,
+      "def": 100,
+      "tags": [
+        "bfx",
+        "bfx-remix",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX014.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "おかえりセッション",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分の墓地からシード1体を手札へ戻す。",
+        "description": "自分の墓地からシード1体を手札へ戻す。",
+        "sourceText": "自分の墓地からシード1体を手札へ戻す。",
+        "program": 104
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_02of07/piecefig/BFX014.png",
+        "rarity": "SR",
+        "statsText": "ATK 80 / DEF 100",
+        "traitText": "CDプレーヤー×チェリータルト×スケート",
+        "soul": {
+          "text": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "CDプレーヤー×チェリータルト×スケート",
+          "intendedRole": "回収・補給",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "f39cffdac7049ffff197c938280c84f539b16f1a7da455c674bc39714e81b7b2",
+          "originalProgram": 0
+        }
+      }
+    },
+    {
+      "id": "BFX015",
+      "uid": "MOB-BFX-015",
+      "name": "モブモチシンセ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "防御支援",
+      "atk": 70,
+      "def": 110,
+      "tags": [
+        "bfx",
+        "bfx-day",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX015.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "カラー・ユニゾン",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "description": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "sourceText": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "program": 105
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_02of07/piecefig/BFX015.png",
+        "rarity": "SR",
+        "statsText": "ATK 70 / DEF 110",
+        "traitText": "アナログシンセ×餅×バスキング",
+        "soul": {
+          "text": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "アナログシンセ×餅×バスキング",
+          "intendedRole": "防御支援",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "74f95e83b1f0480dd25eb2c7dd0dcb31a761ede87cce5bba74c4d046f9142fe7",
+          "originalProgram": 33
+        }
+      }
+    },
+    {
+      "id": "BFX016",
+      "uid": "MOB-BFX-016",
+      "name": "モブシャーベットホーン",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "魔法",
+      "role": "押し返し",
+      "atk": 90,
+      "def": 90,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX016.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "リターン・ビート",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "description": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "sourceText": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "program": 107
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_02of07/piecefig/BFX016.png",
+        "rarity": "SR",
+        "statsText": "ATK 90 / DEF 90",
+        "traitText": "自転車ホーン×シャーベット×路上行進",
+        "soul": {
+          "text": "相手1体のATK-20。そのフィギュアが次に攻撃するまでDEFも-10。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "自転車ホーン×シャーベット×路上行進",
+          "intendedRole": "押し返し",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "ddcb5510dbf31c71b4923dd449cd4edde97cc4d97633d01d4797657bf58aee5a",
+          "originalProgram": 10
+        }
+      }
+    },
+    {
+      "id": "BFX019",
+      "uid": "MOB-BFX-019",
+      "name": "モブクッキーポータブル",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "継続支援",
+      "atk": 80,
+      "def": 100,
+      "tags": [
+        "bfx",
+        "bfx-day",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX019.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "トップ・チューニング",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "description": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "sourceText": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+        "program": 111
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_03of07/piecefig/BFX019.png",
+        "rarity": "SR",
+        "statsText": "ATK 80 / DEF 100",
+        "traitText": "レコードプレーヤー×クッキー×ピクニックDJ",
+        "soul": {
+          "text": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "レコードプレーヤー×クッキー×ピクニックDJ",
+          "intendedRole": "継続支援",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "864388a9d9d3753d21ba585eeb71ba82c07bf22f1ee355f908c0ae664310fbf6",
+          "originalProgram": 11
+        }
+      }
+    },
+    {
+      "id": "BFX023",
+      "uid": "MOB-BFX-023",
+      "name": "モブゼリーステーション",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "情報・妨害",
+      "atk": 90,
+      "def": 110,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX023.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "サイレント・カット",
+        "timing": "skill-response",
+        "timingLabel": "相手スキル発動時",
+        "effect": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "description": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "sourceText": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "program": 109
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_03of07/piecefig/BFX023.png",
+        "rarity": "SSR",
+        "statsText": "ATK 90 / DEF 110",
+        "traitText": "ブラウン管×ゼリー×VJ",
+        "soul": {
+          "text": "相手1体のDEF-20。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "ブラウン管×ゼリー×VJ",
+          "intendedRole": "情報・妨害",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "9b56f171072dbbc0225998eb1292f9c236e31540b26344b991b2b6894fb6be4c",
+          "originalProgram": 29
+        }
+      }
+    },
+    {
+      "id": "BFX027",
+      "uid": "MOB-BFX-027",
+      "name": "モブタルトテレキャスター",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "雷",
+      "attackType": "魔法",
+      "role": "防御突破",
+      "atk": 110,
+      "def": 90,
+      "tags": [
+        "bfx",
+        "bfx-remix",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX027.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "ノイズ・スナップ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "description": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "sourceText": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+        "program": 106
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_04of07/piecefig/BFX027.png",
+        "rarity": "SSR",
+        "statsText": "ATK 110 / DEF 90",
+        "traitText": "公衆電話×タルト×ギター",
+        "soul": {
+          "text": "このターンATK+30。相手のDEF上昇効果を無視し、撃破時の差分ライフダメージ+10。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "公衆電話×タルト×ギター",
+          "intendedRole": "防御突破",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "db7e3719716af045a56d7abf958c867bfde5f9d3889f2330968d242f8adae4d2",
+          "originalProgram": 65
+        }
+      }
+    },
+    {
+      "id": "BFX030",
+      "uid": "MOB-BFX-030",
+      "name": "モブマシュマロテレポップ",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "交代・手札循環",
+      "atk": 90,
+      "def": 110,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX030.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "リターン・ビート",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "description": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "sourceText": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+        "program": 107
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_04of07/piecefig/BFX030.png",
+        "rarity": "SSR",
+        "statsText": "ATK 90 / DEF 110",
+        "traitText": "ダイヤルテレビ×マシュマロ×ポップダンス",
+        "soul": {
+          "text": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "ダイヤルテレビ×マシュマロ×ポップダンス",
+          "intendedRole": "交代・手札循環",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "直接召喚して展開を支える",
+          "sha256": "10a98a201ce3531f0ea7c982218bfbf2daa3a448744720013e47615deab7a0b3",
+          "originalProgram": 2
+        }
+      }
+    },
+    {
+      "id": "BFX033",
+      "uid": "MOB-BFX-033",
+      "name": "モブチョコミキサー",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "雷",
+      "attackType": "魔法",
+      "role": "連携強化",
+      "atk": 140,
+      "def": 140,
+      "tags": [
+        "bfx",
+        "bfx-remix",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX033.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "リミックス・リロード",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "description": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "sourceText": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+        "program": 102
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_04of07/piecefig/BFX033.png",
+        "rarity": "SSR",
+        "statsText": "ATK 140 / DEF 140",
+        "traitText": "カセットMTR×チョコサンド×ビートメイク",
+        "soul": {
+          "text": "次のソウルフュージョンで召喚するフィギュアのATKとDEFを+20。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "カセットMTR×チョコサンド×ビートメイク",
+          "intendedRole": "連携強化",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "シード2体から融合する中継役",
+          "sha256": "ff245e8769ffa63a451b40b666e3b71168a5f9c6fa8b25c1682d5c8aff556538",
+          "originalProgram": 71
+        }
+      }
+    },
+    {
+      "id": "BFX034",
+      "uid": "MOB-BFX-034",
+      "name": "モブソフトラジオスター",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "全体調整",
+      "atk": 120,
+      "def": 160,
+      "tags": [
+        "bfx",
+        "bfx-day",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX034.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "カラー・ユニゾン",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "description": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "sourceText": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+        "program": 105
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_05of07/piecefig/BFX034.png",
+        "rarity": "SSR",
+        "statsText": "ATK 120 / DEF 160",
+        "traitText": "ラジオ塔×ソフトクリーム×ダンス",
+        "soul": {
+          "text": "自分ライフを20回復し、味方全体のDEF+20。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "ラジオ塔×ソフトクリーム×ダンス",
+          "intendedRole": "全体調整",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "シード2体から融合する中継役",
+          "sha256": "1c71d6d9d8fd78248290f75e0ddd8c4a11a4c00743f79b6d13794230ba66acd6",
+          "originalProgram": 26
+        }
+      }
+    },
+    {
+      "id": "BFX035",
+      "uid": "MOB-BFX-035",
+      "name": "モブワッフルアーケイダー",
+      "rarity": "SSR",
+      "soulClass": "middle",
+      "attribute": "雷",
+      "attackType": "魔法",
+      "role": "条件付き連撃",
+      "atk": 145,
+      "def": 125,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX035.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "テンポ・ブレーキ",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "description": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "sourceText": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+        "program": 110
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_05of07/piecefig/BFX035.png",
+        "rarity": "SSR",
+        "statsText": "ATK 145 / DEF 125",
+        "traitText": "アーケード筐体×ワッフル×リズムゲーム",
+        "soul": {
+          "text": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "アーケード筐体×ワッフル×リズムゲーム",
+          "intendedRole": "条件付き連撃",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "シード2体から融合する中継役",
+          "sha256": "d2a5d17340c9214c8ad2084a6f43a1fd4220e35dc116bad7ba981bda12ab4281",
+          "originalProgram": 43
+        }
+      }
+    },
+    {
+      "id": "BFX040",
+      "uid": "MOB-BFX-040",
+      "name": "モブソーダ・エコーフィン",
+      "rarity": "UR",
+      "soulClass": "middle",
+      "attribute": "水",
+      "attackType": "魔法",
+      "role": "反撃・遅延",
+      "atk": 140,
+      "def": 160,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX040.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "リフレクト・ポップ",
+        "timing": "attack-response",
+        "timingLabel": "相手攻撃宣言時",
+        "effect": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "description": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "sourceText": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+        "program": 108
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_05of07/piecefig/BFX040.png",
+        "rarity": "UR",
+        "statsText": "ATK 140 / DEF 160",
+        "traitText": "レトロ潜水ラジオ×ソーダ×ダブ",
+        "soul": {
+          "text": "相手1体のDEF-30。そのフィギュアは次のバトルフェイズで攻撃できない。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "レトロ潜水ラジオ×ソーダ×ダブ",
+          "intendedRole": "反撃・遅延",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "シード2体から融合する中継役",
+          "sha256": "2e9650c71102b0339bdf02e0ed70ee75f001a8a9041ca3b74f08af3904a71bb4",
+          "originalProgram": 76
+        }
+      }
+    },
+    {
+      "id": "BFX042",
+      "uid": "MOB-BFX-042",
+      "name": "モブシュガー・ビデオビート",
+      "rarity": "UR",
+      "soulClass": "middle",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "対象封じ",
+      "atk": 150,
+      "def": 150,
+      "tags": [
+        "bfx",
+        "bfx-remix",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX042.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "サイレント・カット",
+        "timing": "skill-response",
+        "timingLabel": "相手スキル発動時",
+        "effect": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "description": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "sourceText": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "program": 109
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_05of07/piecefig/BFX042.png",
+        "rarity": "UR",
+        "statsText": "ATK 150 / DEF 150",
+        "traitText": "VHSビデオカメラ×角砂糖×ヒップホップ",
+        "soul": {
+          "text": "相手1体のDEF-30。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "VHSビデオカメラ×角砂糖×ヒップホップ",
+          "intendedRole": "対象封じ",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "シード2体から融合する中継役",
+          "sha256": "f065ff8b8ab2aa02d0cce26210c200cb6050264548e7e8b29c2aff39bd9c44e5",
+          "originalProgram": 64
+        }
+      }
+    },
+    {
+      "id": "BFX043",
+      "uid": "MOB-BFX-043",
+      "name": "モブラズベリー・ノイズフォックス",
+      "rarity": "UR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "封印・妨害",
+      "atk": 145,
+      "def": 155,
+      "tags": [
+        "bfx",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX043.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "サイレント・カット",
+        "timing": "skill-response",
+        "timingLabel": "相手スキル発動時",
+        "effect": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "description": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "sourceText": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+        "program": 109
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_06of07/piecefig/BFX043.png",
+        "rarity": "UR",
+        "statsText": "ATK 145 / DEF 155",
+        "traitText": "エフェクター×ベリータルト×エレクトロ",
+        "soul": {
+          "text": "相手1体のATK-30。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "エフェクター×ベリータルト×エレクトロ",
+          "intendedRole": "封印・妨害",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "シード2体から融合する中継役",
+          "sha256": "7c272342f9fde52526597407eada82cec32217ecbb262a4e734b3509270b4477",
+          "originalProgram": 57
+        }
+      }
+    },
+    {
+      "id": "BFX045",
+      "uid": "MOB-BFX-045",
+      "name": "モブモノクローム・チョコロール",
+      "rarity": "UR",
+      "soulClass": "middle",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "継続展開",
+      "atk": 140,
+      "def": 160,
+      "tags": [
+        "bfx",
+        "bfx-remix",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX045.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "おかえりセッション",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分の墓地からシード1体を手札へ戻す。",
+        "description": "自分の墓地からシード1体を手札へ戻す。",
+        "sourceText": "自分の墓地からシード1体を手札へ戻す。",
+        "program": 104
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_06of07/piecefig/BFX045.png",
+        "rarity": "UR",
+        "statsText": "ATK 140 / DEF 160",
+        "traitText": "映写機×ロールケーキ×ジャズステップ",
+        "soul": {
+          "text": "次のソウルフュージョンで召喚するフィギュアのATKとDEFを+30。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "映写機×ロールケーキ×ジャズステップ",
+          "intendedRole": "継続展開",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "シード2体から融合する中継役",
+          "sha256": "82509fa6ecbe6b4b26c63ee9ea90817891364806f7260e43b3de4feb087cf4f0",
+          "originalProgram": 81
+        }
+      }
+    },
+    {
+      "id": "BFX046",
+      "uid": "MOB-BFX-046",
+      "name": "モブクレセント・ミックス",
+      "rarity": "MOB",
+      "soulClass": "mob",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "フィニッシャー・連携",
+      "atk": 220,
+      "def": 220,
+      "tags": [
+        "bfx",
+        "bfx-remix",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX046.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "クレセント・ミックス・セッション",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。攻撃対象は毎回自由で、同じ相手にも複数回攻撃できる。ダイレクトアタック不可。",
+        "description": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。攻撃対象は毎回自由で、同じ相手にも複数回攻撃できる。ダイレクトアタック不可。",
+        "sourceText": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。攻撃対象は毎回自由で、同じ相手にも複数回攻撃できる。ダイレクトアタック不可。",
+        "program": 79
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_06of07/piecefig/BFX046.png",
+        "rarity": "MOB",
+        "statsText": "ATK 220 / DEF 220",
+        "traitText": "レコード×バナナサンデー×フローティングDJ",
+        "soul": {
+          "text": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。攻撃対象は毎回自由で、同じ相手にも複数回攻撃できる。ダイレクトアタック不可。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "レコード×バナナサンデー×フローティングDJ",
+          "intendedRole": "フィニッシャー・連携",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "ミドル2体から融合する切り札",
+          "sha256": "b0b8e7e949526f8b6cc2acb65dad9ea9a29a3f55da95b25abb07742e220670fa",
+          "originalProgram": 79
+        }
+      }
+    },
+    {
+      "id": "BFX050",
+      "uid": "MOB-BFX-050",
+      "name": "モブパルフェ・ディスコオーロラ",
+      "rarity": "MOB",
+      "soulClass": "mob",
+      "attribute": "水",
+      "attackType": "魔法",
+      "role": "回復・全体制御",
+      "atk": 210,
+      "def": 250,
+      "tags": [
+        "bfx",
+        "bfx-day",
+        "bfx-night",
+        "12",
+        "65"
+      ],
+      "image": "piecefig/BFX050.png",
+      "collection": "main",
+      "soulSkill": {
+        "name": "パルフェ・ディスコオーロラ・セッション",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "effect": "自分ライフを20回復し、味方全体のDEF+20。",
+        "description": "自分ライフを20回復し、味方全体のDEF+20。",
+        "sourceText": "自分ライフを20回復し、味方全体のDEF+20。",
+        "program": 26
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "source": {
+        "figureFile": "MOB_BFX50_素材パック_07of07/piecefig/BFX050.png",
+        "rarity": "MOB",
+        "statsText": "ATK 210 / DEF 250",
+        "traitText": "ミラーボール×パフェ×ローラーディスコ",
+        "soul": {
+          "text": "自分ライフを20回復し、味方全体のDEF+20。"
+        },
+        "decision": "追加フィギュア2に実フィギュア画像がある24体のみ採用。2026-10-04のスキル多様化依頼を反映。",
+        "basis": {
+          "theme": "ミラーボール×パフェ×ローラーディスコ",
+          "intendedRole": "回復・全体制御",
+          "performanceBasis": "designed",
+          "imageStatus": "pixel-reviewed",
+          "classReason": "ミドル2体から融合する切り札",
+          "sha256": "405b7bb9762d680b54d2e26d4c7ff55215b04a0a9b072c53fce556a993931811",
+          "originalProgram": 26
+        }
+      }
+    }
+  ],
+  "tags": [
+    {
+      "id": "bfx",
+      "name": "スイート・ストリート・リミックス"
+    },
+    {
+      "id": "bfx-day",
+      "name": "スイートビート・ストリート"
+    },
+    {
+      "id": "bfx-remix",
+      "name": "レトロリミックス・ジャム"
+    },
+    {
+      "id": "bfx-night",
+      "name": "ミッドナイト・シュガーライブ"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "MOB-BFX-033-bfx-remix",
+      "target": "BFX033",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "bfx-remix"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "レトロリミックス・ジャム × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-034-bfx-day",
+      "target": "BFX034",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "bfx-day"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "スイートビート・ストリート × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-035-bfx-night",
+      "target": "BFX035",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "bfx-night"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "ミッドナイト・シュガーライブ × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-040-bfx-night",
+      "target": "BFX040",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "bfx-night"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "ミッドナイト・シュガーライブ × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-042-bfx-remix",
+      "target": "BFX042",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "bfx-remix"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "レトロリミックス・ジャム × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-043-bfx-night",
+      "target": "BFX043",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "bfx-night"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "ミッドナイト・シュガーライブ × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-045-bfx-remix",
+      "target": "BFX045",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "bfx-remix"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "レトロリミックス・ジャム × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-046-bfx-remix",
+      "target": "BFX046",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "bfx-remix"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "レトロリミックス・ジャム × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-046-bfx-night",
+      "target": "BFX046",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "bfx-night"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "ミッドナイト・シュガーライブ × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-050-bfx-day",
+      "target": "BFX050",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "bfx-day"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "スイートビート・ストリート × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    },
+    {
+      "id": "MOB-BFX-050-bfx-night",
+      "target": "BFX050",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "bfx-night"
+        },
+        {
+          "tag": "bfx"
+        }
+      ],
+      "label": "ミッドナイト・シュガーライブ × スイート・ストリート・リミックス",
+      "basis": "BFX50 通常融合",
+      "special": false
+    }
+  ]
+}

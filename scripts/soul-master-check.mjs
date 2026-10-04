@@ -1,3 +1,4 @@
+import {revisedTexts} from '../src/data/tactical-skills.js';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import allCatalog from '../src/data/soul-catalog.js';
@@ -20,7 +21,7 @@ const cast=(s,side,f,o=choose(s,side,f))=>{g.useSkill(s,side,f.uid,o);resolve(s)
 test('327体の固定値・階級・タグ・効果は確定JSONと一致、IDと画像を維持',()=>{
  assert.equal(figures.length,327);assert.equal(new Set(figures.map(f=>f.id)).size,327);
  assert.deepEqual(Object.fromEntries(['seed','middle','mob'].map(k=>[k,figures.filter(f=>f.soulClass===k).length])),{seed:231,middle:74,mob:22});
- for(const f of figures){const r=master.records.find(r=>r.uid===f.uid);assert.equal(f.atk,r.ATK);assert.equal(f.def,r.DEF);assert.equal(f.rarity,r.rarity);assert.equal(f.attribute,r.attribute);assert.deepEqual(f.tags,r.gameTagIds);assert.equal(f.soulSkill.sourceText,r.soulSkill.effect);assert.equal(texts[f.soulSkill.program],r.soulSkill.timing+' | '+r.soulSkill.effect);assert.ok(fs.existsSync(f.image),f.image);assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);assert.equal(legacy.find(x=>x.sourceId===f.id).pending,false);}
+ for(const f of figures){const r=master.records.find(r=>r.uid===f.uid);assert.equal(f.atk,r.ATK);assert.equal(f.def,r.DEF);assert.equal(f.rarity,r.rarity);assert.equal(f.attribute,r.attribute);assert.deepEqual(f.tags,r.gameTagIds);assert.equal(f.soulSkill.sourceText,revisedTexts[f.soulSkill.program]?.split(' | ')[1]||r.soulSkill.effect);assert.equal(texts[f.soulSkill.program],revisedTexts[f.soulSkill.program]||r.soulSkill.timing+' | '+r.soulSkill.effect);assert.ok(fs.existsSync(f.image),f.image);assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);assert.equal(legacy.find(x=>x.sourceId===f.id).pending,false);}
  for(let i=35;i<=46;i++)assert.ok(byId.has('mq:spbossfig/'+i));
  assert.ok(find(55).soulSkill.description.includes('使用後も'));assert.ok(find(93).soulSkill.description.includes('直接召喚'));
 });
@@ -55,7 +56,7 @@ test('相手1体への攻撃/スキル/融合制限が次ターンも効く',()=
 test('タグ追加/無効化、属性無効化はターン終了で解除',()=>{for(const n of [15,34,75]){const s=fresh(),a=put(s,0,find(n)),d=put(s,1,seed);cast(s,0,a);assert.ok([...a.effects,...d.effects].length);g.beginBattle(s,0);g.endTurn(s,0);assert.equal(a.effects.length+d.effects.length,0);}});
 test('次の相手ターンの差分ダメージ無効は最初の1回だけ',()=>{const s=fresh(),a=put(s,0,find(22)),b=put(s,0,seed,1),enemy=put(s,1,seed);cast(s,0,a);g.beginBattle(s,0);g.endTurn(s,0);enemy.permanentAtk=400;g.beginBattle(s,1);g.attack(s,1,enemy.uid,a.uid);resolve(s);assert.equal(s.players[0].life,400);assert.equal(s.players[0].teamEffects.length,0);assert.equal(s.players[0].field[0],null);});
 test('ATK=DEF撃破例外はライフ0差分、DEF強化無視は基礎DEFを維持',()=>{const s=fresh(),a=put(s,0,find(49)),d=put(s,1,seed);cast(s,0,a,{targetUid:d.uid});a.permanentAtk=g.stats(d).def-find(49).atk;g.beginBattle(s,0);g.attack(s,0,a.uid,d.uid);resolve(s);assert.equal(s.players[1].field[0],null);assert.equal(s.players[1].life,400);});
-test('攻撃後の位置変更は許可された味方とだけ、攻撃権の再付与なし',()=>{const s=fresh(),a=put(s,0,find(47)),b=put(s,0,seed,1),d=put(s,1,seed);d.permanentDef=1000;cast(s,0,a);g.beginBattle(s,0);g.attack(s,0,a.uid,d.uid);resolve(s);g.moveAfterAttack(s,0,a.uid,1);assert.equal(s.players[0].field[1],a);assert.equal(a.attacks,1);assert.equal(s.players[0].field[0],b);});
+test('旧位置変更47はATK+30/DEF+20へ置換、位置と攻撃回数を維持',()=>{const s=fresh(),a=put(s,0,find(47)),b=put(s,0,seed,1),d=put(s,1,seed);d.permanentDef=1000;cast(s,0,a);g.beginBattle(s,0);g.attack(s,0,a.uid,d.uid);resolve(s);assert.ok(!s.moveChoice);assert.throws(()=>g.moveAfterAttack(s,0,a.uid,1));assert.equal(s.players[0].field[0],a);assert.equal(a.attacks,1);assert.equal(g.stats(a).atk,find(47).atk+30);assert.equal(g.stats(a).def,find(47).def+20);});
 test('山札切れ敗北は必要ドロー時のみ、スキルのドローも適用',()=>{const s=fresh();s.players[0].deck=[];g.beginBattle(s,0);g.endTurn(s,0);g.beginBattle(s,1);g.endTurn(s,1);assert.equal(s.winner,null);g.summon(s,0,0,0);g.beginBattle(s,0);g.endTurn(s,0);g.beginBattle(s,1);g.endTurn(s,1);assert.equal(s.winner,1);assert.equal(s.reason,'山札切れ');const t=fresh(),a=put(t,0,find(32));t.players[0].deck=[];t.players[0].hand=[];cast(t,0,a);assert.equal(t.winner,1);});
 test('全102効果プログラムが正しいタイミング・選択で解決する',()=>{
  for(let n=0;n<102;n++){const s=fresh(),f=find(n),q=plans[n],a=put(s,0,f),ally=put(s,0,seed,1),d=put(s,1,seed);s.players[0].hand=[seed.id];s.players[0].deck=[seed.id,seed.id];s.players[0].grave=[seed.id];s.players[0].destroyed=[seed.id];s.players[0].reserve=figures.filter(f=>f.soulClass!=='seed').map(f=>f.id);

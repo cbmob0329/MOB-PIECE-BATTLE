@@ -1,0 +1,341 @@
+{
+  "accepted": [
+    {
+      "path": "MOB_RETRO21-30_01_フィギュア10PNG\\figures\\RETRO21.png",
+      "hash": "cfa8301a1f004ecee83692a4598c87a1c5e7b90ffddb7a507ff2af7a6a4ab13c",
+      "duplicate": null,
+      "id": "RETRO21"
+    },
+    {
+      "path": "MOB_RETRO21-30_01_フィギュア10PNG\\figures\\RETRO23.png",
+      "hash": "e858ca53957db12899e74ad07d32b34ab7d0e7929966f5d8f0e1acdb4b340a54",
+      "duplicate": null,
+      "id": "RETRO23"
+    },
+    {
+      "path": "MOB_RETRO21-30_01_フィギュア10PNG\\figures\\RETRO24.png",
+      "hash": "f890370c80114ac561849b2465db3894f88ae6b3f1acb9a7fd704a79fe2fa722",
+      "duplicate": null,
+      "id": "RETRO24"
+    },
+    {
+      "path": "MOB_RETRO21-30_01_フィギュア10PNG\\figures\\RETRO25.png",
+      "hash": "24413d28bcc736f3974893750149292a5fe29103ea3e385f3453caed7175d559",
+      "duplicate": null,
+      "id": "RETRO25"
+    },
+    {
+      "path": "MOB_RETRO21-30_01_フィギュア10PNG\\figures\\RETRO29.png",
+      "hash": "6770d2f34f725c4e283e008dee8a01d6e68a2200e0fddcc57fbdc28c51edc727",
+      "duplicate": null,
+      "id": "RETRO29"
+    },
+    {
+      "path": "MOB_RETRO21-30_01_フィギュア10PNG\\figures\\RETRO30.png",
+      "hash": "44d99f846ee492f45fbc7948b42501be0decc7624f06d2b0a33692f8ef7a20a1",
+      "duplicate": null,
+      "id": "RETRO30"
+    },
+    {
+      "path": "MOB_SET2_双炎6体_透過PNG原本\\images\\figures\\DUA_B01_figure.png",
+      "hash": "3c4754ba3706d8f33119a8d6fd49b27d01bfac80175a5ee4a8c8ee2cdc9a208b",
+      "duplicate": null,
+      "id": "DUA_B01"
+    },
+    {
+      "path": "MOB_SET2_双炎6体_透過PNG原本\\images\\figures\\DUA_M01_figure.png",
+      "hash": "d3181298a78932b4d516b04fe6c096b7e6d69d144b117ff7604b895a5f6a949e",
+      "duplicate": null,
+      "id": "DUA_M01"
+    },
+    {
+      "path": "MOB_SET2_双炎6体_透過PNG原本\\images\\figures\\DUA_M02_figure.png",
+      "hash": "66419754ddb0d83f7299e4c9cdc05528f81fa4b5b119d0a7be13e6f030a49f79",
+      "duplicate": null,
+      "id": "DUA_M02"
+    },
+    {
+      "path": "MOB_SET2_双炎6体_透過PNG原本\\images\\figures\\DUA_S01_figure.png",
+      "hash": "1f7b4aa3395c9a112107e5201d76397cdb70bb84beb3040b53d33c81c15c6c86",
+      "duplicate": null,
+      "id": "DUA_S01"
+    },
+    {
+      "path": "MOB_SET2_双炎6体_透過PNG原本\\images\\figures\\DUA_S02_figure.png",
+      "hash": "3227bc59e28a506e87ba1f20549e2bd9ab1391f8f232e782bab18936730361f2",
+      "duplicate": null,
+      "id": "DUA_S02"
+    },
+    {
+      "path": "MOB_SET2_双炎6体_透過PNG原本\\images\\figures\\DUA_S03_figure.png",
+      "hash": "e7bdb1b067615e7f067b7ae74f32df9eaf4f8a38426e07d3126742499ca0eb19",
+      "duplicate": null,
+      "id": "DUA_S03"
+    },
+    {
+      "path": "MOB_SET2_幽火6体_透過PNG原本\\images\\figures\\GHO_B01_figure.png",
+      "hash": "fbdf9a1abb68597d4aa4ee0da1259f7ad7ad13bf20d375fe10d68f47fbe31a1a",
+      "duplicate": null,
+      "id": "GHO_B01"
+    },
+    {
+      "path": "MOB_SET2_幽火6体_透過PNG原本\\images\\figures\\GHO_M01_figure.png",
+      "hash": "e778e051aa749ebad4b84a0c11f44a13ebe9c42a43e2053a1649ca32d80b0c96",
+      "duplicate": null,
+      "id": "GHO_M01"
+    },
+    {
+      "path": "MOB_SET2_幽火6体_透過PNG原本\\images\\figures\\GHO_M02_figure.png",
+      "hash": "28fe33e0c847e07f6647f3e27b906f270613438cfcdd75fa63c88ad16b3357a7",
+      "duplicate": null,
+      "id": "GHO_M02"
+    },
+    {
+      "path": "MOB_SET2_幽火6体_透過PNG原本\\images\\figures\\GHO_S01_figure.png",
+      "hash": "f6482a44f106249ad911ae6dbab03c4c52892e91eccf17dd8f76d5d7e1763d06",
+      "duplicate": null,
+      "id": "GHO_S01"
+    },
+    {
+      "path": "MOB_SET2_幽火6体_透過PNG原本\\images\\figures\\GHO_S02_figure.png",
+      "hash": "e592a0d256f75ea3a91d3b4ced64913ac31255c37be8583fece8be0eef288692",
+      "duplicate": null,
+      "id": "GHO_S02"
+    },
+    {
+      "path": "MOB_SET2_幽火6体_透過PNG原本\\images\\figures\\GHO_S03_figure.png",
+      "hash": "ef20231e7c13872420fca822364b24dcfaeee0ee00b470cb348e409e29f80f90",
+      "duplicate": null,
+      "id": "GHO_S03"
+    },
+    {
+      "path": "MOB_SET2_忍骨6体_透過PNG原本\\images\\figures\\NIN_B01_figure.png",
+      "hash": "504f5abdcea4f17045e2752ee5acca6002dfc906e99b75e2fe22088c72a3d37a",
+      "duplicate": null,
+      "id": "NIN_B01"
+    },
+    {
+      "path": "MOB_SET2_忍骨6体_透過PNG原本\\images\\figures\\NIN_M01_figure.png",
+      "hash": "ca94d4c90244d369afd4cf38aa7bc7687f6e70a3b1356a32e2325f177f3dd920",
+      "duplicate": null,
+      "id": "NIN_M01"
+    },
+    {
+      "path": "MOB_SET2_忍骨6体_透過PNG原本\\images\\figures\\NIN_M02_figure.png",
+      "hash": "855de07cad49f67c5a5b0fa368aca0852bbaa4afad90790275aa935e8269b6b5",
+      "duplicate": null,
+      "id": "NIN_M02"
+    },
+    {
+      "path": "MOB_SET2_忍骨6体_透過PNG原本\\images\\figures\\NIN_S01_figure.png",
+      "hash": "f24d9c82759ee64a2cdd9cf2f4e51354e219436c0122ce67085d75beac1c445d",
+      "duplicate": null,
+      "id": "NIN_S01"
+    },
+    {
+      "path": "MOB_SET2_忍骨6体_透過PNG原本\\images\\figures\\NIN_S02_figure.png",
+      "hash": "b16374d5ac99b46a95cbe0619992a86afded599f683ea71e52c213561455408b",
+      "duplicate": null,
+      "id": "NIN_S02"
+    },
+    {
+      "path": "MOB_SET2_忍骨6体_透過PNG原本\\images\\figures\\NIN_S03_figure.png",
+      "hash": "78828c1f7fba9e1deba3026eb3d8c32274e2ed43278bd50089a4e037d119f440",
+      "duplicate": null,
+      "id": "NIN_S03"
+    },
+    {
+      "path": "MOB_SET2_魔帽6体_透過PNG原本\\images\\figures\\ECL_B01_figure.png",
+      "hash": "f1b139747682183bf958df28840187445dbf3be384122f1713647ee0856c4c02",
+      "duplicate": null,
+      "id": "ECL_B01"
+    },
+    {
+      "path": "MOB_SET2_魔帽6体_透過PNG原本\\images\\figures\\ECL_M01_figure.png",
+      "hash": "c5c4840312b18cba9c347377b6001bd566654c9feaa7cd1c26ccc1116c55c71b",
+      "duplicate": null,
+      "id": "ECL_M01"
+    },
+    {
+      "path": "MOB_SET2_魔帽6体_透過PNG原本\\images\\figures\\ECL_M02_figure.png",
+      "hash": "ea35ce9e7c78dc04b7727ea13add9e39d248d0e5767e18a0eae001176c7d33b7",
+      "duplicate": null,
+      "id": "ECL_M02"
+    },
+    {
+      "path": "MOB_SET2_魔帽6体_透過PNG原本\\images\\figures\\ECL_S01_figure.png",
+      "hash": "fc2154fedf42a141a920ed22803c3cbefc9a5ed68738d165dc538ea6d791c138",
+      "duplicate": null,
+      "id": "ECL_S01"
+    },
+    {
+      "path": "MOB_SET2_魔帽6体_透過PNG原本\\images\\figures\\ECL_S02_figure.png",
+      "hash": "8667618e57ead469f169a3752b62e813a6962eeb88beaca994f7270ff910df3f",
+      "duplicate": null,
+      "id": "ECL_S02"
+    },
+    {
+      "path": "MOB_SET2_魔帽6体_透過PNG原本\\images\\figures\\ECL_S03_figure.png",
+      "hash": "24c1ccc579120518c643482a710dcda1cffbd25abf716e84ce3662aa7806a69e",
+      "duplicate": null,
+      "id": "ECL_S03"
+    },
+    {
+      "path": "MOB_SET3_CRY_6characters_12PNG\\figures\\CRY_B01_figure.png",
+      "hash": "77700c3af4b86dbf5d8561b547112febbcbe3934960fce2ceb3f2290626c2086",
+      "duplicate": null,
+      "id": "CRY_B01"
+    },
+    {
+      "path": "MOB_SET3_CRY_6characters_12PNG\\figures\\CRY_M01_figure.png",
+      "hash": "5de6b57e61e962ce27e51ef6b3ac88c727aba538f0845c53aa017dc96bca4732",
+      "duplicate": null,
+      "id": "CRY_M01"
+    },
+    {
+      "path": "MOB_SET3_CRY_6characters_12PNG\\figures\\CRY_M02_figure.png",
+      "hash": "15d858d02ae192113c1c0feec2db4d1ab0b39367e77370f419c21bd55c8aca2c",
+      "duplicate": null,
+      "id": "CRY_M02"
+    },
+    {
+      "path": "MOB_SET3_CRY_6characters_12PNG\\figures\\CRY_S01_figure.png",
+      "hash": "9689fb7e3d6874f558f9c920f45dd5fcc1c6f1d22224f1c317b48c2a6f590601",
+      "duplicate": null,
+      "id": "CRY_S01"
+    },
+    {
+      "path": "MOB_SET3_CRY_6characters_12PNG\\figures\\CRY_S02_figure.png",
+      "hash": "dd1d2c3252783de657e7fb12c49ba03868ad0ce73509287599090c5803bf10af",
+      "duplicate": null,
+      "id": "CRY_S02"
+    },
+    {
+      "path": "MOB_SET3_CRY_6characters_12PNG\\figures\\CRY_S03_figure.png",
+      "hash": "ff89baa8cdbfce5dc665335e3fa110b210e9cbc2a96f0b767807ae4a4e040f6e",
+      "duplicate": null,
+      "id": "CRY_S03"
+    },
+    {
+      "path": "MOB_SET3_FRG_6characters_12PNG\\figures\\FRG_B01_figure.png",
+      "hash": "daf03f2633b442b763b327c616f8a37e4a1a4bd78b0081a0fe79731a9807f0ad",
+      "duplicate": null,
+      "id": "FRG_B01"
+    },
+    {
+      "path": "MOB_SET3_FRG_6characters_12PNG\\figures\\FRG_M01_figure.png",
+      "hash": "b16fb567ef255e9b7cf74196c80461e84ef6877e29838f8175b7a9772ac87fe0",
+      "duplicate": null,
+      "id": "FRG_M01"
+    },
+    {
+      "path": "MOB_SET3_FRG_6characters_12PNG\\figures\\FRG_M02_figure.png",
+      "hash": "203a3b0761bb8563d91dbac8dafc6ae86c0ffbdab5dcd1978b245ee73aaf3cec",
+      "duplicate": null,
+      "id": "FRG_M02"
+    },
+    {
+      "path": "MOB_SET3_FRG_6characters_12PNG\\figures\\FRG_S01_figure.png",
+      "hash": "e4e94707333e03f29094f89e7360271564224af9c99e50b21f74e85410d3b9eb",
+      "duplicate": null,
+      "id": "FRG_S01"
+    },
+    {
+      "path": "MOB_SET3_FRG_6characters_12PNG\\figures\\FRG_S02_figure.png",
+      "hash": "82c47c5742947c15a32698565e4e179edee7271b3735f3e15f74192299984596",
+      "duplicate": null,
+      "id": "FRG_S02"
+    },
+    {
+      "path": "MOB_SET3_FRG_6characters_12PNG\\figures\\FRG_S03_figure.png",
+      "hash": "7730dcca5a984b6116590165c00940cada2742d10a00fca36cb29cd2b76d1f83",
+      "duplicate": null,
+      "id": "FRG_S03"
+    },
+    {
+      "path": "MOB_SET3_RUN_6characters_12PNG\\figures\\RUN_B01_figure.png",
+      "hash": "70ae848a9095a5960345703b0e2c836421733ac44db7166b9a6175a2c1d7c21a",
+      "duplicate": null,
+      "id": "RUN_B01"
+    },
+    {
+      "path": "MOB_SET3_RUN_6characters_12PNG\\figures\\RUN_M01_figure.png",
+      "hash": "fb8d2ed72345cf60b842af646f70e42a9eb88ffa08f145d2e7589f62c273ec12",
+      "duplicate": null,
+      "id": "RUN_M01"
+    },
+    {
+      "path": "MOB_SET3_RUN_6characters_12PNG\\figures\\RUN_M02_figure.png",
+      "hash": "a8386157077619b3af6bad139813305c6573ce88ce7409b3c02a625070e34127",
+      "duplicate": null,
+      "id": "RUN_M02"
+    },
+    {
+      "path": "MOB_SET3_RUN_6characters_12PNG\\figures\\RUN_S01_figure.png",
+      "hash": "c675a624c0a946515793d6802e75ef5fb671117bfc34f6ff18de0ec77e45c148",
+      "duplicate": null,
+      "id": "RUN_S01"
+    },
+    {
+      "path": "MOB_SET3_RUN_6characters_12PNG\\figures\\RUN_S02_figure.png",
+      "hash": "e6e3bb43f1badd10933cce334fb5c852dc4ffd8a22f3ca07419a1a84c84b931f",
+      "duplicate": null,
+      "id": "RUN_S02"
+    },
+    {
+      "path": "MOB_SET3_RUN_6characters_12PNG\\figures\\RUN_S03_figure.png",
+      "hash": "c61b28ee6adfa4b912bb52a64d60595f3271ea29bad68ee3a1a732ceb26c08c9",
+      "duplicate": null,
+      "id": "RUN_S03"
+    },
+    {
+      "path": "MOB_SET3_SPI_6characters_12PNG\\figures\\SPI_B01_figure.png",
+      "hash": "bc37f516cdd00a9076a9c4e00b2d28e416571654ce6259127b13c7873ebfe6fc",
+      "duplicate": null,
+      "id": "SPI_B01"
+    },
+    {
+      "path": "MOB_SET3_SPI_6characters_12PNG\\figures\\SPI_M01_figure.png",
+      "hash": "83b4d980ed37aaadff069af348d72715510fc15ce0bbd4f85589f19d0e9977ed",
+      "duplicate": null,
+      "id": "SPI_M01"
+    },
+    {
+      "path": "MOB_SET3_SPI_6characters_12PNG\\figures\\SPI_M02_figure.png",
+      "hash": "17a5ea26d23ffc39934e8eba14c8ae9edfa8588598fbcc69718f68222b9f0505",
+      "duplicate": null,
+      "id": "SPI_M02"
+    },
+    {
+      "path": "MOB_SET3_SPI_6characters_12PNG\\figures\\SPI_S01_figure.png",
+      "hash": "4fa120987e8fc3a853ce00a5a20c6fbeb08fc6312f2acedbc16cbccddf27410b",
+      "duplicate": null,
+      "id": "SPI_S01"
+    },
+    {
+      "path": "MOB_SET3_SPI_6characters_12PNG\\figures\\SPI_S02_figure.png",
+      "hash": "9d77b5f3e8ed85cd2aea6e57f13020edd84b7671f4ad0a70cd3ded5fe4bc69bc",
+      "duplicate": null,
+      "id": "SPI_S02"
+    },
+    {
+      "path": "MOB_SET3_SPI_6characters_12PNG\\figures\\SPI_S03_figure.png",
+      "hash": "6fdfbffb31f31f07871b597c2165b521c0662e3aace35ed7c06603f54bad3a19",
+      "duplicate": null,
+      "id": "SPI_S03"
+    }
+  ],
+  "exactExistingImages": 135,
+  "excluded": {
+    "deletedRetro": [
+      "RETRO22",
+      "RETRO26",
+      "RETRO27",
+      "RETRO28"
+    ],
+    "pixelsOrReferencePng": 153,
+    "normalArt": 44,
+    "unregisteredGuide": "hakase.png"
+  },
+  "snapshot": "2026-10-04"
+}

@@ -1,0 +1,97 @@
+node scripts/source-check.mjs
+PASS: source syntax and merge-conflict markers (142 files)
+
+node scripts/startup-profile-check.mjs
+PASS: startup profile shape and HOME center figure
+
+node scripts/rules-check.mjs
+PASS: catalog integrity, numbering, stats, rarity caps, cost 80, deck 25, ownership boundary
+
+node scripts/gacha-rules-check.mjs
+PASS: 5 pools, exact displayed odds, SR+ last slot, truthful guaranteed cues, inventory caps, ruby conversion, no input mutation, insufficient balance, one-time gift
+
+node scripts/competition-rules-check.mjs
+competition rules ok
+
+node scripts/battle-rules-check.mjs
+battle rules ok
+
+node scripts/v4-features-check.mjs
+PASS: v4 inventory caps/conversion, five deck slots, missions, battle records, hall-of-fame season archive
+
+node scripts/v5-features-check.mjs
+v5 features ok
+
+node scripts/v5-ui-render-check.mjs
+v5 UI render ok
+
+node scripts/v6-assets-check.mjs
+v6 authored UI assets, calendar, history filters and bulk mission claim ok
+
+node scripts/quest-import-check.mjs
+PASS: saved IDs/stats preserved, 547 inventory entries, 23 banners, assets/pickups, atomic ruby exchange and boundaries
+
+node scripts/formation-skills-check.mjs
+PASS: exact 2%/0.1% intervals, all-banner guarantees/odds, adjacency, all SOUL clauses, scope/tier/boost/once-per-match, test inventory persistence
+
+node scripts/soul-rules-check.mjs
+PASS 327体の固定値・階級・タグ・効果は確定JSONと一致、IDと画像を維持
+PASS 45体・階級・所持数、旧セーブの編成を無断変更しない
+PASS 初期LIFE400、山札はシードのみ、手札5、専用領域15
+PASS 3枠制限、融合後の再召喚、バトル後は通常スキル/融合/召喚禁止
+PASS 通常192・特殊10の全レシピが正しい2素材で実行可能
+PASS 特殊融合の+20/+20はターンを跨いで持続、通常ルートも保持
+PASS スキル使用1回と素材ロック、クフレイだけ明示された例外
+PASS ATK>DEFの差分、ATK=DEFで無撃破、通常は1回攻撃
+PASS 攻撃宣言でのみ回避発動、相手も1ターン1回、攻撃回数は消費
+PASS 守護は攻撃先変更と戦闘中DEF、差分無効、貫通は守護のみ禁止
+PASS 相手スキルの無効化と対象変更は解決前、両者の権利を消費
+PASS フェニックス撃破時帰還・通常の差分・手札から直接再召喚DEF+30
+PASS 手札帰還から再召喚しても同ターンの使用者素材ロックを保持
+PASS ぷにパンチの帰還は別の味方への攻撃も終了できる
+PASS 多段攻撃は回数どおり、毎攻撃の累積ATK、同じ相手への再攻撃
+PASS 全員へ1回ずつは個別選択、同一対象へ重複攻撃不可
+PASS 撃破による追加攻撃・全体DEF低下・ドロー
+PASS 永続でない強化の失効と次の相手ターン終了までの強化
+PASS 回復上限・撃破済みSeedの回収、融合素材は回収対象外
+PASS 手札の属性/タグ交換はデッキから選択、総枚数維持
+PASS 相手1体への攻撃/スキル/融合制限が次ターンも効く
+PASS タグ追加/無効化、属性無効化はターン終了で解除
+PASS 次の相手ターンの差分ダメージ無効は最初の1回だけ
+PASS ATK=DEF撃破例外はライフ0差分、DEF強化無視は基礎DEFを維持
+PASS 旧位置変更47はATK+30/DEF+20へ置換、位置と攻撃回数を維持
+PASS 山札切れ敗北は必要ドロー時のみ、スキルのドローも適用
+PASS 全102効果プログラムが正しいタイミング・選択で解決する
+PASS CPUの空き枠・全難度・対応窓を含む対戦は決着し決定的
+PASS 全202レシピで手札×場と場×手札、満員でも場の素材位置に融合
+PASS 手札×手札・不正素材・スキル使用後・融合封印・フェイズ外を拒否し状態不変
+PASS クイーンロックは全員+30、該当タグ+20を一度だけ、相手と次ターンには影響なし
+31 master checks passed
+
+node scripts/soul-update-check.mjs
+PASS: themed 45-piece starters/caps/idempotence, valid fusion aura states, first-turn end, guarded DEF loss/persistence and equality
+
+node scripts/soul-shuffle-check.mjs
+PASS: randomized opening hands, independent decks, exact copy counts, saved order, reserve and subsequent draws
+
+node scripts/piece47-check.mjs
+PASS: 47 images/data/skills; 19 recipes (38 field/hand cases); 207 free main figures (including original 72); 2 legal starters and seed-middle-MOB chains; non-destructive/idempotent migration; unchanged gacha pools
+
+node scripts/materials-check.mjs
+PASS: 135 images/IDs/skill executions; exact 30 supplied performances; 67 recipes x field/hand; all 10 balloon pairs; 11 legal starters and completed CPU matches; version-1 save migration preserved/idempotent; 231 main/302 collab; original 207 free, BFX24 acquired separately
+
+node scripts/audio-check.mjs
+PASS audio: 108 attribute/strength/action PCM variants + 31 common cues; finite peaks/fades, physical/magic, timing, locked/unsupported/storage failure, duplicate suppression, six-voice limit, mute/reload, background/recovery, stopped scopes and metadata overrides
+
+node scripts/tactical-check.mjs
+PASS Exactly selected 24 figures, final images, rarities/classes, source hashes and gated acquisition
+PASS All ten new programs from hand and field, both sides; costs, grave and events
+PASS Invalid/cancelled hand declarations preserve complete state; stale references rejected
+PASS Hand counter negates hand activation, both declared cards stay grave; no effect duplication
+PASS Old hand field-dependent skills adapt without ghost instances, return cards or duplicate grave
+PASS No movement programs remain; revised 7/30/47/91 have active tactical plans
+PASS Same-name/series resonance conserves cards and caps at +10; explicit recipes win
+PASS CPU can use a hand skill and hand response
+PASS Every one of 112 programs resolves from hand with valid choices
+PASS 9 tactical suites
+

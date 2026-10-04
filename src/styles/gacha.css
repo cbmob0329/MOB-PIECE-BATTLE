@@ -7,3 +7,7 @@
 /* Keep every banner selector reachable when the collection grows. */
 .gacha-page .carousel-controls>div{flex:1;min-width:0;overflow-x:auto;scrollbar-width:thin}
 .gacha-page .carousel-controls>div button{flex:0 0 18px}
+
+.banner-slide.selected-banner{height:auto;min-height:0}.banner-slide.selected-banner>img{width:100%;height:auto;aspect-ratio:3/2;object-fit:contain}.sheet-banner{object-fit:contain}
+
+.banner-character-pair{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:3/2;background:radial-gradient(ellipse at center,#fff9,var(--banner-color,#a09ce0));overflow:hidden}.banner-character-pair>img{width:48%!important;height:88%!important;object-fit:contain!important}.banner-character-pair>.missing{display:none}.sheet-banner>img{width:100%;object-fit:contain}.initial-starter-options{display:grid;gap:18px}.initial-pair{display:flex;justify-content:center}.initial-pair img{width:46%;height:160px;object-fit:contain}.initial-pair>.missing{display:none}.initial-choice-actions{position:sticky;bottom:0;padding:14px;background:#f4f1e5;display:flex;gap:10px;flex-wrap:wrap}.initial-choice button,.initial-invite button{border:1px solid #486b58;border-radius:12px;background:#fff5b5;padding:12px;margin:6px 0;color:#24483f;font-weight:800}.initial-invite{padding:14px;background:#fff5d0;border-radius:12px;margin-bottom:14px}.initial-invite b{display:block}

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import legacy from '../src/data/figures_master_v170.js';
-import skillTexts from '../src/data/soul-skill-texts.js';
+import skillTexts,{originalSkillTexts} from '../src/data/soul-skill-texts.js';
 import {soulOverrides} from '../src/data/soul-overrides.js';
 const path='handoff/soul-v1/MOB_SOUL_BATTLE_全327体マスターデータ_v1.json';
 const bytes=fs.readFileSync(path),master=JSON.parse(bytes);
@@ -14,7 +14,7 @@ const idByName=new Map(master.records.map(r=>[r.name,legacy.find(f=>!f.pending&&
 const condition=c=>c.type==='attribute'?{attribute:c.value}:c.type==='tag'?{tag:Object.keys(master.tagMap).find(k=>master.tagMap[k]===c.value)}:{id:idByName.get(c.value)};
 const label=c=>c.value+(c.type==='attribute'?'属性':c.type==='tag'?'タグ':'');
 const figures=master.records.map(r=>{
- const id=idByName.get(r.name),program=skillTexts.indexOf(r.soulSkill.timing+' | '+r.soulSkill.effect);
+ const id=idByName.get(r.name),program=originalSkillTexts.indexOf(r.soulSkill.timing+' | '+r.soulSkill.effect);
  if(!id||program<0||!classes[r.soulClass]||!timings[r.soulSkill.timing])throw Error('Unmapped master record '+r.uid);
  return {id,uid:r.uid,name:r.name,image:r.imagePath,rarity:r.rarity,soulClass:classes[r.soulClass],attribute:r.attribute,attackType:r.attackType,role:r.role,atk:r.ATK,def:r.DEF,tags:r.gameTagIds,
   soulSkill:{...r.soulSkill,timing:timings[r.soulSkill.timing],timingLabel:r.soulSkill.timing,description:r.soulSkill.effect+(program===55?' このスキル使用後も、このターンはフュージョン素材にできる。':program===93?' この効果で手札に戻ったこのフィギュアは、ミドルソウルでも手札から直接召喚できる。':''),program,sourceText:r.soulSkill.effect},
