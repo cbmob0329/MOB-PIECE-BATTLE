@@ -6,7 +6,20 @@ export const classNames={seed:'シードソウル',middle:'ミドルソウル',m
 export const quotas={seed:30,middle:10,mob:5};
 export const recipes=catalog.recipes;
 export function validateSoulDeck(ids,owned=null,context={}){return deckViolations(ids,owned,soulById,quotas,context);}
-export function ensureSoulDecks(profile){if(!Array.isArray(profile.soulDecks))profile.soulDecks=Array.from({length:5},()=>[]);profile.soulDeckSlot=Math.max(0,Math.min(4,profile.soulDeckSlot||0));return profile.soulDecks[profile.soulDeckSlot];}
+export function ensureSoulDecks(profile){
+ if(!Array.isArray(profile.soulDecks))profile.soulDecks=[];
+ for(let i=0;i<5;i++)if(!Array.isArray(profile.soulDecks[i]))profile.soulDecks[i]=[];
+ profile.soulDeckSlot=Math.max(0,Math.min(4,Math.trunc(Number(profile.soulDeckSlot)||0)));
+ return profile.soulDecks[profile.soulDeckSlot];
+}
+// Use the same validation for the add button and the save operation. A card's
+// fusion recipe is not an ownership or deck-editing requirement.
+export function soulDeckAddStatus(profile,id){
+ const ids=ensureSoulDecks(profile),check=validateSoulDeck([...ids,id],profile.owned,{profile});
+ const own=check.violations.filter(v=>v.id===id||v.type==='quota'&&v.key==='quota:'+soulById.get(id)?.soulClass);
+ const reasons=(own.length?own:check.violations).map(v=>v.message);
+ return {allowed:check.errors.length===0,reasons:[...new Set(reasons)]};
+}
 export function setSoulDeck(profile,deck){const old=ensureSoulDecks(profile),context={profile},check=validateSoulDeck(deck,profile.owned,context);if(check.errors.length&&!isRepairOnly(validateSoulDeck(old,profile.owned,context),check,old,deck))throw Error(check.errors[0]);profile.soulDecks[profile.soulDeckSlot]=[...deck];}
 export function prepareSoulDeck(profile,deck){const next=structuredClone(profile);setSoulDeck(next,deck);return next;}
 export function autoSoulDeck(owned,context={}){

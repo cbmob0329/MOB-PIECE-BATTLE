@@ -1,0 +1,94 @@
+{
+  "checks": [
+    "manual add/remove, save/reload, 3/1/1, slot 1/2 exclusion and slot 3 reuse",
+    "quota, retired reason and filtered empty state",
+    "partial old save opens missing slot; invalid old deck repaired only by explicit removals",
+    "failed save preserves live deck and persisted ownership",
+    "five-ace preview and save without inventory changes",
+    "all ten theme labels and actual enemy turns in isolated mobile Edge"
+  ],
+  "battles": [
+    {
+      "id": "grass",
+      "visibleEnemies": [
+        "モブホークⅡ",
+        "MOB SHOT SOUL モブスライム"
+      ]
+    },
+    {
+      "id": "desert",
+      "visibleEnemies": [
+        "モブイシマル",
+        "モブパピ"
+      ]
+    },
+    {
+      "id": "sea",
+      "visibleEnemies": [
+        "モブネプチューン",
+        "モブフロー"
+      ]
+    },
+    {
+      "id": "music",
+      "visibleEnemies": [
+        "モブマグネットM",
+        "ヌードルビート",
+        "モブバンケン"
+      ]
+    },
+    {
+      "id": "castle",
+      "visibleEnemies": [
+        "MOB SHOT リリス四姉妹ソウル 赤",
+        "モブピコダーク",
+        "モブ魔王スライム"
+      ]
+    },
+    {
+      "id": "susu",
+      "visibleEnemies": [
+        "モブススゴールド",
+        "モブススゼリー",
+        "モブトーストビート"
+      ]
+    },
+    {
+      "id": "keke",
+      "visibleEnemies": [
+        "モブアメジャック",
+        "モブスス"
+      ]
+    },
+    {
+      "id": "ame",
+      "visibleEnemies": [
+        "モブアメロー",
+        "モブアメヒノコ",
+        "モブアメブー"
+      ]
+    },
+    {
+      "id": "hero",
+      "visibleEnemies": [
+        "モブ勇者",
+        "酒場の看板娘 モブイルカエル"
+      ]
+    },
+    {
+      "id": "lilith",
+      "visibleEnemies": [
+        "覚醒モブヘルリリス",
+        "覚醒モブキリンリリス",
+        "モブクフリリス"
+      ]
+    }
+  ],
+  "errors": [],
+  "widths": [
+    320,
+    375,
+    430
+  ],
+  "nativePhone": "not tested; isolated touch-enabled Edge contexts"
+}
