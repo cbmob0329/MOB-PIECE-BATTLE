@@ -1,0 +1,4420 @@
+{
+  "patches": [
+    {
+      "id": "70",
+      "section": "fig",
+      "number": "70",
+      "source": "70 シード SSR 頼もしい仲間タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "13"
+      ]
+    },
+    {
+      "id": "71",
+      "section": "fig",
+      "number": "71",
+      "source": "71 シード SSR 頼もしい仲間タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "13"
+      ]
+    },
+    {
+      "id": "72",
+      "section": "fig",
+      "number": "72",
+      "source": "72 シード SSR 頼もしい仲間タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "13"
+      ]
+    },
+    {
+      "id": "73",
+      "section": "fig",
+      "number": "73",
+      "source": "73 シード SSR 頼もしい仲間タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "13"
+      ]
+    },
+    {
+      "id": "74",
+      "section": "fig",
+      "number": "74",
+      "source": "74 シード SSR 頼もしい仲間タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "13"
+      ]
+    },
+    {
+      "id": "185",
+      "section": "fig",
+      "number": "88",
+      "source": "88 シード SSR 頼もしい仲間タグ持ち\n",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "13"
+      ]
+    },
+    {
+      "id": "192",
+      "section": "figplay",
+      "number": "003",
+      "source": "003 ミドル UR 砂漠 or 頼もしい仲間 × 闇属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "13",
+        "42",
+        "24"
+      ],
+      "atk": 220,
+      "def": 200
+    },
+    {
+      "id": "193",
+      "section": "figplay",
+      "number": "004",
+      "source": "004 ミドル UR 田舎町 or 頼もしい仲間 × 雷属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "13",
+        "43",
+        "24"
+      ],
+      "atk": 215,
+      "def": 205
+    },
+    {
+      "id": "194",
+      "section": "figplay",
+      "number": "005",
+      "source": "005 ミドル UR マグマ or 頼もしい仲間 × 火属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "13",
+        "47",
+        "24"
+      ],
+      "atk": 200,
+      "def": 220
+    },
+    {
+      "id": "195",
+      "section": "figplay",
+      "number": "006",
+      "source": "006 ミドル UR ネオン街 or 頼もしい仲間 × 光属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "13",
+        "44",
+        "24"
+      ],
+      "atk": 215,
+      "def": 205
+    },
+    {
+      "id": "196",
+      "section": "figplay",
+      "number": "007",
+      "source": "007 ミドル UR 海底 or 頼もしい仲間 × 水属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "13",
+        "45",
+        "24"
+      ],
+      "atk": 210,
+      "def": 210
+    },
+    {
+      "id": "197",
+      "section": "figplay",
+      "number": "008",
+      "source": "008 ミドル UR 部族村 or 頼もしい仲間 × 雷属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "13",
+        "46",
+        "24"
+      ],
+      "atk": 210,
+      "def": 210
+    },
+    {
+      "id": "198",
+      "section": "figplay",
+      "number": "009",
+      "source": "009 ミドル UR 草原 or 頼もしい仲間 × 地属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "13",
+        "41",
+        "24"
+      ],
+      "atk": 215,
+      "def": 205
+    },
+    {
+      "id": "199",
+      "section": "figplay",
+      "number": "010",
+      "source": "010 ミドル UR 砂漠 or 頼もしい仲間 × 風属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "13",
+        "42",
+        "24"
+      ],
+      "atk": 210,
+      "def": 210
+    },
+    {
+      "id": "200",
+      "section": "figplay",
+      "number": "011",
+      "source": "011 MOB MOB 主人公パーティー × 読みかけの本\n召喚されたターンは戦闘・スキルで破壊されない。\n",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "24"
+      ],
+      "passive": {
+        "summonGuard": true
+      },
+      "program": 173
+    },
+    {
+      "id": "mq:eventfig/01",
+      "section": "eventfig",
+      "number": "01",
+      "source": "01 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/02",
+      "section": "eventfig",
+      "number": "02",
+      "source": "02 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/03",
+      "section": "eventfig",
+      "number": "03",
+      "source": "03 ミドル UR",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/04",
+      "section": "eventfig",
+      "number": "04",
+      "source": "04 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/05",
+      "section": "eventfig",
+      "number": "05",
+      "source": "05 ミドル SSR",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 175,
+      "def": 165
+    },
+    {
+      "id": "mq:eventfig/06",
+      "section": "eventfig",
+      "number": "06",
+      "source": "06 ミドル SSR モブロック×火属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 150,
+      "def": 190
+    },
+    {
+      "id": "mq:eventfig/07",
+      "section": "eventfig",
+      "number": "07",
+      "source": "07 ミドル SSR タグ:海底 × 水属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "45"
+      ],
+      "atk": 170,
+      "def": 170
+    },
+    {
+      "id": "mq:eventfig/08",
+      "section": "eventfig",
+      "number": "08",
+      "source": "08 ミドル SSR タグ:田舎町 × タグ:草原",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "43"
+      ],
+      "atk": 160,
+      "def": 180
+    },
+    {
+      "id": "mq:eventfig/09",
+      "section": "eventfig",
+      "number": "09",
+      "source": "09 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/10",
+      "section": "eventfig",
+      "number": "10",
+      "source": "10 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/11",
+      "section": "eventfig",
+      "number": "11",
+      "source": "11 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/12",
+      "section": "eventfig",
+      "number": "12",
+      "source": "12 シード SSR このフィギュアが破壊された時、デッキから12(モンスター名を表示)を1体召喚する。",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "09"
+      ],
+      "passive": {
+        "deathId": "mq:eventfig/12"
+      },
+      "program": 176
+    },
+    {
+      "id": "mq:eventfig/13",
+      "section": "eventfig",
+      "number": "13",
+      "source": "13 シード SSR このフィギュアが破壊された時、デッキから13を1体召喚する。",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "passive": {
+        "deathId": "mq:eventfig/13"
+      },
+      "program": 176
+    },
+    {
+      "id": "mq:eventfig/14",
+      "section": "eventfig",
+      "number": "14",
+      "source": "14 ミドル SSR 砂漠 × とびっきりのスイーツ or 美味しい食べ物",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42"
+      ],
+      "atk": 155,
+      "def": 185
+    },
+    {
+      "id": "mq:eventfig/15",
+      "section": "eventfig",
+      "number": "15",
+      "source": "15 ミドル UR 魔王城 × タグ:イベントボス",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "48"
+      ],
+      "atk": 200,
+      "def": 220
+    },
+    {
+      "id": "mq:eventfig/16",
+      "section": "eventfig",
+      "number": "16",
+      "source": "16 ミドル UR 魔王城 × タグ:スライム",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "48"
+      ],
+      "atk": 195,
+      "def": 225
+    },
+    {
+      "id": "mq:eventfig/17",
+      "section": "eventfig",
+      "number": "17",
+      "source": "17 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/18",
+      "section": "eventfig",
+      "number": "18",
+      "source": "18 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/19",
+      "section": "eventfig",
+      "number": "19",
+      "source": "19 ミドル SSR モブサバンナ×タグ:草原 MOBソウルフュージョン 17 × 18",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 160,
+      "def": 180
+    },
+    {
+      "id": "mq:eventfig/20",
+      "section": "eventfig",
+      "number": "20",
+      "source": "20 ミドル SSR モブサバンナ×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/21",
+      "section": "eventfig",
+      "number": "21",
+      "source": "21 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/22",
+      "section": "eventfig",
+      "number": "22",
+      "source": "22 ミドル SSR 21 × 火属性 MOBソウルフュージョン 21×21",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 155,
+      "def": 185
+    },
+    {
+      "id": "mq:eventfig/23",
+      "section": "eventfig",
+      "number": "23",
+      "source": "23 MOB MOB 火属性 × タグ:伝説",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [],
+      "atk": 305,
+      "def": 325
+    },
+    {
+      "id": "mq:eventfig/24",
+      "section": "eventfig",
+      "number": "24",
+      "source": "24 シード SSR 美味しい食べ物 & とびっきりのスイーツタグ",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "18",
+        "65",
+        "specified-sweets"
+      ]
+    },
+    {
+      "id": "mq:eventfig/25",
+      "section": "eventfig",
+      "number": "25",
+      "source": "25 ミドル UR 美味しい食べ物 & とびっきりのスイーツタグ\n美味しい食べ物 × タグ:ネオン街 MOBソウルフュージョン 24×24",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "18",
+        "65",
+        "specified-sweets"
+      ],
+      "atk": 200,
+      "def": 220
+    },
+    {
+      "id": "mq:eventfig/26",
+      "section": "eventfig",
+      "number": "26",
+      "source": "26 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/27",
+      "section": "eventfig",
+      "number": "27",
+      "source": "27 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/28",
+      "section": "eventfig",
+      "number": "28",
+      "source": "28 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/29",
+      "section": "eventfig",
+      "number": "29",
+      "source": "29 ミドル SSR 26 or 27 or 28 × 光属性 MOBソウルフュージョン 26×27 26×28 27×28",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/30",
+      "section": "eventfig",
+      "number": "30",
+      "source": "30 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/31",
+      "section": "eventfig",
+      "number": "31",
+      "source": "31 ミドル SSR 草原 × 美味しい食べ物 MOBソウルフュージョン 30×美味しい食べ物",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "41"
+      ],
+      "atk": 170,
+      "def": 170
+    },
+    {
+      "id": "mq:eventfig/32",
+      "section": "eventfig",
+      "number": "32",
+      "source": "32 ミドル SSR 草原 × 水属性 MOBソウルフュージョン 30×水属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "41"
+      ],
+      "atk": 170,
+      "def": 170
+    },
+    {
+      "id": "mq:eventfig/33",
+      "section": "eventfig",
+      "number": "33",
+      "source": "33 MOB UR 草原 × 美味しい食べ物 MOBソウルフュージョン 31×32",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "41"
+      ],
+      "atk": 305,
+      "def": 325
+    },
+    {
+      "id": "mq:eventfig/34",
+      "section": "eventfig",
+      "number": "34",
+      "source": "34 シード SR 美味しい食べ物タグ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": [
+        "18"
+      ]
+    },
+    {
+      "id": "mq:eventfig/35",
+      "section": "eventfig",
+      "number": "35",
+      "source": "35 ミドル SSR 01×雷属性 01×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 165,
+      "def": 175
+    },
+    {
+      "id": "mq:eventfig/36",
+      "section": "eventfig",
+      "number": "36",
+      "source": "36 ミドル SSR 砂漠 × 風属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42"
+      ],
+      "atk": 155,
+      "def": 185
+    },
+    {
+      "id": "mq:eventfig/37",
+      "section": "eventfig",
+      "number": "37",
+      "source": "37 ミドル SSR 砂漠 × 闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42"
+      ],
+      "atk": 150,
+      "def": 190
+    },
+    {
+      "id": "mq:eventfig/38",
+      "section": "eventfig",
+      "number": "38",
+      "source": "38 ミドル SSR 田舎町 × 地属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "43"
+      ],
+      "atk": 180,
+      "def": 160
+    },
+    {
+      "id": "mq:eventfig/39",
+      "section": "eventfig",
+      "number": "39",
+      "source": "39 ミドル SSR 火属性×水属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 180,
+      "def": 160
+    },
+    {
+      "id": "mq:eventfig/40",
+      "section": "eventfig",
+      "number": "40",
+      "source": "40 ミドル SSR モブサバンナ × 光属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 180,
+      "def": 160
+    },
+    {
+      "id": "mq:eventfig/41",
+      "section": "eventfig",
+      "number": "41",
+      "source": "41 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/42",
+      "section": "eventfig",
+      "number": "42",
+      "source": "42 シード SSR 美味しい食べ物タグ",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "18"
+      ]
+    },
+    {
+      "id": "mq:eventfig/43",
+      "section": "eventfig",
+      "number": "43",
+      "source": "43 シード SSR 美味しい食べ物タグ",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "18"
+      ],
+      "atk": 100,
+      "def": 120
+    },
+    {
+      "id": "mq:eventfig/44",
+      "section": "eventfig",
+      "number": "44",
+      "source": "44 ミドル SSR タグ:ドラゴン × 火属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "38"
+      ]
+    },
+    {
+      "id": "mq:eventfig/45",
+      "section": "eventfig",
+      "number": "45",
+      "source": "45 ミドル SSR 部族村 × 闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "46"
+      ]
+    },
+    {
+      "id": "mq:eventfig/48",
+      "section": "eventfig",
+      "number": "48",
+      "source": "48 MOB SSR 29 × 水属性",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [],
+      "atk": 315,
+      "def": 315
+    },
+    {
+      "id": "mq:eventfig/49",
+      "section": "eventfig",
+      "number": "49",
+      "source": "49 ミドル SSR マグマ × 地属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "47"
+      ],
+      "atk": 185,
+      "def": 155
+    },
+    {
+      "id": "mq:eventfig/50",
+      "section": "eventfig",
+      "number": "50",
+      "source": "50 ミドル SSR マグマ × 地属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "47"
+      ],
+      "atk": 165,
+      "def": 175
+    },
+    {
+      "id": "mq:eventfig/51",
+      "section": "eventfig",
+      "number": "51",
+      "source": "51 シード SSR 美味しい食べ物タグ",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "18"
+      ]
+    },
+    {
+      "id": "mq:eventfig/52",
+      "section": "eventfig",
+      "number": "52",
+      "source": "52 ミドル SSR 砂漠 × 地属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42"
+      ],
+      "atk": 160,
+      "def": 180
+    },
+    {
+      "id": "mq:eventfig/53",
+      "section": "eventfig",
+      "number": "53",
+      "source": "53 MOB UR イベントボス × 火属性",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "25",
+        "53"
+      ],
+      "atk": 325,
+      "def": 305
+    },
+    {
+      "id": "mq:eventfig/54",
+      "section": "eventfig",
+      "number": "54",
+      "source": "54 MOB UR 魔王城 × イベントボス",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "48"
+      ],
+      "atk": 325,
+      "def": 305
+    },
+    {
+      "id": "mq:eventfig/55",
+      "section": "eventfig",
+      "number": "55",
+      "source": "55 MOB MOB URミドル × URミドル",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/56",
+      "section": "eventfig",
+      "number": "56",
+      "source": "56 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/57",
+      "section": "eventfig",
+      "number": "57",
+      "source": "57 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/58",
+      "section": "eventfig",
+      "number": "58",
+      "source": "58 ミドル SSR 56×タグ:MUSIC 57×砂漠 MOBソウルフュージョン 56 × 57",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 180,
+      "def": 160
+    },
+    {
+      "id": "mq:eventfig/59",
+      "section": "eventfig",
+      "number": "59",
+      "source": "59 MOB MOB 58 × タグ:MUSIC MOBソウルフュージョン 58 × 60",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/60",
+      "section": "eventfig",
+      "number": "60",
+      "source": "60 ミドル SSR 砂漠 × タグ:MUSIC",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42"
+      ],
+      "atk": 170,
+      "def": 170
+    },
+    {
+      "id": "mq:eventfig/61",
+      "section": "eventfig",
+      "number": "61",
+      "source": "61 シード SSR 美味しい食べ物 & とびっきりのスイーツタグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "18",
+        "65",
+        "specified-sweets"
+      ]
+    },
+    {
+      "id": "mq:eventfig/62",
+      "section": "eventfig",
+      "number": "62",
+      "source": "62 ミドルUR 美味しい食べ物 & とびっきりのスイーツタグ持ち\n61×タグ:キュート MOBソウルフュージョン 61×61",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "18",
+        "65",
+        "specified-sweets"
+      ],
+      "atk": 220,
+      "def": 200
+    },
+    {
+      "id": "mq:eventfig/63",
+      "section": "eventfig",
+      "number": "63",
+      "source": "63 シード SSR 美味しい食べ物 & とびっきりのスイーツタグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "18",
+        "65",
+        "specified-sweets"
+      ]
+    },
+    {
+      "id": "mq:eventfig/64",
+      "section": "eventfig",
+      "number": "64",
+      "source": "64 ミドル UR 美味しい食べ物 & とびっきりのスイーツタグ持ち\n63×タグ:キュート MOBソウルフュージョン 63×63\n",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "18",
+        "65",
+        "specified-sweets"
+      ],
+      "atk": 220,
+      "def": 200
+    },
+    {
+      "id": "88",
+      "section": "figene",
+      "number": "01",
+      "source": "01 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "89",
+      "section": "figene",
+      "number": "02",
+      "source": "02 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "90",
+      "section": "figene",
+      "number": "03",
+      "source": "03 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "91",
+      "section": "figene",
+      "number": "04",
+      "source": "04 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "92",
+      "section": "figene",
+      "number": "05",
+      "source": "05 ミドル SSR 02×雷属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "93",
+      "section": "figene",
+      "number": "06",
+      "source": "06 シード SSR サバンナダンス:1ターンに1度だけ敵の攻撃を回避する",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 125,
+      "def": 95,
+      "passive": {
+        "evadeOnce": true
+      },
+      "program": 175
+    },
+    {
+      "id": "94",
+      "section": "figene",
+      "number": "07",
+      "source": "07 ミドル SSR 04×火属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "96",
+      "section": "figene",
+      "number": "09",
+      "source": "09 ミドル SSR 草原タグ×草原タグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "41"
+      ]
+    },
+    {
+      "id": "97",
+      "section": "figene",
+      "number": "10",
+      "source": "10 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "98",
+      "section": "figene",
+      "number": "11",
+      "source": "11 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "99",
+      "section": "figene",
+      "number": "12",
+      "source": "12 ミドル SSR 10×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "100",
+      "section": "figene",
+      "number": "13",
+      "source": "13 ミドル SSR 10×砂漠タグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "101",
+      "section": "figene",
+      "number": "14",
+      "source": "14 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "103",
+      "section": "figene",
+      "number": "16",
+      "source": "16 ミドル SSR 10×雷属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "104",
+      "section": "figene",
+      "number": "17",
+      "source": "17 ミドル SSR 10×10",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "105",
+      "section": "figene",
+      "number": "18",
+      "source": "18 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "106",
+      "section": "figene",
+      "number": "19",
+      "source": "19 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "107",
+      "section": "figene",
+      "number": "20",
+      "source": "20 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 100,
+      "def": 120
+    },
+    {
+      "id": "108",
+      "section": "figene",
+      "number": "21",
+      "source": "21 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "109",
+      "section": "figene",
+      "number": "22",
+      "source": "22 ミドル SSR 20×光属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "110",
+      "section": "figene",
+      "number": "23",
+      "source": "23 ミドル SSR 19×水属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "111",
+      "section": "figene",
+      "number": "24",
+      "source": "24 ミドル SSR 19×火属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "112",
+      "section": "figene",
+      "number": "25",
+      "source": "25 ミドル SSR 田舎町タグ×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "43"
+      ]
+    },
+    {
+      "id": "113",
+      "section": "figene",
+      "number": "26",
+      "source": "26 ミドル SSR 18×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "114",
+      "section": "figene",
+      "number": "27",
+      "source": "27 ミドル SSR 19×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "115",
+      "section": "figene",
+      "number": "28",
+      "source": "28 ミドル SSR 20×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "116",
+      "section": "figene",
+      "number": "29",
+      "source": "29 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "117",
+      "section": "figene",
+      "number": "30",
+      "source": "30 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "118",
+      "section": "figene",
+      "number": "31",
+      "source": "31 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "119",
+      "section": "figene",
+      "number": "32",
+      "source": "32 ミドル SSR 30×水属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "120",
+      "section": "figene",
+      "number": "33",
+      "source": "33 ミドル SSR 29×29",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "121",
+      "section": "figene",
+      "number": "34",
+      "source": "34 ミドル UR 29×30",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": []
+    },
+    {
+      "id": "122",
+      "section": "figene",
+      "number": "35",
+      "source": "35 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "123",
+      "section": "figene",
+      "number": "36",
+      "source": "36 ミドル SSR 31×35",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 170,
+      "def": 170
+    },
+    {
+      "id": "124",
+      "section": "figene",
+      "number": "37",
+      "source": "37 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "125",
+      "section": "figene",
+      "number": "38",
+      "source": "38 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "126",
+      "section": "figene",
+      "number": "39",
+      "source": "39 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "127",
+      "section": "figene",
+      "number": "40",
+      "source": "40 ミドル SR 37×海底タグ",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "explicitTags": [],
+      "atk": 140,
+      "def": 150
+    },
+    {
+      "id": "128",
+      "section": "figene",
+      "number": "41",
+      "source": "41 ミドル SSR 海底タグ×海底タグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "45"
+      ]
+    },
+    {
+      "id": "129",
+      "section": "figene",
+      "number": "42",
+      "source": "42 MOB UR 40×41",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [],
+      "atk": 330,
+      "def": 300
+    },
+    {
+      "id": "130",
+      "section": "figene",
+      "number": "43",
+      "source": "43 ミドル SSR 39×光属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "132",
+      "section": "figene",
+      "number": "45",
+      "source": "45 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "133",
+      "section": "figene",
+      "number": "46",
+      "source": "46 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "134",
+      "section": "figene",
+      "number": "47",
+      "source": "47 ミドル SSR 部族村タグ×部族村タグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "46"
+      ]
+    },
+    {
+      "id": "135",
+      "section": "figene",
+      "number": "48",
+      "source": "48 ミドル SSR 45×46",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "136",
+      "section": "figene",
+      "number": "49",
+      "source": "49 ミドル SSR 45×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "137",
+      "section": "figene",
+      "number": "50",
+      "source": "50 ミドル SSR 46×火属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "138",
+      "section": "figene",
+      "number": "51",
+      "source": "51 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": [],
+      "atk": 105,
+      "def": 75
+    },
+    {
+      "id": "139",
+      "section": "figene",
+      "number": "52",
+      "source": "52 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": [],
+      "atk": 75,
+      "def": 105
+    },
+    {
+      "id": "140",
+      "section": "figene",
+      "number": "53",
+      "source": "53 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "141",
+      "section": "figene",
+      "number": "54",
+      "source": "54 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "142",
+      "section": "figene",
+      "number": "55",
+      "source": "55 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 120,
+      "def": 100
+    },
+    {
+      "id": "143",
+      "section": "figene",
+      "number": "56",
+      "source": "56 ミドル 55×火属性",
+      "soulClass": "middle",
+      "explicitTags": []
+    },
+    {
+      "id": "144",
+      "section": "figene",
+      "number": "57",
+      "source": "57 ミドル 53×水属性",
+      "soulClass": "middle",
+      "explicitTags": []
+    },
+    {
+      "id": "145",
+      "section": "figene",
+      "number": "58",
+      "source": "58 ミドル 53×火属性",
+      "soulClass": "middle",
+      "explicitTags": []
+    },
+    {
+      "id": "146",
+      "section": "figene",
+      "number": "59",
+      "source": "59 MOB UR 57×58",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [],
+      "atk": 330,
+      "def": 300
+    },
+    {
+      "id": "147",
+      "section": "figene",
+      "number": "60",
+      "source": "60 ミドル SSR 52×火属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "148",
+      "section": "figene",
+      "number": "61",
+      "source": "61 ミドル SSR 51×53",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "149",
+      "section": "figene",
+      "number": "62",
+      "source": "62 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "150",
+      "section": "figene",
+      "number": "63",
+      "source": "63 シード SR",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "explicitTags": []
+    },
+    {
+      "id": "151",
+      "section": "figene",
+      "number": "64",
+      "source": "64 ミドル SSR 63×魔王城タグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 175,
+      "def": 165
+    },
+    {
+      "id": "152",
+      "section": "figene",
+      "number": "65",
+      "source": "65 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "153",
+      "section": "figene",
+      "number": "66",
+      "source": "66 ミドル SSR 魔王城タグ×ネオン街タグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "48"
+      ],
+      "atk": 160,
+      "def": 180
+    },
+    {
+      "id": "154",
+      "section": "figene",
+      "number": "67",
+      "source": "67 ミドル SSR 魔王城タグ×部族村タグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "48"
+      ],
+      "atk": 180,
+      "def": 160
+    },
+    {
+      "id": "155",
+      "section": "figene",
+      "number": "68",
+      "source": "68 ミドル SR 魔王城タグ×マグマタグ",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "explicitTags": [
+        "48"
+      ],
+      "atk": 145,
+      "def": 145
+    },
+    {
+      "id": "156",
+      "section": "figene",
+      "number": "69",
+      "source": "69 MOB SSR 魔王城タグ×砂漠タグ",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "48"
+      ],
+      "atk": 325,
+      "def": 305
+    },
+    {
+      "id": "157",
+      "section": "figene",
+      "number": "70",
+      "source": "70 ミドル SSR 65×闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "158",
+      "section": "figene",
+      "number": "71",
+      "source": "71 ミドル SSR 65×火属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "202",
+      "section": "figene",
+      "number": "72",
+      "source": "72 MOB UR 魔王城タグ×2",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "48"
+      ],
+      "atk": 315,
+      "def": 315
+    },
+    {
+      "id": "159",
+      "section": "figboss",
+      "number": "01",
+      "source": "01 ミドルSSR 草原タグ × 風属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "41"
+      ]
+    },
+    {
+      "id": "160",
+      "section": "figboss",
+      "number": "02",
+      "source": "02 MOB UR figboss 01 × figene 09",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "161",
+      "section": "figboss",
+      "number": "03",
+      "source": "03 ミドルSSR 砂漠タグ × 闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "specified-mira",
+        "42"
+      ]
+    },
+    {
+      "id": "162",
+      "section": "figboss",
+      "number": "04",
+      "source": "04 MOB UR figboss 03 × figene 17",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "specified-mira"
+      ]
+    },
+    {
+      "id": "163",
+      "section": "figboss",
+      "number": "05",
+      "source": "05 ミドルSSR 田舎町 × 田舎町",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "43"
+      ]
+    },
+    {
+      "id": "164",
+      "section": "figboss",
+      "number": "06",
+      "source": "06 MOB UR figboss 05 × figene 22",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "165",
+      "section": "figboss",
+      "number": "07",
+      "source": "07 ミドルSSR figene 31 ×光属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "166",
+      "section": "figboss",
+      "number": "08",
+      "source": "08 ミドルSSR ネオン街タグ × 魔王城タグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "44"
+      ]
+    },
+    {
+      "id": "167",
+      "section": "figboss",
+      "number": "09",
+      "source": "09 ミドルSSR figene 51 × マグマタグ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "168",
+      "section": "figboss",
+      "number": "10",
+      "source": "10 MOB UR figboss 09 × figene 60",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "169",
+      "section": "figboss",
+      "number": "11",
+      "source": "11 MOB MOB figboss 09 × figene 61",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "170",
+      "section": "figboss",
+      "number": "12",
+      "source": "12 MOB MOB タグ ミラモブの系譜 × ミラモブの系譜",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "specified-mira",
+        "specified-mira"
+      ]
+    },
+    {
+      "id": "171",
+      "section": "figboss",
+      "number": "13",
+      "source": "13 ミドル SSR 部族村 × 闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "46"
+      ]
+    },
+    {
+      "id": "172",
+      "section": "figboss",
+      "number": "14",
+      "source": "14 MOB UR figboss 13 × figboss 15",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "173",
+      "section": "figboss",
+      "number": "15",
+      "source": "15 ミドル SSR 部族村 × 闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "46"
+      ]
+    },
+    {
+      "id": "174",
+      "section": "figboss",
+      "number": "16",
+      "source": "16 MOB UR figboss 13 × figboss 15",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "175",
+      "section": "figboss",
+      "number": "17",
+      "source": "17 MOB UR figboss 05 × 雷属性",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [],
+      "atk": 320,
+      "def": 310
+    },
+    {
+      "id": "176",
+      "section": "figboss",
+      "number": "18",
+      "source": "18 MOB UR figboss 07 × figene 34",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [],
+      "atk": 315,
+      "def": 315
+    },
+    {
+      "id": "177",
+      "section": "figboss",
+      "number": "19",
+      "source": "19 シード SSR  リリス4姉妹タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 115,
+      "def": 105
+    },
+    {
+      "id": "178",
+      "section": "figboss",
+      "number": "20",
+      "source": "20 シード SSR  リリス4姉妹タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 115,
+      "def": 105
+    },
+    {
+      "id": "179",
+      "section": "figboss",
+      "number": "21",
+      "source": "21 シード SSR  リリス4姉妹タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 115,
+      "def": 105
+    },
+    {
+      "id": "180",
+      "section": "figboss",
+      "number": "22",
+      "source": "22 シード SSR  リリス4姉妹タグ持ち",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 115,
+      "def": 105
+    },
+    {
+      "id": "181",
+      "section": "figboss",
+      "number": "23",
+      "source": "23 ミドル UR figboss 19 × 魔法使いタグ リリス4姉妹タグ持ち",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 215,
+      "def": 205
+    },
+    {
+      "id": "182",
+      "section": "figboss",
+      "number": "24",
+      "source": "24 ミドル figboss 20 × 魔法使いタグ リリス4姉妹タグ持ち",
+      "soulClass": "middle",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 180,
+      "def": 160
+    },
+    {
+      "id": "183",
+      "section": "figboss",
+      "number": "25",
+      "source": "25 ミドル figboss 21 × 魔法使いタグ リリス4姉妹タグ持ち",
+      "soulClass": "middle",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 180,
+      "def": 160
+    },
+    {
+      "id": "184",
+      "section": "figboss",
+      "number": "26",
+      "source": "26 ミドル figboss 22 × 魔法使いタグ リリス4姉妹タグ持ち",
+      "soulClass": "middle",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 180,
+      "def": 160
+    },
+    {
+      "id": "203",
+      "section": "figboss",
+      "number": "27",
+      "source": "27 ミドル SSR 砂漠タグ×水属性 リリス4姉妹タグ持ち",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42",
+        "specified-lilith"
+      ]
+    },
+    {
+      "id": "204",
+      "section": "figboss",
+      "number": "28",
+      "source": "28 ミドル SSR 砂漠タグ×地属性 リリス4姉妹タグ持ち",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42",
+        "specified-lilith"
+      ]
+    },
+    {
+      "id": "205",
+      "section": "figboss",
+      "number": "29",
+      "source": "29 ミドル SSR 砂漠タグ×光属性 リリス4姉妹タグ持ち",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42",
+        "specified-lilith"
+      ]
+    },
+    {
+      "id": "206",
+      "section": "figboss",
+      "number": "30",
+      "source": "30 ミドル SSR 砂漠タグ×火属性 リリス4姉妹タグ持ち",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [
+        "42",
+        "specified-lilith"
+      ]
+    },
+    {
+      "id": "207",
+      "section": "figboss",
+      "number": "31",
+      "source": "31 MOB UR figene 70 × figene 71 リリス4姉妹タグ持ち スキル:薔薇の鼓動:自分の場のリリス4姉妹タグを持つフィギュアのATKとDEFを+50する",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "specified-lilith"
+      ],
+      "atk": 325,
+      "def": 305,
+      "program": 174
+    },
+    {
+      "id": "215",
+      "section": "figboss",
+      "number": "39",
+      "source": "39 UR ミドル 読みかけの本タグ × 光属性",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [
+        "52"
+      ]
+    },
+    {
+      "id": "219",
+      "section": "figboss",
+      "number": "43",
+      "source": "43 UR MOB figene 43 × 海底タグ",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "explicitTags": [],
+      "atk": 270,
+      "def": 250
+    },
+    {
+      "id": "190",
+      "section": "figplay",
+      "number": "001",
+      "source": "001 MOB MOB 主人公パーティー × 主人公パーティー\n破壊された時、あのヒーローを召喚する。",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [
+        "24"
+      ],
+      "atk": 305,
+      "def": 325,
+      "passive": {
+        "deathReserve": "200"
+      },
+      "program": 176,
+      "skillText": "破壊された時、融合領域からモブあのヒーローを召喚する。"
+    },
+    {
+      "id": "191",
+      "section": "figplay",
+      "number": "002",
+      "source": "002 シード UR このカードを破壊し、ミドルの主人公パーティー1体を召喚する",
+      "soulClass": "seed",
+      "rarity": "UR",
+      "explicitTags": [
+        "24"
+      ],
+      "program": 172
+    },
+    {
+      "id": "208",
+      "section": "figboss",
+      "number": "32",
+      "source": "32 シード SSR",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 110,
+      "def": 110,
+      "passive": {
+        "evolve": {
+          "target": "209",
+          "cost": 1
+        }
+      }
+    },
+    {
+      "id": "209",
+      "section": "figboss",
+      "number": "33",
+      "source": "33 ミドル UR 条件進化 figboss 32が撃破された時、手札を1枚捨てることで召喚出来る",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [],
+      "atk": 215,
+      "def": 205,
+      "passive": {
+        "evolve": {
+          "target": "210",
+          "cost": 2
+        }
+      }
+    },
+    {
+      "id": "210",
+      "section": "figboss",
+      "number": "34",
+      "source": "34 MOB MOB 条件進化 figboss 33が撃破された時、手札を2枚捨てることで召喚出来る",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "218",
+      "section": "figboss",
+      "number": "42",
+      "source": "42 MOB MOB 条件進化 figboss 44 が撃破された時、リリス4姉妹のタグを持つフィギュアをフィールドか手札から捨てることで召喚出来る",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "102",
+      "section": "figene",
+      "number": "15",
+      "source": "15 シード SR（ユーザー訂正）",
+      "rarity": "SR",
+      "explicitTags": [],
+      "soulClass": "seed"
+    },
+    {
+      "id": "216",
+      "section": "figboss",
+      "number": "40",
+      "source": "40 MOB MOB figboss 39 × 読みかけの本タグ（ユーザー訂正）",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": []
+    },
+    {
+      "id": "mq:eventfig/46",
+      "section": "eventfig",
+      "number": "46",
+      "source": "46 ミドル SSR イベントボス × 闇属性",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 155,
+      "def": 185
+    },
+    {
+      "id": "mq:eventfig/47",
+      "section": "eventfig",
+      "number": "47",
+      "source": "47 MOB UR eventfig46 × 闇属性（ユーザー訂正）",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "explicitTags": [],
+      "atk": 315,
+      "def": 315
+    },
+    {
+      "id": "95",
+      "section": "figene",
+      "number": "08",
+      "source": "08 ミドル SSR figene04 × 地属性（ユーザー確定）",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "explicitTags": []
+    },
+    {
+      "id": "211",
+      "section": "figboss",
+      "number": "35",
+      "source": "35 シード SSR・融合レシピなし（ユーザー確定）",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 115,
+      "def": 105
+    },
+    {
+      "id": "212",
+      "section": "figboss",
+      "number": "36",
+      "source": "36 シード SSR・融合レシピなし（ユーザー確定）",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "explicitTags": [],
+      "atk": 125,
+      "def": 95
+    },
+    {
+      "id": "213",
+      "section": "figboss",
+      "number": "37",
+      "source": "37 UR ミドル figboss 35 × 読みかけの本タグ",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [],
+      "atk": 220,
+      "def": 200
+    },
+    {
+      "id": "214",
+      "section": "figboss",
+      "number": "38",
+      "source": "38 UR ミドル figboss 36 × 読みかけの本タグ",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "explicitTags": [],
+      "atk": 215,
+      "def": 205
+    },
+    {
+      "id": "217",
+      "section": "figboss",
+      "number": "41",
+      "source": "41 UR MOB figboss 37 × figboss 38",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "explicitTags": []
+    }
+  ],
+  "recipes": [
+    {
+      "id": "OCT05-192-1",
+      "target": "192",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "tag": "42"
+            },
+            {
+              "tag": "13"
+            }
+          ]
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "砂漠 or 頼もしい仲間 × 闇属性",
+      "basis": "ミドル UR 砂漠 or 頼もしい仲間 × 闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-193-2",
+      "target": "193",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "tag": "43"
+            },
+            {
+              "tag": "13"
+            }
+          ]
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "label": "田舎町 or 頼もしい仲間 × 雷属性",
+      "basis": "ミドル UR 田舎町 or 頼もしい仲間 × 雷属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-194-3",
+      "target": "194",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "tag": "47"
+            },
+            {
+              "tag": "13"
+            }
+          ]
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "マグマ or 頼もしい仲間 × 火属性",
+      "basis": "ミドル UR マグマ or 頼もしい仲間 × 火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-195-4",
+      "target": "195",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "tag": "44"
+            },
+            {
+              "tag": "13"
+            }
+          ]
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "label": "ネオン街 or 頼もしい仲間 × 光属性",
+      "basis": "ミドル UR ネオン街 or 頼もしい仲間 × 光属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-196-5",
+      "target": "196",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "tag": "45"
+            },
+            {
+              "tag": "13"
+            }
+          ]
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "海底 or 頼もしい仲間 × 水属性",
+      "basis": "ミドル UR 海底 or 頼もしい仲間 × 水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-197-6",
+      "target": "197",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "tag": "46"
+            },
+            {
+              "tag": "13"
+            }
+          ]
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "label": "部族村 or 頼もしい仲間 × 雷属性",
+      "basis": "ミドル UR 部族村 or 頼もしい仲間 × 雷属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-198-7",
+      "target": "198",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "tag": "41"
+            },
+            {
+              "tag": "13"
+            }
+          ]
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "label": "草原 or 頼もしい仲間 × 地属性",
+      "basis": "ミドル UR 草原 or 頼もしい仲間 × 地属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-199-8",
+      "target": "199",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "tag": "42"
+            },
+            {
+              "tag": "13"
+            }
+          ]
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "label": "砂漠 or 頼もしい仲間 × 風属性",
+      "basis": "ミドル UR 砂漠 or 頼もしい仲間 × 風属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-200-9",
+      "target": "200",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "24"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "label": "主人公パーティー × 読みかけの本",
+      "basis": "MOB MOB 主人公パーティー × 読みかけの本",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-06-10",
+      "target": "mq:eventfig/06",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "89"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "モブロック×火属性",
+      "basis": "ミドル SSR モブロック×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-07-11",
+      "target": "mq:eventfig/07",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "45"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "タグ:海底 × 水属性",
+      "basis": "ミドル SSR タグ:海底 × 水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-08-12",
+      "target": "mq:eventfig/08",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "43"
+        },
+        {
+          "tag": "41"
+        }
+      ],
+      "label": "タグ:田舎町 × タグ:草原",
+      "basis": "ミドル SSR タグ:田舎町 × タグ:草原",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-14-13",
+      "target": "mq:eventfig/14",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "any": [
+            {
+              "tag": "specified-sweets"
+            },
+            {
+              "tag": "18"
+            }
+          ]
+        }
+      ],
+      "label": "砂漠 × とびっきりのスイーツ or 美味しい食べ物",
+      "basis": "ミドル SSR 砂漠 × とびっきりのスイーツ or 美味しい食べ物",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-15-14",
+      "target": "mq:eventfig/15",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "48"
+        },
+        {
+          "tag": "53"
+        }
+      ],
+      "label": "魔王城 × タグ:イベントボス",
+      "basis": "ミドル UR 魔王城 × タグ:イベントボス",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-16-15",
+      "target": "mq:eventfig/16",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "48"
+        },
+        {
+          "tag": "17"
+        }
+      ],
+      "label": "魔王城 × タグ:スライム",
+      "basis": "ミドル UR 魔王城 × タグ:スライム",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-19-16",
+      "target": "mq:eventfig/19",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "93"
+        },
+        {
+          "tag": "41"
+        }
+      ],
+      "label": "モブサバンナ×タグ:草原",
+      "basis": "ミドル SSR モブサバンナ×タグ:草原",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-19-17",
+      "target": "mq:eventfig/19",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/17"
+        },
+        {
+          "id": "mq:eventfig/18"
+        }
+      ],
+      "label": "17 × 18",
+      "basis": "17 × 18",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-20-18",
+      "target": "mq:eventfig/20",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "93"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "モブサバンナ×闇属性",
+      "basis": "ミドル SSR モブサバンナ×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-22-19",
+      "target": "mq:eventfig/22",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/21"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "21 × 火属性",
+      "basis": "ミドル SSR 21 × 火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-22-20",
+      "target": "mq:eventfig/22",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/21"
+        },
+        {
+          "id": "mq:eventfig/21"
+        }
+      ],
+      "label": "21×21",
+      "basis": "21×21",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-23-21",
+      "target": "mq:eventfig/23",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "attribute": "火"
+        },
+        {
+          "tag": "30"
+        }
+      ],
+      "label": "火属性 × タグ:伝説",
+      "basis": "MOB MOB 火属性 × タグ:伝説",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-25-22",
+      "target": "mq:eventfig/25",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "18"
+        },
+        {
+          "tag": "44"
+        }
+      ],
+      "label": "美味しい食べ物 × タグ:ネオン街",
+      "basis": "美味しい食べ物 × タグ:ネオン街",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-25-23",
+      "target": "mq:eventfig/25",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/24"
+        },
+        {
+          "id": "mq:eventfig/24"
+        }
+      ],
+      "label": "24×24",
+      "basis": "24×24",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-29-24",
+      "target": "mq:eventfig/29",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "any": [
+            {
+              "id": "mq:eventfig/26"
+            },
+            {
+              "id": "mq:eventfig/27"
+            },
+            {
+              "id": "mq:eventfig/28"
+            }
+          ]
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "label": "26 or 27 or 28 × 光属性",
+      "basis": "ミドル SSR 26 or 27 or 28 × 光属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-29-25",
+      "target": "mq:eventfig/29",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/26"
+        },
+        {
+          "id": "mq:eventfig/27"
+        }
+      ],
+      "label": "26×27",
+      "basis": "26×27 26×28 27×28",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-29-26",
+      "target": "mq:eventfig/29",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/26"
+        },
+        {
+          "id": "mq:eventfig/28"
+        }
+      ],
+      "label": "26×28",
+      "basis": "26×27 26×28 27×28",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-29-27",
+      "target": "mq:eventfig/29",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/27"
+        },
+        {
+          "id": "mq:eventfig/28"
+        }
+      ],
+      "label": "27×28",
+      "basis": "26×27 26×28 27×28",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-31-28",
+      "target": "mq:eventfig/31",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "41"
+        },
+        {
+          "tag": "18"
+        }
+      ],
+      "label": "草原 × 美味しい食べ物",
+      "basis": "ミドル SSR 草原 × 美味しい食べ物",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-31-29",
+      "target": "mq:eventfig/31",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/30"
+        },
+        {
+          "tag": "18"
+        }
+      ],
+      "label": "30×美味しい食べ物",
+      "basis": "30×美味しい食べ物",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-32-30",
+      "target": "mq:eventfig/32",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "41"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "草原 × 水属性",
+      "basis": "ミドル SSR 草原 × 水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-32-31",
+      "target": "mq:eventfig/32",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/30"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "30×水属性",
+      "basis": "30×水属性",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-33-32",
+      "target": "mq:eventfig/33",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "41"
+        },
+        {
+          "tag": "18"
+        }
+      ],
+      "label": "草原 × 美味しい食べ物",
+      "basis": "MOB UR 草原 × 美味しい食べ物",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-33-33",
+      "target": "mq:eventfig/33",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "mq:eventfig/31"
+        },
+        {
+          "id": "mq:eventfig/32"
+        }
+      ],
+      "label": "31×32",
+      "basis": "31×32",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-35-34",
+      "target": "mq:eventfig/35",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/01"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "label": "01×雷属性",
+      "basis": "ミドル SSR 01×雷属性 01×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-35-35",
+      "target": "mq:eventfig/35",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/01"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "01×闇属性",
+      "basis": "ミドル SSR 01×雷属性 01×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-36-36",
+      "target": "mq:eventfig/36",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "label": "砂漠 × 風属性",
+      "basis": "ミドル SSR 砂漠 × 風属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-37-37",
+      "target": "mq:eventfig/37",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "砂漠 × 闇属性",
+      "basis": "ミドル SSR 砂漠 × 闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-38-38",
+      "target": "mq:eventfig/38",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "43"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "label": "田舎町 × 地属性",
+      "basis": "ミドル SSR 田舎町 × 地属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-39-39",
+      "target": "mq:eventfig/39",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "火"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "火属性×水属性",
+      "basis": "ミドル SSR 火属性×水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-40-40",
+      "target": "mq:eventfig/40",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "93"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "label": "モブサバンナ × 光属性",
+      "basis": "ミドル SSR モブサバンナ × 光属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-44-41",
+      "target": "mq:eventfig/44",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "38"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "タグ:ドラゴン × 火属性",
+      "basis": "ミドル SSR タグ:ドラゴン × 火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-45-42",
+      "target": "mq:eventfig/45",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "46"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "部族村 × 闇属性",
+      "basis": "ミドル SSR 部族村 × 闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-48-46",
+      "target": "mq:eventfig/48",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "mq:eventfig/29"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "29 × 水属性",
+      "basis": "MOB SSR 29 × 水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-49-47",
+      "target": "mq:eventfig/49",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "47"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "label": "マグマ × 地属性",
+      "basis": "ミドル SSR マグマ × 地属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-50-48",
+      "target": "mq:eventfig/50",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "47"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "label": "マグマ × 地属性",
+      "basis": "ミドル SSR マグマ × 地属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-52-49",
+      "target": "mq:eventfig/52",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "label": "砂漠 × 地属性",
+      "basis": "ミドル SSR 砂漠 × 地属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-53-50",
+      "target": "mq:eventfig/53",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "53"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "イベントボス × 火属性",
+      "basis": "MOB UR イベントボス × 火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-54-51",
+      "target": "mq:eventfig/54",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "48"
+        },
+        {
+          "tag": "53"
+        }
+      ],
+      "label": "魔王城 × イベントボス",
+      "basis": "MOB UR 魔王城 × イベントボス",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-55-52",
+      "target": "mq:eventfig/55",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "rarity": "UR",
+          "class": "middle"
+        },
+        {
+          "rarity": "UR",
+          "class": "middle"
+        }
+      ],
+      "label": "URミドル × URミドル",
+      "basis": "MOB MOB URミドル × URミドル",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-58-53",
+      "target": "mq:eventfig/58",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/56"
+        },
+        {
+          "tag": "12"
+        }
+      ],
+      "label": "56×タグ:MUSIC",
+      "basis": "ミドル SSR 56×タグ:MUSIC 57×砂漠",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-58-54",
+      "target": "mq:eventfig/58",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/57"
+        },
+        {
+          "tag": "42"
+        }
+      ],
+      "label": "57×砂漠",
+      "basis": "ミドル SSR 56×タグ:MUSIC 57×砂漠",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-58-55",
+      "target": "mq:eventfig/58",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/56"
+        },
+        {
+          "id": "mq:eventfig/57"
+        }
+      ],
+      "label": "56 × 57",
+      "basis": "56 × 57",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-59-56",
+      "target": "mq:eventfig/59",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "mq:eventfig/58"
+        },
+        {
+          "tag": "12"
+        }
+      ],
+      "label": "58 × タグ:MUSIC",
+      "basis": "MOB MOB 58 × タグ:MUSIC",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-59-57",
+      "target": "mq:eventfig/59",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "mq:eventfig/58"
+        },
+        {
+          "id": "mq:eventfig/60"
+        }
+      ],
+      "label": "58 × 60",
+      "basis": "58 × 60",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-60-58",
+      "target": "mq:eventfig/60",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "tag": "12"
+        }
+      ],
+      "label": "砂漠 × タグ:MUSIC",
+      "basis": "ミドル SSR 砂漠 × タグ:MUSIC",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-62-59",
+      "target": "mq:eventfig/62",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/61"
+        },
+        {
+          "tag": "27"
+        }
+      ],
+      "label": "61×タグ:キュート",
+      "basis": "61×タグ:キュート",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-62-60",
+      "target": "mq:eventfig/62",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/61"
+        },
+        {
+          "id": "mq:eventfig/61"
+        }
+      ],
+      "label": "61×61",
+      "basis": "61×61",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-mq-eventfig-64-61",
+      "target": "mq:eventfig/64",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/63"
+        },
+        {
+          "tag": "27"
+        }
+      ],
+      "label": "63×タグ:キュート",
+      "basis": "63×タグ:キュート",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-64-62",
+      "target": "mq:eventfig/64",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/63"
+        },
+        {
+          "id": "mq:eventfig/63"
+        }
+      ],
+      "label": "63×63",
+      "basis": "63×63",
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20
+    },
+    {
+      "id": "OCT05-92-63",
+      "target": "92",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "89"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "label": "02×雷属性",
+      "basis": "ミドル SSR 02×雷属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-94-64",
+      "target": "94",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "91"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "04×火属性",
+      "basis": "ミドル SSR 04×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-96-66",
+      "target": "96",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "41"
+        },
+        {
+          "tag": "41"
+        }
+      ],
+      "label": "草原タグ×草原タグ",
+      "basis": "ミドル SSR 草原タグ×草原タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-99-67",
+      "target": "99",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "97"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "10×闇属性",
+      "basis": "ミドル SSR 10×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-100-68",
+      "target": "100",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "97"
+        },
+        {
+          "tag": "42"
+        }
+      ],
+      "label": "10×砂漠タグ",
+      "basis": "ミドル SSR 10×砂漠タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-103-69",
+      "target": "103",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "97"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "label": "10×雷属性",
+      "basis": "ミドル SSR 10×雷属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-104-70",
+      "target": "104",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "97"
+        },
+        {
+          "id": "97"
+        }
+      ],
+      "label": "10×10",
+      "basis": "ミドル SSR 10×10",
+      "special": false
+    },
+    {
+      "id": "OCT05-109-71",
+      "target": "109",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "107"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "label": "20×光属性",
+      "basis": "ミドル SSR 20×光属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-110-72",
+      "target": "110",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "106"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "19×水属性",
+      "basis": "ミドル SSR 19×水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-111-73",
+      "target": "111",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "106"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "19×火属性",
+      "basis": "ミドル SSR 19×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-112-74",
+      "target": "112",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "43"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "田舎町タグ×闇属性",
+      "basis": "ミドル SSR 田舎町タグ×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-113-75",
+      "target": "113",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "105"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "18×闇属性",
+      "basis": "ミドル SSR 18×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-114-76",
+      "target": "114",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "106"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "19×闇属性",
+      "basis": "ミドル SSR 19×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-115-77",
+      "target": "115",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "107"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "20×闇属性",
+      "basis": "ミドル SSR 20×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-119-78",
+      "target": "119",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "117"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "30×水属性",
+      "basis": "ミドル SSR 30×水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-120-79",
+      "target": "120",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "116"
+        },
+        {
+          "id": "116"
+        }
+      ],
+      "label": "29×29",
+      "basis": "ミドル SSR 29×29",
+      "special": false
+    },
+    {
+      "id": "OCT05-121-80",
+      "target": "121",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "116"
+        },
+        {
+          "id": "117"
+        }
+      ],
+      "label": "29×30",
+      "basis": "ミドル UR 29×30",
+      "special": false
+    },
+    {
+      "id": "OCT05-123-81",
+      "target": "123",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "118"
+        },
+        {
+          "id": "122"
+        }
+      ],
+      "label": "31×35",
+      "basis": "ミドル SSR 31×35",
+      "special": false
+    },
+    {
+      "id": "OCT05-127-82",
+      "target": "127",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "124"
+        },
+        {
+          "tag": "45"
+        }
+      ],
+      "label": "37×海底タグ",
+      "basis": "ミドル SR 37×海底タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-128-83",
+      "target": "128",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "45"
+        },
+        {
+          "tag": "45"
+        }
+      ],
+      "label": "海底タグ×海底タグ",
+      "basis": "ミドル SSR 海底タグ×海底タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-129-84",
+      "target": "129",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "127"
+        },
+        {
+          "id": "128"
+        }
+      ],
+      "label": "40×41",
+      "basis": "MOB UR 40×41",
+      "special": false
+    },
+    {
+      "id": "OCT05-130-85",
+      "target": "130",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "126"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "label": "39×光属性",
+      "basis": "ミドル SSR 39×光属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-134-86",
+      "target": "134",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "46"
+        },
+        {
+          "tag": "46"
+        }
+      ],
+      "label": "部族村タグ×部族村タグ",
+      "basis": "ミドル SSR 部族村タグ×部族村タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-135-87",
+      "target": "135",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "132"
+        },
+        {
+          "id": "133"
+        }
+      ],
+      "label": "45×46",
+      "basis": "ミドル SSR 45×46",
+      "special": false
+    },
+    {
+      "id": "OCT05-136-88",
+      "target": "136",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "132"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "45×闇属性",
+      "basis": "ミドル SSR 45×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-137-89",
+      "target": "137",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "133"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "46×火属性",
+      "basis": "ミドル SSR 46×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-143-90",
+      "target": "143",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "142"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "55×火属性",
+      "basis": "ミドル 55×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-144-91",
+      "target": "144",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "140"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "53×水属性",
+      "basis": "ミドル 53×水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-145-92",
+      "target": "145",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "140"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "53×火属性",
+      "basis": "ミドル 53×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-146-93",
+      "target": "146",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "144"
+        },
+        {
+          "id": "145"
+        }
+      ],
+      "label": "57×58",
+      "basis": "MOB UR 57×58",
+      "special": false
+    },
+    {
+      "id": "OCT05-147-94",
+      "target": "147",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "139"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "52×火属性",
+      "basis": "ミドル SSR 52×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-148-95",
+      "target": "148",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "138"
+        },
+        {
+          "id": "140"
+        }
+      ],
+      "label": "51×53",
+      "basis": "ミドル SSR 51×53",
+      "special": false
+    },
+    {
+      "id": "OCT05-151-96",
+      "target": "151",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "150"
+        },
+        {
+          "tag": "48"
+        }
+      ],
+      "label": "63×魔王城タグ",
+      "basis": "ミドル SSR 63×魔王城タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-153-97",
+      "target": "153",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "48"
+        },
+        {
+          "tag": "44"
+        }
+      ],
+      "label": "魔王城タグ×ネオン街タグ",
+      "basis": "ミドル SSR 魔王城タグ×ネオン街タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-154-98",
+      "target": "154",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "48"
+        },
+        {
+          "tag": "46"
+        }
+      ],
+      "label": "魔王城タグ×部族村タグ",
+      "basis": "ミドル SSR 魔王城タグ×部族村タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-155-99",
+      "target": "155",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "48"
+        },
+        {
+          "tag": "47"
+        }
+      ],
+      "label": "魔王城タグ×マグマタグ",
+      "basis": "ミドル SR 魔王城タグ×マグマタグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-156-100",
+      "target": "156",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "48"
+        },
+        {
+          "tag": "42"
+        }
+      ],
+      "label": "魔王城タグ×砂漠タグ",
+      "basis": "MOB SSR 魔王城タグ×砂漠タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-157-101",
+      "target": "157",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "152"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "65×闇属性",
+      "basis": "ミドル SSR 65×闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-158-102",
+      "target": "158",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "152"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "65×火属性",
+      "basis": "ミドル SSR 65×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-202-103",
+      "target": "202",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "48"
+        },
+        {
+          "tag": "48"
+        }
+      ],
+      "label": "魔王城タグ×2",
+      "basis": "MOB UR 魔王城タグ×2",
+      "special": false
+    },
+    {
+      "id": "OCT05-159-104",
+      "target": "159",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "41"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "label": "草原タグ × 風属性",
+      "basis": "ミドルSSR 草原タグ × 風属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-160-105",
+      "target": "160",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "159"
+        },
+        {
+          "id": "96"
+        }
+      ],
+      "label": "figboss 01 × figene 09",
+      "basis": "MOB UR figboss 01 × figene 09",
+      "special": false
+    },
+    {
+      "id": "OCT05-161-106",
+      "target": "161",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "砂漠タグ × 闇属性",
+      "basis": "ミドルSSR 砂漠タグ × 闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-162-107",
+      "target": "162",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "161"
+        },
+        {
+          "id": "104"
+        }
+      ],
+      "label": "figboss 03 × figene 17",
+      "basis": "MOB UR figboss 03 × figene 17",
+      "special": false
+    },
+    {
+      "id": "OCT05-163-108",
+      "target": "163",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "43"
+        },
+        {
+          "tag": "43"
+        }
+      ],
+      "label": "田舎町 × 田舎町",
+      "basis": "ミドルSSR 田舎町 × 田舎町",
+      "special": false
+    },
+    {
+      "id": "OCT05-164-109",
+      "target": "164",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "163"
+        },
+        {
+          "id": "109"
+        }
+      ],
+      "label": "figboss 05 × figene 22",
+      "basis": "MOB UR figboss 05 × figene 22",
+      "special": false
+    },
+    {
+      "id": "OCT05-165-110",
+      "target": "165",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "118"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "label": "figene 31 ×光属性",
+      "basis": "ミドルSSR figene 31 ×光属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-166-111",
+      "target": "166",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "44"
+        },
+        {
+          "tag": "48"
+        }
+      ],
+      "label": "ネオン街タグ × 魔王城タグ",
+      "basis": "ミドルSSR ネオン街タグ × 魔王城タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-167-112",
+      "target": "167",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "138"
+        },
+        {
+          "tag": "47"
+        }
+      ],
+      "label": "figene 51 × マグマタグ",
+      "basis": "ミドルSSR figene 51 × マグマタグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-168-113",
+      "target": "168",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "167"
+        },
+        {
+          "id": "147"
+        }
+      ],
+      "label": "figboss 09 × figene 60",
+      "basis": "MOB UR figboss 09 × figene 60",
+      "special": false
+    },
+    {
+      "id": "OCT05-169-114",
+      "target": "169",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "167"
+        },
+        {
+          "id": "148"
+        }
+      ],
+      "label": "figboss 09 × figene 61",
+      "basis": "MOB MOB figboss 09 × figene 61",
+      "special": false
+    },
+    {
+      "id": "OCT05-170-115",
+      "target": "170",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "specified-mira"
+        },
+        {
+          "tag": "specified-mira"
+        }
+      ],
+      "label": "ミラモブの系譜 × ミラモブの系譜",
+      "basis": "MOB MOB タグ ミラモブの系譜 × ミラモブの系譜",
+      "special": false
+    },
+    {
+      "id": "OCT05-171-116",
+      "target": "171",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "46"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "部族村 × 闇属性",
+      "basis": "ミドル SSR 部族村 × 闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-172-117",
+      "target": "172",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "171"
+        },
+        {
+          "id": "173"
+        }
+      ],
+      "label": "figboss 13 × figboss 15",
+      "basis": "MOB UR figboss 13 × figboss 15",
+      "special": false
+    },
+    {
+      "id": "OCT05-173-118",
+      "target": "173",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "46"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "部族村 × 闇属性",
+      "basis": "ミドル SSR 部族村 × 闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-174-119",
+      "target": "174",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "171"
+        },
+        {
+          "id": "173"
+        }
+      ],
+      "label": "figboss 13 × figboss 15",
+      "basis": "MOB UR figboss 13 × figboss 15",
+      "special": false
+    },
+    {
+      "id": "OCT05-175-120",
+      "target": "175",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "163"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "label": "figboss 05 × 雷属性",
+      "basis": "MOB UR figboss 05 × 雷属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-176-121",
+      "target": "176",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "165"
+        },
+        {
+          "id": "121"
+        }
+      ],
+      "label": "figboss 07 × figene 34",
+      "basis": "MOB UR figboss 07 × figene 34",
+      "special": false
+    },
+    {
+      "id": "OCT05-181-122",
+      "target": "181",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "177"
+        },
+        {
+          "tag": "37"
+        }
+      ],
+      "label": "figboss 19 × 魔法使いタグ",
+      "basis": "ミドル UR figboss 19 × 魔法使いタグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-182-123",
+      "target": "182",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "178"
+        },
+        {
+          "tag": "37"
+        }
+      ],
+      "label": "figboss 20 × 魔法使いタグ",
+      "basis": "ミドル figboss 20 × 魔法使いタグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-183-124",
+      "target": "183",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "179"
+        },
+        {
+          "tag": "37"
+        }
+      ],
+      "label": "figboss 21 × 魔法使いタグ",
+      "basis": "ミドル figboss 21 × 魔法使いタグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-184-125",
+      "target": "184",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "180"
+        },
+        {
+          "tag": "37"
+        }
+      ],
+      "label": "figboss 22 × 魔法使いタグ",
+      "basis": "ミドル figboss 22 × 魔法使いタグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-203-126",
+      "target": "203",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "label": "砂漠タグ×水属性",
+      "basis": "ミドル SSR 砂漠タグ×水属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-204-127",
+      "target": "204",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "label": "砂漠タグ×地属性",
+      "basis": "ミドル SSR 砂漠タグ×地属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-205-128",
+      "target": "205",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "label": "砂漠タグ×光属性",
+      "basis": "ミドル SSR 砂漠タグ×光属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-206-129",
+      "target": "206",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "42"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "label": "砂漠タグ×火属性",
+      "basis": "ミドル SSR 砂漠タグ×火属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-207-130",
+      "target": "207",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "157"
+        },
+        {
+          "id": "158"
+        }
+      ],
+      "label": "figene 70 × figene 71",
+      "basis": "MOB UR figene 70 × figene 71  スキル:薔薇の鼓動:自分の場のリリス4姉妹タグを持つフィギュアのATKとDEFを+50する",
+      "special": false
+    },
+    {
+      "id": "OCT05-215-135",
+      "target": "215",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "52"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "label": "読みかけの本タグ × 光属性",
+      "basis": "UR ミドル 読みかけの本タグ × 光属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-219-137",
+      "target": "219",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "130"
+        },
+        {
+          "tag": "45"
+        }
+      ],
+      "label": "figene 43 × 海底タグ",
+      "basis": "UR MOB figene 43 × 海底タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-190-0",
+      "target": "190",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "24"
+        },
+        {
+          "tag": "24"
+        }
+      ],
+      "label": "主人公パーティー × 主人公パーティー",
+      "basis": "MOB MOB 主人公パーティー × 主人公パーティー",
+      "special": false
+    },
+    {
+      "id": "OCT05-mq-eventfig-46-43",
+      "target": "mq:eventfig/46",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "53"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "イベントボス × 闇属性",
+      "basis": "ミドル SSR イベントボス × 闇属性",
+      "special": false
+    },
+    {
+      "id": "OCT05-confirmed-216",
+      "target": "216",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "215"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "label": "figboss39 × 読みかけの本",
+      "special": false,
+      "basis": "2026-10-05 user correction"
+    },
+    {
+      "id": "OCT05-confirmed-event47",
+      "target": "mq:eventfig/47",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "mq:eventfig/46"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "label": "eventfig46 × 闇属性",
+      "special": false,
+      "basis": "2026-10-05 user correction"
+    },
+    {
+      "id": "OCT05-confirmed-figene08",
+      "target": "95",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "91"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "label": "figene04 × 地属性",
+      "special": false,
+      "basis": "ユーザー確定"
+    },
+    {
+      "id": "OCT05-213-133",
+      "target": "213",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "211"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "label": "figboss 35 × 読みかけの本タグ",
+      "basis": "UR ミドル figboss 35 × 読みかけの本タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-214-134",
+      "target": "214",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "212"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "label": "figboss 36 × 読みかけの本タグ",
+      "basis": "UR ミドル figboss 36 × 読みかけの本タグ",
+      "special": false
+    },
+    {
+      "id": "OCT05-217-136",
+      "target": "217",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "213"
+        },
+        {
+          "id": "214"
+        }
+      ],
+      "label": "figboss 37 × figboss 38",
+      "basis": "UR MOB figboss 37 × figboss 38",
+      "special": false
+    }
+  ],
+  "deferredIds": [],
+  "deferredReasons": [],
+  "confirmations": {
+    "figene15": "シード",
+    "NS2_030": "010",
+    "figboss40": "39 × 読みかけの本",
+    "eventfig47": "46 × 闇属性",
+    "resonance": "同一IDの2体のみ",
+    "figene08": "figene04 × 地属性 / ミドルSSR",
+    "figboss35": "シードSSR・融合レシピなし",
+    "figboss36": "シードSSR・融合レシピなし"
+  }
+}

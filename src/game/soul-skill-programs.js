@@ -1,3 +1,4 @@
+import oct05Data from '../data/oct05-additions.json' with {type:'json'};
 // Explicit execution plans for the exact text keys in soul-skill-texts.js.
 // Values are copied from the master, never derived from figure names or sourceBasis.
 import {revisedPlans,newSkills} from '../data/tactical-skills.js';
@@ -102,4 +103,5 @@ set([101],{atk:20,ignoreDef:true,damageBonus:10});
 for(const [id,plan]of Object.entries(revisedPlans))programs[Number(id)]=plan;for(const row of newSkills)programs[row.program]=row.plan;
 if(programs.length!==112||programs.some(p=>!p))throw Error('Incomplete skill program table');
 for(const s of elementSkills)programs[s.program]={element:true};
+for(const skill of oct05Data.skills)programs[skill.program]=skill.plan;
 export default programs;

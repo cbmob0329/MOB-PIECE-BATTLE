@@ -1,3 +1,4 @@
+import {applyOct05Spec} from './oct05-spec.js';
 // Imported from the v1 master with user-approved soul-overrides.js; edit the source/override, not generated data.
 import {extendPieceCatalog} from './piece-catalog.js';
 const base = {
@@ -35933,4 +35934,4 @@ const base = {
     }
   ]
 };
-export default extendPieceCatalog(base);
+export default applyOct05Spec(extendPieceCatalog(base));

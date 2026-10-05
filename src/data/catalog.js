@@ -1,9 +1,9 @@
 import sourceFigures from './figures_master_v170.js?v=7.3.0';
 import soulCatalog from './soul-catalog.js';
 const tags=soulCatalog.tags;
-const masterNames=new Map(soulCatalog.figures.map(f=>[f.id,f.name]));
+const masterNames=new Map(soulCatalog.figures.map(f=>[f.id,f.name]));const masterById=new Map(soulCatalog.figures.map(f=>[f.id,f]));
 import {pieceInventoryFigures} from './piece-catalog.js';
-const figures=[...sourceFigures,...pieceInventoryFigures].map(f=>masterNames.has(f.sourceId)?{...f,name:masterNames.get(f.sourceId)}:f);
+const figures=[...sourceFigures,...pieceInventoryFigures].map(f=>masterNames.has(f.sourceId)?{...f,name:masterNames.get(f.sourceId),rarity:masterById.get(f.sourceId).rarity,tags:masterById.get(f.sourceId).tags}:f);
 export { figures, tags };
 export const byId = new Map(figures.map(f => [f.sourceId, f]));
 export const imagePath = f => {

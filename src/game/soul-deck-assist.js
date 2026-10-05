@@ -1,6 +1,7 @@
+import {matchesMaterial,recipeMaterialClass} from './fusion-rules.js';
 import {soulFigures,soulById,recipes,quotas,validateSoulDeck} from './soul-battle.js';
 export const countIds=ids=>ids.reduce((out,id)=>(out[id]=(out[id]||0)+1,out),{});
-const matches=(f,m)=>m.id?f.id===m.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute;
+const matches=matchesMaterial;
 const sum=(a,b)=>{const out={...a};for(const [id,n]of Object.entries(b))out[id]=(out[id]||0)+n;return out;};
 const expand=counts=>Object.entries(counts).flatMap(([id,n])=>Array(n).fill(id));
 const valid=(needs,owned)=>!validateSoulDeck(expand(needs),owned).errors.length;
@@ -16,16 +17,20 @@ export function fusionRecommendations(target,owned,deck=[]){
   const f=soulById.get(id);if(f.soulClass==='seed')return (limits[id]||0)>0?[{needs:{[id]:1},steps:[]}]:[];
   const found=[];
   for(const recipe of recipes.filter(r=>r.target===id)){
-   const candidates=recipe.materials.map(m=>soulFigures.filter(f=>(limits[f.id]||0)>0&&(recipe.special||f.soulClass===recipe.fromClass)&&matches(f,m)).sort((a,b)=>(inDeck[b.id]||0)-(inDeck[a.id]||0)||a.id.localeCompare(b.id)).slice(0,20));
-   for(const a of candidates[0])for(const b of candidates[1]){
+   const candidates=recipe.materials.map(m=>soulFigures.filter(f=>(limits[f.id]||0)>0&&f.soulClass===recipeMaterialClass(recipe,soulById)&&matches(f,m)).sort((a,b)=>(inDeck[b.id]||0)-(inDeck[a.id]||0)||a.id.localeCompare(b.id)).slice(0,8));
+   pairs: for(const a of candidates[0])for(const b of candidates[1]){
     if(a.id===b.id&&(limits[a.id]||0)<2)continue;
     for(const left of visit(a.id,[...path,id]))for(const right of visit(b.id,[...path,id])){
      const needs=sum(sum(left.needs,right.needs),{[id]:1});if(!valid(needs,limits))continue;
      found.push({needs,steps:[...left.steps,...right.steps,{target:id,materials:[a.id,b.id],label:recipe.label,special:recipe.special}]});
+     if(found.length>=12)break pairs;
      if(found.length>64){found.sort((a,b)=>score(a.needs)-score(b.needs));const keys=new Set();const keep=found.filter(r=>{const key=JSON.stringify(Object.entries(r.needs).sort());if(keys.has(key))return false;keys.add(key);return true;}).slice(0,16);found.splice(0,found.length,...keep);}
     }
    }
   }
+  // Conditional successors consume a reserve slot and real drawn seed costs too.
+  const predecessors=soulFigures.filter(source=>source.passive?.evolve?.target===id||source.passive?.deathReserve===id||source.soulSkill.program===172&&f.soulClass==='middle'&&f.tags.includes('24'));
+  for(const source of predecessors){if(!(limits[source.id]>0))continue;for(const prior of visit(source.id,[...path,id])){const needs=sum(prior.needs,{[id]:1}),costs=[],e=source.passive?.evolve;let possible=true;for(let n=0;n<(e?.cost||0);n++){const seed=soulFigures.filter(x=>x.soulClass==='seed'&&(!e.tag||x.tags.includes(e.tag))&&(needs[x.id]||0)<Math.min(3,limits[x.id]||0)).sort((a,b)=>(inDeck[b.id]||0)-(inDeck[a.id]||0)||a.id.localeCompare(b.id)).find(x=>valid({...needs,[x.id]:(needs[x.id]||0)+1},limits));if(!seed){possible=false;break;}needs[seed.id]=(needs[seed.id]||0)+1;costs.push(seed.id);}if(possible&&valid(needs,limits))found.push({needs,steps:[...prior.steps,{target:id,materials:[source.id,...costs],kind:'evolution',label:source.soulSkill.program===172?'自身を破壊して召喚':'撃破後の条件召喚',special:false}]});}}
   const seen=new Set(),best=found.sort((a,b)=>score(a.needs)-score(b.needs)).filter(r=>{const key=JSON.stringify(Object.entries(r.needs).sort());if(seen.has(key))return false;seen.add(key);return true;}).slice(0,8);
   cache.set(id,best);return best;
  }
@@ -54,7 +59,7 @@ export function planSoulDeck(deck,owned,mode){
  const fillClass=kind=>{
   const counts=countIds(result);let left=quotas[kind]-result.filter(id=>soulById.get(id).soulClass===kind).length;
   const candidates=soulFigures.filter(f=>f.soulClass===kind&&(owned[f.id]||0)>(counts[f.id]||0)).sort((a,b)=>(weights[b.id]||0)-(weights[a.id]||0)||(b.atk+b.def)-(a.atk+a.def)||a.id.localeCompare(b.id));
-  while(left>0){let added=false;for(const f of candidates)if((counts[f.id]||0)<(owned[f.id]||0)&&left>0){result.push(f.id);counts[f.id]=(counts[f.id]||0)+1;left--;added=true;}if(!added)break;}
+  while(left>0){let added=false;for(const f of candidates)if((counts[f.id]||0)<(owned[f.id]||0)&&left>0&&!validateSoulDeck([...result,f.id],owned).errors.length){result.push(f.id);counts[f.id]=(counts[f.id]||0)+1;left--;added=true;}if(!added)break;}
   if(left)warnings.push(({seed:'シード',middle:'ミドル',mob:'MOB'})[kind]+'の所持数が'+left+'体不足しています');
  };
  fillClass('seed');if(mode==='fill'){fillClass('middle');fillClass('mob');}

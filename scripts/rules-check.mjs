@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {figures,byId,tags} from '../src/data/catalog.js';
 import {RULES,validateDeck} from '../src/game/deck.js';
-assert.equal(figures.length,625);assert.equal(tags.length,112);assert.equal(byId.size,625);
+assert.equal(figures.length,687);assert.equal(tags.length,119);assert.equal(byId.size,687);
 figures.forEach((f,i)=>{assert.equal(f.dexNo,i+1);assert.equal(f.displayNo,`No.${String(i+1).padStart(3,'0')}`);assert.deepEqual(f.mobPiece,f.mobPieceV115);});
 for(const [rarity,cap] of Object.entries(RULES.duplicateCaps)){const f=figures.find(f=>f.rarity===rarity&&!f.pending);assert.equal(validateDeck(Array(cap).fill(f.sourceId),byId).errors.length,0);assert.ok(validateDeck(Array(cap+1).fill(f.sourceId),byId).errors.some(e=>e.includes('重複')));}
 const costly=figures.filter(f=>!f.pending).sort((a,b)=>b.mobPiece.cost-a.mobPiece.cost).flatMap(f=>Array(RULES.duplicateCaps[f.rarity]).fill(f.sourceId)).slice(0,25);assert.ok(validateDeck(costly,byId).cost>80);assert.ok(validateDeck(costly,byId).errors.some(e=>e.includes('COST')));

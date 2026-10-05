@@ -1,3 +1,6 @@
+import {matchesMaterial,recipeMaterialClass} from '../game/fusion-rules.js';
+import oct05Data from './oct05-additions.json' with {type:'json'};
+export const oct05Figures=oct05Data.figures;
 import familyData from './family-additions.json' with {type:'json'};
 export const familyFigures=familyData.figures;
 import definitions from './piece-figures.json' with {type:'json'};
@@ -20,21 +23,22 @@ export const pieceFigures=definitions.records.map(r=>{
 });
 const specialPairs={'013':['011','022'],'025':['022','040'],'039':['036','038'],'049':['046','048']};
 export function extendPieceCatalog(base){
- const figures=[...base.figures.map(f=>({...f,collection:collectionOf(f),fusionMaterials:[...f.fusionMaterials],fusionTargets:[...f.fusionTargets]})),...[...pieceFigures,...materialFigures,...selectedFigures,...elementFigures,...familyFigures].map(f=>({...f,fusionMaterials:[],fusionTargets:[]}))];
- const tags=[...base.tags,...definitions.tags,...materialData.tags,...selectedData.tags,...elementData.tags,...familyData.tags],byTag=new Map(tags.map(t=>[t.id,t.name])),byId=new Map(figures.map(f=>[f.id,f]));
+ const figures=[...base.figures.map(f=>({...f,collection:collectionOf(f),fusionMaterials:[...f.fusionMaterials],fusionTargets:[...f.fusionTargets]})),...[...pieceFigures,...materialFigures,...selectedFigures,...elementFigures,...familyFigures,...oct05Figures].map(f=>({...f,fusionMaterials:[],fusionTargets:[]}))];
+ const tags=[...base.tags,...definitions.tags,...materialData.tags,...selectedData.tags,...elementData.tags,...familyData.tags,...oct05Data.tags],byTag=new Map(tags.map(t=>[t.id,t.name])),byId=new Map(figures.map(f=>[f.id,f]));
  const extra=[];
  for(const f of pieceFigures.filter(f=>f.soulClass!=='seed')){
   const materials=[{tag:f.tags[1]},{tag:'piece-main'}];
   extra.push({id:f.uid+'-normal',target:f.id,fromClass:f.soulClass==='middle'?'seed':'middle',materials,label:materials.map(m=>byTag.get(m.tag)).join(' × '),basis:'追加47体 通常融合',special:false});
   if(specialPairs[f.number]){const ids=specialPairs[f.number].map(n=>'piece:'+n);extra.push({id:f.uid+'-special',target:f.id,fromClass:null,materials:ids.map(id=>({id})),label:ids.map(id=>byId.get(id).name).join(' × '),basis:'追加47体 特殊融合',special:true,bonusATK:20,bonusDEF:20});}
  }
- extra.push(...materialData.recipes,...selectedData.recipes,...elementData.recipes,...familyData.recipes);
+ extra.push(...materialData.recipes,...selectedData.recipes,...elementData.recipes,...familyData.recipes,...oct05Data.recipes);
  for(const r of extra){byId.get(r.target).fusionMaterials.push(r);for(const f of figures)if((r.special||f.soulClass===r.fromClass)&&r.materials.some(m=>m.id?m.id===f.id:f.tags.includes(m.tag)))f.fusionTargets.push(r.target);}
  // New pieces may also satisfy the unchanged original recipes (for example PB2).
  for(const f of figures.filter(f=>f.id.startsWith('piece:')))for(const r of base.recipes)if((r.special||f.soulClass===r.fromClass)&&r.materials.some(m=>m.id?m.id===f.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute))f.fusionTargets.push(r.target);
  for(const f of figures){f.fusionTargets=[...new Set([...base.recipes,...extra].filter(r=>(r.special||f.soulClass===r.fromClass)&&r.materials.some(m=>m.id?m.id===f.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute)).map(r=>r.target))];}
+ for(const f of figures){f.fusionMaterials=[...base.recipes,...extra].filter(r=>r.target===f.id);f.fusionTargets=[...new Set([...base.recipes,...extra].filter(r=>f.soulClass===recipeMaterialClass(r,byId)&&r.materials.some(m=>matchesMaterial(f,m))).map(r=>r.target))];}
  const countsBySoulClass=Object.fromEntries([['seed','シードソウル'],['middle','ミドルソウル'],['mob','MOBソウル']].map(([key,name])=>[name,figures.filter(f=>f.soulClass===key).length]));
- return {...base,version:base.version+'+piece47+materials135+selected24+elements54+families24',meta:{...base.meta,totalFigures:figures.length,countsBySoulClass,countsBySource:{...base.meta.countsBySource,piece:47,materials:materialFigures.length,selected:selectedFigures.length,elements:elementFigures.length,families:familyFigures.length},countsByRarity:Object.fromEntries(['R','SR','SSR','UR','MOB'].map(k=>[k,figures.filter(f=>f.rarity===k).length]))},figures:figures.map(f=>applyTacticalText(f,texts)),recipes:[...base.recipes,...extra],tags};
+ return {...base,version:base.version+'+piece47+materials135+selected24+elements54+families24+oct05-62',meta:{...base.meta,totalFigures:figures.length,countsBySoulClass,countsBySource:{...base.meta.countsBySource,piece:47,materials:materialFigures.length,selected:selectedFigures.length,elements:elementFigures.length,families:familyFigures.length,oct05:oct05Figures.length},countsByRarity:Object.fromEntries(['R','SR','SSR','UR','MOB'].map(k=>[k,figures.filter(f=>f.rarity===k).length]))},figures:figures.map(f=>applyTacticalText(f,texts)),recipes:[...base.recipes,...extra],tags};
 }
 // Inventory IDs and old numerical combat fields remain stable; new pieces use the Soul engine.
-export const pieceInventoryFigures=[...pieceFigures,...materialFigures,...selectedFigures,...elementFigures,...familyFigures].map((f,i)=>({id:f.id,sourceId:f.id,name:f.name,image:f.image,rarity:f.rarity,tags:f.tags,dexNo:342+i,displayNo:'No.'+String(342+i).padStart(3,'0'),pending:false,source:'piece47',statsText:f.source.statsText,traitText:f.source.traitText,soul:{name:f.soulSkill.name,text:f.soulSkill.effect},mobPiece:{cost:1,hp:f.def,attack:f.atk,defense:f.def,speed:20},mobPieceV115:{cost:1,hp:f.def,attack:f.atk,defense:f.def,speed:20},adjacencyTags:[],pieceSoul:{}}));
+export const pieceInventoryFigures=[...pieceFigures,...materialFigures,...selectedFigures,...elementFigures,...familyFigures,...oct05Figures].map((f,i)=>({id:f.id,sourceId:f.id,name:f.name,image:f.image,rarity:f.rarity,tags:f.tags,dexNo:342+i,displayNo:'No.'+String(342+i).padStart(3,'0'),pending:false,source:'piece47',statsText:f.source.statsText,traitText:f.source.traitText,soul:{name:f.soulSkill.name,text:f.soulSkill.effect},mobPiece:{cost:1,hp:f.def,attack:f.atk,defense:f.def,speed:20},mobPieceV115:{cost:1,hp:f.def,attack:f.atk,defense:f.def,speed:20},adjacencyTags:[],pieceSoul:{}}));

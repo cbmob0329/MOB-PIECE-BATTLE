@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "id": "BFX-day",
+      "name": "SWEET BEAT STREET",
+      "count": 94,
+      "newVisible": 19,
+      "rateText": "レア度\n1回\n10連の最後\n48.950%\n0.000%\n29.370%\n65.593%\n14.760%\n24.550%\n4.428%\n6.876%\n2.492%\n2.982%"
+    },
+    {
+      "id": "BFX-remix",
+      "name": "RETRO REMIX JAM",
+      "count": 98,
+      "newVisible": 23,
+      "rateText": "レア度\n1回\n10連の最後\n48.950%\n0.000%\n29.370%\n65.593%\n14.760%\n24.550%\n6.428%\n8.876%\n0.492%\n0.981%"
+    },
+    {
+      "id": "BFX-night",
+      "name": "MIDNIGHT SUGAR LIVE",
+      "count": 95,
+      "newVisible": 20,
+      "rateText": "レア度\n1回\n10連の最後\n48.950%\n0.000%\n29.370%\n65.593%\n14.760%\n24.550%\n4.428%\n6.875%\n2.492%\n2.982%"
+    }
+  ],
+  "errors": []
+}

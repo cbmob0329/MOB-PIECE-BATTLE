@@ -1,3 +1,4 @@
+import {freeEnemy} from '../game/free-enemies.js';
 import {sound} from '../audio/audio.js';
 import {selectCpuStarter} from '../game/piece-starters.js';
 import * as g from '../game/soul-battle.js';
@@ -10,8 +11,8 @@ const {soulById:byId,soulFigures:figures}=g;
 const art=f=>f?`<img src="${esc(f.image)}" alt="${esc(f.name)}" draggable="false">`:'';
 const colors={'火':'#ff915b','水':'#64bcff','雷':'#ffe66e','地':'#dcac77','風':'#9ee895','光':'#ffe5a0','闇':'#c897ff','無':'#d2e2f7'};
 export async function launchBattle({profile,request,onResolved,saveProfile}){
- const deck=[...g.ensureSoulDecks(profile)],check=g.validateSoulDeck(deck,profile.owned);if(!check.valid)throw Error(check.errors[0]||'45体（シード30・ミドル10・MOB5）のデッキを完成させてください');
- const enemy=selectCpuStarter(request.difficulty),cpuDeck=enemy.deck,state=g.createSoulBattle([deck,cpuDeck],['PLAYER',request.opponentName||enemy.name]),style=battleStyle(profile);style.sound=!sound.getSettings().muted;
+ const deck=[...g.ensureSoulDecks(profile)],check=g.validateSoulDeck(deck,profile.owned,{profile});if(!check.valid)throw Error(check.errors[0]||'45体（シード30・ミドル10・MOB5）のデッキを完成させてください');
+ const enemy=request.enemyId?freeEnemy(request.enemyId):selectCpuStarter(request.difficulty),cpuDeck=enemy.deck,state=g.createSoulBattle([deck,cpuDeck],['PLAYER',request.opponentName||enemy.name]),style=battleStyle(profile);state.cpuStrategy=enemy.strategy||null;state.cpuThemeTags=enemy.themeTagIds||[];style.sound=!sound.getSettings().muted;
  const dialog=document.createElement('dialog');dialog.className='soul-battle-dialog duel-dialog';dialog.setAttribute('aria-label','MOB SOUL BATTLE');document.body.append(dialog);dialog.showModal();
  let selected=null,hand=null,materials=[],sheet=null,skillValues={},busy=false,settled=false,meta=null,eventCursor=0,cpuPrepared=0,closed=false,message='',suppressClick=false,drag=null,resolveDone;
  const done=new Promise(resolve=>{resolveDone=resolve;});
@@ -34,8 +35,9 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
  function sheetMarkup(){
   let title='',body='';
   const pending=state.pending?.side===1;
-  if(!sheet&&pending)sheet={type:'response'};
+  if(g.evolutionOptions(state).event?.side===0)sheet={type:'evolution'};else if(!sheet&&pending)sheet={type:'response'};
   if(!sheet)return '';
+  if(sheet.type==='evolution'){const {event:e,costs}=g.evolutionOptions(state);title='撃破後の条件進化';body=`<h3>${esc(byId.get(e.target).name)}</h3><p>素材を${e.cost}体捨てて召喚できます。通常スキルの使用権は消費しません。</p>${Array.from({length:e.cost},(_,i)=>`<label>コスト ${i+1}<select data-evolve-cost><option value="">選んでください</option>${costs.map(c=>`<option value="${c.value}">${c.value.startsWith('field:')?'場':'手札'} · ${esc(byId.get(c.id).name)}</option>`).join('')}</select></label>`).join('')}<button data-evolve-confirm>コストを払い進化</button><button data-evolve-decline>進化しない</button>`;}
   if(sheet.type==='response'){title={attack:'相手の攻撃宣言！',skill:'相手のスキル発動！',defeat:'撃破への対応！'}[state.pending?.kind]||'対応スキル';body=`<p>スキルは各プレイヤー、このターンに合計1回。</p><div class="duel-response-list">${g.reactionOptions(state,0).map(p=>`<button data-response="${p.uid}" ${p.handOrigin?`data-response-hand="${p.handIndex}"`:""}>${art(byId.get(p.id))}<span><b>${esc(byId.get(p.id).name)}</b><small>${p.handOrigin?'手札 → 墓地 · ':''}${esc(byId.get(p.id).soulSkill.name)}</small></span>→</button>`).join('')}</div><button class="duel-primary wide" data-pass>使用せず進む →</button>`;}
   if(sheet.type==='skill'){
    const f=g.skillSource(state,0,sheet.uid);if(!f)return '';const spec=byId.get(f.id).soulSkill;
@@ -49,7 +51,7 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
   if(sheet.type==='inspect'){
    const f=byId.get(sheet.id),live=state.players[sheet.side||0].field.find(x=>x?.uid===sheet.uid),n=live?g.stats(live):f;title=f.name;body=`<div class="duel-detail-figure">${art(f)}<div><b>${f.rarity} · ${g.classNames[f.soulClass]}</b><p>ATK ${n.atk} / DEF ${n.def}</p><small>${f.attribute}属性 · ${f.attackType}</small></div></div><h3>${esc(f.soulSkill.name)}</h3><small>${esc(f.soulSkill.timingLabel)}</small><p>${esc(f.soulSkill.description)}</p><div class="duel-tags">${f.tags.map(t=>`<span>${esc(tagName(t))}</span>`).join('')}</div><p>${f.fusionMaterials.map(r=>`${r.special?'MOB融合：':''}${esc(r.label)}`).join('<br>')||'手札から召喚できます'}</p>${live&&sheet.side===0?`<div class="duel-sheet-actions"><button class="duel-secondary" data-skill ${g.canSkill(state,0,live.uid)?'':'disabled'}>スキル</button>${main()?'<button class="duel-primary" data-material>融合素材にする</button>':'<button class="duel-primary" data-sheet-close>このフィギュアで攻撃先を選ぶ</button>'}</div>`:''}${live&&sheet.side===1&&selectedPiece()&&g.canAttack(state,0,selectedPiece(),live)?`<button class="duel-primary wide" data-attack-target="${live.uid}">この相手を攻撃</button>`:''}`;
   }
-  if(['deck','grave','reserve'].includes(sheet.type)){const p=state.players[sheet.side||0],ids=sheet.type==='deck'?p.deck:sheet.type==='grave'?p.grave:p.reserve;title={deck:'シードデッキ',grave:'ソウルの墓地',reserve:'フュージョン専用領域'}[sheet.type]+' · '+ids.length;body=`<div class="duel-zone-list">${ids.map(id=>`<button data-inspect="${id}">${art(byId.get(id))}<span>${esc(byId.get(id).name)}</span></button>`).join('')||'<p>まだフィギュアはありません。</p>'}</div>`;}
+  if(['deck','grave','reserve'].includes(sheet.type)){const p=state.players[sheet.side||0],ids=sheet.type==='deck'?p.deck:sheet.type==='grave'?p.grave:p.reserve;title={deck:'シードデッキ',grave:'ソウルの墓地',reserve:'フュージョン専用領域'}[sheet.type]+' · '+ids.length;body=`<div class="duel-zone-list">${ids.map((id,i)=>`<button data-inspect="${id}">${art(byId.get(id))}<span>${esc(byId.get(id).name)}</span></button>${sheet.type==='grave'&&!(sheet.side||0)&&main()&&byId.get(id).passive?.graveFusion?`<button data-grave-fuse="${i}" ${selectedPiece()?'':'disabled'}>選択中の場の味方と融合</button>`:''}`).join('')||'<p>まだフィギュアはありません。</p>'}</div>`;}
   if(sheet.type==='move'){title='攻撃後の位置変更';body=`<p>移動先を選んでください。攻撃回数は引き継ぎます。</p>${state.players[0].field.map((p,i)=>`<button class="duel-secondary wide" data-move="${i}">${i+1}枠目 · ${p?esc(byId.get(p.id).name):'空き枠'}</button>`).join('')}<button class="duel-primary wide" data-move-skip>移動せず続ける</button>`;}
   if(sheet.type==='quit'){title='対戦を終了しますか？';body='<p>降参すると、この対戦は敗北として記録されます。</p><div class="duel-sheet-actions"><button class="duel-secondary" data-sheet-close>続ける</button><button class="duel-primary" data-forfeit>降参する</button></div>';}
   if(sheet.type==='help'){title='ソウルを動かそう！';body='<p><b>召喚</b><br>手札を選び、空き台座をタップ。ドラッグでも召喚できます。</p><p><b>フュージョン</b><br>場×場、手札×場の2体を重ねて融合。手札を選んで場の味方をタップしても操作できます。手札×手札は禁止。確認後、場の素材の位置に召喚します。</p><p><b>バトル</b><br>自分のフィギュア→光る相手の順にタップ。ATKとDEFの差がLIFEダメージです。</p><p><b>対応スキル</b><br>割り込みのタイミングで選択画面が開きます。各プレイヤー1ターン1回。</p><p>ドローはターン開始時に手札5体まで自動で行います。召喚コストや直接攻撃はありません。</p>';}
@@ -66,6 +68,7 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
  async function flush(){render();const events=(state.events||[]).filter(e=>e.seq>eventCursor);eventCursor=state.eventSerial||0;await director.run(events);}
  async function settle(){if(state.winner!==null&&!settled){settled=true;try{meta=await onResolved?.(result());}catch(err){meta={message:'結果の保存に失敗しました：'+err.message};}sheet=null;}}
  async function cpu(){for(let i=0;i<60&&!closed&&state.winner===null;i++){
+  if(g.evolutionOptions(state).event){const e=g.evolutionOptions(state);if(e.event.side===0)break;g.resolveEvolution(state,1,e.costs.length>=e.event.cost?e.costs.slice(0,e.event.cost).map(x=>x.value):null);await flush();continue;}
   if(state.pending){if(state.pending.side===1)break;g.cpuRespond(state);await flush();continue;}
   if(state.active===0)break;
   if(state.phase==='main'){if(cpuPrepared!==state.turn){cpuPrepared=state.turn;g.cpuMain(state);}else g.beginBattle(state,1);}
@@ -89,6 +92,8 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
   if(b.hasAttribute('data-zone')){sheet={type:b.dataset.zone};render();return;}
   if(b.hasAttribute('data-inspect')){sheet={type:'inspect',id:b.dataset.inspect};render();return;}
   if(b.hasAttribute('data-help')||b.hasAttribute('data-log')){sheet={type:b.hasAttribute('data-help')?'help':'log'};render();return;}
+  if(b.hasAttribute('data-grave-fuse')){if(!selectedPiece())throw Error('先に場の味方を選んでください');openFusion([selectedPiece().uid,{graveIndex:Number(b.dataset.graveFuse)}]);return;}
+  if(b.hasAttribute('data-evolve-confirm')||b.hasAttribute('data-evolve-decline')){const costs=b.hasAttribute('data-evolve-decline')?null:[...dialog.querySelectorAll('[data-evolve-cost]')].map(el=>el.value);await action(()=>g.resolveEvolution(state,0,costs));return;}
   if(b.hasAttribute('data-hand')){const i=Number(b.dataset.hand);if(main()&&materials.length===1&&typeof materials[0]==='number'){openFusion([materials[0],{handIndex:i}]);return;}hand=i;selected=null;materials=[];message='';render();return;}
   if(b.hasAttribute('data-clear')){selected=null;hand=null;materials=[];message='';render();return;}
   if(b.hasAttribute('data-summon')||b.hasAttribute('data-empty')){if(hand!==null&&main()&&(!b.hasAttribute('data-empty')||b.dataset.side==='0')){const i=hand,slot=b.hasAttribute('data-empty')?Number(b.dataset.empty):state.players[0].field.indexOf(null);await action(()=>{g.summon(state,0,i,slot);hand=null;materials=[];});}return;}
