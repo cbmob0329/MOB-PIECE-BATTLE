@@ -1,0 +1,17 @@
+{
+  "width": 375,
+  "checks": [
+    "source-backed tag search",
+    "no story-only selection",
+    "single-tap detail outside battle",
+    "single ally selects red without dialog",
+    "switch/deselect",
+    "ally/enemy double-tap detail",
+    "enemy single opens one simple confirmation",
+    "cancel preserves life/selection",
+    "confirm double dispatch attacks once",
+    "spent attacker rejected"
+  ],
+  "errors": [],
+  "nativePhone": "not tested; touch-enabled Edge viewport"
+}

@@ -12,7 +12,7 @@ import initialRelease from './initial-release.json' with {type:'json'};
 export const archivedBanners=[...questBanners,selectedBanner];
 export const banners=initialRelease.banners;
 export const RUBY_COST=Object.freeze({R:10,SR:50,SSR:100,UR:300,MOB:500});
-export const usableFigure=f=>!!(f&&!f.pending&&f.name&&!/^\/+$/u.test(f.name)&&f.image);
+export const usableFigure=f=>!!(f&&!f.retired&&!f.pending&&f.name&&!/^\/+$/u.test(f.name)&&f.image);
 export function poolFor(banner){if(banner.figureIds){const ids=new Set(banner.figureIds);return figures.filter(f=>ids.has(f.sourceId)&&usableFigure(f));}const paths=new Set([...common,...banner.extra]);return figures.filter(f=>paths.has(f.image)&&usableFigure(f));}
 export function pickupsFor(banner){const pool=poolFor(banner);const explicit=banner.pickupIds?banner.pickupIds.map(id=>pool.find(f=>f.sourceId===id)).filter(Boolean):pool.filter(f=>banner.pickup?.includes(f.image));return explicit.length?explicit:[...pool].sort((a,b)=>RARITY_RANK[b.rarity]-RARITY_RANK[a.rarity]).slice(0,3);}
 export const mainPickupFor=banner=>pickupsFor(banner)[0];

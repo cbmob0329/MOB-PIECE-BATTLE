@@ -1,6 +1,6 @@
 import {matchesMaterial,recipeMaterialClass} from '../src/game/fusion-rules.js';
 import oct05Spec from '../src/data/oct05-spec.json' with {type:'json'};
-const updatedIds=new Set(oct05Spec.patches.map(p=>p.id));
+const updatedIds=new Set([...oct05Spec.patches.map(p=>p.id),'44','79','80','191','mq:eventfig/46','mq:eventfig/47']);
 import {revisedTexts} from '../src/data/tactical-skills.js';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -22,9 +22,9 @@ const choose=(s,side,f)=>g.cpuOptions(s,side,f.uid);
 const resolve=s=>{for(let i=0;i<8&&s.pending;i++)g.passReaction(s,1-s.pending.side);assert.equal(s.pending,null);};
 const cast=(s,side,f,o=choose(s,side,f))=>{g.useSkill(s,side,f.uid,o);resolve(s);};
 test('更新対象以外の327体由来データは元JSONを維持、指定変更と画像を確認',()=>{
- assert.equal(figures.length,327);assert.equal(new Set(figures.map(f=>f.id)).size,327);
- assert.deepEqual(Object.fromEntries(['seed','middle','mob'].map(k=>[k,figures.filter(f=>f.soulClass===k).length])),{"seed":201,"middle":96,"mob":30});
- for(const f of figures){const r=master.records.find(r=>r.uid===f.uid);if(updatedIds.has(f.id)){assert.ok(fs.existsSync(f.image));assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);continue;}assert.equal(f.atk,r.ATK);assert.equal(f.def,r.DEF);assert.equal(f.rarity,r.rarity);assert.equal(f.attribute,r.attribute);assert.deepEqual(f.tags,r.gameTagIds);assert.equal(f.soulSkill.sourceText,revisedTexts[f.soulSkill.program]?.split(' | ')[1]||r.soulSkill.effect);assert.equal(texts[f.soulSkill.program],revisedTexts[f.soulSkill.program]||r.soulSkill.timing+' | '+r.soulSkill.effect);assert.ok(fs.existsSync(f.image),f.image);assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);assert.equal(legacy.find(x=>x.sourceId===f.id).pending,false);}
+ assert.equal(figures.length,281);assert.equal(new Set(figures.map(f=>f.id)).size,281);
+ assert.deepEqual(Object.fromEntries(['seed','middle','mob'].map(k=>[k,figures.filter(f=>f.soulClass===k).length])),{"seed":155,"middle":96,"mob":30});
+ for(const f of figures){const r=master.records.find(r=>r.uid===f.uid);if(updatedIds.has(f.id)){assert.ok(fs.existsSync(f.image));assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);continue;}assert.equal(f.atk,r.ATK);assert.equal(f.def,r.DEF);assert.equal(f.rarity,r.rarity);assert.equal(f.attribute,r.attribute);assert.deepEqual(f.tags,r.gameTagIds.filter(t=>t!=='13'||['70','71','72','73','74','185','79','80'].includes(f.id)));assert.equal(f.soulSkill.sourceText,revisedTexts[f.soulSkill.program]?.split(' | ')[1]||r.soulSkill.effect);assert.equal(texts[f.soulSkill.program],revisedTexts[f.soulSkill.program]||r.soulSkill.timing+' | '+r.soulSkill.effect);assert.ok(fs.existsSync(f.image),f.image);assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);assert.equal(legacy.find(x=>x.sourceId===f.id).pending,false);}
  for(let i=35;i<=46;i++)assert.ok(byId.has('mq:spbossfig/'+i));
  assert.ok(find(55).soulSkill.description.includes('使用後も'));assert.ok(find(93).soulSkill.description.includes('直接召喚'));
 });

@@ -10,10 +10,10 @@ import {pieceStarters,pieceStarterDeck,grantMainCollection,applyPieceStarter} fr
 import {OWN_CAP,banners,archivedBanners,poolFor} from '../src/data/gacha.js';
 import * as g from '../src/game/soul-battle.js';
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
-assert.equal(pieceFigures.length,47);assert.equal(catalog.figures.length,673);assert.equal(figures.length,687);assert.equal(new Set(figures.map(f=>f.sourceId)).size,687);
+assert.equal(pieceFigures.length,47);assert.equal(catalog.figures.length,627);assert.equal(figures.length,629);assert.equal(new Set(figures.map(f=>f.sourceId)).size,629);
 assert.deepEqual(['seed','middle','mob'].map(k=>pieceFigures.filter(f=>f.soulClass===k).length),[32,11,4]);
 assert.equal(catalog.figures.filter(f=>f.collection==='main').length,368);
-assert.equal(catalog.figures.filter(f=>f.collection==='collab').length,305);
+assert.equal(catalog.figures.filter(f=>f.collection==='collab').length,259);
 for(const f of pieceFigures){assert.ok(byId.has(f.id));assert.ok(availableAssets.has(f.image));assert.equal(hash(f.image),hash('追加用フィギュア/'+f.number+'.png'));assert.ok(f.tags.every(t=>tags.some(x=>x.id===t)));assert.ok(f.tags.length<=catalog.rules.tagLimits[f.rarity]);assert.ok(!/RETRO|SWEET/.test(f.id));}
 const existing={owned:{'01':12,'16':2,'mq:spbossfig/35':1},diamonds:432,rubies:99,coins:456,centerId:'16',displayIds:['16'],welcomeClaimed:true,soulDecks:[['16'],['01'],[],[],[]],soulDeckSlot:1,deck:['16'],deckPresets:[['16'],[],[],[],[]],battleHistory:[{won:true}],custom:'keep'};
 const before=structuredClone(existing);assert.equal(grantMainCollection(existing),true);

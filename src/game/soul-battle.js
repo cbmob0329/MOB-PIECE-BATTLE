@@ -1,7 +1,7 @@
 import {deckViolations,isRepairOnly,availableDeckOwned,soulCopyLimits} from './deck-legality.js';
 import catalog from '../data/soul-catalog.js';
 export const soulFigures=catalog.figures;
-export const soulById=new Map(soulFigures.map(f=>[f.id,f]));
+export const soulById=new Map([...soulFigures,...(catalog.archivedFigures||[])].map(f=>[f.id,f]));
 export const classNames={seed:'シードソウル',middle:'ミドルソウル',mob:'MOBソウル'};
 export const quotas={seed:30,middle:10,mob:5};
 export const recipes=catalog.recipes;

@@ -4,7 +4,7 @@ export const soulCopyLimits={seed:3,middle:1,mob:1};
 export const cardName=f=>String(f.name).normalize('NFKC').trim();
 export function deckViolations(ids,owned,by,quotas,{profile=null,slot=profile?.soulDeckSlot||0,policy=deckPolicy}={}){
  const counts={seed:0,middle:0,mob:0},used={},names={},issues=[];
- for(const id of ids){const f=by.get(id);if(!f){issues.push({key:'unknown:'+id,type:'unknown',id,count:1,limit:0,message:'未対応のフィギュア：'+id});continue;}counts[f.soulClass]++;used[id]=(used[id]||0)+1;const key=f.soulClass+':'+(policy.copyKey==='name'?cardName(f):id);names[key]??={f,count:0};names[key].count++;}
+ for(const id of ids){const f=by.get(id);if(!f){issues.push({key:'unknown:'+id,type:'unknown',id,count:1,limit:0,message:'未対応のフィギュア：'+id});continue;}if(f.retired)issues.push({key:'retired:'+id,type:'retired',id,count:1,limit:0,message:f.name+'はBATTLE対象外です。編成から外してください'});counts[f.soulClass]++;used[id]=(used[id]||0)+1;const key=f.soulClass+':'+(policy.copyKey==='name'?cardName(f):id);names[key]??={f,count:0};names[key].count++;}
  for(const[id,n]of Object.entries(used))if(owned&&n>(owned[id]||0))issues.push({key:'owned:'+id,type:'owned',id,count:n,limit:owned[id]||0,message:by.get(id).name+'の所持数が不足しています'});
  for(const[key,{f,count}]of Object.entries(names)){const limit=soulCopyLimits[f.soulClass];if(count>limit)issues.push({key:'copies:'+key,type:'copies',id:f.id,count,limit,message:f.name+'は同名'+limit+'体までです'});}
  for(const[k,n]of Object.entries(counts))if(n>quotas[k])issues.push({key:'quota:'+k,type:'quota',count:n,limit:quotas[k],message:({seed:'シード',middle:'ミドル',mob:'MOBソウル'})[k]+'は'+quotas[k]+'体までです'});

@@ -1,0 +1,106 @@
+{
+  "battle": {
+    "width": 375,
+    "checks": [
+      "source-backed tag search",
+      "no story-only selection",
+      "single-tap detail outside battle",
+      "single ally selects red without dialog",
+      "switch/deselect",
+      "ally/enemy double-tap detail",
+      "enemy single opens one simple confirmation",
+      "cancel preserves life/selection",
+      "confirm double dispatch attacks once",
+      "spent attacker rejected"
+    ],
+    "errors": [],
+    "nativePhone": "not tested; touch-enabled Edge viewport"
+  },
+  "picker": {
+    "results": [
+      {
+        "width": 320,
+        "normal": {
+          "width": 320,
+          "height": 740,
+          "overflow": false,
+          "left": 19,
+          "right": 301,
+          "buttonTop": 675,
+          "buttonBottom": 721,
+          "sectionBottom": 554,
+          "footerTop": 554
+        },
+        "compact": {
+          "width": 320,
+          "height": 380,
+          "overflow": false,
+          "left": 19,
+          "right": 301,
+          "buttonTop": 315,
+          "buttonBottom": 361,
+          "sectionBottom": 222,
+          "footerTop": 222
+        },
+        "checks": "favorite persistence and failure atomicity; no card click leakage; composed search/tag/favorites and empty results; 0–5 selection, removal, reopen; Japanese composition node/focus; repeat build/apply; owned/deck preservation",
+        "errors": []
+      },
+      {
+        "width": 375,
+        "normal": {
+          "width": 375,
+          "height": 740,
+          "overflow": false,
+          "left": 19,
+          "right": 356,
+          "buttonTop": 675,
+          "buttonBottom": 721,
+          "sectionBottom": 554,
+          "footerTop": 554
+        },
+        "compact": {
+          "width": 375,
+          "height": 380,
+          "overflow": false,
+          "left": 19,
+          "right": 356,
+          "buttonTop": 315,
+          "buttonBottom": 361,
+          "sectionBottom": 222,
+          "footerTop": 222
+        },
+        "checks": "favorite persistence and failure atomicity; no card click leakage; composed search/tag/favorites and empty results; 0–5 selection, removal, reopen; Japanese composition node/focus; repeat build/apply; owned/deck preservation",
+        "errors": []
+      },
+      {
+        "width": 430,
+        "normal": {
+          "width": 430,
+          "height": 740,
+          "overflow": false,
+          "left": 19,
+          "right": 411,
+          "buttonTop": 675,
+          "buttonBottom": 721,
+          "sectionBottom": 554,
+          "footerTop": 554
+        },
+        "compact": {
+          "width": 430,
+          "height": 380,
+          "overflow": false,
+          "left": 19,
+          "right": 411,
+          "buttonTop": 315,
+          "buttonBottom": 361,
+          "sectionBottom": 222,
+          "footerTop": 222
+        },
+        "checks": "favorite persistence and failure atomicity; no card click leakage; composed search/tag/favorites and empty results; 0–5 selection, removal, reopen; Japanese composition node/focus; repeat build/apply; owned/deck preservation",
+        "errors": []
+      }
+    ],
+    "nativePhoneKeyboard": "not available; reduced viewport and composition events tested"
+  },
+  "search": "PASS: existing Japanese composition/focus and collection/deck/display search suite on built main"
+}

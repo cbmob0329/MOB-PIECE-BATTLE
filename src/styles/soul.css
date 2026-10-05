@@ -36,3 +36,13 @@
 @media(max-height:540px){.deck-assist-dialog>header{padding:2px 12px;min-height:44px}.ace-tray>button,.ace-empty{height:54px}.ace-tray img{height:28px}.ace-tray span:not(.ace-empty){font-size:8px;line-height:16px}.ace-footer{padding-top:6px}.ace-selection-heading{margin-bottom:4px}.ace-tray{margin-bottom:6px}}
 @media(prefers-reduced-motion:reduce){.ace-card{transition:none}}
 .reduce-motion .ace-card{transition:none}
+
+/* Override the older generic card-button layout only within this collection. */
+.soul-library .collection-card>.figure-favorite{position:absolute!important;top:7px!important;right:7px!important;width:44px!important;height:44px!important;min-width:44px!important;margin:0!important;border-radius:50%!important;display:grid!important;place-items:center!important}
+.soul-library .collection-card>button[data-figure-info]{display:block;text-align:left;width:100%;padding:10px 6px 4px}
+.soul-library .collection-card>button[data-figure-info]>small{min-height:36px;padding-right:45px;font-size:10px;line-height:1.6}
+.soul-library .collection-card>button[data-figure-info]>b{display:block;line-height:1.5;font-size:12px;margin:6px 0}
+.soul-library .collection-card>small:first-of-type{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:10px;color:#65796d;line-height:1.6;margin:4px 0 8px}
+.soul-library .collection-card>small:nth-of-type(2){font-size:10px;line-height:1.6}
+.soul-library .collection-card>p{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px;font-size:11px;margin:10px 0;line-height:1.5}
+.soul-library .collection-card>p b{display:inline;font-size:13px}

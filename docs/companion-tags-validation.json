@@ -1,0 +1,182 @@
+{
+  "summary": {
+    "testScriptsPassed": 5,
+    "buildPassed": true,
+    "browserPassed": "Built main, mobile Edge; exact eight tag-13 entries; 44/191 tag-24 visibility; attack single/double tap regression",
+    "confirmedCompanions": [
+      {
+        "id": "70",
+        "name": "酒場の看板娘 モブイルカエル",
+        "tags": [
+          "13",
+          "06",
+          "27",
+          "33",
+          "40",
+          "60",
+          "67"
+        ]
+      },
+      {
+        "id": "71",
+        "name": "鍛冶屋の職人 モブゴンゾー",
+        "tags": [
+          "13",
+          "03",
+          "35",
+          "36",
+          "39",
+          "40",
+          "59"
+        ]
+      },
+      {
+        "id": "72",
+        "name": "優しき熱血コーチ モブコーチ",
+        "tags": [
+          "13",
+          "08",
+          "28",
+          "29",
+          "31",
+          "40",
+          "57"
+        ]
+      },
+      {
+        "id": "73",
+        "name": "宿舎の癒し モブミータ",
+        "tags": [
+          "13",
+          "08",
+          "27",
+          "29",
+          "40",
+          "58",
+          "59"
+        ]
+      },
+      {
+        "id": "74",
+        "name": "頼りになる店主 モブマテリア",
+        "tags": [
+          "13",
+          "05",
+          "23",
+          "36",
+          "37",
+          "40",
+          "66"
+        ]
+      },
+      {
+        "id": "185",
+        "name": "新入りフィギュア売り モブメープル",
+        "tags": [
+          "13",
+          "06",
+          "37",
+          "40",
+          "50",
+          "57",
+          "70"
+        ]
+      },
+      {
+        "id": "79",
+        "name": "モブキングダムの王様 モブスライムキング",
+        "tags": [
+          "13",
+          "09",
+          "17",
+          "30",
+          "40",
+          "58",
+          "74"
+        ]
+      },
+      {
+        "id": "80",
+        "name": "王様の右腕 モブライトアーム",
+        "tags": [
+          "13",
+          "09",
+          "17",
+          "40",
+          "49",
+          "59",
+          "66"
+        ]
+      }
+    ],
+    "recipeCount": 314,
+    "enemyDecksValidated": 10,
+    "unexpectedExistingFileChanges": [],
+    "saveOwnershipAndPlayerDecksPreserved": true,
+    "nativePhone": "not tested",
+    "backup": "C:\\Users\\user\\Documents\\Codex\\2026-10-03\\task\\backup-before-companion-correction"
+  },
+  "tests": [
+    {
+      "file": "scripts/source-check.mjs",
+      "status": 0,
+      "output": "PASS: source syntax and merge-conflict markers (188 files)\n"
+    },
+    {
+      "file": "scripts/battle-corrections-check.mjs",
+      "status": 0,
+      "output": "PASS source-backed companion corrections, 46 archived figures, pools/recipes/tags, old save repair, deferred enemy tap and double-tap cancellation\n"
+    },
+    {
+      "file": "scripts/soul-master-check.mjs",
+      "status": 0,
+      "output": "PASS 更新対象以外の327体由来データは元JSONを維持、指定変更と画像を確認\nPASS 45体・階級・所持数、旧セーブの編成を無断変更しない\nPASS 初期LIFE400、山札はシードのみ、手札5、専用領域15\nPASS 3枠制限、融合後の再召喚、バトル後は通常スキル/融合/召喚禁止\nPASS 現行全314レシピが正しい2素材で実行可能\nPASS 特殊融合の+20/+20はターンを跨いで持続、通常ルートも保持\nPASS スキル使用1回と素材ロック、クフレイだけ明示された例外\nPASS ATK>DEFの差分、ATK=DEFで無撃破、通常は1回攻撃\nPASS 攻撃宣言でのみ回避発動、相手も1ターン1回、攻撃回数は消費\nPASS 守護は攻撃先変更と戦闘中DEF、差分無効、貫通は守護のみ禁止\nPASS 相手スキルの無効化と対象変更は解決前、両者の権利を消費\nPASS フェニックス撃破時帰還・通常の差分・手札から直接再召喚DEF+30\nPASS 手札帰還から再召喚しても同ターンの使用者素材ロックを保持\nPASS ぷにパンチの帰還は別の味方への攻撃も終了できる\nPASS 多段攻撃は回数どおり、毎攻撃の累積ATK、同じ相手への再攻撃\nPASS 全員へ1回ずつは個別選択、同一対象へ重複攻撃不可\nPASS 撃破による追加攻撃・全体DEF低下・ドロー\nPASS 永続でない強化の失効と次の相手ターン終了までの強化\nPASS 回復上限・撃破済みSeedの回収、融合素材は回収対象外\nPASS 手札の属性/タグ交換はデッキから選択、総枚数維持\nPASS 相手1体への攻撃/スキル/融合制限が次ターンも効く\nPASS タグ追加/無効化、属性無効化はターン終了で解除\nPASS 次の相手ターンの差分ダメージ無効は最初の1回だけ\nPASS ATK=DEF撃破例外はライフ0差分、DEF強化無視は基礎DEFを維持\nPASS 旧位置変更47はATK+30/DEF+20へ置換、位置と攻撃回数を維持\nPASS 山札切れ敗北は必要ドロー時のみ、スキルのドローも適用\nPASS 全102効果プログラムが正しいタイミング・選択で解決する\nPASS CPUの空き枠・全難度・対応窓を含む対戦は決着し決定的\nPASS 現行全レシピで手札×場と場×手札、満員でも場の素材位置に融合\nPASS 手札×手札・不正素材・スキル使用後・融合封印・フェイズ外を拒否し状態不変\nPASS クイーンロックは全員+30、該当タグ+20を一度だけ、相手と次ターンには影響なし\n31 master checks passed\n"
+    },
+    {
+      "file": "scripts/oct05-check.mjs",
+      "status": 0,
+      "output": "PASS 62 real images, unique IDs, specified stats/classes/rarities/tags, acquisition and full fusion paths\nPASS per-ID 3/1/1 limits, slots 1/2 only, old-save preservation/repair, five aces, no inventory grants, no unapproved acquisition handler\nPASS both sides: immediate self-destruction, atomic discard, team tag buffs, heal, attack ramp, death summons/revive, counter debuff, grave fusion and no seed-to-MOB\nPASS ten distinct legal theme decks, CPU strategy execution and completed battles\n"
+    },
+    {
+      "file": "scripts/favorites-check.mjs",
+      "status": 0,
+      "output": "PASS favorite migration, ID normalization, persistence, no ownership/deck changes, atomic failed save\n"
+    },
+    {
+      "file": "vite build --configLoader native",
+      "status": 0,
+      "output": "vite v7.3.6 building client environment for production...\ntransforming...\n✓ 96 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                     3.63 kB │ gzip:   1.82 kB\ndist/assets/index-BOFBQ-fl.css    187.08 kB │ gzip:  39.71 kB\ndist/assets/index-0UPWR2Ej.js   1,911.45 kB │ gzip: 273.72 kB\n✓ built in 1.86s\n\n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n"
+    }
+  ],
+  "browser": {
+    "width": 375,
+    "checks": [
+      "source-backed tag search",
+      "no story-only selection",
+      "single-tap detail outside battle",
+      "single ally selects red without dialog",
+      "switch/deselect",
+      "ally/enemy double-tap detail",
+      "enemy single opens one simple confirmation",
+      "cancel preserves life/selection",
+      "confirm double dispatch attacks once",
+      "spent attacker rejected"
+    ],
+    "errors": [],
+    "nativePhone": "not tested; touch-enabled Edge viewport"
+  },
+  "changed": [
+    "src/data/battle-corrections.js",
+    "src/data/free-enemies.json",
+    "src/data/oct05-spec.json",
+    "scripts/battle-corrections-check.mjs",
+    "scripts/battle-taps-browser.mjs",
+    "scripts/soul-master-check.mjs",
+    "figure-catalog.html",
+    "docs/BATTLE_TAPS_TAGS.md",
+    "docs/COMPANION_TAGS_FINAL.md",
+    "docs/battle-corrections-audit.json",
+    "docs/companion-tags-validation.json",
+    "docs/companion-tags-changed-files.txt"
+  ]
+}

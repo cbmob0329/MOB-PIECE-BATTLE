@@ -1,0 +1,23 @@
+import {matchesMaterial,recipeMaterialClass} from '../src/game/fusion-rules.js';
+import assert from 'node:assert/strict';import fs from 'node:fs';
+import catalog from '../src/data/soul-catalog.js';import * as g from '../src/game/soul-battle.js';
+import {figures,byId} from '../src/data/catalog.js';import {banners,archivedBanners,poolFor,usableFigure} from '../src/data/gacha.js';
+import {companionRestorations,isStoryOnlyId} from '../src/data/battle-corrections.js';import {createFigureTaps} from '../src/components/figure-taps.js';
+const master=JSON.parse(fs.readFileSync('handoff/soul-v1/MOB_SOUL_BATTLE_全327体マスターデータ_v1.json'));
+for(const id of companionRestorations){const f=g.soulById.get(id),src=master.records.find(r=>r.uid===f.uid);assert.ok(src.sourceTagIds.includes('13'));assert.ok(f.tags.includes('13'));assert.ok(f.tags.length<=catalog.rules.tagLimits[f.rarity]);assert.equal(byId.get(id).tags.includes('13'),true);}
+for(const id of ['44','191','mq:eventfig/46','mq:eventfig/47']){assert.ok(!g.soulById.get(id).tags.includes('13'));assert.ok(!byId.get(id).tags.includes('13'));}
+assert.ok(g.soulById.get('44').tags.includes('24'));assert.ok(g.soulById.get('44').tags.includes('04'));assert.ok(g.soulById.get('191').tags.includes('24'));assert.ok(g.soulById.get('191').tags.includes('06'));
+assert.deepEqual(new Set(g.soulFigures.filter(f=>f.tags.includes('13')).map(f=>f.id)),new Set(companionRestorations));
+const enemies=JSON.parse(fs.readFileSync('src/data/free-enemies.json'));const map=new Map(g.soulFigures.map(f=>[f.id,f]));for(const enemy of enemies){assert.ok(g.validateSoulDeck(enemy.deck).valid,enemy.id);for(const route of enemy.routes)for(const step of route.steps){if(step.kind==='evolution')continue;const [a,b]=step.materials.map(id=>map.get(id));assert.ok(a&&b,enemy.id+': missing route material');assert.ok(catalog.recipes.some(r=>r.target===step.target&&recipeMaterialClass(r,map)===a.soulClass&&a.soulClass===b.soulClass&&((matchesMaterial(a,r.materials[0])&&matchesMaterial(b,r.materials[1]))||(matchesMaterial(b,r.materials[0])&&matchesMaterial(a,r.materials[1])))),enemy.id+': invalid route '+JSON.stringify(step));}}
+assert.equal(catalog.archivedFigures.length,46);assert.equal(g.soulFigures.length,627);assert.ok(g.soulFigures.every(f=>!isStoryOnlyId(f.id)));assert.ok(figures.every(f=>!isStoryOnlyId(f.sourceId)));assert.ok(catalog.tags.every(t=>!['61','62','63'].includes(t.id)));assert.ok(catalog.recipes.every(r=>!isStoryOnlyId(r.target)&&r.materials.every(m=>!isStoryOnlyId(m.id||''))));
+for(const banner of [...banners,...archivedBanners])assert.ok(poolFor(banner).every(f=>!isStoryOnlyId(f.sourceId)));assert.equal(usableFigure(byId.get('spboss001')),false);
+const archived=archivedBanners.find(b=>b.id==='004');assert.deepEqual(archived.extra,[...Array.from({length:18},(_,i)=>`fig/${i+63}.png`),'fig/88.png']);
+const old={soulDecks:[['spboss001','01'],[],[],[],[]],soulDeckSlot:0,owned:{spboss001:1,'01':3},favoriteFigureIds:['spboss001']},snapshot=structuredClone(old);
+assert.deepEqual(g.ensureSoulDecks(old),snapshot.soulDecks[0]);assert.deepEqual(old,snapshot);assert.ok(g.validateSoulDeck(old.soulDecks[0],old.owned).errors.some(e=>e.includes('対象外')));const next=g.prepareSoulDeck(old,['01']);assert.deepEqual(next.owned,old.owned);assert.deepEqual(next.favoriteFigureIds,old.favoriteFigureIds);assert.deepEqual(old,snapshot);
+let stored=JSON.stringify({...old,version:6,centerId:'01',avatarId:'01',deck:[],deckPresets:[[],[],[],[],[]]});globalThis.localStorage={getItem:()=>stored,setItem:(k,v)=>stored=v};const {loadProfile}=await import('../src/game/profile.js?v=7.3.0');const loaded=loadProfile();assert.equal(loaded.owned.spboss001,1);assert.deepEqual(loaded.soulDecks,old.soulDecks);assert.deepEqual(loaded.favoriteFigureIds,old.favoriteFigureIds);
+let time=0,n=0,single=0,double=0;const pending=new Map(),tap=createFigureTaps({now:()=>time,schedule:(fn)=>{pending.set(++n,fn);return n;},cancel:id=>pending.delete(id)}),opts={single:()=>single++,double:()=>double++};
+tap.tap('enemy:1',opts);time=100;tap.tap('enemy:1',opts);for(const fn of pending.values())fn();assert.equal(single,0);assert.equal(double,1);
+time=600;tap.tap('enemy:1',opts);tap.reset();for(const fn of pending.values())fn();assert.equal(single,0);
+time=1000;tap.tap('ally:1',{...opts,immediate:true});assert.equal(single,1);time=1100;tap.tap('ally:1',{...opts,immediate:true});assert.equal(single,1);assert.equal(double,2);
+time=1600;tap.tap('enemy:2',opts);for(const fn of [...pending.values()])fn();assert.equal(single,2);
+console.log('PASS source-backed companion corrections, 46 archived figures, pools/recipes/tags, old save repair, deferred enemy tap and double-tap cancellation');

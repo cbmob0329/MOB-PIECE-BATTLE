@@ -32,3 +32,7 @@
 @keyframes fusion-ready-float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
 @media(prefers-reduced-motion:reduce){.duel-slot.fusion-ready .duel-figure img,.duel-slot.fusion-ready .duel-figure:before{animation:none}}
 .reduce-motion .duel-slot.fusion-ready .duel-figure img,.reduce-motion .duel-slot.fusion-ready .duel-figure:before{animation:none}
+
+.duel-slot.attack-selected{border:3px solid #ef4545!important;box-shadow:0 0 0 3px #ef454544,0 0 22px #ff4141bb!important;animation:attack-selection-glow 1.1s ease-in-out infinite alternate}.duel-slot[data-piece]{touch-action:manipulation}.attack-confirm-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}.attack-confirm-stats>div{padding:12px;background:#edf1e5;border:1px solid #c6d1bd;border-radius:12px;min-width:0}.attack-confirm-stats b,.attack-confirm-stats small,.attack-confirm-stats span{display:block;overflow-wrap:anywhere;line-height:1.6}.attack-confirm-stats small{font-size:11px;opacity:.7}.attack-confirm-stats b{font-size:13px}.attack-confirm-stats span{font-size:12px}@keyframes attack-selection-glow{to{box-shadow:0 0 0 4px #ef454566,0 0 30px #ff4141!important}}@media(prefers-reduced-motion:reduce){.duel-slot.attack-selected{animation:none}}.reduce-motion .duel-slot.attack-selected{animation:none}
+.duel-sheet .attack-confirm-stats>div{background:#10283d;border-color:#456278;color:#eff7ff}
+.duel-sheet .attack-confirm-stats b,.duel-sheet .attack-confirm-stats small,.duel-sheet .attack-confirm-stats span{color:#eff7ff}

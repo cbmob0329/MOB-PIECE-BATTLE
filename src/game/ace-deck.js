@@ -6,7 +6,7 @@ const merge=(a,b)=>{const out={...a};for(const[id,n]of Object.entries(b))out[id]
 export function buildAceDeck(profile,aceIds,{slot=profile.soulDeckSlot||0}={}){
  if(aceIds.length!==5||new Set(aceIds).size!==5)throw Error('異なるフィギュアをエースとして5体選んでください');
  const owned=availableDeckOwned(profile,slot),aces=aceIds.map(id=>soulById.get(id));
- for(let i=0;i<5;i++)if(!aces[i]||!(owned[aceIds[i]]>0))throw Error((aces[i]?.name||aceIds[i])+'を所持していないか、別デッキに編成中です');
+ for(let i=0;i<5;i++)if(!aces[i]||aces[i].retired||!(owned[aceIds[i]]>0))throw Error((aces[i]?.name||aceIds[i])+'を所持していないか、別デッキに編成中です');
  const context={profile,slot},valid=needs=>!validateSoulDeck(expand(needs),owned,context).errors.length;
  for(const[k,n]of Object.entries(quotas)){const groups=new Map();for(const f of soulFigures.filter(f=>f.soulClass===k)){groups.set(f.id,owned[f.id]||0);}const capacity=[...groups.values()].reduce((a,n)=>a+Math.min(n,soulCopyLimits[k]),0);if(capacity<n)throw Error(({seed:'シード',middle:'ミドル',mob:'MOBソウル'})[k]+'が同名制限・別デッキ予約後に'+(n-capacity)+'体不足しています');}
  const score=f=>aces.reduce((n,a)=>n+f.tags.filter(t=>a.tags.includes(t)).length*5+(f.attribute.split('/').some(x=>a.attribute.split('/').includes(x))?4:0)+(f.role===a.role?0:1),0)+(f.atk+f.def)/1000;

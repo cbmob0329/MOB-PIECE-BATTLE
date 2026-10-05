@@ -1,0 +1,450 @@
+{
+  "tagId": "13",
+  "removed": [
+    "16",
+    "44",
+    "191",
+    "192",
+    "193",
+    "194",
+    "195",
+    "196",
+    "197",
+    "198",
+    "199",
+    "217",
+    "mq:eventfig/46",
+    "mq:eventfig/47"
+  ],
+  "retiredFigures": [
+    {
+      "id": "spboss001",
+      "name": "モブ怪人のボス 超合金",
+      "image": "spbossfig/001.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss002",
+      "name": "モブドラゴン 超合金",
+      "image": "spbossfig/002.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss003",
+      "name": "モブドラゴンⅡ超合金",
+      "image": "spbossfig/003.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss004",
+      "name": "モブガーディアン 超合金",
+      "image": "spbossfig/004.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss005",
+      "name": "モブガーディアンⅡ超合金",
+      "image": "spbossfig/005.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss006",
+      "name": "ミラモブ 超合金",
+      "image": "spbossfig/006.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss007",
+      "name": "ミラモブⅡ超合金",
+      "image": "spbossfig/007.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss008",
+      "name": "モブホーク超合金",
+      "image": "spbossfig/008.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss009",
+      "name": "モブホークⅡ超合金",
+      "image": "spbossfig/009.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss010",
+      "name": "モブネオンバルス超合金",
+      "image": "spbossfig/010.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss011",
+      "name": "モブネプチューン 超合金",
+      "image": "spbossfig/011.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss012",
+      "name": "モブエース 超合金",
+      "image": "spbossfig/012.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss013",
+      "name": "モブネオマスター 超合金",
+      "image": "spbossfig/013.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss014",
+      "name": "モブウミデンデン 超合金",
+      "image": "spbossfig/014.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss015",
+      "name": "モブタフネス 超合金",
+      "image": "spbossfig/015.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss016",
+      "name": "モブククリ 超合金",
+      "image": "spbossfig/016.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss017",
+      "name": "モブヒスイ 超合金",
+      "image": "spbossfig/017.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss018",
+      "name": "モブリュウゴウ 超合金",
+      "image": "spbossfig/018.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss019",
+      "name": "酒場の看板娘 モブイルカエル 超合金",
+      "image": "spbossfig/019.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss020",
+      "name": "鍛冶屋の職人 モブゴンゾー 超合金",
+      "image": "spbossfig/020.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss021",
+      "name": "新入りフィギュア売り モブメープル 超合金",
+      "image": "spbossfig/021.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss022",
+      "name": "優しき熱血コーチ モブコーチ 超合金",
+      "image": "spbossfig/022.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss023",
+      "name": "モブアビスナイト 超合金",
+      "image": "spbossfig/023.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss024",
+      "name": "モブネッシー 超合金",
+      "image": "spbossfig/024.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss025",
+      "name": "モブジョーンズ 超合金",
+      "image": "spbossfig/025.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss026",
+      "name": "モブジンベエ 超合金",
+      "image": "spbossfig/026.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss027",
+      "name": "スライム 超合金",
+      "image": "spbossfig/027.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss028",
+      "name": "モブテンデビ 超合金",
+      "image": "spbossfig/028.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss029",
+      "name": "モブジョーロ 超合金",
+      "image": "spbossfig/029.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss030",
+      "name": "モブロック 超合金",
+      "image": "spbossfig/030.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss031",
+      "name": "モブピコダーク 超合金",
+      "image": "spbossfig/031.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss032",
+      "name": "モブデビルスライム 超合金",
+      "image": "spbossfig/032.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss033",
+      "name": "モブミニブック 超合金",
+      "image": "spbossfig/033.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "spboss034",
+      "name": "モブアサシン 超合金",
+      "image": "spbossfig/034.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/35",
+      "name": "モブヒノデビ 超合金",
+      "image": "spbossfig/035.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/36",
+      "name": "モブマグトカゲ 超合金",
+      "image": "spbossfig/036.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/37",
+      "name": "モブマグゴーレム 超合金",
+      "image": "spbossfig/037.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/38",
+      "name": "モブヨーガンスライム 超合金",
+      "image": "spbossfig/038.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/39",
+      "name": "モブダンサー 超合金",
+      "image": "spbossfig/039.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/40",
+      "name": "モブナイフ 超合金",
+      "image": "spbossfig/040.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/41",
+      "name": "モブナーガ 超合金",
+      "image": "spbossfig/041.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/42",
+      "name": "モブネオントカゲ 超合金",
+      "image": "spbossfig/042.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/43",
+      "name": "モブミイラ 超合金",
+      "image": "spbossfig/043.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/44",
+      "name": "モブアドベンチャー 超合金",
+      "image": "spbossfig/044.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/45",
+      "name": "モブギミック 超合金",
+      "image": "spbossfig/045.png",
+      "source": "figure_list_chogokin.txt"
+    },
+    {
+      "id": "mq:spbossfig/46",
+      "name": "モブネコミイラ 超合金",
+      "image": "spbossfig/046.png",
+      "source": "figure_list_chogokin.txt"
+    }
+  ],
+  "removedTagIds": [
+    "61",
+    "62",
+    "63"
+  ],
+  "archivePurpose": "old-save ID/ownership/deck recovery only; not offered in active selection or acquisition",
+  "sourceHashes": {
+    "フィギュア一覧.txt": "7fd84fde75ce22e071f607abd094cc5e459d42e3cb6cc1a833f9b275a2f676a1",
+    "フィギュアの合体指定A.txt": "a9f679147d9a48b74e7c45e4505e4e8fcb967565d5046940540625f3eb3d9294",
+    "フィギュアのガチャ.txt": "c3d0dc361aee4ed0c807db2c41aa69b964db2a707b3cf1ed317f2633589583c6",
+    "src/data/figures_master_v170.json": "a0d8b0694e02d785c509e1b5c3ad0224c1f8ea47eef90d1b4ccf487331c88eef",
+    "handoff/soul-v1/MOB_SOUL_BATTLE_全327体マスターデータ_v1.json": "07e536f3b317a83e08ee2fb15305738ace22633e7806dea77f7276b68a2fcd77"
+  },
+  "authority": "Latest explicit user correction: exact eight names",
+  "confirmedCompanions": [
+    {
+      "id": "70",
+      "name": "酒場の看板娘 モブイルカエル",
+      "tags": [
+        "13",
+        "06",
+        "27",
+        "33",
+        "40",
+        "60",
+        "67"
+      ]
+    },
+    {
+      "id": "71",
+      "name": "鍛冶屋の職人 モブゴンゾー",
+      "tags": [
+        "13",
+        "03",
+        "35",
+        "36",
+        "39",
+        "40",
+        "59"
+      ]
+    },
+    {
+      "id": "72",
+      "name": "優しき熱血コーチ モブコーチ",
+      "tags": [
+        "13",
+        "08",
+        "28",
+        "29",
+        "31",
+        "40",
+        "57"
+      ]
+    },
+    {
+      "id": "73",
+      "name": "宿舎の癒し モブミータ",
+      "tags": [
+        "13",
+        "08",
+        "27",
+        "29",
+        "40",
+        "58",
+        "59"
+      ]
+    },
+    {
+      "id": "74",
+      "name": "頼りになる店主 モブマテリア",
+      "tags": [
+        "13",
+        "05",
+        "23",
+        "36",
+        "37",
+        "40",
+        "66"
+      ]
+    },
+    {
+      "id": "185",
+      "name": "新入りフィギュア売り モブメープル",
+      "tags": [
+        "13",
+        "06",
+        "37",
+        "40",
+        "50",
+        "57",
+        "70"
+      ]
+    },
+    {
+      "id": "79",
+      "name": "モブキングダムの王様 モブスライムキング",
+      "tags": [
+        "13",
+        "09",
+        "17",
+        "30",
+        "40",
+        "58",
+        "74"
+      ]
+    },
+    {
+      "id": "80",
+      "name": "王様の右腕 モブライトアーム",
+      "tags": [
+        "13",
+        "09",
+        "17",
+        "40",
+        "49",
+        "59",
+        "66"
+      ]
+    }
+  ],
+  "supersedes": "Previous restoration of tag 13 on 44 and 191 was incorrect",
+  "dendenAndPink": [
+    {
+      "id": "44",
+      "name": "MOB SHOT PET モブデンデン",
+      "tags": [
+        "24",
+        "04",
+        "34",
+        "40",
+        "43",
+        "51",
+        "67",
+        "68",
+        "79"
+      ]
+    },
+    {
+      "id": "191",
+      "name": "モブピンク",
+      "tags": [
+        "24",
+        "06",
+        "34",
+        "39",
+        "40",
+        "59",
+        "69",
+        "70",
+        "78"
+      ]
+    }
+  ]
+}
