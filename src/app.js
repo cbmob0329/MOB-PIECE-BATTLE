@@ -1,3 +1,4 @@
+import {prepareFavoriteToggle} from './game/favorites.js';
 import {prepareFamilyCollection} from './game/family-collection.js';
 import {prepareElementCollection} from './game/element-collection.js';
 import {release,initializeInitialRelease,prepareInitialChoice} from './game/initial-release.js';
@@ -44,7 +45,7 @@ export const art=(f,cls='')=>{if(!f)return `<span class="missing ${cls}">画像�
 installSoundUi(profile.battleStyle?.sound);
 export const ctx={figures,tags,byId,profile,icon,art,modes,menuArt,iconArt,rankArt};
 let initialSelection=null;
-let deckQuery='',deckTag='ALL';let collectionGroup='main';let query='';let rarity='ALL';let collectionStatus='ALL';let collectionSort='DEX_ASC';let collectionTag='ALL';let displaySlot=0;let displayQuery='';let historyFilter='ALL';let calendarView='year';let calendarMonth=null;
+let deckQuery='',deckTag='ALL';let collectionFavorites=false;let collectionGroup='main';let query='';let rarity='ALL';let collectionStatus='ALL';let collectionSort='DEX_ASC';let collectionTag='ALL';let displaySlot=0;let displayQuery='';let historyFilter='ALL';let calendarView='year';let calendarMonth=null;
 const app=document.querySelector('#app');
 if(!app)throw new Error('APP_ROOT_NOT_FOUND');
 const nav=[['home','home','HOME','home'],['figure','figure','FIGURE','figure'],['deck','deck','DECK','deck'],['battle','battle','BATTLE','battle'],['gacha','gacha','GACHA','gacha']];
@@ -66,7 +67,7 @@ function render({preserveScroll=false}={}){
   const focused=preserveScroll?document.activeElement?.getAttribute('data-add'):null;
   const route=location.hash.slice(1)||'home';
   document.documentElement.classList.toggle('reduce-motion',profile.reducedMotion);
-  const page=route==='initial-starter'?initialStarterScreen(ctx,initialSelection):route==='sound'?soundGalleryScreen():route==='home'?homeScreen(ctx):route==='battle-style'?battleCustomizeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup):route==='deck'?deckScreen(ctx,{query:deckQuery,tag:deckTag}):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
+  const page=route==='initial-starter'?initialStarterScreen(ctx,initialSelection):route==='sound'?soundGalleryScreen():route==='home'?homeScreen(ctx):route==='battle-style'?battleCustomizeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup,collectionFavorites):route==='deck'?deckScreen(ctx,{query:deckQuery,tag:deckTag}):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
   const battleRoute=['battle','tournament','rankTournament','mobLeague'].includes(route);
   const master=isPlayerMaster(profile);const rankKey=master?'MOB_MASTER':profile.rank;
   const avatarFigure=byId.get(profile.avatarId)||byId.get(profile.centerId)||figures.find(f=>!f.pending);
@@ -146,6 +147,8 @@ function grantAllFigures(){
 }
 
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
+if(b.hasAttribute('data-figure-favorites')){collectionFavorites=!collectionFavorites;b.setAttribute('aria-pressed',String(collectionFavorites));refreshSearch(app.querySelector('#figure-search'));return;}
+if(b.dataset.figureFavorite){e.preventDefault();e.stopPropagation();const id=b.dataset.figureFavorite;if(!commitProfile(prepareFavoriteToggle(profile,id))){toast('保存できませんでした。お気に入りは変更していません。','error');return;}refreshSearch(app.querySelector('#figure-search'));const replacement=[...app.querySelectorAll('[data-figure-favorite]')].find(el=>el.dataset.figureFavorite===id);(replacement||app.querySelector('[data-figure-favorites]'))?.focus({preventScroll:true});return;}
 if(b.dataset.battleCube||b.dataset.battleMat){setBattleStyle(profile,b.dataset.battleCube?'cube':'mat',b.dataset.battleCube||b.dataset.battleMat);persist();render({preserveScroll:true});toast('バトルデザインを変更しました');return;}
 if(handleDeckAssist(b,ctx,{render,persist,toast}))return;
 if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}
@@ -191,7 +194,7 @@ if(b.dataset.comp&&competitionAction(b.dataset.comp))return;if(b.dataset.compBat
 const composingSearch=new Set();
 function refreshSearch(input){
  const id=input.id;let markup,selectors;
- if(id==='figure-search'){query=input.value;markup=collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup);selectors=['.soul-grid','[data-figure-count]'];}
+ if(id==='figure-search'){query=input.value;markup=collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup,collectionFavorites);selectors=['.soul-grid','[data-figure-count]'];}
  else if(id==='deck-search'){deckQuery=input.value;markup=deckScreen(ctx,{query:deckQuery,tag:deckTag});selectors=['#deck-inventory'];}
  else if(id==='display-search'){displayQuery=input.value;markup=displayScreen(ctx,displaySlot,displayQuery);selectors=['.figure-grid','.count'];}else return;
  const fragment=document.createElement('template');fragment.innerHTML=markup;

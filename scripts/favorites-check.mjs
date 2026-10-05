@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {favoriteIds,prepareFavoriteToggle} from '../src/game/favorites.js';
+let saved=null,fail=false;globalThis.localStorage={getItem:()=>saved,setItem:(k,v)=>{if(fail)throw Error('quota');saved=v;}};
+const {loadProfile,profile,commitProfile}=await import('../src/game/profile.js?v=7.3.0');
+assert.deepEqual(favoriteIds({}),[]);assert.deepEqual(favoriteIds({favoriteFigureIds:['BFX001','BFX001',3,null,'','future-id']}),['BFX001','future-id']);
+const legacy={...structuredClone(profile),owned:{BFX001:2},soulDecks:[['BFX001'],[],[],[],[]],soulDeckSlot:0,unknownExtension:{keep:true}};delete legacy.favoriteFigureIds;saved=JSON.stringify(legacy);
+const loaded=loadProfile();assert.deepEqual(loaded.favoriteFigureIds,[]);assert.deepEqual(loaded.owned,legacy.owned);assert.deepEqual(loaded.soulDecks,legacy.soulDecks);assert.deepEqual(loaded.unknownExtension,legacy.unknownExtension);
+const before=structuredClone(loaded),next=prepareFavoriteToggle(loaded,'BFX001');assert.deepEqual(loaded,before);assert.deepEqual(next.owned,before.owned);assert.deepEqual(next.soulDecks,before.soulDecks);assert.equal(commitProfile(next),true);assert.deepEqual(loadProfile().favoriteFigureIds,['BFX001']);
+const disk=saved,memory=structuredClone(profile);fail=true;assert.equal(commitProfile(prepareFavoriteToggle(profile,'BFX001')),false);assert.equal(saved,disk);assert.deepEqual(profile,memory);fail=false;
+assert.equal(commitProfile(prepareFavoriteToggle(profile,'BFX001')),true);assert.deepEqual(loadProfile().favoriteFigureIds,[]);assert.deepEqual(loadProfile().soulDecks,legacy.soulDecks);
+console.log('PASS favorite migration, ID normalization, persistence, no ownership/deck changes, atomic failed save');
