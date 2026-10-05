@@ -1,3 +1,4 @@
+import {capturePresentation} from './battle-presentation.js';
 // Choice construction and atomic resolution shared by player and CPU.
 import {elementSkills} from '../data/element-skills.js';
 const definitions=new Map(elementSkills.map(x=>[x.program,x]));
@@ -47,7 +48,7 @@ export function applyElement(s,side,f,byId,o){
  for(const op of d.ops){
   if(['heal','draw','barrier','recover','top','splitDef'].includes(op.kind)&&!condition(op.condition))continue;
   if(op.kind==='heal')p.life=Math.min(400,p.life+op.n);
-  if(op.kind==='draw')for(let i=0;i<op.n&&p.deck.length;i++){const id=p.deck.shift();p.hand.push(id);work.events??=[];work.eventSerial=(work.eventSerial||0)+1;work.events.push({seq:work.eventSerial,type:'draw',side,id});}
+  if(op.kind==='draw')for(let i=0;i<op.n&&p.deck.length;i++){const id=p.deck.shift();p.hand.push(id);work.events??=[];work.eventSerial=(work.eventSerial||0)+1;const event={seq:work.eventSerial,type:'draw',side,id};work.events.push(event);capturePresentation(work,event);}
   if(op.kind==='barrier')p.teamEffects.push({key:'damageReduce',value:op.n,starts:work.turn+1,until:next});
   if(op.kind==='top'){const [id]=p.deck.splice(sel(op.choice),1);p.deck.unshift(id);}
   if(op.kind==='recover'){const indices=op.from.map(sel).filter(i=>i>=0),ids=indices.map(i=>p.grave[i]);for(const i of [...indices].sort((a,b)=>b-a))p.grave.splice(i,1);for(const id of ids){const i=p.destroyed.indexOf(id);if(i>=0)p.destroyed.splice(i,1);p[op.destination].push(id);}}

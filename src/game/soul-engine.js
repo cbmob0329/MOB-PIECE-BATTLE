@@ -1,3 +1,4 @@
+import {capturePresentation} from './battle-presentation.js';
 import {matchesMaterial,recipeStageMatches} from './fusion-rules.js';
 import {soulFigures,soulById,recipes,validateSoulDeck} from './soul-battle.js';
 import programs from './soul-skill-programs.js';
@@ -8,7 +9,7 @@ import {soulOverrides} from '../data/soul-overrides.js';
 const fail=m=>{throw Error(m);};
 const log=(s,t)=>{s.log.push(t);s.log=s.log.slice(-100);};
 // Presentation events observe the rules; they never decide a battle outcome.
-const emit=(s,type,data={})=>{s.events??=[];s.eventSerial=(s.eventSerial||0)+1;s.events.push({seq:s.eventSerial,type,...data});s.events=s.events.slice(-180);};
+const emit=(s,type,data={})=>{s.events??=[];s.eventSerial=(s.eventSerial||0)+1;const event={seq:s.eventSerial,type,...data};s.events.push(event);capturePresentation(s,event);s.events=s.events.slice(-180);};
 const info=p=>soulById.get(p.id);
 export const skillPlan=p=>{const plan=soulOverrides[p.id]?.plan||programs[info(p).soulSkill.program];return p.handOrigin?handPlan(plan,info(p).soulSkill.timing):plan;};
 const sharesAttribute=(a,b)=>a.split('/').some(x=>b.split('/').includes(x));
@@ -26,7 +27,7 @@ export const currentTags=p=>[...new Set([...info(p).tags,...values(p,'addTag')])
 const attribute=p=>value(p,'attribute')||info(p).attribute;
 const expiresNextOpponent=(s,side)=>s.turn+(s.active===side?1:0);
 function main(s,side){if(s.winner!==null)fail('対戦は終了しています');if(s.evolutionQueue?.length)fail('条件進化を選んでください');if(s.pending)fail('対応スキルの確認を完了してください');if(s.phase!=='main'||s.active!==side)fail('自分のメインフェイズでのみ行えます');}
-function finish(s,side,reason){s.winner=side;s.reason=reason;s.phase='finished';s.pending=null;log(s,reason);emit(s,'result',{side,reason});}
+function finish(s,side,reason){if(s.winner!==null)return;if(s.evolutionQueue?.length){s.deferredResult??={side,reason};return;}delete s.deferredResult;s.winner=side;s.reason=reason;s.phase='finished';s.pending=null;log(s,reason);emit(s,'result',{side,reason});}
 function draw(s,side){const p=s.players[side];if(!p.deck.length){finish(s,1-side,'山札切れ');return;}const id=p.deck.shift();p.hand.push(id);emit(s,'draw',{side,id});}
 export function startTurn(s){
  s.phase='draw';s.turn++;emit(s,'turn',{side:s.active,turn:s.turn});
@@ -222,7 +223,7 @@ function respond(s,side,f,o){
 export function beginBattle(s,side){main(s,side);s.phase='battle';log(s,s.players[side].name+'のバトルフェイズ');emit(s,'battle',{side});}
 export const attackLimit=p=>has(p,'eachTarget')?Math.max(1,3):Number(value(p,'maxAttacks')||1)+p.extra;
 export function canAttack(s,side,a,d){
- if(s.winner!==null||s.pending||s.phase!=='battle'||s.active!==side||!a||!d||has(a,'skipBattle'))return false;
+ if(s.winner!==null||s.pending||s.evolutionQueue?.length||s.phase!=='battle'||s.active!==side||!a||!d||has(a,'skipBattle'))return false;
  if(has(a,'eachTarget')?a.attackedTargets.includes(d.uid):a.attacks>=attackLimit(a))return false;
  if(a.chainOnly&&a.lastTarget===d.uid)return false;
  if(has(a,'lastAttack')&&live(s,side).some(x=>x.uid!==a.uid&&!has(x,'skipBattle')&&!has(x,'lastAttack')&&live(s,1-side).some(t=>canAttack(s,side,x,t))))return false;
@@ -274,6 +275,7 @@ export function moveAfterAttack(s,side,uid,slot){
 }
 export function canEndTurn(s,side){return s.winner===null&&!s.pending&&!s.evolutionQueue?.length&&s.active===side&&(s.phase==='battle'||(s.turn===1&&side===0&&s.phase==='main'));}
 export function endTurn(s,side){if(!canEndTurn(s,side))fail('対応完了後、バトルフェイズから終了できます（先攻1ターン目はメインから終了可能）');emit(s,'end',{side});s.moveChoice=null;s.active=1-side;startTurn(s);}
+export function fusionReadyMaterials(s,side){const field=new Set(),hand=new Set();for(const pair of fusionPairs(s,side))if(fusionOptions(s,side,pair).length)for(const ref of pair){if(typeof ref==='number')field.add(ref);else if(Number.isInteger(ref.handIndex))hand.add(ref.handIndex);}return {field,hand};}
 export function fusionReadyUids(s,side){const ready=new Set(),field=live(s,side);for(let i=0;i<field.length;i++)for(let j=i+1;j<field.length;j++)if(fusionOptions(s,side,[field[i].uid,field[j].uid]).length){ready.add(field[i].uid);ready.add(field[j].uid);}return ready;}
 export function cpuOptions(s,side,uid){const o={};for(const c of skillChoices(s,side,uid,o))o[c.key]=(c.choices.find(x=>x.value!=='-1')||c.choices[0])?.value;return o;}
 export function cpuRespond(s){if(!s.pending||s.pending.side===1)return;for(const f of reactionOptions(s,1)){try{useSkill(s,1,skillReference(f),cpuOptions(s,1,skillReference(f)));return;}catch{}}passReaction(s,1);}
@@ -295,4 +297,5 @@ export function cpuAttack(s){
 }
 
 export function evolutionOptions(s){const e=s.evolutionQueue?.[0];if(!e||s.winner!==null)return {event:null,costs:[]};const p=s.players[e.side],valid=id=>!e.tag||soulById.get(id).tags.includes(e.tag);const costs=p.hand.map((id,i)=>({value:'hand:'+i,id})).filter(x=>valid(x.id));if(e.field)for(const f of p.field.filter(Boolean))if(valid(f.id))costs.push({value:'field:'+f.uid,id:f.id});return {event:e,costs};}
-export function resolveEvolution(s,side,costs=null){const {event:e,costs:allowed}=evolutionOptions(s);if(!e||e.side!==side)fail('条件進化の選択待ちではありません');if(costs===null){s.evolutionQueue.shift();return;}const p=s.players[side];if(!Array.isArray(costs)||costs.length!==e.cost||new Set(costs).size!==costs.length||costs.some(x=>!allowed.some(a=>a.value===x))||!p.reserve.includes(e.target)||!p.field.includes(null))fail('条件進化のコストを選んでください');const hand=costs.filter(x=>x.startsWith('hand:')).map(x=>Number(x.slice(5))).sort((a,b)=>b-a);for(const i of hand){const {id}=takeHand(p,i);p.grave.push(id);p.used.push(id);}for(const x of costs.filter(x=>x.startsWith('field:')))remove(s,side,piece(s,side,Number(x.slice(6))));p.reserve.splice(p.reserve.indexOf(e.target),1);const slot=p.field.indexOf(null),f=instance(s,e.target);p.field[slot]=f;p.used.push(f.id);s.evolutionQueue.shift();log(s,info(f).name+'へ条件進化');emit(s,'summon',{side,id:f.id,uid:f.uid,slot,...stats(f)});}
+function finishDeferred(s){if(!s.evolutionQueue?.length&&s.deferredResult){const {side,reason}=s.deferredResult;finish(s,side,reason);}}
+export function resolveEvolution(s,side,costs=null){const {event:e,costs:allowed}=evolutionOptions(s);if(!e||e.side!==side)fail('条件進化の選択待ちではありません');if(costs===null){s.evolutionQueue.shift();finishDeferred(s);return;}const p=s.players[side];if(!Array.isArray(costs)||costs.length!==e.cost||new Set(costs).size!==costs.length||costs.some(x=>!allowed.some(a=>a.value===x))||!p.reserve.includes(e.target)||!p.field.includes(null))fail('条件進化のコストを選んでください');const hand=costs.filter(x=>x.startsWith('hand:')).map(x=>Number(x.slice(5))).sort((a,b)=>b-a);for(const i of hand){const {id}=takeHand(p,i);p.grave.push(id);p.used.push(id);}for(const x of costs.filter(x=>x.startsWith('field:')))remove(s,side,piece(s,side,Number(x.slice(6))));p.reserve.splice(p.reserve.indexOf(e.target),1);const slot=p.field.indexOf(null),f=instance(s,e.target);p.field[slot]=f;p.used.push(f.id);s.evolutionQueue.shift();log(s,info(f).name+'へ条件進化');emit(s,'summon',{side,id:f.id,uid:f.uid,slot,...stats(f)});finishDeferred(s);}

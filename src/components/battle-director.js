@@ -3,7 +3,7 @@ import {soulById} from '../game/soul-battle.js';
 import {cubeMarkup} from './battle-art.js';
 import {esc} from '../screens/soulLibrary.js';
 const image=id=>{const f=soulById.get(id);return f?`<img src="${esc(f.image)}" alt="${esc(f.name)}">`:'';};
-export function groupPresentationEvents(events){const out=[];for(const e of events){const last=out.at(-1);if(e.type==='draw'&&last?.type==='draw'&&last.side===e.side){last.count++;last.ids.push(e.id);}else out.push({...e,...(e.type==='draw'?{count:1,ids:[e.id]}:{})});}return out;}
+export function groupPresentationEvents(events){const out=[];for(const e of events){const last=out.at(-1);if(e.type==='draw'&&last?.type==='draw'&&last.side===e.side){last.count++;last.ids.push(e.id);last.presentationState=e.presentationState;}else out.push({...e,...(e.type==='draw'?{count:1,ids:[e.id]}:{})});}return out;}
 export function createBattleDirector(root,{profile,style}){
  let stopped=0,animation=null;const soundScope=sound.beginScope('battle');
  const reduced=()=>profile.reducedMotion||matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -29,8 +29,8 @@ export function createBattleDirector(root,{profile,style}){
  }
  const skip=()=>{sound.stopScope(soundScope);stopped++;animation?.finish();root.querySelector('.duel-fx')?.replaceChildren();};
  const onLeave=()=>{skip();sound.endScope(soundScope);};window.addEventListener('hashchange',onLeave);
- async function run(events){const token=++stopped,host=root.querySelector('.duel-fx');if(!host)return;root.classList.add('fx-running');
-  try{for(const event of groupPresentationEvents(events)){if(token!==stopped)break;const p=presentation(event);if(!p)continue;
+ async function run(events,{onEvent=()=>{}}={}){const token=++stopped;let host=root.querySelector('.duel-fx');if(!host)return;root.classList.add('fx-running');
+  try{for(const event of groupPresentationEvents(events)){if(token!==stopped)break;onEvent(event);host=root.querySelector('.duel-fx');if(!host)break;const p=presentation(event);if(!p)continue;
    const duration=event.type==='skill'?Math.max(1200,Math.round(p.time*(style.fast?.7:1))):reduced()?220:Math.round(p.time*1.3*(style.fast?.5:1)*(event.side===1?.85:1));
    host.innerHTML=`<div class="battle-cue cue-${p.kind}" data-cue="${event.type}" style="--cue-time:${duration}ms"><div class="fx-rays"></div>${p.body}<div class="fx-title"><strong>${p.title}</strong><span>${esc(p.sub)}</span></div></div><button class="fx-skip" data-fx-skip>演出をスキップ ›</button>`;
    host.classList.toggle('motion-reduced',!!reduced());const audio=battleSound(event,soulById.get(event.id));if(audio)sound.play(audio.cue,{...audio.options,scope:soundScope,presentationDuration:duration/1000,durationLimit:duration/1000});const el=host.querySelector('.battle-cue');
