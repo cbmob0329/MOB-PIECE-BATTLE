@@ -13,9 +13,10 @@ export function cueSpec(cue,options={}){
  let duration=ui?({error:.23,deckArrange:.3}[cue]||.1):({draw:.22,summon:.65,hit:.26,guard:.32,defeat:.4,turn:.3,battle:.3,end:.2,start:.85,win:1.3,lose:1.05,starter:.8,reward:.65,gachaOpen:.22,gachaGather:.7,gachaCue:.6,gachaAssemble:.6,gachaInk:.55,gachaReveal:1.15}[cue]||.65);
  if(['attack','skill','fusion'].includes(cue))duration=attribute.includes('火')?[.82,1.6,3.2][level]:[.48,.78,1.25][level];
  if(cue==='fusion')duration=Math.max(duration,1.05+level*.25);
+ if(Number.isFinite(options.presentationDuration))duration=clamp(options.presentationDuration,.08,3.2);
  if(Number.isFinite(options.durationLimit))duration=Math.min(duration,Math.max(.08,options.durationLimit));
  duration=Math.round(duration*1000)/1000;
- return {cue,strength,level,attribute,attackType:options.attackType==='物理'?'物理':'魔法',special:!!options.special,healing:!!options.healing,duration,priority:ui?(cue==='error'?2:0):['start','win','lose','fusion','gachaReveal','starter'].includes(cue)?3:2};
+ return {cue,strength,level,attribute,timeline:!!options.presentationDuration,attackType:options.attackType==='物理'?'物理':'魔法',special:!!options.special,healing:!!options.healing,duration,priority:ui?(cue==='error'?2:0):['start','win','lose','fusion','gachaReveal','starter'].includes(cue)?3:2};
 }
 export const cueKey=(cue,options)=>JSON.stringify(cueSpec(cue,options));
 function tone(out,sr,start,duration,f0,f1,gain,type='sine',decay=.12){let phase=0;const first=Math.max(0,Math.floor(start*sr)),last=Math.min(out.length,Math.ceil((start+duration)*sr));for(let i=first;i<last;i++){const u=i/sr-start,progress=clamp(u/duration);phase+=2*Math.PI*(f0*Math.pow(Math.max(1,f1)/Math.max(1,f0),progress))/sr;let v=Math.sin(phase);if(type==='triangle')v=2/Math.PI*Math.asin(v);if(type==='bell')v+=.32*Math.sin(phase*2.76)+.12*Math.sin(phase*4.21);out[i]+=gain*E(u,.003,decay)*v;}}
@@ -35,29 +36,55 @@ function fire(out,sr,level,rng){
  if(level===2){S(0,.93,[200,750,4300],.16,.5,.13);tone(out,sr,0,.9*scale,90,280,.075,'bell',.7*scale);S(.908,.73,[5000,1200,160],.89,.46,.007);S(.971,.95,[2100,580,95],.61,.56,.015);B(.914,.73,118,34,.39);B(1.013,.30,85,31,.51);noise(out,sr,.95*scale,2.2*scale,65,520,.25,rng,.02*scale,.58*scale);noise(out,sr,.963*scale,2.2*scale,340,5800,.22,rng,.024*scale,.57*scale,.62);}
  const count=[7,15,28][level],first=[.085,.22,.99][level],last=[.47,1.18,2.61][level];for(let j=0;j<count;j++){const at=(first+(last-first)*j/count)*scale;noise(out,sr,at,.05*scale,1400+rng()*900,5000+rng()*5500,.19*(1-.8*j/count),rng,.0007,.00266+rng()*.00551);}
 }
-function element(out,sr,attribute,s,rng){const d=out.length/sr,k=s.level,attack=s.cue==='attack',fusion=s.cue==='fusion',skill=s.cue==='skill';
- if(attribute==='火')fire(out,sr,k,rng);
- if(attribute==='水'){noise(out,sr,0,d,240,2700,.7,rng,.018,d*.27);for(let j=0;j<7+k*3;j++)tone(out,sr,j*d*.065,d*.22,450+j*95,1200+j*150,.18,'sine',d*.06);}
- if(attribute==='雷'){for(let j=0;j<4+k*2;j++){noise(out,sr,j*d*.075,d*.15,1800,11000,.9,rng,.001,d*.025);tone(out,sr,j*d*.075,d*.13,2300,110,.16,'triangle',d*.025);}}
- if(attribute==='地'){noise(out,sr,0,d,35,700,1.1,rng,.003,d*.24);tone(out,sr,0,d,120,32,.65,'sine',d*.24);for(let j=1;j<5;j++)noise(out,sr,d*j*.11,d*.16,600,2400,.32,rng,.001,d*.025);}
- if(attribute==='風'){noise(out,sr,0,d,550,5000,.8,rng,d*.1,d*.3,.22);tone(out,sr,d*.03,d*.6,280,1700,.1,'sine',d*.26);}
- if(attribute==='光'){for(let j=0;j<5;j++)tone(out,sr,j*d*.08,d*.62,880*Math.pow(1.2599,j),880*Math.pow(1.2599,j),.22,'bell',d*.19);noise(out,sr,0,d,6000,12000,.16,rng,.01,d*.15);}
- if(attribute==='闇'){tone(out,sr,0,d,140,45,.6,'sine',d*.33);tone(out,sr,d*.03,d*.87,217,66,.21,'triangle',d*.3);noise(out,sr,0,d,70,1300,.6,rng,d*.13,d*.28);}
- if(attribute==='無'){noise(out,sr,0,d,500,3200,.4,rng,.003,d*.13);tone(out,sr,0,d,420,130,.4,'triangle',d*.18);}
- if(attack&&s.attackType==='物理'){noise(out,sr,0,d*.19,130,1900,.6,rng,.001,d*.025);tone(out,sr,0,d*.3,180,45,.4,'sine',d*.055);}
- if(skill||s.attackType==='魔法')for(let j=0;j<3;j++)tone(out,sr,j*d*.07,d*.6,520*(1+j*.5),800*(1+j*.5),.065,'bell',d*.19);
- if(fusion){for(let j=0;j<4;j++)tone(out,sr,j*d*.1,d*.65,165*Math.pow(1.26,j),440*Math.pow(1.26,j),.16,'bell',d*.25);tone(out,sr,d*.45,d*.5,100,45,.24,'sine',d*.15);}
- if(s.special)tone(out,sr,d*.35,d*.6,1320,1760,.14,'bell',d*.25);
- if(s.healing)for(let j=0;j<3;j++)tone(out,sr,d*(.2+j*.1),d*.5,660*(1+j*.25),660*(1+j*.25),.15,'bell',d*.2);
+// Short, noise-excited resonances, never sustained pitched UI oscillators.
+function body(out,sr,at,span,f,gain,rng){
+ for(const ratio of [1,1.47,2.09]){
+  const w=2*Math.PI*f*ratio/sr,r=Math.exp(-1/(sr*Math.min(.055,span*.24))),c=2*r*Math.cos(w);let y=0,z=0;
+  for(let i=Math.max(0,Math.floor(at*sr));i<Math.min(out.length,(at+span)*sr);i++){
+   const t=i/sr-at,x=(rng()*2-1)*Math.exp(-t/.004),v=c*y-r*r*z+x;z=y;y=v;
+   out[i]+=v*Math.sin(w)*gain*.32;
+  }
+ }
+}
+function element(out,sr,attribute,s,rng){
+ const d=out.length/sr,k=s.level,idx=ATTRIBUTES.indexOf(attribute);
+ const fraction=s.cue==='fusion'?.60:s.cue==='skill'?.35:.50;
+ const at=s.timeline?d*fraction:(s.cue==='fusion'?d*.42:d*.16),span=d-at;
+ // Travel/charge remains separate from the impact, in one cancellable buffer.
+ noise(out,sr,0,at,280,2300,.16,rng,Math.max(.006,at*.3),Math.max(.025,at*.7));
+ if(idx===0){const burst=new Float32Array(Math.ceil(span*sr));fire(burst,sr,0,rng);for(let i=0;i<burst.length&&i+Math.floor(at*sr)<out.length;i++)out[i+Math.floor(at*sr)]+=burst[i];}
+ if(idx===1){noise(out,sr,at,span,180,3300,1.25,rng,.004,span*.23);noise(out,sr,at+span*.08,span*.7,900,5700,.55,rng,.009,span*.18);for(let j=0;j<9+k*3;j++){const t=at+span*(.04+rng()*.62);noise(out,sr,t,.035,350+rng()*1500,3900,.32,rng,.001,.008);body(out,sr,t,.065,340+rng()*550,.09,rng);}}
+ if(idx===2){noise(out,sr,at,span*.5,550,7600,1.35,rng,.0007,Math.min(.04,span*.12));for(let j=0;j<4+k;j++)noise(out,sr,at+j*.014,span*.25,1600,6800,.5,rng,.0005,.007);noise(out,sr,at+.012,span,65,620,.85,rng,.004,span*.26);}
+ if(idx===3){noise(out,sr,at,span,65,950,1.4,rng,.003,span*.24);body(out,sr,at,span,125,.65,rng);for(let j=0;j<6+k*2;j++)noise(out,sr,at+rng()*span*.65,.055,550,2600,.55,rng,.001,.012);}
+ if(idx===4){noise(out,sr,at,span,420,4100,1.05,rng,.012,span*.27,.15);noise(out,sr,at+span*.13,span*.65,200,1500,.5,rng,.015,span*.20);}
+ if(idx===5){noise(out,sr,at,span,1100,5300,.68,rng,.004,span*.22);for(let j=0;j<5;j++)body(out,sr,at+j*span*.085,span*.38,780+j*187,.25,rng);}
+ if(idx===6){noise(out,sr,at,span,70,1100,1.15,rng,.006,span*.29,.32);body(out,sr,at,span,155,.38,rng);noise(out,sr,at+span*.1,span*.65,500,2100,.25,rng,.02,span*.2);}
+ if(idx===7){noise(out,sr,at,span,180,2600,1,rng,.002,span*.15);body(out,sr,at,span,190,.48,rng);}
+ if(s.attackType==='物理'){body(out,sr,at,span,170,.42,rng);noise(out,sr,at,span*.3,250,2100,.45,rng,.001,.018);}
+ if(s.cue==='fusion'){noise(out,sr,at,span,90,1800,.45,rng,.006,span*.3);body(out,sr,at,span,145,.3,rng);}
+ if(s.special||s.healing)for(let j=0;j<3;j++)body(out,sr,at+span*(.16+j*.12),span*.35,600+j*210,.15,rng);
+}
+function common(out,sr,s,rng){
+ const d=s.duration,c=s.cue,ui=s.priority===0||c==='error';
+ if(ui){const back=['back','deckRemove','end'].includes(c),n=c==='deckArrange'?3:['confirm','deckAdd','error'].includes(c)?2:1;
+  for(let j=0;j<n;j++){const at=j*d*.24;noise(out,sr,at,d-at,240,back?1600:2900,.65,rng,.001,.012);body(out,sr,at,d-at,(back?390:560)+(c==='error'?-230:j*85),.28,rng);}return;}
+ const at=s.timeline&&c==='summon'?d*.78:s.timeline&&c==='draw'?d*.20:['summon','gachaReveal','starter'].includes(c)?d*.45:0;
+ const span=d-at;
+ if(at)noise(out,sr,0,at,300,2400,.28,rng,at*.2,at*.65);
+ if(['hit','guard','defeat'].includes(c)){noise(out,sr,0,d,c==='guard'?800:110,c==='guard'?4200:2300,.95,rng,.001,d*.18);body(out,sr,0,d,c==='guard'?730:155,.55,rng);if(c==='defeat')for(let j=1;j<5;j++)noise(out,sr,j*d*.14,d*.25,450,2600,.4,rng,.001,.012);return;}
+ const paper=['draw','move','gachaOpen','gachaInk'].includes(c),gather=['gachaGather','gachaCue'].includes(c);
+ noise(out,sr,at,span,paper?750:180,paper?4200:2600,paper?.7:.65,rng,gather?.06:.003,span*(gather?.34:.2));
+ body(out,sr,at,span,paper?490:c==='lose'?190:260,paper?.12:.45,rng);
+ if(['win','lose','reward','starter','gachaReveal'].includes(c)){const notes=c==='lose'?[390,310,230]:[520,650,790];for(let j=0;j<notes.length;j++)body(out,sr,at+j*span*.16,span*.48,notes[j],.26,rng);}
+ if(c==='gachaAssemble')for(let j=0;j<4;j++){noise(out,sr,j*d*.16,d*.2,600,3200,.5,rng,.001,.018);body(out,sr,j*d*.16,d*.25,430+j*90,.2,rng);}
 }
 export function synthesizeCue(cue,options={},sampleRate=48000){
  if(!CUES[cue])throw Error('Unknown sound cue: '+cue);
  const s=cueSpec(cue,options),out=new Float32Array(Math.ceil(s.duration*sampleRate)),rng=random(hash(cueKey(cue,options))),d=s.duration,sr=sampleRate;
  if(['attack','skill','fusion'].includes(cue)){const attrs=attributesOf(s.attribute);for(const a of attrs){const layer=new Float32Array(out.length);element(layer,sr,a,s,rng);for(let i=0;i<out.length;i++)out[i]+=layer[i]/Math.sqrt(attrs.length);}}
- else if(['hit','guard','defeat'].includes(cue)){noise(out,sr,0,d,cue==='guard'?1700:100,cue==='guard'?7000:2600,.6,rng,.001,d*.19);tone(out,sr,0,d,cue==='guard'?1200:150,cue==='guard'?950:40,.4,cue==='guard'?'bell':'sine',d*.25);}
- else{const notes={select:[700],confirm:[660,990],back:[700,450],navigate:[540,720],error:[180,150],deckAdd:[620,930],deckRemove:[600,360],deckArrange:[440,550,660],draw:[800,1100],summon:[220,440,880],starter:[440,554,660,880],reward:[660,880,1320],start:[220,330,440],turn:[420,630],battle:[330,440],end:[550,360],win:[523,659,784,1047],lose:[392,330,261],move:[580,850],gachaOpen:[450,660],gachaGather:[180,270,405,610],gachaCue:[330,660,990],gachaAssemble:[500,700,950,1200],gachaInk:[440,660,880],gachaReveal:[523,659,784,1047,1568]}[cue]||[440];for(let j=0;j<notes.length;j++)tone(out,sr,j*d*.13,d*(1-j*.1),notes[j],notes[j]*(cue==='draw'?1.2:1),.4,cue==='error'?'triangle':'bell',d*.24);if(['draw','summon','gachaGather','gachaAssemble'].includes(cue))noise(out,sr,0,d,800,6000,.2,rng,.002,d*.23);}
+ else common(out,sr,s,rng);
  // DC removal, mild saturation, short edge fades and conservative per-cue peaks.
- let low=0,mean=0;const hp=1-Math.exp(-2*Math.PI*27/sr);for(let i=0;i<out.length;i++){low+=hp*(out[i]-low);out[i]=Math.tanh((out[i]-low)*1.15);mean+=out[i];}mean/=out.length;
+ let low=0,mean=0,soft=0;const hp=1-Math.exp(-2*Math.PI*27/sr);for(let i=0;i<out.length;i++){low+=hp*(out[i]-low);soft+=(1-Math.exp(-2*Math.PI*6500/sr))*(Math.tanh((out[i]-low)*1.15)-soft);out[i]=soft;mean+=out[i];}mean/=out.length;
  let peak=0;const tail=Math.min(d*.25,.18);for(let i=0;i<out.length;i++){const t=i/sr,fade=Math.sin(clamp(t/.003)*Math.PI/2)**2*Math.sin(clamp((d-t)/tail)*Math.PI/2)**2;out[i]=(out[i]-mean)*fade;peak=Math.max(peak,Math.abs(out[i]));}
  const target=s.priority===0?.13:cue==='error'?.2:10**(-[8,6.5,5.5][s.level]/20);if(peak)for(let i=0;i<out.length;i++)out[i]*=target/peak;
  return {samples:out,sampleRate,duration:d,spec:s};

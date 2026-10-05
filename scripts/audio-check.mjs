@@ -27,3 +27,7 @@ const legacy=createSoundSystem({host,storage:{getItem:()=>null,setItem(){}}});le
 assert.equal(battleSound({type:'attack',seq:9,attribute:'無'},{attribute:'火',soulClass:'seed'}).options.attribute,'無');assert.equal(battleSound({type:'result',side:0}).cue,'win');assert.equal(battleSound({type:'result',side:1}).cue,'lose');
 s.dispose();assert.equal(s.debug().voices,0);assert.equal(s.debug().scopes,0);
 console.log(`PASS audio: ${rendered} attribute/strength/action PCM variants + ${Object.keys(CUES).length} common cues; finite peaks/fades, physical/magic, timing, locked/unsupported/storage failure, duplicate suppression, six-voice limit, mute/reload, background/recovery, stopped scopes and metadata overrides`);
+
+// Presentation timing must scale to the actual CSS duration, including fast/reduced mode.
+for(const duration of [.22,.845,1.8])for(const cue of ['attack','skill','fusion','summon','draw']){const p=synthesizeCue(cue,{attribute:'雷',presentationDuration:duration,durationLimit:duration});assert.equal(p.duration,duration);assert.equal(p.spec.timeline,true);if(cue==='attack'){const at=Math.floor(duration*.5*p.sampleRate);let before=0,after=0;for(let i=0;i<at;i++)before+=p.samples[i]**2;for(let i=at;i<p.samples.length;i++)after+=p.samples[i]**2;assert.ok(after>before*2,'impact must dominate after the visual contact');}}
+console.log('PASS presentation duration and impact placement');

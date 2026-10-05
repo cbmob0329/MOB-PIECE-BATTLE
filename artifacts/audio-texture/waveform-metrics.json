@@ -1,0 +1,301 @@
+{
+  "baseline": "e0caa119dd6f77bb3a39359f9462cd38dbbdb7f7",
+  "qa": [
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "火",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更前",
+      "duration": 1.6,
+      "peak": 0.4731512665748596,
+      "rms": 0.07952020860852521
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "火",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更後",
+      "duration": 1.6,
+      "peak": 0.4731512665748596,
+      "rms": 0.06652533064441463
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "水",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更前",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.09696992644694975
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "水",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更後",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.0907861936590478
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "雷",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更前",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.06689918996402855
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "雷",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更後",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.05527095962426804
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "地",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更前",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.10480858686419124
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "地",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更後",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.09699049846952436
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "風",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更前",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.08570982920306776
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "風",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更後",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.08642326671699854
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "光",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更前",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.11428638119864237
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "光",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更後",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.08267790397607834
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "闇",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更前",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.123271627042187
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "闇",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更後",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.07328477666298439
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "無",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更前",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.06923287522693657
+    },
+    {
+      "cue": "attack",
+      "options": {
+        "attribute": "無",
+        "strength": "medium",
+        "attackType": "魔法"
+      },
+      "label": "変更後",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.06747612483975664
+    },
+    {
+      "cue": "skill",
+      "options": {
+        "attribute": "水"
+      },
+      "label": "変更前",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.09269569153117825
+    },
+    {
+      "cue": "skill",
+      "options": {
+        "attribute": "水"
+      },
+      "label": "変更後",
+      "duration": 0.78,
+      "peak": 0.4731512665748596,
+      "rms": 0.08493402240950765
+    },
+    {
+      "cue": "fusion",
+      "options": {
+        "attribute": "地/雷"
+      },
+      "label": "変更前",
+      "duration": 1.3,
+      "peak": 0.4731512665748596,
+      "rms": 0.12156034683485678
+    },
+    {
+      "cue": "fusion",
+      "options": {
+        "attribute": "地/雷"
+      },
+      "label": "変更後",
+      "duration": 1.3,
+      "peak": 0.4731512665748596,
+      "rms": 0.06201932103204983
+    },
+    {
+      "cue": "select",
+      "options": {},
+      "label": "変更前",
+      "duration": 0.1,
+      "peak": 0.12999999523162842,
+      "rms": 0.031087336654954237
+    },
+    {
+      "cue": "select",
+      "options": {},
+      "label": "変更後",
+      "duration": 0.1,
+      "peak": 0.12999999523162842,
+      "rms": 0.021724912329674478
+    },
+    {
+      "cue": "draw",
+      "options": {},
+      "label": "変更前",
+      "duration": 0.22,
+      "peak": 0.4731512665748596,
+      "rms": 0.1220410745199745
+    },
+    {
+      "cue": "draw",
+      "options": {},
+      "label": "変更後",
+      "duration": 0.22,
+      "peak": 0.4731512665748596,
+      "rms": 0.0765052100370111
+    },
+    {
+      "cue": "summon",
+      "options": {},
+      "label": "変更前",
+      "duration": 0.65,
+      "peak": 0.4731512665748596,
+      "rms": 0.12494012541628972
+    },
+    {
+      "cue": "summon",
+      "options": {},
+      "label": "変更後",
+      "duration": 0.65,
+      "peak": 0.4731512665748596,
+      "rms": 0.08008972910141932
+    },
+    {
+      "cue": "guard",
+      "options": {},
+      "label": "変更前",
+      "duration": 0.32,
+      "peak": 0.4731512665748596,
+      "rms": 0.08407502192519274
+    },
+    {
+      "cue": "guard",
+      "options": {},
+      "label": "変更後",
+      "duration": 0.32,
+      "peak": 0.4731512665748596,
+      "rms": 0.1340704794110907
+    }
+  ]
+}

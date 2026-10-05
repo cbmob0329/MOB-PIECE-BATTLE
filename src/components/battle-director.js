@@ -33,7 +33,7 @@ export function createBattleDirector(root,{profile,style}){
   try{for(const event of groupPresentationEvents(events)){if(token!==stopped)break;const p=presentation(event);if(!p)continue;
    const duration=event.type==='skill'?Math.max(1200,Math.round(p.time*(style.fast?.7:1))):reduced()?220:Math.round(p.time*1.3*(style.fast?.5:1)*(event.side===1?.85:1));
    host.innerHTML=`<div class="battle-cue cue-${p.kind}" data-cue="${event.type}" style="--cue-time:${duration}ms"><div class="fx-rays"></div>${p.body}<div class="fx-title"><strong>${p.title}</strong><span>${esc(p.sub)}</span></div></div><button class="fx-skip" data-fx-skip>演出をスキップ ›</button>`;
-   host.classList.toggle('motion-reduced',!!reduced());const audio=battleSound(event,soulById.get(event.id));if(audio)sound.play(audio.cue,{...audio.options,scope:soundScope,durationLimit:duration/1000});const el=host.querySelector('.battle-cue');
+   host.classList.toggle('motion-reduced',!!reduced());const audio=battleSound(event,soulById.get(event.id));if(audio)sound.play(audio.cue,{...audio.options,scope:soundScope,presentationDuration:duration/1000,durationLimit:duration/1000});const el=host.querySelector('.battle-cue');
    animation=el.animate([{opacity:0},{opacity:1,offset:.12},{opacity:1,offset:.88},{opacity:0}],{duration,fill:'both'});
    await animation.finished.catch(()=>{});
   }}finally{host.replaceChildren();animation=null;root.classList.remove('fx-running');}
