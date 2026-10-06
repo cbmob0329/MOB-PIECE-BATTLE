@@ -1,0 +1,51 @@
+[
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_v3_性能と設定資料/MOB_SWEETS_v3/MOB_SWEETS_v3_runtime_additions.json",
+    "fixture": "MOB_SWEETS_v3_runtime_additions.json",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224",
+    "newlines": "git",
+    "sha256": "18fcbabed80e33d17839d07c03b9def3885162dfb65eaee477f6db511a1302c9"
+  },
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_v3_性能と設定資料/MOB_SWEETS_v3/MOB_SWEETS_v3_designs.json",
+    "fixture": "MOB_SWEETS_v3_designs.json",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224",
+    "newlines": "git",
+    "sha256": "a1b3880e2ea5a6b084527a5a0df4f8f35e7137e53303aeac884e66508562e8e7"
+  },
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_v3_性能と設定資料/MOB_SWEETS_v3/MOB_SWEETS_v3_figures.csv",
+    "fixture": "MOB_SWEETS_v3_figures.csv",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224",
+    "newlines": "CRLF",
+    "sha256": "21f88caf5fed779b498c6cffa3d21c003d6eb1a232f569a0adccf94a94c03bf6"
+  },
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_v3_性能と設定資料/MOB_SWEETS_v3/MOB_SWEETS_v3_fusion_examples.json",
+    "fixture": "MOB_SWEETS_v3_fusion_examples.json",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224",
+    "newlines": "git",
+    "sha256": "69f5fdf59cea84cfea43a0368db42786037492e8d9ea0ffde1d5cebee727beef"
+  },
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_v3_性能と設定資料/MOB_SWEETS_v3/MOB_SWEETS_v3_master_additions.json",
+    "fixture": "MOB_SWEETS_v3_master_additions.json",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224",
+    "newlines": "git",
+    "sha256": "a4312b85952a256c5560670dc561261184a964ba5106b1a480440264b523fe9d"
+  },
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_v3_性能と設定資料/MOB_SWEETS_v3/MOB_SWEETS_v3_フュージョン例.txt",
+    "fixture": "MOB_SWEETS_v3_フュージョン例.txt",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224",
+    "newlines": "git",
+    "sha256": "3cc5507fef98f04ddac690b565970fffdb82a09bf36fc4d0afaa408614aab047"
+  },
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_v3_性能と設定資料/MOB_SWEETS_v3/README_v3_はじめに.txt",
+    "fixture": "README_v3_はじめに.txt",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224",
+    "newlines": "git",
+    "sha256": "2b6c81076daf9459c53b04e3132ea1b4d344c985e568858908e3161710207657"
+  }
+]

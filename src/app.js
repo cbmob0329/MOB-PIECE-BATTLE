@@ -1,3 +1,4 @@
+import {towerStarters} from './data/tower.js';
 import {towerScreen,handleTower,handleTowerChange} from './screens/tower.js';
 import {prepareTowerStartup} from './game/tower.js';
 import {prepareFavoriteToggle} from './game/favorites.js';
@@ -162,7 +163,7 @@ if(b.hasAttribute('data-soul-filter')){profile.soulDeckFilter=b.dataset.soulFilt
 if(b.dataset.initialReview){initialSelection=b.dataset.initialReview;render();return;}
   if(b.hasAttribute('data-initial-back')){initialSelection=null;render();return;}
   if(b.dataset.initialConfirm){try{const next=prepareInitialChoice(profile,b.dataset.initialConfirm);if(!commitProfile(next))throw Error('保存できませんでした。スターターは未受領です。もう一度お試しください。');initialSelection=null;sound.play('starter');location.hash='deck';render();toast(next.initialChoice.deckSlot<0?'所持品に追加しました。保存済みデッキは維持しています。':'スターターを受け取りました');}catch(err){toast(err.message,'error');}return;}
-  if(b.hasAttribute('data-piece-starter')){try{const starter=release.starters.find(s=>s.id===b.dataset.pieceStarter);if(!starter)throw Error('スターターが見つかりません');const check=validateSoulDeck(starter.deck,profile.owned,{profile});if(!check.valid)throw Error(check.errors[0]||'45体の編成を確認してください');commitDeck(starter.deck);render({preserveScroll:true});sound.play('starter');toast('スターターをセットしました');}catch(err){toast(err.message,'error');}return;}
+  if(b.hasAttribute('data-piece-starter')){try{const starter=towerStarters.find(s=>s.id===b.dataset.pieceStarter);if(!starter)throw Error('スターターが見つかりません');const check=validateSoulDeck(starter.deck,profile.owned,{profile});if(!check.valid)throw Error(check.errors[0]||'45体の編成を確認してください');commitDeck(starter.deck);render({preserveScroll:true});sound.play('starter');toast('スターターをセットしました');}catch(err){toast(err.message,'error');}return;}
 if(b.hasAttribute('data-soul-starter')&&testSettings.enabled){try{applyStarter(profile,b.dataset.soulStarter);persist();render({preserveScroll:true});sound.play('starter');toast('テスト用スターターデッキをセットしました');}catch(err){toast(err.message,'error');}return;}
 if(['data-soul-add','data-soul-remove','data-soul-auto','data-soul-clear'].some(a=>b.hasAttribute(a))){try{let deck=[...ensureSoulDecks(profile)];if(b.hasAttribute('data-soul-add'))deck.push(b.dataset.soulAdd);if(b.hasAttribute('data-soul-remove'))deck.splice(Number(b.dataset.soulRemove),1);if(b.hasAttribute('data-soul-auto'))deck=autoSoulDeck(profile.owned,{profile});if(b.hasAttribute('data-soul-clear'))deck=[];commitDeck(deck);sound.play(b.hasAttribute('data-soul-add')?'deckAdd':b.hasAttribute('data-soul-remove')?'deckRemove':'deckArrange');render({preserveScroll:true});}catch(err){toast(err.message,'error');}return;}
 if(b.hasAttribute('data-week-open')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=false;return;}

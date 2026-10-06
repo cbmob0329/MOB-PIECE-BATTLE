@@ -15,7 +15,7 @@ export const towerStarters=[
  {id:'b',name:'木もれびの守り手',deck:[...triple(['09','10','11','12','13','14','15','17','CRY_S01','CRY_S02','RUN_S01','RUN_S02','SPI_S01','SPI_S02']),'CRY_M01','RUN_M01','SPI_M01']}
 ];
 export const towerMix={id:'mix',name:'組み替えC',deck:[...triple(['01','02','09','10','11','12','13','14','ECL_S01','ECL_S02','CRY_S01','CRY_S02','RUN_S01','RUN_S02']),'ECL_M02','CRY_M01','RUN_M01']};
-export const grassTower={id:'grass',title:'モブタワーマスターへの道',name:'草原の塔',background:'',masterId:'MB025',floors:[
+export const grassTower={id:'grass',title:'モブタワーマスターへの道',name:'草原の塔',background:'assets/backgrounds/grassland-five-floor-tower.png',masterId:'MB025',floors:[
  {id:1,rank:'F',name:'はじまりの一歩',opponent:'草原の見習い ハル'},
  {id:2,rank:'F',name:'風の通り道',opponent:'風追いのナギ'},
  {id:3,rank:'E',name:'木もれびの広場',opponent:'若葉の守り手'},

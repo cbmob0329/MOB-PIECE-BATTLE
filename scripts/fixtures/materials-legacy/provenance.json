@@ -1,0 +1,14 @@
+[
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_21_30_性能と設定資料/MOB_SWEETS_21_30/MOB_SWEETS_21_30_フュージョン例.txt",
+    "sha256": "db816d573e7d8ede823f240512976c7f55e71ef2085cd099cb2307048da54447",
+    "fixture": "MOB_SWEETS_21_30_フュージョン例.txt",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224"
+  },
+  {
+    "file": "handoff/materials-20261003/MOB_SWEETS_21_30_性能と設定資料/MOB_SWEETS_21_30/README_はじめに.txt",
+    "sha256": "ecf4c5b2ca8ad5851e8bae7dc68d23e3d832de18c06edb42d62227432cb70f50",
+    "fixture": "README_はじめに.txt",
+    "revision": "0031dbb193aa29ba2d0d9904ced68d91adade224"
+  }
+]
