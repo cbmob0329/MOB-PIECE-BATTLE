@@ -2,7 +2,7 @@
   {
     "script": "scripts/source-check.mjs",
     "status": 0,
-    "stdout": "PASS: source syntax and merge-conflict markers (220 files)\n",
+    "stdout": "PASS: source syntax and merge-conflict markers (228 files)\n",
     "stderr": ""
   },
   {
@@ -97,9 +97,9 @@
   },
   {
     "script": "scripts/materials-check.mjs",
-    "status": 1,
-    "stdout": "",
-    "stderr": "node:internal/modules/run_main:107\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\r\n\r\n641 !== 627\r\n\r\n    at file:///D:/GitHub/MOB-PIECE-BATTLE/scripts/materials-check.mjs:13:46\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\r\n    at async node:internal/modules/esm/loader:643:26\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\r\n  generatedMessage: true,\r\n  code: 'ERR_ASSERTION',\r\n  actual: 641,\r\n  expected: 627,\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v24.19.0\r\n"
+    "status": 0,
+    "stdout": "PASS: exact 641 active IDs / 643 inventory IDs; 133 active material images and skills; original 30 supplied performances plus approved overlays; 3 live recipes x field/hand; 11 legal starters with concrete fusion routes and completed battles; source SHA-256 and save migration preserved\n",
+    "stderr": ""
   },
   {
     "script": "scripts/audio-check.mjs",
