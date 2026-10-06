@@ -9,8 +9,10 @@ const common=Array.from({length:25},(_,i)=>'fig/'+String(i+1).padStart(2,'0')+'.
 // This standalone battle game has no Quest story progression: all banners are available.
 import selectedBanner from './selected-banner.json' with {type:'json'};
 import initialRelease from './initial-release.json' with {type:'json'};
-export const archivedBanners=[...questBanners,selectedBanner];
-export const banners=initialRelease.banners;
+export const archivedBanners=[...questBanners,selectedBanner,...initialRelease.banners];
+export const banners=towerBanners;
+export {bannerUnlocked};
+export const availableBanners=profile=>banners.filter(b=>bannerUnlocked(profile,b));
 export const RUBY_COST=Object.freeze({R:10,SR:50,SSR:100,UR:300,MOB:500});
 export const usableFigure=f=>!!(f&&!f.retired&&!f.pending&&f.name&&!/^\/+$/u.test(f.name)&&f.image);
 export function poolFor(banner){if(banner.figureIds){const ids=new Set(banner.figureIds);return figures.filter(f=>ids.has(f.sourceId)&&usableFigure(f));}const paths=new Set([...common,...banner.extra]);return figures.filter(f=>paths.has(f.image)&&usableFigure(f));}
@@ -29,3 +31,5 @@ export function drawFigureRate(banner,f,count=1,index=0){
 export function drawRarityRate(banner,rarity,count=1,index=0){
  return poolFor(banner).filter(f=>f.rarity===rarity).reduce((n,f)=>n+drawFigureRate(banner,f,count,index),0);
 }
+
+import {towerBanners,bannerUnlocked} from './tower.js';

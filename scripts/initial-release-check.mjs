@@ -9,8 +9,8 @@ import * as g from '../src/game/soul-battle.js';
 const by=g.soulById;let suites=0;const test=(n,fn)=>{fn();console.log('PASS '+n);suites++;};
 const matches=matchesMaterial;
 test('3 expanded pools of registered figures; selected24 only; displayed rates sum to 100%; correct PU',()=>{
- assert.equal(banners.length,3);assert.equal(archivedBanners.length,23);assert.ok(banners.every(b=>!archivedBanners.some(old=>old.id===b.id)));const selected=g.soulFigures.filter(f=>f.id.startsWith('BFX')).map(f=>f.id);
- for(const b of banners){const pool=poolFor(b);assert.equal(pool.length,({'BFX-day':108,'BFX-remix':99,'BFX-night':98}[b.id]));assert.equal(new Set(pool.map(f=>f.sourceId)).size,({'BFX-day':108,'BFX-remix':99,'BFX-night':98}[b.id]));assert.deepEqual(pool.filter(f=>f.sourceId.startsWith('BFX')).map(f=>f.sourceId).sort(),selected);for(const r of ['R','SR','SSR','UR','MOB'])assert.ok(pool.some(f=>f.rarity===r));for(const id of [...b.pickupIds,...b.featuredIds])assert.ok(pool.some(f=>f.sourceId===id));if(b.image)assert.ok(fs.existsSync(b.image));else for(const id of b.featuredIds)assert.ok(fs.existsSync(by.get(id).image));
+ assert.equal(banners.length,3);assert.equal(archivedBanners.length,26);assert.ok(banners.every(b=>!archivedBanners.some(old=>old.id===b.id)));const selected=['BFX001','BFX009','BFX023','BFX035','BFX040','BFX050'];
+ for(const b of banners){const pool=poolFor(b);assert.equal(pool.length,61);assert.equal(new Set(pool.map(f=>f.sourceId)).size,61);assert.deepEqual(pool.filter(f=>f.sourceId.startsWith('BFX')).map(f=>f.sourceId).sort(),selected);for(const r of ['R','SR','SSR','UR','MOB'])assert.ok(pool.some(f=>f.rarity===r));for(const id of [...b.pickupIds,...b.featuredIds])assert.ok(pool.some(f=>f.sourceId===id));if(b.image)assert.ok(fs.existsSync(b.image));else for(const id of b.featuredIds)assert.ok(fs.existsSync(by.get(id).image));
   for(const count of [1,10])for(let i=0;i<count;i++)assert.ok(Math.abs(pool.reduce((n,f)=>n+drawFigureRate(b,f,count,i),0)-1)<1e-10);for(const guarantee of [false,true,'SSR'])assert.ok(Math.abs(Object.values(ratesFor(b,guarantee)).reduce((a,b)=>a+b,0)-1)<1e-10);
  }
 });
@@ -29,7 +29,7 @@ test('New choice grants selected deck only; review/back do not mutate; reload id
 });
 test('Each pool preserves 5/50 cost, SR+ tenth, caps/overflow and atomic insufficient-balance handling',()=>{
  for(const old of archivedBanners){assert.throws(()=>prepareDraw({diamonds:100,owned:{}},old,1),/提供を終了/);assert.throws(()=>exchangeFigure({rubies:1000,owned:{}},old,poolFor(old)[0].sourceId),/提供を終了/);}
- for(const b of banners){const p={diamonds:100,rubies:0,owned:{},gachaStats:{}};for(const n of [1,10]){const next=prepareDraw(p,b,n,()=>.5);assert.equal(next.diamonds,100-n*5);assert.equal(next.lastDraw.entries.length,n);if(n===10)assert.notEqual(by.get(next.lastDraw.entries[9].id).rarity,'R');assert.deepEqual(p.owned,{});for(const e of next.lastDraw.entries)assert.ok(next.owned[e.id]<=OWN_CAP[by.get(e.id).rarity]);}
+ for(const b of banners){const p={diamonds:100,rubies:0,owned:{},gachaStats:{},towerProgress:{cleared:[1,2,3,4,5]}};for(const n of [1,10]){const next=prepareDraw(p,b,n,()=>.5);assert.equal(next.diamonds,100-n*5);assert.equal(next.lastDraw.entries.length,n);if(n===10)assert.notEqual(by.get(next.lastDraw.entries[9].id).rarity,'R');assert.deepEqual(p.owned,{});for(const e of next.lastDraw.entries)assert.ok(next.owned[e.id]<=OWN_CAP[by.get(e.id).rarity]);}
  const poor={...p,diamonds:0};assert.throws(()=>prepareDraw(poor,b,1));assert.equal(poor.diamonds,0);const full={...p,owned:Object.fromEntries(poolFor(b).map(f=>[f.sourceId,OWN_CAP[f.rarity]]))};const next=prepareDraw(full,b,10,()=>.5);assert.ok(next.lastDraw.entries.every(e=>e.converted));assert.ok(next.rubies>0);assert.deepEqual(next.owned,full.owned);const f=poolFor(b)[0],cost=RUBY_COST[f.rarity],ex=exchangeFigure({...p,rubies:cost},b,f.sourceId);assert.equal(ex.rubies,0);assert.equal(ex.owned[f.sourceId],1);
  }
 });

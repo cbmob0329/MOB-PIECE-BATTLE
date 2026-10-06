@@ -66,19 +66,18 @@ export function fusionOptions(s,side,uids){
  const pair=uids.map(ref=>fusionMaterial(s,side,ref));
  if(pair.some(p=>!p||has(p,'fusionLock')||(has(p,'attackOrFuse')&&p.attacks>0)||(p.skillTurn===s.turn&&!has(p,'wildAttribute'))))return [];
  const explicit=recipes.filter(r=>s.players[side].reserve.includes(r.target)&&recipeStageMatches(r,pair.map(info),soulById)&&recipePairMatches(r,pair.map(info),pair.map(p=>({tags:currentTags(p),attribute:attribute(p),wildAttribute:has(p,'wildAttribute')}))));
- if(explicit.length)return explicit.sort((a,b)=>Number(b.special)-Number(a.special));
- if(info(pair[0]).soulClass!==info(pair[1]).soulClass)return [];
- const same=pair[0].id===pair[1].id;
- const base=pair.find(f=>f.handIndex===undefined&&f.graveIndex===undefined&&(f.resonanceAtk||0)<25);
- if(!base||!same)return [];
- return [{id:'resonance:'+base.uid,target:base.id,fromClass:info(base).soulClass,materials:pair.map(f=>({id:f.id})),special:false,resonance:true,baseUid:base.uid,bonusATK:25,bonusDEF:25,label:'同一フィギュア強化 · ATK/DEF +25（累積上限+25）'}];
+ // Dedicated evolution and strengthening coexist; never hide a legal recipe.
+ const same=pair[0].id===pair[1].id,sharedAttribute=sharesAttribute(attribute(pair[0]),attribute(pair[1])),sharedTag=currentTags(pair[0]).some(t=>currentTags(pair[1]).includes(t));
+ const bonus=same||sharedAttribute&&sharedTag?30:sharedAttribute||sharedTag?15:0;
+ const strength=bonus?pair.flatMap((base,index)=>base.graveIndex!==undefined?[]:[{id:'resonance:'+index+':'+(base.uid??'hand-'+base.handIndex),target:base.id,fromClass:info(base).soulClass,materials:pair.map(f=>({id:f.id})),special:false,resonance:true,sameId:same,baseIndex:index,baseUid:base.uid,bonusATK:bonus,bonusDEF:bonus,label:(same?'同一ID':sharedAttribute&&sharedTag?'属性＋タグ一致':sharedAttribute?'属性一致':'タグ一致')+' · '+(base.handIndex!==undefined?'手札'+(base.handIndex+1):'場'+(s.players[side].field.findIndex(f=>f?.uid===base.uid)+1))+'の'+info(base).name+'を残す · ATK/DEF +'+bonus+' · '+(same?'スキル回数リセット':'残スキル回数を引き継ぐ')}]):[];
+ return [...explicit].sort((a,b)=>Number(b.special)-Number(a.special)).concat(strength);
 }
 // Existing numeric references identify field instances; hand references identify a copy by index.
 export function fusionMaterial(s,side,ref){
  if(typeof ref==='number')return live(s,side).find(p=>p.uid===ref);
  const p=s.players[side];if(Number.isInteger(ref?.graveIndex)){const id=p.grave[ref.graveIndex];return soulById.get(id)?.passive?.graveFusion?{id,graveIndex:ref.graveIndex,effects:[],attacks:0,skillTurn:-1}:null;}const i=ref?.handIndex,id=p.hand[i];
  if(!Number.isInteger(i)||i<0||!id)return null;
- return {id,handIndex:i,effects:[],attacks:0,skillTurn:p.handBonuses.find(b=>b.index===i)?.skillTurn??-1};
+ const bonus=p.handBonuses.find(b=>b.index===i)||{};return {id,handIndex:i,effects:[],attacks:0,...usageRecord(bonus),skillTurn:bonus.skillTurn??-1,permanentAtk:bonus.atk||0,permanentDef:bonus.def||0};
 }
 export function fusionPairs(s,side){const field=live(s,side).map(f=>f.uid),out=[];for(let i=0;i<field.length;i++){for(let j=i+1;j<field.length;j++)out.push([field[i],field[j]]);for(let j=0;j<s.players[side].hand.length;j++)out.push([field[i],{handIndex:j}]);for(let j=0;j<s.players[side].grave.length;j++)if(soulById.get(s.players[side].grave[j])?.passive?.graveFusion)out.push([field[i],{graveIndex:j}]);}return out;}
 function remove(s,side,f,destroyed=false,cause='skill'){const p=s.players[side],i=p.field.findIndex(x=>x?.uid===f.uid);if(i<0)return;if(destroyed&&cause==='skill'&&info(f).passive?.skillDestructionImmune)return;if(destroyed&&info(f).passive?.summonGuard&&f.summonTurn===s.turn)return;p.field[i]=null;putStoredCard(p,'grave',f.id,f);if(destroyed){p.destroyed.push(f.id);emit(s,'defeat',{side,id:f.id,uid:f.uid,slot:i});deathPassive(s,side,f);}}
@@ -89,15 +88,21 @@ const summonId=(id,usage)=>{const slot=p.field.indexOf(null);if(slot<0)return fa
 function bounce(s,side,f,def=0){const p=s.players[side];p.field[p.field.findIndex(x=>x?.uid===f.uid)]=null;p.handBonuses.push({id:f.id,index:p.hand.length,def,...usageRecord(f),direct:!!def});p.hand.push(f.id);}
 export function fuse(s,side,uids,recipeId){
  main(s,side);const r=fusionOptions(s,side,uids).find(r=>r.id===recipeId);if(!r)fail('この素材ではフュージョンできません');
- const p=s.players[side],fieldUid=r.resonance?r.baseUid:uids.find(ref=>typeof ref==='number'),slot=p.field.findIndex(f=>f?.uid===fieldUid),materialIds=uids.map(ref=>fusionMaterial(s,side,ref).id);
- const original=r.resonance?{...piece(s,side,r.baseUid)}:null;
- for(const ref of uids){if(r.resonance&&ref===r.baseUid)continue;if(typeof ref==='number')remove(s,side,piece(s,side,ref));else if(ref.graveIndex!==undefined){const {id,usage}=takeStoredCard(p,'grave',ref.graveIndex);const i=p.destroyed.indexOf(id);if(i>=0)p.destroyed.splice(i,1);putStoredCard(p,'grave',id,usage);p.used.push(id);}else{const {id,bonus}=takeHand(p,ref.handIndex);putStoredCard(p,'grave',id,bonus);p.used.push(id);}}
- if(!r.resonance)p.reserve.splice(p.reserve.indexOf(r.target),1);p.used.push(r.target);const f=instance(s,r.target);p.field[slot]=f;
- if(r.resonance){if(original.phoenixRevived)f.phoenixRevived=true;f.resonanceAtk=25;f.resonanceDef=25;f.permanentAtk=(original.permanentAtk||0)-(original.resonanceAtk||0)+25;f.permanentDef=(original.permanentDef||0)-(original.resonanceDef||0)+25;f.mobFusion=original.mobFusion;}
+ const p=s.players[side],pair=uids.map(ref=>fusionMaterial(s,side,ref)),base=r.resonance?pair[r.baseIndex]:null;
+ const fieldUid=base?.uid??uids.find(ref=>typeof ref==='number'),slot=p.field.findIndex(f=>f?.uid===fieldUid),materialIds=pair.map(f=>f.id);
+ const original=base?{...base,effects:base.effects.map(e=>({...e})),attackedTargets:[...(base.attackedTargets||[])]}:null;
+ for(let i=0;i<uids.length;i++){const ref=uids[i],keep=r.resonance&&i===r.baseIndex;
+  if(typeof ref==='number'){if(!keep)remove(s,side,piece(s,side,ref));}
+  else if(ref.graveIndex!==undefined){const {id,usage}=takeStoredCard(p,'grave',ref.graveIndex);const j=p.destroyed.indexOf(id);if(j>=0)p.destroyed.splice(j,1);putStoredCard(p,'grave',id,usage);p.used.push(id);}
+  else{const {id,bonus}=takeHand(p,ref.handIndex);if(!keep)putStoredCard(p,'grave',id,bonus);p.used.push(id);}
+ }
+ if(!r.resonance)p.reserve.splice(p.reserve.indexOf(r.target),1);p.used.push(r.target);const f=instance(s,r.target);
+ if(r.resonance){const freshUid=f.uid;Object.assign(f,original,{uid:freshUid,id:r.target});delete f.handIndex;delete f.graveIndex;f.summonTurn=original.summonTurn??s.turn;f.permanentAtk=(original.permanentAtk||0)+r.bonusATK;f.permanentDef=(original.permanentDef||0)+r.bonusDEF;f.resonanceAtk=(original.resonanceAtk||0)+r.bonusATK;f.resonanceDef=(original.resonanceDef||0)+r.bonusDEF;if(r.sameId){f.skillUsesUsed=0;f.skillTurn=-1;}}
+ p.field[slot]=f;
  if(r.special){f.mobFusion=true;f.permanentAtk=r.bonusATK;f.permanentDef=r.bonusDEF;s.fusionBanner={serial:f.uid,name:info(f).name,special:true};}
  else s.fusionBanner={serial:f.uid,name:info(f).name,special:false};
  if(p.fusionBonus&&(p.fusionBonus.expires===null||p.fusionBonus.expires>=s.turn)){const until=p.fusionBonus.persistent?Infinity:s.turn;effect(f,'atk',p.fusionBonus.atk,until);effect(f,'def',p.fusionBonus.def,until);p.fusionBonus=null;}
- log(s,(r.special?'MOB SOUL FUSION · ':'SOUL FUSION · ')+info(f).name+(r.special?' · ATK +20 / DEF +20':''));
+ log(s,(r.resonance?'強化召喚 · ':r.special?'MOB SOUL FUSION · ':'SOUL FUSION · ')+info(f).name+(r.resonance?' · ATK/DEF +'+r.bonusATK:r.special?' · ATK +20 / DEF +20':''));
  emit(s,'fusion',{side,slot,uid:f.uid,id:f.id,attribute:attribute(f),attackType:info(f).attackType,materialIds,special:r.special,resonance:!!r.resonance,...stats(f)});
 }
 function reactionEligible(s,side,f){
@@ -309,7 +314,7 @@ function cpuSkillValue(s,f){const q=skillPlan(f),kind=s.cpuStrategy?.skill;retur
 export function cpuMain(s){
  main(s,1);const p=s.players[1];let actions=0;
  while(actions++<20){while(p.hand.some((id,i)=>canSummonHand(s,1,i))&&p.field.includes(null))summon(s,1,p.hand.map((id,i)=>({id,i})).filter(x=>canSummonHand(s,1,x.i)).sort((a,b)=>cpuValue(s,soulById.get(b.id))-cpuValue(s,soulById.get(a.id)))[0].i,p.field.indexOf(null));let best=null;
-  if(!cpuActionAllowed(s,'fusion'))break;for(const uids of fusionPairs(s,1))for(const r of fusionOptions(s,1,uids)){const f=soulById.get(r.target),score=cpuValue(s,f)+(r.special?40:r.resonance?20:0);if(!best||score>best.score)best={r,uids,score};}
+  if(!cpuActionAllowed(s,'fusion'))break;for(const uids of fusionPairs(s,1))for(const r of fusionOptions(s,1,uids)){const f=soulById.get(r.target),score=cpuValue(s,f)+(r.resonance?r.bonusATK+r.bonusDEF:(r.special?240:180));if(!best||score>best.score)best={r,uids,score};}
   if(!best)break;fuse(s,1,best.uids,best.r.id);recordCpuAction(s,'fusion');
  }
  cpuSkill(s);

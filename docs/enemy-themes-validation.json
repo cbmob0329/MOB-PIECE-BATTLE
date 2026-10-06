@@ -2,114 +2,86 @@
   {
     "id": "grass",
     "name": "草原遠征",
-    "routeSteps": 19,
-    "skills": 22,
-    "passives": 1,
-    "themeReserves": 10,
+    "routeSteps": 15,
+    "skills": 21,
+    "passives": 4,
+    "themeReserves": 14,
     "support": [
       {
-        "id": "piece:015",
-        "name": "モブやきそばパン"
+        "id": "BFX001",
+        "name": "モブカセットクレープ"
+      },
+      {
+        "id": "piece:002",
+        "name": "チルタイムモブくん"
+      },
+      {
+        "id": "piece:003",
+        "name": "グラフィティモブくん"
       },
       {
         "id": "ECL_S02",
         "name": "モブミカゲ"
-      },
-      {
-        "id": "BFX019",
-        "name": "モブクッキーポータブル"
-      },
-      {
-        "id": "piece:010",
-        "name": "モブラプサンタ"
-      },
-      {
-        "id": "DUA_S01",
-        "name": "モブアカネ"
-      },
-      {
-        "id": "DUA_S02",
-        "name": "モブアオビ"
-      },
-      {
-        "id": "MB025",
-        "name": "モブコケネ"
-      },
-      {
-        "id": "MB035",
-        "name": "モブレンガン"
-      },
-      {
-        "id": "MB039",
-        "name": "モブマントル"
-      },
-      {
-        "id": "MB050",
-        "name": "モブクルリン"
-      },
-      {
-        "id": "MB030",
-        "name": "モブイシマル"
       }
     ],
     "battles": [
       {
         "seed": 1,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 14,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 6,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 16,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 24,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 14,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 14,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -119,29 +91,13 @@
     "id": "desert",
     "name": "砂漠秘術",
     "routeSteps": 15,
-    "skills": 29,
-    "passives": 0,
-    "themeReserves": 8,
+    "skills": 30,
+    "passives": 1,
+    "themeReserves": 12,
     "support": [
-      {
-        "id": "ECL_S02",
-        "name": "モブミカゲ"
-      },
       {
         "id": "BFX001",
         "name": "モブカセットクレープ"
-      },
-      {
-        "id": "M4F_DOK_V01",
-        "name": "モブドクローネ・バサルト"
-      },
-      {
-        "id": "M4F_DOK_V02",
-        "name": "モブドクローネ・サンド"
-      },
-      {
-        "id": "M4F_DOK_V03",
-        "name": "モブドクローネ・ルーン"
       },
       {
         "id": "RUN_S01",
@@ -156,28 +112,12 @@
         "name": "モブトル"
       },
       {
-        "id": "M4F_DOK_M01",
-        "name": "モブドクローネ・サンドバサルト"
-      },
-      {
-        "id": "M4F_DOK_M02",
-        "name": "モブドクローネ・サンドルーン"
-      },
-      {
         "id": "RUN_M01",
         "name": "モブヴァル"
       },
       {
         "id": "RUN_M02",
         "name": "モブボルグ"
-      },
-      {
-        "id": "MB030",
-        "name": "モブイシマル"
-      },
-      {
-        "id": "M4F_DOK_B01",
-        "name": "モブドクローネ・モノリス"
       },
       {
         "id": "RUN_B01",
@@ -187,61 +127,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 6,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 14,
+        "steps": 19,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 14,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 15,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 25,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 14,
+        "steps": 19,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 23,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 23,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 23,
+        "steps": 19,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 6,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -251,13 +191,17 @@
     "id": "sea",
     "name": "海底守護",
     "routeSteps": 18,
-    "skills": 21,
-    "passives": 0,
-    "themeReserves": 7,
+    "skills": 23,
+    "passives": 2,
+    "themeReserves": 11,
     "support": [
       {
-        "id": "BFX008",
-        "name": "モブワッフルキーボード"
+        "id": "MB016",
+        "name": "モブシオリ"
+      },
+      {
+        "id": "ECL_S02",
+        "name": "モブミカゲ"
       },
       {
         "id": "BFX001",
@@ -276,28 +220,12 @@
         "name": "モブオニル"
       },
       {
-        "id": "BFX009",
-        "name": "モブキャンディアンテナ"
-      },
-      {
-        "id": "BFX010",
-        "name": "モブパフェメトロノーム"
-      },
-      {
-        "id": "BFX034",
-        "name": "モブソフトラジオスター"
+        "id": "BFX023",
+        "name": "モブゼリーステーション"
       },
       {
         "id": "BFX040",
         "name": "モブソーダ・エコーフィン"
-      },
-      {
-        "id": "MB004",
-        "name": "モブヒヤリ"
-      },
-      {
-        "id": "MB037",
-        "name": "モブクモリ"
       },
       {
         "id": "CRY_M02",
@@ -306,74 +234,66 @@
       {
         "id": "BFX050",
         "name": "モブパルフェ・ディスコオーロラ"
-      },
-      {
-        "id": "MB016",
-        "name": "モブシオリ"
-      },
-      {
-        "id": "MB049",
-        "name": "モブミミズク"
       }
     ],
     "battles": [
       {
         "seed": 1,
-        "steps": 14,
+        "steps": 5,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 14,
+        "steps": 4,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 14,
+        "steps": 4,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 6,
+        "steps": 4,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 14,
+        "steps": 5,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 14,
+        "steps": 4,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 14,
+        "steps": 4,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 16,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 14,
+        "steps": 4,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 5,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -382,54 +302,26 @@
   {
     "id": "music",
     "name": "ネオンMUSIC",
-    "routeSteps": 17,
-    "skills": 34,
+    "routeSteps": 16,
+    "skills": 30,
     "passives": 0,
-    "themeReserves": 9,
+    "themeReserves": 13,
     "support": [
       {
-        "id": "M4F_NEO_V01",
-        "name": "モブネオル・アーク"
-      },
-      {
-        "id": "M4F_NEO_V02",
-        "name": "モブネオル・ビート"
-      },
-      {
-        "id": "M4F_NEO_V03",
-        "name": "モブネオル・グラフ"
+        "id": "ECL_S02",
+        "name": "モブミカゲ"
       },
       {
         "id": "piece:002",
         "name": "チルタイムモブくん"
       },
       {
-        "id": "piece:031",
-        "name": "モブアカイシ"
-      },
-      {
         "id": "piece:004",
         "name": "わたあめモブくん"
       },
       {
-        "id": "M4F_NEO_M01",
-        "name": "モブネオル・アークビート"
-      },
-      {
-        "id": "M4F_NEO_M02",
-        "name": "モブネオル・ビートグラフ"
-      },
-      {
         "id": "piece:022",
         "name": "モブパープルストーン"
-      },
-      {
-        "id": "piece:040",
-        "name": "モブダマフレイム"
-      },
-      {
-        "id": "M4F_NEO_B01",
-        "name": "モブネオル・スペクトラ"
       },
       {
         "id": "piece:025",
@@ -439,61 +331,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 25,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 24,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 34,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 44,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 14,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 25,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 34,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 25,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 15,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 24,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -502,9 +394,9 @@
   {
     "id": "castle",
     "name": "魔王城封印",
-    "routeSteps": 18,
-    "skills": 23,
-    "passives": 2,
+    "routeSteps": 17,
+    "skills": 27,
+    "passives": 4,
     "themeReserves": 14,
     "support": [
       {
@@ -516,12 +408,12 @@
         "name": "モブミイラ"
       },
       {
-        "id": "BFX023",
-        "name": "モブゼリーステーション"
+        "id": "ECL_S02",
+        "name": "モブミカゲ"
       },
       {
-        "id": "85",
-        "name": "MOB SHOT リリス四姉妹ソウル 黄"
+        "id": "CRY_S02",
+        "name": "モブフロー"
       },
       {
         "id": "192",
@@ -531,61 +423,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 14,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 13,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 13,
+        "steps": 4,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 14,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 15,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 14,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 14,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -667,61 +559,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 13,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 15,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 22,
+        "steps": 12,
         "winner": 1,
-        "reason": "スキルでライフ0"
+        "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 14,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 15,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 34,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 34,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 24,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 14,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 24,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -768,8 +660,8 @@
         "name": "モブススカケラ"
       },
       {
-        "id": "mq:eventfig/24",
-        "name": "モブカスタード"
+        "id": "BFX001",
+        "name": "モブカセットクレープ"
       },
       {
         "id": "NS2_001",
@@ -795,61 +687,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 15,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 54,
-        "winner": 1,
-        "reason": "ライフ0"
-      },
-      {
-        "seed": 3,
-        "steps": 14,
-        "winner": 1,
-        "reason": "ライフ0"
-      },
-      {
-        "seed": 4,
-        "steps": 34,
-        "winner": 1,
-        "reason": "ライフ0"
-      },
-      {
-        "seed": 5,
         "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
+        "seed": 3,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 3,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
         "seed": 6,
-        "steps": 85,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 25,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 84,
+        "steps": 19,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 25,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 15,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -896,12 +788,16 @@
         "name": "モブススロック"
       },
       {
-        "id": "BFX008",
-        "name": "モブワッフルキーボード"
+        "id": "NS2_025",
+        "name": "モブケケビ"
       },
       {
-        "id": "NS2_010",
-        "name": "モブススブルー"
+        "id": "BFX001",
+        "name": "モブカセットクレープ"
+      },
+      {
+        "id": "BFX030",
+        "name": "モブマシュマロテレポップ"
       },
       {
         "id": "NS2_001",
@@ -912,76 +808,72 @@
         "name": "モブケケ盾"
       },
       {
-        "id": "NS2_012",
-        "name": "モブススシルバー"
+        "id": "NS2_010",
+        "name": "モブススブルー"
       },
       {
         "id": "NS2_004",
         "name": "モブスス剣"
-      },
-      {
-        "id": "BFX001",
-        "name": "モブカセットクレープ"
       }
     ],
     "battles": [
       {
         "seed": 1,
-        "steps": 15,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 14,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 14,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 13,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 15,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 24,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 25,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 13,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 15,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 14,
+        "steps": 3,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -990,14 +882,18 @@
   {
     "id": "hero",
     "name": "光の主人公",
-    "routeSteps": 19,
-    "skills": 25,
+    "routeSteps": 18,
+    "skills": 29,
     "passives": 2,
-    "themeReserves": 9,
+    "themeReserves": 7,
     "support": [
       {
-        "id": "70",
-        "name": "酒場の看板娘 モブイルカエル"
+        "id": "72",
+        "name": "優しき熱血コーチ モブコーチ"
+      },
+      {
+        "id": "73",
+        "name": "宿舎の癒し モブミータ"
       },
       {
         "id": "79",
@@ -1006,6 +902,14 @@
       {
         "id": "185",
         "name": "新入りフィギュア売り モブメープル"
+      },
+      {
+        "id": "M4F_MIM_V01",
+        "name": "モブミミックル・ヴォルト"
+      },
+      {
+        "id": "M4F_MIM_V02",
+        "name": "モブミミックル・スペード"
       },
       {
         "id": "piece:031",
@@ -1020,24 +924,28 @@
         "name": "パーティーモブくん"
       },
       {
-        "id": "piece:018",
-        "name": "モブオレンジバッティング"
+        "id": "DUA_S01",
+        "name": "モブアカネ"
       },
       {
-        "id": "BFX027",
-        "name": "モブタルトテレキャスター"
+        "id": "BFX034",
+        "name": "モブソフトラジオスター"
       },
       {
-        "id": "FRG_S03",
-        "name": "モブプフ"
+        "id": "70",
+        "name": "酒場の看板娘 モブイルカエル"
       },
       {
         "id": "71",
         "name": "鍛冶屋の職人 モブゴンゾー"
       },
       {
-        "id": "72",
-        "name": "優しき熱血コーチ モブコーチ"
+        "id": "215",
+        "name": "モブナビ"
+      },
+      {
+        "id": "M4F_MIM_M01",
+        "name": "モブミミックル・ヴォルトスペード"
       },
       {
         "id": "piece:038",
@@ -1052,8 +960,8 @@
         "name": "モブレッドスマッシュ"
       },
       {
-        "id": "MB049",
-        "name": "モブミミズク"
+        "id": "216",
+        "name": "モブナビマスター"
       },
       {
         "id": "piece:039",
@@ -1067,61 +975,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 13,
+        "steps": 5,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 15,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 13,
+        "steps": 5,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 13,
+        "steps": 5,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 13,
+        "steps": 4,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 13,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1130,9 +1038,9 @@
   {
     "id": "lilith",
     "name": "リリス四姉妹",
-    "routeSteps": 18,
-    "skills": 25,
-    "passives": 0,
+    "routeSteps": 15,
+    "skills": 26,
+    "passives": 1,
     "themeReserves": 5,
     "support": [
       {
@@ -1144,20 +1052,16 @@
         "name": "モブミニブック"
       },
       {
-        "id": "BFX011",
-        "name": "モブジェリーポラロイド"
-      },
-      {
-        "id": "M4F_SIL_V01",
-        "name": "モブシルクラ・ムーン"
-      },
-      {
-        "id": "M4F_SIL_V02",
-        "name": "モブシルクラ・ローゼ"
-      },
-      {
         "id": "ECL_S02",
         "name": "モブミカゲ"
+      },
+      {
+        "id": "MB016",
+        "name": "モブシオリ"
+      },
+      {
+        "id": "M4F_DOK_V03",
+        "name": "モブドクローネ・ルーン"
       },
       {
         "id": "ECL_S03",
@@ -1166,6 +1070,14 @@
       {
         "id": "ECL_S01",
         "name": "モブヒバナ"
+      },
+      {
+        "id": "M4F_SIL_V01",
+        "name": "モブシルクラ・ムーン"
+      },
+      {
+        "id": "M4F_SIL_V02",
+        "name": "モブシルクラ・ローゼ"
       },
       {
         "id": "M4F_SIL_V03",
@@ -1184,10 +1096,6 @@
         "name": "モブララウィッチ"
       },
       {
-        "id": "M4F_SIL_M01",
-        "name": "モブシルクラ・ムーンローゼ"
-      },
-      {
         "id": "ECL_M01",
         "name": "モブクレセント"
       },
@@ -1196,16 +1104,16 @@
         "name": "モブフレアベル"
       },
       {
+        "id": "M4F_SIL_M01",
+        "name": "モブシルクラ・ムーンローゼ"
+      },
+      {
         "id": "M4F_SIL_M02",
         "name": "モブシルクラ・ミストローゼ"
       },
       {
-        "id": "MB016",
-        "name": "モブシオリ"
-      },
-      {
-        "id": "MB049",
-        "name": "モブミミズク"
+        "id": "218",
+        "name": "ウルモブリリス"
       },
       {
         "id": "ECL_B01",
@@ -1219,43 +1127,361 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 15,
+        "steps": 11,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 14,
+        "steps": 19,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 25,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 14,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 15,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 16,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 25,
+        "steps": 21,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 5,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "rookie-haru",
+    "name": "F｜若葉のハル",
+    "routeSteps": 1,
+    "skills": 15,
+    "passives": 0,
+    "themeReserves": 1,
+    "support": [],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 173,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 233,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 123,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 193,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 63,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 174,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 73,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 203,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 103,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 143,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "rookie-nagi",
+    "name": "F｜潮風のナギ",
+    "routeSteps": 1,
+    "skills": 13,
+    "passives": 0,
+    "themeReserves": 1,
+    "support": [
+      {
+        "id": "piece:026",
+        "name": "モブグリーンバルーン"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 123,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 73,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 43,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 63,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 93,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 93,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 83,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 54,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 73,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 63,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "rookie-rin",
+    "name": "E｜音合わせのリン",
+    "routeSteps": 3,
+    "skills": 18,
+    "passives": 0,
+    "themeReserves": 3,
+    "support": [],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 63,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 33,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 63,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 73,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 73,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 83,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 53,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 63,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 83,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 63,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "adept-sara",
+    "name": "D｜砂紋のサラ",
+    "routeSteps": 15,
+    "skills": 30,
+    "passives": 1,
+    "themeReserves": 12,
+    "support": [
+      {
+        "id": "BFX001",
+        "name": "モブカセットクレープ"
+      },
+      {
+        "id": "RUN_S01",
+        "name": "モブルノ"
+      },
+      {
+        "id": "RUN_S02",
+        "name": "モブパピ"
+      },
+      {
+        "id": "RUN_S03",
+        "name": "モブトル"
+      },
+      {
+        "id": "RUN_M01",
+        "name": "モブヴァル"
+      },
+      {
+        "id": "RUN_M02",
+        "name": "モブボルグ"
+      },
+      {
+        "id": "RUN_B01",
+        "name": "モブグラド"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 23,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 23,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 23,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 23,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 23,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 24,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1267,13 +1493,1013 @@
       },
       {
         "seed": 9,
-        "steps": 15,
+        "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 15,
+        "steps": 23,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "adept-sumi",
+    "name": "C｜煤隊長スミ",
+    "routeSteps": 18,
+    "skills": 28,
+    "passives": 4,
+    "themeReserves": 12,
+    "support": [
+      {
+        "id": "NS2_033",
+        "name": "モブアメチー"
+      },
+      {
+        "id": "BFX013",
+        "name": "モブトーストビート"
+      },
+      {
+        "id": "NS2_007",
+        "name": "モブケケ盾"
+      },
+      {
+        "id": "NS2_034",
+        "name": "モブアメブー"
+      },
+      {
+        "id": "BFX007",
+        "name": "モブソーダポケベル"
+      },
+      {
+        "id": "NS2_005",
+        "name": "モブケケ"
+      },
+      {
+        "id": "NS2_036",
+        "name": "モブアメヒノコ"
+      },
+      {
+        "id": "BFX009",
+        "name": "モブキャンディアンテナ"
+      },
+      {
+        "id": "NS2_006",
+        "name": "モブケケ槍"
+      },
+      {
+        "id": "NS2_035",
+        "name": "モブアメロー"
+      },
+      {
+        "id": "NS2_008",
+        "name": "モブケケ剣"
+      },
+      {
+        "id": "NS2_037",
+        "name": "モブアメソウル"
+      },
+      {
+        "id": "BFX008",
+        "name": "モブワッフルキーボード"
+      },
+      {
+        "id": "NS2_047",
+        "name": "モブケケアメ"
+      },
+      {
+        "id": "NS2_048",
+        "name": "モブアメリード"
+      },
+      {
+        "id": "NS2_049",
+        "name": "モブアメヴァル"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 22,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 22,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 22,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "adept-keke",
+    "name": "C｜機巧士ケケル",
+    "routeSteps": 18,
+    "skills": 25,
+    "passives": 6,
+    "themeReserves": 13,
+    "support": [
+      {
+        "id": "NS2_033",
+        "name": "モブアメチー"
+      },
+      {
+        "id": "BFX013",
+        "name": "モブトーストビート"
+      },
+      {
+        "id": "NS2_034",
+        "name": "モブアメブー"
+      },
+      {
+        "id": "BFX007",
+        "name": "モブソーダポケベル"
+      },
+      {
+        "id": "NS2_036",
+        "name": "モブアメヒノコ"
+      },
+      {
+        "id": "BFX009",
+        "name": "モブキャンディアンテナ"
+      },
+      {
+        "id": "NS2_035",
+        "name": "モブアメロー"
+      },
+      {
+        "id": "NS2_021",
+        "name": "モブススカケラ"
+      },
+      {
+        "id": "BFX001",
+        "name": "モブカセットクレープ"
+      },
+      {
+        "id": "NS2_001",
+        "name": "モブスス"
+      },
+      {
+        "id": "NS2_037",
+        "name": "モブアメソウル"
+      },
+      {
+        "id": "BFX030",
+        "name": "モブマシュマロテレポップ"
+      },
+      {
+        "id": "NS2_046",
+        "name": "モブススアメ"
+      },
+      {
+        "id": "NS2_041",
+        "name": "モブアメリーフ"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 22,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 33,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 22,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 22,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 23,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 32,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 22,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "expert-ame",
+    "name": "B｜飴槍のアメリア",
+    "routeSteps": 18,
+    "skills": 27,
+    "passives": 3,
+    "themeReserves": 15,
+    "support": [
+      {
+        "id": "BFX013",
+        "name": "モブトーストビート"
+      },
+      {
+        "id": "NS2_016",
+        "name": "モブケケミイラ"
+      },
+      {
+        "id": "BFX007",
+        "name": "モブソーダポケベル"
+      },
+      {
+        "id": "NS2_015",
+        "name": "モブススサバンナ"
+      },
+      {
+        "id": "BFX009",
+        "name": "モブキャンディアンテナ"
+      },
+      {
+        "id": "NS2_013",
+        "name": "モブケケスライム"
+      },
+      {
+        "id": "NS2_021",
+        "name": "モブススカケラ"
+      },
+      {
+        "id": "NS2_014",
+        "name": "モブススロック"
+      },
+      {
+        "id": "NS2_025",
+        "name": "モブケケビ"
+      },
+      {
+        "id": "BFX001",
+        "name": "モブカセットクレープ"
+      },
+      {
+        "id": "BFX030",
+        "name": "モブマシュマロテレポップ"
+      },
+      {
+        "id": "NS2_001",
+        "name": "モブスス"
+      },
+      {
+        "id": "NS2_007",
+        "name": "モブケケ盾"
+      },
+      {
+        "id": "NS2_010",
+        "name": "モブススブルー"
+      },
+      {
+        "id": "NS2_004",
+        "name": "モブスス剣"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 20,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 22,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "expert-leon",
+    "name": "B｜光騎士レオン",
+    "routeSteps": 18,
+    "skills": 29,
+    "passives": 2,
+    "themeReserves": 7,
+    "support": [
+      {
+        "id": "72",
+        "name": "優しき熱血コーチ モブコーチ"
+      },
+      {
+        "id": "73",
+        "name": "宿舎の癒し モブミータ"
+      },
+      {
+        "id": "79",
+        "name": "モブキングダムの王様 モブスライムキング"
+      },
+      {
+        "id": "185",
+        "name": "新入りフィギュア売り モブメープル"
+      },
+      {
+        "id": "M4F_MIM_V01",
+        "name": "モブミミックル・ヴォルト"
+      },
+      {
+        "id": "M4F_MIM_V02",
+        "name": "モブミミックル・スペード"
+      },
+      {
+        "id": "piece:031",
+        "name": "モブアカイシ"
+      },
+      {
+        "id": "piece:002",
+        "name": "チルタイムモブくん"
+      },
+      {
+        "id": "piece:005",
+        "name": "パーティーモブくん"
+      },
+      {
+        "id": "DUA_S01",
+        "name": "モブアカネ"
+      },
+      {
+        "id": "BFX034",
+        "name": "モブソフトラジオスター"
+      },
+      {
+        "id": "70",
+        "name": "酒場の看板娘 モブイルカエル"
+      },
+      {
+        "id": "71",
+        "name": "鍛冶屋の職人 モブゴンゾー"
+      },
+      {
+        "id": "215",
+        "name": "モブナビ"
+      },
+      {
+        "id": "M4F_MIM_M01",
+        "name": "モブミミックル・ヴォルトスペード"
+      },
+      {
+        "id": "piece:038",
+        "name": "モブグリヒーラー"
+      },
+      {
+        "id": "piece:040",
+        "name": "モブダマフレイム"
+      },
+      {
+        "id": "piece:046",
+        "name": "モブレッドスマッシュ"
+      },
+      {
+        "id": "216",
+        "name": "モブナビマスター"
+      },
+      {
+        "id": "piece:039",
+        "name": "モブリードナイト"
+      },
+      {
+        "id": "piece:049",
+        "name": "モブゴールデンチャンピオン"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 5,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 5,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 5,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 4,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "expert-noa",
+    "name": "A｜深海司令ノア",
+    "routeSteps": 18,
+    "skills": 23,
+    "passives": 2,
+    "themeReserves": 11,
+    "support": [
+      {
+        "id": "MB016",
+        "name": "モブシオリ"
+      },
+      {
+        "id": "ECL_S02",
+        "name": "モブミカゲ"
+      },
+      {
+        "id": "BFX001",
+        "name": "モブカセットクレープ"
+      },
+      {
+        "id": "BFX007",
+        "name": "モブソーダポケベル"
+      },
+      {
+        "id": "CRY_S02",
+        "name": "モブフロー"
+      },
+      {
+        "id": "CRY_S03",
+        "name": "モブオニル"
+      },
+      {
+        "id": "BFX023",
+        "name": "モブゼリーステーション"
+      },
+      {
+        "id": "BFX040",
+        "name": "モブソーダ・エコーフィン"
+      },
+      {
+        "id": "CRY_M02",
+        "name": "モブラズリ"
+      },
+      {
+        "id": "BFX050",
+        "name": "モブパルフェ・ディスコオーロラ"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 5,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 4,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 4,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 4,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 5,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 4,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 4,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 4,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "master-luna",
+    "name": "S｜四姉妹の導師ルナ",
+    "routeSteps": 15,
+    "skills": 26,
+    "passives": 1,
+    "themeReserves": 5,
+    "support": [
+      {
+        "id": "84",
+        "name": "MOB SHOT リリス四姉妹ソウル 赤"
+      },
+      {
+        "id": "152",
+        "name": "モブミニブック"
+      },
+      {
+        "id": "ECL_S02",
+        "name": "モブミカゲ"
+      },
+      {
+        "id": "MB016",
+        "name": "モブシオリ"
+      },
+      {
+        "id": "M4F_DOK_V03",
+        "name": "モブドクローネ・ルーン"
+      },
+      {
+        "id": "ECL_S03",
+        "name": "モブタッセル"
+      },
+      {
+        "id": "ECL_S01",
+        "name": "モブヒバナ"
+      },
+      {
+        "id": "M4F_SIL_V01",
+        "name": "モブシルクラ・ムーン"
+      },
+      {
+        "id": "M4F_SIL_V02",
+        "name": "モブシルクラ・ローゼ"
+      },
+      {
+        "id": "M4F_SIL_V03",
+        "name": "モブシルクラ・ミスト"
+      },
+      {
+        "id": "85",
+        "name": "MOB SHOT リリス四姉妹ソウル 黄"
+      },
+      {
+        "id": "157",
+        "name": "モブキラウィッチ"
+      },
+      {
+        "id": "158",
+        "name": "モブララウィッチ"
+      },
+      {
+        "id": "ECL_M01",
+        "name": "モブクレセント"
+      },
+      {
+        "id": "ECL_M02",
+        "name": "モブフレアベル"
+      },
+      {
+        "id": "M4F_SIL_M01",
+        "name": "モブシルクラ・ムーンローゼ"
+      },
+      {
+        "id": "M4F_SIL_M02",
+        "name": "モブシルクラ・ミストローゼ"
+      },
+      {
+        "id": "218",
+        "name": "ウルモブリリス"
+      },
+      {
+        "id": "ECL_B01",
+        "name": "モブエクリプサ"
+      },
+      {
+        "id": "M4F_SIL_B01",
+        "name": "モブシルクラ・オーロラ"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 19,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 21,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 21,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 20,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 21,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 5,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "master-zen",
+    "name": "SS｜封印王ゼノ",
+    "routeSteps": 17,
+    "skills": 27,
+    "passives": 4,
+    "themeReserves": 14,
+    "support": [
+      {
+        "id": "84",
+        "name": "MOB SHOT リリス四姉妹ソウル 赤"
+      },
+      {
+        "id": "97",
+        "name": "モブミイラ"
+      },
+      {
+        "id": "ECL_S02",
+        "name": "モブミカゲ"
+      },
+      {
+        "id": "CRY_S02",
+        "name": "モブフロー"
+      },
+      {
+        "id": "192",
+        "name": "モブデザート"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 4,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 11,
+        "winner": 1,
+        "reason": "ライフ0"
+      }
+    ]
+  },
+  {
+    "id": "master-beat",
+    "name": "SS｜極音指揮者ビート",
+    "routeSteps": 16,
+    "skills": 30,
+    "passives": 0,
+    "themeReserves": 13,
+    "support": [
+      {
+        "id": "ECL_S02",
+        "name": "モブミカゲ"
+      },
+      {
+        "id": "piece:002",
+        "name": "チルタイムモブくん"
+      },
+      {
+        "id": "piece:004",
+        "name": "わたあめモブくん"
+      },
+      {
+        "id": "piece:022",
+        "name": "モブパープルストーン"
+      },
+      {
+        "id": "piece:025",
+        "name": "モブレッドファイヤ"
+      }
+    ],
+    "battles": [
+      {
+        "seed": 1,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 2,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 3,
+        "steps": 21,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 4,
+        "steps": 21,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 5,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 7,
+        "steps": 12,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 8,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 9,
+        "steps": 13,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
+        "seed": 10,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       }

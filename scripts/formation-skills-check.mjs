@@ -3,7 +3,7 @@ import {figures,byId,tags} from '../src/data/catalog.js';
 import {banners,poolFor,mainPickupFor,RARITY_RANK,drawFigureRate} from '../src/data/gacha.js';
 import {drawMode,prepareDraw} from '../src/game/gacha.js';
 import {adjacencyPairs,applyAdjacency,soulSpec,soulClauses,applySoulText,activateSouls,eligibleSouls} from '../src/game/figure-skills.js';
-const current={version:6,diamonds:100,rubies:0,owned:{},testMode:true};
+const current={towerProgress:{cleared:[1,2,3,4,5]},version:6,diamonds:100,rubies:0,owned:{},testMode:true};
 const modes={normal:0,pickup:0,allSSR:0};
 for(let i=0;i<100000;i++)modes[drawMode((i+.5)/100000)]++;
 assert.deepEqual(modes,{normal:97900,pickup:2000,allSSR:100});

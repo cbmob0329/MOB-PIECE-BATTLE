@@ -1,0 +1,80 @@
+[
+  {
+    "id": "tower-beginning",
+    "reachable": 61,
+    "unreachable": [],
+    "normalRarityRates": {
+      "R": 0.5,
+      "SR": 0.3,
+      "SSR": 0.15,
+      "UR": 0.045,
+      "MOB": 0.005
+    },
+    "singleActualRarityRates": {
+      "R": 0.48949999999999977,
+      "SR": 0.2936999999999999,
+      "SSR": 0.1476,
+      "UR": 0.04428,
+      "MOB": 0.024919999999999998
+    },
+    "tenthActualRarityRates": {
+      "R": 0,
+      "SR": 0.65593,
+      "SSR": 0.24550000000000005,
+      "UR": 0.06875500000000001,
+      "MOB": 0.029815
+    }
+  },
+  {
+    "id": "tower-crossroads",
+    "reachable": 61,
+    "unreachable": [],
+    "normalRarityRates": {
+      "R": 0.5,
+      "SR": 0.3,
+      "SSR": 0.15,
+      "UR": 0.045,
+      "MOB": 0.005
+    },
+    "singleActualRarityRates": {
+      "R": 0.4894999999999997,
+      "SR": 0.29369999999999996,
+      "SSR": 0.1476,
+      "UR": 0.04428,
+      "MOB": 0.024919999999999998
+    },
+    "tenthActualRarityRates": {
+      "R": 0,
+      "SR": 0.6559300000000002,
+      "SSR": 0.24549999999999997,
+      "UR": 0.06875500000000001,
+      "MOB": 0.029815
+    }
+  },
+  {
+    "id": "tower-lanterns",
+    "reachable": 61,
+    "unreachable": [],
+    "normalRarityRates": {
+      "R": 0.5,
+      "SR": 0.3,
+      "SSR": 0.15,
+      "UR": 0.045,
+      "MOB": 0.005
+    },
+    "singleActualRarityRates": {
+      "R": 0.48949999999999977,
+      "SR": 0.29369999999999996,
+      "SSR": 0.1476,
+      "UR": 0.04428,
+      "MOB": 0.024919999999999998
+    },
+    "tenthActualRarityRates": {
+      "R": 0,
+      "SR": 0.6559299999999999,
+      "SSR": 0.2455,
+      "UR": 0.06875500000000001,
+      "MOB": 0.029815
+    }
+  }
+]
