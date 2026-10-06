@@ -44,9 +44,9 @@ function shuffled(ids,random){
  for(let i=deck.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];}
  return deck;
 }
-export function createSoulBattle(decks,names=['PLAYER','CPU'],{random=Math.random}={}){
+export function createSoulBattle(decks,names=['PLAYER','CPU'],{random=Math.random,startingSide=0}={}){
  for(const d of decks)if(!validateSoulDeck(d).valid)fail('合計45体のデッキが必要です');
- const s={version:2,active:0,turn:0,phase:'draw',winner:null,reason:'',serial:0,log:[],pending:null,players:decks.map((d,i)=>({name:names[i],life:400,original:[...d],deck:shuffled(d.filter(id=>soulById.get(id).soulClass==='seed'),random),reserve:d.filter(id=>soulById.get(id).soulClass!=='seed'),hand:[],used:[],field:[null,null,null],grave:[],destroyed:[],skillUsed:false,teamEffects:[],handBonuses:[],fusionBonus:null,revealed:[]}))};startTurn(s);return s;
+ const s={version:2,active:startingSide===1?1:0,turn:0,phase:'draw',winner:null,reason:'',serial:0,log:[],pending:null,players:decks.map((d,i)=>({name:names[i],life:400,original:[...d],deck:shuffled(d.filter(id=>soulById.get(id).soulClass==='seed'),random),reserve:d.filter(id=>soulById.get(id).soulClass!=='seed'),hand:[],used:[],field:[null,null,null],grave:[],destroyed:[],skillUsed:false,teamEffects:[],handBonuses:[],fusionBonus:null,revealed:[]}))};startTurn(s);return s;
 }
 export const canSummonHand=(s,side,index)=>{const p=s.players[side],id=p.hand[index];return !!id&&(soulById.get(id).soulClass==='seed'||p.handBonuses.some(b=>b.index===index&&b.direct));};
 function takeHand(p,index){const bonus=p.handBonuses.find(b=>b.index===index);p.handBonuses=p.handBonuses.filter(b=>b.index!==index);for(const b of p.handBonuses)if(b.index>index)b.index--;return {id:p.hand.splice(index,1)[0],bonus};}
@@ -69,9 +69,9 @@ export function fusionOptions(s,side,uids){
  if(explicit.length)return explicit.sort((a,b)=>Number(b.special)-Number(a.special));
  if(info(pair[0]).soulClass!==info(pair[1]).soulClass)return [];
  const same=pair[0].id===pair[1].id;
- const base=pair.find(f=>f.handIndex===undefined&&f.graveIndex===undefined&&(f.resonanceAtk||0)<10);
+ const base=pair.find(f=>f.handIndex===undefined&&f.graveIndex===undefined&&(f.resonanceAtk||0)<25);
  if(!base||!same)return [];
- return [{id:'resonance:'+base.uid,target:base.id,fromClass:info(base).soulClass,materials:pair.map(f=>({id:f.id})),special:false,resonance:true,baseUid:base.uid,bonusATK:10,bonusDEF:10,label:'同一フィギュア強化 · ATK/DEF +10（累積上限+10）'}];
+ return [{id:'resonance:'+base.uid,target:base.id,fromClass:info(base).soulClass,materials:pair.map(f=>({id:f.id})),special:false,resonance:true,baseUid:base.uid,bonusATK:25,bonusDEF:25,label:'同一フィギュア強化 · ATK/DEF +25（累積上限+25）'}];
 }
 // Existing numeric references identify field instances; hand references identify a copy by index.
 export function fusionMaterial(s,side,ref){
@@ -93,7 +93,7 @@ export function fuse(s,side,uids,recipeId){
  const original=r.resonance?{...piece(s,side,r.baseUid)}:null;
  for(const ref of uids){if(r.resonance&&ref===r.baseUid)continue;if(typeof ref==='number')remove(s,side,piece(s,side,ref));else if(ref.graveIndex!==undefined){const {id,usage}=takeStoredCard(p,'grave',ref.graveIndex);const i=p.destroyed.indexOf(id);if(i>=0)p.destroyed.splice(i,1);putStoredCard(p,'grave',id,usage);p.used.push(id);}else{const {id,bonus}=takeHand(p,ref.handIndex);putStoredCard(p,'grave',id,bonus);p.used.push(id);}}
  if(!r.resonance)p.reserve.splice(p.reserve.indexOf(r.target),1);p.used.push(r.target);const f=instance(s,r.target);p.field[slot]=f;
- if(r.resonance){if(original.phoenixRevived)f.phoenixRevived=true;f.resonanceAtk=10;f.resonanceDef=10;f.permanentAtk=(original.permanentAtk||0)-(original.resonanceAtk||0)+10;f.permanentDef=(original.permanentDef||0)-(original.resonanceDef||0)+10;f.mobFusion=original.mobFusion;}
+ if(r.resonance){if(original.phoenixRevived)f.phoenixRevived=true;f.resonanceAtk=25;f.resonanceDef=25;f.permanentAtk=(original.permanentAtk||0)-(original.resonanceAtk||0)+25;f.permanentDef=(original.permanentDef||0)-(original.resonanceDef||0)+25;f.mobFusion=original.mobFusion;}
  if(r.special){f.mobFusion=true;f.permanentAtk=r.bonusATK;f.permanentDef=r.bonusDEF;s.fusionBanner={serial:f.uid,name:info(f).name,special:true};}
  else s.fusionBanner={serial:f.uid,name:info(f).name,special:false};
  if(p.fusionBonus&&(p.fusionBonus.expires===null||p.fusionBonus.expires>=s.turn)){const until=p.fusionBonus.persistent?Infinity:s.turn;effect(f,'atk',p.fusionBonus.atk,until);effect(f,'def',p.fusionBonus.def,until);p.fusionBonus=null;}
@@ -239,10 +239,11 @@ function respond(s,side,f,o){
  pending.combatDef=q.combatDef||(q.fallbackDef&&o.targetUid===undefined?q.fallbackDef:0)||0;
  pending.noDamage=!!q.noDamage;pending.survive=!!q.combatSurvive;resolveCombat(s,pending);
 }
-export function beginBattle(s,side){main(s,side);s.phase='battle';log(s,s.players[side].name+'のバトルフェイズ');emit(s,'battle',{side});}
+export const canBeginBattle=(s,side)=>s.turn>1&&s.winner===null&&!s.pending&&!s.evolutionQueue?.length&&s.phase==='main'&&s.active===side;
+export function beginBattle(s,side){main(s,side);if(s.turn<=1)fail('先攻の最初のターンはバトルフェイズへ進めません');s.phase='battle';log(s,s.players[side].name+'のバトルフェイズ');emit(s,'battle',{side});}
 export const attackLimit=p=>has(p,'eachTarget')?Math.max(1,3):Math.max(Number(value(p,'maxAttacks')||1),passiveBonus(p,soulById).attacks||1)+p.extra;
 export function canAttack(s,side,a,d){bindBattle(s,soulById);
- if(s.winner!==null||s.pending||s.evolutionQueue?.length||s.phase!=='battle'||s.active!==side||!a||!d||has(a,'skipBattle'))return false;
+ if(s.turn<=1||s.winner!==null||s.pending||s.evolutionQueue?.length||s.phase!=='battle'||s.active!==side||!a||!d||has(a,'skipBattle'))return false;
  if(has(a,'eachTarget')?a.attackedTargets.includes(d.uid):a.attacks>=attackLimit(a))return false;
  if(live(s,1-side).some(t=>has(t,'taunt'))&&!has(d,'taunt'))return false;
  if(a.chainOnly&&a.lastTarget===d.uid)return false;
@@ -297,7 +298,7 @@ export function moveAfterAttack(s,side,uid,slot){
  if(m.mode==='unattacked'&&(!other||other.uid===uid||other.attacks>0))fail('まだ攻撃していない別の味方を選んでください');
  const i=p.field.indexOf(f);[p.field[i],p.field[slot]]=[p.field[slot],p.field[i]];s.moveChoice=null;log(s,info(f).name+'の位置を変更');
 }
-export function canEndTurn(s,side){return s.winner===null&&!s.pending&&!s.evolutionQueue?.length&&s.active===side&&(s.phase==='battle'||(s.turn===1&&side===0&&s.phase==='main'));}
+export function canEndTurn(s,side){return s.winner===null&&!s.pending&&!s.evolutionQueue?.length&&s.active===side&&(s.phase==='battle'||(s.turn===1&&s.phase==='main'));}
 export function endTurn(s,side){if(!canEndTurn(s,side))fail('対応完了後、バトルフェイズから終了できます（先攻1ターン目はメインから終了可能）');emit(s,'end',{side});s.moveChoice=null;s.active=1-side;startTurn(s);}
 export function fusionReadyMaterials(s,side){const field=new Set(),hand=new Set();for(const pair of fusionPairs(s,side))if(fusionOptions(s,side,pair).length)for(const ref of pair){if(typeof ref==='number')field.add(ref);else if(Number.isInteger(ref.handIndex))hand.add(ref.handIndex);}return {field,hand};}
 export function fusionReadyUids(s,side){const ready=new Set(),field=live(s,side);for(let i=0;i<field.length;i++)for(let j=i+1;j<field.length;j++)if(fusionOptions(s,side,[field[i].uid,field[j].uid]).length){ready.add(field[i].uid);ready.add(field[j].uid);}return ready;}

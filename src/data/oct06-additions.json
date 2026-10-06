@@ -1,0 +1,872 @@
+{
+  "source": "Reviewed 2026-10-06 local images",
+  "figures": [
+    {
+      "id": "BFX051",
+      "uid": "OCT06-BFX051",
+      "name": "モブアクア・オービット",
+      "image": "piecefig/BFX/BFX051.png",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "水",
+      "atk": 270,
+      "def": 310,
+      "tags": [
+        "27",
+        "18",
+        "specified-sweets",
+        "12",
+        "45",
+        "37",
+        "bfx"
+      ],
+      "attackType": "魔法",
+      "role": "回復・支援",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "UR",
+        "statsText": "ATK 270 / DEF 310",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分ライフを30回復し、自分の場の水属性フィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "アクア・ハーモニー",
+        "description": "自分ライフを30回復し、自分の場の水属性フィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "effect": "自分ライフを30回復し、自分の場の水属性フィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "sourceText": "自分ライフを30回復し、自分の場の水属性フィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "heal": 30,
+          "target": "attributeAllies",
+          "def": 20,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "BFX052",
+      "uid": "OCT06-BFX052",
+      "name": "モブキャラメル・ビートキング",
+      "image": "piecefig/BFX/BFX052.png",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "光",
+      "atk": 300,
+      "def": 300,
+      "tags": [
+        "27",
+        "18",
+        "specified-sweets",
+        "12",
+        "44",
+        "bfx"
+      ],
+      "attackType": "物理",
+      "role": "回復・支援",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "MOB",
+        "statsText": "ATK 300 / DEF 300",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場のMUSICタグを持つフィギュア全員のATKとDEFを20アップする。能力変更は対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "スイート・アンセム",
+        "description": "自分の場のMUSICタグを持つフィギュア全員のATKとDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "effect": "自分の場のMUSICタグを持つフィギュア全員のATKとDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "sourceText": "自分の場のMUSICタグを持つフィギュア全員のATKとDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "allies",
+          "filterTag": "12",
+          "atk": 20,
+          "def": 20,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "SWEET31",
+      "uid": "OCT06-SWEET31",
+      "name": "ソーダスプラッシャー",
+      "image": "piecefig/SWEET/SWEET31.png",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "水",
+      "atk": 80,
+      "def": 70,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43"
+      ],
+      "attackType": "物理",
+      "role": "回復・支援",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "R",
+        "statsText": "ATK 80 / DEF 70",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場の水属性フィギュア全員のDEFを10アップする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "ソーダ・ステップ",
+        "description": "自分の場の水属性フィギュア全員のDEFを10アップする。対象が場を離れるまで継続。",
+        "effect": "自分の場の水属性フィギュア全員のDEFを10アップする。対象が場を離れるまで継続。",
+        "sourceText": "自分の場の水属性フィギュア全員のDEFを10アップする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "attributeAllies",
+          "def": 10,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "SWEET32",
+      "uid": "OCT06-SWEET32",
+      "name": "キャラメルトレッカー",
+      "image": "piecefig/SWEET/SWEET32.png",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "地",
+      "atk": 75,
+      "def": 85,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43"
+      ],
+      "attackType": "物理",
+      "role": "回復・支援",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "R",
+        "statsText": "ATK 75 / DEF 85",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分ライフを20回復する。"
+        }
+      },
+      "soulSkill": {
+        "name": "キャラメル補給",
+        "description": "自分ライフを20回復する。",
+        "effect": "自分ライフを20回復する。",
+        "sourceText": "自分ライフを20回復する。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "heal": 20
+        }
+      }
+    },
+    {
+      "id": "SWEET33",
+      "uid": "OCT06-SWEET33",
+      "name": "キャンディウィッチ",
+      "image": "piecefig/SWEET/SWEET33.png",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "闇",
+      "atk": 100,
+      "def": 100,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43",
+        "37"
+      ],
+      "attackType": "物理",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "SR",
+        "statsText": "ATK 100 / DEF 100",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "相手フィギュア1体のATKを15ダウンする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "キャンディ・ミスト",
+        "description": "相手フィギュア1体のATKを15ダウンする。対象が場を離れるまで継続。",
+        "effect": "相手フィギュア1体のATKを15ダウンする。対象が場を離れるまで継続。",
+        "sourceText": "相手フィギュア1体のATKを15ダウンする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "enemy",
+          "atk": -15,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "SWEET34",
+      "uid": "OCT06-SWEET34",
+      "name": "せんべいシールド",
+      "image": "piecefig/SWEET/SWEET34.png",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "地",
+      "atk": 85,
+      "def": 120,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43",
+        "70"
+      ],
+      "attackType": "物理",
+      "role": "回復・支援",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "SR",
+        "statsText": "ATK 85 / DEF 120",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを15アップする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "こんがりガード",
+        "description": "自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを15アップする。対象が場を離れるまで継続。",
+        "effect": "自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを15アップする。対象が場を離れるまで継続。",
+        "sourceText": "自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを15アップする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "allies",
+          "filterTag": "18",
+          "def": 15,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "SWEET35",
+      "uid": "OCT06-SWEET35",
+      "name": "ビスケットスカウト",
+      "image": "piecefig/SWEET/SWEET35.png",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "風",
+      "atk": 155,
+      "def": 145,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43",
+        "70"
+      ],
+      "attackType": "物理",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "SSR",
+        "statsText": "ATK 155 / DEF 145",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場の風属性フィギュア全員のATKを20アップする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "ビスケット・ウィンド",
+        "description": "自分の場の風属性フィギュア全員のATKを20アップする。対象が場を離れるまで継続。",
+        "effect": "自分の場の風属性フィギュア全員のATKを20アップする。対象が場を離れるまで継続。",
+        "sourceText": "自分の場の風属性フィギュア全員のATKを20アップする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "attributeAllies",
+          "atk": 20,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "SWEET36",
+      "uid": "OCT06-SWEET36",
+      "name": "ワッフルアコーディオン",
+      "image": "piecefig/SWEET/SWEET36.png",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 140,
+      "def": 165,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43",
+        "12"
+      ],
+      "attackType": "物理",
+      "role": "回復・支援",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "SSR",
+        "statsText": "ATK 140 / DEF 165",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場のMUSICタグを持つフィギュア全員のDEFを20アップする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "ワッフル・ワルツ",
+        "description": "自分の場のMUSICタグを持つフィギュア全員のDEFを20アップする。対象が場を離れるまで継続。",
+        "effect": "自分の場のMUSICタグを持つフィギュア全員のDEFを20アップする。対象が場を離れるまで継続。",
+        "sourceText": "自分の場のMUSICタグを持つフィギュア全員のDEFを20アップする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "allies",
+          "filterTag": "12",
+          "def": 20,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "SWEET37",
+      "uid": "OCT06-SWEET37",
+      "name": "ソフトクリームサーファー",
+      "image": "piecefig/SWEET/SWEET37.png",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "atk": 110,
+      "def": 95,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43",
+        "55"
+      ],
+      "attackType": "物理",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "SR",
+        "statsText": "ATK 110 / DEF 95",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "このターン、自分の場の水属性フィギュア全員のATKを20アップする。"
+        }
+      },
+      "soulSkill": {
+        "name": "スイート・ウェーブ",
+        "description": "このターン、自分の場の水属性フィギュア全員のATKを20アップする。",
+        "effect": "このターン、自分の場の水属性フィギュア全員のATKを20アップする。",
+        "sourceText": "このターン、自分の場の水属性フィギュア全員のATKを20アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "attributeAllies",
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "SWEET38",
+      "uid": "OCT06-SWEET38",
+      "name": "キャンディ・キャプテン",
+      "image": "piecefig/SWEET/SWEET38.png",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "火",
+      "atk": 290,
+      "def": 250,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43"
+      ],
+      "attackType": "物理",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "UR",
+        "statsText": "ATK 290 / DEF 250",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "このターン2回まで攻撃でき、攻撃対象のかばう効果を無視する。"
+        }
+      },
+      "soulSkill": {
+        "name": "キャンディ・カトラス",
+        "description": "このターン2回まで攻撃でき、攻撃対象のかばう効果を無視する。",
+        "effect": "このターン2回まで攻撃でき、攻撃対象のかばう効果を無視する。",
+        "sourceText": "このターン2回まで攻撃でき、攻撃対象のかばう効果を無視する。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "attacks": 2,
+          "pierceGuard": true
+        }
+      }
+    },
+    {
+      "id": "SWEET39",
+      "uid": "OCT06-SWEET39",
+      "name": "クリーム・グランシェフ",
+      "image": "piecefig/SWEET/SWEET39.png",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "光",
+      "atk": 260,
+      "def": 300,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43",
+        "70"
+      ],
+      "attackType": "魔法",
+      "role": "回復・支援",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "UR",
+        "statsText": "ATK 260 / DEF 300",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分ライフを30回復し、自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "グラン・デザート",
+        "description": "自分ライフを30回復し、自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "effect": "自分ライフを30回復し、自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "sourceText": "自分ライフを30回復し、自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "heal": 30,
+          "target": "allies",
+          "filterTag": "18",
+          "def": 20,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "SWEET40",
+      "uid": "OCT06-SWEET40",
+      "name": "カップケーキヒーロー",
+      "image": "piecefig/SWEET/SWEET40.png",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "火",
+      "atk": 300,
+      "def": 260,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43"
+      ],
+      "attackType": "物理",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "UR",
+        "statsText": "ATK 300 / DEF 260",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場の美味しい食べ物タグを持つフィギュア全員のATKを20アップする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "シュガー・ヒーローズ",
+        "description": "自分の場の美味しい食べ物タグを持つフィギュア全員のATKを20アップする。対象が場を離れるまで継続。",
+        "effect": "自分の場の美味しい食べ物タグを持つフィギュア全員のATKを20アップする。対象が場を離れるまで継続。",
+        "sourceText": "自分の場の美味しい食べ物タグを持つフィギュア全員のATKを20アップする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "allies",
+          "filterTag": "18",
+          "atk": 20,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "SWEET41",
+      "uid": "OCT06-SWEET41",
+      "name": "サブレガーディアン",
+      "image": "piecefig/SWEET/SWEET41.png",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "光",
+      "atk": 250,
+      "def": 320,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43"
+      ],
+      "attackType": "物理",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "UR",
+        "statsText": "ATK 250 / DEF 320",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場のとびっきりのスイーツタグを持つフィギュア全員は、次に撃破される時に1度だけ場に残る。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "スター・ビスケット",
+        "description": "自分の場のとびっきりのスイーツタグを持つフィギュア全員は、次に撃破される時に1度だけ場に残る。対象が場を離れるまで継続。",
+        "effect": "自分の場のとびっきりのスイーツタグを持つフィギュア全員は、次に撃破される時に1度だけ場に残る。対象が場を離れるまで継続。",
+        "sourceText": "自分の場のとびっきりのスイーツタグを持つフィギュア全員は、次に撃破される時に1度だけ場に残る。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "allies",
+          "filterTag": "specified-sweets",
+          "survive": 1,
+          "survivePersistent": true
+        }
+      }
+    },
+    {
+      "id": "SWEET42",
+      "uid": "OCT06-SWEET42",
+      "name": "サブレウィング",
+      "image": "piecefig/SWEET/SWEET42.png",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "風",
+      "atk": 165,
+      "def": 140,
+      "tags": [
+        "18",
+        "specified-sweets",
+        "43",
+        "55"
+      ],
+      "attackType": "物理",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "SSR",
+        "statsText": "ATK 165 / DEF 140",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場の風属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "クリーム・フライト",
+        "description": "自分の場の風属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。",
+        "effect": "自分の場の風属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。",
+        "sourceText": "自分の場の風属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "attributeAllies",
+          "atk": 15,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "ECL_S04",
+      "uid": "OCT06-ECL_S04",
+      "name": "月環の赤灯術師",
+      "image": "piecefig/ECL_S04.png",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "火",
+      "atk": 75,
+      "def": 70,
+      "tags": [
+        "27",
+        "55",
+        "46",
+        "element-ECL",
+        "37"
+      ],
+      "attackType": "魔法",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "R",
+        "statsText": "ATK 75 / DEF 70",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "相手フィギュア1体のDEFを10ダウンする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "赤灯の火花",
+        "description": "相手フィギュア1体のDEFを10ダウンする。対象が場を離れるまで継続。",
+        "effect": "相手フィギュア1体のDEFを10ダウンする。対象が場を離れるまで継続。",
+        "sourceText": "相手フィギュア1体のDEFを10ダウンする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "enemy",
+          "def": -10,
+          "duration": "persistent"
+        }
+      }
+    },
+    {
+      "id": "ECL_S05",
+      "uid": "OCT06-ECL_S05",
+      "name": "月環の紅帽術師",
+      "image": "piecefig/ECL_S05.png",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "火",
+      "atk": 105,
+      "def": 90,
+      "tags": [
+        "27",
+        "55",
+        "46",
+        "element-ECL",
+        "37"
+      ],
+      "attackType": "魔法",
+      "role": "攻撃",
+      "collection": "main",
+      "source": {
+        "figureFile": "2026年10月6日.txt + reviewed local image",
+        "rarity": "SR",
+        "statsText": "ATK 105 / DEF 90",
+        "traitText": "2026-10-06 ユーザー許可の画像確認補完",
+        "soul": {
+          "text": "自分の場の火属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。"
+        }
+      },
+      "soulSkill": {
+        "name": "紅帽の灯火",
+        "description": "自分の場の火属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。",
+        "effect": "自分の場の火属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。",
+        "sourceText": "自分の場の火属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。",
+        "timing": "own-main",
+        "timingLabel": "自分メイン",
+        "program": 0,
+        "runtimePlan": {
+          "target": "attributeAllies",
+          "atk": 15,
+          "duration": "persistent"
+        }
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "id": "oct06-new-BFX051-normal",
+      "target": "BFX051",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "BFX040"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-BFX051-special",
+      "target": "BFX051",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "BFX040"
+        },
+        {
+          "id": "BFX046"
+        }
+      ],
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-BFX052-normal",
+      "target": "BFX052",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "BFX035"
+        },
+        {
+          "tag": "specified-sweets"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-BFX052-special",
+      "target": "BFX052",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "BFX035"
+        },
+        {
+          "id": "BFX043"
+        }
+      ],
+      "special": true,
+      "bonusATK": 20,
+      "bonusDEF": 20,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-SWEET35-normal",
+      "target": "SWEET35",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "70"
+        },
+        {
+          "tag": "18"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-SWEET36-normal",
+      "target": "SWEET36",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "12"
+        },
+        {
+          "tag": "specified-sweets"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-SWEET42-normal",
+      "target": "SWEET42",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "風"
+        },
+        {
+          "tag": "specified-sweets"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-SWEET38-normal",
+      "target": "SWEET38",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "SWEET17"
+        },
+        {
+          "tag": "specified-sweets"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-SWEET39-normal",
+      "target": "SWEET39",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "SWEET16"
+        },
+        {
+          "id": "SWEET19"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-SWEET40-normal",
+      "target": "SWEET40",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "SWEET17"
+        },
+        {
+          "id": "SWEET35"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    },
+    {
+      "id": "oct06-new-SWEET41-normal",
+      "target": "SWEET41",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "SWEET35"
+        },
+        {
+          "id": "SWEET36"
+        }
+      ],
+      "special": false,
+      "basis": "2026-10-06 image-reviewed completion"
+    }
+  ],
+  "tags": []
+}

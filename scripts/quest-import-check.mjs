@@ -6,7 +6,7 @@ import {banners,poolFor,RUBY_COST,OWN_CAP} from '../src/data/gacha.js';
 import {exchangeFigure} from '../src/game/gacha.js';
 const old=JSON.parse(execFileSync('git',['show','HEAD:src/data/figures_master_v170.json'],{encoding:'utf8'}));
 for(const f of old){const next=byId.get(f.sourceId);assert.equal(next.image,f.image);assert.equal(next.dexNo,f.dexNo);assert.deepEqual(next.mobPiece,f.mobPiece);}
-assert.equal(figures.length,627);assert.equal(banners.length,3);
+assert.equal(figures.length,643);assert.equal(banners.length,3);
 assert.equal(new Set(figures.map(f=>f.image)).size,figures.length);
 for(const f of figures.filter(f=>!f.pending)){assert.ok(fs.existsSync(f.image),f.image);assert.ok(f.tags.every(id=>tags.some(t=>t.id===id)));}
 for(const b of banners){if(b.image)assert.ok(fs.existsSync(b.image),b.image);else assert.ok(b.featuredIds.every(id=>fs.existsSync(byId.get(id).image)));assert.ok(poolFor(b).length>=25,b.id);for(const image of b.pickup||[])assert.ok(poolFor(b).some(f=>f.image===image),`${b.id}: ${image}`);}

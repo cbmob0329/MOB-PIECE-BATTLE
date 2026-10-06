@@ -44,3 +44,23 @@
 .attack-confirm-summary span{color:#9fafc5;}
 
 .duel-skill-usage{font-size:12px;margin:5px 0;color:#bde9ff;}.duel-skill-usage small{display:block;font-size:11px;color:#ffd3a8;}.duel-hand-piece .hand-skill-count{display:block;font-size:9px;padding:2px 0;color:#d6f4ff;}.duel-status{font-size:8px;}
+
+/* MOB fusion: charge, convergence, reveal, then held afterglow. */
+.cue-fusion.mob .fx-mob-charge{position:absolute;inset:18% 8% 22%;display:grid;place-items:center;color:#fff1a8;animation:mob-charge var(--cue-time) both;pointer-events:none}
+.fx-mob-charge i{position:absolute;width:210px;height:210px;border:3px solid #ffe398;border-radius:50%;box-shadow:0 0 35px #ffd85c,inset 0 0 28px #9c7dff;transform:rotateX(55deg)}
+.fx-mob-charge i:nth-child(2){transform:rotateY(55deg)}
+.fx-mob-charge b{letter-spacing:.2em;font-size:13px}
+.cue-fusion.mob .fx-materials{animation:mob-materials var(--cue-time) both}
+.cue-fusion.mob .fx-materials>div{animation:mob-merge var(--cue-time) both;--travel:80px}
+.cue-fusion.mob .fx-materials>div:nth-child(2){--travel:-80px}
+.cue-fusion.mob .fx-form{animation:mob-reveal var(--cue-time) both}
+.cue-fusion.mob .fx-stats,.cue-fusion.mob .fx-bonus{animation:mob-stats var(--cue-time) both}
+.cue-fusion.mob .fx-body{animation:mob-body var(--cue-time) both}
+@keyframes mob-charge{0%{opacity:0;transform:scale(.65)}12%,30%{opacity:1}43%{opacity:1;transform:scale(1.4)}52%,100%{opacity:0;transform:scale(1.8)}}
+@keyframes mob-materials{0%,12%{opacity:0}20%,39%{opacity:1}48%,100%{opacity:0}}
+@keyframes mob-merge{0%,28%{transform:translateX(0) scale(.85)}42%{transform:translateX(var(--travel)) scale(.45);filter:brightness(3)}50%,100%{transform:translateX(var(--travel)) scale(0)}}
+@keyframes mob-reveal{0%,43%{opacity:0;transform:scale(.15)}52%{opacity:1;transform:scale(1.1)}65%,100%{opacity:1;transform:scale(1)}}
+@keyframes mob-body{0%,46%{opacity:0;filter:brightness(4)}58%{opacity:1;filter:brightness(2)}72%,100%{opacity:1;filter:brightness(1);transform:translateY(0)}}
+@keyframes mob-stats{0%,60%{opacity:0;transform:translateY(12px)}72%,100%{opacity:1;transform:translateY(0)}}
+.motion-reduced .cue-fusion.mob .fx-form,.motion-reduced .cue-fusion.mob .fx-body,.motion-reduced .cue-fusion.mob .fx-stats,.motion-reduced .cue-fusion.mob .fx-bonus{animation:none;opacity:1;transform:none}
+.motion-reduced .fx-mob-charge,.motion-reduced .cue-fusion.mob .fx-materials{display:none}

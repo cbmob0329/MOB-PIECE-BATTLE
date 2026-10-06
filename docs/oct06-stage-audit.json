@@ -1,0 +1,1226 @@
+[
+  {
+    "id": "01",
+    "name": "ぷにモブグリーン",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "自分ライフを20回復し、自分の場の地属性フィギュアのATKを20アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "02",
+    "name": "ぷにモブレッド",
+    "stage": "seed",
+    "atk": 80,
+    "def": 60,
+    "skill": "自分ライフを20回復し、自分の場の火属性フィギュアのATKを20アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "03",
+    "name": "ぷにモブオレンジ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 60,
+    "skill": "攻撃対象となった自分のモンスターのDEFを30アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "06",
+    "name": "ぷにモブ:ピンク",
+    "stage": "seed",
+    "atk": 60,
+    "def": 70,
+    "skill": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "16",
+    "name": "みかんちゃん",
+    "stage": "middle",
+    "atk": 0,
+    "def": 250,
+    "skill": "このフィギュアはどの融合素材にも対応することが出来る。ただし、もう片方は正しい融合素材でなければならない。（片方のみ代用可。素材の段階と同キャラ強化の制限は守る。）",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "18",
+    "name": "モブクラシックグリーン",
+    "stage": "seed",
+    "atk": 100,
+    "def": 120,
+    "skill": "自分ライフを20回復する。さらに、自分の場の全ての地属性フィギュアのDEFを20アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "190",
+    "name": "モブ勇者",
+    "stage": "mob",
+    "atk": 305,
+    "def": 325,
+    "skill": "メインスキル:相手の場のモンスタータグを持つモンスターのATKとDEFを30ダウンさせる。\nパッシブ:破壊された時、融合領域からモブあのヒーローを召喚する。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "200",
+    "name": "モブあのヒーロー",
+    "stage": "mob",
+    "atk": 370,
+    "def": 380,
+    "skill": "メインスキル:相手の手札を全て破壊する。\nパッシブ:このフィギュアはスキルの効果では破壊されない。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "129",
+    "name": "モブジョーンズ",
+    "stage": "mob",
+    "atk": 330,
+    "def": 300,
+    "skill": "メインスキル:相手1体を選ぶ。そのフィギュアは次のバトルフェイズで最後にしか攻撃できない。\nパッシブ:攻撃を受ける度、ATKを20アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "146",
+    "name": "モブフレザード",
+    "stage": "mob",
+    "atk": 300,
+    "def": 300,
+    "skill": "メインスキル:敵全体のDEFを20ダウンさせる。\nパッシブ:自分の場の火属性と水属性モンスターのATKとDEFを20アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "156",
+    "name": "モブミラヘルド",
+    "stage": "mob",
+    "atk": 325,
+    "def": 305,
+    "skill": "メインスキル:次のソウルフュージョンで召喚するフィギュアのATKとDEFを+20。\nパッシブ:火属性以外とバトルを行う時、このフィギュアのATKは30アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "202",
+    "name": "グラディモブ",
+    "stage": "mob",
+    "atk": 315,
+    "def": 315,
+    "skill": "メインスキル:このターン4回まで攻撃出来る。同じ相手への攻撃も可能。\nパッシブ:攻撃する度このフィギュアのATKとDEFは10アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "160",
+    "name": "モブホークⅡ",
+    "stage": "mob",
+    "atk": 320,
+    "def": 300,
+    "skill": "メインスキル:自分の場にこのフィギュアしかいない時、デッキから草原タグを持つミドルフィギュア1体を召喚する。\nパッシブ:浮遊を持っていないフィギュアとの戦闘時、ATKを30アップする。\n",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "162",
+    "name": "ミラモブⅡ",
+    "stage": "mob",
+    "atk": 300,
+    "def": 310,
+    "skill": "メインスキル:相手フィギュア1体を選択する。そのフィギュアは毎ターンATKとDEFが20ダウンする。\nパッシブ:場に出ている砂漠タグフィギュア1体につきATKとDEF20アップ。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "164",
+    "name": "モブガーディアンⅡ",
+    "stage": "mob",
+    "atk": 300,
+    "def": 320,
+    "skill": "メインスキル:このターン、相手はこのフィギュアしか攻撃出来ない。\nパッシブ:このフィギュアはそのターン中1回目の攻撃では破壊されない。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "169",
+    "name": "モブギドラ",
+    "stage": "mob",
+    "atk": 370,
+    "def": 370,
+    "skill": "メインスキル:このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。攻撃対象は毎回自由で、同じ相手にも複数回攻撃できる。ダイレクトアタック不可。\nパッシブ:破壊された時、自分の墓地の火属性モンスター1体を召喚する。（自分自身は蘇生対象外。）",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "170",
+    "name": "ミラモブファラオ",
+    "stage": "mob",
+    "atk": 370,
+    "def": 370,
+    "skill": "メインスキル:相手フィギュア1体を選ぶ。次の相手ターン終了までDEF-40、ソウルスキル使用不可、ソウルフュージョン素材にもできない。\nパッシブ:ピラミッドタグを持つ自分の場のモンスターは1ターンに2回まで攻撃出来る。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "218",
+    "name": "ウルモブリリス",
+    "stage": "mob",
+    "atk": 375,
+    "def": 370,
+    "skill": "スキル:相手の場のフィギュアのDEFを30ダウンさせ、このターンスキルを使用不可にする。\nパッシブ:自身を除く自分の場の闇属性モンスターのATKを30アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "219",
+    "name": "モブネプチューン",
+    "stage": "mob",
+    "atk": 270,
+    "def": 250,
+    "skill": "メインスキル:このターン、このフィギュアの攻撃対象となったフィギュアはスキルが使えなくなる。\nパッシブ:場と墓地の水属性フィギュア1体につきATKとDEFが20アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "mq:eventfig/23",
+    "name": "モブフェニックス",
+    "stage": "mob",
+    "atk": 305,
+    "def": 325,
+    "skill": "メインスキル:味方全体のDEFを30アップする。\nパッシブ:破壊された時、1度だけ復活する。この効果が発動した時、自分のライフを50回復する。（同じ個体につき1戦1回。別の蘇生でも自動復活権は戻らない。）",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "mq:eventfig/33",
+    "name": "モブトイティラ・モチ",
+    "stage": "mob",
+    "atk": 305,
+    "def": 325,
+    "skill": "メインスキル:墓地に存在する 美味しい食べ物 タグを持つフィギュア1体につき、このターン中ATKとDEFが20アップする。\nパッシブ:場に出ている 美味しい食べ物 タグを持つフィギュア1体につき、ATKとDEFが20アップする 。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "mq:eventfig/40",
+    "name": "モブシロサバンナ",
+    "stage": "mob",
+    "atk": 270,
+    "def": 220,
+    "skill": "メインスキル:このターン全ての攻撃を回避する。\nパッシブ:このフィギュアはターン開始毎にATKが20アップする。（成長は自分ターン開始時。）",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "SWEET11",
+    "name": "ふがしバウンダー",
+    "stage": "seed",
+    "atk": 70,
+    "def": 65,
+    "skill": "このターンATK+20。このフィギュアがこのターン相手を撃破した時、1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET12",
+    "name": "きなこスラッガー",
+    "stage": "seed",
+    "atk": 80,
+    "def": 60,
+    "skill": "このターン最大5回攻撃できる。攻撃するたび、このターン中ATK+10（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET13",
+    "name": "ピーピーローラー",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "相手1体のDEF-20。そのフィギュアは次のバトルフェイズで攻撃できない。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET14",
+    "name": "バブルホッパー",
+    "stage": "seed",
+    "atk": 75,
+    "def": 60,
+    "skill": "このフィギュアを手札へ戻し、その攻撃を終了する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET15",
+    "name": "むぎチョコスクーパー",
+    "stage": "seed",
+    "atk": 60,
+    "def": 75,
+    "skill": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET16",
+    "name": "ボーロバランサー",
+    "stage": "middle",
+    "atk": 120,
+    "def": 160,
+    "skill": "このフィギュアが攻撃対象になった時、その攻撃中DEF+20。その攻撃による撃破を1回だけ無効にする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "SWEET17",
+    "name": "カステラフリッパー",
+    "stage": "middle",
+    "atk": 180,
+    "def": 140,
+    "skill": "このターンATK+30。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "SWEET18",
+    "name": "ヌードルビート",
+    "stage": "seed",
+    "atk": 105,
+    "def": 115,
+    "skill": "相手フィールド全体のATKを-10。このターン、相手フィールド全員へ1回ずつ攻撃できる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET19",
+    "name": "ヨーグルクライマー",
+    "stage": "middle",
+    "atk": 155,
+    "def": 185,
+    "skill": "次の相手ターン終了まで、このフィギュアのATKを25、DEFを30アップする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "SWEET20",
+    "name": "りんごアメノツルギ",
+    "stage": "seed",
+    "atk": 155,
+    "def": 130,
+    "skill": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。攻撃対象変更・守護効果を無視して対象を選べる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET21",
+    "name": "かりんとうアクロバット",
+    "stage": "seed",
+    "atk": 75,
+    "def": 65,
+    "skill": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET22",
+    "name": "きびだんご旅人",
+    "stage": "seed",
+    "atk": 70,
+    "def": 60,
+    "skill": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET23",
+    "name": "ビスケット彫刻家",
+    "stage": "seed",
+    "atk": 65,
+    "def": 75,
+    "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET24",
+    "name": "ポン菓子屋台番",
+    "stage": "seed",
+    "atk": 60,
+    "def": 70,
+    "skill": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET25",
+    "name": "ミルク飴マジシャン",
+    "stage": "seed",
+    "atk": 65,
+    "def": 65,
+    "skill": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET26",
+    "name": "水あめ職人",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET27",
+    "name": "あんず棒スケーター",
+    "stage": "seed",
+    "atk": 110,
+    "def": 110,
+    "skill": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET28",
+    "name": "梅ジャム絵師",
+    "stage": "seed",
+    "atk": 95,
+    "def": 125,
+    "skill": "相手1体のDEF-20。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET29",
+    "name": "渦巻きキャンディ指揮者",
+    "stage": "seed",
+    "atk": 125,
+    "def": 150,
+    "skill": "味方1体のATK+20。その味方はこのターン守護効果を無視して攻撃対象を選べる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET30",
+    "name": "たい焼き船長",
+    "stage": "middle",
+    "atk": 180,
+    "def": 200,
+    "skill": "このターン相手フィールド全員へ1回ずつ攻撃できる。1体撃破するたび、このターン残っている相手全体のDEFを15ダウンする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "SWEET01",
+    "name": "モブラムネクーリエ",
+    "stage": "seed",
+    "atk": 60,
+    "def": 75,
+    "skill": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET02",
+    "name": "モブキャラメルフォージ",
+    "stage": "seed",
+    "atk": 80,
+    "def": 60,
+    "skill": "このターンATK+20。攻撃対象変更・守護効果を無視して任意の相手を攻撃できる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET03",
+    "name": "モブコンペイトスター",
+    "stage": "seed",
+    "atk": 60,
+    "def": 70,
+    "skill": "自分ライフを20回復する。味方1体は次に撃破される時、1度だけ撃破されず場に残る。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET04",
+    "name": "モブセンベイガード",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET05",
+    "name": "モブウエハースミューズ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 65,
+    "skill": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET06",
+    "name": "モブドロップタンブラー",
+    "stage": "seed",
+    "atk": 75,
+    "def": 60,
+    "skill": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET07",
+    "name": "モブショココイン船長",
+    "stage": "seed",
+    "atk": 115,
+    "def": 100,
+    "skill": "このターン、相手フィールドの各フィギュアへ1回ずつ攻撃できる。2体目以降への攻撃時ATK+10。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET08",
+    "name": "モブモナカオニパティシエ",
+    "stage": "seed",
+    "atk": 100,
+    "def": 120,
+    "skill": "自分ライフを20回復し、味方全体のDEF+20。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET09",
+    "name": "モブゼリールミナリス",
+    "stage": "seed",
+    "atk": 130,
+    "def": 150,
+    "skill": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET10",
+    "name": "モブワタアメ雲龍王",
+    "stage": "seed",
+    "atk": 140,
+    "def": 150,
+    "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+40。差分ライフダメージは0。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB001",
+    "name": "モブススケ",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB002",
+    "name": "モブコバネ",
+    "stage": "seed",
+    "atk": 65,
+    "def": 75,
+    "skill": "このターンATK+20。このフィギュアがこのターン相手を撃破した時、1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB003",
+    "name": "モブエラポン",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "手札1体をデッキ下へ戻し、同じ属性を持つシードソウル1体をデッキから手札へ加える。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB004",
+    "name": "モブヒヤリ",
+    "stage": "seed",
+    "atk": 110,
+    "def": 150,
+    "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+40。差分ライフダメージは0。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB005",
+    "name": "モブヌイガミ",
+    "stage": "seed",
+    "atk": 65,
+    "def": 75,
+    "skill": "このフィギュアを手札へ戻し、その攻撃を終了する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB006",
+    "name": "モブトドケ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB007",
+    "name": "モブヒロイ",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB008",
+    "name": "モブミハリ",
+    "stage": "seed",
+    "atk": 105,
+    "def": 155,
+    "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB009",
+    "name": "モブトモシ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB010",
+    "name": "モブツギハギ",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB016",
+    "name": "モブシオリ",
+    "stage": "seed",
+    "atk": 145,
+    "def": 125,
+    "skill": "相手のソウルスキルを無効にする。その後、自分フィールドのフィギュア1体のATKとDEFを+20する。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB017",
+    "name": "モブユラリ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "このターンATK+20。このフィギュアがこのターン相手を撃破した時、1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB018",
+    "name": "モブホノリ",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "このターンATK+20。攻撃対象変更・守護効果を無視して任意の相手を攻撃できる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB019",
+    "name": "モブケムリン",
+    "stage": "seed",
+    "atk": 110,
+    "def": 90,
+    "skill": "相手1体のATK-30。そのフィギュアが次に攻撃するまでDEFも-20。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB020",
+    "name": "モブスナラ",
+    "stage": "seed",
+    "atk": 100,
+    "def": 80,
+    "skill": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB021",
+    "name": "モブハナミ",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "自分ライフを20回復する。撃破済みのシードソウル1体をシードデッキの一番下へ戻す。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB022",
+    "name": "モブアマネ",
+    "stage": "seed",
+    "atk": 65,
+    "def": 75,
+    "skill": "味方全体のDEF+20。次の相手ターン、ATK/DEF低下効果を1回無効にする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB023",
+    "name": "モブスミト",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "相手フィールド全体のDEF-10。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB024",
+    "name": "モブカゼル",
+    "stage": "seed",
+    "atk": 100,
+    "def": 150,
+    "skill": "次の相手ターン終了まで、このフィギュアのATK+30、DEF+20。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB025",
+    "name": "モブコケネ",
+    "stage": "seed",
+    "atk": 90,
+    "def": 115,
+    "skill": "自分ライフを20回復し、味方全体のDEF+20。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB026",
+    "name": "モブユウヒ",
+    "stage": "seed",
+    "atk": 135,
+    "def": 120,
+    "skill": "このターンATK+30。相手のDEF上昇効果を無視し、撃破時の差分ライフダメージ+10。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB027",
+    "name": "モブシオナ",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "手札1体をデッキ下へ戻し、同じ属性を持つシードソウル1体をデッキから手札へ加える。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB028",
+    "name": "モブユメル",
+    "stage": "seed",
+    "atk": 105,
+    "def": 145,
+    "skill": "相手1体のATK-30。次の相手ターン、そのフィギュアはソウルスキルを発動できない。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB029",
+    "name": "モブユラビ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "味方1体のATK+20。その味方はこのターン守護効果を無視して攻撃対象を選べる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB030",
+    "name": "モブイシマル",
+    "stage": "seed",
+    "atk": 115,
+    "def": 155,
+    "skill": "味方全体のDEF+30。次の相手ターン、最初に発生する差分ライフダメージを0にする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB031",
+    "name": "モブヌノヒラ",
+    "stage": "seed",
+    "atk": 65,
+    "def": 75,
+    "skill": "味方1体に、このフィギュアが持つ通常タグ1つをターン終了まで追加する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB032",
+    "name": "モブサビネ",
+    "stage": "seed",
+    "atk": 100,
+    "def": 80,
+    "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB033",
+    "name": "モブツギト",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "手札1体をデッキ下へ戻し、同じタグを1つ以上持つシード1体を手札へ加える。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB034",
+    "name": "モブシロガネ",
+    "stage": "seed",
+    "atk": 120,
+    "def": 140,
+    "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB035",
+    "name": "モブレンガン",
+    "stage": "seed",
+    "atk": 120,
+    "def": 85,
+    "skill": "このターンATK+20。撃破した場合、別の相手1体へ追加攻撃できる。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB036",
+    "name": "モブオビリン",
+    "stage": "seed",
+    "atk": 90,
+    "def": 90,
+    "skill": "このターンATK+20。このフィギュアがこのターン相手を撃破した時、1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB037",
+    "name": "モブクモリ",
+    "stage": "seed",
+    "atk": 90,
+    "def": 115,
+    "skill": "味方全体のDEF+20。次の相手ターン、最初に発生する差分ライフダメージを0にする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB038",
+    "name": "モブカケラ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB039",
+    "name": "モブマントル",
+    "stage": "seed",
+    "atk": 120,
+    "def": 150,
+    "skill": "自分フィールド全体のATKとDEFを+20する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB040",
+    "name": "モブホツレ",
+    "stage": "seed",
+    "atk": 100,
+    "def": 150,
+    "skill": "相手1体のDEF-30。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB041",
+    "name": "モブスナリ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB042",
+    "name": "モブヤギリ",
+    "stage": "seed",
+    "atk": 60,
+    "def": 80,
+    "skill": "このフィギュアを対象にした攻撃を1回無効にし、自分ライフを10回復する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB043",
+    "name": "モブツノマル",
+    "stage": "seed",
+    "atk": 65,
+    "def": 75,
+    "skill": "このターンATK+20。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB044",
+    "name": "モブモクレン",
+    "stage": "seed",
+    "atk": 155,
+    "def": 115,
+    "skill": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB046",
+    "name": "モブサラリ",
+    "stage": "seed",
+    "atk": 65,
+    "def": 75,
+    "skill": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB047",
+    "name": "モブヒソネ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 70,
+    "skill": "このフィギュアを手札へ戻し、その攻撃を終了する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "MB048",
+    "name": "モブコロガネ",
+    "stage": "seed",
+    "atk": 100,
+    "def": 145,
+    "skill": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "MB050",
+    "name": "モブクルリン",
+    "stage": "seed",
+    "atk": 150,
+    "def": 120,
+    "skill": "このターン、相手フィールドの各フィギュアへ1回ずつ攻撃できる。2体目以降への攻撃時ATK+15。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "BFX001",
+    "name": "モブカセットクレープ",
+    "stage": "seed",
+    "atk": 80,
+    "def": 100,
+    "skill": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX007",
+    "name": "モブソーダポケベル",
+    "stage": "seed",
+    "atk": 80,
+    "def": 100,
+    "skill": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX008",
+    "name": "モブワッフルキーボード",
+    "stage": "seed",
+    "atk": 70,
+    "def": 110,
+    "skill": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX009",
+    "name": "モブキャンディアンテナ",
+    "stage": "seed",
+    "atk": 90,
+    "def": 90,
+    "skill": "自分ライフを20消費し、このフィギュアと同じ属性を1つ以上持つシード1体をデッキから手札へ加える。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX010",
+    "name": "モブパフェメトロノーム",
+    "stage": "seed",
+    "atk": 70,
+    "def": 110,
+    "skill": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX011",
+    "name": "モブジェリーポラロイド",
+    "stage": "middle",
+    "atk": 125,
+    "def": 155,
+    "skill": "自分ライフを10回復する。シードデッキの上から3体までを確認し、1体を手札へ加える。残りの順番は変えない。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "BFX012",
+    "name": "モブマカロンケーブル",
+    "stage": "seed",
+    "atk": 90,
+    "def": 90,
+    "skill": "自分の墓地からシード1体を手札へ戻す。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX013",
+    "name": "モブトーストビート",
+    "stage": "seed",
+    "atk": 100,
+    "def": 80,
+    "skill": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX014",
+    "name": "モブチェリーディスクマン",
+    "stage": "seed",
+    "atk": 80,
+    "def": 100,
+    "skill": "自分の墓地からシード1体を手札へ戻す。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX015",
+    "name": "モブモチシンセ",
+    "stage": "seed",
+    "atk": 70,
+    "def": 110,
+    "skill": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX016",
+    "name": "モブシャーベットホーン",
+    "stage": "seed",
+    "atk": 90,
+    "def": 90,
+    "skill": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX019",
+    "name": "モブクッキーポータブル",
+    "stage": "seed",
+    "atk": 80,
+    "def": 100,
+    "skill": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX023",
+    "name": "モブゼリーステーション",
+    "stage": "middle",
+    "atk": 145,
+    "def": 175,
+    "skill": "自分ライフを20消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "BFX027",
+    "name": "モブタルトテレキャスター",
+    "stage": "seed",
+    "atk": 110,
+    "def": 90,
+    "skill": "相手1体のATK-10。相手ライフに20ダメージを与える。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX030",
+    "name": "モブマシュマロテレポップ",
+    "stage": "seed",
+    "atk": 90,
+    "def": 110,
+    "skill": "手札の別の1体を墓地へ送り、相手フィールドのシード1体を相手の手札へ戻す。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX033",
+    "name": "モブチョコミキサー",
+    "stage": "seed",
+    "atk": 140,
+    "def": 140,
+    "skill": "手札の別の1体を墓地へ送り、シードデッキから2体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX034",
+    "name": "モブソフトラジオスター",
+    "stage": "seed",
+    "atk": 120,
+    "def": 160,
+    "skill": "次の相手ターン終了まで、このフィギュアと同じ属性を1つ以上持つ味方全体のATKとDEFを+20する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX035",
+    "name": "モブワッフルアーケイダー",
+    "stage": "middle",
+    "atk": 145,
+    "def": 125,
+    "skill": "相手1体のDEF-10。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。シードデッキから1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX040",
+    "name": "モブソーダ・エコーフィン",
+    "stage": "middle",
+    "atk": 140,
+    "def": 160,
+    "skill": "このフィギュアを対象にした攻撃を無効にし、相手ライフに20ダメージを与える。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX042",
+    "name": "モブシュガー・ビデオビート",
+    "stage": "middle",
+    "atk": 150,
+    "def": 150,
+    "skill": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX043",
+    "name": "モブラズベリー・ノイズフォックス",
+    "stage": "middle",
+    "atk": 145,
+    "def": 155,
+    "skill": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX045",
+    "name": "モブモノクローム・チョコロール",
+    "stage": "mob",
+    "atk": 260,
+    "def": 280,
+    "skill": "自分の墓地からシード1体を手札へ戻し、自分ライフを30回復する。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "BFX046",
+    "name": "モブクレセント・ミックス",
+    "stage": "middle",
+    "atk": 185,
+    "def": 175,
+    "skill": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手にも攻撃できる。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "BFX050",
+    "name": "モブパルフェ・ディスコオーロラ",
+    "stage": "mob",
+    "atk": 250,
+    "def": 290,
+    "skill": "自分ライフを30回復し、次の相手ターン終了まで味方全体のDEFを30アップする。",
+    "decision": "adjusted"
+  },
+  {
+    "id": "NS2_055",
+    "name": "モブアメロン",
+    "stage": "mob",
+    "atk": 315,
+    "def": 315,
+    "skill": "メインスキル:相手がステータスアップのスキルを使った時、アップ効果をダウン効果に変更する。\nパッシブ:とびっきりのスイーツ、美味しい食べ物 のタグを持つ自分の場のフィギュアのDEFを30アップする。",
+    "decision": "explicit-user-values-preserved"
+  },
+  {
+    "id": "BFX051",
+    "name": "モブアクア・オービット",
+    "stage": "mob",
+    "atk": 270,
+    "def": 310,
+    "skill": "自分ライフを30回復し、自分の場の水属性フィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "BFX052",
+    "name": "モブキャラメル・ビートキング",
+    "stage": "mob",
+    "atk": 300,
+    "def": 300,
+    "skill": "自分の場のMUSICタグを持つフィギュア全員のATKとDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET31",
+    "name": "ソーダスプラッシャー",
+    "stage": "seed",
+    "atk": 80,
+    "def": 70,
+    "skill": "自分の場の水属性フィギュア全員のDEFを10アップする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET32",
+    "name": "キャラメルトレッカー",
+    "stage": "seed",
+    "atk": 75,
+    "def": 85,
+    "skill": "自分ライフを20回復する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET33",
+    "name": "キャンディウィッチ",
+    "stage": "seed",
+    "atk": 100,
+    "def": 100,
+    "skill": "相手フィギュア1体のATKを15ダウンする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET34",
+    "name": "せんべいシールド",
+    "stage": "seed",
+    "atk": 85,
+    "def": 120,
+    "skill": "自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを15アップする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET35",
+    "name": "ビスケットスカウト",
+    "stage": "middle",
+    "atk": 155,
+    "def": 145,
+    "skill": "自分の場の風属性フィギュア全員のATKを20アップする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET36",
+    "name": "ワッフルアコーディオン",
+    "stage": "middle",
+    "atk": 140,
+    "def": 165,
+    "skill": "自分の場のMUSICタグを持つフィギュア全員のDEFを20アップする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET37",
+    "name": "ソフトクリームサーファー",
+    "stage": "seed",
+    "atk": 110,
+    "def": 95,
+    "skill": "このターン、自分の場の水属性フィギュア全員のATKを20アップする。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET38",
+    "name": "キャンディ・キャプテン",
+    "stage": "mob",
+    "atk": 290,
+    "def": 250,
+    "skill": "このターン2回まで攻撃でき、攻撃対象のかばう効果を無視する。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET39",
+    "name": "クリーム・グランシェフ",
+    "stage": "mob",
+    "atk": 260,
+    "def": 300,
+    "skill": "自分ライフを30回復し、自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを20アップする。能力変更は対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET40",
+    "name": "カップケーキヒーロー",
+    "stage": "mob",
+    "atk": 300,
+    "def": 260,
+    "skill": "自分の場の美味しい食べ物タグを持つフィギュア全員のATKを20アップする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET41",
+    "name": "サブレガーディアン",
+    "stage": "mob",
+    "atk": 250,
+    "def": 320,
+    "skill": "自分の場のとびっきりのスイーツタグを持つフィギュア全員は、次に撃破される時に1度だけ場に残る。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "SWEET42",
+    "name": "サブレウィング",
+    "stage": "middle",
+    "atk": 165,
+    "def": 140,
+    "skill": "自分の場の風属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "ECL_S04",
+    "name": "月環の赤灯術師",
+    "stage": "seed",
+    "atk": 75,
+    "def": 70,
+    "skill": "相手フィギュア1体のDEFを10ダウンする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  },
+  {
+    "id": "ECL_S05",
+    "name": "月環の紅帽術師",
+    "stage": "seed",
+    "atk": 105,
+    "def": 90,
+    "skill": "自分の場の火属性フィギュア全員のATKを15アップする。対象が場を離れるまで継続。",
+    "decision": "role-and-stage-reviewed-retained"
+  }
+]

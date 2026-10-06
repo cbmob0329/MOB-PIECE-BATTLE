@@ -3,7 +3,7 @@ import * as g from '../src/game/soul-battle.js';
 import {putStoredCard,storedUsage,moveStoredCard,topStoredCard} from '../src/game/skill-budget.js';
 import {pieceStarterDeck} from '../src/game/piece-starters.js';
 const deck=pieceStarterDeck('materials-balloon');
-const fresh=()=>{const s=g.createSoulBattle([deck,deck]);for(const p of s.players){p.hand=[];p.handBonuses=[];p.field=[null,null,null];p.reserve=[];p.grave=[];p.destroyed=[];}return s;};
+const fresh=()=>{const s=g.createSoulBattle([deck,deck]);s.turn=3;for(const p of s.players){p.hand=[];p.handBonuses=[];p.field=[null,null,null];p.reserve=[];p.grave=[];p.destroyed=[];}return s;};
 const put=(s,side,id,slot=0)=>s.players[side].field[slot]={id,uid:++s.serial,summonTurn:0,skillUsesUsed:0,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],extra:0,permanentAtk:0,permanentDef:0};
 const resolve=s=>{for(let i=0;i<12&&s.pending;i++)g.passReaction(s,1-s.pending.side);};
 const cast=(s,side,f)=>{g.useSkill(s,side,f.uid,g.cpuOptions(s,side,f.uid));resolve(s);};
@@ -25,7 +25,7 @@ test('Normal fusion material lock remains; next-turn fusion and same-ID reinforc
  const q=fresh(),f=put(q,0,'01');q.players[0].hand=['01'];f.skillUsesUsed=1;f.skillTurn=q.turn-1;const r2=g.fusionOptions(q,0,[f.uid,{handIndex:0}])[0];assert(r2.resonance);g.fuse(q,0,[f.uid,{handIndex:0}],r2.id);assert.equal(g.skillBudget(q,0,q.players[0].field[0].uid).remaining,1);
 });
 test('Returning to hand preserves usage and turn lock through resummon',()=>{
- const s=fresh(),p=s.players[0],f=put(s,0,'03');assert(g.skillPlan(f).replaceSeed);cast(s,0,f);assert.equal(p.field[0],null);const i=p.hand.indexOf('03');assert.equal(g.skillBudget(s,0,{handIndex:i}).remaining,0);assert(!g.canSkill(s,0,{handIndex:i}));const next=g.summon(s,0,i,0);assert.equal(next.skillUsesUsed,1);assert.equal(next.skillTurn,s.turn);assert(!g.canSkill(s,0,next.uid));
+ const s=fresh(),p=s.players[0],f=put(s,0,'13');assert(g.skillPlan(f).replaceSeed);cast(s,0,f);assert.equal(p.field[0],null);const i=p.hand.indexOf('13');assert.equal(g.skillBudget(s,0,{handIndex:i}).remaining,0);assert(!g.canSkill(s,0,{handIndex:i}));const next=g.summon(s,0,i,0);assert.equal(next.skillUsesUsed,1);assert.equal(next.skillTurn,s.turn);assert(!g.canSkill(s,0,next.uid));
 });
 test('Death revival restores full usage while keeping existing instance action defaults; passives spend nothing',()=>{
  const s=fresh(),p=s.players[1];s.phase='battle';const a=put(s,0,'02'),victim=put(s,1,'NS2_032');a.permanentAtk=1000;putStoredCard(p,'grave','01',{skillUsesUsed:1,skillTurn:s.turn});g.attack(s,0,a.uid,victim.uid);resolve(s);const revived=p.field.find(f=>f?.id==='01');assert(revived);assert.equal(g.skillBudget(s,1,revived.uid).remaining,1);assert.equal(revived.skillTurn,-1);assert.equal(revived.attacks,0);assert.equal(victim.skillUsesUsed,0);

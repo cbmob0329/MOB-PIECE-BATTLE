@@ -1,3 +1,4 @@
+import balance from './oct06-balance.json' with {type:'json'};
 import {applyOct06Draft} from './oct06-draft.js';
 import data from './oct06-spec.json' with {type:'json'};
 import {matchesMaterial,recipeMaterialClass} from '../game/fusion-rules.js';
@@ -9,6 +10,7 @@ export function applyOct06Spec(catalog){
  const ensureTag=name=>{if(!tagByName.has(name)){const id=name==='眠る才能'?'oct06-latent-talent':'oct06-puni-series';if(tags.some(t=>t.id===id))throw Error('Duplicate Oct06 tag ID');tags.push({id,name});tagByName.set(name,id);}return tagByName.get(name);};
  const figures=catalog.figures.map(f=>({...f,tags:[...f.tags]})),by=new Map(figures.map(f=>[f.id,f]));
  for(const p of data.patches){const f=by.get(p.id);if(!f)throw Error('Unknown Oct06 figure '+p.id);f.tags=[...new Set([...f.tags,...p.addTags.map(ensureTag)])];if(p.soulClass)f.soulClass=p.soulClass;}
+ for(const {id,after:a}of balance.changes){const f=by.get(id);f.atk=a.atk;f.def=a.def;if(a.runtimePlan)f.soulSkill={...f.soulSkill,runtimePlan:a.runtimePlan,description:a.description};}
  const sourceRecipes=applyOct06Draft(figures,catalog.recipes);
  const replaced=new Set(data.recipes.map(r=>r.target));
  const active=figures.filter(f=>!oct06RetiredIds.has(f.id)),activeBy=new Map(active.map(f=>[f.id,f]));

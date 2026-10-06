@@ -1,0 +1,573 @@
+{
+  "source": "2026-10-06 stage audit, explicit 23 changes protected",
+  "changes": [
+    {
+      "id": "BFX011",
+      "name": "モブジェリーポラロイド",
+      "before": {
+        "soulClass": "middle",
+        "atk": 80,
+        "def": 100,
+        "skill": "シードデッキの上から3体までを確認し、その中の1体を手札へ加える。残りの順番は変えない。"
+      },
+      "after": {
+        "soulClass": "middle",
+        "atk": 125,
+        "def": 155,
+        "runtimePlan": {
+          "scout": true,
+          "heal": 10
+        },
+        "description": "自分ライフを10回復する。シードデッキの上から3体までを確認し、1体を手札へ加える。残りの順番は変えない。"
+      },
+      "reason": "Middle探索支援。選択ドローを維持して生存力を補強。"
+    },
+    {
+      "id": "BFX023",
+      "name": "モブゼリーステーション",
+      "before": {
+        "soulClass": "middle",
+        "atk": 90,
+        "def": 110,
+        "skill": "自分ライフを30消費し、相手のソウルスキルを無効にする。その後1体ドローする。"
+      },
+      "after": {
+        "soulClass": "middle",
+        "atk": 145,
+        "def": 175,
+        "runtimePlan": {
+          "lifeCost": 20,
+          "cancelSkill": true,
+          "draw": 1
+        },
+        "description": "自分ライフを20消費し、相手のソウルスキルを無効にする。その後1体ドローする。"
+      },
+      "reason": "Middle妨害。融合コストに見合う耐久と軽い発動コスト。"
+    },
+    {
+      "id": "BFX045",
+      "name": "モブモノクローム・チョコロール",
+      "before": {
+        "soulClass": "mob",
+        "atk": 140,
+        "def": 160,
+        "skill": "自分の墓地からシード1体を手札へ戻す。"
+      },
+      "after": {
+        "soulClass": "mob",
+        "atk": 260,
+        "def": 280,
+        "runtimePlan": {
+          "recoverSeed": true,
+          "heal": 30
+        },
+        "description": "自分の墓地からシード1体を手札へ戻し、自分ライフを30回復する。"
+      },
+      "reason": "MOB回収支援。旧Middle基礎値と単機能を改善。"
+    },
+    {
+      "id": "BFX046",
+      "name": "モブクレセント・ミックス",
+      "before": {
+        "soulClass": "middle",
+        "atk": 220,
+        "def": 220,
+        "skill": "このターン最大3回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。攻撃対象は毎回自由で、同じ相手にも複数回攻撃できる。ダイレクトアタック不可。"
+      },
+      "after": {
+        "soulClass": "middle",
+        "atk": 185,
+        "def": 175,
+        "runtimePlan": {
+          "attacks": 2,
+          "ramp": 20
+        },
+        "description": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+20（累積）。同じ相手にも攻撃できる。"
+      },
+      "reason": "MOBレアのMiddle連撃役。旧MOB段階の3連撃を軽減。"
+    },
+    {
+      "id": "BFX050",
+      "name": "モブパルフェ・ディスコオーロラ",
+      "before": {
+        "soulClass": "mob",
+        "atk": 210,
+        "def": 250,
+        "skill": "自分ライフを20回復し、味方全体のDEF+20。"
+      },
+      "after": {
+        "soulClass": "mob",
+        "atk": 250,
+        "def": 290,
+        "runtimePlan": {
+          "heal": 30,
+          "target": "allies",
+          "def": 30,
+          "duration": "next-opponent"
+        },
+        "description": "自分ライフを30回復し、次の相手ターン終了まで味方全体のDEFを30アップする。"
+      },
+      "reason": "特定Middle2体を要するMOB守備支援。"
+    },
+    {
+      "id": "SWEET16",
+      "name": "ボーロバランサー",
+      "before": {
+        "soulClass": "middle",
+        "atk": 65,
+        "def": 70,
+        "skill": "このフィギュアが攻撃対象になった時、その攻撃による撃破を1回だけ無効にする。"
+      },
+      "after": {
+        "soulClass": "middle",
+        "atk": 120,
+        "def": 160,
+        "runtimePlan": {
+          "combatSurvive": true,
+          "combatDef": 20
+        },
+        "description": "このフィギュアが攻撃対象になった時、その攻撃中DEF+20。その攻撃による撃破を1回だけ無効にする。"
+      },
+      "reason": "RのMiddle守備役。撃破回避の個性を維持。"
+    },
+    {
+      "id": "SWEET17",
+      "name": "カステラフリッパー",
+      "before": {
+        "soulClass": "middle",
+        "atk": 120,
+        "def": 95,
+        "skill": "このターンATK+20。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。"
+      },
+      "after": {
+        "soulClass": "middle",
+        "atk": 180,
+        "def": 140,
+        "runtimePlan": {
+          "atk": 30,
+          "threshold": 30,
+          "damageBonus": 20
+        },
+        "description": "このターンATK+30。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。"
+      },
+      "reason": "SRのMiddle突破役。"
+    },
+    {
+      "id": "SWEET19",
+      "name": "ヨーグルクライマー",
+      "before": {
+        "soulClass": "middle",
+        "atk": 135,
+        "def": 145,
+        "skill": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。"
+      },
+      "after": {
+        "soulClass": "middle",
+        "atk": 155,
+        "def": 185,
+        "runtimePlan": {
+          "atk": 25,
+          "def": 30,
+          "duration": "next-opponent"
+        },
+        "description": "次の相手ターン終了まで、このフィギュアのATKを25、DEFを30アップする。"
+      },
+      "reason": "SSRのMiddle持久役。"
+    },
+    {
+      "id": "SWEET30",
+      "name": "たい焼き船長",
+      "before": {
+        "soulClass": "middle",
+        "atk": 145,
+        "def": 155,
+        "skill": "このターン相手フィールド全員へ1回ずつ攻撃できる。1体撃破するたび、残っている相手全体のDEF-10。"
+      },
+      "after": {
+        "soulClass": "middle",
+        "atk": 180,
+        "def": 200,
+        "runtimePlan": {
+          "eachTarget": true,
+          "killBreak": 15
+        },
+        "description": "このターン相手フィールド全員へ1回ずつ攻撃できる。1体撃破するたび、このターン残っている相手全体のDEFを15ダウンする。"
+      },
+      "reason": "URのMiddle全体突破役。"
+    },
+    {
+      "id": "MB004",
+      "name": "モブヒヤリ",
+      "before": {
+        "soulClass": "middle",
+        "atk": 130,
+        "def": 150,
+        "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+40。差分ライフダメージは0。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 110,
+        "def": 150,
+        "runtimePlan": {
+          "redirectSelf": true,
+          "combatDef": 40,
+          "noDamage": true
+        },
+        "description": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+40。差分ライフダメージは0。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB008",
+      "name": "モブミハリ",
+      "before": {
+        "soulClass": "middle",
+        "atk": 130,
+        "def": 150,
+        "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 105,
+        "def": 155,
+        "runtimePlan": {
+          "redirectSelf": true,
+          "combatDef": 50,
+          "noDamage": true
+        },
+        "description": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB016",
+      "name": "モブシオリ",
+      "before": {
+        "soulClass": "mob",
+        "atk": 220,
+        "def": 210,
+        "skill": "相手のソウルスキルを無効にする。その後、自分フィールドのフィギュア1体のATKとDEFを+40する。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 145,
+        "def": 125,
+        "runtimePlan": {
+          "cancelSkill": true,
+          "target": "ally",
+          "atk": 20,
+          "def": 20
+        },
+        "description": "相手のソウルスキルを無効にする。その後、自分フィールドのフィギュア1体のATKとDEFを+20する。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB019",
+      "name": "モブケムリン",
+      "before": {
+        "soulClass": "middle",
+        "atk": 150,
+        "def": 130,
+        "skill": "相手1体のATK-30。そのフィギュアが次に攻撃するまでDEFも-20。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 110,
+        "def": 90,
+        "runtimePlan": {
+          "target": "enemy",
+          "atk": -30,
+          "untilAttackDef": -20
+        },
+        "description": "相手1体のATK-30。そのフィギュアが次に攻撃するまでDEFも-20。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB024",
+      "name": "モブカゼル",
+      "before": {
+        "soulClass": "middle",
+        "atk": 120,
+        "def": 160,
+        "skill": "次の相手ターン終了まで、このフィギュアのATK+30、DEF+20。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 100,
+        "def": 150,
+        "runtimePlan": {
+          "atk": 30,
+          "def": 20,
+          "duration": "next-opponent"
+        },
+        "description": "次の相手ターン終了まで、このフィギュアのATK+30、DEF+20。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB025",
+      "name": "モブコケネ",
+      "before": {
+        "soulClass": "middle",
+        "atk": 130,
+        "def": 150,
+        "skill": "自分ライフを20回復し、味方全体のDEF+20。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 90,
+        "def": 115,
+        "runtimePlan": {
+          "heal": 20,
+          "target": "allies",
+          "def": 20
+        },
+        "description": "自分ライフを20回復し、味方全体のDEF+20。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB026",
+      "name": "モブユウヒ",
+      "before": {
+        "soulClass": "middle",
+        "atk": 140,
+        "def": 140,
+        "skill": "このターンATK+30。相手のDEF上昇効果を無視し、撃破時の差分ライフダメージ+10。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 135,
+        "def": 120,
+        "runtimePlan": {
+          "atk": 30,
+          "ignoreDef": true,
+          "damageBonus": 10
+        },
+        "description": "このターンATK+30。相手のDEF上昇効果を無視し、撃破時の差分ライフダメージ+10。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB028",
+      "name": "モブユメル",
+      "before": {
+        "soulClass": "middle",
+        "atk": 120,
+        "def": 160,
+        "skill": "相手1体のATK-30。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 105,
+        "def": 145,
+        "runtimePlan": {
+          "target": "enemy",
+          "atk": -30,
+          "skillLock": true
+        },
+        "description": "相手1体のATK-30。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB030",
+      "name": "モブイシマル",
+      "before": {
+        "soulClass": "mob",
+        "atk": 210,
+        "def": 220,
+        "skill": "味方全体のDEF+30。次の相手ターン、最初に発生する差分ライフダメージを0にする。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 115,
+        "def": 155,
+        "runtimePlan": {
+          "target": "allies",
+          "def": 30,
+          "damageShield": true
+        },
+        "description": "味方全体のDEF+30。次の相手ターン、最初に発生する差分ライフダメージを0にする。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB034",
+      "name": "モブシロガネ",
+      "before": {
+        "soulClass": "middle",
+        "atk": 140,
+        "def": 140,
+        "skill": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 120,
+        "def": 140,
+        "runtimePlan": {
+          "redirectSelf": true,
+          "combatDef": 50,
+          "noDamage": true
+        },
+        "description": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB035",
+      "name": "モブレンガン",
+      "before": {
+        "soulClass": "middle",
+        "atk": 150,
+        "def": 130,
+        "skill": "このターンATK+30。撃破した場合、別の相手1体へ追加攻撃できる。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 120,
+        "def": 85,
+        "runtimePlan": {
+          "atk": 20,
+          "killChain": true
+        },
+        "description": "このターンATK+20。撃破した場合、別の相手1体へ追加攻撃できる。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB037",
+      "name": "モブクモリ",
+      "before": {
+        "soulClass": "middle",
+        "atk": 130,
+        "def": 150,
+        "skill": "味方全体のDEF+20。次の相手ターン、最初に発生する差分ライフダメージを0にする。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 90,
+        "def": 115,
+        "runtimePlan": {
+          "target": "allies",
+          "def": 20,
+          "damageShield": true
+        },
+        "description": "味方全体のDEF+20。次の相手ターン、最初に発生する差分ライフダメージを0にする。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB039",
+      "name": "モブマントル",
+      "before": {
+        "soulClass": "mob",
+        "atk": 210,
+        "def": 220,
+        "skill": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 120,
+        "def": 150,
+        "runtimePlan": {
+          "target": "allies",
+          "atk": 20,
+          "def": 20,
+          "teamSurvive": true
+        },
+        "description": "自分フィールド全体のATKとDEFを+20する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB040",
+      "name": "モブホツレ",
+      "before": {
+        "soulClass": "middle",
+        "atk": 120,
+        "def": 160,
+        "skill": "相手1体のDEF-30。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 100,
+        "def": 150,
+        "runtimePlan": {
+          "target": "enemy",
+          "def": -30,
+          "fusionLock": true
+        },
+        "description": "相手1体のDEF-30。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB044",
+      "name": "モブモクレン",
+      "before": {
+        "soulClass": "mob",
+        "atk": 230,
+        "def": 200,
+        "skill": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 155,
+        "def": 115,
+        "runtimePlan": {
+          "attacks": 2,
+          "ramp": 15
+        },
+        "description": "このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+15（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB048",
+      "name": "モブコロガネ",
+      "before": {
+        "soulClass": "middle",
+        "atk": 120,
+        "def": 160,
+        "skill": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 100,
+        "def": 145,
+        "runtimePlan": {
+          "target": "allies",
+          "def": 20,
+          "debuffShield": "def",
+          "shieldNow": true
+        },
+        "description": "味方全体のDEF+20。次の相手ターン終了まで、相手のDEF低下系ソウルスキルを1回無効にする。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    },
+    {
+      "id": "MB050",
+      "name": "モブクルリン",
+      "before": {
+        "soulClass": "mob",
+        "atk": 230,
+        "def": 200,
+        "skill": "このターン、相手フィールドの各フィギュアへ1回ずつ攻撃できる。2体目以降への攻撃時ATK+30。"
+      },
+      "after": {
+        "soulClass": "seed",
+        "atk": 150,
+        "def": 120,
+        "runtimePlan": {
+          "eachTarget": true,
+          "laterAtk": 15
+        },
+        "description": "このターン、相手フィールドの各フィギュアへ1回ずつ攻撃できる。2体目以降への攻撃時ATK+15。"
+      },
+      "reason": "承認されたSeed化。元の役割とレア度を保ち、旧Middle/MOBの基礎値・過剰連撃を縮小。"
+    }
+  ]
+}

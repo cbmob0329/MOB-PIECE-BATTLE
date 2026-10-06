@@ -74,7 +74,7 @@
         "M4F_MIM_M02",
         "M4F_SIL_M01",
         "M4F_SIL_M02",
-        "BFX042",
+        "BFX011",
         "BFX046",
         "BFX050",
         "DUA_B01",
@@ -221,7 +221,7 @@
     {
       "id": "BFX-day",
       "name": "SWEET BEAT STREET",
-      "subtitle": "回復・防御と手札循環を組み合わせる混合編成 / 全94種",
+      "subtitle": "回復・防御と手札循環を組み合わせる混合編成 / 全108種",
       "image": "gacha/sweet-beat-street.png",
       "color": "#ff9a64",
       "featuredIds": [
@@ -327,13 +327,27 @@
         "NS2_032",
         "NS2_056",
         "NS2_057",
-        "NS2_059"
+        "NS2_059",
+        "BFX051",
+        "BFX052",
+        "SWEET31",
+        "SWEET32",
+        "SWEET33",
+        "SWEET34",
+        "SWEET35",
+        "SWEET36",
+        "SWEET37",
+        "SWEET38",
+        "SWEET39",
+        "SWEET40",
+        "SWEET41",
+        "SWEET42"
       ]
     },
     {
       "id": "BFX-remix",
       "name": "RETRO REMIX JAM",
-      "subtitle": "連撃・攻撃支援と手札検索を組み合わせる混合編成 / 全97種",
+      "subtitle": "連撃・攻撃支援と手札検索を組み合わせる混合編成 / 全99種",
       "image": null,
       "color": "#32c9e8",
       "featuredIds": [
@@ -442,13 +456,15 @@
         "NS2_052",
         "NS2_053",
         "NS2_054",
-        "NS2_055"
+        "NS2_055",
+        "BFX051",
+        "BFX052"
       ]
     },
     {
       "id": "BFX-night",
       "name": "MIDNIGHT SUGAR LIVE",
-      "subtitle": "弱体・回復と魔法支援を組み合わせる混合編成 / 全94種",
+      "subtitle": "弱体・回復と魔法支援を組み合わせる混合編成 / 全98種",
       "image": null,
       "color": "#9b76ef",
       "featuredIds": [
@@ -554,7 +570,11 @@
         "NS2_058",
         "mq:figene/73",
         "mq:figene/74",
-        "mq:figboss/44"
+        "mq:figboss/44",
+        "BFX051",
+        "BFX052",
+        "ECL_S04",
+        "ECL_S05"
       ]
     }
   ]

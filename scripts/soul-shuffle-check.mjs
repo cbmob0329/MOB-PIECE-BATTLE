@@ -17,7 +17,7 @@ for(const p of first.players){
 assert.deepEqual(deck,before);
 assert.equal(first.players[0].hand.length,5);assert.equal(first.players[0].deck.length,25);
 const next=first.players[0].deck[0];g.summon(first,0,0,0);
-g.beginBattle(first,0);g.endTurn(first,0);g.beginBattle(first,1);g.endTurn(first,1);
+assert.equal(g.canBeginBattle(first,0),false);assert.throws(()=>g.beginBattle(first,0));g.endTurn(first,0);g.beginBattle(first,1);g.endTurn(first,1);
 assert.equal(first.players[0].hand.at(-1),next);
 // The normal gameplay call must also shuffle, not only the injected test path.
 const originalRandom=Math.random;let calls=0;
