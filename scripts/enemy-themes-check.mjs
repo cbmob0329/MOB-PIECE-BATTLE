@@ -9,7 +9,7 @@ const put=(s,side,id,slot=0)=>s.players[side].field[slot]={id,uid:++s.serial,sum
 for(const e of freeEnemies){
  assert.deepEqual(freeEnemy(e.id).deck,e.deck);const allowed=new Set(e.deck),have={};for(const id of e.deck)have[id]=(have[id]||0)+1;
  for(const id of e.deck)assert.ok(enemyFigureAllowed(e,g.soulById.get(id)),e.id+' '+id);
- for(const id of enemySeedAnchors[e.id])assert.ok(allowed.has(id),e.id+' missing seed anchor '+id);
+ for(const id of enemySeedAnchors[e.id]||[])assert.ok(allowed.has(id),e.id+' missing seed anchor '+id);
  if(e.id==='grass')for(const id of e.deck)assert.ok(!g.soulById.get(id).tags.includes('48'),'castle in grass '+id);
  const check=s=>{for(const id of [...s.players[1].deck,...s.players[1].hand,...s.players[1].reserve,...s.players[1].grave,...s.players[1].field.filter(Boolean).map(f=>f.id)])assert.ok(allowed.has(id),e.id+' runtime escaped: '+id);};
  const fresh=()=>{const s=g.createSoulBattle([release.starters[0].deck,e.deck],undefined,{random:()=>.41});s.turn=3;s.active=1;s.phase='main';s.cpuStrategy=e.strategy;s.cpuThemeTags=e.themeTagIds;s.players.forEach(p=>p.field=[null,null,null]);return s;};
@@ -42,4 +42,4 @@ for(const e of freeEnemies){
 const grass=freeEnemies.find(e=>e.id==='grass'),original=grass.deck;
 try{grass.deck=[...original];grass.deck[0]='149';assert.ok(g.validateSoulDeck(grass.deck).valid);assert.throws(()=>freeEnemy('grass'),/再検証/);}finally{grass.deck=original;}
 fs.writeFileSync('docs/enemy-themes-validation.json',JSON.stringify(output,null,2));
-console.log('PASS ten legal themed decks; every recorded fusion/evolution route; skill/passive zone containment; 100 completed AI battles.');
+console.log('PASS '+freeEnemies.length+' legal themed decks; every recorded fusion/evolution route; skill/passive zone containment; '+freeEnemies.length*10+' completed AI battles.');

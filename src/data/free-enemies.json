@@ -34,13 +34,11 @@
       "90",
       "91",
       "93",
-      "piece:015",
+      "BFX001",
+      "M4F_DOK_V03",
       "ECL_S02",
-      "BFX019",
-      "piece:010",
-      "DUA_S01",
-      "mq:eventfig/21",
-      "DUA_S02",
+      "ECL_S02",
+      "BFX034",
       "50",
       "88",
       "88",
@@ -51,7 +49,8 @@
       "91",
       "91",
       "93",
-      "95",
+      "93",
+      "MB001",
       "96",
       "159",
       "mq:eventfig/31",
@@ -59,8 +58,9 @@
       "MB025",
       "MB035",
       "mq:eventfig/20",
-      "mq:eventfig/44",
-      "mq:eventfig/22",
+      "MB019",
+      "MB037",
+      "MB024",
       "160",
       "mq:eventfig/33",
       "MB039",
@@ -114,7 +114,7 @@
         "needs": {
           "45": 2,
           "90": 1,
-          "piece:015": 1,
+          "BFX001": 1,
           "mq:eventfig/31": 1,
           "mq:eventfig/32": 1,
           "mq:eventfig/33": 1
@@ -124,7 +124,7 @@
             "target": "mq:eventfig/31",
             "materials": [
               "45",
-              "piece:015"
+              "BFX001"
             ],
             "label": "草原 × 美味しい食べ物",
             "special": false
@@ -151,7 +151,7 @@
         "seeds": {
           "45": 2,
           "90": 1,
-          "piece:015": 1
+          "BFX001": 1
         }
       },
       {
@@ -285,7 +285,7 @@
       {
         "needs": {
           "93": 1,
-          "ECL_S02": 1,
+          "M4F_DOK_V03": 1,
           "mq:eventfig/20": 1
         },
         "steps": [
@@ -293,7 +293,7 @@
             "target": "mq:eventfig/20",
             "materials": [
               "93",
-              "ECL_S02"
+              "M4F_DOK_V03"
             ],
             "label": "モブサバンナ×闇属性",
             "special": false
@@ -301,88 +301,79 @@
         ],
         "seeds": {
           "93": 1,
-          "ECL_S02": 1
+          "M4F_DOK_V03": 1
         }
       },
       {
         "needs": {
+          "ECL_S02": 2,
+          "MB019": 1
+        },
+        "steps": [
+          {
+            "target": "MB019",
+            "materials": [
+              "ECL_S02",
+              "ECL_S02"
+            ],
+            "label": "闇属性 × 闇属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "ECL_S02": 2
+        }
+      },
+      {
+        "needs": {
+          "45": 1,
           "91": 1,
-          "95": 1,
-          "BFX019": 1
+          "MB037": 1
         },
         "steps": [
           {
-            "target": "95",
+            "target": "MB037",
             "materials": [
-              "91",
-              "BFX019"
+              "45",
+              "91"
             ],
-            "label": "figene04 × 地属性",
+            "label": "水属性 × 水属性",
             "special": false
           }
         ],
         "seeds": {
-          "91": 1,
-          "BFX019": 1
+          "45": 1,
+          "91": 1
         }
       },
       {
         "needs": {
-          "piece:010": 1,
-          "DUA_S01": 1,
-          "mq:eventfig/44": 1
+          "50": 1,
+          "BFX034": 1,
+          "MB024": 1
         },
         "steps": [
           {
-            "target": "mq:eventfig/44",
+            "target": "MB024",
             "materials": [
-              "piece:010",
-              "DUA_S01"
+              "50",
+              "BFX034"
             ],
-            "label": "タグ:ドラゴン × 火属性",
+            "label": "風属性 × 風属性",
             "special": false
           }
         ],
         "seeds": {
-          "piece:010": 1,
-          "DUA_S01": 1
-        }
-      },
-      {
-        "needs": {
-          "mq:eventfig/21": 1,
-          "DUA_S02": 1,
-          "mq:eventfig/22": 1
-        },
-        "steps": [
-          {
-            "target": "mq:eventfig/22",
-            "materials": [
-              "mq:eventfig/21",
-              "DUA_S02"
-            ],
-            "label": "21 × 火属性",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "mq:eventfig/21": 1,
-          "DUA_S02": 1
+          "50": 1,
+          "BFX034": 1
         }
       }
     ],
     "supportIds": [
-      "piece:015",
+      "BFX001",
+      "M4F_DOK_V03",
       "ECL_S02",
-      "BFX019",
-      "piece:010",
-      "DUA_S01",
-      "DUA_S02",
-      "MB025",
-      "MB035",
-      "MB039",
-      "MB050",
-      "MB030"
+      "BFX034"
     ],
     "supportSummary": "草原の進化先＋地・風の補助"
   },
@@ -417,7 +408,7 @@
       "102",
       "211",
       "212",
-      "ECL_S02",
+      "GHO_S03",
       "mq:eventfig/56",
       "BFX001",
       "BFX001",
@@ -462,14 +453,14 @@
           "104": 1,
           "161": 1,
           "162": 1,
-          "ECL_S02": 1
+          "GHO_S03": 1
         },
         "steps": [
           {
             "target": "161",
             "materials": [
               "101",
-              "ECL_S02"
+              "GHO_S03"
             ],
             "label": "砂漠タグ × 闇属性",
             "special": false
@@ -496,7 +487,7 @@
         "seeds": {
           "97": 2,
           "101": 1,
-          "ECL_S02": 1
+          "GHO_S03": 1
         }
       },
       {
@@ -677,20 +668,13 @@
       }
     ],
     "supportIds": [
-      "ECL_S02",
       "BFX001",
-      "M4F_DOK_V01",
-      "M4F_DOK_V02",
-      "M4F_DOK_V03",
       "RUN_S01",
       "RUN_S02",
       "RUN_S03",
-      "M4F_DOK_M01",
-      "M4F_DOK_M02",
       "RUN_M01",
       "RUN_M02",
       "MB030",
-      "M4F_DOK_B01",
       "RUN_B01"
     ],
     "supportSummary": "砂漠・遺跡の進化先＋補助"
@@ -714,7 +698,7 @@
       "219",
       "BFX050",
       "MB016",
-      "MB049"
+      "M4F_SIL_B01"
     ],
     "deck": [
       "43",
@@ -724,53 +708,53 @@
       "125",
       "126",
       "126",
-      "mq:eventfig/43",
       "BFX008",
-      "BFX001",
+      "ECL_S02",
       "BFX001",
       "BFX007",
-      "BFX007",
+      "M4F_SIL_V01",
+      "M4F_SIL_V02",
+      "M4F_SIL_V02",
+      "M4F_SIL_V03",
       "CRY_S02",
       "CRY_S03",
+      "mq:eventfig/43",
       "125",
       "125",
       "126",
       "43",
       "43",
+      "M4F_SIL_V01",
+      "M4F_SIL_V01",
+      "M4F_SIL_V02",
+      "M4F_SIL_V03",
+      "M4F_SIL_V03",
       "mq:eventfig/43",
       "mq:eventfig/43",
-      "BFX001",
-      "BFX007",
-      "BFX008",
-      "BFX008",
-      "BFX009",
-      "BFX009",
-      "BFX009",
-      "BFX010",
       "127",
       "128",
       "130",
-      "196",
-      "BFX034",
+      "BFX023",
       "BFX040",
       "MB004",
       "MB037",
+      "M4F_SIL_M01",
+      "M4F_SIL_M02",
       "CRY_M02",
-      "mq:eventfig/07",
       "129",
       "219",
       "BFX050",
       "MB016",
-      "MB049"
+      "M4F_SIL_B01"
     ],
     "routes": [
       {
         "needs": {
+          "43": 1,
           "124": 3,
           "127": 1,
           "128": 1,
-          "129": 1,
-          "mq:eventfig/43": 1
+          "129": 1
         },
         "steps": [
           {
@@ -786,7 +770,7 @@
             "target": "128",
             "materials": [
               "124",
-              "mq:eventfig/43"
+              "43"
             ],
             "label": "海底タグ×海底タグ",
             "special": false
@@ -802,8 +786,8 @@
           }
         ],
         "seeds": {
-          "124": 3,
-          "mq:eventfig/43": 1
+          "43": 1,
+          "124": 3
         }
       },
       {
@@ -852,86 +836,48 @@
       },
       {
         "needs": {
-          "BFX001": 2,
-          "BFX034": 1,
-          "BFX007": 2,
+          "124": 1,
+          "ECL_S02": 1,
+          "BFX001": 1,
+          "BFX023": 1,
+          "BFX007": 1,
           "BFX040": 1,
           "BFX050": 1
         },
         "steps": [
           {
-            "target": "BFX034",
+            "target": "BFX023",
             "materials": [
-              "BFX001",
+              "ECL_S02",
               "BFX001"
             ],
-            "label": "スイートビート・ストリート × スイート・ストリート・リミックス",
+            "label": "闇属性 × 美味しい食べ物",
             "special": false
           },
           {
             "target": "BFX040",
             "materials": [
-              "BFX007",
+              "124",
               "BFX007"
             ],
-            "label": "ミッドナイト・シュガーライブ × スイート・ストリート・リミックス",
+            "label": "水属性 × 美味しい食べ物",
             "special": false
           },
           {
             "target": "BFX050",
             "materials": [
-              "BFX034",
+              "BFX023",
               "BFX040"
             ],
-            "label": "スイートビート・ストリート × スイート・ストリート・リミックス",
+            "label": "モブゼリーステーション × モブソーダ・エコーフィン",
             "special": false
           }
         ],
         "seeds": {
-          "BFX001": 2,
-          "BFX007": 2
-        }
-      },
-      {
-        "needs": {
-          "43": 1,
-          "124": 3,
-          "MB004": 1,
-          "MB037": 1,
-          "MB016": 1
-        },
-        "steps": [
-          {
-            "target": "MB004",
-            "materials": [
-              "124",
-              "124"
-            ],
-            "label": "水属性 × 水属性",
-            "special": false
-          },
-          {
-            "target": "MB037",
-            "materials": [
-              "124",
-              "43"
-            ],
-            "label": "水属性 × 水属性",
-            "special": false
-          },
-          {
-            "target": "MB016",
-            "materials": [
-              "MB004",
-              "MB037"
-            ],
-            "label": "モブヒヤリ × モブクモリ",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "43": 1,
-          "124": 3
+          "124": 1,
+          "ECL_S02": 1,
+          "BFX001": 1,
+          "BFX007": 1
         }
       },
       {
@@ -940,7 +886,7 @@
           "125": 1,
           "MB004": 1,
           "MB037": 1,
-          "MB049": 1
+          "MB016": 1
         },
         "steps": [
           {
@@ -962,7 +908,7 @@
             "special": false
           },
           {
-            "target": "MB049",
+            "target": "MB016",
             "materials": [
               "MB004",
               "MB037"
@@ -974,6 +920,50 @@
         "seeds": {
           "124": 3,
           "125": 1
+        }
+      },
+      {
+        "needs": {
+          "M4F_SIL_V01": 1,
+          "M4F_SIL_V02": 2,
+          "M4F_SIL_M01": 1,
+          "M4F_SIL_V03": 1,
+          "M4F_SIL_M02": 1,
+          "M4F_SIL_B01": 1
+        },
+        "steps": [
+          {
+            "target": "M4F_SIL_M01",
+            "materials": [
+              "M4F_SIL_V01",
+              "M4F_SIL_V02"
+            ],
+            "label": "モブシルクラ・ムーン × モブシルクラ・ローゼ",
+            "special": false
+          },
+          {
+            "target": "M4F_SIL_M02",
+            "materials": [
+              "M4F_SIL_V02",
+              "M4F_SIL_V03"
+            ],
+            "label": "モブシルクラ・ローゼ × モブシルクラ・ミスト",
+            "special": false
+          },
+          {
+            "target": "M4F_SIL_B01",
+            "materials": [
+              "M4F_SIL_M01",
+              "M4F_SIL_M02"
+            ],
+            "label": "モブシルクラ・ムーンローゼ × モブシルクラ・ミストローゼ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "M4F_SIL_V01": 1,
+          "M4F_SIL_V02": 2,
+          "M4F_SIL_V03": 1
         }
       },
       {
@@ -997,64 +987,22 @@
           "CRY_S02": 1,
           "CRY_S03": 1
         }
-      },
-      {
-        "needs": {
-          "124": 2,
-          "mq:eventfig/07": 1
-        },
-        "steps": [
-          {
-            "target": "mq:eventfig/07",
-            "materials": [
-              "124",
-              "124"
-            ],
-            "label": "タグ:海底 × 水属性",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "124": 2
-        }
-      },
-      {
-        "needs": {
-          "124": 2,
-          "196": 1
-        },
-        "steps": [
-          {
-            "target": "196",
-            "materials": [
-              "124",
-              "124"
-            ],
-            "label": "海底 or 頼もしい仲間 × 水属性",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "124": 2
-        }
       }
     ],
     "supportIds": [
       "BFX008",
+      "ECL_S02",
       "BFX001",
       "BFX007",
       "CRY_S02",
       "CRY_S03",
-      "BFX009",
-      "BFX010",
-      "BFX034",
+      "BFX023",
       "BFX040",
       "MB004",
       "MB037",
       "CRY_M02",
       "BFX050",
-      "MB016",
-      "MB049"
+      "MB016"
     ],
     "supportSummary": "海底の全5ミドルと2MOB＋深海・水の補助"
   },
@@ -1074,7 +1022,7 @@
       "skill": "draw"
     },
     "aces": [
-      "BFX046",
+      "BFX045",
       "BFX050",
       "176",
       "M4F_NEO_B01",
@@ -1084,11 +1032,12 @@
       "116",
       "117",
       "118",
-      "BFX014",
+      "122",
       "BFX001",
-      "BFX001",
-      "BFX009",
+      "ECL_S02",
       "BFX008",
+      "BFX007",
+      "BFX007",
       "BFX030",
       "M4F_NEO_V01",
       "M4F_NEO_V02",
@@ -1096,12 +1045,9 @@
       "M4F_NEO_V03",
       "piece:023",
       "piece:002",
-      "piece:031",
+      "piece:010",
       "piece:004",
-      "BFX007",
-      "BFX007",
-      "mq:eventfig/26",
-      "BFX015",
+      "BFX009",
       "BFX027",
       "SWEET05",
       "SWEET18",
@@ -1111,18 +1057,20 @@
       "117",
       "118",
       "118",
+      "122",
+      "122",
       "121",
       "165",
-      "BFX033",
-      "BFX034",
+      "BFX011",
+      "BFX023",
+      "BFX040",
       "M4F_NEO_M01",
       "M4F_NEO_M02",
       "piece:022",
-      "piece:040",
-      "BFX040",
-      "mq:eventfig/29",
+      "piece:011",
+      "BFX043",
       "176",
-      "BFX046",
+      "BFX045",
       "BFX050",
       "M4F_NEO_B01",
       "piece:025"
@@ -1130,90 +1078,92 @@
     "routes": [
       {
         "needs": {
-          "BFX014": 1,
-          "BFX001": 2,
-          "BFX033": 1,
-          "BFX009": 1,
-          "BFX034": 1,
-          "BFX046": 1
+          "118": 1,
+          "BFX001": 1,
+          "BFX011": 1,
+          "ECL_S02": 1,
+          "BFX008": 1,
+          "BFX023": 1,
+          "BFX045": 1
         },
         "steps": [
           {
-            "target": "BFX033",
+            "target": "BFX011",
             "materials": [
-              "BFX014",
+              "118",
               "BFX001"
             ],
-            "label": "レトロリミックス・ジャム × スイート・ストリート・リミックス",
+            "label": "キュート × とびっきりのスイーツ",
             "special": false
           },
           {
-            "target": "BFX034",
+            "target": "BFX023",
             "materials": [
-              "BFX001",
-              "BFX009"
+              "ECL_S02",
+              "BFX008"
             ],
-            "label": "スイートビート・ストリート × スイート・ストリート・リミックス",
+            "label": "闇属性 × 美味しい食べ物",
             "special": false
           },
           {
-            "target": "BFX046",
+            "target": "BFX045",
             "materials": [
-              "BFX033",
-              "BFX034"
+              "BFX011",
+              "BFX023"
             ],
-            "label": "レトロリミックス・ジャム × スイート・ストリート・リミックス",
+            "label": "MUSIC × 美味しい食べ物",
             "special": false
           }
         ],
         "seeds": {
-          "BFX014": 1,
-          "BFX001": 2,
-          "BFX009": 1
+          "118": 1,
+          "BFX001": 1,
+          "ECL_S02": 1,
+          "BFX008": 1
         }
       },
       {
         "needs": {
-          "BFX001": 2,
-          "BFX034": 1,
-          "BFX014": 1,
-          "BFX008": 1,
-          "BFX033": 1,
+          "ECL_S02": 1,
+          "BFX001": 1,
+          "BFX023": 1,
+          "BFX007": 2,
+          "BFX040": 1,
           "BFX050": 1
         },
         "steps": [
           {
-            "target": "BFX034",
+            "target": "BFX023",
             "materials": [
-              "BFX001",
+              "ECL_S02",
               "BFX001"
             ],
-            "label": "スイートビート・ストリート × スイート・ストリート・リミックス",
+            "label": "闇属性 × 美味しい食べ物",
             "special": false
           },
           {
-            "target": "BFX033",
+            "target": "BFX040",
             "materials": [
-              "BFX014",
-              "BFX008"
+              "BFX007",
+              "BFX007"
             ],
-            "label": "レトロリミックス・ジャム × スイート・ストリート・リミックス",
+            "label": "水属性 × 美味しい食べ物",
             "special": false
           },
           {
             "target": "BFX050",
             "materials": [
-              "BFX034",
-              "BFX033"
+              "BFX023",
+              "BFX040"
             ],
-            "label": "スイートビート・ストリート × スイート・ストリート・リミックス",
+            "label": "モブゼリーステーション × モブソーダ・エコーフィン",
             "special": false
           }
         ],
         "seeds": {
-          "BFX001": 2,
-          "BFX014": 1,
-          "BFX008": 1
+          "ECL_S02": 1,
+          "BFX001": 1,
+          "BFX007": 2
         }
       },
       {
@@ -1311,9 +1261,9 @@
           "piece:023": 1,
           "piece:002": 1,
           "piece:022": 1,
-          "piece:031": 1,
+          "piece:010": 1,
           "piece:004": 1,
-          "piece:040": 1,
+          "piece:011": 1,
           "piece:025": 1
         },
         "steps": [
@@ -1327,19 +1277,19 @@
             "special": false
           },
           {
-            "target": "piece:040",
+            "target": "piece:011",
             "materials": [
-              "piece:031",
+              "piece:010",
               "piece:004"
             ],
-            "label": "モブ兵士 × ピースメイン",
+            "label": "ヒーローベル × ピースメイン",
             "special": false
           },
           {
             "target": "piece:025",
             "materials": [
               "piece:022",
-              "piece:040"
+              "piece:011"
             ],
             "label": "PB2 × ピースメイン",
             "special": false
@@ -1348,65 +1298,38 @@
         "seeds": {
           "piece:023": 1,
           "piece:002": 1,
-          "piece:031": 1,
+          "piece:010": 1,
           "piece:004": 1
         }
       },
       {
         "needs": {
-          "BFX007": 2,
-          "BFX040": 1
+          "122": 1,
+          "BFX009": 1,
+          "BFX043": 1
         },
         "steps": [
           {
-            "target": "BFX040",
+            "target": "BFX043",
             "materials": [
-              "BFX007",
-              "BFX007"
+              "122",
+              "BFX009"
             ],
-            "label": "ミッドナイト・シュガーライブ × スイート・ストリート・リミックス",
+            "label": "火属性 × とびっきりのスイーツ",
             "special": false
           }
         ],
         "seeds": {
-          "BFX007": 2
-        }
-      },
-      {
-        "needs": {
-          "mq:eventfig/26": 1,
-          "BFX015": 1,
-          "mq:eventfig/29": 1
-        },
-        "steps": [
-          {
-            "target": "mq:eventfig/29",
-            "materials": [
-              "mq:eventfig/26",
-              "BFX015"
-            ],
-            "label": "26 or 27 or 28 × 光属性",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "mq:eventfig/26": 1,
-          "BFX015": 1
+          "122": 1,
+          "BFX009": 1
         }
       }
     ],
     "supportIds": [
-      "M4F_NEO_V01",
-      "M4F_NEO_V02",
-      "M4F_NEO_V03",
+      "ECL_S02",
       "piece:002",
-      "piece:031",
       "piece:004",
-      "M4F_NEO_M01",
-      "M4F_NEO_M02",
       "piece:022",
-      "piece:040",
-      "M4F_NEO_B01",
       "piece:025"
     ],
     "supportSummary": "ネオン・MUSICの進化先＋音楽機材の補助"
@@ -1449,7 +1372,8 @@
       "179",
       "180",
       "208",
-      "BFX023",
+      "ECL_S02",
+      "CRY_S02",
       "152",
       "177",
       "178",
@@ -1460,14 +1384,13 @@
       "180",
       "208",
       "208",
-      "84",
-      "84",
-      "85",
+      "NS010",
+      "NS010",
       "151",
+      "153",
       "157",
       "158",
       "181",
-      "182",
       "183",
       "184",
       "192",
@@ -1483,11 +1406,12 @@
       {
         "needs": {
           "97": 1,
-          "149": 2,
+          "149": 1,
           "150": 1,
           "151": 1,
           "156": 1,
-          "192": 1
+          "192": 1,
+          "ECL_S02": 1
         },
         "steps": [
           {
@@ -1503,7 +1427,7 @@
             "target": "192",
             "materials": [
               "97",
-              "149"
+              "ECL_S02"
             ],
             "label": "砂漠 or 頼もしい仲間 × 闇属性",
             "special": false
@@ -1520,19 +1444,19 @@
         ],
         "seeds": {
           "97": 1,
-          "149": 2,
-          "150": 1
+          "149": 1,
+          "150": 1,
+          "ECL_S02": 1
         }
       },
       {
         "needs": {
-          "149": 1,
+          "149": 2,
           "150": 1,
           "151": 1,
-          "152": 1,
-          "157": 1,
+          "153": 1,
           "202": 1,
-          "BFX023": 1
+          "CRY_S02": 1
         },
         "steps": [
           {
@@ -1545,29 +1469,28 @@
             "special": false
           },
           {
-            "target": "157",
+            "target": "153",
             "materials": [
-              "152",
-              "BFX023"
+              "149",
+              "CRY_S02"
             ],
-            "label": "65×闇属性",
+            "label": "魔王城タグ×ネオン街タグ",
             "special": false
           },
           {
             "target": "202",
             "materials": [
               "151",
-              "157"
+              "153"
             ],
             "label": "魔王城タグ×2",
             "special": false
           }
         ],
         "seeds": {
-          "149": 1,
+          "149": 2,
           "150": 1,
-          "152": 1,
-          "BFX023": 1
+          "CRY_S02": 1
         }
       },
       {
@@ -1754,35 +1677,13 @@
           "149": 1,
           "179": 1
         }
-      },
-      {
-        "needs": {
-          "149": 1,
-          "178": 1,
-          "182": 1
-        },
-        "steps": [
-          {
-            "target": "182",
-            "materials": [
-              "178",
-              "149"
-            ],
-            "label": "figboss 20 × 魔法使いタグ",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "149": 1,
-          "178": 1
-        }
       }
     ],
     "supportIds": [
       "84",
       "97",
-      "BFX023",
-      "85",
+      "ECL_S02",
+      "CRY_S02",
       "192"
     ],
     "supportSummary": "魔王城の5MOB＋融合素材の補助"
@@ -2209,7 +2110,7 @@
       "NS2_021",
       "NS2_008",
       "NS2_025",
-      "mq:eventfig/24",
+      "BFX001",
       "NS2_027",
       "NS2_001",
       "NS2_037",
@@ -2429,7 +2330,7 @@
       {
         "needs": {
           "NS2_025": 1,
-          "mq:eventfig/24": 1,
+          "BFX001": 1,
           "NS2_045": 1,
           "NS2_027": 1,
           "NS2_005": 1,
@@ -2441,7 +2342,7 @@
             "target": "NS2_045",
             "materials": [
               "NS2_025",
-              "mq:eventfig/24"
+              "BFX001"
             ],
             "label": "025～028 × タグ:とびっきりのスイーツ",
             "special": false
@@ -2467,7 +2368,7 @@
         ],
         "seeds": {
           "NS2_025": 1,
-          "mq:eventfig/24": 1,
+          "BFX001": 1,
           "NS2_027": 1,
           "NS2_005": 1
         }
@@ -2548,7 +2449,7 @@
       "BFX009",
       "NS2_035",
       "NS2_021",
-      "mq:eventfig/24",
+      "BFX001",
       "NS2_001",
       "NS2_037",
       "BFX030",
@@ -2592,12 +2493,13 @@
       "NS2_035",
       "NS2_021",
       "NS2_014",
+      "NS2_025",
+      "BFX001",
       "NS2_037",
-      "BFX008",
-      "NS2_010",
+      "BFX030",
       "NS2_001",
       "NS2_007",
-      "NS2_012",
+      "NS2_010",
       "NS2_004",
       "NS2_033",
       "NS2_033",
@@ -2608,14 +2510,13 @@
       "NS2_036",
       "NS2_037",
       "NS2_037",
-      "BFX001",
       "NS2_046",
       "NS2_039",
       "NS2_047",
       "NS2_048",
       "NS2_041",
+      "NS2_045",
       "NS2_049",
-      "NS2_038",
       "NS2_040",
       "NS2_043",
       "NS2_042",
@@ -2810,48 +2711,48 @@
       },
       {
         "needs": {
+          "NS2_025": 1,
+          "BFX001": 1,
+          "NS2_045": 1,
           "NS2_037": 1,
-          "BFX008": 1,
+          "BFX030": 1,
           "NS2_049": 1,
-          "NS2_033": 1,
-          "NS2_010": 1,
-          "NS2_038": 1,
           "NS2_054": 1
         },
         "steps": [
           {
+            "target": "NS2_045",
+            "materials": [
+              "NS2_025",
+              "BFX001"
+            ],
+            "label": "025～028 × タグ:とびっきりのスイーツ",
+            "special": false
+          },
+          {
             "target": "NS2_049",
             "materials": [
               "NS2_037",
-              "BFX008"
+              "BFX030"
             ],
             "label": "037×光属性",
             "special": false
           },
           {
-            "target": "NS2_038",
-            "materials": [
-              "NS2_033",
-              "NS2_010"
-            ],
-            "label": "033×009～012",
-            "special": false
-          },
-          {
             "target": "NS2_054",
             "materials": [
-              "NS2_049",
-              "NS2_038"
+              "NS2_045",
+              "NS2_049"
             ],
-            "label": "049×闇属性",
+            "label": "045×光属性",
             "special": false
           }
         ],
         "seeds": {
+          "NS2_025": 1,
+          "BFX001": 1,
           "NS2_037": 1,
-          "BFX008": 1,
-          "NS2_033": 1,
-          "NS2_010": 1
+          "BFX030": 1
         }
       },
       {
@@ -2879,7 +2780,7 @@
       {
         "needs": {
           "NS2_034": 1,
-          "NS2_012": 1,
+          "NS2_010": 1,
           "NS2_043": 1
         },
         "steps": [
@@ -2887,7 +2788,7 @@
             "target": "NS2_043",
             "materials": [
               "NS2_034",
-              "NS2_012"
+              "NS2_010"
             ],
             "label": "034 × 010 or 012",
             "special": false
@@ -2895,7 +2796,7 @@
         ],
         "seeds": {
           "NS2_034": 1,
-          "NS2_012": 1
+          "NS2_010": 1
         }
       },
       {
@@ -2930,13 +2831,13 @@
       "NS2_013",
       "NS2_021",
       "NS2_014",
-      "BFX008",
-      "NS2_010",
+      "NS2_025",
+      "BFX001",
+      "BFX030",
       "NS2_001",
       "NS2_007",
-      "NS2_012",
-      "NS2_004",
-      "BFX001"
+      "NS2_010",
+      "NS2_004"
     ],
     "supportSummary": "アメ系統のミドル・MOB＋素材の補助"
   },
@@ -2957,26 +2858,29 @@
     "aces": [
       "190",
       "200",
-      "MB049",
+      "216",
       "piece:039",
       "piece:049"
     ],
     "deck": [
       "44",
       "47",
-      "70",
+      "72",
+      "73",
       "79",
       "185",
       "191",
-      "191",
+      "M4F_MIM_V01",
+      "M4F_MIM_V01",
+      "M4F_MIM_V02",
       "piece:031",
       "piece:031",
       "piece:002",
       "piece:002",
       "piece:005",
-      "piece:018",
-      "BFX027",
-      "FRG_S03",
+      "MB001",
+      "BFX034",
+      "191",
       "191",
       "44",
       "44",
@@ -2986,25 +2890,22 @@
       "185",
       "70",
       "70",
+      "70",
       "71",
       "71",
-      "71",
-      "72",
-      "72",
-      "72",
       "192",
       "193",
       "195",
-      "196",
-      "197",
       "198",
       "199",
+      "215",
+      "M4F_MIM_M01",
       "piece:038",
       "piece:040",
       "piece:046",
       "190",
       "200",
-      "MB049",
+      "216",
       "piece:039",
       "piece:049"
     ],
@@ -3055,11 +2956,12 @@
       },
       {
         "needs": {
-          "190": 1,
-          "191": 2,
+          "47": 1,
+          "191": 1,
           "192": 1,
-          "193": 1,
-          "200": 1
+          "200": 1,
+          "215": 1,
+          "M4F_MIM_V01": 1
         },
         "steps": [
           {
@@ -3072,79 +2974,72 @@
             "special": false
           },
           {
-            "target": "193",
+            "target": "215",
             "materials": [
-              "191"
+              "M4F_MIM_V01",
+              "47"
             ],
-            "kind": "evolution",
-            "label": "自身を破壊して召喚",
-            "special": false
-          },
-          {
-            "target": "190",
-            "materials": [
-              "192",
-              "193"
-            ],
-            "label": "主人公パーティー × 主人公パーティー",
+            "label": "読みかけの本タグ × 光属性",
             "special": false
           },
           {
             "target": "200",
             "materials": [
-              "190"
+              "192",
+              "215"
             ],
-            "kind": "evolution",
-            "label": "撃破後の条件召喚",
+            "label": "主人公パーティー × 読みかけの本",
             "special": false
           }
         ],
         "seeds": {
-          "191": 2
+          "47": 1,
+          "191": 1,
+          "M4F_MIM_V01": 1
         }
       },
       {
         "needs": {
-          "79": 1,
-          "185": 1,
-          "191": 1,
-          "195": 1,
-          "198": 1,
-          "MB049": 1
+          "73": 1,
+          "215": 1,
+          "216": 1,
+          "M4F_MIM_V01": 2,
+          "M4F_MIM_V02": 1,
+          "M4F_MIM_M01": 1
         },
         "steps": [
           {
-            "target": "195",
+            "target": "215",
             "materials": [
-              "191"
+              "M4F_MIM_V01",
+              "73"
             ],
-            "kind": "evolution",
-            "label": "自身を破壊して召喚",
+            "label": "読みかけの本タグ × 光属性",
             "special": false
           },
           {
-            "target": "198",
+            "target": "M4F_MIM_M01",
             "materials": [
-              "185",
-              "79"
+              "M4F_MIM_V01",
+              "M4F_MIM_V02"
             ],
-            "label": "草原 or 頼もしい仲間 × 地属性",
+            "label": "モブミミックル・ヴォルト × モブミミックル・スペード",
             "special": false
           },
           {
-            "target": "MB049",
+            "target": "216",
             "materials": [
-              "195",
-              "198"
+              "215",
+              "M4F_MIM_M01"
             ],
-            "label": "光属性 × 光属性",
+            "label": "figboss39 × 読みかけの本",
             "special": false
           }
         ],
         "seeds": {
-          "79": 1,
-          "185": 1,
-          "191": 1
+          "73": 1,
+          "M4F_MIM_V01": 2,
+          "M4F_MIM_V02": 1
         }
       },
       {
@@ -3193,7 +3088,7 @@
       },
       {
         "needs": {
-          "piece:018": 1,
+          "MB001": 1,
           "piece:002": 2,
           "piece:046": 1,
           "piece:031": 1,
@@ -3204,7 +3099,7 @@
           {
             "target": "piece:046",
             "materials": [
-              "piece:018",
+              "MB001",
               "piece:002"
             ],
             "label": "ボクサー × ピースメイン",
@@ -3230,52 +3125,52 @@
           }
         ],
         "seeds": {
-          "piece:018": 1,
+          "MB001": 1,
           "piece:002": 2,
           "piece:031": 1
         }
       },
       {
         "needs": {
+          "72": 1,
           "185": 1,
-          "197": 1,
-          "BFX027": 1
+          "195": 1
         },
         "steps": [
           {
-            "target": "197",
+            "target": "195",
             "materials": [
               "185",
-              "BFX027"
+              "72"
             ],
-            "label": "部族村 or 頼もしい仲間 × 雷属性",
+            "label": "ネオン街 or 頼もしい仲間 × 光属性",
             "special": false
           }
         ],
         "seeds": {
-          "185": 1,
-          "BFX027": 1
+          "72": 1,
+          "185": 1
         }
       },
       {
         "needs": {
-          "70": 1,
+          "79": 1,
           "185": 1,
-          "196": 1
+          "198": 1
         },
         "steps": [
           {
-            "target": "196",
+            "target": "198",
             "materials": [
               "185",
-              "70"
+              "79"
             ],
-            "label": "海底 or 頼もしい仲間 × 水属性",
+            "label": "草原 or 頼もしい仲間 × 地属性",
             "special": false
           }
         ],
         "seeds": {
-          "70": 1,
+          "79": 1,
           "185": 1
         }
       },
@@ -3283,14 +3178,14 @@
         "needs": {
           "185": 1,
           "199": 1,
-          "FRG_S03": 1
+          "BFX034": 1
         },
         "steps": [
           {
             "target": "199",
             "materials": [
               "185",
-              "FRG_S03"
+              "BFX034"
             ],
             "label": "砂漠 or 頼もしい仲間 × 風属性",
             "special": false
@@ -3298,26 +3193,30 @@
         ],
         "seeds": {
           "185": 1,
-          "FRG_S03": 1
+          "BFX034": 1
         }
       }
     ],
     "supportIds": [
-      "70",
+      "72",
+      "73",
       "79",
       "185",
+      "M4F_MIM_V01",
+      "M4F_MIM_V02",
       "piece:031",
       "piece:002",
       "piece:005",
-      "piece:018",
-      "BFX027",
-      "FRG_S03",
+      "MB001",
+      "BFX034",
+      "70",
       "71",
-      "72",
+      "215",
+      "M4F_MIM_M01",
       "piece:038",
       "piece:040",
       "piece:046",
-      "MB049",
+      "216",
       "piece:039",
       "piece:049"
     ],
@@ -3340,7 +3239,7 @@
     "aces": [
       "207",
       "MB016",
-      "MB049",
+      "218",
       "ECL_B01",
       "M4F_SIL_B01"
     ],
@@ -3349,21 +3248,21 @@
       "152",
       "152",
       "177",
-      "177",
       "178",
       "178",
       "179",
       "179",
       "180",
-      "BFX011",
+      "ECL_S02",
+      "ECL_S02",
       "M4F_SIL_V01",
       "M4F_SIL_V02",
       "M4F_SIL_V02",
-      "ECL_S02",
-      "ECL_S02",
+      "M4F_DOK_V03",
       "ECL_S03",
       "ECL_S01",
       "M4F_SIL_V03",
+      "177",
       "177",
       "178",
       "179",
@@ -3386,8 +3285,8 @@
       "ECL_M02",
       "M4F_SIL_M02",
       "207",
+      "218",
       "MB016",
-      "MB049",
       "ECL_B01",
       "M4F_SIL_B01"
     ],
@@ -3399,14 +3298,14 @@
           "157": 1,
           "158": 1,
           "207": 1,
-          "BFX011": 1
+          "ECL_S02": 1
         },
         "steps": [
           {
             "target": "157",
             "materials": [
               "152",
-              "BFX011"
+              "ECL_S02"
             ],
             "label": "65×闇属性",
             "special": false
@@ -3433,7 +3332,7 @@
         "seeds": {
           "84": 1,
           "152": 2,
-          "BFX011": 1
+          "ECL_S02": 1
         }
       },
       {
@@ -3484,48 +3383,46 @@
       },
       {
         "needs": {
-          "179": 1,
-          "180": 1,
-          "184": 1,
-          "M4F_SIL_V01": 1,
-          "M4F_SIL_V02": 1,
-          "M4F_SIL_M01": 1,
-          "MB049": 1
+          "152": 2,
+          "157": 1,
+          "177": 1,
+          "181": 1,
+          "218": 1,
+          "M4F_DOK_V03": 1
         },
         "steps": [
           {
-            "target": "184",
+            "target": "181",
             "materials": [
-              "180",
-              "179"
+              "177",
+              "152"
             ],
-            "label": "figboss 22 × 魔法使いタグ",
+            "label": "figboss 19 × 魔法使いタグ",
             "special": false
           },
           {
-            "target": "M4F_SIL_M01",
+            "target": "157",
             "materials": [
-              "M4F_SIL_V01",
-              "M4F_SIL_V02"
+              "152",
+              "M4F_DOK_V03"
             ],
-            "label": "モブシルクラ・ムーン × モブシルクラ・ローゼ",
+            "label": "65×闇属性",
             "special": false
           },
           {
-            "target": "MB049",
+            "target": "218",
             "materials": [
-              "184",
-              "M4F_SIL_M01"
+              "181",
+              "157"
             ],
-            "label": "光属性 × 光属性",
+            "label": "リリス4姉妹 × 闇属性",
             "special": false
           }
         ],
         "seeds": {
-          "179": 1,
-          "180": 1,
-          "M4F_SIL_V01": 1,
-          "M4F_SIL_V02": 1
+          "152": 2,
+          "177": 1,
+          "M4F_DOK_V03": 1
         }
       },
       {
@@ -3618,22 +3515,2907 @@
       },
       {
         "needs": {
-          "177": 2,
-          "181": 1
+          "179": 2,
+          "183": 1
+        },
+        "steps": [
+          {
+            "target": "183",
+            "materials": [
+              "179",
+              "179"
+            ],
+            "label": "figboss 21 × 魔法使いタグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "179": 2
+        }
+      },
+      {
+        "needs": {
+          "178": 2,
+          "182": 1
+        },
+        "steps": [
+          {
+            "target": "182",
+            "materials": [
+              "178",
+              "178"
+            ],
+            "label": "figboss 20 × 魔法使いタグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "178": 2
+        }
+      }
+    ],
+    "supportIds": [
+      "84",
+      "152",
+      "ECL_S02",
+      "M4F_SIL_V01",
+      "M4F_SIL_V02",
+      "M4F_DOK_V03",
+      "ECL_S03",
+      "ECL_S01",
+      "M4F_SIL_V03",
+      "85",
+      "157",
+      "158",
+      "M4F_SIL_M01",
+      "ECL_M01",
+      "ECL_M02",
+      "M4F_SIL_M02",
+      "218",
+      "MB016",
+      "ECL_B01",
+      "M4F_SIL_B01"
+    ],
+    "supportSummary": "覚醒四姉妹・モブリリス＋魔法系の補助"
+  },
+  {
+    "id": "rookie-haru",
+    "name": "F｜若葉のハル",
+    "description": "ランクF・草原遠征。シード中心、融合は慎重。",
+    "attribute": "地",
+    "themeTagIds": [
+      "41"
+    ],
+    "strategy": {
+      "atk": 1.8,
+      "def": 0.4,
+      "target": "weak",
+      "skill": "attack",
+      "fusionEvery": 4,
+      "fusionLimit": 1,
+      "skillEvery": 3,
+      "skillLimit": 1
+    },
+    "aces": [],
+    "deck": [
+      "45",
+      "45",
+      "45",
+      "46",
+      "46",
+      "46",
+      "MB001",
+      "MB001",
+      "MB001",
+      "MB002",
+      "MB002",
+      "MB002",
+      "MB003",
+      "MB003",
+      "MB003",
+      "MB005",
+      "MB005",
+      "MB005",
+      "MB006",
+      "MB006",
+      "MB006",
+      "MB007",
+      "MB007",
+      "MB007",
+      "MB009",
+      "MB009",
+      "MB009",
+      "MB010",
+      "MB010",
+      "MB010",
+      "MB017",
+      "MB017",
+      "MB017",
+      "MB018",
+      "MB018",
+      "MB018",
+      "MB021",
+      "MB021",
+      "MB021",
+      "MB022",
+      "MB022",
+      "MB022",
+      "MB023",
+      "MB023",
+      "96"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "45": 2,
+          "96": 1
+        },
+        "steps": [
+          {
+            "target": "96",
+            "materials": [
+              "45",
+              "45"
+            ],
+            "label": "草原タグ×草原タグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "45": 2
+        }
+      }
+    ],
+    "supportIds": [],
+    "supportSummary": "草原の進化先＋地・風の補助",
+    "rank": "F",
+    "baseThemeId": "grass",
+    "middleCount": 1,
+    "themeName": "草原遠征"
+  },
+  {
+    "id": "rookie-nagi",
+    "name": "F｜潮風のナギ",
+    "description": "ランクF・海底守護。シード中心、融合は慎重。",
+    "attribute": "水",
+    "themeTagIds": [
+      "45"
+    ],
+    "strategy": {
+      "atk": 0.5,
+      "def": 1.7,
+      "target": "weak",
+      "skill": "heal",
+      "fusionEvery": 4,
+      "fusionLimit": 1,
+      "skillEvery": 3,
+      "skillLimit": 1
+    },
+    "aces": [],
+    "deck": [
+      "124",
+      "124",
+      "M4F_SIL_V01",
+      "M4F_SIL_V01",
+      "M4F_SIL_V01",
+      "M4F_SIL_V02",
+      "M4F_SIL_V02",
+      "M4F_SIL_V02",
+      "M4F_SIL_V03",
+      "M4F_SIL_V03",
+      "M4F_SIL_V03",
+      "NS001",
+      "NS001",
+      "NS001",
+      "NS002",
+      "NS002",
+      "NS002",
+      "NS003",
+      "NS003",
+      "NS003",
+      "NS004",
+      "NS004",
+      "NS004",
+      "NS006",
+      "NS006",
+      "NS006",
+      "124",
+      "125",
+      "125",
+      "125",
+      "126",
+      "126",
+      "126",
+      "NS009",
+      "NS009",
+      "NS009",
+      "mq:eventfig/43",
+      "mq:eventfig/43",
+      "mq:eventfig/43",
+      "43",
+      "43",
+      "43",
+      "piece:026",
+      "piece:026",
+      "127"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "124": 2,
+          "127": 1
+        },
+        "steps": [
+          {
+            "target": "127",
+            "materials": [
+              "124",
+              "124"
+            ],
+            "label": "37×海底タグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "124": 2
+        }
+      }
+    ],
+    "supportIds": [
+      "piece:026"
+    ],
+    "supportSummary": "海底の全5ミドルと2MOB＋深海・水の補助",
+    "rank": "F",
+    "baseThemeId": "sea",
+    "middleCount": 1,
+    "themeName": "海底守護"
+  },
+  {
+    "id": "rookie-rin",
+    "name": "E｜音合わせのリン",
+    "description": "ランクE・ネオンMUSIC。シード中心、融合の練習中。",
+    "attribute": "雷",
+    "themeTagIds": [
+      "12",
+      "44"
+    ],
+    "strategy": {
+      "atk": 1.1,
+      "def": 0.8,
+      "target": "weak",
+      "skill": "draw",
+      "fusionEvery": 2,
+      "fusionLimit": 1,
+      "skillEvery": 2,
+      "skillLimit": 1
+    },
+    "aces": [],
+    "deck": [
+      "116",
+      "117",
+      "118",
+      "BFX007",
+      "RETRO23",
+      "RETRO23",
+      "RETRO23",
+      "CRY_S03",
+      "CRY_S03",
+      "CRY_S03",
+      "M4F_NEO_V03",
+      "M4F_NEO_V03",
+      "M4F_NEO_V03",
+      "RETRO25",
+      "RETRO25",
+      "RETRO25",
+      "SWEET05",
+      "SWEET05",
+      "SWEET05",
+      "CRY_S01",
+      "CRY_S01",
+      "CRY_S01",
+      "M4F_NEO_V01",
+      "M4F_NEO_V01",
+      "M4F_NEO_V01",
+      "M4F_NEO_V02",
+      "M4F_NEO_V02",
+      "M4F_NEO_V02",
+      "RETRO01",
+      "RETRO01",
+      "RETRO01",
+      "RETRO02",
+      "RETRO02",
+      "RETRO02",
+      "RETRO03",
+      "RETRO03",
+      "RETRO03",
+      "RETRO04",
+      "RETRO04",
+      "RETRO04",
+      "RETRO05",
+      "RETRO05",
+      "121",
+      "165",
+      "BFX011"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "116": 1,
+          "117": 1,
+          "121": 1
+        },
+        "steps": [
+          {
+            "target": "121",
+            "materials": [
+              "116",
+              "117"
+            ],
+            "label": "29×30",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "116": 1,
+          "117": 1
+        }
+      },
+      {
+        "needs": {
+          "116": 1,
+          "118": 1,
+          "165": 1
+        },
+        "steps": [
+          {
+            "target": "165",
+            "materials": [
+              "118",
+              "116"
+            ],
+            "label": "figene 31 ×光属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "116": 1,
+          "118": 1
+        }
+      },
+      {
+        "needs": {
+          "118": 1,
+          "BFX007": 1,
+          "BFX011": 1
+        },
+        "steps": [
+          {
+            "target": "BFX011",
+            "materials": [
+              "118",
+              "BFX007"
+            ],
+            "label": "キュート × とびっきりのスイーツ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "118": 1,
+          "BFX007": 1
+        }
+      }
+    ],
+    "supportIds": [],
+    "supportSummary": "ネオン・MUSICの進化先＋音楽機材の補助",
+    "rank": "E",
+    "baseThemeId": "music",
+    "middleCount": 3,
+    "themeName": "ネオンMUSIC"
+  },
+  {
+    "id": "adept-sara",
+    "name": "D｜砂紋のサラ",
+    "description": "ランクD・砂漠秘術。テーマの融合とスキルを使い分ける。",
+    "attribute": "闇",
+    "themeTagIds": [
+      "42"
+    ],
+    "strategy": {
+      "atk": 1.2,
+      "def": 0.7,
+      "target": "threat",
+      "skill": "control",
+      "fusionEvery": 1,
+      "fusionLimit": 2,
+      "skillEvery": 1,
+      "skillLimit": 1
+    },
+    "aces": [
+      "162",
+      "mq:eventfig/59",
+      "MB030",
+      "M4F_DOK_B01",
+      "RUN_B01"
+    ],
+    "deck": [
+      "49",
+      "97",
+      "97",
+      "98",
+      "101",
+      "101",
+      "102",
+      "211",
+      "212",
+      "GHO_S03",
+      "mq:eventfig/56",
+      "BFX001",
+      "BFX001",
+      "M4F_DOK_V01",
+      "M4F_DOK_V02",
+      "M4F_DOK_V02",
+      "M4F_DOK_V03",
+      "RUN_S01",
+      "RUN_S02",
+      "RUN_S02",
+      "RUN_S03",
+      "101",
+      "102",
+      "102",
+      "211",
+      "211",
+      "212",
+      "212",
+      "49",
+      "49",
+      "104",
+      "161",
+      "192",
+      "204",
+      "mq:eventfig/58",
+      "mq:eventfig/60",
+      "M4F_DOK_M01",
+      "M4F_DOK_M02",
+      "RUN_M01",
+      "RUN_M02",
+      "162",
+      "mq:eventfig/59",
+      "MB030",
+      "M4F_DOK_B01",
+      "RUN_B01"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "97": 2,
+          "101": 1,
+          "104": 1,
+          "161": 1,
+          "162": 1,
+          "GHO_S03": 1
+        },
+        "steps": [
+          {
+            "target": "161",
+            "materials": [
+              "101",
+              "GHO_S03"
+            ],
+            "label": "砂漠タグ × 闇属性",
+            "special": false
+          },
+          {
+            "target": "104",
+            "materials": [
+              "97",
+              "97"
+            ],
+            "label": "10×10",
+            "special": false
+          },
+          {
+            "target": "162",
+            "materials": [
+              "161",
+              "104"
+            ],
+            "label": "figboss 03 × figene 17",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "97": 2,
+          "101": 1,
+          "GHO_S03": 1
+        }
+      },
+      {
+        "needs": {
+          "101": 1,
+          "mq:eventfig/56": 1,
+          "BFX001": 2,
+          "mq:eventfig/58": 1,
+          "mq:eventfig/60": 1,
+          "mq:eventfig/59": 1
+        },
+        "steps": [
+          {
+            "target": "mq:eventfig/58",
+            "materials": [
+              "mq:eventfig/56",
+              "BFX001"
+            ],
+            "label": "56×タグ:MUSIC",
+            "special": false
+          },
+          {
+            "target": "mq:eventfig/60",
+            "materials": [
+              "101",
+              "BFX001"
+            ],
+            "label": "砂漠 × タグ:MUSIC",
+            "special": false
+          },
+          {
+            "target": "mq:eventfig/59",
+            "materials": [
+              "mq:eventfig/58",
+              "mq:eventfig/60"
+            ],
+            "label": "58 × 60",
+            "special": true
+          }
+        ],
+        "seeds": {
+          "101": 1,
+          "mq:eventfig/56": 1,
+          "BFX001": 2
+        }
+      },
+      {
+        "needs": {
+          "49": 1,
+          "98": 1,
+          "101": 2,
+          "192": 1,
+          "204": 1,
+          "MB030": 1
+        },
+        "steps": [
+          {
+            "target": "192",
+            "materials": [
+              "101",
+              "49"
+            ],
+            "label": "砂漠 or 頼もしい仲間 × 闇属性",
+            "special": false
+          },
+          {
+            "target": "204",
+            "materials": [
+              "101",
+              "98"
+            ],
+            "label": "砂漠タグ×地属性",
+            "special": false
+          },
+          {
+            "target": "MB030",
+            "materials": [
+              "192",
+              "204"
+            ],
+            "label": "地属性 × 地属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "49": 1,
+          "98": 1,
+          "101": 2
+        }
+      },
+      {
+        "needs": {
+          "M4F_DOK_V01": 1,
+          "M4F_DOK_V02": 2,
+          "M4F_DOK_M01": 1,
+          "M4F_DOK_V03": 1,
+          "M4F_DOK_M02": 1,
+          "M4F_DOK_B01": 1
+        },
+        "steps": [
+          {
+            "target": "M4F_DOK_M01",
+            "materials": [
+              "M4F_DOK_V01",
+              "M4F_DOK_V02"
+            ],
+            "label": "モブドクローネ・バサルト × モブドクローネ・サンド",
+            "special": false
+          },
+          {
+            "target": "M4F_DOK_M02",
+            "materials": [
+              "M4F_DOK_V02",
+              "M4F_DOK_V03"
+            ],
+            "label": "モブドクローネ・サンド × モブドクローネ・ルーン",
+            "special": false
+          },
+          {
+            "target": "M4F_DOK_B01",
+            "materials": [
+              "M4F_DOK_M01",
+              "M4F_DOK_M02"
+            ],
+            "label": "モブドクローネ・サンドバサルト × モブドクローネ・サンドルーン",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "M4F_DOK_V01": 1,
+          "M4F_DOK_V02": 2,
+          "M4F_DOK_V03": 1
+        }
+      },
+      {
+        "needs": {
+          "RUN_S01": 1,
+          "RUN_S02": 2,
+          "RUN_M01": 1,
+          "RUN_S03": 1,
+          "RUN_M02": 1,
+          "RUN_B01": 1
+        },
+        "steps": [
+          {
+            "target": "RUN_M01",
+            "materials": [
+              "RUN_S01",
+              "RUN_S02"
+            ],
+            "label": "モブルノ × モブパピ",
+            "special": false
+          },
+          {
+            "target": "RUN_M02",
+            "materials": [
+              "RUN_S02",
+              "RUN_S03"
+            ],
+            "label": "モブパピ × モブトル",
+            "special": false
+          },
+          {
+            "target": "RUN_B01",
+            "materials": [
+              "RUN_M01",
+              "RUN_M02"
+            ],
+            "label": "モブヴァル × モブボルグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "RUN_S01": 1,
+          "RUN_S02": 2,
+          "RUN_S03": 1
+        }
+      }
+    ],
+    "supportIds": [
+      "BFX001",
+      "RUN_S01",
+      "RUN_S02",
+      "RUN_S03",
+      "RUN_M01",
+      "RUN_M02",
+      "MB030",
+      "RUN_B01"
+    ],
+    "supportSummary": "砂漠・遺跡の進化先＋補助",
+    "rank": "D",
+    "baseThemeId": "desert",
+    "middleCount": null,
+    "themeName": "砂漠秘術"
+  },
+  {
+    "id": "adept-sumi",
+    "name": "C｜煤隊長スミ",
+    "description": "ランクC・スス群隊。テーマの融合とスキルを使い分ける。",
+    "attribute": "闇",
+    "themeTagIds": [
+      "ns2-susu"
+    ],
+    "strategy": {
+      "atk": 1.6,
+      "def": 0.6,
+      "target": "weak",
+      "skill": "attack",
+      "fusionEvery": 1,
+      "fusionLimit": 3,
+      "skillEvery": 1,
+      "skillLimit": 2
+    },
+    "aces": [
+      "NS2_050",
+      "NS2_051",
+      "NS2_052",
+      "NS2_053",
+      "NS2_054"
+    ],
+    "deck": [
+      "NS2_033",
+      "BFX013",
+      "NS2_001",
+      "NS2_007",
+      "NS2_034",
+      "BFX007",
+      "NS2_005",
+      "NS2_036",
+      "BFX009",
+      "NS2_006",
+      "NS2_035",
+      "NS2_021",
+      "NS2_008",
+      "NS2_037",
+      "BFX008",
+      "NS2_004",
+      "NS2_002",
+      "NS2_003",
+      "NS2_010",
+      "NS2_011",
+      "NS2_009",
+      "NS2_001",
+      "NS2_001",
+      "NS2_002",
+      "NS2_002",
+      "NS2_003",
+      "NS2_003",
+      "NS2_004",
+      "NS2_004",
+      "NS2_009",
+      "NS2_046",
+      "NS2_040",
+      "NS2_047",
+      "NS2_048",
+      "NS2_041",
+      "NS2_049",
+      "NS2_029",
+      "NS2_030",
+      "NS2_043",
+      "NS2_038",
+      "NS2_050",
+      "NS2_051",
+      "NS2_052",
+      "NS2_053",
+      "NS2_054"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "NS2_033": 1,
+          "BFX013": 1,
+          "NS2_046": 1,
+          "NS2_001": 1,
+          "NS2_007": 1,
+          "NS2_040": 1,
+          "NS2_050": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_046",
+            "materials": [
+              "NS2_033",
+              "BFX013"
+            ],
+            "label": "033×火属性",
+            "special": false
+          },
+          {
+            "target": "NS2_040",
+            "materials": [
+              "NS2_001",
+              "NS2_007"
+            ],
+            "label": "タグ:スス × タグ:ケケ",
+            "special": false
+          },
+          {
+            "target": "NS2_050",
+            "materials": [
+              "NS2_046",
+              "NS2_040"
+            ],
+            "label": "046×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_033": 1,
+          "BFX013": 1,
+          "NS2_001": 1,
+          "NS2_007": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_034": 1,
+          "BFX007": 1,
+          "NS2_047": 1,
+          "NS2_001": 1,
+          "NS2_005": 1,
+          "NS2_040": 1,
+          "NS2_051": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_047",
+            "materials": [
+              "NS2_034",
+              "BFX007"
+            ],
+            "label": "034×水属性",
+            "special": false
+          },
+          {
+            "target": "NS2_040",
+            "materials": [
+              "NS2_001",
+              "NS2_005"
+            ],
+            "label": "タグ:スス × タグ:ケケ",
+            "special": false
+          },
+          {
+            "target": "NS2_051",
+            "materials": [
+              "NS2_047",
+              "NS2_040"
+            ],
+            "label": "047×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_034": 1,
+          "BFX007": 1,
+          "NS2_001": 1,
+          "NS2_005": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_036": 1,
+          "BFX009": 1,
+          "NS2_048": 1,
+          "NS2_001": 1,
+          "NS2_006": 1,
+          "NS2_040": 1,
+          "NS2_052": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_048",
+            "materials": [
+              "NS2_036",
+              "BFX009"
+            ],
+            "label": "036×雷属性",
+            "special": false
+          },
+          {
+            "target": "NS2_040",
+            "materials": [
+              "NS2_001",
+              "NS2_006"
+            ],
+            "label": "タグ:スス × タグ:ケケ",
+            "special": false
+          },
+          {
+            "target": "NS2_052",
+            "materials": [
+              "NS2_048",
+              "NS2_040"
+            ],
+            "label": "048×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_036": 1,
+          "BFX009": 1,
+          "NS2_001": 1,
+          "NS2_006": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_035": 1,
+          "NS2_021": 1,
+          "NS2_041": 1,
+          "NS2_001": 1,
+          "NS2_008": 1,
+          "NS2_040": 1,
+          "NS2_053": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_041",
+            "materials": [
+              "NS2_035",
+              "NS2_021"
+            ],
+            "label": "035×021～024",
+            "special": false
+          },
+          {
+            "target": "NS2_040",
+            "materials": [
+              "NS2_001",
+              "NS2_008"
+            ],
+            "label": "タグ:スス × タグ:ケケ",
+            "special": false
+          },
+          {
+            "target": "NS2_053",
+            "materials": [
+              "NS2_041",
+              "NS2_040"
+            ],
+            "label": "041×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_035": 1,
+          "NS2_021": 1,
+          "NS2_001": 1,
+          "NS2_008": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_037": 1,
+          "BFX008": 1,
+          "NS2_049": 1,
+          "NS2_021": 1,
+          "NS2_004": 1,
+          "NS2_029": 1,
+          "NS2_054": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_049",
+            "materials": [
+              "NS2_037",
+              "BFX008"
+            ],
+            "label": "037×光属性",
+            "special": false
+          },
+          {
+            "target": "NS2_029",
+            "materials": [
+              "NS2_021",
+              "NS2_004"
+            ],
+            "label": "021 × 001～004",
+            "special": false
+          },
+          {
+            "target": "NS2_054",
+            "materials": [
+              "NS2_049",
+              "NS2_029"
+            ],
+            "label": "049×闇属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_037": 1,
+          "BFX008": 1,
+          "NS2_021": 1,
+          "NS2_004": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_002": 1,
+          "NS2_003": 1,
+          "NS2_030": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_030",
+            "materials": [
+              "NS2_002",
+              "NS2_003"
+            ],
+            "label": "002 × 001～004",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_002": 1,
+          "NS2_003": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_034": 1,
+          "NS2_010": 1,
+          "NS2_043": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_043",
+            "materials": [
+              "NS2_034",
+              "NS2_010"
+            ],
+            "label": "034 × 010 or 012",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_034": 1,
+          "NS2_010": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_033": 1,
+          "NS2_011": 1,
+          "NS2_038": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_038",
+            "materials": [
+              "NS2_033",
+              "NS2_011"
+            ],
+            "label": "033×009～012",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_033": 1,
+          "NS2_011": 1
+        }
+      }
+    ],
+    "supportIds": [
+      "NS2_033",
+      "BFX013",
+      "NS2_007",
+      "NS2_034",
+      "BFX007",
+      "NS2_005",
+      "NS2_036",
+      "BFX009",
+      "NS2_006",
+      "NS2_035",
+      "NS2_008",
+      "NS2_037",
+      "BFX008",
+      "NS2_047",
+      "NS2_048",
+      "NS2_049"
+    ],
+    "supportSummary": "スス系統・共通アメ進化＋補助",
+    "rank": "C",
+    "baseThemeId": "susu",
+    "middleCount": null,
+    "themeName": "スス群隊"
+  },
+  {
+    "id": "adept-keke",
+    "name": "C｜機巧士ケケル",
+    "description": "ランクC・ケケ隊。テーマの融合とスキルを使い分ける。",
+    "attribute": "光",
+    "themeTagIds": [
+      "ns2-keke"
+    ],
+    "strategy": {
+      "atk": 0.8,
+      "def": 1.5,
+      "target": "threat",
+      "skill": "heal",
+      "fusionEvery": 1,
+      "fusionLimit": 3,
+      "skillEvery": 1,
+      "skillLimit": 2
+    },
+    "aces": [
+      "NS2_050",
+      "NS2_051",
+      "NS2_052",
+      "NS2_053",
+      "NS2_054"
+    ],
+    "deck": [
+      "NS2_033",
+      "BFX013",
+      "NS2_028",
+      "NS2_007",
+      "NS2_034",
+      "BFX007",
+      "NS2_005",
+      "NS2_036",
+      "BFX009",
+      "NS2_006",
+      "NS2_035",
+      "NS2_021",
+      "NS2_008",
+      "NS2_025",
+      "BFX001",
+      "NS2_027",
+      "NS2_001",
+      "NS2_037",
+      "BFX030",
+      "NS2_016",
+      "NS2_005",
+      "NS2_005",
+      "NS2_006",
+      "NS2_006",
+      "NS2_007",
+      "NS2_007",
+      "NS2_008",
+      "NS2_008",
+      "NS2_013",
+      "NS2_013",
+      "NS2_046",
+      "NS2_031",
+      "NS2_047",
+      "NS2_048",
+      "NS2_041",
+      "NS2_045",
+      "NS2_032",
+      "NS2_040",
+      "NS2_049",
+      "NS2_039",
+      "NS2_050",
+      "NS2_051",
+      "NS2_052",
+      "NS2_053",
+      "NS2_054"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "NS2_033": 1,
+          "BFX013": 1,
+          "NS2_046": 1,
+          "NS2_028": 1,
+          "NS2_007": 1,
+          "NS2_031": 1,
+          "NS2_050": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_046",
+            "materials": [
+              "NS2_033",
+              "BFX013"
+            ],
+            "label": "033×火属性",
+            "special": false
+          },
+          {
+            "target": "NS2_031",
+            "materials": [
+              "NS2_028",
+              "NS2_007"
+            ],
+            "label": "028 × 005～008",
+            "special": false
+          },
+          {
+            "target": "NS2_050",
+            "materials": [
+              "NS2_046",
+              "NS2_031"
+            ],
+            "label": "046×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_033": 1,
+          "BFX013": 1,
+          "NS2_028": 1,
+          "NS2_007": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_034": 1,
+          "BFX007": 1,
+          "NS2_047": 1,
+          "NS2_028": 1,
+          "NS2_005": 1,
+          "NS2_031": 1,
+          "NS2_051": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_047",
+            "materials": [
+              "NS2_034",
+              "BFX007"
+            ],
+            "label": "034×水属性",
+            "special": false
+          },
+          {
+            "target": "NS2_031",
+            "materials": [
+              "NS2_028",
+              "NS2_005"
+            ],
+            "label": "028 × 005～008",
+            "special": false
+          },
+          {
+            "target": "NS2_051",
+            "materials": [
+              "NS2_047",
+              "NS2_031"
+            ],
+            "label": "047×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_034": 1,
+          "BFX007": 1,
+          "NS2_028": 1,
+          "NS2_005": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_036": 1,
+          "BFX009": 1,
+          "NS2_048": 1,
+          "NS2_028": 1,
+          "NS2_006": 1,
+          "NS2_031": 1,
+          "NS2_052": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_048",
+            "materials": [
+              "NS2_036",
+              "BFX009"
+            ],
+            "label": "036×雷属性",
+            "special": false
+          },
+          {
+            "target": "NS2_031",
+            "materials": [
+              "NS2_028",
+              "NS2_006"
+            ],
+            "label": "028 × 005～008",
+            "special": false
+          },
+          {
+            "target": "NS2_052",
+            "materials": [
+              "NS2_048",
+              "NS2_031"
+            ],
+            "label": "048×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_036": 1,
+          "BFX009": 1,
+          "NS2_028": 1,
+          "NS2_006": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_035": 1,
+          "NS2_021": 1,
+          "NS2_041": 1,
+          "NS2_028": 1,
+          "NS2_008": 1,
+          "NS2_031": 1,
+          "NS2_053": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_041",
+            "materials": [
+              "NS2_035",
+              "NS2_021"
+            ],
+            "label": "035×021～024",
+            "special": false
+          },
+          {
+            "target": "NS2_031",
+            "materials": [
+              "NS2_028",
+              "NS2_008"
+            ],
+            "label": "028 × 005～008",
+            "special": false
+          },
+          {
+            "target": "NS2_053",
+            "materials": [
+              "NS2_041",
+              "NS2_031"
+            ],
+            "label": "041×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_035": 1,
+          "NS2_021": 1,
+          "NS2_028": 1,
+          "NS2_008": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_025": 1,
+          "BFX001": 1,
+          "NS2_045": 1,
+          "NS2_027": 1,
+          "NS2_005": 1,
+          "NS2_032": 1,
+          "NS2_054": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_045",
+            "materials": [
+              "NS2_025",
+              "BFX001"
+            ],
+            "label": "025～028 × タグ:とびっきりのスイーツ",
+            "special": false
+          },
+          {
+            "target": "NS2_032",
+            "materials": [
+              "NS2_027",
+              "NS2_005"
+            ],
+            "label": "027 × 005～008",
+            "special": false
+          },
+          {
+            "target": "NS2_054",
+            "materials": [
+              "NS2_045",
+              "NS2_032"
+            ],
+            "label": "045×光属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_025": 1,
+          "BFX001": 1,
+          "NS2_027": 1,
+          "NS2_005": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_001": 1,
+          "NS2_005": 1,
+          "NS2_040": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_040",
+            "materials": [
+              "NS2_001",
+              "NS2_005"
+            ],
+            "label": "タグ:スス × タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_001": 1,
+          "NS2_005": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_037": 1,
+          "BFX030": 1,
+          "NS2_049": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_049",
+            "materials": [
+              "NS2_037",
+              "BFX030"
+            ],
+            "label": "037×光属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_037": 1,
+          "BFX030": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_034": 1,
+          "NS2_016": 1,
+          "NS2_039": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_039",
+            "materials": [
+              "NS2_034",
+              "NS2_016"
+            ],
+            "label": "034×013～016",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_034": 1,
+          "NS2_016": 1
+        }
+      }
+    ],
+    "supportIds": [
+      "NS2_033",
+      "BFX013",
+      "NS2_034",
+      "BFX007",
+      "NS2_036",
+      "BFX009",
+      "NS2_035",
+      "NS2_021",
+      "BFX001",
+      "NS2_001",
+      "NS2_037",
+      "BFX030",
+      "NS2_046",
+      "NS2_041"
+    ],
+    "supportSummary": "ケケ系統・共通アメ進化＋補助",
+    "rank": "C",
+    "baseThemeId": "keke",
+    "middleCount": null,
+    "themeName": "ケケ隊"
+  },
+  {
+    "id": "expert-ame",
+    "name": "B｜飴槍のアメリア",
+    "description": "ランクB・アメ戦士。テーマの融合とスキルを使い分ける。",
+    "attribute": "水",
+    "themeTagIds": [
+      "ns2-ame"
+    ],
+    "strategy": {
+      "atk": 1.1,
+      "def": 1.1,
+      "target": "weak",
+      "skill": "support",
+      "fusionEvery": 1,
+      "fusionLimit": 4,
+      "skillEvery": 1,
+      "skillLimit": 3
+    },
+    "aces": [
+      "NS2_050",
+      "NS2_051",
+      "NS2_052",
+      "NS2_053",
+      "NS2_054"
+    ],
+    "deck": [
+      "NS2_033",
+      "BFX013",
+      "NS2_034",
+      "NS2_034",
+      "NS2_016",
+      "BFX007",
+      "NS2_015",
+      "NS2_036",
+      "BFX009",
+      "NS2_013",
+      "NS2_035",
+      "NS2_021",
+      "NS2_014",
+      "NS2_025",
+      "BFX001",
+      "NS2_037",
+      "BFX030",
+      "NS2_001",
+      "NS2_007",
+      "NS2_010",
+      "NS2_004",
+      "NS2_033",
+      "NS2_033",
+      "NS2_034",
+      "NS2_035",
+      "NS2_035",
+      "NS2_036",
+      "NS2_036",
+      "NS2_037",
+      "NS2_037",
+      "NS2_046",
+      "NS2_039",
+      "NS2_047",
+      "NS2_048",
+      "NS2_041",
+      "NS2_045",
+      "NS2_049",
+      "NS2_040",
+      "NS2_043",
+      "NS2_042",
+      "NS2_050",
+      "NS2_051",
+      "NS2_052",
+      "NS2_053",
+      "NS2_054"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "NS2_033": 1,
+          "BFX013": 1,
+          "NS2_046": 1,
+          "NS2_034": 1,
+          "NS2_016": 1,
+          "NS2_039": 1,
+          "NS2_050": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_046",
+            "materials": [
+              "NS2_033",
+              "BFX013"
+            ],
+            "label": "033×火属性",
+            "special": false
+          },
+          {
+            "target": "NS2_039",
+            "materials": [
+              "NS2_034",
+              "NS2_016"
+            ],
+            "label": "034×013～016",
+            "special": false
+          },
+          {
+            "target": "NS2_050",
+            "materials": [
+              "NS2_046",
+              "NS2_039"
+            ],
+            "label": "046×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_033": 1,
+          "BFX013": 1,
+          "NS2_034": 1,
+          "NS2_016": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_034": 2,
+          "BFX007": 1,
+          "NS2_047": 1,
+          "NS2_015": 1,
+          "NS2_039": 1,
+          "NS2_051": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_047",
+            "materials": [
+              "NS2_034",
+              "BFX007"
+            ],
+            "label": "034×水属性",
+            "special": false
+          },
+          {
+            "target": "NS2_039",
+            "materials": [
+              "NS2_034",
+              "NS2_015"
+            ],
+            "label": "034×013～016",
+            "special": false
+          },
+          {
+            "target": "NS2_051",
+            "materials": [
+              "NS2_047",
+              "NS2_039"
+            ],
+            "label": "047×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_034": 2,
+          "BFX007": 1,
+          "NS2_015": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_036": 1,
+          "BFX009": 1,
+          "NS2_048": 1,
+          "NS2_034": 1,
+          "NS2_013": 1,
+          "NS2_039": 1,
+          "NS2_052": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_048",
+            "materials": [
+              "NS2_036",
+              "BFX009"
+            ],
+            "label": "036×雷属性",
+            "special": false
+          },
+          {
+            "target": "NS2_039",
+            "materials": [
+              "NS2_034",
+              "NS2_013"
+            ],
+            "label": "034×013～016",
+            "special": false
+          },
+          {
+            "target": "NS2_052",
+            "materials": [
+              "NS2_048",
+              "NS2_039"
+            ],
+            "label": "048×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_036": 1,
+          "BFX009": 1,
+          "NS2_034": 1,
+          "NS2_013": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_035": 1,
+          "NS2_021": 1,
+          "NS2_041": 1,
+          "NS2_034": 1,
+          "NS2_014": 1,
+          "NS2_039": 1,
+          "NS2_053": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_041",
+            "materials": [
+              "NS2_035",
+              "NS2_021"
+            ],
+            "label": "035×021～024",
+            "special": false
+          },
+          {
+            "target": "NS2_039",
+            "materials": [
+              "NS2_034",
+              "NS2_014"
+            ],
+            "label": "034×013～016",
+            "special": false
+          },
+          {
+            "target": "NS2_053",
+            "materials": [
+              "NS2_041",
+              "NS2_039"
+            ],
+            "label": "041×タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_035": 1,
+          "NS2_021": 1,
+          "NS2_034": 1,
+          "NS2_014": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_025": 1,
+          "BFX001": 1,
+          "NS2_045": 1,
+          "NS2_037": 1,
+          "BFX030": 1,
+          "NS2_049": 1,
+          "NS2_054": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_045",
+            "materials": [
+              "NS2_025",
+              "BFX001"
+            ],
+            "label": "025～028 × タグ:とびっきりのスイーツ",
+            "special": false
+          },
+          {
+            "target": "NS2_049",
+            "materials": [
+              "NS2_037",
+              "BFX030"
+            ],
+            "label": "037×光属性",
+            "special": false
+          },
+          {
+            "target": "NS2_054",
+            "materials": [
+              "NS2_045",
+              "NS2_049"
+            ],
+            "label": "045×光属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_025": 1,
+          "BFX001": 1,
+          "NS2_037": 1,
+          "BFX030": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_001": 1,
+          "NS2_007": 1,
+          "NS2_040": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_040",
+            "materials": [
+              "NS2_001",
+              "NS2_007"
+            ],
+            "label": "タグ:スス × タグ:ケケ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_001": 1,
+          "NS2_007": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_034": 1,
+          "NS2_010": 1,
+          "NS2_043": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_043",
+            "materials": [
+              "NS2_034",
+              "NS2_010"
+            ],
+            "label": "034 × 010 or 012",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "NS2_034": 1,
+          "NS2_010": 1
+        }
+      },
+      {
+        "needs": {
+          "NS2_004": 1,
+          "NS2_033": 1,
+          "NS2_042": 1
+        },
+        "steps": [
+          {
+            "target": "NS2_042",
+            "materials": [
+              "NS2_004",
+              "NS2_033"
+            ],
+            "label": "004×033",
+            "special": true
+          }
+        ],
+        "seeds": {
+          "NS2_004": 1,
+          "NS2_033": 1
+        }
+      }
+    ],
+    "supportIds": [
+      "BFX013",
+      "NS2_016",
+      "BFX007",
+      "NS2_015",
+      "BFX009",
+      "NS2_013",
+      "NS2_021",
+      "NS2_014",
+      "NS2_025",
+      "BFX001",
+      "BFX030",
+      "NS2_001",
+      "NS2_007",
+      "NS2_010",
+      "NS2_004"
+    ],
+    "supportSummary": "アメ系統のミドル・MOB＋素材の補助",
+    "rank": "B",
+    "baseThemeId": "ame",
+    "middleCount": null,
+    "themeName": "アメ戦士"
+  },
+  {
+    "id": "expert-leon",
+    "name": "B｜光騎士レオン",
+    "description": "ランクB・光の主人公。テーマの融合とスキルを使い分ける。",
+    "attribute": "光",
+    "themeTagIds": [
+      "24"
+    ],
+    "strategy": {
+      "atk": 1.4,
+      "def": 1,
+      "target": "threat",
+      "skill": "support",
+      "fusionEvery": 1,
+      "fusionLimit": 4,
+      "skillEvery": 1,
+      "skillLimit": 3
+    },
+    "aces": [
+      "190",
+      "200",
+      "216",
+      "piece:039",
+      "piece:049"
+    ],
+    "deck": [
+      "44",
+      "47",
+      "72",
+      "73",
+      "79",
+      "185",
+      "191",
+      "M4F_MIM_V01",
+      "M4F_MIM_V01",
+      "M4F_MIM_V02",
+      "piece:031",
+      "piece:031",
+      "piece:002",
+      "piece:002",
+      "piece:005",
+      "MB001",
+      "BFX034",
+      "191",
+      "191",
+      "44",
+      "44",
+      "47",
+      "47",
+      "185",
+      "185",
+      "70",
+      "70",
+      "70",
+      "71",
+      "71",
+      "192",
+      "193",
+      "195",
+      "198",
+      "199",
+      "215",
+      "M4F_MIM_M01",
+      "piece:038",
+      "piece:040",
+      "piece:046",
+      "190",
+      "200",
+      "216",
+      "piece:039",
+      "piece:049"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "44": 1,
+          "185": 1,
+          "190": 1,
+          "191": 1,
+          "192": 1,
+          "193": 1
+        },
+        "steps": [
+          {
+            "target": "192",
+            "materials": [
+              "191"
+            ],
+            "kind": "evolution",
+            "label": "自身を破壊して召喚",
+            "special": false
+          },
+          {
+            "target": "193",
+            "materials": [
+              "185",
+              "44"
+            ],
+            "label": "田舎町 or 頼もしい仲間 × 雷属性",
+            "special": false
+          },
+          {
+            "target": "190",
+            "materials": [
+              "192",
+              "193"
+            ],
+            "label": "主人公パーティー × 主人公パーティー",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "44": 1,
+          "185": 1,
+          "191": 1
+        }
+      },
+      {
+        "needs": {
+          "47": 1,
+          "191": 1,
+          "192": 1,
+          "200": 1,
+          "215": 1,
+          "M4F_MIM_V01": 1
+        },
+        "steps": [
+          {
+            "target": "192",
+            "materials": [
+              "191"
+            ],
+            "kind": "evolution",
+            "label": "自身を破壊して召喚",
+            "special": false
+          },
+          {
+            "target": "215",
+            "materials": [
+              "M4F_MIM_V01",
+              "47"
+            ],
+            "label": "読みかけの本タグ × 光属性",
+            "special": false
+          },
+          {
+            "target": "200",
+            "materials": [
+              "192",
+              "215"
+            ],
+            "label": "主人公パーティー × 読みかけの本",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "47": 1,
+          "191": 1,
+          "M4F_MIM_V01": 1
+        }
+      },
+      {
+        "needs": {
+          "73": 1,
+          "215": 1,
+          "216": 1,
+          "M4F_MIM_V01": 2,
+          "M4F_MIM_V02": 1,
+          "M4F_MIM_M01": 1
+        },
+        "steps": [
+          {
+            "target": "215",
+            "materials": [
+              "M4F_MIM_V01",
+              "73"
+            ],
+            "label": "読みかけの本タグ × 光属性",
+            "special": false
+          },
+          {
+            "target": "M4F_MIM_M01",
+            "materials": [
+              "M4F_MIM_V01",
+              "M4F_MIM_V02"
+            ],
+            "label": "モブミミックル・ヴォルト × モブミミックル・スペード",
+            "special": false
+          },
+          {
+            "target": "216",
+            "materials": [
+              "215",
+              "M4F_MIM_M01"
+            ],
+            "label": "figboss39 × 読みかけの本",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "73": 1,
+          "M4F_MIM_V01": 2,
+          "M4F_MIM_V02": 1
+        }
+      },
+      {
+        "needs": {
+          "piece:031": 2,
+          "piece:002": 1,
+          "piece:038": 1,
+          "piece:005": 1,
+          "piece:040": 1,
+          "piece:039": 1
+        },
+        "steps": [
+          {
+            "target": "piece:038",
+            "materials": [
+              "piece:031",
+              "piece:002"
+            ],
+            "label": "モブ兵士 × ピースメイン",
+            "special": false
+          },
+          {
+            "target": "piece:040",
+            "materials": [
+              "piece:031",
+              "piece:005"
+            ],
+            "label": "モブ兵士 × ピースメイン",
+            "special": false
+          },
+          {
+            "target": "piece:039",
+            "materials": [
+              "piece:038",
+              "piece:040"
+            ],
+            "label": "モブ兵士 × ピースメイン",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "piece:031": 2,
+          "piece:002": 1,
+          "piece:005": 1
+        }
+      },
+      {
+        "needs": {
+          "MB001": 1,
+          "piece:002": 2,
+          "piece:046": 1,
+          "piece:031": 1,
+          "piece:038": 1,
+          "piece:049": 1
+        },
+        "steps": [
+          {
+            "target": "piece:046",
+            "materials": [
+              "MB001",
+              "piece:002"
+            ],
+            "label": "ボクサー × ピースメイン",
+            "special": false
+          },
+          {
+            "target": "piece:038",
+            "materials": [
+              "piece:031",
+              "piece:002"
+            ],
+            "label": "モブ兵士 × ピースメイン",
+            "special": false
+          },
+          {
+            "target": "piece:049",
+            "materials": [
+              "piece:046",
+              "piece:038"
+            ],
+            "label": "ボクサー × ピースメイン",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "MB001": 1,
+          "piece:002": 2,
+          "piece:031": 1
+        }
+      },
+      {
+        "needs": {
+          "72": 1,
+          "185": 1,
+          "195": 1
+        },
+        "steps": [
+          {
+            "target": "195",
+            "materials": [
+              "185",
+              "72"
+            ],
+            "label": "ネオン街 or 頼もしい仲間 × 光属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "72": 1,
+          "185": 1
+        }
+      },
+      {
+        "needs": {
+          "79": 1,
+          "185": 1,
+          "198": 1
+        },
+        "steps": [
+          {
+            "target": "198",
+            "materials": [
+              "185",
+              "79"
+            ],
+            "label": "草原 or 頼もしい仲間 × 地属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "79": 1,
+          "185": 1
+        }
+      },
+      {
+        "needs": {
+          "185": 1,
+          "199": 1,
+          "BFX034": 1
+        },
+        "steps": [
+          {
+            "target": "199",
+            "materials": [
+              "185",
+              "BFX034"
+            ],
+            "label": "砂漠 or 頼もしい仲間 × 風属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "185": 1,
+          "BFX034": 1
+        }
+      }
+    ],
+    "supportIds": [
+      "72",
+      "73",
+      "79",
+      "185",
+      "M4F_MIM_V01",
+      "M4F_MIM_V02",
+      "piece:031",
+      "piece:002",
+      "piece:005",
+      "MB001",
+      "BFX034",
+      "70",
+      "71",
+      "215",
+      "M4F_MIM_M01",
+      "piece:038",
+      "piece:040",
+      "piece:046",
+      "216",
+      "piece:039",
+      "piece:049"
+    ],
+    "supportSummary": "主人公パーティー＋光の戦士・補助",
+    "rank": "B",
+    "baseThemeId": "hero",
+    "middleCount": null,
+    "themeName": "光の主人公"
+  },
+  {
+    "id": "expert-noa",
+    "name": "A｜深海司令ノア",
+    "description": "ランクA・海底守護。テーマの融合とスキルを使い分ける。",
+    "attribute": "水",
+    "themeTagIds": [
+      "45"
+    ],
+    "strategy": {
+      "atk": 0.5,
+      "def": 1.7,
+      "target": "weak",
+      "skill": "heal",
+      "fusionEvery": 1,
+      "fusionLimit": 6,
+      "skillEvery": 1,
+      "skillLimit": 4
+    },
+    "aces": [
+      "129",
+      "219",
+      "BFX050",
+      "MB016",
+      "M4F_SIL_B01"
+    ],
+    "deck": [
+      "43",
+      "124",
+      "124",
+      "124",
+      "125",
+      "126",
+      "126",
+      "BFX008",
+      "ECL_S02",
+      "BFX001",
+      "BFX007",
+      "M4F_SIL_V01",
+      "M4F_SIL_V02",
+      "M4F_SIL_V02",
+      "M4F_SIL_V03",
+      "CRY_S02",
+      "CRY_S03",
+      "mq:eventfig/43",
+      "125",
+      "125",
+      "126",
+      "43",
+      "43",
+      "M4F_SIL_V01",
+      "M4F_SIL_V01",
+      "M4F_SIL_V02",
+      "M4F_SIL_V03",
+      "M4F_SIL_V03",
+      "mq:eventfig/43",
+      "mq:eventfig/43",
+      "127",
+      "128",
+      "130",
+      "BFX023",
+      "BFX040",
+      "MB004",
+      "MB037",
+      "M4F_SIL_M01",
+      "M4F_SIL_M02",
+      "CRY_M02",
+      "129",
+      "219",
+      "BFX050",
+      "MB016",
+      "M4F_SIL_B01"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "43": 1,
+          "124": 3,
+          "127": 1,
+          "128": 1,
+          "129": 1
+        },
+        "steps": [
+          {
+            "target": "127",
+            "materials": [
+              "124",
+              "124"
+            ],
+            "label": "37×海底タグ",
+            "special": false
+          },
+          {
+            "target": "128",
+            "materials": [
+              "124",
+              "43"
+            ],
+            "label": "海底タグ×海底タグ",
+            "special": false
+          },
+          {
+            "target": "129",
+            "materials": [
+              "127",
+              "128"
+            ],
+            "label": "40×41",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "43": 1,
+          "124": 3
+        }
+      },
+      {
+        "needs": {
+          "124": 1,
+          "126": 2,
+          "127": 1,
+          "130": 1,
+          "219": 1,
+          "BFX008": 1
+        },
+        "steps": [
+          {
+            "target": "130",
+            "materials": [
+              "126",
+              "BFX008"
+            ],
+            "label": "39×光属性",
+            "special": false
+          },
+          {
+            "target": "127",
+            "materials": [
+              "124",
+              "126"
+            ],
+            "label": "37×海底タグ",
+            "special": false
+          },
+          {
+            "target": "219",
+            "materials": [
+              "130",
+              "127"
+            ],
+            "label": "figene 43 × 海底タグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "124": 1,
+          "126": 2,
+          "BFX008": 1
+        }
+      },
+      {
+        "needs": {
+          "124": 1,
+          "ECL_S02": 1,
+          "BFX001": 1,
+          "BFX023": 1,
+          "BFX007": 1,
+          "BFX040": 1,
+          "BFX050": 1
+        },
+        "steps": [
+          {
+            "target": "BFX023",
+            "materials": [
+              "ECL_S02",
+              "BFX001"
+            ],
+            "label": "闇属性 × 美味しい食べ物",
+            "special": false
+          },
+          {
+            "target": "BFX040",
+            "materials": [
+              "124",
+              "BFX007"
+            ],
+            "label": "水属性 × 美味しい食べ物",
+            "special": false
+          },
+          {
+            "target": "BFX050",
+            "materials": [
+              "BFX023",
+              "BFX040"
+            ],
+            "label": "モブゼリーステーション × モブソーダ・エコーフィン",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "124": 1,
+          "ECL_S02": 1,
+          "BFX001": 1,
+          "BFX007": 1
+        }
+      },
+      {
+        "needs": {
+          "124": 3,
+          "125": 1,
+          "MB004": 1,
+          "MB037": 1,
+          "MB016": 1
+        },
+        "steps": [
+          {
+            "target": "MB004",
+            "materials": [
+              "124",
+              "124"
+            ],
+            "label": "水属性 × 水属性",
+            "special": false
+          },
+          {
+            "target": "MB037",
+            "materials": [
+              "124",
+              "125"
+            ],
+            "label": "水属性 × 水属性",
+            "special": false
+          },
+          {
+            "target": "MB016",
+            "materials": [
+              "MB004",
+              "MB037"
+            ],
+            "label": "モブヒヤリ × モブクモリ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "124": 3,
+          "125": 1
+        }
+      },
+      {
+        "needs": {
+          "M4F_SIL_V01": 1,
+          "M4F_SIL_V02": 2,
+          "M4F_SIL_M01": 1,
+          "M4F_SIL_V03": 1,
+          "M4F_SIL_M02": 1,
+          "M4F_SIL_B01": 1
+        },
+        "steps": [
+          {
+            "target": "M4F_SIL_M01",
+            "materials": [
+              "M4F_SIL_V01",
+              "M4F_SIL_V02"
+            ],
+            "label": "モブシルクラ・ムーン × モブシルクラ・ローゼ",
+            "special": false
+          },
+          {
+            "target": "M4F_SIL_M02",
+            "materials": [
+              "M4F_SIL_V02",
+              "M4F_SIL_V03"
+            ],
+            "label": "モブシルクラ・ローゼ × モブシルクラ・ミスト",
+            "special": false
+          },
+          {
+            "target": "M4F_SIL_B01",
+            "materials": [
+              "M4F_SIL_M01",
+              "M4F_SIL_M02"
+            ],
+            "label": "モブシルクラ・ムーンローゼ × モブシルクラ・ミストローゼ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "M4F_SIL_V01": 1,
+          "M4F_SIL_V02": 2,
+          "M4F_SIL_V03": 1
+        }
+      },
+      {
+        "needs": {
+          "CRY_S02": 1,
+          "CRY_S03": 1,
+          "CRY_M02": 1
+        },
+        "steps": [
+          {
+            "target": "CRY_M02",
+            "materials": [
+              "CRY_S02",
+              "CRY_S03"
+            ],
+            "label": "モブフロー × モブオニル",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "CRY_S02": 1,
+          "CRY_S03": 1
+        }
+      }
+    ],
+    "supportIds": [
+      "BFX008",
+      "ECL_S02",
+      "BFX001",
+      "BFX007",
+      "CRY_S02",
+      "CRY_S03",
+      "BFX023",
+      "BFX040",
+      "MB004",
+      "MB037",
+      "CRY_M02",
+      "BFX050",
+      "MB016"
+    ],
+    "supportSummary": "海底の全5ミドルと2MOB＋深海・水の補助",
+    "rank": "A",
+    "baseThemeId": "sea",
+    "middleCount": null,
+    "themeName": "海底守護"
+  },
+  {
+    "id": "master-luna",
+    "name": "S｜四姉妹の導師ルナ",
+    "description": "ランクS・リリス四姉妹。希少な切り札と連続融合を使う上級者。",
+    "attribute": "火",
+    "themeTagIds": [
+      "specified-lilith"
+    ],
+    "strategy": {
+      "atk": 1.5,
+      "def": 0.9,
+      "target": "threat",
+      "skill": "attack",
+      "fusionEvery": 1,
+      "fusionLimit": 8,
+      "skillEvery": 1,
+      "skillLimit": 6
+    },
+    "aces": [
+      "207",
+      "MB016",
+      "218",
+      "ECL_B01",
+      "M4F_SIL_B01"
+    ],
+    "deck": [
+      "84",
+      "152",
+      "152",
+      "177",
+      "178",
+      "178",
+      "179",
+      "179",
+      "180",
+      "ECL_S02",
+      "ECL_S02",
+      "M4F_SIL_V01",
+      "M4F_SIL_V02",
+      "M4F_SIL_V02",
+      "M4F_DOK_V03",
+      "ECL_S03",
+      "ECL_S01",
+      "M4F_SIL_V03",
+      "177",
+      "177",
+      "178",
+      "179",
+      "180",
+      "180",
+      "152",
+      "84",
+      "84",
+      "85",
+      "85",
+      "85",
+      "157",
+      "158",
+      "181",
+      "182",
+      "183",
+      "184",
+      "M4F_SIL_M01",
+      "ECL_M01",
+      "ECL_M02",
+      "M4F_SIL_M02",
+      "207",
+      "218",
+      "MB016",
+      "ECL_B01",
+      "M4F_SIL_B01"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "84": 1,
+          "152": 2,
+          "157": 1,
+          "158": 1,
+          "207": 1,
+          "ECL_S02": 1
+        },
+        "steps": [
+          {
+            "target": "157",
+            "materials": [
+              "152",
+              "ECL_S02"
+            ],
+            "label": "65×闇属性",
+            "special": false
+          },
+          {
+            "target": "158",
+            "materials": [
+              "152",
+              "84"
+            ],
+            "label": "65×火属性",
+            "special": false
+          },
+          {
+            "target": "207",
+            "materials": [
+              "157",
+              "158"
+            ],
+            "label": "figene 70 × figene 71",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "84": 1,
+          "152": 2,
+          "ECL_S02": 1
+        }
+      },
+      {
+        "needs": {
+          "178": 1,
+          "180": 1,
+          "184": 1,
+          "M4F_SIL_V01": 1,
+          "M4F_SIL_V02": 1,
+          "M4F_SIL_M01": 1,
+          "MB016": 1
+        },
+        "steps": [
+          {
+            "target": "184",
+            "materials": [
+              "180",
+              "178"
+            ],
+            "label": "figboss 22 × 魔法使いタグ",
+            "special": false
+          },
+          {
+            "target": "M4F_SIL_M01",
+            "materials": [
+              "M4F_SIL_V01",
+              "M4F_SIL_V02"
+            ],
+            "label": "モブシルクラ・ムーン × モブシルクラ・ローゼ",
+            "special": false
+          },
+          {
+            "target": "MB016",
+            "materials": [
+              "184",
+              "M4F_SIL_M01"
+            ],
+            "label": "光属性 × 光属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "178": 1,
+          "180": 1,
+          "M4F_SIL_V01": 1,
+          "M4F_SIL_V02": 1
+        }
+      },
+      {
+        "needs": {
+          "152": 2,
+          "157": 1,
+          "177": 1,
+          "181": 1,
+          "218": 1,
+          "M4F_DOK_V03": 1
         },
         "steps": [
           {
             "target": "181",
             "materials": [
               "177",
-              "177"
+              "152"
             ],
             "label": "figboss 19 × 魔法使いタグ",
+            "special": false
+          },
+          {
+            "target": "157",
+            "materials": [
+              "152",
+              "M4F_DOK_V03"
+            ],
+            "label": "65×闇属性",
+            "special": false
+          },
+          {
+            "target": "218",
+            "materials": [
+              "181",
+              "157"
+            ],
+            "label": "リリス4姉妹 × 闇属性",
             "special": false
           }
         ],
         "seeds": {
-          "177": 2
+          "152": 2,
+          "177": 1,
+          "M4F_DOK_V03": 1
+        }
+      },
+      {
+        "needs": {
+          "ECL_S02": 2,
+          "ECL_S03": 1,
+          "ECL_M01": 1,
+          "ECL_S01": 1,
+          "ECL_M02": 1,
+          "ECL_B01": 1
+        },
+        "steps": [
+          {
+            "target": "ECL_M01",
+            "materials": [
+              "ECL_S02",
+              "ECL_S03"
+            ],
+            "label": "モブミカゲ × モブタッセル",
+            "special": false
+          },
+          {
+            "target": "ECL_M02",
+            "materials": [
+              "ECL_S01",
+              "ECL_S02"
+            ],
+            "label": "モブヒバナ × モブミカゲ",
+            "special": false
+          },
+          {
+            "target": "ECL_B01",
+            "materials": [
+              "ECL_M01",
+              "ECL_M02"
+            ],
+            "label": "モブクレセント × モブフレアベル",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "ECL_S02": 2,
+          "ECL_S03": 1,
+          "ECL_S01": 1
+        }
+      },
+      {
+        "needs": {
+          "M4F_SIL_V01": 1,
+          "M4F_SIL_V02": 2,
+          "M4F_SIL_M01": 1,
+          "M4F_SIL_V03": 1,
+          "M4F_SIL_M02": 1,
+          "M4F_SIL_B01": 1
+        },
+        "steps": [
+          {
+            "target": "M4F_SIL_M01",
+            "materials": [
+              "M4F_SIL_V01",
+              "M4F_SIL_V02"
+            ],
+            "label": "モブシルクラ・ムーン × モブシルクラ・ローゼ",
+            "special": false
+          },
+          {
+            "target": "M4F_SIL_M02",
+            "materials": [
+              "M4F_SIL_V02",
+              "M4F_SIL_V03"
+            ],
+            "label": "モブシルクラ・ローゼ × モブシルクラ・ミスト",
+            "special": false
+          },
+          {
+            "target": "M4F_SIL_B01",
+            "materials": [
+              "M4F_SIL_M01",
+              "M4F_SIL_M02"
+            ],
+            "label": "モブシルクラ・ムーンローゼ × モブシルクラ・ミストローゼ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "M4F_SIL_V01": 1,
+          "M4F_SIL_V02": 2,
+          "M4F_SIL_V03": 1
         }
       },
       {
@@ -3680,10 +6462,10 @@
     "supportIds": [
       "84",
       "152",
-      "BFX011",
+      "ECL_S02",
       "M4F_SIL_V01",
       "M4F_SIL_V02",
-      "ECL_S02",
+      "M4F_DOK_V03",
       "ECL_S03",
       "ECL_S01",
       "M4F_SIL_V03",
@@ -3694,11 +6476,713 @@
       "ECL_M01",
       "ECL_M02",
       "M4F_SIL_M02",
+      "218",
       "MB016",
-      "MB049",
       "ECL_B01",
       "M4F_SIL_B01"
     ],
-    "supportSummary": "覚醒四姉妹・モブリリス＋魔法系の補助"
+    "supportSummary": "覚醒四姉妹・モブリリス＋魔法系の補助",
+    "rank": "S",
+    "baseThemeId": "lilith",
+    "middleCount": null,
+    "themeName": "リリス四姉妹"
+  },
+  {
+    "id": "master-zen",
+    "name": "SS｜封印王ゼノ",
+    "description": "ランクSS・魔王城封印。希少な切り札と連続融合を使う上級者。",
+    "attribute": "闇",
+    "themeTagIds": [
+      "48"
+    ],
+    "strategy": {
+      "atk": 1.3,
+      "def": 1.2,
+      "target": "threat",
+      "skill": "control",
+      "fusionEvery": 1,
+      "fusionLimit": 20,
+      "skillEvery": 1,
+      "skillLimit": 20
+    },
+    "aces": [
+      "156",
+      "202",
+      "207",
+      "210",
+      "mq:eventfig/54"
+    ],
+    "deck": [
+      "84",
+      "97",
+      "149",
+      "149",
+      "149",
+      "150",
+      "150",
+      "150",
+      "152",
+      "152",
+      "177",
+      "177",
+      "178",
+      "179",
+      "180",
+      "208",
+      "ECL_S02",
+      "CRY_S02",
+      "152",
+      "177",
+      "178",
+      "178",
+      "179",
+      "179",
+      "180",
+      "180",
+      "208",
+      "208",
+      "NS010",
+      "NS010",
+      "151",
+      "153",
+      "157",
+      "158",
+      "181",
+      "183",
+      "184",
+      "192",
+      "209",
+      "mq:eventfig/16",
+      "156",
+      "202",
+      "207",
+      "210",
+      "mq:eventfig/54"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "97": 1,
+          "149": 1,
+          "150": 1,
+          "151": 1,
+          "156": 1,
+          "192": 1,
+          "ECL_S02": 1
+        },
+        "steps": [
+          {
+            "target": "151",
+            "materials": [
+              "150",
+              "149"
+            ],
+            "label": "63×魔王城タグ",
+            "special": false
+          },
+          {
+            "target": "192",
+            "materials": [
+              "97",
+              "ECL_S02"
+            ],
+            "label": "砂漠 or 頼もしい仲間 × 闇属性",
+            "special": false
+          },
+          {
+            "target": "156",
+            "materials": [
+              "151",
+              "192"
+            ],
+            "label": "魔王城タグ×砂漠タグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "97": 1,
+          "149": 1,
+          "150": 1,
+          "ECL_S02": 1
+        }
+      },
+      {
+        "needs": {
+          "149": 2,
+          "150": 1,
+          "151": 1,
+          "153": 1,
+          "202": 1,
+          "CRY_S02": 1
+        },
+        "steps": [
+          {
+            "target": "151",
+            "materials": [
+              "150",
+              "149"
+            ],
+            "label": "63×魔王城タグ",
+            "special": false
+          },
+          {
+            "target": "153",
+            "materials": [
+              "149",
+              "CRY_S02"
+            ],
+            "label": "魔王城タグ×ネオン街タグ",
+            "special": false
+          },
+          {
+            "target": "202",
+            "materials": [
+              "151",
+              "153"
+            ],
+            "label": "魔王城タグ×2",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "149": 2,
+          "150": 1,
+          "CRY_S02": 1
+        }
+      },
+      {
+        "needs": {
+          "84": 1,
+          "149": 1,
+          "152": 2,
+          "157": 1,
+          "158": 1,
+          "207": 1
+        },
+        "steps": [
+          {
+            "target": "157",
+            "materials": [
+              "152",
+              "149"
+            ],
+            "label": "65×闇属性",
+            "special": false
+          },
+          {
+            "target": "158",
+            "materials": [
+              "152",
+              "84"
+            ],
+            "label": "65×火属性",
+            "special": false
+          },
+          {
+            "target": "207",
+            "materials": [
+              "157",
+              "158"
+            ],
+            "label": "figene 70 × figene 71",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "84": 1,
+          "149": 1,
+          "152": 2
+        }
+      },
+      {
+        "needs": {
+          "149": 3,
+          "208": 1,
+          "209": 1,
+          "210": 1
+        },
+        "steps": [
+          {
+            "target": "209",
+            "materials": [
+              "208",
+              "149"
+            ],
+            "kind": "evolution",
+            "label": "撃破後の条件召喚",
+            "special": false
+          },
+          {
+            "target": "210",
+            "materials": [
+              "209",
+              "149",
+              "149"
+            ],
+            "kind": "evolution",
+            "label": "撃破後の条件召喚",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "149": 3,
+          "208": 1
+        }
+      },
+      {
+        "needs": {
+          "149": 1,
+          "150": 3,
+          "151": 1,
+          "mq:eventfig/16": 1,
+          "mq:eventfig/54": 1
+        },
+        "steps": [
+          {
+            "target": "151",
+            "materials": [
+              "150",
+              "149"
+            ],
+            "label": "63×魔王城タグ",
+            "special": false
+          },
+          {
+            "target": "mq:eventfig/16",
+            "materials": [
+              "150",
+              "150"
+            ],
+            "label": "魔王城 × タグ:スライム",
+            "special": false
+          },
+          {
+            "target": "mq:eventfig/54",
+            "materials": [
+              "151",
+              "mq:eventfig/16"
+            ],
+            "label": "魔王城 × イベントボス",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "149": 1,
+          "150": 3
+        }
+      },
+      {
+        "needs": {
+          "177": 2,
+          "181": 1
+        },
+        "steps": [
+          {
+            "target": "181",
+            "materials": [
+              "177",
+              "177"
+            ],
+            "label": "figboss 19 × 魔法使いタグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "177": 2
+        }
+      },
+      {
+        "needs": {
+          "149": 1,
+          "180": 1,
+          "184": 1
+        },
+        "steps": [
+          {
+            "target": "184",
+            "materials": [
+              "180",
+              "149"
+            ],
+            "label": "figboss 22 × 魔法使いタグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "149": 1,
+          "180": 1
+        }
+      },
+      {
+        "needs": {
+          "149": 1,
+          "179": 1,
+          "183": 1
+        },
+        "steps": [
+          {
+            "target": "183",
+            "materials": [
+              "179",
+              "149"
+            ],
+            "label": "figboss 21 × 魔法使いタグ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "149": 1,
+          "179": 1
+        }
+      }
+    ],
+    "supportIds": [
+      "84",
+      "97",
+      "ECL_S02",
+      "CRY_S02",
+      "192"
+    ],
+    "supportSummary": "魔王城の5MOB＋融合素材の補助",
+    "rank": "SS",
+    "baseThemeId": "castle",
+    "middleCount": null,
+    "themeName": "魔王城封印"
+  },
+  {
+    "id": "master-beat",
+    "name": "SS｜極音指揮者ビート",
+    "description": "ランクSS・ネオンMUSIC。希少な切り札と連続融合を使う上級者。",
+    "attribute": "雷",
+    "themeTagIds": [
+      "12",
+      "44"
+    ],
+    "strategy": {
+      "atk": 1.1,
+      "def": 0.8,
+      "target": "weak",
+      "skill": "draw",
+      "fusionEvery": 1,
+      "fusionLimit": 20,
+      "skillEvery": 1,
+      "skillLimit": 20
+    },
+    "aces": [
+      "BFX045",
+      "BFX050",
+      "176",
+      "M4F_NEO_B01",
+      "piece:025"
+    ],
+    "deck": [
+      "116",
+      "117",
+      "118",
+      "122",
+      "BFX001",
+      "ECL_S02",
+      "BFX008",
+      "BFX007",
+      "BFX007",
+      "BFX030",
+      "M4F_NEO_V01",
+      "M4F_NEO_V02",
+      "M4F_NEO_V02",
+      "M4F_NEO_V03",
+      "piece:023",
+      "piece:002",
+      "piece:010",
+      "piece:004",
+      "BFX009",
+      "BFX027",
+      "SWEET05",
+      "SWEET18",
+      "116",
+      "116",
+      "117",
+      "117",
+      "118",
+      "118",
+      "122",
+      "122",
+      "121",
+      "165",
+      "BFX011",
+      "BFX023",
+      "BFX040",
+      "M4F_NEO_M01",
+      "M4F_NEO_M02",
+      "piece:022",
+      "piece:011",
+      "BFX043",
+      "176",
+      "BFX045",
+      "BFX050",
+      "M4F_NEO_B01",
+      "piece:025"
+    ],
+    "routes": [
+      {
+        "needs": {
+          "118": 1,
+          "BFX001": 1,
+          "BFX011": 1,
+          "ECL_S02": 1,
+          "BFX008": 1,
+          "BFX023": 1,
+          "BFX045": 1
+        },
+        "steps": [
+          {
+            "target": "BFX011",
+            "materials": [
+              "118",
+              "BFX001"
+            ],
+            "label": "キュート × とびっきりのスイーツ",
+            "special": false
+          },
+          {
+            "target": "BFX023",
+            "materials": [
+              "ECL_S02",
+              "BFX008"
+            ],
+            "label": "闇属性 × 美味しい食べ物",
+            "special": false
+          },
+          {
+            "target": "BFX045",
+            "materials": [
+              "BFX011",
+              "BFX023"
+            ],
+            "label": "MUSIC × 美味しい食べ物",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "118": 1,
+          "BFX001": 1,
+          "ECL_S02": 1,
+          "BFX008": 1
+        }
+      },
+      {
+        "needs": {
+          "ECL_S02": 1,
+          "BFX001": 1,
+          "BFX023": 1,
+          "BFX007": 2,
+          "BFX040": 1,
+          "BFX050": 1
+        },
+        "steps": [
+          {
+            "target": "BFX023",
+            "materials": [
+              "ECL_S02",
+              "BFX001"
+            ],
+            "label": "闇属性 × 美味しい食べ物",
+            "special": false
+          },
+          {
+            "target": "BFX040",
+            "materials": [
+              "BFX007",
+              "BFX007"
+            ],
+            "label": "水属性 × 美味しい食べ物",
+            "special": false
+          },
+          {
+            "target": "BFX050",
+            "materials": [
+              "BFX023",
+              "BFX040"
+            ],
+            "label": "モブゼリーステーション × モブソーダ・エコーフィン",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "ECL_S02": 1,
+          "BFX001": 1,
+          "BFX007": 2
+        }
+      },
+      {
+        "needs": {
+          "116": 1,
+          "117": 1,
+          "118": 1,
+          "121": 1,
+          "165": 1,
+          "176": 1,
+          "BFX030": 1
+        },
+        "steps": [
+          {
+            "target": "165",
+            "materials": [
+              "118",
+              "BFX030"
+            ],
+            "label": "figene 31 ×光属性",
+            "special": false
+          },
+          {
+            "target": "121",
+            "materials": [
+              "116",
+              "117"
+            ],
+            "label": "29×30",
+            "special": false
+          },
+          {
+            "target": "176",
+            "materials": [
+              "165",
+              "121"
+            ],
+            "label": "figboss 07 × figene 34",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "116": 1,
+          "117": 1,
+          "118": 1,
+          "BFX030": 1
+        }
+      },
+      {
+        "needs": {
+          "M4F_NEO_V01": 1,
+          "M4F_NEO_V02": 2,
+          "M4F_NEO_M01": 1,
+          "M4F_NEO_V03": 1,
+          "M4F_NEO_M02": 1,
+          "M4F_NEO_B01": 1
+        },
+        "steps": [
+          {
+            "target": "M4F_NEO_M01",
+            "materials": [
+              "M4F_NEO_V01",
+              "M4F_NEO_V02"
+            ],
+            "label": "モブネオル・アーク × モブネオル・ビート",
+            "special": false
+          },
+          {
+            "target": "M4F_NEO_M02",
+            "materials": [
+              "M4F_NEO_V02",
+              "M4F_NEO_V03"
+            ],
+            "label": "モブネオル・ビート × モブネオル・グラフ",
+            "special": false
+          },
+          {
+            "target": "M4F_NEO_B01",
+            "materials": [
+              "M4F_NEO_M01",
+              "M4F_NEO_M02"
+            ],
+            "label": "モブネオル・アークビート × モブネオル・ビートグラフ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "M4F_NEO_V01": 1,
+          "M4F_NEO_V02": 2,
+          "M4F_NEO_V03": 1
+        }
+      },
+      {
+        "needs": {
+          "piece:023": 1,
+          "piece:002": 1,
+          "piece:022": 1,
+          "piece:010": 1,
+          "piece:004": 1,
+          "piece:011": 1,
+          "piece:025": 1
+        },
+        "steps": [
+          {
+            "target": "piece:022",
+            "materials": [
+              "piece:023",
+              "piece:002"
+            ],
+            "label": "PB2 × ピースメイン",
+            "special": false
+          },
+          {
+            "target": "piece:011",
+            "materials": [
+              "piece:010",
+              "piece:004"
+            ],
+            "label": "ヒーローベル × ピースメイン",
+            "special": false
+          },
+          {
+            "target": "piece:025",
+            "materials": [
+              "piece:022",
+              "piece:011"
+            ],
+            "label": "PB2 × ピースメイン",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "piece:023": 1,
+          "piece:002": 1,
+          "piece:010": 1,
+          "piece:004": 1
+        }
+      },
+      {
+        "needs": {
+          "122": 1,
+          "BFX009": 1,
+          "BFX043": 1
+        },
+        "steps": [
+          {
+            "target": "BFX043",
+            "materials": [
+              "122",
+              "BFX009"
+            ],
+            "label": "火属性 × とびっきりのスイーツ",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "122": 1,
+          "BFX009": 1
+        }
+      }
+    ],
+    "supportIds": [
+      "ECL_S02",
+      "piece:002",
+      "piece:004",
+      "piece:022",
+      "piece:025"
+    ],
+    "supportSummary": "ネオン・MUSICの進化先＋音楽機材の補助",
+    "rank": "SS",
+    "baseThemeId": "music",
+    "middleCount": null,
+    "themeName": "ネオンMUSIC"
   }
 ]

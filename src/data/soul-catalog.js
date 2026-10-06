@@ -1,3 +1,4 @@
+import {applyOct06Spec} from './oct06-spec.js';
 import {applyBattleCorrections} from './battle-corrections.js';
 import {applyOct05Spec} from './oct05-spec.js';
 // Imported from the v1 master with user-approved soul-overrides.js; edit the source/override, not generated data.
@@ -33,6 +34,9 @@ const base = {
     "handRefill": 5,
     "directAttack": false,
     "skillPerTurn": 1,
+    "skillPerTurnScope": "figure",
+    "skillUsesByStage": {"seed":1,"middle":2,"mob":3},
+    "fusionAndRevivalRefillSkills": true,
     "skillUsedFigureCannotFuseSameTurn": true,
     "attackPerFigurePerTurn": 1,
     "seedDeck": 30,
@@ -35935,4 +35939,4 @@ const base = {
     }
   ]
 };
-export default applyBattleCorrections(applyOct05Spec(extendPieceCatalog(base)));
+export default applyOct06Spec(applyBattleCorrections(applyOct05Spec(extendPieceCatalog(base))));

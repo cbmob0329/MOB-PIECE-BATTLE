@@ -18,7 +18,7 @@ for(const f of g.soulFigures){
 }
 const p=blank();p.soulDecks[1]=['NS2_033'];assert.ok(g.soulDeckAddStatus(p,'NS2_033').reasons.some(r=>r.includes('DECK 2')));
 p.soulDeckSlot=2;assert.ok(g.soulDeckAddStatus(p,'NS2_033').allowed);
-p.soulDecks[2]=freeEnemies[0].deck.slice(0,30);assert.ok(g.soulDeckAddStatus(p,'NS2_033').reasons.some(r=>r.includes('30体')));
+p.soulDecks[2]=freeEnemies[0].deck.slice();assert.ok(g.soulDeckAddStatus(p,'NS2_033').reasons.some(r=>r.includes('45体')));
 const legacy=blank();legacy.soulDecks=[['NS2_001','NS2_001','NS2_001','NS2_001','spboss001','obsolete-id']];legacy.soulDeckSlot='4';const original=structuredClone(legacy.soulDecks[0]);assert.deepEqual(g.ensureSoulDecks(legacy),[]);assert.equal(legacy.soulDeckSlot,4);assert.deepEqual(legacy.soulDecks[0],original);
 legacy.soulDeckSlot=0;assert.equal(g.soulDeckAddStatus(legacy,'NS2_002').allowed,false);let repaired=legacy;for(let i=0;i<3;i++)repaired=g.prepareSoulDeck(repaired,repaired.soulDecks[0].slice(0,-1));assert.ok(g.soulDeckAddStatus(repaired,'NS2_002').allowed);assert.deepEqual(legacy.soulDecks[0],original);assert.deepEqual(repaired.owned,owned);
 assert.ok(g.soulDeckAddStatus(blank(),'spboss001').reasons.some(r=>r.includes('BATTLE対象外')));

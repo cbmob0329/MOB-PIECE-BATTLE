@@ -24,7 +24,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX001.png",
+      "image": "piecefig/BFX/BFX001.png",
       "collection": "main",
       "soulSkill": {
         "name": "リミックス・リロード",
@@ -74,7 +74,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX007.png",
+      "image": "piecefig/BFX/BFX007.png",
       "collection": "main",
       "soulSkill": {
         "name": "リフレクト・ポップ",
@@ -124,7 +124,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX008.png",
+      "image": "piecefig/BFX/BFX008.png",
       "collection": "main",
       "soulSkill": {
         "name": "カラー・ユニゾン",
@@ -174,7 +174,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX009.png",
+      "image": "piecefig/BFX/BFX009.png",
       "collection": "main",
       "soulSkill": {
         "name": "同調アンテナ",
@@ -224,7 +224,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX010.png",
+      "image": "piecefig/BFX/BFX010.png",
       "collection": "main",
       "soulSkill": {
         "name": "テンポ・ブレーキ",
@@ -274,7 +274,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX011.png",
+      "image": "piecefig/BFX/BFX011.png",
       "collection": "main",
       "soulSkill": {
         "name": "トップ・チューニング",
@@ -324,7 +324,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX012.png",
+      "image": "piecefig/BFX/BFX012.png",
       "collection": "main",
       "soulSkill": {
         "name": "おかえりセッション",
@@ -374,7 +374,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX013.png",
+      "image": "piecefig/BFX/BFX013.png",
       "collection": "main",
       "soulSkill": {
         "name": "ノイズ・スナップ",
@@ -424,7 +424,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX014.png",
+      "image": "piecefig/BFX/BFX014.png",
       "collection": "main",
       "soulSkill": {
         "name": "おかえりセッション",
@@ -474,7 +474,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX015.png",
+      "image": "piecefig/BFX/BFX015.png",
       "collection": "main",
       "soulSkill": {
         "name": "カラー・ユニゾン",
@@ -524,7 +524,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX016.png",
+      "image": "piecefig/BFX/BFX016.png",
       "collection": "main",
       "soulSkill": {
         "name": "リターン・ビート",
@@ -574,7 +574,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX019.png",
+      "image": "piecefig/BFX/BFX019.png",
       "collection": "main",
       "soulSkill": {
         "name": "トップ・チューニング",
@@ -624,7 +624,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX023.png",
+      "image": "piecefig/BFX/BFX023.png",
       "collection": "main",
       "soulSkill": {
         "name": "サイレント・カット",
@@ -674,7 +674,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX027.png",
+      "image": "piecefig/BFX/BFX027.png",
       "collection": "main",
       "soulSkill": {
         "name": "ノイズ・スナップ",
@@ -724,7 +724,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX030.png",
+      "image": "piecefig/BFX/BFX030.png",
       "collection": "main",
       "soulSkill": {
         "name": "リターン・ビート",
@@ -774,7 +774,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX033.png",
+      "image": "piecefig/BFX/BFX033.png",
       "collection": "main",
       "soulSkill": {
         "name": "リミックス・リロード",
@@ -824,7 +824,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX034.png",
+      "image": "piecefig/BFX/BFX034.png",
       "collection": "main",
       "soulSkill": {
         "name": "カラー・ユニゾン",
@@ -874,7 +874,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX035.png",
+      "image": "piecefig/BFX/BFX035.png",
       "collection": "main",
       "soulSkill": {
         "name": "テンポ・ブレーキ",
@@ -924,7 +924,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX040.png",
+      "image": "piecefig/BFX/BFX040.png",
       "collection": "main",
       "soulSkill": {
         "name": "リフレクト・ポップ",
@@ -974,7 +974,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX042.png",
+      "image": "piecefig/BFX/BFX042.png",
       "collection": "main",
       "soulSkill": {
         "name": "サイレント・カット",
@@ -1024,7 +1024,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX043.png",
+      "image": "piecefig/BFX/BFX043.png",
       "collection": "main",
       "soulSkill": {
         "name": "サイレント・カット",
@@ -1074,7 +1074,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX045.png",
+      "image": "piecefig/BFX/BFX045.png",
       "collection": "main",
       "soulSkill": {
         "name": "おかえりセッション",
@@ -1125,7 +1125,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX046.png",
+      "image": "piecefig/BFX/BFX046.png",
       "collection": "main",
       "soulSkill": {
         "name": "クレセント・ミックス・セッション",
@@ -1176,7 +1176,7 @@
         "12",
         "65"
       ],
-      "image": "piecefig/BFX050.png",
+      "image": "piecefig/BFX/BFX050.png",
       "collection": "main",
       "soulSkill": {
         "name": "パルフェ・ディスコオーロラ・セッション",

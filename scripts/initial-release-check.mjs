@@ -1,3 +1,5 @@
+import {matchesMaterial} from '../src/game/fusion-rules.js';
+import {oct06RetiredIds} from '../src/data/oct06-spec.js';
 import expansion from '../docs/oct05-gacha-manifest.json' with {type:'json'};
 import assert from 'node:assert/strict';import fs from 'node:fs';
 import {release,initializeInitialRelease,prepareInitialChoice} from '../src/game/initial-release.js';
@@ -5,10 +7,10 @@ import {banners,archivedBanners,poolFor,drawFigureRate,ratesFor,OWN_CAP,RUBY_COS
 import {prepareDraw,exchangeFigure} from '../src/game/gacha.js';
 import * as g from '../src/game/soul-battle.js';
 const by=g.soulById;let suites=0;const test=(n,fn)=>{fn();console.log('PASS '+n);suites++;};
-const matches=(f,m)=>m.id?f.id===m.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute;
+const matches=matchesMaterial;
 test('3 expanded pools of registered figures; selected24 only; displayed rates sum to 100%; correct PU',()=>{
  assert.equal(banners.length,3);assert.equal(archivedBanners.length,23);assert.ok(banners.every(b=>!archivedBanners.some(old=>old.id===b.id)));const selected=g.soulFigures.filter(f=>f.id.startsWith('BFX')).map(f=>f.id);
- for(const b of banners){const pool=poolFor(b);assert.equal(pool.length,expansion.banners.find(x=>x.id===b.id).count);assert.equal(new Set(pool.map(f=>f.sourceId)).size,expansion.banners.find(x=>x.id===b.id).count);assert.deepEqual(pool.filter(f=>f.sourceId.startsWith('BFX')).map(f=>f.sourceId).sort(),selected);for(const r of ['R','SR','SSR','UR','MOB'])assert.ok(pool.some(f=>f.rarity===r));for(const id of [...b.pickupIds,...b.featuredIds])assert.ok(pool.some(f=>f.sourceId===id));if(b.image)assert.ok(fs.existsSync(b.image));else for(const id of b.featuredIds)assert.ok(fs.existsSync(by.get(id).image));
+ for(const b of banners){const pool=poolFor(b);assert.equal(pool.length,(expansion.banners.find(x=>x.id===b.id).count-expansion.banners.find(x=>x.id===b.id).added.filter(id=>oct06RetiredIds.has(id)).length-expansion.banners.find(x=>x.id===b.id).before.filter(id=>oct06RetiredIds.has(id)).length));assert.equal(new Set(pool.map(f=>f.sourceId)).size,(expansion.banners.find(x=>x.id===b.id).count-expansion.banners.find(x=>x.id===b.id).added.filter(id=>oct06RetiredIds.has(id)).length-expansion.banners.find(x=>x.id===b.id).before.filter(id=>oct06RetiredIds.has(id)).length));assert.deepEqual(pool.filter(f=>f.sourceId.startsWith('BFX')).map(f=>f.sourceId).sort(),selected);for(const r of ['R','SR','SSR','UR','MOB'])assert.ok(pool.some(f=>f.rarity===r));for(const id of [...b.pickupIds,...b.featuredIds])assert.ok(pool.some(f=>f.sourceId===id));if(b.image)assert.ok(fs.existsSync(b.image));else for(const id of b.featuredIds)assert.ok(fs.existsSync(by.get(id).image));
   for(const count of [1,10])for(let i=0;i<count;i++)assert.ok(Math.abs(pool.reduce((n,f)=>n+drawFigureRate(b,f,count,i),0)-1)<1e-10);for(const guarantee of [false,true,'SSR'])assert.ok(Math.abs(Object.values(ratesFor(b,guarantee)).reduce((a,b)=>a+b,0)-1)<1e-10);
  }
 });

@@ -42,3 +42,5 @@
 .duel-hand-piece.fusion-ready.selected{outline:3px solid #ffe795;}
 .attack-confirm-summary{display:flex;align-items:center;justify-content:center;gap:12px;font-size:18px;margin:12px 0 20px;}
 .attack-confirm-summary span{color:#9fafc5;}
+
+.duel-skill-usage{font-size:12px;margin:5px 0;color:#bde9ff;}.duel-skill-usage small{display:block;font-size:11px;color:#ffd3a8;}.duel-hand-piece .hand-skill-count{display:block;font-size:9px;padding:2px 0;color:#d6f4ff;}.duel-status{font-size:8px;}

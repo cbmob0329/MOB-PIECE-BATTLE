@@ -10,3 +10,14 @@ export function matchesMaterial(figure,material,{tags=figure.tags,attribute=figu
 }
 export function recipeMaterialClass(recipe,by){const target=by.get(recipe.target);if(!target)return null;return recipe.preserveStage?target.soulClass:soulStages[soulStages.indexOf(target.soulClass)-1]||null;}
 export function recipeStageMatches(recipe,pair,by){const kind=recipeMaterialClass(recipe,by);return !!kind&&pair.length===2&&pair.every(f=>f.soulClass===kind);}
+
+// One universal material may substitute one condition; the other condition must
+// match naturally. Stage legality is always checked separately by the caller.
+export function recipePairMatches(recipe,pair,options=[]){
+ if(pair.length!==2)return false;
+ const matches=(i,j)=>matchesMaterial(pair[i],recipe.materials[j],options[i]);
+ const universal=i=>!!pair[i].passive?.universalFusion;
+ return (matches(0,0)&&matches(1,1))||(matches(1,0)&&matches(0,1))||
+  (universal(0)&&(matches(1,0)||matches(1,1)))||
+  (universal(1)&&(matches(0,0)||matches(0,1)));
+}

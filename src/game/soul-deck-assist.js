@@ -1,4 +1,4 @@
-import {matchesMaterial,recipeMaterialClass} from './fusion-rules.js';
+import {matchesMaterial,recipeMaterialClass,recipePairMatches} from './fusion-rules.js';
 import {soulFigures,soulById,recipes,quotas,validateSoulDeck} from './soul-battle.js';
 export const countIds=ids=>ids.reduce((out,id)=>(out[id]=(out[id]||0)+1,out),{});
 const matches=matchesMaterial;
@@ -17,9 +17,10 @@ export function fusionRecommendations(target,owned,deck=[]){
   const f=soulById.get(id);if(f.soulClass==='seed')return (limits[id]||0)>0?[{needs:{[id]:1},steps:[]}]:[];
   const found=[];
   for(const recipe of recipes.filter(r=>r.target===id)){
-   const candidates=recipe.materials.map(m=>soulFigures.filter(f=>(limits[f.id]||0)>0&&f.soulClass===recipeMaterialClass(recipe,soulById)&&matches(f,m)).sort((a,b)=>(inDeck[b.id]||0)-(inDeck[a.id]||0)||a.id.localeCompare(b.id)).slice(0,8));
+   const candidates=recipe.materials.map(m=>soulFigures.filter(f=>(limits[f.id]||0)>0&&f.soulClass===recipeMaterialClass(recipe,soulById)&&(matches(f,m)||f.passive?.universalFusion)).sort((a,b)=>(inDeck[b.id]||0)-(inDeck[a.id]||0)||a.id.localeCompare(b.id)).slice(0,8));
    pairs: for(const a of candidates[0])for(const b of candidates[1]){
     if(a.id===b.id&&(limits[a.id]||0)<2)continue;
+    if(!recipePairMatches(recipe,[a,b]))continue;
     for(const left of visit(a.id,[...path,id]))for(const right of visit(b.id,[...path,id])){
      const needs=sum(sum(left.needs,right.needs),{[id]:1});if(!valid(needs,limits))continue;
      found.push({needs,steps:[...left.steps,...right.steps,{target:id,materials:[a.id,b.id],label:recipe.label,special:recipe.special}]});
@@ -56,13 +57,13 @@ export function planSoulDeck(deck,owned,mode){
   if(!chosen){warnings.push(soulById.get(id).name+'：所持素材・中間ミドル・空き枠に合う融合ルート候補が見つかりません');continue;}
   for(const [fid,n]of Object.entries(chosen.seeds))weights[fid]=(weights[fid]||0)+n;
  }
- const fillClass=kind=>{
-  const counts=countIds(result);let left=quotas[kind]-result.filter(id=>soulById.get(id).soulClass===kind).length;
+ const fillClass=(kind,limit=quotas[kind])=>{
+  const counts=countIds(result);let left=limit-result.filter(id=>soulById.get(id).soulClass===kind).length;
   const candidates=soulFigures.filter(f=>f.soulClass===kind&&(owned[f.id]||0)>(counts[f.id]||0)).sort((a,b)=>(weights[b.id]||0)-(weights[a.id]||0)||(b.atk+b.def)-(a.atk+a.def)||a.id.localeCompare(b.id));
   while(left>0){let added=false;for(const f of candidates)if((counts[f.id]||0)<(owned[f.id]||0)&&left>0&&!validateSoulDeck([...result,f.id],owned).errors.length){result.push(f.id);counts[f.id]=(counts[f.id]||0)+1;left--;added=true;}if(!added)break;}
-  if(left)warnings.push(({seed:'シード',middle:'ミドル',mob:'MOB'})[kind]+'の所持数が'+left+'体不足しています');
+  if(left>0&&mode!=='fill')warnings.push(({seed:'シード',middle:'ミドル',mob:'MOB'})[kind]+'の所持数が'+left+'体不足しています');
  };
- fillClass('seed');if(mode==='fill'){fillClass('middle');fillClass('mob');}
+ fillClass('seed');if(mode==='fill'){fillClass('middle');fillClass('mob');for(const kind of ['seed','middle','mob'])fillClass(kind,result.filter(id=>soulById.get(id).soulClass===kind).length+Math.max(0,45-result.length));if(result.length<45)warnings.push('合計45体まであと'+(45-result.length)+'体不足しています');}
  // Put a recommended pair first only when replacing seeds. Fill mode preserves draw order.
  if(mode!=='fill')result=[...result.filter(id=>soulById.get(id).soulClass==='seed'),...result.filter(id=>soulById.get(id).soulClass!=='seed')];
  return {deck:result,warnings,counts:validateSoulDeck(result,owned).counts};

@@ -20,7 +20,7 @@
       "id": "SWEET11",
       "uid": "MOB-SWEET-011",
       "name": "ふがしバウンダー",
-      "image": "piecefig/SWEET11.png",
+      "image": "piecefig/SWEET/SWEET11.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "風",
@@ -75,7 +75,7 @@
       "id": "SWEET12",
       "uid": "MOB-SWEET-012",
       "name": "きなこスラッガー",
-      "image": "piecefig/SWEET12.png",
+      "image": "piecefig/SWEET/SWEET12.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "地",
@@ -130,7 +130,7 @@
       "id": "SWEET13",
       "uid": "MOB-SWEET-013",
       "name": "ピーピーローラー",
-      "image": "piecefig/SWEET13.png",
+      "image": "piecefig/SWEET/SWEET13.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "風",
@@ -185,7 +185,7 @@
       "id": "SWEET14",
       "uid": "MOB-SWEET-014",
       "name": "バブルホッパー",
-      "image": "piecefig/SWEET14.png",
+      "image": "piecefig/SWEET/SWEET14.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "風",
@@ -240,7 +240,7 @@
       "id": "SWEET15",
       "uid": "MOB-SWEET-015",
       "name": "むぎチョコスクーパー",
-      "image": "piecefig/SWEET15.png",
+      "image": "piecefig/SWEET/SWEET15.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "地",
@@ -295,7 +295,7 @@
       "id": "SWEET16",
       "uid": "MOB-SWEET-016",
       "name": "ボーロバランサー",
-      "image": "piecefig/SWEET16.png",
+      "image": "piecefig/SWEET/SWEET16.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "光",
@@ -350,7 +350,7 @@
       "id": "SWEET17",
       "uid": "MOB-SWEET-017",
       "name": "カステラフリッパー",
-      "image": "piecefig/SWEET17.png",
+      "image": "piecefig/SWEET/SWEET17.png",
       "rarity": "SR",
       "soulClass": "seed",
       "attribute": "火",
@@ -407,7 +407,7 @@
       "id": "SWEET18",
       "uid": "MOB-SWEET-018",
       "name": "ヌードルビート",
-      "image": "piecefig/SWEET18.png",
+      "image": "piecefig/SWEET/SWEET18.png",
       "rarity": "SR",
       "soulClass": "seed",
       "attribute": "雷",
@@ -464,7 +464,7 @@
       "id": "SWEET19",
       "uid": "MOB-SWEET-019",
       "name": "ヨーグルクライマー",
-      "image": "piecefig/SWEET19.png",
+      "image": "piecefig/SWEET/SWEET19.png",
       "rarity": "SSR",
       "soulClass": "seed",
       "attribute": "地",
@@ -523,7 +523,7 @@
       "id": "SWEET20",
       "uid": "MOB-SWEET-020",
       "name": "りんごアメノツルギ",
-      "image": "piecefig/SWEET20.png",
+      "image": "piecefig/SWEET/SWEET20.png",
       "rarity": "UR",
       "soulClass": "seed",
       "attribute": "火",
@@ -584,7 +584,7 @@
       "id": "SWEET21",
       "uid": "MOB-SWEET-021",
       "name": "かりんとうアクロバット",
-      "image": "piecefig/SWEET21.png",
+      "image": "piecefig/SWEET/SWEET21.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "地",
@@ -639,7 +639,7 @@
       "id": "SWEET22",
       "uid": "MOB-SWEET-022",
       "name": "きびだんご旅人",
-      "image": "piecefig/SWEET22.png",
+      "image": "piecefig/SWEET/SWEET22.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "地",
@@ -694,7 +694,7 @@
       "id": "SWEET23",
       "uid": "MOB-SWEET-023",
       "name": "ビスケット彫刻家",
-      "image": "piecefig/SWEET23.png",
+      "image": "piecefig/SWEET/SWEET23.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "地",
@@ -749,7 +749,7 @@
       "id": "SWEET24",
       "uid": "MOB-SWEET-024",
       "name": "ポン菓子屋台番",
-      "image": "piecefig/SWEET24.png",
+      "image": "piecefig/SWEET/SWEET24.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "風",
@@ -804,7 +804,7 @@
       "id": "SWEET25",
       "uid": "MOB-SWEET-025",
       "name": "ミルク飴マジシャン",
-      "image": "piecefig/SWEET25.png",
+      "image": "piecefig/SWEET/SWEET25.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "光",
@@ -859,7 +859,7 @@
       "id": "SWEET26",
       "uid": "MOB-SWEET-026",
       "name": "水あめ職人",
-      "image": "piecefig/SWEET26.png",
+      "image": "piecefig/SWEET/SWEET26.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "水",
@@ -914,7 +914,7 @@
       "id": "SWEET27",
       "uid": "MOB-SWEET-027",
       "name": "あんず棒スケーター",
-      "image": "piecefig/SWEET27.png",
+      "image": "piecefig/SWEET/SWEET27.png",
       "rarity": "SR",
       "soulClass": "seed",
       "attribute": "水",
@@ -971,7 +971,7 @@
       "id": "SWEET28",
       "uid": "MOB-SWEET-028",
       "name": "梅ジャム絵師",
-      "image": "piecefig/SWEET28.png",
+      "image": "piecefig/SWEET/SWEET28.png",
       "rarity": "SR",
       "soulClass": "seed",
       "attribute": "地",
@@ -1028,7 +1028,7 @@
       "id": "SWEET29",
       "uid": "MOB-SWEET-029",
       "name": "渦巻きキャンディ指揮者",
-      "image": "piecefig/SWEET29.png",
+      "image": "piecefig/SWEET/SWEET29.png",
       "rarity": "SSR",
       "soulClass": "seed",
       "attribute": "雷",
@@ -1087,7 +1087,7 @@
       "id": "SWEET30",
       "uid": "MOB-SWEET-030",
       "name": "たい焼き船長",
-      "image": "piecefig/SWEET30.png",
+      "image": "piecefig/SWEET/SWEET30.png",
       "rarity": "UR",
       "soulClass": "seed",
       "attribute": "火",
@@ -1148,7 +1148,7 @@
       "id": "SWEET01",
       "uid": "MOB-SWEET-001",
       "name": "モブラムネクーリエ",
-      "image": "piecefig/SWEET01.png",
+      "image": "piecefig/SWEET/SWEET01.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "水",
@@ -1203,7 +1203,7 @@
       "id": "SWEET02",
       "uid": "MOB-SWEET-002",
       "name": "モブキャラメルフォージ",
-      "image": "piecefig/SWEET02.png",
+      "image": "piecefig/SWEET/SWEET02.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "地",
@@ -1258,7 +1258,7 @@
       "id": "SWEET03",
       "uid": "MOB-SWEET-003",
       "name": "モブコンペイトスター",
-      "image": "piecefig/SWEET03.png",
+      "image": "piecefig/SWEET/SWEET03.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "光",
@@ -1313,7 +1313,7 @@
       "id": "SWEET04",
       "uid": "MOB-SWEET-004",
       "name": "モブセンベイガード",
-      "image": "piecefig/SWEET04.png",
+      "image": "piecefig/SWEET/SWEET04.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "地",
@@ -1368,7 +1368,7 @@
       "id": "SWEET05",
       "uid": "MOB-SWEET-005",
       "name": "モブウエハースミューズ",
-      "image": "piecefig/SWEET05.png",
+      "image": "piecefig/SWEET/SWEET05.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "雷",
@@ -1423,7 +1423,7 @@
       "id": "SWEET06",
       "uid": "MOB-SWEET-006",
       "name": "モブドロップタンブラー",
-      "image": "piecefig/SWEET06.png",
+      "image": "piecefig/SWEET/SWEET06.png",
       "rarity": "R",
       "soulClass": "seed",
       "attribute": "風",
@@ -1478,7 +1478,7 @@
       "id": "SWEET07",
       "uid": "MOB-SWEET-007",
       "name": "モブショココイン船長",
-      "image": "piecefig/SWEET07.png",
+      "image": "piecefig/SWEET/SWEET07.png",
       "rarity": "SR",
       "soulClass": "seed",
       "attribute": "闇",
@@ -1535,7 +1535,7 @@
       "id": "SWEET08",
       "uid": "MOB-SWEET-008",
       "name": "モブモナカオニパティシエ",
-      "image": "piecefig/SWEET08.png",
+      "image": "piecefig/SWEET/SWEET08.png",
       "rarity": "SR",
       "soulClass": "seed",
       "attribute": "地",
@@ -1592,7 +1592,7 @@
       "id": "SWEET09",
       "uid": "MOB-SWEET-009",
       "name": "モブゼリールミナリス",
-      "image": "piecefig/SWEET09.png",
+      "image": "piecefig/SWEET/SWEET09.png",
       "rarity": "SSR",
       "soulClass": "seed",
       "attribute": "水",
@@ -1651,7 +1651,7 @@
       "id": "SWEET10",
       "uid": "MOB-SWEET-010",
       "name": "モブワタアメ雲龍王",
-      "image": "piecefig/SWEET10.png",
+      "image": "piecefig/SWEET/SWEET10.png",
       "rarity": "UR",
       "soulClass": "seed",
       "attribute": "光",
@@ -4523,7 +4523,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB001.png"
+      "image": "piecefig/MB/MB001.png"
     },
     {
       "id": "MB002",
@@ -4570,7 +4570,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB002.png"
+      "image": "piecefig/MB/MB002.png"
     },
     {
       "id": "MB003",
@@ -4617,7 +4617,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB003.png"
+      "image": "piecefig/MB/MB003.png"
     },
     {
       "id": "MB004",
@@ -4664,7 +4664,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB004.png"
+      "image": "piecefig/MB/MB004.png"
     },
     {
       "id": "MB005",
@@ -4711,7 +4711,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB005.png"
+      "image": "piecefig/MB/MB005.png"
     },
     {
       "id": "MB006",
@@ -4758,7 +4758,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB006.png"
+      "image": "piecefig/MB/MB006.png"
     },
     {
       "id": "MB007",
@@ -4805,7 +4805,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB007.png"
+      "image": "piecefig/MB/MB007.png"
     },
     {
       "id": "MB008",
@@ -4852,7 +4852,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB008.png"
+      "image": "piecefig/MB/MB008.png"
     },
     {
       "id": "MB009",
@@ -4899,7 +4899,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB009.png"
+      "image": "piecefig/MB/MB009.png"
     },
     {
       "id": "MB010",
@@ -4946,7 +4946,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB010.png"
+      "image": "piecefig/MB/MB010.png"
     },
     {
       "id": "MB016",
@@ -4993,7 +4993,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB016.png"
+      "image": "piecefig/MB/MB016.png"
     },
     {
       "id": "MB017",
@@ -5040,7 +5040,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB017.png"
+      "image": "piecefig/MB/MB017.png"
     },
     {
       "id": "MB018",
@@ -5087,7 +5087,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB018.png"
+      "image": "piecefig/MB/MB018.png"
     },
     {
       "id": "MB019",
@@ -5134,7 +5134,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB019.png"
+      "image": "piecefig/MB/MB019.png"
     },
     {
       "id": "MB020",
@@ -5181,7 +5181,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB020.png"
+      "image": "piecefig/MB/MB020.png"
     },
     {
       "id": "MB021",
@@ -5228,7 +5228,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB021.png"
+      "image": "piecefig/MB/MB021.png"
     },
     {
       "id": "MB022",
@@ -5275,7 +5275,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB022.png"
+      "image": "piecefig/MB/MB022.png"
     },
     {
       "id": "MB023",
@@ -5322,7 +5322,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB023.png"
+      "image": "piecefig/MB/MB023.png"
     },
     {
       "id": "MB024",
@@ -5369,7 +5369,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB024.png"
+      "image": "piecefig/MB/MB024.png"
     },
     {
       "id": "MB025",
@@ -5416,7 +5416,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB025.png"
+      "image": "piecefig/MB/MB025.png"
     },
     {
       "id": "MB026",
@@ -5463,7 +5463,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB026.png"
+      "image": "piecefig/MB/MB026.png"
     },
     {
       "id": "MB027",
@@ -5510,7 +5510,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB027.png"
+      "image": "piecefig/MB/MB027.png"
     },
     {
       "id": "MB028",
@@ -5557,7 +5557,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB028.png"
+      "image": "piecefig/MB/MB028.png"
     },
     {
       "id": "MB029",
@@ -5604,7 +5604,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB029.png"
+      "image": "piecefig/MB/MB029.png"
     },
     {
       "id": "MB030",
@@ -5651,7 +5651,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB030.png"
+      "image": "piecefig/MB/MB030.png"
     },
     {
       "id": "MB031",
@@ -5698,7 +5698,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB031.png"
+      "image": "piecefig/MB/MB031.png"
     },
     {
       "id": "MB032",
@@ -5745,7 +5745,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB032.png"
+      "image": "piecefig/MB/MB032.png"
     },
     {
       "id": "MB033",
@@ -5792,7 +5792,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB033.png"
+      "image": "piecefig/MB/MB033.png"
     },
     {
       "id": "MB034",
@@ -5839,7 +5839,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB034.png"
+      "image": "piecefig/MB/MB034.png"
     },
     {
       "id": "MB035",
@@ -5886,7 +5886,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB035.png"
+      "image": "piecefig/MB/MB035.png"
     },
     {
       "id": "MB036",
@@ -5933,7 +5933,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB036.png"
+      "image": "piecefig/MB/MB036.png"
     },
     {
       "id": "MB037",
@@ -5980,7 +5980,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB037.png"
+      "image": "piecefig/MB/MB037.png"
     },
     {
       "id": "MB038",
@@ -6027,7 +6027,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB038.png"
+      "image": "piecefig/MB/MB038.png"
     },
     {
       "id": "MB039",
@@ -6074,7 +6074,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB039.png"
+      "image": "piecefig/MB/MB039.png"
     },
     {
       "id": "MB040",
@@ -6121,7 +6121,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB040.png"
+      "image": "piecefig/MB/MB040.png"
     },
     {
       "id": "MB041",
@@ -6168,7 +6168,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB041.png"
+      "image": "piecefig/MB/MB041.png"
     },
     {
       "id": "MB042",
@@ -6215,7 +6215,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB042.png"
+      "image": "piecefig/MB/MB042.png"
     },
     {
       "id": "MB043",
@@ -6262,7 +6262,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB043.png"
+      "image": "piecefig/MB/MB043.png"
     },
     {
       "id": "MB044",
@@ -6309,7 +6309,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB044.png"
+      "image": "piecefig/MB/MB044.png"
     },
     {
       "id": "MB045",
@@ -6403,7 +6403,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB046.png"
+      "image": "piecefig/MB/MB046.png"
     },
     {
       "id": "MB047",
@@ -6450,7 +6450,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB047.png"
+      "image": "piecefig/MB/MB047.png"
     },
     {
       "id": "MB048",
@@ -6497,7 +6497,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB048.png"
+      "image": "piecefig/MB/MB048.png"
     },
     {
       "id": "MB049",
@@ -6591,7 +6591,7 @@
       },
       "fusionMaterials": [],
       "fusionTargets": [],
-      "image": "piecefig/MB050.png"
+      "image": "piecefig/MB/MB050.png"
     }
   ],
   "tags": [

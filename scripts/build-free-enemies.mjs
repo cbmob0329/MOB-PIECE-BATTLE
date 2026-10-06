@@ -1,3 +1,4 @@
+import {buildRankedEnemies} from './build-ranked-free-enemies.mjs';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import data from '../src/data/free-enemies.json' with {type:'json'};
@@ -5,7 +6,7 @@ import {soulFigures,soulById,validateSoulDeck} from '../src/game/soul-battle.js'
 import {buildAceDeck} from '../src/game/ace-deck.js';
 import {enemyThemes,enemySeedAnchors,enemyFigureAllowed} from '../src/game/free-enemy-policy.js';
 const results=[];
-for(const original of data){
+for(const original of data.filter(e=>!e.baseThemeId)){
  const spec=enemyThemes[original.id],e={...original,themeTagIds:spec.tags||original.themeTagIds};
  const pool=soulFigures.filter(f=>enemyFigureAllowed(e,f));
  const owned=Object.fromEntries(pool.map(f=>[f.id,f.soulClass==='seed'?3:1]));
@@ -24,4 +25,5 @@ for(const original of data){
  results.push({...e,deck,aces:built.aces,routes:built.routes,supportIds,supportSummary});
  console.log(e.id,deck.length,'support',supportIds.length);
 }
+results.push(...buildRankedEnemies(results));
 fs.writeFileSync('src/data/free-enemies.json',JSON.stringify(results,null,2)+'\n');

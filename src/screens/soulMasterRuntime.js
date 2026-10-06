@@ -4,7 +4,7 @@ import catalog from '../data/soul-catalog.js';
 import {esc} from './soulLibrary.js';
 const {soulFigures,soulById,classNames,validateSoulDeck,ensureSoulDecks,autoSoulDeck,createSoulBattle,summon,fusionOptions,fuse,canSkill,useSkill,skillChoices,reactionOptions,passReaction,cpuRespond,beginBattle,attack,endTurn,cpuMain,cpuAttack,stats,attackLimit,moveAfterAttack}=game;
 export async function launchBattle({profile,request,onResolved}){
- const deck=ensureSoulDecks(profile),check=validateSoulDeck(deck,profile.owned);if(!check.valid)throw Error(check.errors[0]||'45体（シード30・ミドル10・MOB5）のデッキを完成させてください');
+ const deck=ensureSoulDecks(profile),check=validateSoulDeck(deck,profile.owned);if(!check.valid)throw Error(check.errors[0]||'合計45体のデッキを完成させてください');
  const enemy=selectCpuStarter(request.difficulty),state=createSoulBattle([deck,enemy.deck],['PLAYER',request.opponentName||enemy.name]);
  const dialog=document.createElement('dialog');dialog.className='soul-battle-dialog';document.body.append(dialog);dialog.showModal();
  let selected=null,materials=[],error='',settled=false,meta=null,skillUid=null,skillValues={},bannerSeen=0;
