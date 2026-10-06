@@ -1,4 +1,4 @@
-const ownEffects=['atk','def','attacks','ramp','killChain','firstKillChain','killDraw','eachTarget','laterAtk','killBreak','pierceGuard','ignoreDef','damageBonus','wildAttribute','survive'];
+const ownEffects=['atk','def','attacks','ramp','killChain','firstKillChain','killDraw','eachTarget','laterAtk','killBreak','pierceGuard','ignoreDef','damageBonus','wildAttribute','survive','taunt','attackSkillLock','graveTagBuff'];
 export function handPlan(plan,timing){const q={...plan};
  if(q.returnSelf){delete q.returnSelf;if(timing==='defeat-response')q.rescueTarget=true;if(q.replaceSeed){delete q.replaceSeed;q.draw=1;}}
  if(q.redirectSelf)delete q.redirectSelf;
@@ -7,7 +7,7 @@ export function handPlan(plan,timing){const q={...plan};
  if(q.casterEach||q.casterDamage)q.supportCaster=true;
  return q;
 }
-export function handSkillDescription(f){const t=f.soulSkill.timing,p=f.soulSkill.program;
+export function handSkillDescription(f){if(f.soulSkill.runtimePlan)return f.soulSkill.description+"（手札から発動すると、そのカードを墓地へ送る。パッシブは場でのみ有効。）";const t=f.soulSkill.timing,p=f.soulSkill.program;
  if(p>=112)return f.soulSkill.description+'（手札・場から同じ対象と条件で発動。成立した手札は墓地へ。）';
  if(t==='defeat-response')return '撃破される味方を手札へ戻します。'+(p===93?'その味方は次に召喚した時DEF+30。':'')+'差分ライフダメージは通常どおりです。';
  if(p===2)return 'シードデッキから1体ドローします。';

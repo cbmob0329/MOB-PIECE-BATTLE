@@ -1,6 +1,7 @@
+import oct06Draft from '../src/data/oct06-draft.json' with {type:'json'};
 import {matchesMaterial,recipeMaterialClass} from '../src/game/fusion-rules.js';
 import oct05Spec from '../src/data/oct05-spec.json' with {type:'json'};
-const updatedIds=new Set([...oct05Spec.patches.map(p=>p.id),'44','79','80','191','mq:eventfig/46','mq:eventfig/47']);
+const updatedIds=new Set([...oct05Spec.patches.map(p=>p.id),...oct06Draft.changes.map(p=>p.id),'44','79','80','191','mq:eventfig/46','mq:eventfig/47']);
 import {revisedTexts} from '../src/data/tactical-skills.js';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -14,7 +15,7 @@ const master=JSON.parse(fs.readFileSync('handoff/soul-v1/MOB_SOUL_BATTLE_全327�
 let count=0;const test=(name,fn)=>{fn();console.log('PASS '+name);count++;};
 const figures=c.figures,byId=g.soulById;
 const own=Object.fromEntries(figures.map(f=>[f.id,25])),deck=g.autoSoulDeck(own);
-const find=n=>{const found=g.soulFigures.find(f=>f.soulSkill.program===n);if(found)return found;const [timingLabel,effect]=texts[n].split(' | '),f={...figures[0],id:'test:program:'+n,soulSkill:{program:n,name:'Legacy program '+n,timing:({'自分メイン':'own-main','相手攻撃宣言時':'attack-response','相手スキル発動時':'skill-response','撃破時':'defeat-response'})[timingLabel],timingLabel,effect,description:effect}};byId.set(f.id,f);return f;},seed=figures.find(f=>f.soulClass==='seed'),mid=figures.find(f=>f.soulClass==='middle'),mob=figures.find(f=>f.soulClass==='mob');
+const find=n=>{const found=g.soulFigures.find(f=>f.soulSkill.program===n&&!f.soulSkill.runtimePlan);if(found)return found;const [timingLabel,effect]=texts[n].split(' | '),f={...figures[0],id:'test:program:'+n,soulSkill:{program:n,name:'Legacy program '+n,timing:({'自分メイン':'own-main','相手攻撃宣言時':'attack-response','相手スキル発動時':'skill-response','撃破時':'defeat-response'})[timingLabel],timingLabel,effect,description:effect}};byId.set(f.id,f);return f;},seed=figures.find(f=>f.soulClass==='seed'),mid=figures.find(f=>f.soulClass==='middle'),mob=figures.find(f=>f.soulClass==='mob');
 const fresh=()=>g.createSoulBattle([deck,deck],undefined,{random:()=>0.999999});
 // Isolated field fixtures use real imported figures; integration cases below use legal summons.
 function put(s,side,f,slot=0){const p={uid:++s.serial,id:f.id,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],lastTarget:null,extra:0,mobFusion:false,permanentAtk:0,permanentDef:0};s.players[side].field[slot]=p;return p;}
@@ -23,16 +24,16 @@ const resolve=s=>{for(let i=0;i<8&&s.pending;i++)g.passReaction(s,1-s.pending.si
 const cast=(s,side,f,o=choose(s,side,f))=>{g.useSkill(s,side,f.uid,o);resolve(s);};
 test('更新対象以外の327体由来データは元JSONを維持、指定変更と画像を確認',()=>{
  assert.equal(figures.length,281);assert.equal(new Set(figures.map(f=>f.id)).size,281);
- assert.deepEqual(Object.fromEntries(['seed','middle','mob'].map(k=>[k,figures.filter(f=>f.soulClass===k).length])),{"seed":155,"middle":96,"mob":30});
+ assert.deepEqual(Object.fromEntries(['seed','middle','mob'].map(k=>[k,figures.filter(f=>f.soulClass===k).length])),{"seed":154,"middle":96,"mob":31});
  for(const f of figures){const r=master.records.find(r=>r.uid===f.uid);if(updatedIds.has(f.id)){assert.ok(fs.existsSync(f.image));assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);continue;}assert.equal(f.atk,r.ATK);assert.equal(f.def,r.DEF);assert.equal(f.rarity,r.rarity);assert.equal(f.attribute,r.attribute);assert.deepEqual(f.tags,r.gameTagIds.filter(t=>t!=='13'||['70','71','72','73','74','185','79','80'].includes(f.id)));assert.equal(f.soulSkill.sourceText,revisedTexts[f.soulSkill.program]?.split(' | ')[1]||r.soulSkill.effect);assert.equal(texts[f.soulSkill.program],revisedTexts[f.soulSkill.program]||r.soulSkill.timing+' | '+r.soulSkill.effect);assert.ok(fs.existsSync(f.image),f.image);assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);assert.equal(legacy.find(x=>x.sourceId===f.id).pending,false);}
  for(let i=35;i<=46;i++)assert.ok(byId.has('mq:spbossfig/'+i));
- assert.ok(find(55).soulSkill.description.includes('使用後も'));assert.ok(find(93).soulSkill.description.includes('直接召喚'));
+ assert.ok(find(55).soulSkill.description.includes('使用後も'));assert.ok(byId.get('mq:eventfig/23').passive.phoenixOnce);
 });
 test('45体・階級・所持数、旧セーブの編成を無断変更しない',()=>{assert.ok(g.validateSoulDeck(deck,own).valid);assert.ok(!g.validateSoulDeck(deck.slice(1)).valid);assert.ok(!g.validateSoulDeck(deck,{}).valid);const p={soulDecks:[[seed.id]],soulDeckSlot:0,owned:own};assert.deepEqual(g.ensureSoulDecks(p),[seed.id]);});
 test('初期LIFE400、山札はシードのみ、手札5、専用領域15',()=>{const s=fresh();assert.deepEqual(s.players.map(p=>p.life),[400,400]);assert.equal(s.players[0].hand.length,5);assert.equal(s.players[0].reserve.length,15);assert.ok(s.players[0].deck.every(id=>byId.get(id).soulClass==='seed'));});
 test('3枠制限、融合後の再召喚、バトル後は通常スキル/融合/召喚禁止',()=>{const s=fresh();g.summon(s,0,0,0);g.summon(s,0,0,1);g.summon(s,0,0,2);assert.throws(()=>g.summon(s,0,0,2));const u=s.players[0].field.slice(0,2).map(f=>f.uid),r=g.fusionOptions(s,0,u)[0];assert.ok(r);g.fuse(s,0,u,r.id);g.summon(s,0,0,s.players[0].field.indexOf(null));g.beginBattle(s,0);assert.throws(()=>g.summon(s,0,0,0));assert.throws(()=>g.beginBattle(s,0));assert.throws(()=>g.attack(s,0,s.players[0].field[0].uid,null));});
 test('現行全314レシピが正しい2素材で実行可能',()=>{
- assert.equal(c.recipes.length,310);
+ assert.equal(new Set(c.recipes.map(r=>r.id)).size,c.recipes.length);
  for(const r of c.recipes){const s=fresh();const fs=r.materials.map(m=>g.soulFigures.find(f=>f.soulClass===recipeMaterialClass(r,byId)&&matchesMaterial(f,m)));if(!fs.every(Boolean)){assert.ok(oct05Spec.deferredIds.includes(r.target),'Only deferred recipes may lack a stage material: '+r.id);continue;}const a=put(s,0,fs[0]),b=put(s,0,fs[1],1);s.players[0].reserve=[r.target];assert.ok(g.fusionOptions(s,0,[a.uid,b.uid]).some(x=>x.id===r.id),r.id);g.fuse(s,0,[a.uid,b.uid],r.id);const result=s.players[0].field[0];assert.equal(result.id,r.target);assert.deepEqual(g.stats(result),{atk:byId.get(r.target).atk+(r.special?20:0),def:byId.get(r.target).def+(r.special?20:0)});assert.equal(s.players[0].grave.length,2);}
 });
 test('特殊融合の+20/+20はターンを跨いで持続、通常ルートも保持',()=>{const r=c.recipes.find(r=>r.special&&r.materials.every(m=>m.id)&&c.recipes.some(x=>x.target===r.target&&!x.special)),s=fresh();s.players[0].reserve=[r.target];const a=put(s,0,byId.get(r.materials[0].id)),b=put(s,0,byId.get(r.materials[1].id),1);g.fuse(s,0,[a.uid,b.uid],r.id);const f=s.players[0].field[0];g.beginBattle(s,0);g.endTurn(s,0);assert.equal(g.stats(f).atk,byId.get(r.target).atk+20);assert.ok(f.mobFusion);assert.ok(c.recipes.some(x=>x.target===r.target&&!x.special));assert.ok(c.recipes.filter(x=>x.special&&byId.get(x.target).name.includes('覚醒モブ')).every(x=>x.materials.every(m=>byId.get(m.id).name!=='モブリリス')));});

@@ -35,7 +35,8 @@
     "test:pools75-ui": "node scripts/initial-release-browser.mjs && node scripts/pools75-browser.mjs",
     "test:enemy-themes": "node scripts/enemy-themes-check.mjs",
     "test:deck-edit": "node scripts/deck-edit-check.mjs",
-    "data:free-enemies": "node scripts/build-free-enemies.mjs"
+    "data:free-enemies": "node scripts/build-free-enemies.mjs",
+    "test:oct06": "node scripts/oct06-runtime-check.mjs && node scripts/deck-flexible-check.mjs && node scripts/ranked-enemies-check.mjs"
   },
   "devDependencies": {
     "vite": "^7.1.5"

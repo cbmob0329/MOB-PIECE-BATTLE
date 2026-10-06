@@ -7,7 +7,7 @@ const plans={
  '190':{target:'enemies',filterTag:'09',atk:-30,def:-30,duration:'persistent'},
  '200':{discardEnemyHand:true},'129':{target:'enemy',lastAttack:true},
  '146':{target:'enemies',def:-20,duration:'persistent'},
- '156':{fusionBonus:{atk:20,def:20}},'202':{attacks:4},
+ '156':{fusionBonus:{atk:20,def:20,persistent:true}},'202':{attacks:4},
  '160':{summonLoneReserve:{class:'middle',tag:'41'}},
  '162':{target:'enemy',turnPoison:20},'164':{taunt:true},
  '169':{attacks:3,ramp:30},

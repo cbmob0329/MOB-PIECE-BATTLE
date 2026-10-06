@@ -7,7 +7,7 @@ import plans from '../src/game/soul-skill-programs.js';
 import selected from '../src/data/selected-additions.json' with {type:'json'};
 import {banners,poolFor} from '../src/data/gacha.js';
 import {grantMainCollection} from '../src/game/piece-starters.js';
-const figures=g.soulFigures,by=g.soulById,find=n=>[...by.values()].find(f=>f.soulSkill.program===n),seed=figures.find(f=>f.soulClass==='seed');
+const figures=g.soulFigures,by=g.soulById,seed=figures.find(f=>f.soulClass==='seed');const find=n=>{const found=[...by.values()].find(f=>f.soulSkill.program===n&&!f.soulSkill.runtimePlan);if(found)return found;const f={...seed,id:'legacy-program:'+n,soulSkill:{...seed.soulSkill,runtimePlan:undefined,program:n,timing:n===93?'defeat-response':'own-main',description:'Legacy program fixture'}};by.set(f.id,f);return f;};
 const deck=g.autoSoulDeck(Object.fromEntries(figures.map(f=>[f.id,25])));
 const fresh=()=>{const s=g.createSoulBattle([deck,deck]);s.players.forEach(p=>{p.hand=[];p.handBonuses=[];});return s;};
 function put(s,side,id,slot=0){const f={id,uid:++s.serial,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],lastTarget:null,extra:0,mobFusion:false,permanentAtk:0,permanentDef:0};s.players[side].field[slot]=f;return f;}
