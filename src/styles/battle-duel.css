@@ -64,3 +64,15 @@
 @keyframes mob-stats{0%,60%{opacity:0;transform:translateY(12px)}72%,100%{opacity:1;transform:translateY(0)}}
 .motion-reduced .cue-fusion.mob .fx-form,.motion-reduced .cue-fusion.mob .fx-body,.motion-reduced .cue-fusion.mob .fx-stats,.motion-reduced .cue-fusion.mob .fx-bonus{animation:none;opacity:1;transform:none}
 .motion-reduced .fx-mob-charge,.motion-reduced .cue-fusion.mob .fx-materials{display:none}
+
+/* Reserve fixed text rows; shrink artwork instead of overlapping card names. */
+.duel-hand-piece{flex:0 0 88px;min-width:88px;display:grid;grid-template-rows:9px minmax(0,1fr) 27px 11px 10px;gap:1px;align-content:stretch;padding:3px 4px;}
+.duel-hand-piece>small{font-size:7px;line-height:9px;min-height:0;}
+.duel-hand-piece img{height:100%;min-height:0;max-height:100%;width:100%;}
+.duel-hand-piece>b{font-size:9px;line-height:13px;max-height:27px;min-height:27px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow-wrap:anywhere;}
+.duel-hand-piece>span{font-size:8px;line-height:10px;height:11px;margin:0;padding:0;gap:5px;}
+.duel-hand-piece .hand-skill-count{font-size:7px;line-height:10px;padding:0;min-height:10px;white-space:nowrap;text-align:center;}
+@media(max-width:350px){.duel-hand-piece{flex-basis:84px;min-width:84px}.duel-hand-piece>b{font-size:9px}.duel-hand-piece>span{font-size:8px}}
+@media(max-height:740px){.duel-screen{grid-template-rows:62px 26px minmax(150px,1fr) 49px 42px 41px 121px 47px}.duel-hand-piece>b{font-size:9px}}
+
+.duel-screen{min-width:0;width:100%;grid-template-columns:minmax(0,1fr)}.duel-hand-wrap,.duel-hand{min-width:0;max-width:100%}
