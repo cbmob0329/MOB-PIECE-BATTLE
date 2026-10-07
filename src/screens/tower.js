@@ -27,7 +27,7 @@ export async function handleTower(button,ctx,{render,toast}){
  if(await handlePractice(button,ctx,{render,toast}))return true;
  if(![...button.attributes].some(a=>a.name.startsWith('data-tower-')))return false;if(locked)return true;
  try{
- if(button.dataset.towerFloor){floor=Number(button.dataset.towerFloor);if(floor===5)sound.play('start',{sampleId:99});opponentSlot=Number(button.dataset.towerSlot||0);const valid=towerDeckOptions(ctx.profile).filter(o=>o.check.valid);keys=floor===5?[valid[0]?.key,valid.find(o=>o.key!==valid[0]?.key&&JSON.stringify(o.deck)!==JSON.stringify(valid[0]?.deck))?.key,'starter:mix']:[(valid.find(o=>o.key==='slot:'+ctx.profile.soulDeckSlot)||valid[0])?.key];order=[0,1,2,0,1];render();}
+ if(button.dataset.towerFloor){floor=Number(button.dataset.towerFloor);sound.play(floor===5?'start':'select',{sampleId:floor===5?99:100,durationLimit:floor===5?1.4:.5});opponentSlot=Number(button.dataset.towerSlot||0);const valid=towerDeckOptions(ctx.profile).filter(o=>o.check.valid);keys=floor===5?[valid[0]?.key,valid.find(o=>o.key!==valid[0]?.key&&JSON.stringify(o.deck)!==JSON.stringify(valid[0]?.deck))?.key,'starter:mix']:[(valid.find(o=>o.key==='slot:'+ctx.profile.soulDeckSlot)||valid[0])?.key];order=[0,1,2,0,1];render();}
  else if(button.hasAttribute('data-tower-cancel')){floor=null;abandon=false;render();}
  else if(button.dataset.towerAssign){const [i,n]=button.dataset.towerAssign.split(':').map(Number);order[i]=n;render();}
  else if(button.hasAttribute('data-tower-third')){commit(prepareTowerThirdDeck(ctx.profile));location.hash='deck';toast('支給カードを組み替えました。自由に編集できます。');}

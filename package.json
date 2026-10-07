@@ -38,7 +38,9 @@
     "data:free-enemies": "node scripts/build-free-enemies.mjs",
     "test:oct06": "node scripts/oct06-runtime-check.mjs && node scripts/deck-flexible-check.mjs && node scripts/ranked-enemies-check.mjs && node scripts/oct06-stage-rules-check.mjs",
     "test:tower": "node scripts/tower-check.mjs",
-    "test:strengthen": "node scripts/strengthen-check.mjs"
+    "test:strengthen": "node scripts/strengthen-check.mjs",
+    "test:oct07": "node scripts/oct07-safe-check.mjs && node scripts/oct07-skills-check.mjs && node scripts/oct07-effects-check.mjs && node scripts/oct07-boundaries-check.mjs && node scripts/strengthen-check.mjs && node scripts/campaign19-check.mjs && node scripts/tower-campaign-check.mjs && node scripts/practice-check.mjs",
+    "test:campaign-ui": "node scripts/campaign-final-browser.mjs"
   },
   "devDependencies": {
     "vite": "^7.1.5"

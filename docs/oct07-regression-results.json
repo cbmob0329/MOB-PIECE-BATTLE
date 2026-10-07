@@ -1,0 +1,182 @@
+[
+  {
+    "script": "scripts/source-check.mjs",
+    "status": 0,
+    "stdout": "PASS: source syntax and merge-conflict markers (253 files)\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/startup-profile-check.mjs",
+    "status": 0,
+    "stdout": "PASS: startup profile shape and HOME center figure\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/rules-check.mjs",
+    "status": 0,
+    "stdout": "PASS: catalog integrity, numbering, stats, rarity caps, cost 80, deck 25, ownership boundary\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/gacha-rules-check.mjs",
+    "status": 0,
+    "stdout": "PASS: 5 pools, exact displayed odds, SR+ last slot, truthful guaranteed cues, inventory caps, ruby conversion, no input mutation, insufficient balance, one-time gift\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/competition-rules-check.mjs",
+    "status": 0,
+    "stdout": "competition rules ok\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/battle-rules-check.mjs",
+    "status": 0,
+    "stdout": "battle rules ok\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/v4-features-check.mjs",
+    "status": 0,
+    "stdout": "PASS: v4 inventory caps/conversion, five deck slots, missions, battle records, hall-of-fame season archive\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/v5-features-check.mjs",
+    "status": 0,
+    "stdout": "v5 features ok\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/v5-ui-render-check.mjs",
+    "status": 0,
+    "stdout": "v5 UI render ok\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/v6-assets-check.mjs",
+    "status": 0,
+    "stdout": "v6 authored UI assets, calendar, history filters and bulk mission claim ok\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/quest-import-check.mjs",
+    "status": 0,
+    "stdout": "PASS: saved IDs/stats preserved, 625 inventory entries, 3 active banners, assets/pickups, atomic ruby exchange and boundaries\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/formation-skills-check.mjs",
+    "status": 0,
+    "stdout": "PASS: exact 2%/0.1% intervals, all-banner guarantees/odds, adjacency, all SOUL clauses, scope/tier/boost/once-per-match, test inventory persistence\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/soul-rules-check.mjs",
+    "status": 0,
+    "stdout": "PASS 更新対象以外の327体由来データは元JSONを維持、指定変更と画像を確認\nPASS 45体・階級・所持数、旧セーブの編成を無断変更しない\nPASS 初期LIFE400、山札はシードのみ、手札5、専用領域15\nPASS 3枠制限、融合後の再召喚、バトル後は通常スキル/融合/召喚禁止\nPASS 現行全314レシピが正しい2素材で実行可能\nPASS 特殊融合の+25/+25はターンを跨いで持続、通常ルートも保持\nPASS スキル使用1回と素材ロック、クフレイだけ明示された例外\nPASS ATK>DEFの差分、ATK=DEFで無撃破、通常は1回攻撃\nPASS 攻撃宣言でのみ回避発動、相手も1ターン1回、攻撃回数は消費\nPASS 守護は攻撃先変更と戦闘中DEF、差分無効、貫通は守護のみ禁止\nPASS 相手スキルの無効化と対象変更は解決前、両者の権利を消費\nPASS フェニックス撃破時帰還・通常の差分・手札から直接再召喚DEF+30\nPASS 手札帰還から再召喚しても同ターンの使用者素材ロックを保持\nPASS ぷにパンチの帰還は別の味方への攻撃も終了できる\nPASS 多段攻撃は回数どおり、毎攻撃の累積ATK、同じ相手への再攻撃\nPASS 全員へ1回ずつは個別選択、同一対象へ重複攻撃不可\nPASS 撃破による追加攻撃・全体DEF低下・ドロー\nPASS 永続でない強化の失効と次の相手ターン終了までの強化\nPASS 回復上限・撃破済みSeedの回収、融合素材は回収対象外\nPASS 手札の属性/タグ交換はデッキから選択、総枚数維持\nPASS 相手1体への攻撃/スキル/融合制限が次ターンも効く\nPASS タグ追加/無効化、属性無効化はターン終了で解除\nPASS 次の相手ターンの差分ダメージ無効は最初の1回だけ\nPASS ATK=DEF撃破例外はライフ0差分、DEF強化無視は基礎DEFを維持\nPASS 旧位置変更47はATK+30/DEF+20へ置換、位置と攻撃回数を維持\nPASS 山札切れ敗北は必要ドロー時のみ、スキルのドローも適用\nPASS 全102効果プログラムが正しいタイミング・選択で解決する\nPASS CPUの空き枠・全難度・対応窓を含む対戦は決着し決定的\nPASS 現行全レシピで手札×場と場×手札、満員でも場の素材位置に融合\nPASS 手札×手札・不正素材・スキル使用後・融合封印・フェイズ外を拒否し状態不変\nPASS クイーンロックは全員+30、該当タグ+20を一度だけ、相手と次ターンには影響なし\n31 master checks passed\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/soul-update-check.mjs",
+    "status": 0,
+    "stdout": "PASS: themed 45-piece starters/caps/idempotence, valid fusion aura states, first-turn end, guarded DEF loss/persistence and equality\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/soul-shuffle-check.mjs",
+    "status": 0,
+    "stdout": "PASS: randomized opening hands, independent decks, exact copy counts, saved order, reserve and subsequent draws\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/piece47-check.mjs",
+    "status": 0,
+    "stdout": "PASS: 47 images/data/skills; 19 recipes (38 field/hand cases); 207 free main figures (including original 72); 2 legal starters and seed-middle-MOB chains; non-destructive/idempotent migration; unchanged gacha pools\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/materials-check.mjs",
+    "status": 0,
+    "stdout": "PASS: exact 641 active IDs / 643 inventory IDs; 133 active material images and skills; original 30 supplied performances plus approved overlays; 3 live recipes x field/hand; 11 legal starters with concrete fusion routes and completed battles; source SHA-256 and save migration preserved\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/audio-check.mjs",
+    "status": 0,
+    "stdout": "PASS audio: 117 attribute/strength/action PCM variants + 31 common cues; finite peaks/fades, physical/magic, timing, locked/unsupported/storage failure, duplicate suppression, six-voice limit, mute/reload, background/recovery, stopped scopes and metadata overrides\nPASS presentation duration and impact placement\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/tactical-check.mjs",
+    "status": 0,
+    "stdout": "PASS Exactly selected 24 figures, final images, rarities/classes, source hashes and gated acquisition\nPASS All ten new programs from hand and field, both sides; costs, grave and events\nPASS Invalid/cancelled hand declarations preserve complete state; stale references rejected\nPASS Hand counter negates hand activation, both declared cards stay grave; no effect duplication\nPASS Old hand field-dependent skills adapt without ghost instances, return cards or duplicate grave\nPASS No movement programs remain; revised 7/30/47/91 have active tactical plans\nPASS Same-ID strengthening conserves cards and adds +30; explicit recipes coexist\nPASS CPU can use a hand skill and hand response\nPASS Every one of 112 programs resolves from hand with valid choices\nPASS 9 tactical suites\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/initial-release-check.mjs",
+    "status": 0,
+    "stdout": "PASS 3 expanded pools of registered figures; selected24 only; displayed rates sum to 100%; correct PU\nPASS 3 legal 45-card starters with caps; every reserve figure reachable from actual deck materials\nPASS New choice grants selected deck only; review/back do not mutate; reload idempotence and full-slot safety\nPASS Each pool preserves 5/50 cost, SR+ tenth, caps/overflow and atomic insufficient-balance handling\nPASS All three starter decks complete real CPU battles\nPASS Profile loader retains archived draw history and all old save fields; removed banner selection falls back\nPASS Storage rejection does not consume choice or change live profile\nPASS 7 initial release suites\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/elements-check.mjs",
+    "status": 0,
+    "stdout": "PASS 192 new skill executions: both sides x field/hand, invalid/cancel atomic, actual programs and caps\nPASS fire support, fire/dark link, water cleanse, wind/fire guard penetration, earth weakness, current attribute changes\nPASS alternate target/mode/optional/one-effect removal choices\nPASS 24 recipes x both sides x hand/field; ordinary fusion has no unrequested bonus\nPASS explicit free acquisition, sufficient shared fusion seeds, no currency/deck/save overwrite, idempotence; three starters/banners unchanged\nPASS 24 RETRO executions using verified existing programs (6 x both sides x hand/field)\nPASS enemy CPU executes all48 new hand programs\nPASS priority/+10 cap, empty/duplicate targets, ordered grave/deck choices, nonstacking/expiry, lowering barrier, negation\nPASS eight family CPU battles terminate with legal decks\nPASS next-attack heal, first positive battle damage reduction, opposite stance replacement/expiry\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/families-check.mjs",
+    "status": 0,
+    "stdout": "PASS 96 actual skills: both sides, hand/field, reaction timing, cancellation and stale references\nPASS 12 recipes x both sides x hand/field; ordinary fusion has no unrequested bonus\nPASS explicit free acquisition, sufficient shared fusion seeds, no currency/deck/save overwrite, idempotence; three starters/banners unchanged\nPASS fusion priority/+25 cap, eleven original backgrounds and fourteen selections, existing style settings retained\nPASS four family CPU battles terminate with legal decks\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/pools75-check.mjs",
+    "status": 0,
+    "stdout": "PASS Three 61-figure mixed tower pools: unchanged rarity/special/guarantee rules, 100% sums, complete fusion closure, archived starters and claimed saves preserved\n[{\"id\":\"tower-beginning\",\"reachable\":61,\"unreachable\":[]},{\"id\":\"tower-crossroads\",\"reachable\":61,\"unreachable\":[]},{\"id\":\"tower-lanterns\",\"reachable\":61,\"unreachable\":[]}]\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/tower-check.mjs",
+    "status": 0,
+    "stdout": "PASS two editable starters; one-time grant, immutable input and existing occupied slots/ownership\nPASS initial 61 mixed figures, every reserve has legal material pairs, all rarities and rates retained\nPASS locked draw and exchange rejected; no currency mutation; costs and guarantees unchanged\nPASS floor gates, first-to-two/three early stop, unique first clear reward, losses no penalty\nPASS reload and edited saved decks do not alter locked series snapshots; stale token rejected\nPASS all five grass enemies legal, no fig exceptions or passives, F cannot fuse or use skills, 50 real battles finish\nPASS legacy save retains owned, growth, decks and archived draw; storage failure is atomic\nPASS 7 tower suites; 50 complete battles\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/strengthen-check.mjs",
+    "status": 0,
+    "stdout": "PASS attribute single priority, fixed stationary base, once only, both hand directions\nPASS tag single priority, fixed stationary base, once only, both hand directions\nPASS mix single priority, fixed stationary base, once only, both hand directions\nPASS same-ID priority30 resets charges only; moving card disappears\nPASS used-this-turn, sealed, and hand/hand reject atomically\nPASS old strengthened field and hand saves cannot gain a second boost\nPASS return-to-hand carries one-time flag and actual boost through resummon\nPASS normal evolution discards previous strengthening, resets flag, leaves two silhouettes\nPASS every special recipe publishes25 bonus; actual special evolution is base plus25\nPASS confirmed27 accepts arbitrary Middle second material; both Seed materials reject\nPASS 10 fusion6 semantic groups\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/deck-flexible-check.mjs",
+    "status": 0,
+    "stdout": "PASS flexible45: seed-only manual/auto/five aces/fill/battle/CPU/UI; default30/10/5; no stage minimum; size/copies/ownership/exclusion; partial edits and JSON persistence.\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/skill-budget-check.mjs",
+    "status": 0,
+    "stdout": "PASS Seed1/Middle2/MOB3 over the whole battle, each figure once per turn; JSON resume preserves exhaustion\nPASS Different allied instances and different hand copies can each activate; CPU follows the same limits\nPASS Cancelled selections, invalid targets, absent target, invalid cost do not spend cards or usage\nPASS Normal fusion material lock remains; next-turn fusion and same-ID reinforcement create full new budgets\nPASS Returning to hand preserves usage and turn lock through resummon\nPASS Death revival restores full usage while keeping existing instance action defaults; passives spend nothing\nPASS Grave recovery is not revival: usage follows individual cards through hand/deck and JSON save\nPASS Old states remain readable without mandatory new catalog fields\n8 skill-budget checks passed\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/battle-presentation-check.mjs",
+    "status": 0,
+    "stdout": "PASS: immutable CPU seed/middle/MOB frames and attack; lethal defeat → evolution/decline → one result on either side; legal hand+field highlights update with hand/field/reserve/stage/skill-lock/resonance changes; hand-only pairs remain illegal.\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/enemy-themes-check.mjs",
+    "status": 0,
+    "stdout": "PASS 22 legal themed decks; every recorded fusion/evolution route; skill/passive zone containment; 220 completed AI battles.\n",
+    "stderr": ""
+  },
+  {
+    "script": "scripts/ranked-enemies-check.mjs",
+    "status": 0,
+    "stdout": "PASS 12 ranked opponents + 10 themes; 4 bands; legal seed-heavy / high-rarity decks; rank pacing and per-turn limits\n",
+    "stderr": ""
+  }
+]

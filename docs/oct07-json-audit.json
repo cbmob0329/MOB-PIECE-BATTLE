@@ -336,7 +336,7 @@
     "SWEET41"
   ],
   "pendingFigures": 1,
-  "reason": "Latest descriptions are approved; all skills except MOB39 are implemented and under regression validation. MOB39 recipe remains unconfirmed. BFX052 returns surviving figures to original owners at turn end; if an original owner field is full, return to that owner hand without discarding, preserving usage and strengthening.",
+  "reason": "153 requested records applied; 138/139 changed skills implemented and regression verified. MOB39 alone retains its old coherent stage/stat/skill tuple pending its fusion recipe. See OCT07_MATERIALS_PROGRESS.md for exact validation and limits.",
   "audit": [
     {
       "id": "26",
@@ -27096,5 +27096,25 @@
     "NS2_052",
     "BFX052"
   ],
-  "pendingSkills": 1
+  "pendingSkills": 1,
+  "verification": {
+    "date": "2026-10-07T16:15:02.320Z",
+    "head": "7786bf7",
+    "regressionScripts": 30,
+    "skillExecutions": 504,
+    "boundaryGroups": 21,
+    "towers": 19,
+    "towerDecks": 239,
+    "towerBattles": 478,
+    "practiceOpponents": 45,
+    "themeBattles": 220,
+    "build": true,
+    "mobileWidths": [
+      320,
+      390,
+      430
+    ],
+    "physicalIOS": false,
+    "subjectiveAudio": false
+  }
 }

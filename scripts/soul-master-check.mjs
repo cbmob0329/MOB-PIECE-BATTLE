@@ -23,7 +23,7 @@ const fresh=()=>{const s=g.createSoulBattle([deck,deck],undefined,{random:()=>0.
 // Isolated field fixtures use real imported figures; integration cases below use legal summons.
 function put(s,side,f,slot=0){const p={uid:++s.serial,id:f.id,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],lastTarget:null,extra:0,mobFusion:false,permanentAtk:0,permanentDef:0};s.players[side].field[slot]=p;return p;}
 const choose=(s,side,f)=>g.cpuOptions(s,side,f.uid);
-const resolve=s=>{for(let i=0;i<8&&s.pending;i++)g.passReaction(s,1-s.pending.side);assert.equal(s.pending,null);};
+const resolve=s=>{for(let i=0;i<30&&(s.pending||g.evolutionOptions(s).event);i++){if(s.pending)g.passReaction(s,1-s.pending.side);else {const e=g.evolutionOptions(s);g.resolveEvolution(s,e.event.side,e.costs.length>=e.event.cost?e.costs.slice(0,e.event.cost).map(x=>x.value):null);}}assert.equal(s.pending,null);};
 const cast=(s,side,f,o=choose(s,side,f))=>{g.useSkill(s,side,f.uid,o);resolve(s);};
 test('更新対象以外の327体由来データは元JSONを維持、指定変更と画像を確認',()=>{
  assert.equal(figures.length,281);assert.equal(new Set(figures.map(f=>f.id)).size,281);
