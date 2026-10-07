@@ -1,6 +1,6 @@
 export const skillUseLimits=Object.freeze({seed:1,middle:2,mob:3});
 export const usedSkills=f=>Number.isInteger(f?.skillUsesUsed)?Math.max(0,f.skillUsesUsed):(f?.skillTurn>=0?1:0);
-export const usageRecord=f=>({skillUsesUsed:usedSkills(f),skillTurn:f?.skillTurn??-1,...(f?.phoenixRevived?{phoenixRevived:true}:{})});
+export const usageRecord=f=>({skillUsesUsed:usedSkills(f),skillTurn:f?.skillTurn??-1,...(f?.phoenixRevived?{phoenixRevived:true}:{}),...((f?.strengthened||f?.resonanceAtk>0||f?.resonanceDef>0)?{strengthened:true,resonanceAtk:f.resonanceAtk||0,resonanceDef:f.resonanceDef||0,fusionStyle:f.fusionStyle||'legacy',fusionPartnerIds:[...(f.fusionPartnerIds||[])]}:{})});
 export function storedUsage(p,zone,index){return (zone==='hand'?p.handBonuses:p.skillUsage?.[zone])?.find(r=>r.index===index&&r.id===p[zone][index]);}
 export function rememberUsage(p,zone,index,source){
  if(!source)return;const list=zone==='hand'?(p.handBonuses??=[]):((p.skillUsage??={})[zone]??=[]);

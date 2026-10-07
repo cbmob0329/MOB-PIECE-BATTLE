@@ -192,7 +192,7 @@
     "name": "海底守護",
     "routeSteps": 18,
     "skills": 21,
-    "passives": 4,
+    "passives": 5,
     "themeReserves": 11,
     "support": [
       {
@@ -304,7 +304,7 @@
     "name": "ネオンMUSIC",
     "routeSteps": 16,
     "skills": 27,
-    "passives": 3,
+    "passives": 4,
     "themeReserves": 13,
     "support": [
       {
@@ -379,7 +379,7 @@
       },
       {
         "seed": 9,
-        "steps": 13,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -395,8 +395,8 @@
     "id": "castle",
     "name": "魔王城封印",
     "routeSteps": 17,
-    "skills": 22,
-    "passives": 9,
+    "skills": 21,
+    "passives": 13,
     "themeReserves": 14,
     "support": [
       {
@@ -884,7 +884,7 @@
     "name": "光の主人公",
     "routeSteps": 18,
     "skills": 28,
-    "passives": 3,
+    "passives": 4,
     "themeReserves": 7,
     "support": [
       {
@@ -1040,7 +1040,7 @@
     "name": "リリス四姉妹",
     "routeSteps": 15,
     "skills": 21,
-    "passives": 6,
+    "passives": 8,
     "themeReserves": 5,
     "support": [
       {
@@ -1906,7 +1906,7 @@
     "name": "B｜光騎士レオン",
     "routeSteps": 18,
     "skills": 28,
-    "passives": 3,
+    "passives": 4,
     "themeReserves": 7,
     "support": [
       {
@@ -2062,7 +2062,7 @@
     "name": "A｜深海司令ノア",
     "routeSteps": 18,
     "skills": 21,
-    "passives": 4,
+    "passives": 5,
     "themeReserves": 11,
     "support": [
       {
@@ -2174,7 +2174,7 @@
     "name": "S｜四姉妹の導師ルナ",
     "routeSteps": 15,
     "skills": 21,
-    "passives": 6,
+    "passives": 8,
     "themeReserves": 5,
     "support": [
       {
@@ -2325,8 +2325,8 @@
     "id": "master-zen",
     "name": "SS｜封印王ゼノ",
     "routeSteps": 17,
-    "skills": 22,
-    "passives": 9,
+    "skills": 21,
+    "passives": 13,
     "themeReserves": 14,
     "support": [
       {
@@ -2418,7 +2418,7 @@
     "name": "SS｜極音指揮者ビート",
     "routeSteps": 16,
     "skills": 27,
-    "passives": 3,
+    "passives": 4,
     "themeReserves": 13,
     "support": [
       {
@@ -2493,7 +2493,7 @@
       },
       {
         "seed": 9,
-        "steps": 13,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },

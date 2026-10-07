@@ -16,7 +16,7 @@ export function recipeStageMatches(recipe,pair,by){const kind=recipeMaterialClas
 export function recipePairMatches(recipe,pair,options=[]){
  if(pair.length!==2)return false;
  const matches=(i,j)=>matchesMaterial(pair[i],recipe.materials[j],options[i]);
- const universal=i=>!!pair[i].passive?.universalFusion;
+ const universal=i=>{const passive=pair[i].passive||{},rule=passive.universalFusionFor;return !!passive.universalFusion||!!rule&&pair[i].soulClass==='seed'&&recipe.targetClass==='middle'&&((rule.tags||[]).some(t=>recipe.targetTags?.includes(t))||(rule.attributes||[]).some(a=>recipe.targetAttribute?.split('/').includes(a)));};
  return (matches(0,0)&&matches(1,1))||(matches(1,0)&&matches(0,1))||
   (universal(0)&&(matches(1,0)||matches(1,1)))||
   (universal(1)&&(matches(0,0)||matches(0,1)));

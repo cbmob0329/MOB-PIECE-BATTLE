@@ -632,6 +632,1224 @@
           "atk": 20
         }
       }
+    },
+    {
+      "id": "104",
+      "name": "ミラキャノン",
+      "description": "このフィギュアはこのターン攻撃出来ない。自分の場のフィギュアのATKとDEFを45アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "atk": 45,
+        "def": 45,
+        "skipCaster": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "107",
+      "name": "ダンスビート",
+      "description": "相手の攻撃を無効にし、次の相手ターン終了時までスキルを無効にする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "target": "trigger",
+        "skillLock": true,
+        "lockDuration": "next-opponent"
+      },
+      "passive": {}
+    },
+    {
+      "id": "109",
+      "name": "バイオメロディ",
+      "description": "このターン相手はスキルを発動出来ない。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "teamLock": "all",
+        "lockSide": "enemy",
+        "lockDuration": "turn"
+      },
+      "passive": {}
+    },
+    {
+      "id": "114",
+      "name": "シツイレイン",
+      "description": "攻撃してきた相手フィギュアは、このターンのみATKが0になる。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "trigger",
+        "setAtk": 0
+      },
+      "passive": {}
+    },
+    {
+      "id": "119",
+      "name": "スライムパーティー",
+      "description": "自分の場に存在するタグ:スライムを持つ全てのフィギュアのATKとDEFを45アップする。\nこの効果はこのフィギュアが場に存在する限り継続する。※新たに召喚したフィギュアにも適応",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "activateAura": {
+          "tags": [
+            "17"
+          ],
+          "atk": 45,
+          "def": 45
+        }
+      },
+      "passive": {}
+    },
+    {
+      "id": "120",
+      "name": "エネチェイス",
+      "description": "このフィギュアは同じフィギュアに3回連続で攻撃出来る。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "attacks": 3,
+        "sameTarget": true,
+        "attackDuration": "persistent"
+      },
+      "passive": {}
+    },
+    {
+      "id": "121",
+      "name": "ネオン街の実力者",
+      "description": "このターン、自分の場の光属性1体につき、このフィギュアのATKは25アップし、2回攻撃出来る。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "ownCount": {
+          "attribute": "光",
+          "atk": 25
+        },
+        "attacks": 2
+      },
+      "passive": {}
+    },
+    {
+      "id": "129",
+      "name": "海底騎士団",
+      "description": "メインスキル:このターン、相手はフィギュアを破壊するスキルを発動出来ない。\nパッシブ:攻撃を受ける度、ATKを20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "teamLock": "destruction",
+        "lockSide": "enemy",
+        "lockDuration": "turn"
+      },
+      "passive": {
+        "hurtGrowth": 20
+      }
+    },
+    {
+      "id": "141",
+      "name": "ボムアーチ",
+      "description": "相手のスキルを無効にし、相手の手札を1枚ランダムに捨てる。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "discardEnemyOne": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "148",
+      "name": "ヨーガンプレス",
+      "description": "このターン、お互いのプレイヤーは火属性フィギュア以外の効果を発動出来ない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "teamLock": "attribute",
+        "onlyAttribute": "火",
+        "lockSide": "both",
+        "lockDuration": "turn"
+      },
+      "passive": {}
+    },
+    {
+      "id": "161",
+      "name": "ミラモブポイズン",
+      "description": "相手の攻撃を無効にし、そのフィギュアをスキル使用不可状態にする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "target": "trigger",
+        "skillLock": true,
+        "lockDuration": "persistent"
+      },
+      "passive": {}
+    },
+    {
+      "id": "172",
+      "name": "デバフオーバー",
+      "description": "メインスキル:相手フィールド全体のDEF-40。このターン、相手フィールド全員へ1回ずつ攻撃できる。\nパッシブ:相手の場のフィギュアのATKを20ダウンする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemies",
+        "def": -40,
+        "casterEach": true
+      },
+      "passive": {
+        "enemyAura": {
+          "atk": -20
+        }
+      }
+    },
+    {
+      "id": "174",
+      "name": "バーサクオーバー",
+      "description": "メインスキル:手札を1枚捨てる。このカードのATKはそのフィギュアの半分のATK分アップする。\nパッシブ:自分の場の闇属性フィギュアのATKを20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "discardCost": 1,
+        "discardAtkFactor": 0.5
+      },
+      "passive": {
+        "aura": {
+          "attributes": [
+            "闇"
+          ],
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "175",
+      "name": "ウミサンダー",
+      "description": "メインスキル:相手の場のフィギュアはこのターンスキルを発動出来ない。\nパッシブ:このフィギュアはステータスが下がるスキルやパッシブの効果を受けない。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "teamLock": "field",
+        "lockSide": "enemy",
+        "lockDuration": "turn"
+      },
+      "passive": {
+        "lowerImmune": true
+      }
+    },
+    {
+      "id": "177",
+      "name": "ヘルフレイムガード",
+      "description": "相手の攻撃を無効にし、相手のバトルを終了させる。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "endEnemyBattle": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "192",
+      "name": "サンドブレイク",
+      "description": "自身のATKを＋20、相手1体のATKとDEF-20。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemy",
+        "atk": -20,
+        "def": -20,
+        "selfAtk": 20,
+        "fusionLock": true,
+        "lockDuration": "next-opponent"
+      },
+      "passive": {}
+    },
+    {
+      "id": "196",
+      "name": "ネムレナイヨル",
+      "description": "このターン中、自分の場の全てのフィギュアのDEFを40アップする。さらに、次の自分の攻撃ターンのみこのフィギュアのATKは30アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "def": 40,
+        "nextOwnAtk": 30
+      },
+      "passive": {}
+    },
+    {
+      "id": "203",
+      "name": "ピラミッド・ランス",
+      "description": "自身のATKとDEFを25アップする。さらに、このフィギュアが攻撃した相手フィギュアはこのターンスキル使用不可となる。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "atk": 25,
+        "def": 25,
+        "attackSkillLock": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "217",
+      "name": "アクノソシキⅡ",
+      "description": "メインスキル:このターン、このフィギュアの攻撃に対して相手はスキルを発動出来ない。\nパッシブ:読みかけの本のタグを持つ自分の場のフィギュアのDEFを25アップする",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "noAttackResponse": true
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "52"
+          ],
+          "def": 25
+        }
+      }
+    },
+    {
+      "id": "mq:eventfig/24",
+      "name": "カスタードガード",
+      "description": "自分の場のとびっきりのスイーツを持つフィギュア1体につき、このフィギュアのATKとDEFを25アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "ownCount": {
+          "tag": "specified-sweets",
+          "atk": 25,
+          "def": 25
+        }
+      },
+      "passive": {}
+    },
+    {
+      "id": "mq:eventfig/25",
+      "name": "カスタードMAX",
+      "description": "自分がスキルを発動する度、このフィギュアのATKとDEFを20アップする。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "skillGrowth": {
+          "side": "own",
+          "atk": 20,
+          "def": 20
+        }
+      }
+    },
+    {
+      "id": "mq:eventfig/47",
+      "name": "カセット・リロード",
+      "description": "メインスキル:攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。\nパッシブ:イベントボスのタグを持つフィギュアのATKとDEFを20アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "redirectSelf": true,
+        "combatDef": 50,
+        "noDamage": true
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "53"
+          ],
+          "atk": 20,
+          "def": 20
+        }
+      }
+    },
+    {
+      "id": "mq:eventfig/48",
+      "name": "マグネット・フォース",
+      "description": "メインスキル:相手の攻撃を無効にし、DEFを20ダウンする。\nパッシブ:機械の力 タグを持つフィギュアのDEFを30アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "target": "trigger",
+        "def": -20
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "82"
+          ],
+          "def": 30
+        }
+      }
+    },
+    {
+      "id": "mq:eventfig/54",
+      "name": "シルバーバレット",
+      "description": "メインスキル:相手1体のDEF-30。そのフィギュアは3ターンの間ソウルスキルを発動出来なくなる。\nパッシブ:立ちはだかる強敵 タグを持つフィギュアのATKを20アップする。\n",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemy",
+        "def": -30,
+        "skillLock": true,
+        "lockDuration": 3
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "32"
+          ],
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "mq:eventfig/55",
+      "name": "アノコ・ハ・ワルイコ",
+      "description": "メインスキル:攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+60。差分ライフダメージは0。\nパッシブ:攻撃を受ける度、このフィギュアのATKは10アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "redirectSelf": true,
+        "combatDef": 60,
+        "noDamage": true
+      },
+      "passive": {
+        "hurtGrowth": 10
+      }
+    },
+    {
+      "id": "mq:eventfig/61",
+      "name": "ミントマジック",
+      "description": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。敵を撃破する度、ライフを20回復。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "attacks": 2,
+        "ramp": 20,
+        "rampDuration": "persistent",
+        "killHeal": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "mq:eventfig/62",
+      "name": "ミントマジック",
+      "description": "このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。このフィギュアの攻撃に対して相手はスキルを発動出来ない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "attacks": 2,
+        "ramp": 20,
+        "rampDuration": "persistent",
+        "noAttackResponse": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "piece:025",
+      "name": "PB2ファイヤバースト",
+      "description": "メインスキル:相手フィールド全体のDEFを-30する。このターン、このフィギュアの攻撃で撃破した時の差分ライフダメージを+20する。\nパッシブ:PB2 タグを持つ全てのフィギュアのATKとDEFを40アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemies",
+        "def": -30,
+        "casterDamage": 20
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "11"
+          ],
+          "atk": 40,
+          "def": 40,
+          "side": "both"
+        }
+      }
+    },
+    {
+      "id": "BFX050",
+      "name": "パルフェ・ディスコオーロラ・セッション",
+      "description": "メインスキル:自分ライフを30回復し、次の相手ターン終了まで味方全体のDEFを30アップする。\nパッシブ:フィギュアを1体ドローする度、このフィギュアのATKは10アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "next-opponent",
+        "heal": 30,
+        "target": "allies",
+        "def": 30
+      },
+      "passive": {
+        "drawGrowth": 10
+      }
+    },
+    {
+      "id": "ECL_M01",
+      "name": "月読みの頁",
+      "description": "部族村のタグを持つ味方全体のDEFを次の相手ターン終了まで20上げる。場に火と闇の味方が揃っている場合、さらに15アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "next-opponent",
+        "target": "allies",
+        "filterTag": "46",
+        "def": 20,
+        "attributePairBonus": {
+          "attributes": [
+            "火",
+            "闇"
+          ],
+          "def": 15
+        }
+      },
+      "passive": {}
+    },
+    {
+      "id": "GHO_B01",
+      "name": "終夜のヴェイル",
+      "description": "メインスキル:相手全体のATKを次の相手ターン終了まで30下げる。発動前の墓地にシードが3体以上あればライフ50回復。\nパッシブ:ピラミッドタグを持つ自分の場のフィギュアのATK+20。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "next-opponent",
+        "target": "enemies",
+        "atk": -30,
+        "graveSeedHeal": {
+          "count": 3,
+          "heal": 50
+        }
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "54"
+          ],
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "RUN_B01",
+      "name": "封門・三連刻印",
+      "description": "メインスキル:相手全体のDEFをこのターン20下げる。その中の1体のATKを次の相手ターン終了まで30下げる。\nパッシブ:場に出ている闇属性フィギュアの数×20、このフィギュアのATKをアップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "enemies",
+        "def": -20,
+        "selectedEnemyAtk": -30
+      },
+      "passive": {
+        "fieldScale": {
+          "attribute": "闇",
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "M4F_MIM_B01",
+      "name": "宝庫のユニゾン",
+      "description": "メインスキル:相手の攻撃を無効にし、自身のDEFを20アップする。\nパッシブ:相手がスキルを発動する度、ATKを20アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "def": 20
+      },
+      "passive": {
+        "skillGrowth": {
+          "side": "enemy",
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "M4F_NEO_B01",
+      "name": "虹閃の二連",
+      "description": "メインスキル:このターン最大2回攻撃できる。攻撃するたびATK+20（累積）。\nパッシブ:自分のフィギュアがスキルを発動する度、ATKを20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "attacks": 2,
+        "ramp": 20,
+        "rampDuration": "persistent"
+      },
+      "passive": {
+        "skillGrowth": {
+          "side": "own",
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "M4F_DOK_V03",
+      "name": "無響の石槌",
+      "description": "相手フィールド1体のステータスアップ効果をターン終了まで無効にする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "enemy",
+        "suppressBuff": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "SWEET39",
+      "name": "グラン・デザート",
+      "description": "メインスキル:自分ライフを30回復し、自分の場の美味しい食べ物タグを持つフィギュア全員のDEFを20アップする。\nパッシブ:自分がフィギュアをドローする度、ライフを10ポイント回復する。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "heal": 30,
+        "target": "allies",
+        "filterTag": "18",
+        "def": 20
+      },
+      "passive": {
+        "drawHeal": 10
+      }
+    },
+    {
+      "id": "SWEET41",
+      "name": "スター・ビスケット",
+      "description": "メインスキル:自分の場のとびっきりのスイーツタグを持つフィギュア全員は、次に撃破される時に1度だけ場に残る。\nパッシブ:相手がソウルフュージョンする度、このフィギュアのATKを20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "filterTag": "specified-sweets",
+        "survive": true,
+        "survivePersistent": true
+      },
+      "passive": {
+        "enemyFusionGrowth": 20
+      }
+    },
+    {
+      "id": "26",
+      "name": "VRドリフト",
+      "description": "味方全体のATK+20。このターン、相手は手札のフィギュアのスキルを発動できない。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "atk": 20,
+        "teamLock": "hand",
+        "lockSide": "enemy",
+        "lockDuration": "turn"
+      },
+      "passive": {}
+    },
+    {
+      "id": "27",
+      "name": "ゴールドラップ",
+      "description": "メインスキル:手札を1枚捨て、このターン中、このフィギュアのATKを40UPする。\nパッシブ:手札に存在するタグ マスコットを持つフィギュア1体につき、ATKが10アップする。 ",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "discardCost": 1,
+        "atk": 40
+      },
+      "passive": {
+        "handScale": {
+          "tag": "10",
+          "atk": 10
+        }
+      }
+    },
+    {
+      "id": "28",
+      "name": "ブラックドリフト",
+      "description": "敵全体のDEFを20ダウンさせる。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemies",
+        "def": -20
+      },
+      "passive": {}
+    },
+    {
+      "id": "30",
+      "name": "ダーク・ファイヤー",
+      "description": "相手のフィギュアを1体選択する。そのフィギュアのATKとDEFを30ダウンさせる。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemy",
+        "atk": -30,
+        "def": -30
+      },
+      "passive": {}
+    },
+    {
+      "id": "37",
+      "name": "トリプルサイファー",
+      "description": "このターン、自分の場の全てのフィギュアのATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "next-opponent",
+        "target": "allies",
+        "atk": 20,
+        "def": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "98",
+      "name": "ミイラニャン",
+      "description": "このフィギュアが攻撃に成功した時、相手の手札を1枚墓地へ送る。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "attackDiscard": true
+      }
+    },
+    {
+      "id": "100",
+      "name": "ポイズンミスト",
+      "description": "タグ:砂漠かタグ:ピラミッドのミドルフィギュアをソウルフュージョン(シード×シード)召喚する時、このフィギュアはどの素材としても対応できる。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "universalFusionFor": {
+          "tags": [
+            "42",
+            "54"
+          ]
+        }
+      }
+    },
+    {
+      "id": "103",
+      "name": "ツインスパーク",
+      "description": "手札を1枚捨てる。このターンこのフィギュアのATKとDEFは30アップし、スキルの対象にならなくなる。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "discardCost": 1,
+        "atk": 30,
+        "def": 30,
+        "skillUntargetable": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "106",
+      "name": "ナイフエッジ",
+      "description": "このフィギュアが攻撃に成功した時、相手の手札を1枚墓地へ送る。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "attackDiscard": true
+      }
+    },
+    {
+      "id": "128",
+      "name": "アビスランス",
+      "description": "相手フィギュア1体を破壊する。この効果を使ったターン、このフィギュア以外の自分の場のフィギュアは攻撃出来ない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemy",
+        "destroyTarget": true,
+        "skipOtherAllies": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "142",
+      "name": "ホノスピン",
+      "description": "火属性のミドルフィギュアをソウルフュージョン(シード×シード)召喚する時、このフィギュアはどの素材としても対応できる。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "universalFusionFor": {
+          "attributes": [
+            "火"
+          ]
+        }
+      }
+    },
+    {
+      "id": "143",
+      "name": "ヒノリング",
+      "description": "手札か場の火属性フィギュアを1体墓地へ送る。このターンこのフィギュアのATKは45アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "fireCost": true,
+        "atk": 45
+      },
+      "passive": {}
+    },
+    {
+      "id": "152",
+      "name": "ブックトラップ",
+      "description": "タグ魔王城のミドルフィギュアをソウルフュージョン(シード×シード)召喚する時、このフィギュアはどの素材としても対応できる。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "universalFusionFor": {
+          "tags": [
+            "48"
+          ]
+        }
+      }
+    },
+    {
+      "id": "157",
+      "name": "キラリフレクト",
+      "description": "自分の場の闇属性フィギュアは、2ターンの間、1回目の攻撃では破壊されない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "filterAttribute": "闇",
+        "firstGuardTurns": 2
+      },
+      "passive": {}
+    },
+    {
+      "id": "159",
+      "name": "ホークストーム",
+      "description": "このターン中、このフィギュアに対する1度目の攻撃を回避する。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "onlySelfResponse": true,
+        "onlyFirstAttack": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "166",
+      "name": "ネオン街の戦士。",
+      "description": "タグ:ネオン街 を持つフィギュアはこのターン中破壊されず、相手のスキルの効果も受け付けない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "filterTag": "44",
+        "indestructible": true,
+        "skillImmune": "hostile"
+      },
+      "passive": {}
+    },
+    {
+      "id": "179",
+      "name": "リヴァウェイブ",
+      "description": "このターン中のみ、このフィギュアは攻撃対象にならず、スキルの効果も受けない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "attackHidden": true,
+        "skillImmune": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "180",
+      "name": "クフライト",
+      "description": "リリス4姉妹のタグを持つフィギュアはこのターン破壊されない。さらに、ATKとDEFを25アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "filterTag": "specified-lilith",
+        "atk": 25,
+        "def": 25,
+        "indestructible": true,
+        "protectionDuration": "turn"
+      },
+      "passive": {}
+    },
+    {
+      "id": "193",
+      "name": "デンデン・ムキムキ・カナリツヨイ",
+      "description": "このターン中、このフィギュアの攻撃を受けたフィギュアはダメージ計算を行わずに破壊される。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "instantKill": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "195",
+      "name": "ネオマニプール",
+      "description": "相手の攻撃を無効にし、攻撃してきたフィギュアを破壊する。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "target": "trigger",
+        "destroyTarget": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "197",
+      "name": "ダブルサンダー",
+      "description": "このターン最大2回攻撃できる。攻撃するたびATK+25（累積）。さらに、このターンこのフィギュアに対して相手はスキルを発動出来ない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "attacks": 2,
+        "ramp": 25,
+        "rampDuration": "persistent",
+        "skillImmune": "hostile",
+        "skillUntargetable": "hostile",
+        "protectionDuration": "turn",
+        "noAttackResponse": true,
+        "responseDuration": "turn"
+      },
+      "passive": {}
+    },
+    {
+      "id": "198",
+      "name": "モブテツ流茄子落とし",
+      "description": "手札を1枚捨て、このターンこのフィギュアのATK+35 & DEF +45。さらに、このターン撃破に成功する度に相手の手札を1枚墓地へ送る。※手札が無い場合は無効",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "discardCost": 1,
+        "atk": 35,
+        "def": 45,
+        "killDiscard": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "205",
+      "name": "ミラ・タイム・フィールド",
+      "description": "このターン、お互いにスキルを使用することが出来ない。このスキルを使ったターン、このフィギュアは破壊されない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "teamLock": "all",
+        "lockSide": "both",
+        "lockDuration": "turn",
+        "indestructible": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "mq:eventfig/50",
+      "name": "パワークラッシュ",
+      "description": "このターン、このフィギュアは戦闘では破壊されない。このスキルが発動する度、DEFを30アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "battleImmune": true,
+        "def": 30,
+        "protectionDuration": "turn"
+      },
+      "passive": {}
+    },
+    {
+      "id": "piece:039",
+      "name": "リーダーオーダー",
+      "description": "メインスキル:自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。\nパッシブ:このフィギュアは1ターンに1度相手の攻撃を無効にする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "atk": 30,
+        "def": 30,
+        "teamSurvive": true
+      },
+      "passive": {
+        "evadeOnce": true
+      }
+    },
+    {
+      "id": "M4F_SIL_B01",
+      "name": "彩扇の大舞",
+      "description": "メインスキル:自分フィールド全体のATKとDEFを+30する。このターン、このフィギュアはスキルの効果を受けない。\nパッシブ:自分の場の海底フィギュア1体につき、ATKが20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "atk": 30,
+        "def": 30,
+        "casterSkillImmune": true
+      },
+      "passive": {
+        "fieldScale": {
+          "tag": "45",
+          "scope": "own",
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "SWEET40",
+      "name": "シュガー・ヒーローズ",
+      "description": "メインスキル:このターン中、このフィギュアは戦闘では破壊されない。\nパッシブ:相手がスキルを発動する度、このフィギュアのATKとDEFを10アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "battleImmune": true
+      },
+      "passive": {
+        "skillGrowth": {
+          "side": "enemy",
+          "atk": 10,
+          "def": 10
+        }
+      }
+    }
+  ],
+  "stagePatches": [
+    {
+      "id": "26",
+      "after": {
+        "soulClass": "middle",
+        "atk": 160,
+        "def": 175
+      },
+      "recipes": [
+        {
+          "id": "draft-26-1791355880676",
+          "target": "26",
+          "fromClass": "seed",
+          "materials": [
+            {
+              "tag": "10"
+            },
+            {
+              "tag": "10"
+            }
+          ],
+          "label": "新しい融合案",
+          "special": false
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "after": {
+        "soulClass": "mob",
+        "atk": 230,
+        "def": 220
+      },
+      "recipes": [
+        {
+          "id": "OCT07-27-confirmed",
+          "target": "27",
+          "fromClass": "middle",
+          "materials": [
+            {
+              "tag": "22"
+            },
+            {
+              "class": "middle"
+            }
+          ],
+          "label": "MiddleのMOB KART × 任意のMiddle",
+          "special": false,
+          "basis": "Sentinel_d5ff9a84cfc0819187e2ddbaba70ca54"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "after": {
+        "soulClass": "middle",
+        "atk": 170,
+        "def": 170
+      },
+      "recipes": [
+        {
+          "id": "draft-28-1791355711265",
+          "target": "28",
+          "fromClass": "seed",
+          "materials": [
+            {
+              "tag": "10"
+            },
+            {
+              "tag": "10"
+            }
+          ],
+          "label": "新しい融合案",
+          "special": false
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "after": {
+        "soulClass": "middle",
+        "attribute": "闇",
+        "atk": 180
+      },
+      "recipes": [
+        {
+          "id": "draft-30-1791356157284",
+          "target": "30",
+          "fromClass": "seed",
+          "materials": [
+            {
+              "tag": "10"
+            },
+            {
+              "attribute": "闇"
+            }
+          ],
+          "label": "新しい融合案",
+          "special": false
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "after": {
+        "soulClass": "middle",
+        "atk": 175,
+        "def": 180
+      },
+      "recipes": [
+        {
+          "id": "draft-37-1791356271520",
+          "target": "37",
+          "fromClass": "seed",
+          "materials": [
+            {
+              "tag": "10"
+            },
+            {
+              "tag": "11"
+            }
+          ],
+          "label": "新しい融合案",
+          "special": false
+        }
+      ]
+    },
+    {
+      "id": "100",
+      "after": {
+        "soulClass": "seed",
+        "def": 90
+      },
+      "recipes": []
+    },
+    {
+      "id": "119",
+      "after": {},
+      "recipes": [
+        {
+          "id": "OCT05-119-78",
+          "target": "119",
+          "fromClass": "seed",
+          "materials": [
+            {
+              "id": "117"
+            },
+            {
+              "attribute": "水"
+            }
+          ],
+          "label": "30×水属性",
+          "basis": "ミドル SSR 30×水属性",
+          "special": false
+        },
+        {
+          "id": "draft-119-1791363332243",
+          "target": "119",
+          "fromClass": "seed",
+          "materials": [
+            {
+              "tag": "17"
+            },
+            {
+              "tag": "17"
+            }
+          ],
+          "label": "スライム×スライム",
+          "special": false
+        }
+      ]
     }
   ]
 }

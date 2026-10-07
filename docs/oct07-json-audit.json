@@ -181,67 +181,131 @@
   "patchedFigures": 59,
   "appliedFields": 78,
   "fullyApplied": [
-    "130",
-    "137",
-    "162",
-    "170",
-    "204",
-    "208",
-    "mq:eventfig/34",
-    "mq:eventfig/56",
-    "mq:eventfig/57",
-    "mq:eventfig/58",
-    "mq:eventfig/60",
-    "FRG_B01",
-    "NS2_053",
-    "NS2_054",
-    "NS2_055",
+    "26",
+    "27",
+    "28",
+    "30",
+    "37",
     "55",
+    "192",
+    "193",
     "194",
+    "195",
+    "196",
+    "197",
+    "198",
     "199",
     "88",
     "94",
     "96",
+    "98",
+    "100",
     "101",
+    "103",
+    "104",
+    "106",
+    "107",
+    "109",
+    "114",
     "117",
     "118",
+    "119",
+    "120",
+    "121",
     "123",
     "125",
     "126",
+    "128",
+    "129",
+    "130",
+    "133",
     "136",
+    "137",
     "140",
+    "141",
+    "142",
+    "143",
     "144",
+    "148",
     "149",
     "150",
+    "151",
+    "152",
     "154",
+    "157",
     "158",
+    "159",
+    "161",
+    "162",
     "163",
     "165",
+    "166",
+    "168",
+    "170",
+    "172",
+    "174",
+    "175",
+    "177",
+    "178",
+    "179",
+    "180",
     "181",
     "182",
     "183",
     "184",
+    "203",
+    "204",
+    "205",
     "206",
+    "207",
+    "208",
+    "210",
+    "217",
     "219",
+    "mq:eventfig/24",
+    "mq:eventfig/25",
     "mq:eventfig/31",
     "mq:eventfig/33",
+    "mq:eventfig/34",
     "mq:eventfig/37",
+    "mq:eventfig/47",
+    "mq:eventfig/48",
+    "mq:eventfig/50",
+    "mq:eventfig/54",
+    "mq:eventfig/55",
+    "mq:eventfig/56",
+    "mq:eventfig/57",
+    "mq:eventfig/58",
+    "mq:eventfig/60",
+    "mq:eventfig/61",
+    "mq:eventfig/62",
     "mq:eventfig/64",
     "piece:007",
-    "M4F_DOK_V01",
-    "133",
-    "151",
-    "168",
-    "178",
-    "207",
-    "210",
+    "piece:025",
+    "piece:039",
     "piece:049",
     "BFX045",
+    "BFX050",
+    "ECL_M01",
+    "GHO_B01",
+    "FRG_B01",
+    "RUN_B01",
+    "M4F_MIM_B01",
+    "M4F_SIL_B01",
+    "M4F_NEO_B01",
+    "M4F_DOK_V01",
+    "M4F_DOK_V03",
+    "NS2_053",
+    "NS2_054",
+    "NS2_055",
     "BFX051",
-    "SWEET38"
+    "SWEET38",
+    "SWEET39",
+    "SWEET40",
+    "SWEET41"
   ],
-  "pendingFigures": 96,
-  "reason": "Latest edited skill descriptions are approved as authoritative (Sentinel_3cdac8120c9c8191bf7de45a9609bedc). The remaining 96 changed skills remain implementation-pending, not approval-pending. MOB27/39 have no fusion recipes in the supplied draft and need material definitions. Effects without an explicit duration persist; absent a one-target qualifier, attribute/tag effects apply to every eligible target on the stated side.",
+  "pendingFigures": 32,
+  "reason": "Latest edited skill descriptions are approved. 32 skills remain implementation-pending. Only MOB39 fusion recipe is unconfirmed; MOB27 confirmed as Middle MOB KART plus arbitrary Middle.",
   "audit": [
     {
       "id": "26",
@@ -253,14 +317,14 @@
         "skill",
         "summon"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
+        "skill",
         "soulClass",
         "atk",
         "def",
-        "skill",
         "summon"
       ],
+      "pending": [],
       "before": {
         "id": "26",
         "uid": "MSB-026",
@@ -388,7 +452,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "27",
@@ -399,13 +464,13 @@
         "def",
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
+        "skill",
         "soulClass",
         "atk",
-        "def",
-        "skill"
+        "def"
       ],
+      "pending": [],
       "before": {
         "id": "27",
         "uid": "MSB-027",
@@ -517,7 +582,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "28",
@@ -529,14 +595,14 @@
         "skill",
         "summon"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
+        "skill",
         "soulClass",
         "atk",
         "def",
-        "skill",
         "summon"
       ],
+      "pending": [],
       "before": {
         "id": "28",
         "uid": "MSB-028",
@@ -662,7 +728,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "30",
@@ -674,14 +741,14 @@
         "skill",
         "summon"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
+        "skill",
         "soulClass",
         "attribute",
         "atk",
-        "skill",
         "summon"
       ],
+      "pending": [],
       "before": {
         "id": "30",
         "uid": "MSB-030",
@@ -809,7 +876,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "37",
@@ -821,14 +889,14 @@
         "skill",
         "summon"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
+        "skill",
         "soulClass",
         "atk",
         "def",
-        "skill",
         "summon"
       ],
+      "pending": [],
       "before": {
         "id": "37",
         "uid": "MSB-037",
@@ -965,7 +1033,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "39",
@@ -1517,10 +1586,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "192",
         "uid": "MSB-095",
@@ -1707,7 +1776,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "193",
@@ -1715,10 +1785,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "193",
         "uid": "MSB-096",
@@ -1905,7 +1975,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "194",
@@ -2129,11 +2200,10 @@
         "skill"
       ],
       "applied": [
-        "def"
-      ],
-      "pending": [
+        "def",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "195",
         "uid": "MSB-098",
@@ -2321,7 +2391,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "196",
@@ -2329,10 +2400,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "196",
         "uid": "MSB-099",
@@ -2517,7 +2588,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "197",
@@ -2529,11 +2601,10 @@
       ],
       "applied": [
         "attackType",
-        "atk"
-      ],
-      "pending": [
+        "atk",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "197",
         "uid": "MSB-100",
@@ -2722,7 +2793,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "198",
@@ -2736,11 +2808,10 @@
       "applied": [
         "role",
         "atk",
-        "def"
-      ],
-      "pending": [
+        "def",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "198",
         "uid": "MSB-101",
@@ -2930,7 +3001,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "199",
@@ -3740,10 +3812,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "98",
         "uid": "MSB-114",
@@ -3850,7 +3922,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "100",
@@ -3860,12 +3933,12 @@
         "def",
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
+        "skill",
         "soulClass",
-        "def",
-        "skill"
+        "def"
       ],
+      "pending": [],
       "before": {
         "id": "100",
         "uid": "MSB-116",
@@ -4025,7 +4098,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "101",
@@ -4152,10 +4226,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "103",
         "uid": "MSB-119",
@@ -4313,7 +4387,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "104",
@@ -4325,11 +4400,10 @@
       ],
       "applied": [
         "def",
-        "tags"
-      ],
-      "pending": [
+        "tags",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "104",
         "uid": "MSB-120",
@@ -4502,7 +4576,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "106",
@@ -4510,10 +4585,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "106",
         "uid": "MSB-122",
@@ -4620,7 +4695,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "107",
@@ -4628,10 +4704,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "107",
         "uid": "MSB-123",
@@ -4738,7 +4814,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "109",
@@ -4750,11 +4827,10 @@
       ],
       "applied": [
         "atk",
-        "tags"
-      ],
-      "pending": [
+        "tags",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "109",
         "uid": "MSB-125",
@@ -4924,7 +5000,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "110",
@@ -5642,10 +5719,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "114",
         "uid": "MSB-130",
@@ -5807,7 +5884,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "115",
@@ -6225,12 +6303,11 @@
       ],
       "applied": [
         "atk",
-        "def"
-      ],
-      "pending": [
+        "def",
         "skill",
         "summon"
       ],
+      "pending": [],
       "before": {
         "id": "119",
         "uid": "MSB-135",
@@ -6403,7 +6480,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "120",
@@ -6415,11 +6493,10 @@
       ],
       "applied": [
         "atk",
-        "def"
-      ],
-      "pending": [
+        "def",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "120",
         "uid": "MSB-136",
@@ -6579,7 +6656,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "121",
@@ -6591,11 +6669,10 @@
       ],
       "applied": [
         "atk",
-        "def"
-      ],
-      "pending": [
+        "def",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "121",
         "uid": "MSB-137",
@@ -6759,7 +6836,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "123",
@@ -7175,10 +7253,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "128",
         "uid": "MSB-144",
@@ -7338,7 +7416,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "129",
@@ -7346,10 +7425,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "129",
         "uid": "MSB-145",
@@ -7521,7 +7600,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "130",
@@ -8289,10 +8369,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "141",
         "uid": "MSB-156",
@@ -8399,7 +8479,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "142",
@@ -8407,10 +8488,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "142",
         "uid": "MSB-157",
@@ -8513,7 +8594,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "143",
@@ -8521,10 +8603,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "143",
         "uid": "MSB-158",
@@ -8680,7 +8762,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "144",
@@ -8860,10 +8943,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "148",
         "uid": "MSB-163",
@@ -9023,7 +9106,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "149",
@@ -9445,10 +9529,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "152",
         "uid": "MSB-167",
@@ -9555,7 +9639,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "153",
@@ -9908,11 +9993,10 @@
         "skill"
       ],
       "applied": [
-        "tags"
-      ],
-      "pending": [
+        "tags",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "157",
         "uid": "MSB-172",
@@ -10084,7 +10168,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "158",
@@ -10278,10 +10363,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "159",
         "uid": "MSB-175",
@@ -10441,7 +10526,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "161",
@@ -10449,10 +10535,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "161",
         "uid": "MSB-177",
@@ -10610,7 +10696,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "162",
@@ -11163,10 +11250,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "166",
         "uid": "MSB-182",
@@ -11328,7 +11415,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "168",
@@ -11738,11 +11826,10 @@
         "skill"
       ],
       "applied": [
-        "attribute"
-      ],
-      "pending": [
+        "attribute",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "172",
         "uid": "MSB-188",
@@ -11909,7 +11996,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "173",
@@ -12094,11 +12182,10 @@
         "skill"
       ],
       "applied": [
-        "attribute"
-      ],
-      "pending": [
+        "attribute",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "174",
         "uid": "MSB-190",
@@ -12261,7 +12348,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "175",
@@ -12269,10 +12357,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "175",
         "uid": "MSB-191",
@@ -12436,7 +12524,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "176",
@@ -12621,10 +12710,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "177",
         "uid": "MSB-193",
@@ -12735,7 +12824,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "178",
@@ -12862,10 +12952,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "179",
         "uid": "MSB-195",
@@ -12976,7 +13066,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "180",
@@ -12984,10 +13075,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "180",
         "uid": "MSB-196",
@@ -13098,7 +13189,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "181",
@@ -13796,11 +13888,10 @@
         "skill"
       ],
       "applied": [
-        "tags"
-      ],
-      "pending": [
+        "tags",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "203",
         "uid": "MSB-201",
@@ -13971,7 +14062,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "204",
@@ -14165,11 +14257,10 @@
         "skill"
       ],
       "applied": [
-        "tags"
-      ],
-      "pending": [
+        "tags",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "205",
         "uid": "MSB-203",
@@ -14341,7 +14432,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "206",
@@ -15957,11 +16049,10 @@
         "skill"
       ],
       "applied": [
-        "tags"
-      ],
-      "pending": [
+        "tags",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "217",
         "uid": "MSB-215",
@@ -16136,7 +16227,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "219",
@@ -16339,10 +16431,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/24",
         "uid": "MSB-241",
@@ -16451,7 +16543,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/25",
@@ -16459,10 +16552,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/25",
         "uid": "MSB-242",
@@ -16682,7 +16775,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/31",
@@ -17477,10 +17571,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/47",
         "uid": "MSB-264",
@@ -17646,7 +17740,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/48",
@@ -17656,11 +17751,10 @@
         "skill"
       ],
       "applied": [
-        "tags"
-      ],
-      "pending": [
+        "tags",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/48",
         "uid": "MSB-265",
@@ -17838,7 +17932,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/50",
@@ -17846,10 +17941,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/50",
         "uid": "MSB-267",
@@ -18011,7 +18106,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/53",
@@ -18198,10 +18294,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/54",
         "uid": "MSB-271",
@@ -18367,7 +18463,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/55",
@@ -18375,10 +18472,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/55",
         "uid": "MSB-272",
@@ -18556,7 +18653,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/56",
@@ -19538,10 +19636,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/61",
         "uid": "MSB-278",
@@ -19652,7 +19750,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/62",
@@ -19662,11 +19761,10 @@
         "skill"
       ],
       "applied": [
-        "atk"
-      ],
-      "pending": [
+        "atk",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "mq:eventfig/62",
         "uid": "MSB-279",
@@ -19887,7 +19985,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "mq:eventfig/63",
@@ -20590,10 +20689,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "piece:025",
         "uid": "PIECE-025",
@@ -20801,7 +20900,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "piece:039",
@@ -20809,10 +20909,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "piece:039",
         "uid": "PIECE-039",
@@ -21024,7 +21124,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "piece:049",
@@ -21430,11 +21531,10 @@
         "skill"
       ],
       "applied": [
-        "atk"
-      ],
-      "pending": [
+        "atk",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "BFX050",
         "uid": "MOB-BFX-050",
@@ -21607,7 +21707,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "ECL_M01",
@@ -21615,10 +21716,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "ECL_M01",
         "uid": "ELEMENT-ECL_M01",
@@ -21787,7 +21888,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "ECL_B01",
@@ -22159,10 +22261,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "GHO_B01",
         "uid": "ELEMENT-GHO_B01",
@@ -22327,7 +22429,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "NIN_B01",
@@ -22870,11 +22973,10 @@
       ],
       "applied": [
         "attribute",
-        "def"
-      ],
-      "pending": [
+        "def",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "RUN_B01",
         "uid": "ELEMENT-RUN_B01",
@@ -23037,7 +23139,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "SPI_B01",
@@ -23223,11 +23326,10 @@
         "skill"
       ],
       "applied": [
-        "atk"
-      ],
-      "pending": [
+        "atk",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "M4F_MIM_B01",
         "uid": "M4F_MIM_B01",
@@ -23388,7 +23490,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "M4F_SIL_B01",
@@ -23400,11 +23503,10 @@
       ],
       "applied": [
         "attribute",
-        "atk"
-      ],
-      "pending": [
+        "atk",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "M4F_SIL_B01",
         "uid": "M4F_SIL_B01",
@@ -23566,7 +23668,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "M4F_NEO_B01",
@@ -23578,11 +23681,10 @@
       ],
       "applied": [
         "atk",
-        "def"
-      ],
-      "pending": [
+        "def",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "M4F_NEO_B01",
         "uid": "M4F_NEO_B01",
@@ -23742,7 +23844,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "M4F_DOK_V01",
@@ -23865,10 +23968,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "M4F_DOK_V03",
         "uid": "M4F_DOK_V03",
@@ -23971,7 +24074,8 @@
           "passive": {},
           "recipes": []
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "M4F_DOK_B01",
@@ -26249,11 +26353,10 @@
         "skill"
       ],
       "applied": [
-        "def"
-      ],
-      "pending": [
+        "def",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "SWEET39",
         "uid": "OCT06-SWEET39",
@@ -26421,7 +26524,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "SWEET40",
@@ -26429,10 +26533,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "SWEET40",
         "uid": "OCT06-SWEET40",
@@ -26594,7 +26698,8 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     },
     {
       "id": "SWEET41",
@@ -26602,10 +26707,10 @@
       "requested": [
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "SWEET41",
         "uid": "OCT06-SWEET41",
@@ -26767,14 +26872,42 @@
             }
           ]
         }
-      }
+      },
+      "runtimeStatus": "implemented-oct07"
     }
   ],
   "confirmations": {
     "retroMaster": "RETRO09; rank B; robot-like katakana dialogue",
     "mobFloor4": "Maple and protagonist party are an explicit exception to the general campaign exclusion",
     "skillDescriptionPriority": true,
-    "evidence": "Sentinel_3cdac8120c9c8191bf7de45a9609bedc"
+    "evidence": "Sentinel_3cdac8120c9c8191bf7de45a9609bedc",
+    "mob27Recipe": {
+      "fromClass": "middle",
+      "materials": [
+        {
+          "tag": "22"
+        },
+        {
+          "class": "middle"
+        }
+      ],
+      "evidence": "Sentinel_d5ff9a84cfc0819187e2ddbaba70ca54"
+    },
+    "fusionV2": {
+      "evidence": [
+        "Sentinel_e74b469b9d308191af5c3bc2c095de8f",
+        "Sentinel_7a83bc8cae708191b091eb90e86a1f4b"
+      ],
+      "boosts": {
+        "tag": 20,
+        "attribute": 15,
+        "mix": 25,
+        "same": 30
+      },
+      "oncePerIndividual": true,
+      "stationaryBase": true,
+      "specialEvolutionBonus": 25
+    }
   },
   "implementedSkills": [
     "55",
@@ -26819,6 +26952,71 @@
     "piece:049",
     "BFX045",
     "BFX051",
-    "SWEET38"
-  ]
+    "SWEET38",
+    "104",
+    "107",
+    "109",
+    "114",
+    "119",
+    "120",
+    "121",
+    "129",
+    "141",
+    "148",
+    "161",
+    "172",
+    "174",
+    "175",
+    "177",
+    "192",
+    "196",
+    "203",
+    "217",
+    "mq:eventfig/24",
+    "mq:eventfig/25",
+    "mq:eventfig/47",
+    "mq:eventfig/48",
+    "mq:eventfig/54",
+    "mq:eventfig/55",
+    "mq:eventfig/61",
+    "mq:eventfig/62",
+    "piece:025",
+    "BFX050",
+    "ECL_M01",
+    "GHO_B01",
+    "RUN_B01",
+    "M4F_MIM_B01",
+    "M4F_NEO_B01",
+    "M4F_DOK_V03",
+    "SWEET39",
+    "SWEET41",
+    "26",
+    "27",
+    "28",
+    "30",
+    "37",
+    "98",
+    "100",
+    "103",
+    "106",
+    "128",
+    "142",
+    "143",
+    "152",
+    "157",
+    "159",
+    "166",
+    "179",
+    "180",
+    "193",
+    "195",
+    "197",
+    "198",
+    "205",
+    "mq:eventfig/50",
+    "piece:039",
+    "M4F_SIL_B01",
+    "SWEET40"
+  ],
+  "pendingSkills": 32
 }

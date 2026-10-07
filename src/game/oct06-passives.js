@@ -6,8 +6,9 @@ const matches=(f,q,by)=>q.attribute?attr(f,by).split('/').includes(q.attribute):
 function calculate(s,f,by){
  const side=s.players.findIndex(p=>p.field.includes(f));if(side<0)return {atk:0,def:0,attacks:0};
  const own=s.players[side].field.filter(Boolean),all=s.players.flatMap(p=>p.field.filter(Boolean)),out={atk:0,def:0,attacks:0};
- for(const source of own){const q=by.get(source.id).passive||{},a=q.aura;if(a&&(!a.excludeSelf||source!==f)&&(!a.attributes||a.attributes.some(x=>attr(f,by).split('/').includes(x)))&&(!a.tags||a.tags.some(t=>tags(f,by).includes(t)))){out.atk+=a.atk||0;out.def+=a.def||0;}if(q.attackAura&&tags(f,by).includes(q.attackAura.tag))out.attacks=Math.max(out.attacks,q.attackAura.limit);}
- const q=by.get(f.id).passive||{};
+ for(const source of all){if(!own.includes(source)&&!by.get(source.id).passive?.aura?.side)continue;const q=by.get(source.id).passive||{},a=source.activatedAura||q.aura;if(a&&(!a.excludeSelf||source!==f)&&(!a.attributes||a.attributes.some(x=>attr(f,by).split('/').includes(x)))&&(!a.tags||a.tags.some(t=>tags(f,by).includes(t)))){out.atk+=a.atk||0;out.def+=a.def||0;}if(q.attackAura&&tags(f,by).includes(q.attackAura.tag))out.attacks=Math.max(out.attacks,q.attackAura.limit);}
+ const q=by.get(f.id).passive||{};for(const source of all.filter(x=>!own.includes(x))){const aura=by.get(source.id).passive?.enemyAura;if(aura&&!q.lowerImmune){out.atk+=aura.atk||0;out.def+=aura.def||0;}}
+ if(q.handScale){const rule=q.handScale,n=s.players[side].hand.filter(id=>!rule.tag||by.get(id).tags.includes(rule.tag)).length;out.atk+=n*(rule.atk||0);out.def+=n*(rule.def||0);}
  for(const key of ['fieldScale','fieldGraveScale'])if(q[key]){const rule=q[key];let n=(rule.scope==='own'?own:all).filter(x=>matches(x,rule,by)).length;if(key==='fieldGraveScale')n+=s.players.flatMap(p=>p.grave).filter(id=>{const c=by.get(id);return c&&(rule.attribute?c.attribute.split('/').includes(rule.attribute):c.tags.includes(rule.tag));}).length;out.atk+=n*(rule.atk||0);out.def+=n*(rule.def||0);}
  return out;
 }

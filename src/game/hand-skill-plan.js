@@ -1,10 +1,10 @@
-const ownEffects=['atk','def','attacks','ramp','killChain','firstKillChain','killDraw','eachTarget','laterAtk','killBreak','pierceGuard','ignoreDef','damageBonus','wildAttribute','survive','taunt','attackSkillLock','graveTagBuff'];
+const ownEffects=['atk','def','attacks','ramp','killChain','firstKillChain','killDraw','eachTarget','laterAtk','killBreak','pierceGuard','ignoreDef','damageBonus','wildAttribute','survive','taunt','attackSkillLock','graveTagBuff','ownCount','noAttackResponse','activateAura','setAtk','suppressBuff','skillUntargetable','skillImmune','attackHidden','indestructible','battleImmune','instantKill','killDiscard'];
 export function handPlan(plan,timing){const q={...plan};
  if(q.returnSelf){delete q.returnSelf;if(timing==='defeat-response')q.rescueTarget=true;if(q.replaceSeed){delete q.replaceSeed;q.draw=1;}}
  if(q.redirectSelf)delete q.redirectSelf;
  if(q.redirectSkill){delete q.redirectSkill;q.cancelSkill=true;}
  if(!q.target&&ownEffects.some(k=>q[k]))q.target='ally';
- if(q.casterEach||q.casterDamage)q.supportCaster=true;
+ if(q.casterSkillImmune||q.skipOtherAllies||q.casterEach||q.casterDamage||q.selfAtk||q.nextOwnAtk||q.skipCaster||q.discardAtkFactor)q.supportCaster=true;
  return q;
 }
 export function handSkillDescription(f){if(f.soulSkill.runtimePlan)return f.soulSkill.description+"（手札から発動すると、そのカードを墓地へ送る。パッシブは場でのみ有効。）";const t=f.soulSkill.timing,p=f.soulSkill.program;

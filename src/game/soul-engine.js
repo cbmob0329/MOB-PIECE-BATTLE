@@ -1,3 +1,5 @@
+import {targetableBySkill,affectedBySkill} from './skill-protection.js';
+import {oct07Event} from './oct07-events.js';
 import {bindUnit,bindBattle,passiveBonus,combatBonus,isStatRaisingPlan,reverseStatIncreases} from './oct06-passives.js';
 import {cpuActionAllowed,recordCpuAction} from './free-enemy-ai.js';
 import {skillUseLimits,usedSkills,usageRecord,storedUsage,rememberUsage,takeStoredCard,putStoredCard,moveStoredCard} from './skill-budget.js';
@@ -12,20 +14,23 @@ import {soulOverrides} from '../data/soul-overrides.js';
 const fail=m=>{throw Error(m);};
 const log=(s,t)=>{s.log.push(t);s.log=s.log.slice(-100);};
 // Presentation events observe the rules; they never decide a battle outcome.
-const emit=(s,type,data={})=>{bindBattle(s,soulById,true);s.events??=[];s.eventSerial=(s.eventSerial||0)+1;const event={seq:s.eventSerial,type,...data};s.events.push(event);capturePresentation(s,event);s.events=s.events.slice(-180);};
+const emit=(s,type,data={})=>{oct07Event(s,{type,...data},soulById);bindBattle(s,soulById,true);s.events??=[];s.eventSerial=(s.eventSerial||0)+1;const event={seq:s.eventSerial,type,...data};s.events.push(event);capturePresentation(s,event);s.events=s.events.slice(-180);};
 const info=p=>soulById.get(p.id);
 export const skillPlan=p=>{const plan=info(p).soulSkill.runtimePlan||soulOverrides[p.id]?.plan||programs[info(p).soulSkill.program];return p.handOrigin?handPlan(plan,info(p).soulSkill.timing):plan;};
 const sharesAttribute=(a,b)=>a.split('/').some(x=>b.split('/').includes(x));
 const live=(s,side)=>s.players[side].field.filter(Boolean).map(f=>bindUnit(s,f));
 const piece=(s,side,uid)=>live(s,side).find(p=>p.uid===uid)||fail('フィールドのフィギュアを選んでください');
-const effect=(p,key,value,until)=>p.effects.push({key,value,until});
+const strengthened=p=>p.strengthened===true||(p.resonanceAtk||0)>0||(p.resonanceDef||0)>0;
+function restoreStrength(f,usage){if(!strengthened(usage||{}))return;f.strengthened=true;f.resonanceAtk=usage.resonanceAtk||0;f.resonanceDef=usage.resonanceDef||0;f.permanentAtk+=f.resonanceAtk;f.permanentDef+=f.resonanceDef;f.fusionStyle=usage.fusionStyle||'legacy';f.fusionPartnerIds=[...(usage.fusionPartnerIds||[])];}
+const effect=(p,key,value,until)=>{if(info(p).passive?.lowerImmune&&((['atk','def','defUntilAttack'].includes(key)&&value<0)||key==='turnPoison'||key==='atkSet'&&value<stats(p).atk))return;p.effects.push({key,value,until});};
 const values=(p,key)=>p.effects.filter(e=>e.key===key).map(e=>e.value);
 const value=(p,key)=>values(p,key).at(-1);
 const has=(p,key)=>!!value(p,key);
 const sum=(p,key)=>values(p,key).reduce((a,b)=>a+b,0);
 const clear=(p,key)=>{p.effects=p.effects.filter(e=>e.key!==key);};
 function instance(s,id){return bindUnit(s,{uid:++s.serial,id,summonTurn:s.turn,attacks:0,skillTurn:-1,skillUsesUsed:0,effects:[],attackedTargets:[],lastTarget:null,extra:0,mobFusion:false,permanentAtk:0,permanentDef:0});}
-export const stats=p=>({atk:Math.max(0,info(p).atk+p.permanentAtk+sum(p,'atk')+passiveBonus(p,soulById).atk),def:Math.max(0,info(p).def+p.permanentDef+sum(p,'def')+sum(p,'defUntilAttack')+passiveBonus(p,soulById).def)});
+function statValue(p,k){const fixed=value(p,k+'Set');if(fixed!==undefined)return Math.max(0,fixed);const bonus=passiveBonus(p,soulById),parts=[k==='atk'?p.permanentAtk:p.permanentDef,bonus[k],...values(p,k),...(k==='def'?values(p,'defUntilAttack'):[])];return Math.max(0,info(p)[k]+parts.reduce((n,v)=>n+(has(p,'suppressBuff')?Math.min(0,v):v),0));}
+export const stats=p=>({atk:statValue(p,'atk'),def:statValue(p,'def')});
 export const currentTags=p=>[...new Set([...info(p).tags,...values(p,'addTag')])].filter(t=>!values(p,'removeTag').includes(t));
 const attribute=p=>value(p,'attribute')||info(p).attribute;
 const expiresNextOpponent=(s,side)=>s.turn+(s.active===side?1:0);
@@ -34,9 +39,9 @@ function finish(s,side,reason){if(s.winner!==null)return;if(s.evolutionQueue?.le
 function draw(s,side){const p=s.players[side];if(!p.deck.length){finish(s,1-side,'山札切れ');return;}const id=moveStoredCard(p,'deck',0,'hand');emit(s,'draw',{side,id});}
 export function startTurn(s){
  s.phase='draw';s.turn++;emit(s,'turn',{side:s.active,turn:s.turn});
- for(const p of s.players){p.skillUsed=false;p.teamEffects=p.teamEffects.filter(e=>e.until>=s.turn);for(const f of p.field.filter(Boolean)){f.effects=f.effects.filter(e=>e.until===null||e.until>=s.turn);for(const e of f.effects.filter(e=>e.key==='turnPoison')){f.permanentAtk-=e.value;f.permanentDef-=e.value;}f.attacks=0;f.attackedTargets=[];f.lastTarget=null;f.extra=0;f.chainOnly=false;}}
+ for(const p of s.players){p.skillUsed=false;p.teamEffects=p.teamEffects.filter(e=>e.until>=s.turn);for(const f of p.field.filter(Boolean)){f.effects=f.effects.filter(e=>e.until===null||e.until>=s.turn);for(const e of f.effects)if(e.key==='futureAtk'&&e.starts<=s.turn)e.key='atk';for(const e of f.effects.filter(e=>e.key==='turnPoison')){f.permanentAtk-=e.value;f.permanentDef-=e.value;}f.attacks=0;f.targetedAttacks=0;f.attackedTargets=[];f.lastTarget=null;f.extra=0;f.chainOnly=false;}}
  for(const f of s.players.flatMap(p=>p.field.filter(Boolean)))f.permanentAtk+=info(f).passive?.eachTurnGrowth||0;for(const f of live(s,s.active))f.permanentAtk+=info(f).passive?.ownTurnGrowth||0;bindBattle(s,soulById);
- const p=s.players[s.active];while(p.hand.length<5&&s.winner===null)draw(s,s.active);
+ const p=s.players[s.active];for(let n=Math.max(0,5-p.hand.length);n>0&&s.winner===null;n--)draw(s,s.active);
  if(s.winner===null){s.phase='main';log(s,`TURN ${s.turn} · ${p.name}のメインフェイズ`);}
 }
 function shuffled(ids,random){
@@ -54,7 +59,7 @@ function place(s,side,index,slot){
  const p=s.players[side],id=p.hand[index];if(!canSummonHand(s,side,index))fail('シード、または帰還スキルで直接召喚可能なフィギュアを選んでください');
  if(!Number.isInteger(slot)||slot<0||slot>2||p.field[slot])fail('空き枠が必要です');
  const {bonus}=takeHand(p,index);p.used.push(id);const f=instance(s,id);
- if(bonus){if(bonus.def)effect(f,'def',bonus.def,Infinity);Object.assign(f,usageRecord(bonus));}
+ if(bonus){if(bonus.def)effect(f,'def',bonus.def,Infinity);Object.assign(f,usageRecord(bonus));restoreStrength(f,bonus);}
  p.field[slot]=f;log(s,info(f).name+'を召喚');emit(s,'summon',{side,slot,id,attribute:attribute(f),attackType:info(f).attackType,uid:f.uid,...stats(f)});return f;
 }
 export function summon(s,side,index,slot){main(s,side);return place(s,side,index,slot);}
@@ -68,8 +73,9 @@ export function fusionOptions(s,side,uids){
  const explicit=recipes.filter(r=>s.players[side].reserve.includes(r.target)&&recipeStageMatches(r,pair.map(info),soulById)&&recipePairMatches(r,pair.map(info),pair.map(p=>({tags:currentTags(p),attribute:attribute(p),wildAttribute:has(p,'wildAttribute')}))));
  // Dedicated evolution and strengthening coexist; never hide a legal recipe.
  const same=pair[0].id===pair[1].id,sharedAttribute=sharesAttribute(attribute(pair[0]),attribute(pair[1])),sharedTag=currentTags(pair[0]).some(t=>currentTags(pair[1]).includes(t));
- const bonus=same||sharedAttribute&&sharedTag?30:sharedAttribute||sharedTag?15:0;
- const strength=bonus?pair.flatMap((base,index)=>base.graveIndex!==undefined?[]:[{id:'resonance:'+index+':'+(base.uid??'hand-'+base.handIndex),target:base.id,fromClass:info(base).soulClass,materials:pair.map(f=>({id:f.id})),special:false,resonance:true,sameId:same,baseIndex:index,baseUid:base.uid,bonusATK:bonus,bonusDEF:bonus,label:(same?'同一ID':sharedAttribute&&sharedTag?'属性＋タグ一致':sharedAttribute?'属性一致':'タグ一致')+' · '+(base.handIndex!==undefined?'手札'+(base.handIndex+1):'場'+(s.players[side].field.findIndex(f=>f?.uid===base.uid)+1))+'の'+info(base).name+'を残す · ATK/DEF +'+bonus+' · '+(same?'スキル回数リセット':'残スキル回数を引き継ぐ')}]):[];
+ const kind=same?'same':sharedAttribute&&sharedTag?'mix':sharedTag?'tag':sharedAttribute?'attribute':null;
+ const bonus=({same:30,mix:25,tag:20,attribute:15})[kind]||0,baseIndex=pair[1].graveIndex!==undefined?0:1,base=pair[baseIndex];
+ const strength=bonus&&!strengthened(base)?[{id:'resonance:'+baseIndex+':'+(base.uid??'hand-'+base.handIndex),target:base.id,fromClass:info(base).soulClass,materials:pair.map(f=>({id:f.id})),special:false,resonance:true,sameId:same,baseIndex,baseUid:base.uid,bonusATK:bonus,bonusDEF:bonus,fusionStyle:kind,label:({same:'同名',mix:'属性＋タグ一致',tag:'タグ一致',attribute:'属性一致'})[kind]+' · '+info(base).name+'を強化 · ATK/DEF +'+bonus+' · '+(same?'スキル回数リセット':'残スキル回数を引き継ぐ')}]:[];
  return [...explicit].sort((a,b)=>Number(b.special)-Number(a.special)).concat(strength);
 }
 // Existing numeric references identify field instances; hand references identify a copy by index.
@@ -77,14 +83,14 @@ export function fusionMaterial(s,side,ref){
  if(typeof ref==='number')return live(s,side).find(p=>p.uid===ref);
  const p=s.players[side];if(Number.isInteger(ref?.graveIndex)){const id=p.grave[ref.graveIndex];return soulById.get(id)?.passive?.graveFusion?{id,graveIndex:ref.graveIndex,effects:[],attacks:0,skillTurn:-1}:null;}const i=ref?.handIndex,id=p.hand[i];
  if(!Number.isInteger(i)||i<0||!id)return null;
- const bonus=p.handBonuses.find(b=>b.index===i)||{};return {id,handIndex:i,effects:[],attacks:0,...usageRecord(bonus),skillTurn:bonus.skillTurn??-1,permanentAtk:bonus.atk||0,permanentDef:bonus.def||0};
+ const bonus=p.handBonuses.find(b=>b.index===i)||{};return {id,handIndex:i,effects:[],attacks:0,...usageRecord(bonus),skillTurn:bonus.skillTurn??-1,permanentAtk:(bonus.atk||0)+(bonus.resonanceAtk||0),permanentDef:(bonus.def||0)+(bonus.resonanceDef||0)};
 }
 export function fusionPairs(s,side){const field=live(s,side).map(f=>f.uid),out=[];for(let i=0;i<field.length;i++){for(let j=i+1;j<field.length;j++)out.push([field[i],field[j]]);for(let j=0;j<s.players[side].hand.length;j++)out.push([field[i],{handIndex:j}]);for(let j=0;j<s.players[side].grave.length;j++)if(soulById.get(s.players[side].grave[j])?.passive?.graveFusion)out.push([field[i],{graveIndex:j}]);}return out;}
-function remove(s,side,f,destroyed=false,cause='skill'){const p=s.players[side],i=p.field.findIndex(x=>x?.uid===f.uid);if(i<0)return;if(destroyed&&cause==='skill'&&info(f).passive?.skillDestructionImmune)return;if(destroyed&&info(f).passive?.summonGuard&&f.summonTurn===s.turn)return;p.field[i]=null;putStoredCard(p,'grave',f.id,f);if(destroyed){p.destroyed.push(f.id);emit(s,'defeat',{side,id:f.id,uid:f.uid,slot:i});deathPassive(s,side,f);}}
+function remove(s,side,f,destroyed=false,cause='skill'){const p=s.players[side],i=p.field.findIndex(x=>x?.uid===f.uid);if(i<0)return;if(destroyed&&(has(f,'indestructible')||cause==='battle'&&has(f,'battleImmune')))return;if(destroyed&&cause==='skill'&&info(f).passive?.skillDestructionImmune)return;if(destroyed&&info(f).passive?.summonGuard&&f.summonTurn===s.turn)return;p.field[i]=null;putStoredCard(p,'grave',f.id,f);if(destroyed){p.destroyed.push(f.id);emit(s,'defeat',{side,id:f.id,uid:f.uid,slot:i});deathPassive(s,side,f);}}
 function deathPassive(s,side,f){const p=s.players[side],q=info(f).passive;if(!q)return;
- if(q.phoenixOnce&&!f.phoenixRevived&&p.field.includes(null)){const i=p.grave.length-1;takeStoredCard(p,'grave',i);const j=p.destroyed.lastIndexOf(f.id);if(j>=0)p.destroyed.splice(j,1);const unit=instance(s,f.id);unit.phoenixRevived=true;const slot=p.field.indexOf(null);p.field[slot]=unit;p.life=Math.min(400,p.life+(q.reviveHeal||0));emit(s,'summon',{side,id:f.id,uid:unit.uid,slot,...stats(unit)});return;}
+ if(q.phoenixOnce&&!f.phoenixRevived&&p.field.includes(null)){const i=p.grave.length-1;takeStoredCard(p,'grave',i);const j=p.destroyed.lastIndexOf(f.id);if(j>=0)p.destroyed.splice(j,1);const unit=instance(s,f.id);restoreStrength(unit,f);unit.phoenixRevived=true;const slot=p.field.indexOf(null);p.field[slot]=unit;p.life=Math.min(400,p.life+(q.reviveHeal||0));emit(s,'summon',{side,id:f.id,uid:unit.uid,slot,...stats(unit)});return;}
  if(q.deathGraveAttribute&&p.field.includes(null)){const choices=p.grave.filter(id=>id!==f.id&&soulById.get(id).attribute.split('/').includes(q.deathGraveAttribute));if(choices.length){s.evolutionQueue??=[];s.evolutionQueue.push({kind:'revive',side,source:f.id,target:f.id,cost:1,attribute:q.deathGraveAttribute});}}
-const summonId=(id,usage)=>{const slot=p.field.indexOf(null);if(slot<0)return false;const unit=instance(s,id);if(usage?.phoenixRevived)unit.phoenixRevived=true;p.field[slot]=unit;p.used.push(id);emit(s,'summon',{side,slot,id,uid:unit.uid,...stats(unit)});return true;};if(q.deathReserve&&p.field.includes(null)){const i=p.reserve.indexOf(q.deathReserve);if(i>=0){p.reserve.splice(i,1);summonId(q.deathReserve);}}if(q.evolve&&p.reserve.includes(q.evolve.target)){s.evolutionQueue??=[];s.evolutionQueue.push({side,source:f.id,...q.evolve});if(evolutionOptions(s).costs.length<q.evolve.cost)s.evolutionQueue.pop();}if(q.deathId&&p.field.includes(null)){const i=p.deck.indexOf(q.deathId);if(i>=0){takeStoredCard(p,'deck',i);summonId(q.deathId);}}if(q.deathRandomTag){const choices=p.deck.map((id,i)=>({id,i})).filter(x=>soulById.get(x.id).tags.includes(q.deathRandomTag));if(choices.length&&p.field.includes(null)){const selected=choices[Math.floor(Math.random()*choices.length)];takeStoredCard(p,'deck',selected.i);summonId(selected.id);}}if(q.deathRevive){for(let n=0;n<q.deathRevive&&p.field.includes(null);n++){const i=p.grave.findIndex(id=>soulById.get(id).soulClass==='seed');if(i<0)break;const {id,usage}=takeStoredCard(p,'grave',i),j=p.destroyed.indexOf(id);if(j>=0)p.destroyed.splice(j,1);summonId(id,usage);}}}
+const summonId=(id,usage)=>{const slot=p.field.indexOf(null);if(slot<0)return false;const unit=instance(s,id);if(usage?.phoenixRevived)unit.phoenixRevived=true;restoreStrength(unit,usage);p.field[slot]=unit;p.used.push(id);emit(s,'summon',{side,slot,id,uid:unit.uid,...stats(unit)});return true;};if(q.deathReserve&&p.field.includes(null)){const i=p.reserve.indexOf(q.deathReserve);if(i>=0){p.reserve.splice(i,1);summonId(q.deathReserve);}}if(q.evolve&&p.reserve.includes(q.evolve.target)){s.evolutionQueue??=[];s.evolutionQueue.push({side,source:f.id,...q.evolve});if(evolutionOptions(s).costs.length<q.evolve.cost)s.evolutionQueue.pop();}if(q.deathId&&p.field.includes(null)){const i=p.deck.indexOf(q.deathId);if(i>=0){takeStoredCard(p,'deck',i);summonId(q.deathId);}}if(q.deathRandomTag){const choices=p.deck.map((id,i)=>({id,i})).filter(x=>soulById.get(x.id).tags.includes(q.deathRandomTag));if(choices.length&&p.field.includes(null)){const selected=choices[Math.floor(Math.random()*choices.length)];takeStoredCard(p,'deck',selected.i);summonId(selected.id);}}if(q.deathRevive){for(let n=0;n<q.deathRevive&&p.field.includes(null);n++){const i=p.grave.findIndex(id=>soulById.get(id).soulClass==='seed');if(i<0)break;const {id,usage}=takeStoredCard(p,'grave',i),j=p.destroyed.indexOf(id);if(j>=0)p.destroyed.splice(j,1);summonId(id,usage);}}}
 function bounce(s,side,f,def=0){const p=s.players[side];p.field[p.field.findIndex(x=>x?.uid===f.uid)]=null;p.handBonuses.push({id:f.id,index:p.hand.length,def,...usageRecord(f),direct:!!def});p.hand.push(f.id);}
 export function fuse(s,side,uids,recipeId){
  main(s,side);const r=fusionOptions(s,side,uids).find(r=>r.id===recipeId);if(!r)fail('この素材ではフュージョンできません');
@@ -97,20 +103,22 @@ export function fuse(s,side,uids,recipeId){
   else{const {id,bonus}=takeHand(p,ref.handIndex);if(!keep)putStoredCard(p,'grave',id,bonus);p.used.push(id);}
  }
  if(!r.resonance)p.reserve.splice(p.reserve.indexOf(r.target),1);p.used.push(r.target);const f=instance(s,r.target);
- if(r.resonance){const freshUid=f.uid;Object.assign(f,original,{uid:freshUid,id:r.target});delete f.handIndex;delete f.graveIndex;f.summonTurn=original.summonTurn??s.turn;f.permanentAtk=(original.permanentAtk||0)+r.bonusATK;f.permanentDef=(original.permanentDef||0)+r.bonusDEF;f.resonanceAtk=(original.resonanceAtk||0)+r.bonusATK;f.resonanceDef=(original.resonanceDef||0)+r.bonusDEF;if(r.sameId){f.skillUsesUsed=0;f.skillTurn=-1;}}
+ if(r.resonance){const freshUid=f.uid;Object.assign(f,original,{uid:freshUid,id:r.target});delete f.handIndex;delete f.graveIndex;f.summonTurn=original.summonTurn??s.turn;f.permanentAtk=(original.permanentAtk||0)+r.bonusATK;f.permanentDef=(original.permanentDef||0)+r.bonusDEF;f.resonanceAtk=r.bonusATK;f.resonanceDef=r.bonusDEF;f.strengthened=true;if(r.sameId){f.skillUsesUsed=0;f.skillTurn=-1;}}
  p.field[slot]=f;
- if(r.special){f.mobFusion=true;f.permanentAtk=r.bonusATK;f.permanentDef=r.bonusDEF;s.fusionBanner={serial:f.uid,name:info(f).name,special:true};}
+ f.fusionStyle=r.resonance?r.fusionStyle:r.special?'mob':'soul';f.fusionPartnerIds=r.resonance?[pair[1-r.baseIndex].id]:[...materialIds];
+ if(r.special){f.mobFusion=true;f.permanentAtk=25;f.permanentDef=25;s.fusionBanner={serial:f.uid,name:info(f).name,special:true};}
  else s.fusionBanner={serial:f.uid,name:info(f).name,special:false};
  if(p.fusionBonus&&(p.fusionBonus.expires===null||p.fusionBonus.expires>=s.turn)){const until=p.fusionBonus.persistent?Infinity:s.turn;effect(f,'atk',p.fusionBonus.atk,until);effect(f,'def',p.fusionBonus.def,until);p.fusionBonus=null;}
- log(s,(r.resonance?'強化召喚 · ':r.special?'MOB SOUL FUSION · ':'SOUL FUSION · ')+info(f).name+(r.resonance?' · ATK/DEF +'+r.bonusATK:r.special?' · ATK +20 / DEF +20':''));
- emit(s,'fusion',{side,slot,uid:f.uid,id:f.id,attribute:attribute(f),attackType:info(f).attackType,materialIds,special:r.special,resonance:!!r.resonance,...stats(f)});
+ log(s,(r.resonance?'強化召喚 · ':r.special?'MOB SOUL FUSION · ':'SOUL FUSION · ')+info(f).name+(r.resonance?' · ATK/DEF +'+r.bonusATK:r.special?' · ATK +25 / DEF +25':''));
+ emit(s,'fusion',{side,slot,uid:f.uid,id:f.id,attribute:attribute(f),attackType:info(f).attackType,materialIds,partnerIds:[...f.fusionPartnerIds],fusionStyle:f.fusionStyle,bonusATK:r.resonance?r.bonusATK:r.special?25:0,bonusDEF:r.resonance?r.bonusDEF:r.special?25:0,special:r.special,resonance:!!r.resonance,...stats(f)});
 }
 function reactionEligible(s,side,f){
- const p=s.pending;if(!p||p.side===side)return false;const timing=info(f).soulSkill.timing,q=skillPlan(f);
+ const p=s.pending;if(!p||p.side===side)return false;if(p.kind==='attack'&&has(piece(s,p.side,p.uid),'noAttackResponse'))return false;const timing=info(f).soulSkill.timing,q=skillPlan(f);
  if(p.kind==='skill')return timing==='skill-response'&&(!q.reverseBuffs||isStatRaisingPlan(skillPlan(p.caster||piece(s,p.side,p.uid)),elementDefinition(info(p.caster||piece(s,p.side,p.uid)))));
  if(p.kind==='defeat')return timing==='defeat-response'&&p.targetUid===f.uid;
  if(p.kind!=='attack'||timing!=='attack-response')return false;
- if(q.revision==='oct07')return live(s,side).some(x=>x.uid===p.targetUid);
+ if(q.onlySelfResponse&&p.targetUid!==f.uid)return false;
+ if(q.revision==='oct07'&&!q.redirectSelf&&!q.redirectOther)return live(s,side).some(x=>x.uid===p.targetUid);
  const a=piece(s,p.side,p.uid);if(has(a,'pierceGuard')&&(q.redirectSelf||q.redirectOther))return false;
  if(q.guardAlly)return !!live(s,side).find(x=>x.uid===p.targetUid);if(q.redirectSelf)return true;
  if(q.redirectOther)return live(s,side).some(x=>x.uid!==p.targetUid)||!!q.fallbackDef;
@@ -123,13 +131,14 @@ export function skillSource(s,side,ref){
  return {id,uid:-(i+1),handIndex:i,handOrigin:true,effects:[],...usageRecord(storedUsage(p,'hand',i)),permanentAtk:0,permanentDef:0};
 }
 export const skillReference=f=>f.handOrigin?{handIndex:f.handIndex,id:f.id}:f.uid;
-function resourcesAvailable(s,side,f){if(f.handOrigin&&['blood','promoteSelf'].includes(skillPlan(f).specified))return false;const q=skillPlan(f),p=s.players[side];if(q.summonLoneReserve&&(f.handOrigin||p.field.filter(Boolean).length!==1||!p.reserve.some(id=>soulById.get(id).soulClass===q.summonLoneReserve.class&&soulById.get(id).tags.includes(q.summonLoneReserve.tag))))return false;if(q.lifeCost&&p.life<=q.lifeCost)return false;if(q.discardCost&&p.hand.length-(f.handOrigin?1:0)<q.discardCost)return false;if(f.handOrigin&&q.draw&&p.deck.length<q.draw)return false;if((q.attributeSearch||q.scout)&&!p.deck.length)return false;if(q.recoverSeed&&!p.grave.some(id=>soulById.get(id).soulClass==='seed'))return false;return true;}
+function resourcesAvailable(s,side,f){if(skillPlan(f).onlyFirstAttack&&(f.handOrigin?live(s,side).find(x=>x.uid===s.pending?.targetUid):f)?.targetedAttacks>1)return false;if(f.handOrigin&&['blood','promoteSelf'].includes(skillPlan(f).specified))return false;const q=skillPlan(f),p=s.players[side];if(q.summonLoneReserve&&(f.handOrigin||p.field.filter(Boolean).length!==1||!p.reserve.some(id=>soulById.get(id).soulClass===q.summonLoneReserve.class&&soulById.get(id).tags.includes(q.summonLoneReserve.tag))))return false;if(q.lifeCost&&p.life<=q.lifeCost)return false;if(q.discardCost&&p.hand.length-(f.handOrigin?1:0)<q.discardCost)return false;if(f.handOrigin&&q.draw&&p.deck.length<q.draw)return false;if((q.attributeSearch||q.scout)&&!p.deck.length)return false;if(q.recoverSeed&&!p.grave.some(id=>soulById.get(id).soulClass==='seed'))return false;return true;}
 function skillTimingAllowed(s,side,f){
+ if(s.pending?.kind==='attack'&&has(piece(s,s.pending.side,s.pending.uid),'noAttackResponse'))return false;
  if(s.pending){if(f.handOrigin){const pending=s.pending,t=info(f).soulSkill.timing;if(pending.side===side)return false;if(pending.kind==='skill')return t==='skill-response'&&(!skillPlan(f).reverseBuffs||isStatRaisingPlan(skillPlan(pending.caster||piece(s,pending.side,pending.uid)),elementDefinition(info(pending.caster||piece(s,pending.side,pending.uid)))));if(pending.kind==='defeat')return t==='defeat-response'&&!!live(s,side).find(x=>x.uid===pending.targetUid);if(pending.kind==='attack'&&skillPlan(f).redirectOther&&has(piece(s,pending.side,pending.uid),'pierceGuard'))return false;return pending.kind==='attack'&&t==='attack-response'&&!!live(s,side).find(x=>x.uid===pending.targetUid);}return reactionEligible(s,side,f);}
  return s.phase==='main'&&s.active===side&&info(f).soulSkill.timing==='own-main';
 }
 export function skillBudget(s,side,ref){bindBattle(s,soulById);const f=skillSource(s,side,ref);if(!f)return null;const passive=!!skillPlan(f).passive||info(f).soulSkill.timing==='passive',limit=skillUseLimits[info(f).soulClass]||1,used=usedSkills(f);return {passive,limit,used,remaining:Math.max(0,limit-used)};}
-export function skillUnavailableReason(s,side,ref){const f=skillSource(s,side,ref);if(!f)return '発動元がありません';const budget=skillBudget(s,side,ref);if(budget.passive)return '自動発動（手動回数を消費しません）';if(s.winner!==null)return '対戦は終了しています';if(s.evolutionQueue?.length)return '条件進化を先に解決してください';if(f.skillTurn===s.turn)return 'この個体はこのターン使用済み';if(!budget.remaining)return 'この個体の残り回数は0です';if(f.effects.some(e=>e.key==='skillLock'&&(e.starts??0)<=s.turn))return 'スキル使用禁止中です';if(!resourcesAvailable(s,side,f))return '手札・ライフ等のコストまたは発動条件が不足しています';if(!skillTimingAllowed(s,side,f))return '今は発動タイミングではありません';if(skillChoices(s,side,ref).some(c=>!c.choices.length))return '条件を満たす対象がありません';return '';}
+export function skillUnavailableReason(s,side,ref){const f=skillSource(s,side,ref);if(!f)return '発動元がありません';const budget=skillBudget(s,side,ref);if(budget.passive)return '自動発動（手動回数を消費しません）';if(s.winner!==null)return '対戦は終了しています';if(s.evolutionQueue?.length)return '条件進化を先に解決してください';if(f.skillTurn===s.turn)return 'この個体はこのターン使用済み';if(!budget.remaining)return 'この個体の残り回数は0です';if(f.effects.some(e=>e.key==='skillLock'&&(e.starts??0)<=s.turn))return 'スキル使用禁止中です';if(s.players[side].teamEffects.some(e=>e.key==='skillRule'&&(e.starts??0)<=s.turn&&e.until>=s.turn&&(e.value==='all'||e.value==='field'&&!f.handOrigin||e.value==='hand'&&f.handOrigin||e.value==='attribute'&&!attribute(f).split('/').includes(e.attribute)||e.value==='destruction'&&!!(skillPlan(f).destroyTarget||skillPlan(f).instantKill||skillPlan(f).destroyTrigger))))return 'このターンのスキル制限中です';if(!resourcesAvailable(s,side,f))return '手札・ライフ等のコストまたは発動条件が不足しています';if(!skillTimingAllowed(s,side,f))return '今は発動タイミングではありません';if(skillChoices(s,side,ref).some(c=>!c.choices.length))return '条件を満たす対象がありません';return '';}
 export const canSkill=(s,side,ref)=>!skillUnavailableReason(s,side,ref);
 export const reactionOptions=(s,side)=>[...live(s,side),...s.players[side].hand.map((id,handIndex)=>skillSource(s,side,{handIndex,id}))].filter(f=>canSkill(s,side,skillReference(f)));
 const option=(value,label)=>({value:String(value),label});
@@ -138,6 +147,8 @@ export function skillChoices(s,side,uid,selected={}){
  const add=(key,label,choices)=>out.push({key,label,choices});
  if(q.element)return elementChoices(s,side,f,soulById,selected);if(q.specified==='promoteSelf')add('promoteId','召喚する主人公パーティーのミドル',p.reserve.filter(id=>soulById.get(id).soulClass===q.class&&soulById.get(id).tags.includes(q.tag)).map(id=>option(id,soulById.get(id).name)));
  if(q.summonLoneReserve)add('reserveId','召喚する草原のミドル',p.reserve.filter(id=>soulById.get(id).soulClass===q.summonLoneReserve.class&&soulById.get(id).tags.includes(q.summonLoneReserve.tag)).map(id=>option(id,soulById.get(id).name)));
+ if(q.fireCost)add('fireCostRef','墓地へ送る火属性', [...p.hand.map((id,i)=>({id,i})).filter(x=>(!f.handOrigin||x.i!==f.handIndex)&&soulById.get(x.id).attribute.split('/').includes('火')).map(x=>option('hand:'+x.i,soulById.get(x.id).name)),...live(s,side).filter(x=>attribute(x).split('/').includes('火')).map(x=>option('field:'+x.uid,info(x).name))]);
+ if(q.selectedEnemyAtk)add('selectedEnemyUid','ATKを下げる相手',live(s,1-side).map(x=>option(x.uid,info(x).name)));
  if(q.target==='ally')add('targetUid','味方を選択',live(s,side).map(x=>option(x.uid,info(x).name)));
  if(q.target==='enemySeed')add('targetUid','相手のシードを選択',live(s,1-side).filter(x=>info(x).soulClass==='seed').map(x=>option(x.uid,info(x).name)));
  if(q.supportCaster)add('allyUid','追加強化を受ける味方',live(s,side).map(x=>option(x.uid,info(x).name)));
@@ -153,6 +164,7 @@ export function skillChoices(s,side,uid,selected={}){
  if(q.addTag)add('tag','追加するタグ',currentTags(f).map(t=>option(t,t)));
  if(q.removeTag){const target=live(s,1-side).find(x=>x.uid===Number(selected.targetUid))||live(s,1-side)[0];add('tag','無効にするタグ',target?currentTags(target).map(t=>option(t,t)):[]);}
  if(q.move)add('slot','移動先',p.field.map((x,i)=>option(i,(i+1)+'枠目'+(x?' · '+info(x).name:''))));
+ for(const c of out)if(['targetUid','allyUid','selectedEnemyUid'].includes(c.key))c.choices=c.choices.filter(o=>{const target=s.players.flatMap(p=>p.field.filter(Boolean)).find(t=>String(t.uid)===o.value);return !target||targetableBySkill(target,side,s.players.findIndex(p=>p.field.includes(target)));});
  return out;
 }
 function checkedOptions(s,side,uid,options){const out={...options};for(const c of skillChoices(s,side,uid,out)){if(out[c.key]===undefined&&c.choices.length===1)out[c.key]=c.choices[0].value;if(out[c.key]===undefined&&['graveIndex','handIndex'].includes(c.key)&&c.choices.some(x=>x.value==='-1'))out[c.key]=-1;if(!c.choices.some(x=>x.value===String(out[c.key])))fail(c.label+'を選んでください');}return out;}
@@ -165,14 +177,16 @@ export function useSkill(s,side,uid,options={}){
  if(f.handOrigin&&q.target==='allies'&&!live(s,side).length)fail('場の味方が必要です');
  if(q.target==='attributeAllies'&&!q.heal&&!live(s,side).some(x=>sharesAttribute(attribute(x),info(f).attribute)))fail('同じ属性の味方が必要です');
  if(q.element){validateElement(s,side,f,soulById,opts);opts.el_graveSeeds=p.grave.filter(id=>soulById.get(id).soulClass==='seed').length;}
+ opts.graveSeedsBefore=p.grave.filter(id=>soulById.get(id).soulClass==='seed').length;if(q.discardAtkFactor)opts.discardedAtk=soulById.get(p.hand[Number(opts.costHandIndex)]).atk;
  // All validation precedes costs; no await or callback can interleave this commit.
- const removals=[...(f.handOrigin?[f.handIndex]:[]),...(q.discardCost?[Number(opts.costHandIndex)]:[])].sort((a,b)=>b-a);
+ const removals=[...(f.handOrigin?[f.handIndex]:[]),...(q.discardCost?[Number(opts.costHandIndex)]:[]),...(q.fireCost&&opts.fireCostRef.startsWith('hand:')?[Number(opts.fireCostRef.slice(5))]:[])].sort((a,b)=>b-a);
  for(const index of removals){const card=takeHand(p,index);const gi=putStoredCard(p,'grave',card.id,card.bonus);if(f.handOrigin&&index===f.handIndex)f.spentGraveIndex=gi;p.used.push(card.id);}
  if(opts.handIndex!==undefined&&Number(opts.handIndex)>=0)opts.handIndex=Number(opts.handIndex)-removals.filter(i=>i<Number(opts.handIndex)).length;
+ if(q.fireCost&&opts.fireCostRef.startsWith('field:'))remove(s,side,piece(s,side,Number(opts.fireCostRef.slice(6))));
  if(q.lifeCost)p.life-=q.lifeCost;
  if(f.handOrigin)f.uid=++s.serial;
  if(s.pending){debit(s,side,f);respond(s,side,f,opts);return;}
- debit(s,side,f);s.pending={kind:'skill',side,uid:f.uid,caster:f.handOrigin?f:null,options:opts};
+ debit(s,side,f);s.pending={kind:'skill',side,uid:f.uid,caster:f.handOrigin||!live(s,side).includes(f)?f:null,options:opts};
  if(!reactionOptions(s,1-side).length)passReaction(s,1-side);
 }
 function applySkill(s,side,f,o){
@@ -180,25 +194,39 @@ function applySkill(s,side,f,o){
  const specified=skillPlan(f);if(specified.specified){const p=s.players[side];if(specified.specified==='promoteSelf'){const slot=p.field.indexOf(f),i=p.reserve.indexOf(o.promoteId);if(slot<0||i<0)return;remove(s,side,f,true);p.reserve.splice(i,1);const next=instance(s,o.promoteId);p.field[slot]=next;p.used.push(next.id);emit(s,'summon',{side,id:next.id,slot,uid:next.uid,...stats(next)});return;}if(specified.specified==='blood'){effect(f,'atk',s.players[1-side].grave.length*10,s.turn);remove(s,side,f,true);return;}if(['tagBuff','rain'].includes(specified.specified)){if(specified.specified==='rain')p.life=Math.min(400,p.life+p.hand.length*10);for(const targetSide of specified.both?[0,1]:[side])for(const t of live(s,targetSide))if(currentTags(t).includes(specified.tag)){if(specified.atk)effect(t,'atk',specified.atk,s.turn);if(specified.def)effect(t,'def',specified.def,s.turn);}return;}}
  const q=skillPlan(f),p=s.players[side],enemy=s.players[1-side],until=q.duration==='persistent'?Infinity:q.duration==='next-opponent'?expiresNextOpponent(s,side):s.turn;
  let targets=q.target==='trigger'?live(s,1-side).filter(x=>x.uid===o.triggerUid):q.target==='ally'?[piece(s,side,Number(o.targetUid))]:['enemy','enemySeed'].includes(q.target)?[piece(s,1-side,Number(o.targetUid))]:q.target==='attributeAllies'?live(s,side).filter(x=>sharesAttribute(attribute(x),info(f).attribute)):q.target==='allies'?live(s,side):q.target==='enemies'?live(s,1-side):q.target==='center'?[p.field[1]].filter(Boolean):[f];
+ targets=targets.filter(t=>affectedBySkill(t,side,s.players.findIndex(p=>p.field.includes(t))));
  if(q.filterTag)targets=targets.filter(t=>currentTags(t).includes(q.filterTag));if(q.filterAttribute)targets=targets.filter(t=>attribute(t).split('/').includes(q.filterAttribute));
  // A one-use team barrier cancels the hostile lowering skill as specified.
- if(q.atk<0||q.def<0){const i=enemy.teamEffects.findIndex(e=>e.key==='debuffShield'&&e.starts<=s.turn&&e.until>=s.turn&&(e.value==='both'||q.def<0));if(i>=0){enemy.teamEffects.splice(i,1);log(s,'低下スキルを無効化');return;}}
+ if(targets.length&&(q.atk<0||q.def<0)){const i=enemy.teamEffects.findIndex(e=>e.key==='debuffShield'&&e.starts<=s.turn&&e.until>=s.turn&&(e.value==='both'||q.def<0));if(i>=0){enemy.teamEffects.splice(i,1);log(s,'低下スキルを無効化');return;}}
  if(q.heal)p.life=Math.min(400,p.life+q.heal);
+ const lockUntil=q.lockDuration==='persistent'?Infinity:q.lockDuration==='next-opponent'?expiresNextOpponent(s,side):typeof q.lockDuration==='number'?s.turn+q.lockDuration-1:s.turn;
+ if(q.teamLock)for(const targetSide of q.lockSide==='both'?[0,1]:q.lockSide==='enemy'?[1-side]:[side])s.players[targetSide].teamEffects.push({key:'skillRule',value:q.teamLock,attribute:q.onlyAttribute,starts:s.turn,until:lockUntil});
+ if(q.discardEnemyOne&&enemy.hand.length){const index=Math.floor(Math.random()*enemy.hand.length),card=takeHand(enemy,index);putStoredCard(enemy,'grave',card.id,card.bonus);}
+ if(q.graveSeedHeal&&o.graveSeedsBefore>=q.graveSeedHeal.count)p.life=Math.min(400,p.life+q.graveSeedHeal.heal);
+ const pairBonus=q.attributePairBonus&&q.attributePairBonus.attributes.every(a=>live(s,side).some(x=>attribute(x).split('/').includes(a)))?q.attributePairBonus:null;
  for(const t of targets){
-  if(q.atk)effect(t,'atk',q.atk,until);if(q.def)effect(t,'def',q.def,until);
+  if(q.atk)effect(t,'atk',q.atk,until);if(q.def)effect(t,'def',q.def,until);if(pairBonus?.def)effect(t,'def',pairBonus.def,until);if(q.setAtk!==undefined)effect(t,'atkSet',q.setAtk,until);if(q.suppressBuff)effect(t,'suppressBuff',true,until);
+  const protectionUntil=q.protectionDuration==='turn'?s.turn:until;for(const key of ['skillUntargetable','skillImmune','attackHidden','indestructible','battleImmune'])if(q[key])effect(t,key,q[key],protectionUntil);if(q.firstGuardTurns)effect(t,'firstAttackGuard',true,s.turn+q.firstGuardTurns-1);if(q.instantKill)effect(t,'instantKill',true,until);if(q.killDiscard)effect(t,'killDiscard',true,until);
   if(q.turnPoison)effect(t,'turnPoison',q.turnPoison,Infinity);if(q.currentSkillLock)effect(t,'skillLock',true,s.turn);
   if(q.untilAttackDef)effect(t,'defUntilAttack',q.untilAttackDef,Infinity);
   if(q.cleanse)t.effects=t.effects.filter(e=>!(['atk','def','defUntilAttack'].includes(e.key)&&e.value<0));
-  for(const k of ['pierceGuard','ignoreDef','ignoreDefOnTarget','equalKill','wildAttribute','eachTarget','laterAtk','ramp','killChain','firstKillChain','killBreak','killDraw','postMove','attribute'])if(q[k])effect(t,k,q[k],s.turn);
-  if(q.attacks)effect(t,'maxAttacks',q.attacks,s.turn);
+  for(const k of ['pierceGuard','ignoreDef','ignoreDefOnTarget','equalKill','wildAttribute','eachTarget','laterAtk','ramp','killChain','firstKillChain','killBreak','killDraw','postMove','attribute'])if(q[k])effect(t,k,q[k],q.revision==='oct07'&&k==='ramp'&&q.rampDuration==='persistent'?Infinity:s.turn);
+  if(q.attacks)effect(t,'maxAttacks',q.attacks,q.attackDuration==='persistent'?Infinity:s.turn);if(q.sameTarget)effect(t,'sameTarget',true,until);if(q.rampDuration==='persistent')effect(t,'rampPersistent',true,until);if(q.noAttackResponse)effect(t,'noAttackResponse',true,q.responseDuration==='turn'?s.turn:until);if(q.killHeal)effect(t,'killHeal',q.killHeal,until);
   if(q.damageBonus){effect(t,'damageBonus',q.damageBonus,s.turn);if(q.threshold)effect(t,'threshold',q.threshold,s.turn);}
   if(q.survive)effect(t,'survive',1,q.survivePersistent?Infinity:s.turn);
-  for(const k of ['skillLock','fusionLock','attackOrFuse','skipBattle','lastAttack'])if(q[k]){effect(t,k,true,expiresNextOpponent(s,side));if(k==='skillLock'&&q.duration!=='next-opponent')t.effects.at(-1).starts=s.turn+1;}
+  for(const k of ['skillLock','fusionLock','attackOrFuse','skipBattle','lastAttack'])if(q[k]){effect(t,k,true,q.revision==='oct07'?lockUntil:expiresNextOpponent(s,side));if(k==='skillLock'&&q.revision!=='oct07'&&q.duration!=='next-opponent')t.effects.at(-1).starts=s.turn+1;}
   if(q.addTag)effect(t,'addTag',o.tag,s.turn);if(q.removeTag)effect(t,'removeTag',o.tag,s.turn);
   if(q.musicFreedom&&currentTags(t).some(t=>['12','78'].includes(t)))effect(t,'pierceGuard',true,s.turn);
   if(q.musicAtk&&currentTags(t).some(tag=>['12','78'].includes(tag)))effect(t,'atk',q.musicAtk,s.turn);
  }
  const support=q.supportCaster?piece(s,side,Number(o.allyUid)):f;
+ if(q.casterSkillImmune)effect(support,'skillImmune',true,s.turn);if(q.skipOtherAllies)for(const t of live(s,side))if(t!==support)effect(t,'skipBattle',true,s.turn);if(q.destroyTarget)for(const t of targets)remove(s,s.players.findIndex(p=>p.field.includes(t)),t,true,'skill');
+ if(q.selfAtk)effect(support,'atk',q.selfAtk,until);if(q.skipCaster)effect(support,'skipBattle',true,s.turn);
+ if(q.nextOwnAtk){const next=s.turn+(s.active===side?2:1);support.effects.push({key:'futureAtk',value:q.nextOwnAtk,starts:next,until:next});}
+ if(q.discardAtkFactor)effect(support,'atk',o.discardedAtk*q.discardAtkFactor,until);
+ if(q.ownCount){const rule=q.ownCount,n=live(s,side).filter(t=>rule.tag?currentTags(t).includes(rule.tag):attribute(t).split('/').includes(rule.attribute)).length;if(rule.atk)effect(support,'atk',n*rule.atk,until);if(rule.def)effect(support,'def',n*rule.def,until);}
+ if(q.activateAura){const anchor=f.handOrigin?targets[0]:f;if(anchor)anchor.activatedAura=structuredClone(q.activateAura);}
+ if(q.selectedEnemyAtk)effect(piece(s,1-side,Number(o.selectedEnemyUid)),'atk',q.selectedEnemyAtk,expiresNextOpponent(s,side));
  if(q.casterEach)effect(support,'eachTarget',true,s.turn);if(q.casterDamage)effect(support,'damageBonus',q.casterDamage,s.turn);
  for(const key of ['debuffShield','damageShield','teamSurvive'])if(q[key])p.teamEffects.push({key,value:q[key],until:key==='teamSurvive'?s.turn:expiresNextOpponent(s,side),starts:key==='teamSurvive'||q.shieldNow?s.turn:s.turn+1});
  if(q.recycle&&Number(o.graveIndex)>=0){const id=p.destroyed.splice(Number(o.graveIndex),1)[0];moveStoredCard(p,'grave',p.grave.indexOf(id),'deck');}
@@ -229,8 +257,8 @@ function respond(s,side,f,o){
   applySkill(s,side,f,{...o,triggerUid:pending.uid});
   if(s.winner!==null)return;
   if(pending.kind==='skill'&&q.cancelSkill){log(s,'相手のソウルスキルを無効化');return;}
-  if(pending.kind==='attack'&&q.cancelAttack){log(s,'攻撃を無効化');emit(s,'guard',{side,id:f.id,label:'攻撃を無効化！'});afterCombat(s,pending,false);return;}
-  if(pending.kind==='attack'){resolveCombat(s,pending);return;}
+  if(pending.kind==='attack'&&q.cancelAttack){log(s,'攻撃を無効化');emit(s,'guard',{side,id:f.id,label:'攻撃を無効化！'});afterCombat(s,pending,false);if(q.endEnemyBattle&&canEndTurn(s,pending.side))endTurn(s,pending.side);return;}
+  if(pending.kind==='attack'){if(q.redirectSelf)pending.targetUid=f.uid;pending.combatDef=q.combatDef||0;pending.noDamage=!!q.noDamage;resolveCombat(s,pending);return;}
   if(pending.kind==='skill'){applySkill(s,pending.side,pending.caster||piece(s,pending.side,pending.uid),pending.options);return;}
  }
 
@@ -258,18 +286,18 @@ export const canBeginBattle=(s,side)=>s.turn>1&&s.winner===null&&!s.pending&&!s.
 export function beginBattle(s,side){main(s,side);if(s.turn<=1)fail('先攻の最初のターンはバトルフェイズへ進めません');s.phase='battle';log(s,s.players[side].name+'のバトルフェイズ');emit(s,'battle',{side});}
 export const attackLimit=p=>has(p,'eachTarget')?Math.max(1,3):Math.max(Number(value(p,'maxAttacks')||1),passiveBonus(p,soulById).attacks||1)+p.extra;
 export function canAttack(s,side,a,d){bindBattle(s,soulById);
- if(s.turn<=1||s.winner!==null||s.pending||s.evolutionQueue?.length||s.phase!=='battle'||s.active!==side||!a||!d||has(a,'skipBattle'))return false;
+ if(s.turn<=1||s.winner!==null||s.pending||s.evolutionQueue?.length||s.phase!=='battle'||s.active!==side||!a||!d||has(a,'skipBattle')||has(d,'attackHidden'))return false;
  if(has(a,'eachTarget')?a.attackedTargets.includes(d.uid):a.attacks>=attackLimit(a))return false;
  if(live(s,1-side).some(t=>has(t,'taunt')||info(t).passive?.taunt)&&!has(d,'taunt')&&!info(d).passive?.taunt)return false;
- if(a.chainOnly&&a.lastTarget===d.uid)return false;
+ if(a.chainOnly&&a.lastTarget===d.uid)return false;if(has(a,'sameTarget')&&a.lastTarget!==null&&a.lastTarget!==undefined&&a.lastTarget!==d.uid)return false;
  if(has(a,'lastAttack')&&live(s,side).some(x=>x.uid!==a.uid&&!has(x,'skipBattle')&&!has(x,'lastAttack')&&live(s,1-side).some(t=>canAttack(s,side,x,t))))return false;
  return true;
 }
 export function attack(s,side,uid,targetUid){
  const a=piece(s,side,uid),d=piece(s,1-side,targetUid);if(!canAttack(s,side,a,d))fail('この攻撃はできません（攻撃回数・対象・行動制限を確認）');
- s.moveChoice=null;a.attacks++;a.attackedTargets.push(d.uid);a.lastTarget=d.uid;clear(a,'defUntilAttack');
+ s.moveChoice=null;d.targetedAttacks=(d.targetedAttacks||0)+1;a.attacks++;a.attackedTargets.push(d.uid);a.lastTarget=d.uid;clear(a,'defUntilAttack');
  if(info(a).passive?.attackGrowth){a.permanentAtk+=info(a).passive.attackGrowth.atk;a.permanentDef+=info(a).passive.attackGrowth.def;}if(has(a,'attackSkillLock'))effect(d,'skillLock',true,s.turn);
- if(has(a,'ramp'))effect(a,'atk',value(a,'ramp'),s.turn);if(info(a).passive?.attackRamp)effect(a,'atk',info(a).passive.attackRamp,s.turn);
+ if(has(a,'ramp'))effect(a,'atk',value(a,'ramp'),has(a,'rampPersistent')?Infinity:s.turn);if(info(a).passive?.attackRamp)effect(a,'atk',info(a).passive.attackRamp,s.turn);
  s.pending={kind:'attack',side,uid,targetUid,combatDef:0,noDamage:false,survive:false};
  emit(s,'attack',{side,id:a.id,attribute:attribute(a),targetId:d.id,uid,targetUid,slot:s.players[side].field.indexOf(a),targetSlot:s.players[1-side].field.indexOf(d),atk:stats(a).atk+(a.attacks>=2?Number(value(a,'laterAtk')||0):0),def:stats(d).def,attackType:info(a).attackType});
  log(s,info(a).name+' → '+info(d).name+'へ攻撃宣言');if(!reactionOptions(s,1-side).length)passReaction(s,1-side);
@@ -278,10 +306,11 @@ function resolveCombat(s,event){
  const a=piece(s,event.side,event.uid),d=piece(s,1-event.side,event.targetUid),enemy=s.players[1-event.side];
  const atk=stats(a).atk+combatBonus(a,d,soulById)+(a.attacks>=2?Number(value(a,'laterAtk')||0):0);
  const ignore=has(a,'ignoreDef')||has(d,'ignoreDefOnTarget');
- const def=Math.max(0,info(d).def+d.permanentDef+(ignore?values(d,'def').filter(v=>v<0).reduce((a,b)=>a+b,0):sum(d,'def'))+sum(d,'defUntilAttack')+passiveBonus(d,soulById).def+(ignore?0:event.combatDef||0));
+ const def=Math.max(0,(ignore?info(d).def+d.permanentDef+values(d,'def').filter(v=>v<0).reduce((a,b)=>a+b,0)+sum(d,'defUntilAttack')+passiveBonus(d,soulById).def:stats(d).def)+(ignore?0:event.combatDef||0));
  if(has(d,'evadeAll')){log(s,info(d).name+'は攻撃を回避');afterCombat(s,event,false);return;}
  if(info(d).passive?.evadeOnce&&d.evadeTurn!==s.turn){d.evadeTurn=s.turn;log(s,info(d).name+'が攻撃を回避');afterCombat(s,event,false);return;}
- event.attackConnected=true;const firstGuard=info(d).passive?.firstAttackGuard&&d.receivedAttackTurn!==s.turn;d.receivedAttackTurn=s.turn;
+ event.attackConnected=true;const firstGuard=(info(d).passive?.firstAttackGuard||has(d,'firstAttackGuard'))&&d.receivedAttackTurn!==s.turn;d.receivedAttackTurn=s.turn;
+ if(has(a,'instantKill')){remove(s,1-event.side,d,true,'skill');afterCombat(s,event,!live(s,1-event.side).includes(d));return;}
  const destroyed=atk>def||(atk===def&&has(d,'equalKill'));
  if(!destroyed){const loss=def>atk?Math.min(10,stats(d).def):0;d.permanentDef-=loss;log(s,info(d).name+'が防御 · ダメージ0'+(loss?' / DEF −'+loss:''));emit(s,'guard',{side:1-event.side,id:d.id,label:loss?'ガード！ DEF −'+loss:'ガード！',atk,def,defLoss:loss,remainingDef:stats(d).def});afterCombat(s,event,false);return;}
  const difference=Math.max(0,atk-def);let damage=difference+(difference>=Number(value(a,'threshold')||0)?Number(value(a,'damageBonus')||0):0);
@@ -290,14 +319,15 @@ function resolveCombat(s,event){
  const reduction=enemy.teamEffects.findIndex(e=>e.key==='damageReduce'&&e.starts<=s.turn&&e.until>=s.turn);if(damage>0&&reduction>=0){damage=Math.max(0,damage-enemy.teamEffects[reduction].value);enemy.teamEffects.splice(reduction,1);}
  enemy.life=Math.max(0,enemy.life-damage);log(s,`${info(a).name} → ${info(d).name} · 差分 ${difference} / LIFE −${damage}`);emit(s,'hit',{side:event.side,id:a.id,targetId:d.id,targetUid:d.uid,targetSlot:enemy.field.indexOf(d),damage,life:enemy.life,atk,def});
  const team=enemy.teamEffects.findIndex(e=>e.key==='teamSurvive'&&e.until>=s.turn);
- if(firstGuard||(info(d).passive?.summonGuard&&d.summonTurn===s.turn)||event.survive||has(d,'survive')||team>=0){if(!event.survive){if(has(d,'survive'))clear(d,'survive');else if(team>=0)enemy.teamEffects.splice(team,1);}log(s,info(d).name+'の撃破を無効化');afterCombat(s,event,false);return;}
+ if(has(d,'indestructible')||has(d,'battleImmune')||firstGuard||(info(d).passive?.summonGuard&&d.summonTurn===s.turn)||event.survive||has(d,'survive')||team>=0){if(!event.survive&&!has(d,'indestructible')&&!has(d,'battleImmune')&&!firstGuard){if(has(d,'survive'))clear(d,'survive');else if(team>=0)enemy.teamEffects.splice(team,1);}log(s,info(d).name+'の撃破を無効化');afterCombat(s,event,false);return;}
  s.pending={...event,kind:'defeat',defeatHeal:d.effects.find(e=>e.key==='defeatHeal')||null};
  if(!reactionOptions(s,1-event.side).length)passReaction(s,1-event.side);
 }
 function afterCombat(s,event,destroyed){
  const defender=live(s,1-event.side).find(f=>f.uid===event.targetUid);if(event.attackConnected&&defender)defender.permanentAtk+=info(defender).passive?.hurtGrowth||0;bindBattle(s,soulById);
  const a=live(s,event.side).find(x=>x.uid===event.uid);if(a){
-  if(destroyed){const heal=Number(info(a).passive?.killHeal||0)+Number(value(a,'nextAttackHeal')||0)+Number(value(a,'nextKillHeal')||0);if(heal)s.players[event.side].life=Math.min(400,s.players[event.side].life+heal);clear(a,'nextKillHeal');if(event.defeatHeal){const p=s.players[event.defeatHeal.sourceSide];p.life=Math.min(400,p.life+event.defeatHeal.value);}
+  if((event.attackConnected&&info(a).passive?.attackDiscard||destroyed&&has(a,'killDiscard'))&&s.players[1-event.side].hand.length){const p=s.players[1-event.side],card=takeHand(p,0);putStoredCard(p,'grave',card.id,card.bonus);}
+  if(destroyed){const heal=Number(info(a).passive?.killHeal||0)+Number(value(a,'killHeal')||0)+Number(value(a,'nextAttackHeal')||0)+Number(value(a,'nextKillHeal')||0);if(heal)s.players[event.side].life=Math.min(400,s.players[event.side].life+heal);clear(a,'nextKillHeal');if(event.defeatHeal){const p=s.players[event.defeatHeal.sourceSide];p.life=Math.min(400,p.life+event.defeatHeal.value);}
    if(has(a,'killChain')||(has(a,'firstKillChain')&&a.attacks===1)){a.extra++;a.chainOnly=true;}
    if(has(a,'killBreak'))for(const t of live(s,1-event.side))effect(t,'def',-value(a,'killBreak'),s.turn);
    if(has(a,'killDraw')&&s.players[1-event.side].life>0)draw(s,event.side);
@@ -341,4 +371,4 @@ export function cpuAttack(s){
 
 export function evolutionOptions(s){const e=s.evolutionQueue?.[0];if(!e||s.winner!==null)return {event:null,costs:[]};const p=s.players[e.side];if(e.kind==='revive')return {event:e,costs:p.grave.map((id,i)=>({id,value:'grave:'+i})).filter(x=>x.id!==e.source&&soulById.get(x.id).attribute.split('/').includes(e.attribute))};const valid=id=>!e.tag||soulById.get(id).tags.includes(e.tag);const costs=p.hand.map((id,i)=>({value:'hand:'+i,id})).filter(x=>valid(x.id));if(e.field)for(const f of p.field.filter(Boolean))if(valid(f.id))costs.push({value:'field:'+f.uid,id:f.id});return {event:e,costs};}
 function finishDeferred(s){if(!s.evolutionQueue?.length&&s.deferredResult){const {side,reason}=s.deferredResult;finish(s,side,reason);}}
-export function resolveEvolution(s,side,costs=null){const {event:e,costs:allowed}=evolutionOptions(s);if(!e||e.side!==side)fail('条件進化の選択待ちではありません');if(costs===null){s.evolutionQueue.shift();finishDeferred(s);return;}const p=s.players[side];if(e.kind==='revive'){if(!Array.isArray(costs)||costs.length!==1||!allowed.some(a=>a.value===costs[0])||!p.field.includes(null))fail('蘇生する火属性を1体選んでください');const {id,usage}=takeStoredCard(p,'grave',Number(costs[0].slice(6))),j=p.destroyed.indexOf(id);if(j>=0)p.destroyed.splice(j,1);const unit=instance(s,id);if(usage?.phoenixRevived)unit.phoenixRevived=true;const slot=p.field.indexOf(null);p.field[slot]=unit;p.used.push(id);s.evolutionQueue.shift();emit(s,'summon',{side,id,uid:unit.uid,slot,...stats(unit)});finishDeferred(s);return;}if(!Array.isArray(costs)||costs.length!==e.cost||new Set(costs).size!==costs.length||costs.some(x=>!allowed.some(a=>a.value===x))||!p.reserve.includes(e.target)||!p.field.includes(null))fail('条件進化のコストを選んでください');const hand=costs.filter(x=>x.startsWith('hand:')).map(x=>Number(x.slice(5))).sort((a,b)=>b-a);for(const i of hand){const {id,bonus}=takeHand(p,i);putStoredCard(p,'grave',id,bonus);p.used.push(id);}for(const x of costs.filter(x=>x.startsWith('field:')))remove(s,side,piece(s,side,Number(x.slice(6))));p.reserve.splice(p.reserve.indexOf(e.target),1);const slot=p.field.indexOf(null),f=instance(s,e.target);p.field[slot]=f;p.used.push(f.id);s.evolutionQueue.shift();log(s,info(f).name+'へ条件進化');emit(s,'summon',{side,id:f.id,uid:f.uid,slot,...stats(f)});finishDeferred(s);}
+export function resolveEvolution(s,side,costs=null){const {event:e,costs:allowed}=evolutionOptions(s);if(!e||e.side!==side)fail('条件進化の選択待ちではありません');if(costs===null){s.evolutionQueue.shift();finishDeferred(s);return;}const p=s.players[side];if(e.kind==='revive'){if(!Array.isArray(costs)||costs.length!==1||!allowed.some(a=>a.value===costs[0])||!p.field.includes(null))fail('蘇生する火属性を1体選んでください');const {id,usage}=takeStoredCard(p,'grave',Number(costs[0].slice(6))),j=p.destroyed.indexOf(id);if(j>=0)p.destroyed.splice(j,1);const unit=instance(s,id);if(usage?.phoenixRevived)unit.phoenixRevived=true;restoreStrength(unit,usage);const slot=p.field.indexOf(null);p.field[slot]=unit;p.used.push(id);s.evolutionQueue.shift();emit(s,'summon',{side,id,uid:unit.uid,slot,...stats(unit)});finishDeferred(s);return;}if(!Array.isArray(costs)||costs.length!==e.cost||new Set(costs).size!==costs.length||costs.some(x=>!allowed.some(a=>a.value===x))||!p.reserve.includes(e.target)||!p.field.includes(null))fail('条件進化のコストを選んでください');const hand=costs.filter(x=>x.startsWith('hand:')).map(x=>Number(x.slice(5))).sort((a,b)=>b-a);for(const i of hand){const {id,bonus}=takeHand(p,i);putStoredCard(p,'grave',id,bonus);p.used.push(id);}for(const x of costs.filter(x=>x.startsWith('field:')))remove(s,side,piece(s,side,Number(x.slice(6))));p.reserve.splice(p.reserve.indexOf(e.target),1);const slot=p.field.indexOf(null),f=instance(s,e.target);p.field[slot]=f;p.used.push(f.id);s.evolutionQueue.shift();log(s,info(f).name+'へ条件進化');emit(s,'summon',{side,id:f.id,uid:f.uid,slot,...stats(f)});finishDeferred(s);}

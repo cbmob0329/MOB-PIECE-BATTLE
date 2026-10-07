@@ -9,7 +9,7 @@ const resolve=s=>{for(let i=0;i<12&&s.pending;i++)g.passReaction(s,1-s.pending.s
 const cast=(s,side,f)=>{g.useSkill(s,side,f.uid,g.cpuOptions(s,side,f.uid));resolve(s);};
 let tests=0;const test=(name,fn)=>{fn();console.log('PASS '+name);tests++;};
 test('Seed1/Middle2/MOB3 over the whole battle, each figure once per turn; JSON resume preserves exhaustion',()=>{
- for(const [id,limit] of [['01',1],['146',2],['219',3]]){let s=fresh();const f=put(s,0,id);assert.equal(g.skillBudget(s,0,f.uid).limit,limit);for(let i=0;i<limit;i++){cast(s,0,f);assert.equal(g.skillBudget(s,0,f.uid).remaining,limit-i-1);assert(!g.canSkill(s,0,f.uid));const saved=JSON.stringify(s);assert.throws(()=>cast(s,0,f));assert.equal(JSON.stringify(s),saved);s.turn++;}assert(!g.canSkill(s,0,f.uid));s=JSON.parse(JSON.stringify(s));assert.equal(g.skillBudget(s,0,f.uid).remaining,0);}
+ for(const [id,limit] of [['01',1],['94',2],['219',3]]){let s=fresh();const f=put(s,0,id);assert.equal(g.skillBudget(s,0,f.uid).limit,limit);for(let i=0;i<limit;i++){cast(s,0,f);assert.equal(g.skillBudget(s,0,f.uid).remaining,limit-i-1);assert(!g.canSkill(s,0,f.uid));const saved=JSON.stringify(s);assert.throws(()=>cast(s,0,f));assert.equal(JSON.stringify(s),saved);s.turn++;}assert(!g.canSkill(s,0,f.uid));s=JSON.parse(JSON.stringify(s));assert.equal(g.skillBudget(s,0,f.uid).remaining,0);}
 });
 test('Different allied instances and different hand copies can each activate; CPU follows the same limits',()=>{
  for(const side of [0,1]){const s=fresh();s.active=side;const a=put(s,side,'01'),b=put(s,side,'06',1);if(side===0){cast(s,side,a);assert(g.canSkill(s,side,b.uid));cast(s,side,b);}else{assert(g.cpuSkill(s));assert(g.cpuSkill(s));assert(!g.cpuSkill(s));}assert.equal(a.skillUsesUsed,1);assert.equal(b.skillUsesUsed,1);}
@@ -35,7 +35,7 @@ test('Grave recovery is not revival: usage follows individual cards through hand
  const s=fresh(),p=s.players[0],f=put(s,0,'NS2_016');putStoredCard(p,'grave','01',{skillUsesUsed:1,skillTurn:s.turn-1});cast(s,0,f);assert.equal(g.skillBudget(s,0,{handIndex:0}).remaining,0);moveStoredCard(p,'hand',0,'deck');const i=p.deck.length-1;topStoredCard(p,i);moveStoredCard(p,'deck',0,'hand');const saved=JSON.parse(JSON.stringify(s));assert.equal(g.skillBudget(saved,0,{handIndex:0}).remaining,0);assert.equal(storedUsage(saved.players[0],'hand',0).skillUsesUsed,1);
 });
 test('Old states remain readable without mandatory new catalog fields',()=>{
- const s=fresh(),a=put(s,0,'96');delete a.skillUsesUsed;a.skillTurn=s.turn-1;assert.equal(g.skillBudget(s,0,a.uid).remaining,1);cast(s,0,a);assert.equal(a.skillUsesUsed,2);assert.equal(g.skillBudget(s,0,a.uid).remaining,0);
+ const s=fresh(),a=put(s,0,'94');delete a.skillUsesUsed;a.skillTurn=s.turn-1;assert.equal(g.skillBudget(s,0,a.uid).remaining,1);cast(s,0,a);assert.equal(a.skillUsesUsed,2);assert.equal(g.skillBudget(s,0,a.uid).remaining,0);
 });
 console.log(`${tests} skill-budget checks passed`);
 

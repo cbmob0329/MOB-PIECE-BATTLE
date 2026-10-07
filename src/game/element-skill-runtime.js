@@ -1,3 +1,4 @@
+import {targetableBySkill,affectedBySkill} from './skill-protection.js';
 import {storedUsage,takeStoredCard,putStoredCard,moveStoredCard,topStoredCard} from './skill-budget.js';
 import {capturePresentation} from './battle-presentation.js';
 // Choice construction and atomic resolution shared by player and CPU.
@@ -15,7 +16,7 @@ export function elementContext(s,side,f,byId){
 export function elementChoices(s,side,f,byId,selected={}){
  const d=elementDefinition(byId.get(f.id));if(!d)return [];const c=elementContext(s,side,f,byId),out=[];const chosen={...selected};
  for(const q of d.choices){let xs=[];
-  if(q.zone==='ally'||q.zone==='enemy')xs=c.live(q.zone==='ally'?c.own:c.foe).filter(x=>c.match(x,q.filter)&&String(x.uid)!==String(chosen[q.distinct])).map(x=>({value:String(x.uid),label:c.info(x).name}));
+  if(q.zone==='ally'||q.zone==='enemy')xs=c.live(q.zone==='ally'?c.own:c.foe).filter(x=>targetableBySkill(x,side,q.zone==='ally'?side:1-side)&&c.match(x,q.filter)&&String(x.uid)!==String(chosen[q.distinct])).map(x=>({value:String(x.uid),label:c.info(x).name}));
   if(q.zone==='grave')xs=c.own.grave.map((id,i)=>({id,i})).filter(x=>c.cardMatch(x.id,q.filter)&&String(x.i)!==String(chosen[q.distinct])).map(x=>({value:String(x.i),label:byId.get(x.id).name}));
   if(q.zone==='top')xs=c.own.deck.slice(0,3).map((id,i)=>({value:String(i),label:byId.get(id).name}));
   if(q.zone==='mode')xs=q.values.map(value=>({value,label:({atk:'ATK',def:'DEF',guard:'構え',advance:'進撃'})[value]}));
@@ -40,9 +41,10 @@ export function applyElement(s,side,f,byId,o){
  // Validate against the current response-resolved state before touching any effects.
  try{validateElement(s,side,f,byId,o);}catch{s.log.push('対象が失われたためスキル効果は不発');return true;}
  const work=s,c=elementContext(work,side,f,byId),p=c.own,next=work.turn+(work.active===side?1:0),sel=k=>Number(o['el_'+k]);
- const targets=k=>k==='allies'?c.live(p):k==='magicAllies'?c.live(p).filter(x=>c.info(x).attackType==='魔法'):k==='enemies'?c.live(c.foe):[...c.live(p),...c.live(c.foe)].filter(x=>x.uid===sel(k));
+ const rawTargets=k=>k==='allies'?c.live(p):k==='magicAllies'?c.live(p).filter(x=>c.info(x).attackType==='魔法'):k==='enemies'?c.live(c.foe):[...c.live(p),...c.live(c.foe)].filter(x=>x.uid===sel(k));
+ const targets=k=>rawTargets(k).filter(t=>affectedBySkill(t,side,p.field.includes(t)?side:1-side));
  const condition=(q,t)=>!q||Object.entries(q).every(([k,v])=>({allyAttribute:()=>c.live(p).some(x=>c.attr(x).split('/').includes(v)),allyType:()=>c.live(p).some(x=>c.info(x).attackType===v),attributes:()=>v.every(a=>c.live(p).some(x=>c.attr(x).split('/').includes(a))),targetAttribute:()=>!!t&&c.attr(t).split('/').includes(v),targetFamily:()=>!!t&&c.info(t).family===v,targetClass:()=>!!t&&c.info(t).soulClass===v,behind:()=>p.life<c.foe.life,defAbove:()=>c.stat(t,'def')>c.stat(t,'atk'),atkAbove:()=>c.stat(t,'atk')>c.stat(t,'def'),positiveAtk:()=>t.effects.some(e=>c.effectMatches(e,{key:'atk',sign:1})),graveSeeds:()=>Number(o.el_graveSeeds??p.grave.filter(id=>byId.get(id).soulClass==='seed').length)>=v})[k]?.());
- const put=(t,key,value,until)=>{if(!value)return;if((key==='atk'||key==='def')&&value<0)value=-Math.min(-value,c.stat(t,key));if(!value)return;
+ const put=(t,key,value,until)=>{if(!value||value<0&&['atk','def'].includes(key)&&byId.get(t.id).passive?.lowerImmune)return;if((key==='atk'||key==='def')&&value<0)value=-Math.min(-value,c.stat(t,key));if(!value)return;
   // Repeated copies of the same skill do not stack the same stat/flag on one target.
   const old=t.effects.find(e=>e.source===d.id&&e.key===key);if(old){if(typeof value==='number'&&Math.sign(value)!==Math.sign(old.value)){old.value=value;old.until=until;}else{old.value=typeof value==='number'?Math.abs(value)>Math.abs(old.value)?value:old.value:value;old.until=Math.max(old.until,until);}}else t.effects.push({key,value,until,source:d.id,sourceSide:side});};
  const lower=d.ops.some(x=>x.kind==='splitDef'||x.kind==='buff'&&(x.atk<0||x.def<0)&&['e','e2','enemies'].includes(x.to));if(lower){const i=c.foe.teamEffects.findIndex(e=>e.key==='debuffShield'&&e.starts<=work.turn&&e.until>=work.turn&&(e.value==='both'||d.ops.some(x=>x.def<0||x.kind==='splitDef')));if(i>=0){c.foe.teamEffects.splice(i,1);work.log.push('低下スキルを無効化');Object.assign(s,work);return true;}}
