@@ -116,7 +116,7 @@ export function fuse(s,side,uids,recipeId){
 }
 function reactionEligible(s,side,f){
  const p=s.pending;if(!p||p.side===side)return false;if(p.kind==='attack'&&has(piece(s,p.side,p.uid),'noAttackResponse'))return false;const timing=info(f).soulSkill.timing,q=skillPlan(f);
- if(q.mixedResponse){if(p.kind==='attack')return p.targetUid===f.uid;if(p.kind==='skill'){const caster=p.caster||piece(s,p.side,p.uid),plan=skillPlan(caster);return plan.target==='enemies'||Object.values(p.options||{}).some(v=>String(v)===String(f.uid));}}
+ if(q.mixedResponse){if(p.kind==='attack')return p.targetUid===f.uid;if(p.kind==='skill'){const caster=p.caster||piece(s,p.side,p.uid),plan=skillPlan(caster);return plan.target==='enemies'||['targetUid','secondUid','selectedEnemyUid','swapEnemyUid'].some(k=>String(p.options?.[k])===String(f.uid));}}
  if(p.kind==='skill')return timing==='skill-response'&&(!q.reverseBuffs||isStatRaisingPlan(skillPlan(p.caster||piece(s,p.side,p.uid)),elementDefinition(info(p.caster||piece(s,p.side,p.uid)))));
  if(p.kind==='defeat')return timing==='defeat-response'&&p.targetUid===f.uid;
  if(p.kind!=='attack'||timing!=='attack-response')return false;
@@ -199,7 +199,7 @@ export function useSkill(s,side,uid,options={}){
 }
 function applySkill(s,side,f,o){
  if(!info(f).soulSkill.runtimePlan&&applyElement(s,side,f,soulById,o)){bindBattle(s,soulById);return;}
- const specified=skillPlan(f);if(specified.specified){const p=s.players[side];if(specified.specified==='promoteSelf'){const slot=p.field.indexOf(f),i=p.reserve.indexOf(o.promoteId);if(slot<0||i<0)return;remove(s,side,f,true);p.reserve.splice(i,1);const next=instance(s,o.promoteId);p.field[slot]=next;p.used.push(next.id);emit(s,'summon',{side,id:next.id,slot,uid:next.uid,...stats(next)});return;}if(specified.specified==='blood'){effect(f,'atk',s.players[1-side].grave.length*10,s.turn);remove(s,side,f,true);return;}if(['tagBuff','rain'].includes(specified.specified)){if(specified.specified==='rain')p.life=Math.min(400,p.life+p.hand.length*10);for(const targetSide of specified.both?[0,1]:[side])for(const t of live(s,targetSide))if(currentTags(t).includes(specified.tag)){if(specified.atk)effect(t,'atk',specified.atk,s.turn);if(specified.def)effect(t,'def',specified.def,s.turn);}return;}}
+ const specified=skillPlan(f);if(specified.specified){const p=s.players[side];if(specified.specified==='promoteSelf'){const slot=p.field.indexOf(f),i=p.reserve.indexOf(o.promoteId);if(slot<0||i<0)return;remove(s,side,f,true);p.reserve.splice(i,1);const next=instance(s,o.promoteId);p.field[slot]=next;p.used.push(next.id);emit(s,'summon',{side,id:next.id,slot,uid:next.uid,...stats(next)});return;}if(specified.specified==='blood'){effect(f,'atk',s.players[1-side].grave.length*10,s.turn);remove(s,side,f,true);return;}if(['tagBuff','rain'].includes(specified.specified)){if(specified.specified==='rain')p.life=Math.min(400,p.life+p.hand.length*10);const tagged=(specified.both?[0,1]:[side]).flatMap(owner=>live(s,owner).filter(t=>currentTags(t).includes(specified.tag)&&affectedBySkill(t,side,owner)));if(consumeSkillShield(s,side,tagged))return;for(const t of tagged){if(specified.atk)effect(t,'atk',specified.atk,s.turn);if(specified.def)effect(t,'def',specified.def,s.turn);}return;}}
  const q=skillPlan(f),p=s.players[side],enemy=s.players[1-side],until=q.duration==='persistent'?Infinity:q.duration==='next-opponent'?expiresNextOpponent(s,side):s.turn;
  let targets=['selectedAllies','selectedEnemies'].includes(q.target)?live(s,q.target==='selectedAllies'?side:1-side).filter(t=>[Number(o.targetUid),Number(o.secondUid)].includes(t.uid)):q.target==='trigger'?live(s,1-side).filter(x=>x.uid===o.triggerUid):q.target==='ally'?live(s,side).filter(t=>t.uid===Number(o.targetUid)):['enemy','enemySeed'].includes(q.target)?live(s,1-side).filter(t=>t.uid===Number(o.targetUid)):q.target==='attributeAllies'?live(s,side).filter(x=>sharesAttribute(attribute(x),info(f).attribute)):q.target==='allies'?live(s,side):q.target==='enemies'?live(s,1-side):q.target==='center'?[p.field[1]].filter(Boolean):[f];
  targets=targets.filter(t=>affectedBySkill(t,side,s.players.findIndex(p=>p.field.includes(t))));
@@ -276,7 +276,7 @@ function respond(s,side,f,o){
   if(s.winner!==null)return;
   if(pending.kind==='skill'&&q.cancelSkill){log(s,'相手のソウルスキルを無効化');return;}
   if(pending.kind==='attack'&&q.cancelAttack){log(s,'攻撃を無効化');emit(s,'guard',{side,id:f.id,label:'攻撃を無効化！'});afterCombat(s,pending,false);if(q.endEnemyBattle&&canEndTurn(s,pending.side))endTurn(s,pending.side);return;}
-  if(pending.kind==='attack'){if(q.redirectEnemy){pending.targetUid=Number(o.redirectUid);pending.targetSide=1-side;pending.damageBoth=!!q.damageBoth;}if(q.redirectSelf)pending.targetUid=f.uid;pending.combatDef=q.combatDef||0;pending.noDamage=!!q.noDamage;resolveCombat(s,pending);return;}
+  if(pending.kind==='attack'){if(!live(s,pending.side).some(a=>a.uid===pending.uid)){afterCombat(s,pending,false);return;}if(q.redirectEnemy){pending.targetUid=Number(o.redirectUid);pending.targetSide=1-side;pending.damageBoth=!!q.damageBoth;}if(q.redirectSelf)pending.targetUid=f.uid;pending.combatDef=q.combatDef||0;pending.noDamage=!!q.noDamage;resolveCombat(s,pending);return;}
   if(pending.kind==='skill'){applySkill(s,pending.side,opposingCaster,pending.options);return;}
  }
 
@@ -369,7 +369,7 @@ export function fusionReadyMaterials(s,side){const field=new Set(),hand=new Set(
 export function fusionReadyUids(s,side){const ready=new Set(),field=live(s,side);for(let i=0;i<field.length;i++)for(let j=i+1;j<field.length;j++)if(fusionOptions(s,side,[field[i].uid,field[j].uid]).length){ready.add(field[i].uid);ready.add(field[j].uid);}return ready;}
 export function cpuOptions(s,side,uid){const o={};for(const c of skillChoices(s,side,uid,o))o[c.key]=(c.choices.find(x=>x.value!=='-1')||c.choices[0])?.value;return o;}
 export function cpuRespond(s){if(!s.pending||s.pending.side===1)return;if(!cpuActionAllowed(s,'reaction')){passReaction(s,1);return;}for(const f of reactionOptions(s,1)){try{useSkill(s,1,skillReference(f),cpuOptions(s,1,skillReference(f)));recordCpuAction(s,'reaction');return;}catch{}}passReaction(s,1);}
-function cpuValue(s,f){const q=s.cpuStrategy||{atk:1,def:1};return f.atk*q.atk+f.def*q.def+f.tags.filter(t=>(s.cpuThemeTags||[]).includes(t)).length*25;}
+function cpuValue(s,f){const q=s.cpuStrategy||{atk:1,def:1};return (q.focusIds?.includes(f.id)?300:0)+f.atk*q.atk+f.def*q.def+f.tags.filter(t=>(s.cpuThemeTags||[]).includes(t)).length*25;}
 function cpuSkillValue(s,f){const q=skillPlan(f),kind=s.cpuStrategy?.skill;return (kind==='heal'&&(q.heal||passive(f)?.killHeal)?100:kind==='draw'&&(q.draw||q.scout||q.attributeSearch)?100:kind==='control'&&(q.fusionLock||q.skillLock||q.bounceEnemy||q.atk<0||q.def<0)?100:kind==='support'&&(q.target==='allies'||q.specified==='tagBuff'||q.specified==='rain')?100:kind==='attack'&&(q.atk>0||q.attacks||q.lifeDamage)?100:0)+cpuValue(s,info(f))/10;}
 export function cpuMain(s){
  main(s,1);const p=s.players[1];let actions=0;

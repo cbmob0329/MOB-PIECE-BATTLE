@@ -1,3 +1,4 @@
+import {oct07Event} from './oct07-events.js';
 import {targetableBySkill,affectedBySkill,consumeSkillShield} from './skill-protection.js';
 import {storedUsage,takeStoredCard,putStoredCard,moveStoredCard,topStoredCard} from './skill-budget.js';
 import {capturePresentation} from './battle-presentation.js';
@@ -52,7 +53,7 @@ export function applyElement(s,side,f,byId,o){
  for(const op of d.ops){
   if(['heal','draw','barrier','recover','top','splitDef'].includes(op.kind)&&!condition(op.condition))continue;
   if(op.kind==='heal')p.life=Math.min(400,p.life+op.n);
-  if(op.kind==='draw')for(let i=0;i<op.n&&p.deck.length;i++){const id=moveStoredCard(p,'deck',0,'hand');work.events??=[];work.eventSerial=(work.eventSerial||0)+1;const event={seq:work.eventSerial,type:'draw',side,id};work.events.push(event);capturePresentation(work,event);}
+  if(op.kind==='draw')for(let i=0;i<op.n&&p.deck.length;i++){const id=moveStoredCard(p,'deck',0,'hand');work.events??=[];work.eventSerial=(work.eventSerial||0)+1;const event={seq:work.eventSerial,type:'draw',side,id};oct07Event(work,event,byId);work.events.push(event);capturePresentation(work,event);}
   if(op.kind==='barrier')p.teamEffects.push({key:'damageReduce',value:op.n,starts:work.turn+1,until:next});
   if(op.kind==='top'){topStoredCard(p,sel(op.choice));}
   if(op.kind==='recover'){const indices=op.from.map(sel).filter(i=>i>=0),cards=indices.map(i=>({id:p.grave[i],usage:storedUsage(p,'grave',i)}));for(const i of [...indices].sort((a,b)=>b-a))takeStoredCard(p,'grave',i);for(const {id,usage} of cards){const i=p.destroyed.indexOf(id);if(i>=0)p.destroyed.splice(i,1);putStoredCard(p,op.destination,id,usage);}}

@@ -1,3 +1,4 @@
+import {passiveBonus} from '../src/game/oct06-passives.js';
 import {familyIds} from '../src/game/family-collection.js';
 import {elementIds} from '../src/game/element-collection.js';
 import assert from 'node:assert/strict';
@@ -30,7 +31,7 @@ for(const raw of pieceFigures){const f=g.soulById.get(raw.id),s=fresh(),a=put(s,
  assert.ok(g.canSkill(s,0,a.uid),f.name);g.useSkill(s,0,a.uid,g.cpuOptions(s,0,a.uid));resolve(s);assert.ok(s.players[0].skillUsed,f.name);}
 const matches=(f,m)=>m.id?f.id===m.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute;
 const additions=catalog.recipes.filter(r=>r.id.startsWith('PIECE-'));assert.equal(additions.length,19);assert.equal(additions.filter(r=>r.special).length,4);
-for(const r of additions)for(const hand of [false,true]){const s=fresh(),p=s.players[0],pair=r.materials.map(m=>catalog.figures.find(f=>(r.special||f.soulClass===r.fromClass)&&matches(f,m)));assert.ok(pair.every(Boolean));const a=put(s,0,pair[0]);let refs;if(hand){p.hand=[pair[1].id];refs=[a.uid,{handIndex:0}];}else refs=[a.uid,put(s,0,pair[1],1).uid];p.reserve=[r.target];assert.ok(g.fusionOptions(s,0,refs).some(x=>x.id===r.id));g.fuse(s,0,refs,r.id);assert.equal(p.field[0].id,r.target);assert.equal(g.stats(p.field[0]).atk,g.soulById.get(r.target).atk+(r.special?20:0));}
+for(const r of additions)for(const hand of [false,true]){const s=fresh(),p=s.players[0],pair=r.materials.map(m=>catalog.figures.find(f=>(r.special||f.soulClass===r.fromClass)&&matches(f,m)));assert.ok(pair.every(Boolean));const a=put(s,0,pair[0]);let refs;if(hand){p.hand=[pair[1].id];refs=[a.uid,{handIndex:0}];}else refs=[a.uid,put(s,0,pair[1],1).uid];p.reserve=[r.target];assert.ok(g.fusionOptions(s,0,refs).some(x=>x.id===r.id));g.fuse(s,0,refs,r.id);assert.equal(p.field[0].id,r.target);assert.equal(g.stats(p.field[0]).atk,g.soulById.get(r.target).atk+(r.special?25:0)+passiveBonus(p.field[0],g.soulById).atk);}
 for(const starter of pieceStarters.filter(s=>['piece-soldier','piece-boxer'].includes(s.id))){const ids=pieceStarterDeck(starter.id);assert.ok(g.validateSoulDeck(ids,existing.owned).valid);assert.ok(ids.every(id=>g.soulById.get(id).collection==='main'));for(const id of new Set(ids))assert.ok(ids.filter(x=>x===id).length<=OWN_CAP[g.soulById.get(id).rarity]);
  const reachable=new Set(ids.filter(id=>g.soulById.get(id).soulClass==='seed'));
  for(const kind of ['middle','mob'])for(const id of new Set(ids.filter(id=>g.soulById.get(id).soulClass===kind))){assert.ok(catalog.recipes.some(r=>r.target===id&&!r.special&&r.materials.every(m=>[...reachable].some(fid=>g.soulById.get(fid).soulClass===r.fromClass&&matches(g.soulById.get(fid),m)))),id);reachable.add(id);}

@@ -4,7 +4,7 @@
     "name": "草原遠征",
     "routeSteps": 15,
     "skills": 19,
-    "passives": 7,
+    "passives": 10,
     "themeReserves": 14,
     "support": [
       {
@@ -27,63 +27,63 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 11,
-        "winner": 1,
-        "reason": "ライフ0"
+        "steps": 57,
+        "winner": 0,
+        "reason": "山札切れ"
       },
       {
         "seed": 2,
-        "steps": 11,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 11,
+        "steps": 19,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 11,
+        "steps": 31,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 11,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 11,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 12,
+        "steps": 39,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 11,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 11,
-        "winner": 1,
-        "reason": "ライフ0"
+        "steps": 58,
+        "winner": 0,
+        "reason": "山札切れ"
       },
       {
         "seed": 10,
-        "steps": 11,
-        "winner": 1,
-        "reason": "ライフ0"
+        "steps": 55,
+        "winner": 0,
+        "reason": "山札切れ"
       }
     ]
   },
@@ -91,8 +91,8 @@
     "id": "desert",
     "name": "砂漠秘術",
     "routeSteps": 15,
-    "skills": 29,
-    "passives": 3,
+    "skills": 27,
+    "passives": 13,
     "themeReserves": 12,
     "support": [
       {
@@ -127,61 +127,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 13,
+        "steps": 34,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 19,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 20,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 21,
+        "steps": 52,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 20,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 19,
+        "steps": 25,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 20,
+        "steps": 53,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 12,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 19,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 12,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -191,8 +191,8 @@
     "id": "sea",
     "name": "海底守護",
     "routeSteps": 18,
-    "skills": 21,
-    "passives": 5,
+    "skills": 20,
+    "passives": 9,
     "themeReserves": 11,
     "support": [
       {
@@ -239,61 +239,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 5,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 4,
+        "steps": 38,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 4,
+        "steps": 50,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 4,
+        "steps": 38,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 5,
+        "steps": 48,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 4,
+        "steps": 29,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 4,
-        "winner": 1,
-        "reason": "ライフ0"
+        "steps": 57,
+        "winner": 0,
+        "reason": "山札切れ"
       },
       {
         "seed": 8,
-        "steps": 13,
+        "steps": 52,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 4,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 11,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -304,7 +304,7 @@
     "name": "ネオンMUSIC",
     "routeSteps": 16,
     "skills": 27,
-    "passives": 4,
+    "passives": 9,
     "themeReserves": 13,
     "support": [
       {
@@ -331,61 +331,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 13,
+        "steps": 24,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 13,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 13,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 21,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 12,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 12,
+        "steps": 40,
         "winner": 1,
-        "reason": "ライフ0"
+        "reason": "スキルでライフ0"
       },
       {
         "seed": 8,
-        "steps": 12,
+        "steps": 14,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -395,8 +395,8 @@
     "id": "castle",
     "name": "魔王城封印",
     "routeSteps": 17,
-    "skills": 21,
-    "passives": 13,
+    "skills": 17,
+    "passives": 22,
     "themeReserves": 14,
     "support": [
       {
@@ -423,61 +423,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 11,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 11,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 12,
+        "steps": 35,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 4,
+        "steps": 39,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 11,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 11,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 11,
+        "steps": 52,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 11,
+        "steps": 42,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 11,
+        "steps": 30,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 11,
+        "steps": 31,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -488,7 +488,7 @@
     "name": "スス群隊",
     "routeSteps": 18,
     "skills": 28,
-    "passives": 4,
+    "passives": 7,
     "themeReserves": 12,
     "support": [
       {
@@ -559,61 +559,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 3,
+        "steps": 40,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 12,
+        "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 12,
+        "steps": 42,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 12,
+        "steps": 42,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 3,
+        "steps": 49,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 20,
+        "steps": 54,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 21,
+        "steps": 51,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 20,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 12,
+        "steps": 42,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 3,
+        "steps": 53,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -624,7 +624,7 @@
     "name": "ケケ隊",
     "routeSteps": 18,
     "skills": 25,
-    "passives": 6,
+    "passives": 9,
     "themeReserves": 13,
     "support": [
       {
@@ -687,61 +687,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 12,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 23,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 13,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 11,
-        "winner": 1,
-        "reason": "ライフ0"
+        "steps": 59,
+        "winner": 0,
+        "reason": "山札切れ"
       },
       {
         "seed": 5,
-        "steps": 3,
+        "steps": 19,
         "winner": 1,
-        "reason": "ライフ0"
+        "reason": "スキルでライフ0"
       },
       {
         "seed": 6,
-        "steps": 21,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 13,
-        "winner": 1,
-        "reason": "ライフ0"
+        "steps": 61,
+        "winner": 0,
+        "reason": "山札切れ"
       },
       {
         "seed": 8,
-        "steps": 19,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 11,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 3,
+        "steps": 42,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -752,7 +752,7 @@
     "name": "アメ戦士",
     "routeSteps": 18,
     "skills": 27,
-    "passives": 3,
+    "passives": 6,
     "themeReserves": 15,
     "support": [
       {
@@ -819,63 +819,63 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 3,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 3,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 12,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 3,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 3,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 11,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 3,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 20,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 3,
+        "steps": 30,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 3,
+        "steps": 31,
         "winner": 1,
-        "reason": "ライフ0"
+        "reason": "スキルでライフ0"
       }
     ]
   },
@@ -883,8 +883,8 @@
     "id": "hero",
     "name": "光の主人公",
     "routeSteps": 18,
-    "skills": 28,
-    "passives": 4,
+    "skills": 24,
+    "passives": 13,
     "themeReserves": 7,
     "support": [
       {
@@ -975,37 +975,37 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 5,
+        "steps": 30,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 11,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 11,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 5,
+        "steps": 14,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 4,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1017,7 +1017,7 @@
       },
       {
         "seed": 8,
-        "steps": 11,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1029,7 +1029,7 @@
       },
       {
         "seed": 10,
-        "steps": 11,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1039,8 +1039,8 @@
     "id": "lilith",
     "name": "リリス四姉妹",
     "routeSteps": 15,
-    "skills": 21,
-    "passives": 8,
+    "skills": 19,
+    "passives": 17,
     "themeReserves": 5,
     "support": [
       {
@@ -1127,61 +1127,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 11,
+        "steps": 31,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 19,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 21,
+        "steps": 34,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 21,
+        "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 13,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 20,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 21,
+        "steps": 40,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 12,
+        "steps": 14,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 20,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 12,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1198,27 +1198,27 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 173,
+        "steps": 263,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 233,
+        "steps": 246,
         "winner": 1,
-        "reason": "ライフ0"
+        "reason": "山札切れ"
       },
       {
         "seed": 3,
-        "steps": 123,
+        "steps": 93,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 193,
+        "steps": 266,
         "winner": 1,
-        "reason": "ライフ0"
+        "reason": "山札切れ"
       },
       {
         "seed": 5,
@@ -1228,9 +1228,9 @@
       },
       {
         "seed": 6,
-        "steps": 174,
+        "steps": 216,
         "winner": 1,
-        "reason": "ライフ0"
+        "reason": "山札切れ"
       },
       {
         "seed": 7,
@@ -1240,19 +1240,19 @@
       },
       {
         "seed": 8,
-        "steps": 203,
+        "steps": 263,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 103,
+        "steps": 206,
         "winner": 1,
-        "reason": "ライフ0"
+        "reason": "山札切れ"
       },
       {
         "seed": 10,
-        "steps": 143,
+        "steps": 173,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1274,7 +1274,7 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 123,
+        "steps": 143,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1286,31 +1286,31 @@
       },
       {
         "seed": 3,
-        "steps": 35,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 53,
+        "steps": 73,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 93,
+        "steps": 133,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 84,
+        "steps": 123,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 83,
+        "steps": 73,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1322,13 +1322,13 @@
       },
       {
         "seed": 9,
-        "steps": 73,
+        "steps": 83,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 63,
+        "steps": 74,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1339,7 +1339,7 @@
     "name": "E｜音合わせのリン",
     "routeSteps": 3,
     "skills": 15,
-    "passives": 3,
+    "passives": 4,
     "themeReserves": 3,
     "support": [],
     "battles": [
@@ -1357,31 +1357,31 @@
       },
       {
         "seed": 3,
-        "steps": 73,
+        "steps": 63,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 73,
-        "winner": 1,
-        "reason": "ライフ0"
-      },
-      {
-        "seed": 5,
-        "steps": 73,
-        "winner": 1,
-        "reason": "ライフ0"
-      },
-      {
-        "seed": 6,
         "steps": 83,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
+        "seed": 5,
+        "steps": 72,
+        "winner": 1,
+        "reason": "スキルでライフ0"
+      },
+      {
+        "seed": 6,
+        "steps": 113,
+        "winner": 1,
+        "reason": "ライフ0"
+      },
+      {
         "seed": 7,
-        "steps": 53,
+        "steps": 54,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1393,7 +1393,7 @@
       },
       {
         "seed": 9,
-        "steps": 83,
+        "steps": 114,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1409,8 +1409,8 @@
     "id": "adept-sara",
     "name": "D｜砂紋のサラ",
     "routeSteps": 15,
-    "skills": 29,
-    "passives": 3,
+    "skills": 27,
+    "passives": 13,
     "themeReserves": 12,
     "support": [
       {
@@ -1445,7 +1445,7 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 13,
+        "steps": 34,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1457,37 +1457,37 @@
       },
       {
         "seed": 3,
-        "steps": 23,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 23,
+        "steps": 24,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 23,
+        "steps": 34,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 23,
+        "steps": 25,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 23,
+        "steps": 53,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 14,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1499,7 +1499,7 @@
       },
       {
         "seed": 10,
-        "steps": 13,
+        "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1510,7 +1510,7 @@
     "name": "C｜煤隊長スミ",
     "routeSteps": 18,
     "skills": 28,
-    "passives": 4,
+    "passives": 7,
     "themeReserves": 12,
     "support": [
       {
@@ -1587,13 +1587,13 @@
       },
       {
         "seed": 2,
-        "steps": 13,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 12,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1611,31 +1611,31 @@
       },
       {
         "seed": 6,
-        "steps": 22,
+        "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 22,
+        "steps": 42,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 22,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 12,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 13,
+        "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1646,7 +1646,7 @@
     "name": "C｜機巧士ケケル",
     "routeSteps": 18,
     "skills": 25,
-    "passives": 6,
+    "passives": 9,
     "themeReserves": 13,
     "support": [
       {
@@ -1709,25 +1709,25 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 22,
+        "steps": 15,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 33,
+        "steps": 51,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 13,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 12,
+        "steps": 44,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1739,31 +1739,31 @@
       },
       {
         "seed": 6,
-        "steps": 22,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 23,
+        "steps": 45,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 32,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 22,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 13,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1774,7 +1774,7 @@
     "name": "B｜飴槍のアメリア",
     "routeSteps": 18,
     "skills": 27,
-    "passives": 3,
+    "passives": 6,
     "themeReserves": 15,
     "support": [
       {
@@ -1841,25 +1841,25 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 12,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 11,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1871,13 +1871,13 @@
       },
       {
         "seed": 6,
-        "steps": 20,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 12,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -1889,13 +1889,13 @@
       },
       {
         "seed": 9,
-        "steps": 11,
+        "steps": 12,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 12,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -1905,8 +1905,8 @@
     "id": "expert-leon",
     "name": "B｜光騎士レオン",
     "routeSteps": 18,
-    "skills": 28,
-    "passives": 4,
+    "skills": 24,
+    "passives": 13,
     "themeReserves": 7,
     "support": [
       {
@@ -1997,37 +1997,37 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 5,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 11,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 11,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 5,
+        "steps": 14,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 4,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -2039,7 +2039,7 @@
       },
       {
         "seed": 8,
-        "steps": 11,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
@@ -2051,7 +2051,7 @@
       },
       {
         "seed": 10,
-        "steps": 11,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -2061,8 +2061,8 @@
     "id": "expert-noa",
     "name": "A｜深海司令ノア",
     "routeSteps": 18,
-    "skills": 21,
-    "passives": 5,
+    "skills": 20,
+    "passives": 9,
     "themeReserves": 11,
     "support": [
       {
@@ -2109,61 +2109,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 5,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 4,
+        "steps": 38,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 4,
+        "steps": 50,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 4,
+        "steps": 38,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 5,
+        "steps": 48,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 4,
+        "steps": 29,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 4,
-        "winner": 1,
-        "reason": "ライフ0"
+        "steps": 57,
+        "winner": 0,
+        "reason": "山札切れ"
       },
       {
         "seed": 8,
-        "steps": 13,
+        "steps": 52,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 4,
+        "steps": 20,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 11,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -2173,8 +2173,8 @@
     "id": "master-luna",
     "name": "S｜四姉妹の導師ルナ",
     "routeSteps": 15,
-    "skills": 21,
-    "passives": 8,
+    "skills": 19,
+    "passives": 17,
     "themeReserves": 5,
     "support": [
       {
@@ -2261,61 +2261,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 11,
+        "steps": 31,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 19,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 21,
+        "steps": 34,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 21,
+        "steps": 23,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 13,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 20,
+        "steps": 33,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 21,
+        "steps": 40,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 12,
+        "steps": 14,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 20,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 12,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -2325,8 +2325,8 @@
     "id": "master-zen",
     "name": "SS｜封印王ゼノ",
     "routeSteps": 17,
-    "skills": 21,
-    "passives": 13,
+    "skills": 17,
+    "passives": 22,
     "themeReserves": 14,
     "support": [
       {
@@ -2353,61 +2353,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 11,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 11,
+        "steps": 21,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 12,
+        "steps": 35,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 4,
+        "steps": 39,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 11,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 11,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 11,
+        "steps": 52,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 8,
-        "steps": 11,
+        "steps": 42,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 11,
+        "steps": 30,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 11,
+        "steps": 31,
         "winner": 1,
         "reason": "ライフ0"
       }
@@ -2418,7 +2418,7 @@
     "name": "SS｜極音指揮者ビート",
     "routeSteps": 16,
     "skills": 27,
-    "passives": 4,
+    "passives": 9,
     "themeReserves": 13,
     "support": [
       {
@@ -2445,61 +2445,61 @@
     "battles": [
       {
         "seed": 1,
-        "steps": 13,
+        "steps": 24,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 2,
-        "steps": 13,
+        "steps": 41,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 3,
-        "steps": 13,
+        "steps": 22,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 4,
-        "steps": 21,
+        "steps": 32,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 5,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 6,
-        "steps": 12,
+        "steps": 43,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 7,
-        "steps": 12,
+        "steps": 40,
         "winner": 1,
-        "reason": "ライフ0"
+        "reason": "スキルでライフ0"
       },
       {
         "seed": 8,
-        "steps": 12,
+        "steps": 14,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 9,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       },
       {
         "seed": 10,
-        "steps": 12,
+        "steps": 13,
         "winner": 1,
         "reason": "ライフ0"
       }

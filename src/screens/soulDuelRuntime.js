@@ -28,7 +28,7 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
  const close=()=>{if(closed)return;closed=true;window.removeEventListener('hashchange',close);timeline.destroy();figureTaps.reset();sound.endScope(musicScope);sound.stopAll();director.destroy();dialog.close();dialog.remove();resolveDone(result());};
  window.addEventListener('hashchange',close);
  const skillInfo=(ref,side=0,state=view)=>{const b=g.skillBudget(state,side,ref);if(b?.reactivePassive)return 'パッシブ · 手札1枚';return !b?'':b.passive?'自動発動':`スキル 残り ${b.remaining}/${b.limit}`;};
- const skillButtonLabel=ref=>{const b=g.skillBudget(view,0,ref);return b?.passive?'自動発動':`スキル ${b?.remaining??0}/${b?.limit??0}`;};
+ const skillButtonLabel=ref=>{const b=g.skillBudget(view,0,ref);return b?.reactivePassive?'手札1枚で無効化':b?.passive?'自動発動':`スキル ${b?.remaining??0}/${b?.limit??0}`;};
  const skillNote=(ref,side=0,state=view)=>`<p class="duel-skill-usage">${skillInfo(ref,side,state)}<small>${esc(g.skillUnavailableReason(state,side,ref))}</small></p>`;
  const tagName=id=>catalog.tags.find(t=>t.id===id)?.name||id;
  function playerHud(side,state=view){const p=state.players[side],f=byId.get(side===0?profile.avatarId:cpuDeck[0])||byId.get(deck[0]);return `<div class="duel-player side-${side}"><div class="duel-avatar">${art(f)}</div><span><small>${esc(p.name)}</small><b data-life="${side}"><em>LIFE</em> ${p.life}</b><i class="duel-life-track"><i style="width:${p.life/4}%"></i></i></span></div>`;}

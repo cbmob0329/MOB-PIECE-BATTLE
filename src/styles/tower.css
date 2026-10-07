@@ -14,3 +14,5 @@
 .campaign-map{height:490px}.campaign-floors{top:10px;bottom:10px;gap:5px}.campaign-floor{padding-block:2px}.campaign-floor header{height:20px}.campaign-opponents button{height:54px}.campaign-opponents img{height:42px}
 
 .screen-loader progress{width:min(260px,70vw);height:14px;accent-color:#efca61}.screen-loader .loading-actions{display:flex;gap:8px;justify-content:center;margin-top:12px}.loading-actions button{min-height:44px;padding:7px 12px;border-radius:10px;border:1px solid #ebd998;background:#fff2c6;color:#21473d;font-weight:bold}
+
+.tower-practice{margin:20px 0;padding:16px;border:1px solid #786849;border-radius:16px;background:#171d28}.tower-practice label{display:grid;gap:5px;margin:12px 0}.tower-practice select{min-width:0;width:100%;min-height:44px}.tower-practice summary{min-height:44px;cursor:pointer}.tower-practice .tower-assignment{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}
