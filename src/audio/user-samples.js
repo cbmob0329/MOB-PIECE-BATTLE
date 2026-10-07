@@ -1,0 +1,35 @@
+// Numbered user assets; originals remain in 素材集. Unspecified cues retain synthesis.
+export const sampleFiles={
+  "1": "assets/audio/user-20261007/001.wav",
+  "2": "assets/audio/user-20261007/002.wav",
+  "3": "assets/audio/user-20261007/003.wav",
+  "4": "assets/audio/user-20261007/004.wav",
+  "5": "assets/audio/user-20261007/005.mp3",
+  "7": "assets/audio/user-20261007/007.mp3",
+  "13": "assets/audio/user-20261007/013.wav",
+  "19": "assets/audio/user-20261007/019.wav",
+  "20": "assets/audio/user-20261007/020.wav",
+  "23": "assets/audio/user-20261007/023.wav",
+  "26": "assets/audio/user-20261007/026.mp3",
+  "27": "assets/audio/user-20261007/027.mp3",
+  "28": "assets/audio/user-20261007/028.mp3",
+  "29": "assets/audio/user-20261007/029.mp3",
+  "30": "assets/audio/user-20261007/030.mp3",
+  "31": "assets/audio/user-20261007/031.mp3",
+  "32": "assets/audio/user-20261007/032.mp3",
+  "33": "assets/audio/user-20261007/033.mp3",
+  "34": "assets/audio/user-20261007/034.mp3",
+  "35": "assets/audio/user-20261007/035.mp3",
+  "37": "assets/audio/user-20261007/037.mp3",
+  "38": "assets/audio/user-20261007/038.wav",
+  "49": "assets/audio/user-20261007/049.mp3",
+  "50": "assets/audio/user-20261007/050.mp3",
+  "53": "assets/audio/user-20261007/053.mp3",
+  "54": "assets/audio/user-20261007/054.mp3",
+  "55": "assets/audio/user-20261007/055.mp3",
+  "97": "assets/audio/user-20261007/097.mp3",
+  "99": "assets/audio/user-20261007/099.mp3",
+  "100": "assets/audio/user-20261007/100.wav"
+};
+export const battleMusic='assets/audio/user-20261007/battle.mp3';
+export function sampleNumber(cue,o={}){const fixed={select:13,confirm:13,back:13,navigate:1,deckAdd:13,deckRemove:13,deckArrange:3,starter:5,reward:5,start:97,hit:53,defeat:19,fusion:55,win:5,lose:4,move:3,gachaReveal:5};if(cue==='skill'&&o.healing)return 38;if(cue==='attack'||cue==='skill'){if(o.attackType==='物理')return o.strength==='large'?20:2;const big=o.strength==='large',attribute=String(o.attribute||'無').split('/')[0];return {火:big?29:31,水:37,地:big?32:35,風:big?34:27,闇:big?30:33,光:big?50:49,無:28}[attribute]||28;}return fixed[cue]||null;}

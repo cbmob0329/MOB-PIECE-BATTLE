@@ -19,12 +19,13 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
  let selected=null,hand=null,materials=[],sheet=null,skillValues={},busy=false,settled=false,meta=null,eventCursor=0,cpuPrepared=0,closed=false,message='',suppressClick=false,drag=null,resolveDone;
  const figureTaps=createFigureTaps();
  const done=new Promise(resolve=>{resolveDone=resolve;});
+ const musicScope=sound.beginScope('battle-music');sound.startMusic(musicScope);
  const director=createBattleDirector(dialog,{profile,style}),timeline=observePresentation(state);let view=state;
 
  const own=()=>view.active===0,main=()=>own()&&view.phase==='main'&&!view.pending&&!view.evolutionQueue?.length&&view.winner===null;
  const selectedPiece=()=>view.players[0].field.find(p=>p?.uid===selected);
  const result=()=>({won:state.winner===0,battleFor:state.winner===0?1:0,battleAgainst:state.winner===1?1:0,match:{ruleset:'soul-master-v1',playerDeckOriginal:deck,cpuDeckOriginal:cpuDeck,history:[{pHand:state.players[0].used,cHand:state.players[1].used,won:state.winner===0}],life:state.players.map(p=>p.life),reason:state.reason},soulState:state});
- const close=()=>{if(closed)return;closed=true;window.removeEventListener('hashchange',close);timeline.destroy();figureTaps.reset();sound.stopAll();director.destroy();dialog.close();dialog.remove();resolveDone(result());};
+ const close=()=>{if(closed)return;closed=true;window.removeEventListener('hashchange',close);timeline.destroy();figureTaps.reset();sound.endScope(musicScope);sound.stopAll();director.destroy();dialog.close();dialog.remove();resolveDone(result());};
  window.addEventListener('hashchange',close);
  const skillInfo=(ref,side=0,state=view)=>{const b=g.skillBudget(state,side,ref);return !b?'':b.passive?'自動発動':`スキル 残り ${b.remaining}/${b.limit}`;};
  const skillButtonLabel=ref=>{const b=g.skillBudget(view,0,ref);return b?.passive?'自動発動':`スキル ${b?.remaining??0}/${b?.limit??0}`;};
