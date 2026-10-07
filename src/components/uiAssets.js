@@ -36,18 +36,7 @@ export function rankArt(key, className='', fallback='') {
   return assetMarkup('rank', RANK_ASSETS[normalized], fallback || normalized, `rank-art ${className}`, fallback || normalized);
 }
 
-export function preloadUrls(urls, onProgress) {
-  const unique = [...new Set((urls || []).filter(Boolean))];
-  if (!unique.length) return Promise.resolve();
-  let done = 0;
-  return Promise.all(unique.map(src => new Promise(resolve => {
-    const img = new Image();
-    const finish = () => { done += 1; onProgress?.(done, unique.length); resolve(); };
-    const timer = setTimeout(finish, 3500);
-    img.onload = img.onerror = () => { clearTimeout(timer); finish(); };
-    img.src = src;
-  })));
-}
+export async function preloadUrls(urls,onProgress){const unique=[...new Set((urls||[]).filter(Boolean))];let done=0;const failed=[];onProgress?.(0,unique.length);await Promise.all(unique.map(src=>new Promise(resolve=>{const img=new Image();let ended=false;const finish=ok=>{if(ended)return;ended=true;clearTimeout(timer);img.onload=img.onerror=null;if(!ok)failed.push(src);onProgress?.(++done,unique.length);resolve();};const timer=setTimeout(()=>finish(false),15000);img.onload=()=>finish(true);img.onerror=()=>finish(false);img.src=src;})));return failed;}
 
 export function criticalUiUrls(profile, centerImage) {
   const menuKeys = ['home','figure','gacha','battle','shop','calendar','mission','history','nextWeek','player','settings','collection'];

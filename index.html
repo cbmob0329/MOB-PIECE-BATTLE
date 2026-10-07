@@ -12,7 +12,8 @@
   <link rel="stylesheet" href="./src/styles/soul.css">
   <style>
     #mpb-boot-guard{position:fixed;inset:0;z-index:99999;background:#173331;color:#f7f3e8;display:grid;place-items:center;font-family:Arial,'Yu Gothic',sans-serif;padding:24px;text-align:center}
-    #mpb-boot-guard>div{width:min(340px,88vw)}#mpb-boot-guard b{font-size:22px;letter-spacing:.04em}#mpb-boot-guard p{font-size:12px;opacity:.8;line-height:1.7;margin-bottom:10px}.mpb-loadbar{height:9px;border:1px solid #f7f3e875;border-radius:999px;overflow:hidden;background:#0f2927;margin:12px 0 7px}.mpb-loadbar i{display:block;width:6%;height:100%;background:#f0c85d;transition:width .18s ease}.mpb-progress{display:block;font-size:9px;letter-spacing:.08em;opacity:.72}.mpb-boot-failed code{display:block;margin:12px 0;padding:10px;background:#0f2927;border-radius:8px;font-size:10px;word-break:break-all}.mpb-boot-failed button{border:0;border-radius:8px;padding:10px 18px;font-weight:800;background:#f0c85d;color:#173331}
+    #mpb-boot-guard>div{width:min(340px,88vw)}#mpb-boot-guard b{font-size:22px;letter-spacing:.04em}#mpb-boot-guard p{font-size:12px;opacity:.8;line-height:1.7;margin-bottom:10px}.mpb-loadbar{height:9px;border:1px solid #f7f3e875;border-radius:999px;overflow:hidden;background:#0f2927;margin:12px 0 7px}.mpb-loadbar i{display:block;width:0%;height:100%;background:#f0c85d;transition:width .18s ease}.mpb-progress{display:block;font-size:9px;letter-spacing:.08em;opacity:.72}.mpb-boot-failed code{display:block;margin:12px 0;padding:10px;background:#0f2927;border-radius:8px;font-size:10px;word-break:break-all}.mpb-boot-failed button{border:0;border-radius:8px;padding:10px 18px;font-weight:800;background:#f0c85d;color:#173331}
+    #mpb-boot-guard:not([data-known]) .mpb-loadbar i{width:35%;animation:boot-wait 1s ease-in-out infinite alternate}@keyframes boot-wait{to{transform:translateX(180%)}}@media(prefers-reduced-motion:reduce){#mpb-boot-guard .mpb-loadbar i{animation:none}}
     html[data-mpb-ready="1"] #mpb-boot-guard{display:none}
   </style>
 <link rel="stylesheet" href="./src/styles/soul-master.css">
@@ -25,12 +26,13 @@
   <script>
     (function(){
       var guard=document.getElementById('mpb-boot-guard'),bar=document.getElementById('mpb-load-progress'),count=document.getElementById('mpb-load-count'),label=document.getElementById('mpb-load-label');
-      window.mpbBootProgress=function(done,total,text){var p=total?Math.round(done/total*100):0;if(bar)bar.style.width=Math.max(6,p)+'%';if(count)count.textContent=done+' / '+total+' · '+p+'%';if(label&&text)label.textContent=text+' を読み込んでいます';};
-      function fail(message){if(document.documentElement.dataset.mpbReady==='1')return;document.documentElement.dataset.mpbReady='error';guard.className='mpb-boot-failed';guard.innerHTML='<div><b>起動エラー</b><p>読み込みに失敗しました。キャッシュではなくエラー内容を表示しています。</p><code>'+String(message||'UNKNOWN_ERROR').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];})+'</code><button onclick="location.reload()">再読み込み</button></div>';}
+      window.mpbBootProgress=function(done,total,text){guard.dataset.known='1';var p=total?Math.round(done/total*100):0;if(bar)bar.style.width=p+'%';if(count)count.textContent=total?done+' / '+total+' 件確認':'準備中…';if(label&&text)label.textContent=text+' を読み込んでいます';};
+      function fail(message){if(document.documentElement.dataset.mpbReady==='1')return;document.documentElement.dataset.mpbReady='error';guard.className='mpb-boot-failed';guard.innerHTML='<div><b>起動エラー</b><p>読み込みに失敗しました。キャッシュではなくエラー内容を表示しています。</p><code>'+String(message||'UNKNOWN_ERROR').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];})+'</code><button onclick="location.reload()">再読み込み</button><button onclick="history.back()">戻る</button></div>';}
       window.addEventListener('error',function(e){if(e && e.message)fail(e.message+' @ '+(e.filename||'')+':'+(e.lineno||''));});
       window.addEventListener('unhandledrejection',function(e){fail(e && e.reason ? (e.reason.message||e.reason) : 'PROMISE_REJECTION');});
+      window.addEventListener('mpb:boot-error',function(e){fail(e.detail);});
       window.addEventListener('mpb:ready',function(){document.documentElement.dataset.mpbReady='1';});
-      setTimeout(function(){if(document.documentElement.dataset.mpbReady!=='1')fail('BOOT_TIMEOUT_v7.3.0');},15000);
+      setTimeout(function(){if(document.documentElement.dataset.mpbReady!=='1')fail('BOOT_TIMEOUT_v7.3.0');},30000);
     })();
   </script>
   <script type="module" src="./src/app.js?v=7.3.0"></script>

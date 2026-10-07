@@ -1,3 +1,4 @@
+import {watchScreenImages} from './components/loading.js';
 import {towerStarters} from './data/tower.js';
 import {towerScreen,handleTower,handleTowerChange} from './screens/tower.js';
 import {prepareTowerStartup} from './game/tower.js';
@@ -57,15 +58,10 @@ const compact=n=>{const v=Number(n||0);if(v>=1000000)return `${(v/1000000).toFix
 try{if(!profile.towerProgress?.starterGranted){if(!commitProfile(prepareTowerStartup(profile)))throw Error('スターターを保存できませんでした');if(isNewProfile)location.hash='tower';}normalizeBattleProgress(profile);if(syncCompetition(profile))saveProfile();}catch(err){console.error('[MPB] profile bootstrap failed',err);}
 
 function noticeMarkup(){const n=getCompetitionNotice(profile);if(!n)return '';const kicker=n.type==='weekly-rank'?'WEEKLY RANK REWARD':n.type==='bonus'?'MOB MASTER BONUS':'ANNUAL COMPETITION';return `<div class="competition-notice" role="dialog" aria-modal="true"><div class="competition-notice-card"><small>${kicker}</small><h2>${n.title}</h2><p>${n.body}</p><strong>${Number(n.coins||0).toLocaleString('ja-JP')} COIN<br>+ ${Number(n.diamonds||0).toLocaleString('ja-JP')} DIAMOND</strong><button data-comp="dismiss-notice">受け取る</button></div></div>`;}
-function settleScreenImages(){
-  const loader=app.querySelector('[data-screen-loader]');if(!loader)return;
-  const imgs=[...app.querySelectorAll('main img')].filter(img=>!img.complete);
-  if(imgs.length<3){loader.hidden=true;return;}
-  let finished=false;const hide=()=>{if(finished)return;finished=true;loader.hidden=true;};
-  const timer=setTimeout(()=>{if(!finished)loader.hidden=false;},140);
-  Promise.race([Promise.all(imgs.slice(0,18).map(img=>new Promise(resolve=>{if(img.complete)return resolve();img.addEventListener('load',resolve,{once:true});img.addEventListener('error',resolve,{once:true});}))),new Promise(resolve=>setTimeout(resolve,1800))]).then(()=>{clearTimeout(timer);hide();});
-}
+let cancelScreenLoad=()=>{};
+function settleScreenImages(){cancelScreenLoad();cancelScreenLoad=watchScreenImages(app,app.querySelector('[data-screen-loader]'));}
 function render({preserveScroll=false}={}){
+  cancelScreenLoad();
   const scroll=preserveScroll?(app.querySelector('#main')?.scrollTop||0):0;
   const focused=preserveScroll?document.activeElement?.getAttribute('data-add'):null;
   const route=location.hash.slice(1)||'home';
@@ -212,6 +208,6 @@ app.addEventListener('search',e=>{if(!composingSearch.has(e.target))refreshSearc
 app.addEventListener('change',e=>{if(handleTowerChange(e.target,ctx,{render}))return;if(e.target.id==='deck-tag-filter'){deckTag=e.target.value;refreshSearch(app.querySelector('#deck-search'));}});
 
 app.addEventListener('change',e=>{if(e.target.id==='figure-collection'){collectionGroup=e.target.value;render({preserveScroll:true});}if(e.target.id==='figure-sort'){collectionSort=e.target.value;render({preserveScroll:true});}if(e.target.id==='figure-tag-filter'){collectionTag=e.target.value;render({preserveScroll:true});}});
-async function boot(){try{initGacha(ctx,render,toast);const center=byId.get(profile.centerId)||figures.find(f=>!f.pending);const centerImage=center?imagePath(center):null;await preloadUrls(criticalUiUrls(profile,centerImage),(done,total)=>window.mpbBootProgress?.(done,total,'UI / FIGURE'));window.addEventListener('hashchange',()=>{try{render();}catch(err){showBootError(err);}});render();document.documentElement.dataset.mpbReady='1';window.dispatchEvent(new CustomEvent('mpb:ready'));if(!storageAvailable)toast('ブラウザ保存を利用できません','error');}catch(err){showBootError(err);}}
-function showBootError(err){console.error('[MPB] boot error',err);document.documentElement.dataset.mpbReady='error';const msg=String(err?.message||err||'UNKNOWN_ERROR');app.innerHTML=`<div class="boot-error"><div><small>MOB PIECE BATTLE</small><h1>起動エラー</h1><p>ゲームの読み込みに失敗しました。</p><code>${msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</code><button onclick="location.reload()">再読み込み</button></div></div>`;}
+async function boot(){try{initGacha(ctx,render,toast);const center=byId.get(profile.centerId)||figures.find(f=>!f.pending);const centerImage=center?imagePath(center):null;const missing=await preloadUrls(criticalUiUrls(profile,centerImage),(done,total)=>window.mpbBootProgress?.(done,total,'UI / FIGURE'));if(missing.length)throw Error('起動用画像 '+missing.length+'件を読み込めませんでした。再読み込みしてください。');window.addEventListener('hashchange',()=>{try{render();}catch(err){showBootError(err);}});render();document.documentElement.dataset.mpbReady='1';window.dispatchEvent(new CustomEvent('mpb:ready'));if(!storageAvailable)toast('ブラウザ保存を利用できません','error');}catch(err){showBootError(err);}}
+function showBootError(err){window.dispatchEvent(new CustomEvent('mpb:boot-error',{detail:String(err?.message||err)}));console.error('[MPB] boot error',err);document.documentElement.dataset.mpbReady='error';const msg=String(err?.message||err||'UNKNOWN_ERROR');app.innerHTML=`<div class="boot-error"><div><small>MOB PIECE BATTLE</small><h1>起動エラー</h1><p>ゲームの読み込みに失敗しました。</p><code>${msg.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</code><button onclick="location.reload()">再読み込み</button></div></div>`;}
 boot();
