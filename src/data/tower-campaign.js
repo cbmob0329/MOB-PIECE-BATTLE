@@ -7,7 +7,8 @@ export const campaignTowers=[
  ['town','田舎町','D','C','107',series(17,21),'さあ、始めましょう。','やるぞ！やるぞ！','#91ad70','田舎町タワー'],
  ['neon','ネオン街','D','C','117',series(17,21),'よろしくね～！','やるぞ！やるぞ！','#706bb8','ネオン街タワー'],
  ['magma','マグマ','C','B','138',["33","37","38","piece:024"],'レッツゴー！','レッツゴー！','#ba6647','マグマタワー'],
- ['sweets','スイーツ','C','B','mq:eventfig/51',series(22,25),'やってやるぜ！','いらっしゃ～い♪','#c7909a','スイーツタワー']
+ ['sweets','スイーツ','C','B','mq:eventfig/51',series(22,25),'やってやるぜ！','いらっしゃ～い♪','#c7909a','スイーツタワー'],
+ ['retro','レトロゲーム','C','B','RETRO09',Array.from({length:8},(_,i)=>'RETRO'+String(i+1).padStart(2,'0')),'バトル、カイシ。チカラ、ミセテ。','いっくよー！','#729dd0','レトロゲームタワー']
 ].map(([id,label,rank,bossRank,masterId,portraits,dialogue,greeting,color,art])=>({id,name:label+'タワー',rank,bossRank,masterId,portraits,dialogue,greeting,color,art,background:'assets/towers/'+id+'.png',title:'モブタワーマスターへの道'}));
 export const campaignAllowed=f=>!!f&&!f.retired&&!f.tags.some(t=>['24','52'].includes(t))&&!/魔王|ミラモブファラオ|モブギドラ|モブネプチューン/.test(f.name);
 export function campaignOpponent(tower,floor,slot=0){if(floor===5)return tower.masterId;const ids=tower.portraits.filter(id=>campaignAllowed(soulById.get(id))).sort((a,b)=>{const x=soulById.get(a),y=soulById.get(b);return x.atk+x.def-y.atk-y.def;});return ids[(Math.floor((floor-1)*(Math.max(0,ids.length-3))/3)+slot)%ids.length];}

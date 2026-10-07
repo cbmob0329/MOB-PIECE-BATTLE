@@ -1,0 +1,637 @@
+{
+  "source": "素材集/MOB PIECE BATTLE 案/MOB-PIECE-draft-2026-10-07T12-56-06.json",
+  "sha256": "9df5e620a75f2d47497dd3373c66147864abfc29f4913b372d00e829631380fc",
+  "skills": [
+    {
+      "id": "55",
+      "name": "どらネコタイム",
+      "description": "自分ライフを50回復し、味方全体のDEF+20。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "heal": 50,
+        "def": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "88",
+      "name": "スラスライダー",
+      "description": "相手の攻撃を無効にし、このフィギュアのDEFを20アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "def": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "94",
+      "name": "メラケロップ",
+      "description": "タグ草原を持つ自分の場のフィギュアのATKとDEF+25。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "filterTag": "41",
+        "atk": 25,
+        "def": 25
+      },
+      "passive": {}
+    },
+    {
+      "id": "96",
+      "name": "ツルショット",
+      "description": "相手がスキルを使用した時、そのスキルを無効にし、DEFを30ダウンする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "trigger",
+        "def": -30
+      },
+      "passive": {}
+    },
+    {
+      "id": "101",
+      "name": "アドベンダッシュ",
+      "description": "このターン、砂漠タグを持つ味方フィギュアのATKを25アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "filterTag": "42",
+        "atk": 25
+      },
+      "passive": {}
+    },
+    {
+      "id": "117",
+      "name": "カイロトリック",
+      "description": "相手の攻撃を無効にする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "118",
+      "name": "バンケンガード",
+      "description": "相手のスキルを無効にする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "123",
+      "name": "ネオン街のキュートな魔物",
+      "description": "相手の攻撃を無効にし、そのフィギュアのATKを30ダウンする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "target": "trigger",
+        "atk": -30
+      },
+      "passive": {}
+    },
+    {
+      "id": "125",
+      "name": "ネッシーダイブ",
+      "description": "相手のスキルを無効にし、自分の場のフィギュアのATKを20UPする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "allies",
+        "atk": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "126",
+      "name": "バブルケア",
+      "description": "相手の攻撃を無効にする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "136",
+      "name": "ヒスイバリア",
+      "description": "相手の攻撃を無効にし、相手のライフに20ダメージを与える。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "lifeDamage": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "140",
+      "name": "ヒノステップ",
+      "description": "相手の攻撃を無効にし、相手プレイヤーに20のダメージを与える。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "lifeDamage": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "144",
+      "name": "ブリザガード",
+      "description": "スキルの発動を無効にし、相手フィールド全体のDEF-20。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "enemies",
+        "def": -20
+      },
+      "passive": {}
+    },
+    {
+      "id": "149",
+      "name": "ピコシャドウ",
+      "description": "攻撃を無効にし、DEFを20ダウンする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "target": "trigger",
+        "def": -20
+      },
+      "passive": {}
+    },
+    {
+      "id": "150",
+      "name": "デビスライド",
+      "description": "スキルを無効にし、ATKを15ダウンする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "trigger",
+        "atk": -15
+      },
+      "passive": {}
+    },
+    {
+      "id": "154",
+      "name": "アサシンステップ",
+      "description": "相手フィールド全体のATKとDEF-10。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemies",
+        "atk": -10,
+        "def": -10
+      },
+      "passive": {}
+    },
+    {
+      "id": "158",
+      "name": "ララマショマロ",
+      "description": "相手の攻撃を無効にし、ライフを60回復する。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "heal": 60
+      },
+      "passive": {}
+    },
+    {
+      "id": "163",
+      "name": "ガードウォール",
+      "description": "このターン中、自分の場のフィギュアのDEFを30アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "def": 30
+      },
+      "passive": {}
+    },
+    {
+      "id": "165",
+      "name": "ネオンバースト",
+      "description": "スキルの効果を無効にし、発動したフィギュアのDEFを20ダウンする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "trigger",
+        "def": -20
+      },
+      "passive": {}
+    },
+    {
+      "id": "181",
+      "name": "ヘルバースト",
+      "description": "相手の攻撃を無効にし、このフィギュアのATKを20アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "atk": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "182",
+      "name": "キリンブレイク",
+      "description": "相手の攻撃を無効にし、このフィギュアのDEFを20アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "def": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "183",
+      "name": "リヴァタイド",
+      "description": "相手のスキル発動を無効にし、このフィギュアのATKを20アップする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "atk": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "184",
+      "name": "クフレイ",
+      "description": "相手のスキル発動を無効にし、このフィギュアのDEFを20アップする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "def": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "194",
+      "name": "マグマスイミング",
+      "description": "相手フィールド全体のDEFを-25する。このターン、このフィギュアは相手フィールド全員を攻撃対象に選べる。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemies",
+        "def": -25,
+        "casterEach": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "199",
+      "name": "サクラ一族",
+      "description": "相手がスキルを発動した時、そのスキルを無効にする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "206",
+      "name": "ミラ・トウガラシ",
+      "description": "このターン、砂漠タグを持つ自分の場のフィギュアのATKを25アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "filterTag": "42",
+        "atk": 25
+      },
+      "passive": {}
+    },
+    {
+      "id": "219",
+      "name": "海底の王",
+      "description": "メインスキル:このターン、このフィギュアの攻撃対象となったフィギュアはスキルが使えなくなる。\nパッシブ:場と墓地の水属性フィギュア1体につきATKとDEFが10アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "attackSkillLock": true
+      },
+      "passive": {
+        "fieldGraveScale": {
+          "attribute": "水",
+          "atk": 10,
+          "def": 10
+        }
+      }
+    },
+    {
+      "id": "piece:007",
+      "name": "ルートサーチ",
+      "description": "相手の攻撃を無効にし、HPを20回復する。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "heal": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "mq:eventfig/31",
+      "name": "ムシャトイ",
+      "description": "相手の攻撃を無効にし、ライフを30ポイント回復する。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "heal": 30
+      },
+      "passive": {}
+    },
+    {
+      "id": "M4F_DOK_V01",
+      "name": "石床の記憶",
+      "description": "相手のスキル発動を無効にし、自分ライフを20回復する。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "heal": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "mq:eventfig/64",
+      "name": "マカロンブーストⅡ",
+      "description": "相手のスキル発動を無効にし、敵全体のATKを30ダウンする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "enemies",
+        "atk": -30
+      },
+      "passive": {}
+    },
+    {
+      "id": "mq:eventfig/37",
+      "name": "クイックステップ",
+      "description": "相手のスキルの発動を無効にし、このフィギュアのATKを20アップする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "atk": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "mq:eventfig/33",
+      "name": "モチ職人",
+      "description": "メインスキル:墓地に存在する 美味しい食べ物 タグを持つフィギュア1体につき、このターン中ATKとDEFが10アップする。\nパッシブ:場に出ている 美味しい食べ物 タグを持つフィギュア1体につき、ATKとDEFが20アップする 。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "graveTagBuff": {
+          "tag": "18",
+          "atk": 10,
+          "def": 10
+        }
+      },
+      "passive": {
+        "fieldScale": {
+          "tag": "18",
+          "atk": 20,
+          "def": 20
+        }
+      }
+    },
+    {
+      "id": "133",
+      "name": "キバラッシュ",
+      "description": "相手のスキルを無効にし、タグ部族村を持つフィギュアのATKとDEFを+20する。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "allies",
+        "filterTag": "46",
+        "atk": 20,
+        "def": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "151",
+      "name": "プニライド",
+      "description": "このターン、このフィギュアは2回攻撃出来る。攻撃する度、このターン中ATKを20アップする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "attacks": 2,
+        "ramp": 20
+      },
+      "passive": {}
+    },
+    {
+      "id": "168",
+      "name": "ドラゴンレイジ",
+      "description": "メインスキル:このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。\nパッシブ:相手フィギュアはこのフィギュアが場に出ている限り、このフィギュアしか攻撃出来ない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "attacks": 2,
+        "ramp": 30
+      },
+      "passive": {
+        "taunt": true
+      }
+    },
+    {
+      "id": "178",
+      "name": "キリン・サンダーボルト",
+      "description": "相手のスキルを無効にし、相手の場のフィギュア1体のDEFを30ダウンする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "enemy",
+        "def": -30
+      },
+      "passive": {}
+    },
+    {
+      "id": "207",
+      "name": "薔薇の鼓動",
+      "description": "メインスキル:このターン、自分の場のリリス4姉妹タグを持つフィギュアのATKとDEFを50上げる。\nパッシブ:このフィギュアはターン開始毎にATKが15アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "filterTag": "specified-lilith",
+        "atk": 50,
+        "def": 50
+      },
+      "passive": {
+        "eachTurnGrowth": 15
+      }
+    },
+    {
+      "id": "210",
+      "name": "エンマジャッジ",
+      "description": "メインスキル:スキルの発動を無効にし、そのフィギュアのDEFを30ダウンする。\nパッシブ:自分の場の火属性フィギュアのDEFを15アップする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "trigger",
+        "def": -30
+      },
+      "passive": {
+        "aura": {
+          "attributes": [
+            "火"
+          ],
+          "def": 15
+        }
+      }
+    },
+    {
+      "id": "piece:049",
+      "name": "ゴールデンフィニッシュ",
+      "description": "メインスキル:このターン最大2回攻撃できる。攻撃するたび、このターン中ATK+30（累積）。同じ相手を続けて攻撃してもよい。ダイレクトアタック不可。\nパッシブ:ボクサー タグを持つ自分の場のフィギュアのDEFを25アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "attacks": 2,
+        "ramp": 30
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "piece-boxer"
+          ],
+          "def": 25
+        }
+      }
+    },
+    {
+      "id": "BFX045",
+      "name": "おかえりセッション",
+      "description": "メインスキル:自分の墓地からシード1体を手札へ戻し、自分ライフを30回復する。\nパッシブ:とびっきりのスイーツ タグを持つ自分の場のフィギュアのATKとDEFを20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "recoverSeed": true,
+        "heal": 30
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "specified-sweets"
+          ],
+          "atk": 20,
+          "def": 20
+        }
+      }
+    },
+    {
+      "id": "BFX051",
+      "name": "アクア・ハーモニー",
+      "description": "メインスキル:自分ライフを30回復し、自分の場の水属性フィギュア全員のDEFを20アップする。\nパッシブ:場に出ている水属性フィギュア1体につき、このフィギュアのATKとDEFを15アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "heal": 30,
+        "target": "allies",
+        "filterAttribute": "水",
+        "def": 20
+      },
+      "passive": {
+        "fieldScale": {
+          "attribute": "水",
+          "atk": 15,
+          "def": 15
+        }
+      }
+    },
+    {
+      "id": "SWEET38",
+      "name": "キャンディ・カトラス",
+      "description": "メインスキル:このフィギュアのATKを40アップし、このターン2回まで攻撃出来る。\nパッシブ:自分の場に出ているとびっきりのスイーツ1体につき、このフィギュアのATKは20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "atk": 40,
+        "attacks": 2
+      },
+      "passive": {
+        "fieldScale": {
+          "tag": "specified-sweets",
+          "scope": "own",
+          "atk": 20
+        }
+      }
+    }
+  ]
+}

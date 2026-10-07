@@ -1,3 +1,5 @@
+import oct07Skills from '../src/data/oct07-skills.json' with {type:'json'};
+import oct07Safe from '../src/data/oct07-safe.json' with {type:'json'};
 import {passiveBonus} from '../src/game/oct06-passives.js';
 import oct06Draft from '../src/data/oct06-draft.json' with {type:'json'};
 import {matchesMaterial,recipeMaterialClass} from '../src/game/fusion-rules.js';
@@ -26,7 +28,7 @@ const cast=(s,side,f,o=choose(s,side,f))=>{g.useSkill(s,side,f.uid,o);resolve(s)
 test('更新対象以外の327体由来データは元JSONを維持、指定変更と画像を確認',()=>{
  assert.equal(figures.length,281);assert.equal(new Set(figures.map(f=>f.id)).size,281);
  assert.deepEqual(Object.fromEntries(['seed','middle','mob'].map(k=>[k,figures.filter(f=>f.soulClass===k).length])),{"seed":154,"middle":96,"mob":31});
- for(const f of figures){const r=master.records.find(r=>r.uid===f.uid);if(updatedIds.has(f.id)){assert.ok(fs.existsSync(f.image));assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);continue;}assert.equal(f.atk,r.ATK);assert.equal(f.def,r.DEF);assert.equal(f.rarity,r.rarity);assert.equal(f.attribute,r.attribute);assert.deepEqual(f.tags,r.gameTagIds.filter(t=>t!=='13'||['70','71','72','73','74','185','79','80'].includes(f.id)));assert.equal(f.soulSkill.sourceText,revisedTexts[f.soulSkill.program]?.split(' | ')[1]||r.soulSkill.effect);assert.equal(texts[f.soulSkill.program],revisedTexts[f.soulSkill.program]||r.soulSkill.timing+' | '+r.soulSkill.effect);assert.ok(fs.existsSync(f.image),f.image);assert.ok(f.tags.length<=master.rules.tagLimits[f.rarity]);assert.equal(legacy.find(x=>x.sourceId===f.id).pending,false);}
+ for(const f of figures){const r=master.records.find(r=>r.uid===f.uid),patch=oct07Safe.patches.find(p=>p.id===f.id)?.after||{};if(updatedIds.has(f.id)){assert.ok(fs.existsSync(f.image));assert.ok(patch.tags||f.tags.length<=master.rules.tagLimits[f.rarity]);continue;}assert.equal(f.atk,patch.atk??r.ATK);assert.equal(f.def,patch.def??r.DEF);assert.equal(f.rarity,patch.rarity??r.rarity);assert.equal(f.attribute,patch.attribute??r.attribute);assert.deepEqual(f.tags,patch.tags??r.gameTagIds.filter(t=>t!=='13'||['70','71','72','73','74','185','79','80'].includes(f.id)));assert.equal(f.soulSkill.sourceText,oct07Skills.skills.find(p=>p.id===f.id)?.description||revisedTexts[f.soulSkill.program]?.split(' | ')[1]||r.soulSkill.effect);assert.equal(texts[f.soulSkill.program],revisedTexts[f.soulSkill.program]||r.soulSkill.timing+' | '+r.soulSkill.effect);assert.ok(fs.existsSync(f.image),f.image);assert.ok(patch.tags||f.tags.length<=master.rules.tagLimits[f.rarity]);assert.equal(legacy.find(x=>x.sourceId===f.id).pending,false);}
  for(let i=35;i<=46;i++)assert.ok(byId.has('mq:spbossfig/'+i));
  assert.ok(find(55).soulSkill.description.includes('使用後も'));assert.ok(byId.get('mq:eventfig/23').passive.phoenixOnce);
 });

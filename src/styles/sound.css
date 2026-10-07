@@ -3,3 +3,5 @@
 .fx-skill-effect{max-width:32rem;padding:10px 14px;border-radius:12px;background:#101a31ed;color:#fff;font-size:14px;line-height:1.5;text-align:left;margin:8px auto;position:relative;z-index:5;}
 
 .audio-loading-note{position:fixed;left:8px;right:8px;bottom:calc(82px + env(safe-area-inset-bottom));z-index:11000;display:flex;align-items:center;gap:6px;padding:6px 9px;border:1px solid #526b58;border-radius:12px;background:#fff8e9;color:#25483e;box-shadow:0 2px 9px #0003;font-size:11px}.audio-loading-note span{flex:1}.audio-loading-note button{min-height:44px;padding:3px 8px;border-radius:7px;border:1px solid #527463;background:#e5efd1;color:#234e3b}
+
+.music-loading-note{bottom:calc(140px + env(safe-area-inset-bottom))}

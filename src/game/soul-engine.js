@@ -35,7 +35,7 @@ function draw(s,side){const p=s.players[side];if(!p.deck.length){finish(s,1-side
 export function startTurn(s){
  s.phase='draw';s.turn++;emit(s,'turn',{side:s.active,turn:s.turn});
  for(const p of s.players){p.skillUsed=false;p.teamEffects=p.teamEffects.filter(e=>e.until>=s.turn);for(const f of p.field.filter(Boolean)){f.effects=f.effects.filter(e=>e.until===null||e.until>=s.turn);for(const e of f.effects.filter(e=>e.key==='turnPoison')){f.permanentAtk-=e.value;f.permanentDef-=e.value;}f.attacks=0;f.attackedTargets=[];f.lastTarget=null;f.extra=0;f.chainOnly=false;}}
- for(const f of live(s,s.active))f.permanentAtk+=info(f).passive?.ownTurnGrowth||0;bindBattle(s,soulById);
+ for(const f of s.players.flatMap(p=>p.field.filter(Boolean)))f.permanentAtk+=info(f).passive?.eachTurnGrowth||0;for(const f of live(s,s.active))f.permanentAtk+=info(f).passive?.ownTurnGrowth||0;bindBattle(s,soulById);
  const p=s.players[s.active];while(p.hand.length<5&&s.winner===null)draw(s,s.active);
  if(s.winner===null){s.phase='main';log(s,`TURN ${s.turn} · ${p.name}のメインフェイズ`);}
 }
@@ -110,6 +110,7 @@ function reactionEligible(s,side,f){
  if(p.kind==='skill')return timing==='skill-response'&&(!q.reverseBuffs||isStatRaisingPlan(skillPlan(p.caster||piece(s,p.side,p.uid)),elementDefinition(info(p.caster||piece(s,p.side,p.uid)))));
  if(p.kind==='defeat')return timing==='defeat-response'&&p.targetUid===f.uid;
  if(p.kind!=='attack'||timing!=='attack-response')return false;
+ if(q.revision==='oct07')return live(s,side).some(x=>x.uid===p.targetUid);
  const a=piece(s,p.side,p.uid);if(has(a,'pierceGuard')&&(q.redirectSelf||q.redirectOther))return false;
  if(q.guardAlly)return !!live(s,side).find(x=>x.uid===p.targetUid);if(q.redirectSelf)return true;
  if(q.redirectOther)return live(s,side).some(x=>x.uid!==p.targetUid)||!!q.fallbackDef;
@@ -178,8 +179,8 @@ function applySkill(s,side,f,o){
  if(!info(f).soulSkill.runtimePlan&&applyElement(s,side,f,soulById,o)){bindBattle(s,soulById);return;}
  const specified=skillPlan(f);if(specified.specified){const p=s.players[side];if(specified.specified==='promoteSelf'){const slot=p.field.indexOf(f),i=p.reserve.indexOf(o.promoteId);if(slot<0||i<0)return;remove(s,side,f,true);p.reserve.splice(i,1);const next=instance(s,o.promoteId);p.field[slot]=next;p.used.push(next.id);emit(s,'summon',{side,id:next.id,slot,uid:next.uid,...stats(next)});return;}if(specified.specified==='blood'){effect(f,'atk',s.players[1-side].grave.length*10,s.turn);remove(s,side,f,true);return;}if(['tagBuff','rain'].includes(specified.specified)){if(specified.specified==='rain')p.life=Math.min(400,p.life+p.hand.length*10);for(const targetSide of specified.both?[0,1]:[side])for(const t of live(s,targetSide))if(currentTags(t).includes(specified.tag)){if(specified.atk)effect(t,'atk',specified.atk,s.turn);if(specified.def)effect(t,'def',specified.def,s.turn);}return;}}
  const q=skillPlan(f),p=s.players[side],enemy=s.players[1-side],until=q.duration==='persistent'?Infinity:q.duration==='next-opponent'?expiresNextOpponent(s,side):s.turn;
- let targets=q.target==='ally'?[piece(s,side,Number(o.targetUid))]:['enemy','enemySeed'].includes(q.target)?[piece(s,1-side,Number(o.targetUid))]:q.target==='attributeAllies'?live(s,side).filter(x=>sharesAttribute(attribute(x),info(f).attribute)):q.target==='allies'?live(s,side):q.target==='enemies'?live(s,1-side):q.target==='center'?[p.field[1]].filter(Boolean):[f];
- if(q.filterTag)targets=targets.filter(t=>currentTags(t).includes(q.filterTag));
+ let targets=q.target==='trigger'?live(s,1-side).filter(x=>x.uid===o.triggerUid):q.target==='ally'?[piece(s,side,Number(o.targetUid))]:['enemy','enemySeed'].includes(q.target)?[piece(s,1-side,Number(o.targetUid))]:q.target==='attributeAllies'?live(s,side).filter(x=>sharesAttribute(attribute(x),info(f).attribute)):q.target==='allies'?live(s,side):q.target==='enemies'?live(s,1-side):q.target==='center'?[p.field[1]].filter(Boolean):[f];
+ if(q.filterTag)targets=targets.filter(t=>currentTags(t).includes(q.filterTag));if(q.filterAttribute)targets=targets.filter(t=>attribute(t).split('/').includes(q.filterAttribute));
  // A one-use team barrier cancels the hostile lowering skill as specified.
  if(q.atk<0||q.def<0){const i=enemy.teamEffects.findIndex(e=>e.key==='debuffShield'&&e.starts<=s.turn&&e.until>=s.turn&&(e.value==='both'||q.def<0));if(i>=0){enemy.teamEffects.splice(i,1);log(s,'低下スキルを無効化');return;}}
  if(q.heal)p.life=Math.min(400,p.life+q.heal);
@@ -224,6 +225,15 @@ export function passReaction(s,side){
 }
 function respond(s,side,f,o){
  const pending=s.pending,q=skillPlan(f);s.pending=null;
+ if(q.revision==='oct07'){
+  applySkill(s,side,f,{...o,triggerUid:pending.uid});
+  if(s.winner!==null)return;
+  if(pending.kind==='skill'&&q.cancelSkill){log(s,'相手のソウルスキルを無効化');return;}
+  if(pending.kind==='attack'&&q.cancelAttack){log(s,'攻撃を無効化');emit(s,'guard',{side,id:f.id,label:'攻撃を無効化！'});afterCombat(s,pending,false);return;}
+  if(pending.kind==='attack'){resolveCombat(s,pending);return;}
+  if(pending.kind==='skill'){applySkill(s,pending.side,pending.caster||piece(s,pending.side,pending.uid),pending.options);return;}
+ }
+
  if(pending.kind==='skill'&&q.reverseBuffs){const caster=pending.caster||piece(s,pending.side,pending.uid);reverseStatIncreases(s,()=>applySkill(s,pending.side,caster,pending.options));bindBattle(s,soulById);return;}
  if(pending.kind==='attack'&&(q.guardAlly||q.evadeTurn)){const target=piece(s,side,pending.targetUid);if(q.guardAlly)effect(target,'def',q.guardAlly,Infinity);if(q.evadeTurn)effect(target,'evadeAll',true,s.turn);resolveCombat(s,pending);return;}
  if(pending.kind==='skill'){
@@ -250,7 +260,7 @@ export const attackLimit=p=>has(p,'eachTarget')?Math.max(1,3):Math.max(Number(va
 export function canAttack(s,side,a,d){bindBattle(s,soulById);
  if(s.turn<=1||s.winner!==null||s.pending||s.evolutionQueue?.length||s.phase!=='battle'||s.active!==side||!a||!d||has(a,'skipBattle'))return false;
  if(has(a,'eachTarget')?a.attackedTargets.includes(d.uid):a.attacks>=attackLimit(a))return false;
- if(live(s,1-side).some(t=>has(t,'taunt'))&&!has(d,'taunt'))return false;
+ if(live(s,1-side).some(t=>has(t,'taunt')||info(t).passive?.taunt)&&!has(d,'taunt')&&!info(d).passive?.taunt)return false;
  if(a.chainOnly&&a.lastTarget===d.uid)return false;
  if(has(a,'lastAttack')&&live(s,side).some(x=>x.uid!==a.uid&&!has(x,'skipBattle')&&!has(x,'lastAttack')&&live(s,1-side).some(t=>canAttack(s,side,x,t))))return false;
  return true;

@@ -25,7 +25,7 @@ const newcomer={owned:{},diamonds:0};grantMainCollection(newcomer,{newProfile:tr
 const deck=pieceStarterDeck(pieceStarters[0].id),fresh=()=>g.createSoulBattle([deck,deck],undefined,{random:()=>.999999});
 function put(s,side,f,slot=0){const p={uid:++s.serial,id:f.id,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],lastTarget:null,extra:0,mobFusion:false,permanentAtk:0,permanentDef:0};s.players[side].field[slot]=p;return p;}
 const seed=g.soulById.get('01');const resolve=s=>{for(let i=0;i<8&&s.pending;i++)g.passReaction(s,1-s.pending.side);assert.equal(s.pending,null);};
-for(const f of pieceFigures){const s=fresh(),a=put(s,0,f),ally=put(s,0,seed,1),d=put(s,1,seed);s.players[0].hand=[seed.id];s.players[0].deck=[seed.id,seed.id];s.players[0].grave=[seed.id];s.players[0].destroyed=[seed.id];
+for(const raw of pieceFigures){const f=g.soulById.get(raw.id),s=fresh(),a=put(s,0,f),ally=put(s,0,seed,1),d=put(s,1,seed);s.players[0].hand=[seed.id];s.players[0].deck=[seed.id,seed.id];s.players[0].grave=[seed.id];s.players[0].destroyed=[seed.id];
  if(f.soulSkill.timing!=='own-main'){s.active=1;s.phase='battle';s.pending={kind:f.soulSkill.timing==='attack-response'?'attack':'skill',side:1,uid:d.uid,targetUid:a.uid,options:{targetUid:a.uid}};if(s.pending.kind==='skill')d.id=catalog.figures.find(x=>x.soulSkill.program===6).id;}
  assert.ok(g.canSkill(s,0,a.uid),f.name);g.useSkill(s,0,a.uid,g.cpuOptions(s,0,a.uid));resolve(s);assert.ok(s.players[0].skillUsed,f.name);}
 const matches=(f,m)=>m.id?f.id===m.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute;

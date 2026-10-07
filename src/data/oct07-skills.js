@@ -1,0 +1,2 @@
+import data from './oct07-skills.json' with {type:'json'};
+export function applyOct07Skills(catalog){const patches=new Map(data.skills.map(x=>[x.id,x]));return {...catalog,figures:catalog.figures.map(f=>{const p=patches.get(f.id);if(!p)return f;return {...f,passive:structuredClone(p.passive),soulSkill:{...f.soulSkill,name:p.name,description:p.description,effect:p.description,sourceText:p.description,timing:p.timing,timingLabel:p.timing==='attack-response'?'相手攻撃宣言時':p.timing==='skill-response'?'相手スキル発動時':'自分メイン',runtimePlan:structuredClone(p.plan)}};})};}

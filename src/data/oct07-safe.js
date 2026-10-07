@@ -1,0 +1,3 @@
+import data from './oct07-safe.json' with {type:'json'};
+import {matchesMaterial,recipeMaterialClass} from '../game/fusion-rules.js';
+export function applyOct07Safe(catalog){const figures=catalog.figures.map(f=>({...f,tags:[...f.tags],soulSkill:{...f.soulSkill}})),by=new Map(figures.map(f=>[f.id,f]));for(const patch of data.patches){const f=by.get(patch.id);for(const [key,value]of Object.entries(patch.after)){if(key==='skillName')f.soulSkill.name=value;else f[key]=structuredClone(value);}}for(const f of figures)f.fusionTargets=[...new Set(catalog.recipes.filter(r=>f.soulClass===recipeMaterialClass(r,by)&&r.materials.some(m=>matchesMaterial(f,m))).map(r=>r.target))];return {...catalog,figures};}
