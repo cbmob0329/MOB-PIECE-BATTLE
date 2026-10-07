@@ -1,6 +1,6 @@
 
 /* Six confirmed fusion styles. Silhouettes are decoration; snapshots still control arrival. */
 .fusion-tag,.battle-cue.fusion.tag{--fusion-aura:#ffe04b}.fusion-attribute,.battle-cue.fusion.attribute{--fusion-aura:#47a9ff}.fusion-mix,.battle-cue.fusion.mix{--fusion-aura:#65eb91}.fusion-same,.battle-cue.fusion.same{--fusion-aura:#ff5a59}.fusion-soul,.battle-cue.fusion.soul{--fusion-aura:#b676ff}.fusion-mob,.battle-cue.fusion.mob{--fusion-aura:#ffc83e}
-.duel-slot[class*="fusion-"] .duel-pedestal{box-shadow:0 0 12px var(--fusion-aura,#b676ff),inset 0 0 8px var(--fusion-aura,#b676ff)}
+.duel-slot:is(.fusion-tag,.fusion-attribute,.fusion-mix,.fusion-same,.fusion-soul,.fusion-mob) .duel-pedestal{box-shadow:0 0 12px var(--fusion-aura,#b676ff),inset 0 0 8px var(--fusion-aura,#b676ff)}
 .duel-figure,.fx-body{isolation:isolate}.duel-figure>img,.fx-body>img{position:relative;z-index:2}.duel-partner,.fx-partner{position:absolute;inset:5% 12%;z-index:0;pointer-events:none;transform:translateX(calc((var(--partner) - (var(--partners) - 1)/2)*30% + 12%)) scale(.92);opacity:.24;filter:brightness(0) drop-shadow(0 0 5px var(--fusion-aura,#a86bff))}.duel-partner img,.fx-partner img{width:100%;height:100%;object-fit:contain}.fx-partner{inset:0 -8%;opacity:.32}
 .battle-cue.fusion .fx-ring,.battle-cue.fusion .fx-platform{border-color:var(--fusion-aura,#b676ff);box-shadow:0 0 20px var(--fusion-aura,#b676ff)}

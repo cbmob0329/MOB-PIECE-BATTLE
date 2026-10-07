@@ -1,4 +1,4 @@
-import {targetableBySkill,affectedBySkill} from './skill-protection.js';
+import {targetableBySkill,affectedBySkill,consumeSkillShield} from './skill-protection.js';
 import {storedUsage,takeStoredCard,putStoredCard,moveStoredCard,topStoredCard} from './skill-budget.js';
 import {capturePresentation} from './battle-presentation.js';
 // Choice construction and atomic resolution shared by player and CPU.
@@ -43,6 +43,7 @@ export function applyElement(s,side,f,byId,o){
  const work=s,c=elementContext(work,side,f,byId),p=c.own,next=work.turn+(work.active===side?1:0),sel=k=>Number(o['el_'+k]);
  const rawTargets=k=>k==='allies'?c.live(p):k==='magicAllies'?c.live(p).filter(x=>c.info(x).attackType==='魔法'):k==='enemies'?c.live(c.foe):[...c.live(p),...c.live(c.foe)].filter(x=>x.uid===sel(k));
  const targets=k=>rawTargets(k).filter(t=>affectedBySkill(t,side,p.field.includes(t)?side:1-side));
+ if(consumeSkillShield(s,side,d.ops.flatMap(op=>targets(op.to))))return true;
  const condition=(q,t)=>!q||Object.entries(q).every(([k,v])=>({allyAttribute:()=>c.live(p).some(x=>c.attr(x).split('/').includes(v)),allyType:()=>c.live(p).some(x=>c.info(x).attackType===v),attributes:()=>v.every(a=>c.live(p).some(x=>c.attr(x).split('/').includes(a))),targetAttribute:()=>!!t&&c.attr(t).split('/').includes(v),targetFamily:()=>!!t&&c.info(t).family===v,targetClass:()=>!!t&&c.info(t).soulClass===v,behind:()=>p.life<c.foe.life,defAbove:()=>c.stat(t,'def')>c.stat(t,'atk'),atkAbove:()=>c.stat(t,'atk')>c.stat(t,'def'),positiveAtk:()=>t.effects.some(e=>c.effectMatches(e,{key:'atk',sign:1})),graveSeeds:()=>Number(o.el_graveSeeds??p.grave.filter(id=>byId.get(id).soulClass==='seed').length)>=v})[k]?.());
  const put=(t,key,value,until)=>{if(!value||value<0&&['atk','def'].includes(key)&&byId.get(t.id).passive?.lowerImmune)return;if((key==='atk'||key==='def')&&value<0)value=-Math.min(-value,c.stat(t,key));if(!value)return;
   // Repeated copies of the same skill do not stack the same stat/flag on one target.

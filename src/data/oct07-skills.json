@@ -1677,6 +1677,713 @@
           "def": 10
         }
       }
+    },
+    {
+      "id": "97",
+      "name": "砂漠のマスコット",
+      "description": "このフィギュアが破壊された時、シードデッキから砂漠タグを持つフィギュア1体を召喚する。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "deck"
+          ],
+          "tags": [
+            "42"
+          ],
+          "classes": [
+            "seed"
+          ]
+        }
+      }
+    },
+    {
+      "id": "110",
+      "name": "ジュラシック・ヤベージャンズ",
+      "description": "このフィギュアが破壊された時、ミドルデッキからモブティラを召喚する。対象が存在しない時、シードデッキから田舎町タグを持つフィギュアを1体召喚する。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "reserve"
+          ],
+          "ids": [
+            "111"
+          ],
+          "fallback": {
+            "mode": "summon",
+            "zones": [
+              "deck"
+            ],
+            "tags": [
+              "43"
+            ],
+            "classes": [
+              "seed"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "111",
+      "name": "ジュラシック・ヤベージャンズ",
+      "description": "このフィギュアが破壊された時、ミドルデッキからモブティラを召喚する。対象が存在しない時、シードデッキから田舎町タグを持つフィギュアを1体召喚する。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "reserve"
+          ],
+          "ids": [
+            "111"
+          ],
+          "fallback": {
+            "mode": "summon",
+            "zones": [
+              "deck"
+            ],
+            "tags": [
+              "43"
+            ],
+            "classes": [
+              "seed"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "112",
+      "name": "田舎町の悪意",
+      "description": "このフィギュアを墓地へ送り、デッキか墓地からモブアクイ、モブシツイ、モブヤマイを可能な限り召喚する。※フィールドに空きがある限り召喚可能",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "selfSacrifice": true,
+        "summonMany": {
+          "zones": [
+            "deck",
+            "grave"
+          ],
+          "ids": [
+            "113",
+            "114",
+            "115"
+          ],
+          "unique": true,
+          "remaining": 3
+        }
+      },
+      "passive": {}
+    },
+    {
+      "id": "113",
+      "name": "アクイニードル",
+      "description": "このフィギュアが破壊された時、相手の場のフィギュア1体を破壊する。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "destroy",
+          "side": "enemy"
+        }
+      }
+    },
+    {
+      "id": "115",
+      "name": "ヤマイミスト",
+      "description": "このフィギュアを破壊したフィギュアは、毎ターン、ターン開始時にATKとDEFが30ダウンする。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "deathPoison": 30
+      }
+    },
+    {
+      "id": "153",
+      "name": "エマージェンシー",
+      "description": "攻撃してきた相手フィギュア以外の相手の場のフィギュアと一時的に入れ替わり、代わりに攻撃を受けさせる。ダメージが発生する場合、お互いにダメージを受ける。※対象が存在しない場合、発動出来ない",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "redirectEnemy": true,
+        "damageBoth": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "173",
+      "name": "バーサクラッシュ",
+      "description": "自身のDEFを30ダウンし、ATKを40アップする。このフィギュアが撃破された時、部族村のタグを持つシードかミドルフィギュア1体を復活させる。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "atk": 40,
+        "def": -30
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "grave"
+          ],
+          "tags": [
+            "46"
+          ],
+          "classes": [
+            "seed",
+            "middle"
+          ]
+        }
+      }
+    },
+    {
+      "id": "176",
+      "name": "ネオン街のマスター",
+      "description": "メインスキル:自身のATKを100ダウンし、ネオン街タグを持つシードかミドルフィギュア1体を復活させる。\nパッシブ:ネオン街タグを持つ自分のフィギュアは1ターンに1度だけ戦闘で破壊されない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "selfAtk": -100,
+        "summon": {
+          "zones": [
+            "grave"
+          ],
+          "tags": [
+            "44"
+          ],
+          "classes": [
+            "seed",
+            "middle"
+          ]
+        }
+      },
+      "passive": {
+        "guardAura": {
+          "tag": "44"
+        }
+      }
+    },
+    {
+      "id": "185",
+      "name": "ルーキーコール",
+      "description": "相手の攻撃を無効にし、このフィギュアを墓地に送る。このスキルの発動に成功した時、とびっきりのスイーツタグを持つミドルフィギュアをミドルデッキか墓地から1体召喚する。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "selfSacrifice": true,
+        "summon": {
+          "zones": [
+            "reserve",
+            "grave"
+          ],
+          "tags": [
+            "specified-sweets"
+          ],
+          "classes": [
+            "middle"
+          ]
+        }
+      },
+      "passive": {}
+    },
+    {
+      "id": "191",
+      "name": "支える力",
+      "description": "自身が破壊された時、融合領域から主人公パーティーのミドル1体を選んで召喚する。",
+      "timing": "passive",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "reserve"
+          ],
+          "tags": [
+            "24"
+          ],
+          "classes": [
+            "middle"
+          ]
+        }
+      }
+    },
+    {
+      "id": "211",
+      "name": "アクノソシキ",
+      "description": "このターンATK+30。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。このフィギュアが撃破された時、読みかけの本のタグをフィギュア1体のATKとDEFを30アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "atk": 30,
+        "damageBonus": 20,
+        "threshold": 30
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "buff",
+          "side": "own",
+          "tags": [
+            "52"
+          ],
+          "atk": 30,
+          "def": 30
+        }
+      }
+    },
+    {
+      "id": "212",
+      "name": "アクノソシキ",
+      "description": "このターンATK+30。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。このフィギュアが撃破された時、読みかけの本のタグをフィギュア1体のATKとDEFを30アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "atk": 30,
+        "damageBonus": 20,
+        "threshold": 30
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "buff",
+          "side": "own",
+          "tags": [
+            "52"
+          ],
+          "atk": 30,
+          "def": 30
+        }
+      }
+    },
+    {
+      "id": "213",
+      "name": "アクノソシキ",
+      "description": "このターンATK+30。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。このフィギュアが撃破された時、読みかけの本のタグをフィギュア1体のATKとDEFを30アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "atk": 30,
+        "damageBonus": 20,
+        "threshold": 30
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "buff",
+          "side": "own",
+          "tags": [
+            "52"
+          ],
+          "atk": 30,
+          "def": 30
+        }
+      }
+    },
+    {
+      "id": "214",
+      "name": "アクノソシキ",
+      "description": "このターンATK+30。ATKが相手DEFを30以上上回った場合、差分ライフダメージ+20。このフィギュアが撃破された時、読みかけの本のタグをフィギュア1体のATKとDEFを30アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "atk": 30,
+        "damageBonus": 20,
+        "threshold": 30
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "buff",
+          "side": "own",
+          "tags": [
+            "52"
+          ],
+          "atk": 30,
+          "def": 30
+        }
+      }
+    },
+    {
+      "id": "215",
+      "name": "読みかけの本のナビゲーター",
+      "description": "このターン、このフィギュアは3回まで攻撃とスキル(このフィギュアに影響を与える)を無効にする。攻撃とスキル、合わせて3回とする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "shieldCharges": 3,
+        "mixedResponse": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "216",
+      "name": "読みかけの本のナビゲーター",
+      "description": "このターン、このフィギュアは3回まで攻撃とスキル(このフィギュアに影響を与える)を無効にする。攻撃とスキル、合わせて3回とする。",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "shieldCharges": 3,
+        "mixedResponse": true
+      },
+      "passive": {}
+    },
+    {
+      "id": "mq:eventfig/53",
+      "name": "ランプの魔神",
+      "description": "メインスキル:スキルを発動した相手フィギュアを破壊する。この効果を発動した場合、このフィギュアはスキルとパッシブを失う。\nパッシブ:自分の手札1枚につき、このフィギュアのATKは10アップする。\n",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "trigger",
+        "destroyTarget": true,
+        "loseAbilities": true
+      },
+      "passive": {
+        "handScale": {
+          "atk": 10
+        }
+      }
+    },
+    {
+      "id": "mq:eventfig/59",
+      "name": "クイーンロック",
+      "description": "メインスキル:このターン、味方全体のATK+30。さらにMUSICまたは団結力タグを持つ味方はATK+20（合計ATK+50、両タグを持つ場合も追加は1回）。\nパッシブ:このフィギュアが撃破された時、団結力タグを持つフィギュア1体を墓地から召喚する。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "atk": 30,
+        "musicAtk": 20
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "grave"
+          ],
+          "tags": [
+            "78"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mq:eventfig/63",
+      "name": "マカロンブースト",
+      "description": "相手のスキルを無効化し、このフィギュアはモブネコマカロンに進化する。※ミドルデッキに存在する場合のみ進化",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "evolveSelf": "mq:eventfig/64"
+      },
+      "passive": {}
+    },
+    {
+      "id": "piece:013",
+      "name": "ホーリーベル",
+      "description": "メインスキル:相手のソウルスキルを無効にする。その後、自分フィールドのフィギュア1体のATKとDEFを+40する。\nパッシブ:このフィギュアが破壊された時、墓地から好きなフィギュア1体を復活召喚出来る。※相手の墓地も選択できる",
+      "timing": "skill-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "ally",
+        "atk": 40,
+        "def": 40
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "grave"
+          ],
+          "owners": "both"
+        }
+      }
+    },
+    {
+      "id": "ECL_B01",
+      "name": "月環の大魔法",
+      "description": "メインスキル:部族村 タグを持つ味方全体のATKをこのターン30上げ、相手1体のATKを次の相手ターン終了まで30下げる。\nパッシブ:このフィギュアが場に存在する限り、相手はドローしたフィギュアを1体を捨てなければならない。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "filterTag": "46",
+        "atk": 30,
+        "selectedEnemyAtk": -30
+      },
+      "passive": {
+        "enemyDrawDiscard": true
+      }
+    },
+    {
+      "id": "DUA_B01",
+      "name": "二色の握りこぶし",
+      "description": "メインスキル:火属性と水属性の味方全体のATK/DEFを次の相手ターン終了まで50上げ、ライフを20回復する。\nパッシブ:このフィギュアが破壊された時、シードかミドルの火属性と水属性のフィギュアをそれぞれ1体ずつ復活する。対象がいない時は無効。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "next-opponent",
+        "target": "allies",
+        "filterAttributes": [
+          "火",
+          "水"
+        ],
+        "atk": 50,
+        "def": 50,
+        "heal": 20
+      },
+      "passive": {
+        "deathActions": [
+          {
+            "mode": "summon",
+            "zones": [
+              "grave"
+            ],
+            "attributes": [
+              "火"
+            ],
+            "classes": [
+              "seed",
+              "middle"
+            ]
+          },
+          {
+            "mode": "summon",
+            "zones": [
+              "grave"
+            ],
+            "attributes": [
+              "水"
+            ],
+            "classes": [
+              "seed",
+              "middle"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "NIN_B01",
+      "name": "朧双刃の決着",
+      "description": "メインスキル:味方2体までのATKをこのターン30上げ、それぞれ2回ずつ攻撃出来る。自身も対象に出来る。\nパッシブ:部族村 タグを持つ味方フィギュアのATKを20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "selectedAllies",
+        "atk": 30,
+        "attacks": 2,
+        "multiSelect": true
+      },
+      "passive": {
+        "aura": {
+          "tags": [
+            "46"
+          ],
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "CRY_B01",
+      "name": "双球・黒曜領域",
+      "description": "メインスキル:相手フィギュア2体までのATK/DEFを次の相手ターン終了まで25下げる。\nパッシブ:このフィギュアは攻撃を受ける度ATKが20アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "next-opponent",
+        "target": "selectedEnemies",
+        "atk": -25,
+        "def": -25,
+        "multiSelect": true
+      },
+      "passive": {
+        "hurtGrowth": 20
+      }
+    },
+    {
+      "id": "SPI_B01",
+      "name": "魂縫いの大儀式",
+      "description": "メインスキル:墓地から部族村のシードかミドル1体を復活召喚する。\nパッシブ:このフィギュアが復活させたフィギュアは1.シードの場合 ATKとDEFを80アップ、2.ミドルの場合 ATKとDEFを40アップする。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "summon": {
+          "zones": [
+            "grave"
+          ],
+          "tags": [
+            "46"
+          ],
+          "classes": [
+            "seed",
+            "middle"
+          ],
+          "bonus": {
+            "seed": 80,
+            "middle": 40
+          }
+        }
+      },
+      "passive": {}
+    },
+    {
+      "id": "M4F_DOK_B01",
+      "name": "古城砕き",
+      "description": "メインスキル:相手フィールド全体のDEF-30。このターン、相手フィールド全員へ1回ずつ攻撃できる。\nパッシブ:このフィギュアが破壊された時、砂漠タグを持つフィギュア1体を墓地から召喚する。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemies",
+        "def": -30,
+        "casterEach": true
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "grave"
+          ],
+          "tags": [
+            "42"
+          ]
+        }
+      }
+    },
+    {
+      "id": "NS2_050",
+      "name": "アメジョーカーのソウル",
+      "description": "メインスキル:相手の攻撃を別の相手のフィギュアに代わりに受けさせる。ダメージが発生する場合、相手が受ける。\nパッシブ:スキルを発動する度、このフィギュアのDEFは40ダウンする。",
+      "timing": "attack-response",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "redirectEnemy": true
+      },
+      "passive": {
+        "skillGrowth": {
+          "side": "own",
+          "selfOnly": true,
+          "def": -40
+        }
+      }
+    },
+    {
+      "id": "NS2_051",
+      "name": "アメジャックのソウル",
+      "description": "メインスキル:相手フィギュアを1体選択する。このターン中、このフィギュアATKとDEFは選択した相手と同じになる。\nパッシブ:このフィギュアが撃破された時、ススかケケのタグを持つシードかミドルフィギュア1体を復活召喚する。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "enemy",
+        "copyStats": true
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "grave"
+          ],
+          "tags": [
+            "ns2-susu",
+            "ns2-keke"
+          ],
+          "classes": [
+            "seed",
+            "middle"
+          ]
+        }
+      }
+    },
+    {
+      "id": "NS2_052",
+      "name": "アメキングのソウル",
+      "description": "メインスキル:自分フィールド全体のATKとDEFを+30する。さらに、手札の数×10、相手フィールド全体のDEFをダウンさせる。\nパッシブ:このフィギュアは手札を1枚捨てることで相手の攻撃を1回無効化する。手札が無い時は使用不可。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "atk": 30,
+        "def": 30,
+        "handDefDebuff": 10
+      },
+      "passive": {
+        "handAttackCancel": true
+      }
+    },
+    {
+      "id": "BFX052",
+      "name": "スイート・アンセム",
+      "description": "メインスキル:自分と相手の場からフィギュアを1体選択する。自身は選択不可。選択したフィギュアをこのターン中入れ替える。\nパッシブ:このフィギュアが破壊された時、自分の墓地からミドルフィギュア1体を召喚する。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "controlSwap": true
+      },
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "grave"
+          ],
+          "classes": [
+            "middle"
+          ]
+        }
+      }
     }
   ],
   "stagePatches": [
