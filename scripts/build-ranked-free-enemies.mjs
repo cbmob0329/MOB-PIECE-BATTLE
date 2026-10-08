@@ -7,11 +7,11 @@ export function buildRankedEnemies(baseEnemies){
  return rankedEnemySpecs.map(spec=>{
   const base=baseEnemies.find(e=>e.id===spec.baseThemeId);
   assert.ok(base,'missing base theme '+spec.baseThemeId);
-  const enemy={...base,...spec,name:`${spec.rank}｜${spec.name}`,themeName:base.name,description:`ランク${spec.rank}・${base.name}。${spec.rank==='F'?'シード中心、融合は慎重。':spec.rank==='E'?'シード中心、融合の練習中。':['S','SS'].includes(spec.rank)?'希少な切り札と連続融合を使う上級者。':'テーマの融合とスキルを使い分ける。'}`,strategy:{...base.strategy,...rankSettings[spec.rank]}};
+  const enemy={...base,...spec,name:`${spec.rank}｜${spec.name}`,themeName:base.name,description:`ランク${spec.rank}・${base.name}。${spec.rank==='F'?'シードのみ。稀に属性・タグの強化融合を使う。':spec.rank==='E'?'シード中心、融合の練習中。':['S','SS'].includes(spec.rank)?'希少な切り札と連続融合を使う上級者。':'テーマの融合とスキルを使い分ける。'}`,strategy:{...base.strategy,...rankSettings[spec.rank]}};
   let deck=[...base.deck],routes=[...base.routes];
   if(spec.middleCount!==null){
    const owned=Object.fromEntries(soulFigures.filter(f=>enemyFigureAllowed(enemy,f)).map(f=>[f.id,f.soulClass==='seed'?3:1]));
-   const choices=new Map(base.deck.filter(id=>soulById.get(id).soulClass==='middle').map(id=>[id,fusionRecommendations(id,owned,base.deck).find(r=>Object.keys(r.needs).every(k=>k===id||soulById.get(k).soulClass==='seed'))]));
+   const choices=new Map([...new Set([...(spec.preferredMiddleId?[spec.preferredMiddleId]:[]),...base.deck.filter(id=>soulById.get(id).soulClass==='middle')])].map(id=>[id,fusionRecommendations(id,owned,base.deck).find(r=>Object.keys(r.needs).every(k=>k===id||soulById.get(k).soulClass==='seed'))]));
    const middle=[...choices.keys()].filter(id=>choices.get(id)).slice(0,spec.middleCount);
    assert.equal(middle.length,spec.middleCount,enemy.id+' needs seed-to-middle routes');
    routes=middle.map(id=>choices.get(id));

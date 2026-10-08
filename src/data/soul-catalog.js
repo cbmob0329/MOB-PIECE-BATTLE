@@ -1,3 +1,4 @@
+import {applyOct10Additions} from './oct10-addition-updates.js';
 import {applyOct07Skills} from './oct07-skills.js';
 import {applyOct07Safe} from './oct07-safe.js';
 import {applyOct06Spec} from './oct06-spec.js';
@@ -35941,4 +35942,4 @@ const base = {
     }
   ]
 };
-export default applyOct07Skills(applyOct07Safe(applyOct06Spec(applyBattleCorrections(applyOct05Spec(extendPieceCatalog(base))))));
+export default applyOct10Additions(applyOct07Skills(applyOct07Safe(applyOct06Spec(applyBattleCorrections(applyOct05Spec(extendPieceCatalog(base)))))));

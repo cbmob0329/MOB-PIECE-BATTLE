@@ -16,5 +16,5 @@ export const enemySeedAnchors={grass:['45','46','89','93','50'],desert:['49','10
 export function enemyFigureAllowed(enemy,figure){
  const policy=enemyThemes[enemy.baseThemeId||enemy.id];if(!policy||!figure||figure.retired)return false;
  if(policy.reserves&&figure.soulClass!=='seed'&&!policy.reserves.includes(figure.id))return false;
- return figure.tags.some(t=>(policy.tags||enemy.themeTagIds).includes(t))||policy.support.includes(figure.id)||figure.soulClass==='seed'&&(figure.image.startsWith('piecefig/')||policy.extraSeeds?.includes(figure.id));
+ return enemy.materialSupportIds?.includes(figure.id)&&figure.soulClass==='seed'||figure.tags.some(t=>(policy.tags||enemy.themeTagIds).includes(t))||policy.support.includes(figure.id)||figure.soulClass==='seed'&&(figure.image.startsWith('piecefig/')||policy.extraSeeds?.includes(figure.id));
 }

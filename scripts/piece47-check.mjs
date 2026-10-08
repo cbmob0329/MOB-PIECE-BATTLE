@@ -26,11 +26,12 @@ const newcomer={owned:{},diamonds:0};grantMainCollection(newcomer,{newProfile:tr
 const deck=pieceStarterDeck(pieceStarters[0].id),fresh=()=>g.createSoulBattle([deck,deck],undefined,{random:()=>.999999});
 function put(s,side,f,slot=0){const p={uid:++s.serial,id:f.id,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],lastTarget:null,extra:0,mobFusion:false,permanentAtk:0,permanentDef:0};s.players[side].field[slot]=p;return p;}
 const seed=g.soulById.get('01');const resolve=s=>{for(let i=0;i<8&&s.pending;i++)g.passReaction(s,1-s.pending.side);assert.equal(s.pending,null);};
-for(const raw of pieceFigures){const f=g.soulById.get(raw.id),s=fresh(),a=put(s,0,f),ally=put(s,0,seed,1),d=put(s,1,seed);s.players[0].hand=[seed.id];s.players[0].deck=[seed.id,seed.id];s.players[0].grave=[seed.id];s.players[0].destroyed=[seed.id];
+for(const raw of pieceFigures){const f=g.soulById.get(raw.id),s=fresh(),a=put(s,0,f),ally=put(s,0,seed,1),d=put(s,1,seed);s.players[0].hand=[seed.id];s.players[0].deck=[seed.id,seed.id];s.players[0].grave=[seed.id,'piece:010'];s.players[0].destroyed=[seed.id];
+ if(f.soulSkill.timing==='passive'){assert(g.skillBudget(s,0,a.uid).passive);assert(!g.canSkill(s,0,a.uid));continue;}
  if(f.soulSkill.timing!=='own-main'){s.active=1;s.phase='battle';s.pending={kind:f.soulSkill.timing==='attack-response'?'attack':'skill',side:1,uid:d.uid,targetUid:a.uid,options:{targetUid:a.uid}};if(s.pending.kind==='skill')d.id=catalog.figures.find(x=>x.soulSkill.program===6).id;}
  assert.ok(g.canSkill(s,0,a.uid),f.name);g.useSkill(s,0,a.uid,g.cpuOptions(s,0,a.uid));resolve(s);assert.ok(s.players[0].skillUsed,f.name);}
 const matches=(f,m)=>m.id?f.id===m.id:m.tag?f.tags.includes(m.tag):f.attribute===m.attribute;
-const additions=catalog.recipes.filter(r=>r.id.startsWith('PIECE-'));assert.equal(additions.length,19);assert.equal(additions.filter(r=>r.special).length,4);
+const additions=catalog.recipes.filter(r=>r.id.startsWith('PIECE-'));assert.equal(additions.length,16);assert.equal(additions.filter(r=>r.special).length,3);
 for(const r of additions)for(const hand of [false,true]){const s=fresh(),p=s.players[0],pair=r.materials.map(m=>catalog.figures.find(f=>(r.special||f.soulClass===r.fromClass)&&matches(f,m)));assert.ok(pair.every(Boolean));const a=put(s,0,pair[0]);let refs;if(hand){p.hand=[pair[1].id];refs=[a.uid,{handIndex:0}];}else refs=[a.uid,put(s,0,pair[1],1).uid];p.reserve=[r.target];assert.ok(g.fusionOptions(s,0,refs).some(x=>x.id===r.id));g.fuse(s,0,refs,r.id);assert.equal(p.field[0].id,r.target);assert.equal(g.stats(p.field[0]).atk,g.soulById.get(r.target).atk+(r.special?25:0)+passiveBonus(p.field[0],g.soulById).atk);}
 for(const starter of pieceStarters.filter(s=>['piece-soldier','piece-boxer'].includes(s.id))){const ids=pieceStarterDeck(starter.id);assert.ok(g.validateSoulDeck(ids,existing.owned).valid);assert.ok(ids.every(id=>g.soulById.get(id).collection==='main'));for(const id of new Set(ids))assert.ok(ids.filter(x=>x===id).length<=OWN_CAP[g.soulById.get(id).rarity]);
  const reachable=new Set(ids.filter(id=>g.soulById.get(id).soulClass==='seed'));
@@ -45,5 +46,5 @@ for(const starter of pieceStarters.filter(s=>['piece-soldier','piece-boxer'].inc
  const refs=p.field.filter(Boolean).map(x=>x.uid);const r=g.fusionOptions(s,0,refs).find(r=>r.target===target);assert.ok(r);g.fuse(s,0,refs,r.id);assert.ok(p.field.some(x=>x?.id===target));
  const other=structuredClone(existing.soulDecks[0]);applyPieceStarter(existing,starter.id);assert.deepEqual(existing.soulDecks[0],other);
 }
-assert.equal(banners.length,4);assert.ok(archivedBanners.filter(b=>b.id!=='SELECTED-BFX').every(b=>poolFor(b).every(f=>!f.sourceId.startsWith('piece:'))));
+assert.equal(banners.length,5);assert.ok(archivedBanners.filter(b=>b.id!=='SELECTED-BFX').every(b=>poolFor(b).every(f=>!f.sourceId.startsWith('piece:'))));
 console.log('PASS: 47 images/data/skills; 19 recipes (38 field/hand cases); 207 free main figures (including original 72); 2 legal starters and seed-middle-MOB chains; non-destructive/idempotent migration; unchanged gacha pools');

@@ -1,0 +1,724 @@
+{
+  "source": "追加用フィギュア/追加用フィギュア.txt",
+  "records": [
+    {
+      "id": "piece:002",
+      "name": "チルタイムモブくん",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "風",
+      "atk": 115,
+      "def": 155,
+      "skill": {
+        "name": "チルタイム",
+        "description": "このフィギュアが攻撃を受ける度ライフを20回復する。"
+      },
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "attackedHeal": 20
+      },
+      "timing": "passive"
+    },
+    {
+      "id": "piece:003",
+      "name": "グラフィティモブくん",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "地",
+      "atk": 135,
+      "def": 130,
+      "skill": {
+        "name": "グラフィティアート",
+        "description": "発生条件:相手フィギュアの攻撃時相手の攻撃を無効にする。"
+      },
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "anyAttack": true
+      },
+      "passive": {},
+      "timing": "attack-response"
+    },
+    {
+      "id": "piece:004",
+      "name": "わたあめモブくん",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 150,
+      "def": 165,
+      "skill": {
+        "name": "あまたいわたあめ",
+        "description": "相手フィギュアがスキルを発動した時、そのスキルを無効にし、味方全体のDEFを20アップする。タグ マスコットを持つ場合、さらに10アップする。"
+      },
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "allies",
+        "def": 20,
+        "tagBonus": {
+          "tag": "10",
+          "def": 10
+        }
+      },
+      "passive": {},
+      "timing": "skill-response"
+    },
+    {
+      "id": "piece:005",
+      "name": "パーティーモブくん",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "水",
+      "atk": 130,
+      "def": 140,
+      "skill": {
+        "name": "レッツパーティー",
+        "description": "自分の場の全てのフィギュアのATKを20アップする。タグ マスコットを持つ場合、さらに10あっぷする。"
+      },
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "allies",
+        "atk": 20,
+        "tagBonus": {
+          "tag": "10",
+          "atk": 10
+        }
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:006",
+      "name": "ミュージックモブくん",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "雷",
+      "atk": 145,
+      "def": 125,
+      "skill": {
+        "name": "モブライブ",
+        "description": "手札を1枚捨てる。このターン中、このフィギュアのATKを30アップする。"
+      },
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "discardCost": 1,
+        "atk": 30
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:007",
+      "name": "ゲーミングモブくん",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "無",
+      "atk": 120,
+      "def": 130,
+      "skill": {
+        "name": "ゲーミングテクニック",
+        "description": "自分の場と相手の場のフィギュアを1体ずつ選択する。選択したフィギュア同士をこのターン中のみ入れ替える。"
+      },
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "attribute": "無"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "controlSwap": true,
+        "swapSelfAllowed": true
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:008",
+      "name": "どら焼きモブくん",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "火",
+      "atk": 140,
+      "def": 170,
+      "skill": {
+        "name": "どら焼きは美味しいよ",
+        "description": "発生条件:相手フィギュア攻撃時相手の攻撃を無効にし、このフィギュアのATKとDEFを20アップする。"
+      },
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "anyAttack": true,
+        "atk": 20,
+        "def": 20
+      },
+      "passive": {},
+      "timing": "attack-response"
+    },
+    {
+      "id": "piece:009",
+      "name": "モブくんとみかんちゃん",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "無",
+      "atk": 140,
+      "def": 140,
+      "skill": {
+        "name": "片付け苦手なみかんちゃん",
+        "description": "敵全体のDEFを30ダウンさせる。"
+      },
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "tag": "10"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "enemies",
+        "def": -30
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:010",
+      "name": "モブラプサンタ",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 90,
+      "def": 110,
+      "skill": {
+        "name": "ソリの達人",
+        "description": "このターン、自分の場のフィギュアは1ターンに2回攻撃出来る。すでに回数バフがかかっている場合、回数が多い方を優先する。"
+      },
+      "plan": {
+        "revision": "oct07",
+        "duration": "turn",
+        "target": "allies",
+        "attacks": 2
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:011",
+      "name": "モブベルマージョ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 150,
+      "def": 135,
+      "skill": {
+        "name": "ホワイトクリスマス",
+        "description": "発動条件:相手フィギュアがスキルを発動した時スキルの発動を無効にし、そのフィギュアのDEFを20ダウンする。"
+      },
+      "materials": [
+        {
+          "tag": "piece-bell"
+        },
+        {
+          "tag": "01"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true,
+        "target": "trigger",
+        "def": -20
+      },
+      "passive": {},
+      "timing": "skill-response"
+    },
+    {
+      "id": "piece:012",
+      "name": "モブトナッチ",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 100,
+      "def": 90,
+      "skill": {
+        "name": "トナッチプレゼント",
+        "description": "自分の場のフィギュア1体を選択する。選択したのATKとDEFを10か30か50アップする。アップした分、このフィギュアのATKとDEFをダウンする。"
+      },
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "target": "ally",
+        "transferStats": [
+          10,
+          30,
+          50
+        ]
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:013",
+      "name": "モブバッジサンタ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 120,
+      "def": 155,
+      "skill": {
+        "name": "ヒーローベル",
+        "description": "デッキか墓地からタグ ヒーローベルを持つフィギュア1体を召喚する。この方法で召喚したフィギュアはATKとDEFが40アップし、スキル回数が回復する。"
+      },
+      "materials": [
+        {
+          "tag": "piece-bell"
+        },
+        {
+          "tag": "01"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "summon": {
+          "zones": [
+            "deck",
+            "grave"
+          ],
+          "tags": [
+            "piece-bell"
+          ],
+          "bonus": {
+            "seed": 40,
+            "middle": 40,
+            "mob": 40
+          },
+          "resetSkills": true
+        }
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:014",
+      "name": "モブコッペパン",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "地",
+      "atk": 130,
+      "def": 130,
+      "skill": {
+        "name": "コッペパン",
+        "description": "自分のライフを20回復し、味方フィギュア1体のDEFを20アップする。"
+      },
+      "materials": [
+        {
+          "tag": "10"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "heal": 20,
+        "target": "ally",
+        "def": 20
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:015",
+      "name": "モブやきそばパン",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "火",
+      "atk": 140,
+      "def": 125,
+      "skill": {
+        "name": "焼きそばパン",
+        "description": "自分のライフを20回復し、味方フィギュア1体のATKを20アップする。"
+      },
+      "materials": [
+        {
+          "tag": "10"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "heal": 20,
+        "target": "ally",
+        "atk": 20
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:016",
+      "name": "モブクロワッサン",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "風",
+      "atk": 110,
+      "def": 140,
+      "skill": {
+        "name": "クロワッサン",
+        "description": "自分のライフを20回復し、味方フィギュア全体のATKを10アップする。"
+      },
+      "materials": [
+        {
+          "tag": "10"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "heal": 20,
+        "target": "allies",
+        "atk": 10
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:017",
+      "name": "モブ食パン",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "無",
+      "atk": 125,
+      "def": 125,
+      "skill": {
+        "name": "食パン",
+        "description": "自分のライフを20回復し、味方フィギュア全体のDEFを10アップする。"
+      },
+      "materials": [
+        {
+          "tag": "10"
+        },
+        {
+          "attribute": "無"
+        }
+      ],
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "heal": 20,
+        "target": "allies",
+        "def": 10
+      },
+      "passive": {},
+      "timing": "own-main"
+    },
+    {
+      "id": "piece:026",
+      "name": "モブグリーンバルーン",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "風/地",
+      "atk": 0,
+      "def": 90,
+      "skill": {
+        "name": "バルーントラップ",
+        "description": "相手の攻撃時、その攻撃を無効にして相手に10ダメージを与える。"
+      },
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelAttack": true,
+        "anyAttack": true,
+        "lifeDamage": 10
+      },
+      "passive": {},
+      "timing": "attack-response"
+    },
+    {
+      "id": "piece:027",
+      "name": "モブピンクバルーン",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "火/光",
+      "atk": 0,
+      "def": 90,
+      "skill": {
+        "name": "バルーンガード",
+        "description": "相手の攻撃時、攻撃対象の自分のフィギュアのDEFを30アップする。"
+      },
+      "plan": {
+        "duration": "persistent",
+        "guardAlly": 30
+      },
+      "passive": {},
+      "timing": "attack-response"
+    },
+    {
+      "id": "piece:028",
+      "name": "モブブルーバルーン",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水/闇",
+      "atk": 0,
+      "def": 90,
+      "skill": {
+        "name": "バルーンリフレクト",
+        "description": "相手のスキル発動時、そのスキルを無効にする。"
+      },
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "cancelSkill": true
+      },
+      "passive": {},
+      "timing": "skill-response"
+    },
+    {
+      "id": "piece:029",
+      "name": "モブイエローバルーン",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "雷/無",
+      "atk": 0,
+      "def": 90,
+      "skill": {
+        "name": "バルーンダイナマイト",
+        "description": "相手がフィギュアを召喚(融合含む)した時、そのフィギュアのATKを25ダウンする。"
+      },
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "passive": true
+      },
+      "passive": {
+        "enemySummonAtk": -25
+      },
+      "timing": "passive"
+    },
+    {
+      "id": "piece:022",
+      "name": "モブパープルストーン"
+    },
+    {
+      "id": "piece:023",
+      "name": "モブイエローレコード"
+    },
+    {
+      "id": "piece:024",
+      "name": "モブブルークラウド"
+    },
+    {
+      "id": "piece:025",
+      "name": "モブレッドファイヤ"
+    },
+    {
+      "id": "piece:042",
+      "name": "モブレッドストレート",
+      "soulClass": "seed",
+      "rarity": "R"
+    },
+    {
+      "id": "piece:043",
+      "name": "モブイエロージャブ",
+      "soulClass": "seed",
+      "rarity": "R"
+    },
+    {
+      "id": "piece:044",
+      "name": "モブブルーストレート",
+      "soulClass": "seed",
+      "rarity": "R"
+    },
+    {
+      "id": "piece:045",
+      "name": "モブグリーンアッパー",
+      "soulClass": "seed",
+      "rarity": "R"
+    },
+    {
+      "id": "piece:046",
+      "name": "モブレッドスマッシュ",
+      "soulClass": "middle",
+      "rarity": "SR"
+    },
+    {
+      "id": "piece:047",
+      "name": "モブパープルガゼル",
+      "soulClass": "middle",
+      "rarity": "SR"
+    },
+    {
+      "id": "piece:048",
+      "name": "モブシルバーショットガン",
+      "soulClass": "middle",
+      "rarity": "SSR"
+    },
+    {
+      "id": "piece:049",
+      "name": "モブゴールデンチャンピオン",
+      "soulClass": "mob",
+      "rarity": "SSR"
+    },
+    {
+      "id": "piece:018",
+      "name": "モブオレンジバッティング",
+      "soulClass": "seed",
+      "rarity": "SR"
+    },
+    {
+      "id": "piece:019",
+      "name": "モブパープルダッキング",
+      "soulClass": "seed",
+      "rarity": "SR"
+    },
+    {
+      "id": "piece:020",
+      "name": "モブファングステップ",
+      "soulClass": "middle",
+      "rarity": "SSR"
+    },
+    {
+      "id": "piece:021",
+      "name": "モブギラチャンピオン",
+      "soulClass": "middle",
+      "rarity": "SSR"
+    },
+    {
+      "id": "piece:031",
+      "name": "モブアカイシ",
+      "soulClass": "seed",
+      "rarity": "R"
+    },
+    {
+      "id": "piece:032",
+      "name": "モブアカナイト",
+      "soulClass": "seed",
+      "rarity": "SR"
+    },
+    {
+      "id": "piece:033",
+      "name": "モブパプオノ",
+      "soulClass": "seed",
+      "rarity": "R"
+    },
+    {
+      "id": "piece:034",
+      "name": "モブパプマジック",
+      "soulClass": "middle",
+      "rarity": "SSR"
+    },
+    {
+      "id": "piece:035",
+      "name": "モブパプヤリ",
+      "soulClass": "seed",
+      "rarity": "SR"
+    },
+    {
+      "id": "piece:036",
+      "name": "モブパプソルジャー",
+      "soulClass": "middle",
+      "rarity": "SSR"
+    },
+    {
+      "id": "piece:037",
+      "name": "モブグリコン",
+      "soulClass": "seed",
+      "rarity": "R"
+    },
+    {
+      "id": "piece:038",
+      "name": "モブグリヒーラー",
+      "soulClass": "middle",
+      "rarity": "SR"
+    },
+    {
+      "id": "piece:039",
+      "name": "モブリードナイト",
+      "soulClass": "mob",
+      "rarity": "UR"
+    },
+    {
+      "id": "piece:040",
+      "name": "モブダマフレイム",
+      "soulClass": "middle",
+      "rarity": "SSR"
+    },
+    {
+      "id": "piece:041",
+      "name": "モブアカアーチャー",
+      "soulClass": "seed",
+      "rarity": "SSR"
+    }
+  ]
+}

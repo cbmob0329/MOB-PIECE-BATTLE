@@ -1,15 +1,15 @@
 import {towerVersion,towerStarters,towerMix,grassTower,towerEnemy} from '../data/tower.js';
 import {validateSoulDeck} from './soul-battle.js';
 import {FREE_BATTLE} from '../data/battle.js';
-export function towerState(profile){const p=profile.towerProgress||{};return {version:towerVersion,cleared:[...new Set((p.cleared||[]).filter(n=>Number.isInteger(n)&&n>=1&&n<=5))],starterGranted:p.starterGranted===true,active:p.active||null,last:p.last||null};}
+export function towerState(profile){const p=profile.towerProgress||{};return {...p,version:towerVersion,cleared:[...new Set((p.cleared||[]).filter(n=>Number.isInteger(n)&&n>=1&&n<=5))],starterGranted:p.starterGranted===true,starterVersion:p.starterVersion||0,active:p.active||null,last:p.last||null};}
 export function prepareTowerStartup(profile){
- const next=structuredClone(profile),t=towerState(next);next.towerProgress=t;if(t.starterGranted)return next;
+ const next=structuredClone(profile),t=towerState(next);next.towerProgress=t;if(t.starterGranted&&t.starterVersion>=2)return next;const grants=t.starterGranted?towerStarters.filter(s=>s.id==='c'):towerStarters;
  next.owned??={};const decks=Array.from({length:5},(_,i)=>[...(next.soulDecks?.[i]||[])]);
- for(const s of towerStarters){const counts={};for(const id of s.deck)counts[id]=(counts[id]||0)+1;for(const [id,n]of Object.entries(counts))next.owned[id]=Math.max(next.owned[id]||0,n);}
- for(const s of towerStarters){const slot=decks.findIndex((d,i)=>!d.length&&validateSoulDeck(s.deck,next.owned,{profile:{...next,soulDecks:decks},slot:i}).valid);if(slot>=0)decks[slot]=[...s.deck];}
- next.soulDecks=decks;t.starterGranted=true;
+ for(const s of grants){const counts={};for(const id of s.deck)counts[id]=(counts[id]||0)+1;for(const [id,n]of Object.entries(counts))next.owned[id]=Math.max(next.owned[id]||0,n);}
+ for(const s of grants){const slot=decks.findIndex((d,i)=>(!profile.towerProgress?.starterGranted||i>=2)&&!d.length&&validateSoulDeck(s.deck,next.owned,{profile:{...next,soulDecks:decks},slot:i}).valid);if(slot>=0)decks[slot]=[...s.deck];}
+ next.soulDecks=decks;t.starterGranted=true;t.starterVersion=2;
  // Replace the removed gift button with the same one-time welcome amount.
- if(!next.welcomeClaimed){next.diamonds=(next.diamonds||0)+50;next.welcomeClaimed=true;}
+ if(!profile.towerProgress?.starterGranted&&!next.welcomeClaimed){next.diamonds=(next.diamonds||0)+50;next.welcomeClaimed=true;}
  return next;
 }
 export function towerDeckOptions(profile){

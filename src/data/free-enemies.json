@@ -37,8 +37,8 @@
       "BFX001",
       "piece:031",
       "piece:031",
-      "piece:002",
-      "piece:003",
+      "piece:010",
+      "piece:010",
       "ECL_S02",
       "45",
       "45",
@@ -60,8 +60,8 @@
       "mq:eventfig/32",
       "piece:034",
       "piece:036",
-      "mq:eventfig/19",
       "mq:eventfig/20",
+      "mq:eventfig/19",
       "160",
       "mq:eventfig/33",
       "mq:eventfig/40",
@@ -201,9 +201,8 @@
       {
         "needs": {
           "piece:031": 2,
-          "piece:002": 1,
+          "piece:010": 2,
           "piece:034": 1,
-          "piece:003": 1,
           "piece:036": 1,
           "piece:039": 1
         },
@@ -212,7 +211,7 @@
             "target": "piece:034",
             "materials": [
               "piece:031",
-              "piece:002"
+              "piece:010"
             ],
             "label": "モブ兵士 × ピースメイン",
             "special": false
@@ -221,7 +220,7 @@
             "target": "piece:036",
             "materials": [
               "piece:031",
-              "piece:003"
+              "piece:010"
             ],
             "label": "モブ兵士 × ピースメイン",
             "special": false
@@ -238,30 +237,29 @@
         ],
         "seeds": {
           "piece:031": 2,
-          "piece:002": 1,
-          "piece:003": 1
+          "piece:010": 2
         }
       },
       {
         "needs": {
-          "45": 1,
           "93": 1,
-          "mq:eventfig/19": 1
+          "ECL_S02": 1,
+          "mq:eventfig/20": 1
         },
         "steps": [
           {
-            "target": "mq:eventfig/19",
+            "target": "mq:eventfig/20",
             "materials": [
               "93",
-              "45"
+              "ECL_S02"
             ],
-            "label": "モブサバンナ×タグ:草原",
+            "label": "モブサバンナ×闇属性",
             "special": false
           }
         ],
         "seeds": {
-          "45": 1,
-          "93": 1
+          "93": 1,
+          "ECL_S02": 1
         }
       },
       {
@@ -288,31 +286,30 @@
       },
       {
         "needs": {
+          "45": 1,
           "93": 1,
-          "ECL_S02": 1,
-          "mq:eventfig/20": 1
+          "mq:eventfig/19": 1
         },
         "steps": [
           {
-            "target": "mq:eventfig/20",
+            "target": "mq:eventfig/19",
             "materials": [
               "93",
-              "ECL_S02"
+              "45"
             ],
-            "label": "モブサバンナ×闇属性",
+            "label": "モブサバンナ×タグ:草原",
             "special": false
           }
         ],
         "seeds": {
-          "93": 1,
-          "ECL_S02": 1
+          "45": 1,
+          "93": 1
         }
       }
     ],
     "supportIds": [
       "BFX001",
-      "piece:002",
-      "piece:003",
+      "piece:010",
       "ECL_S02"
     ],
     "supportSummary": "草原の進化先＋地・風の補助"
@@ -342,6 +339,7 @@
       "49",
       "97",
       "97",
+      "100",
       "101",
       "102",
       "211",
@@ -361,14 +359,13 @@
       "GHO_S01",
       "GHO_S03",
       "GHO_S02",
+      "100",
+      "100",
       "101",
       "101",
       "102",
       "102",
       "211",
-      "211",
-      "212",
-      "212",
       "104",
       "161",
       "mq:eventfig/58",
@@ -390,7 +387,7 @@
         "needs": {
           "49": 1,
           "97": 2,
-          "101": 1,
+          "100": 1,
           "104": 1,
           "161": 1,
           "162": 1
@@ -399,7 +396,7 @@
           {
             "target": "161",
             "materials": [
-              "101",
+              "100",
               "49"
             ],
             "label": "砂漠タグ × 闇属性",
@@ -427,12 +424,12 @@
         "seeds": {
           "49": 1,
           "97": 2,
-          "101": 1
+          "100": 1
         }
       },
       {
         "needs": {
-          "101": 1,
+          "100": 1,
           "mq:eventfig/56": 1,
           "BFX001": 2,
           "mq:eventfig/58": 1,
@@ -452,7 +449,7 @@
           {
             "target": "mq:eventfig/60",
             "materials": [
-              "101",
+              "100",
               "BFX001"
             ],
             "label": "砂漠 × タグ:MUSIC",
@@ -464,12 +461,12 @@
               "mq:eventfig/58",
               "mq:eventfig/60"
             ],
-            "label": "58 × 60",
-            "special": true
+            "label": "58 × タグ:MUSIC",
+            "special": false
           }
         ],
         "seeds": {
-          "101": 1,
+          "100": 1,
           "mq:eventfig/56": 1,
           "BFX001": 2
         }
@@ -1022,9 +1019,9 @@
       "M4F_NEO_V02",
       "M4F_NEO_V03",
       "piece:023",
-      "piece:002",
       "piece:010",
-      "piece:004",
+      "piece:010",
+      "piece:031",
       "BFX009",
       "BFX027",
       "SWEET05",
@@ -1045,7 +1042,7 @@
       "M4F_NEO_M01",
       "M4F_NEO_M02",
       "piece:022",
-      "piece:011",
+      "piece:040",
       "BFX043",
       "176",
       "BFX045",
@@ -1237,11 +1234,10 @@
       {
         "needs": {
           "piece:023": 1,
-          "piece:002": 1,
+          "piece:010": 2,
           "piece:022": 1,
-          "piece:010": 1,
-          "piece:004": 1,
-          "piece:011": 1,
+          "piece:031": 1,
+          "piece:040": 1,
           "piece:025": 1
         },
         "steps": [
@@ -1249,25 +1245,25 @@
             "target": "piece:022",
             "materials": [
               "piece:023",
-              "piece:002"
+              "piece:010"
             ],
             "label": "PB2 × ピースメイン",
             "special": false
           },
           {
-            "target": "piece:011",
+            "target": "piece:040",
             "materials": [
-              "piece:010",
-              "piece:004"
+              "piece:031",
+              "piece:010"
             ],
-            "label": "ヒーローベル × ピースメイン",
+            "label": "モブ兵士 × ピースメイン",
             "special": false
           },
           {
             "target": "piece:025",
             "materials": [
               "piece:022",
-              "piece:011"
+              "piece:040"
             ],
             "label": "PB2 × ピースメイン",
             "special": false
@@ -1275,9 +1271,8 @@
         ],
         "seeds": {
           "piece:023": 1,
-          "piece:002": 1,
-          "piece:010": 1,
-          "piece:004": 1
+          "piece:010": 2,
+          "piece:031": 1
         }
       },
       {
@@ -1305,9 +1300,9 @@
     ],
     "supportIds": [
       "ECL_S02",
-      "piece:002",
-      "piece:004",
+      "piece:031",
       "piece:022",
+      "piece:040",
       "piece:025"
     ],
     "supportSummary": "ネオン・MUSICの進化先＋音楽機材の補助"
@@ -1705,13 +1700,13 @@
       "BFX008",
       "NS2_004",
       "NS2_002",
-      "NS2_003",
+      "NS2_002",
       "NS2_010",
       "NS2_011",
+      "NS2_003",
       "NS2_009",
       "NS2_001",
       "NS2_001",
-      "NS2_002",
       "NS2_002",
       "NS2_003",
       "NS2_003",
@@ -1967,8 +1962,7 @@
       },
       {
         "needs": {
-          "NS2_002": 1,
-          "NS2_003": 1,
+          "NS2_002": 2,
           "NS2_030": 1
         },
         "steps": [
@@ -1976,15 +1970,14 @@
             "target": "NS2_030",
             "materials": [
               "NS2_002",
-              "NS2_003"
+              "NS2_002"
             ],
             "label": "002 × 001～004",
             "special": false
           }
         ],
         "seeds": {
-          "NS2_002": 1,
-          "NS2_003": 1
+          "NS2_002": 2
         }
       },
       {
@@ -2464,13 +2457,13 @@
       "NS2_034",
       "NS2_016",
       "BFX007",
-      "NS2_015",
+      "NS2_013",
       "NS2_036",
       "BFX009",
-      "NS2_013",
+      "NS2_014",
       "NS2_035",
       "NS2_021",
-      "NS2_014",
+      "NS2_015",
       "NS2_025",
       "BFX001",
       "NS2_037",
@@ -2556,7 +2549,7 @@
           "NS2_034": 2,
           "BFX007": 1,
           "NS2_047": 1,
-          "NS2_015": 1,
+          "NS2_013": 1,
           "NS2_039": 1,
           "NS2_051": 1
         },
@@ -2574,7 +2567,7 @@
             "target": "NS2_039",
             "materials": [
               "NS2_034",
-              "NS2_015"
+              "NS2_013"
             ],
             "label": "034×013～016",
             "special": false
@@ -2592,7 +2585,7 @@
         "seeds": {
           "NS2_034": 2,
           "BFX007": 1,
-          "NS2_015": 1
+          "NS2_013": 1
         }
       },
       {
@@ -2601,7 +2594,7 @@
           "BFX009": 1,
           "NS2_048": 1,
           "NS2_034": 1,
-          "NS2_013": 1,
+          "NS2_014": 1,
           "NS2_039": 1,
           "NS2_052": 1
         },
@@ -2619,7 +2612,7 @@
             "target": "NS2_039",
             "materials": [
               "NS2_034",
-              "NS2_013"
+              "NS2_014"
             ],
             "label": "034×013～016",
             "special": false
@@ -2638,7 +2631,7 @@
           "NS2_036": 1,
           "BFX009": 1,
           "NS2_034": 1,
-          "NS2_013": 1
+          "NS2_014": 1
         }
       },
       {
@@ -2647,7 +2640,7 @@
           "NS2_021": 1,
           "NS2_041": 1,
           "NS2_034": 1,
-          "NS2_014": 1,
+          "NS2_015": 1,
           "NS2_039": 1,
           "NS2_053": 1
         },
@@ -2665,7 +2658,7 @@
             "target": "NS2_039",
             "materials": [
               "NS2_034",
-              "NS2_014"
+              "NS2_015"
             ],
             "label": "034×013～016",
             "special": false
@@ -2684,7 +2677,7 @@
           "NS2_035": 1,
           "NS2_021": 1,
           "NS2_034": 1,
-          "NS2_014": 1
+          "NS2_015": 1
         }
       },
       {
@@ -2804,11 +2797,11 @@
       "BFX013",
       "NS2_016",
       "BFX007",
-      "NS2_015",
-      "BFX009",
       "NS2_013",
-      "NS2_021",
+      "BFX009",
       "NS2_014",
+      "NS2_021",
+      "NS2_015",
       "NS2_025",
       "BFX001",
       "BFX030",
@@ -2853,11 +2846,11 @@
       "M4F_MIM_V02",
       "piece:031",
       "piece:031",
-      "piece:002",
-      "piece:002",
-      "piece:005",
+      "piece:010",
+      "piece:010",
       "DUA_S01",
-      "BFX034",
+      "piece:012",
+      "piece:019",
       "191",
       "191",
       "44",
@@ -2875,12 +2868,12 @@
       "193",
       "195",
       "198",
-      "199",
       "215",
       "M4F_MIM_M01",
       "piece:038",
       "piece:040",
       "piece:046",
+      "piece:048",
       "190",
       "200",
       "216",
@@ -3023,9 +3016,8 @@
       {
         "needs": {
           "piece:031": 2,
-          "piece:002": 1,
+          "piece:010": 2,
           "piece:038": 1,
-          "piece:005": 1,
           "piece:040": 1,
           "piece:039": 1
         },
@@ -3034,7 +3026,7 @@
             "target": "piece:038",
             "materials": [
               "piece:031",
-              "piece:002"
+              "piece:010"
             ],
             "label": "モブ兵士 × ピースメイン",
             "special": false
@@ -3043,7 +3035,7 @@
             "target": "piece:040",
             "materials": [
               "piece:031",
-              "piece:005"
+              "piece:010"
             ],
             "label": "モブ兵士 × ピースメイン",
             "special": false
@@ -3060,16 +3052,16 @@
         ],
         "seeds": {
           "piece:031": 2,
-          "piece:002": 1,
-          "piece:005": 1
+          "piece:010": 2
         }
       },
       {
         "needs": {
           "DUA_S01": 1,
-          "piece:002": 2,
+          "piece:010": 1,
           "piece:046": 1,
           "piece:031": 1,
+          "piece:012": 1,
           "piece:038": 1,
           "piece:049": 1
         },
@@ -3078,7 +3070,7 @@
             "target": "piece:046",
             "materials": [
               "DUA_S01",
-              "piece:002"
+              "piece:010"
             ],
             "label": "ボクサー × ピースメイン",
             "special": false
@@ -3087,7 +3079,7 @@
             "target": "piece:038",
             "materials": [
               "piece:031",
-              "piece:002"
+              "piece:012"
             ],
             "label": "モブ兵士 × ピースメイン",
             "special": false
@@ -3104,8 +3096,9 @@
         ],
         "seeds": {
           "DUA_S01": 1,
-          "piece:002": 2,
-          "piece:031": 1
+          "piece:010": 1,
+          "piece:031": 1,
+          "piece:012": 1
         }
       },
       {
@@ -3154,24 +3147,24 @@
       },
       {
         "needs": {
-          "185": 1,
-          "199": 1,
-          "BFX034": 1
+          "DUA_S01": 1,
+          "piece:019": 1,
+          "piece:048": 1
         },
         "steps": [
           {
-            "target": "199",
+            "target": "piece:048",
             "materials": [
-              "185",
-              "BFX034"
+              "DUA_S01",
+              "piece:019"
             ],
-            "label": "砂漠 or 頼もしい仲間 × 風属性",
+            "label": "ボクサー × ピースメイン",
             "special": false
           }
         ],
         "seeds": {
-          "185": 1,
-          "BFX034": 1
+          "DUA_S01": 1,
+          "piece:019": 1
         }
       }
     ],
@@ -3183,10 +3176,10 @@
       "M4F_MIM_V01",
       "M4F_MIM_V02",
       "piece:031",
-      "piece:002",
-      "piece:005",
+      "piece:010",
       "DUA_S01",
-      "BFX034",
+      "piece:012",
+      "piece:019",
       "70",
       "71",
       "215",
@@ -3194,6 +3187,7 @@
       "piece:038",
       "piece:040",
       "piece:046",
+      "piece:048",
       "216",
       "piece:039",
       "piece:049"
@@ -3539,7 +3533,7 @@
   {
     "id": "rookie-haru",
     "name": "F｜若葉のハル",
-    "description": "ランクF・草原遠征。シード中心、融合は慎重。",
+    "description": "ランクF・草原遠征。シードのみ。稀に属性・タグの強化融合を使う。",
     "attribute": "地",
     "themeTagIds": [
       "41"
@@ -3549,6 +3543,7 @@
       "def": 0.4,
       "target": "weak",
       "skill": "attack",
+      "seedOnly": true,
       "fusionEvery": 4,
       "fusionLimit": 1,
       "skillEvery": 3,
@@ -3556,11 +3551,10 @@
     },
     "aces": [],
     "deck": [
+      "45",
+      "45",
+      "45",
       "46",
-      "91",
-      "45",
-      "45",
-      "45",
       "46",
       "46",
       "MB001",
@@ -3600,43 +3594,21 @@
       "MB022",
       "MB022",
       "MB023",
-      "95"
+      "MB023",
+      "MB023"
     ],
-    "routes": [
-      {
-        "needs": {
-          "46": 1,
-          "91": 1,
-          "95": 1
-        },
-        "steps": [
-          {
-            "target": "95",
-            "materials": [
-              "91",
-              "46"
-            ],
-            "label": "figene04 × 地属性",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "46": 1,
-          "91": 1
-        }
-      }
-    ],
+    "routes": [],
     "supportIds": [],
     "supportSummary": "草原の進化先＋地・風の補助",
     "rank": "F",
     "baseThemeId": "grass",
-    "middleCount": 1,
+    "middleCount": 0,
     "themeName": "草原遠征"
   },
   {
     "id": "rookie-nagi",
     "name": "F｜潮風のナギ",
-    "description": "ランクF・海底守護。シード中心、融合は慎重。",
+    "description": "ランクF・海底守護。シードのみ。稀に属性・タグの強化融合を使う。",
     "attribute": "水",
     "themeTagIds": [
       "45"
@@ -3646,6 +3618,7 @@
       "def": 1.7,
       "target": "weak",
       "skill": "heal",
+      "seedOnly": true,
       "fusionEvery": 4,
       "fusionLimit": 1,
       "skillEvery": 3,
@@ -3653,32 +3626,32 @@
     },
     "aces": [],
     "deck": [
+      "M4F_SIL_V01",
+      "M4F_SIL_V01",
+      "M4F_SIL_V01",
+      "M4F_SIL_V02",
+      "M4F_SIL_V02",
+      "M4F_SIL_V02",
+      "M4F_SIL_V03",
+      "M4F_SIL_V03",
+      "M4F_SIL_V03",
+      "NS001",
+      "NS001",
+      "NS001",
+      "NS002",
+      "NS002",
+      "NS002",
+      "NS003",
+      "NS003",
+      "NS003",
+      "NS004",
+      "NS004",
+      "NS004",
+      "NS006",
+      "NS006",
+      "NS006",
       "124",
       "124",
-      "M4F_SIL_V01",
-      "M4F_SIL_V01",
-      "M4F_SIL_V01",
-      "M4F_SIL_V02",
-      "M4F_SIL_V02",
-      "M4F_SIL_V02",
-      "M4F_SIL_V03",
-      "M4F_SIL_V03",
-      "M4F_SIL_V03",
-      "NS001",
-      "NS001",
-      "NS001",
-      "NS002",
-      "NS002",
-      "NS002",
-      "NS003",
-      "NS003",
-      "NS003",
-      "NS004",
-      "NS004",
-      "NS004",
-      "NS006",
-      "NS006",
-      "NS006",
       "124",
       "125",
       "125",
@@ -3697,37 +3670,16 @@
       "43",
       "piece:026",
       "piece:026",
-      "127"
+      "piece:026"
     ],
-    "routes": [
-      {
-        "needs": {
-          "124": 2,
-          "127": 1
-        },
-        "steps": [
-          {
-            "target": "127",
-            "materials": [
-              "124",
-              "124"
-            ],
-            "label": "37×海底タグ",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "124": 2
-        }
-      }
-    ],
+    "routes": [],
     "supportIds": [
       "piece:026"
     ],
     "supportSummary": "海底の全5ミドルと2MOB＋深海・水の補助",
     "rank": "F",
     "baseThemeId": "sea",
-    "middleCount": 1,
+    "middleCount": 0,
     "themeName": "海底守護"
   },
   {
@@ -3754,29 +3706,29 @@
       "116",
       "117",
       "118",
-      "BFX007",
-      "RETRO23",
-      "RETRO23",
-      "RETRO23",
-      "CRY_S03",
-      "CRY_S03",
-      "CRY_S03",
-      "M4F_NEO_V03",
-      "M4F_NEO_V03",
-      "M4F_NEO_V03",
-      "RETRO25",
-      "RETRO25",
-      "RETRO25",
-      "SWEET05",
-      "SWEET05",
-      "SWEET05",
-      "CRY_S01",
-      "CRY_S01",
-      "CRY_S01",
-      "M4F_NEO_V01",
-      "M4F_NEO_V01",
-      "M4F_NEO_V01",
+      "04",
       "M4F_NEO_V02",
+      "RETRO23",
+      "RETRO23",
+      "RETRO23",
+      "CRY_S03",
+      "CRY_S03",
+      "CRY_S03",
+      "M4F_NEO_V03",
+      "M4F_NEO_V03",
+      "M4F_NEO_V03",
+      "RETRO25",
+      "RETRO25",
+      "RETRO25",
+      "SWEET05",
+      "SWEET05",
+      "SWEET05",
+      "CRY_S01",
+      "CRY_S01",
+      "CRY_S01",
+      "M4F_NEO_V01",
+      "M4F_NEO_V01",
+      "M4F_NEO_V01",
       "M4F_NEO_V02",
       "M4F_NEO_V02",
       "RETRO01",
@@ -3795,9 +3747,31 @@
       "RETRO05",
       "121",
       "165",
-      "BFX011"
+      "piece:006"
     ],
     "routes": [
+      {
+        "needs": {
+          "04": 1,
+          "M4F_NEO_V02": 1,
+          "piece:006": 1
+        },
+        "steps": [
+          {
+            "target": "piece:006",
+            "materials": [
+              "04",
+              "M4F_NEO_V02"
+            ],
+            "label": "ぷにモブ × 雷属性",
+            "special": false
+          }
+        ],
+        "seeds": {
+          "04": 1,
+          "M4F_NEO_V02": 1
+        }
+      },
       {
         "needs": {
           "116": 1,
@@ -3841,35 +3815,19 @@
           "116": 1,
           "118": 1
         }
-      },
-      {
-        "needs": {
-          "118": 1,
-          "BFX007": 1,
-          "BFX011": 1
-        },
-        "steps": [
-          {
-            "target": "BFX011",
-            "materials": [
-              "118",
-              "BFX007"
-            ],
-            "label": "キュート × とびっきりのスイーツ",
-            "special": false
-          }
-        ],
-        "seeds": {
-          "118": 1,
-          "BFX007": 1
-        }
       }
     ],
-    "supportIds": [],
+    "supportIds": [
+      "04"
+    ],
     "supportSummary": "ネオン・MUSICの進化先＋音楽機材の補助",
     "rank": "E",
     "baseThemeId": "music",
     "middleCount": 3,
+    "preferredMiddleId": "piece:006",
+    "materialSupportIds": [
+      "04"
+    ],
     "themeName": "ネオンMUSIC"
   },
   {
@@ -3900,6 +3858,7 @@
       "49",
       "97",
       "97",
+      "100",
       "101",
       "102",
       "211",
@@ -3919,14 +3878,13 @@
       "GHO_S01",
       "GHO_S03",
       "GHO_S02",
+      "100",
+      "100",
       "101",
       "101",
       "102",
       "102",
       "211",
-      "211",
-      "212",
-      "212",
       "104",
       "161",
       "mq:eventfig/58",
@@ -3948,7 +3906,7 @@
         "needs": {
           "49": 1,
           "97": 2,
-          "101": 1,
+          "100": 1,
           "104": 1,
           "161": 1,
           "162": 1
@@ -3957,7 +3915,7 @@
           {
             "target": "161",
             "materials": [
-              "101",
+              "100",
               "49"
             ],
             "label": "砂漠タグ × 闇属性",
@@ -3985,12 +3943,12 @@
         "seeds": {
           "49": 1,
           "97": 2,
-          "101": 1
+          "100": 1
         }
       },
       {
         "needs": {
-          "101": 1,
+          "100": 1,
           "mq:eventfig/56": 1,
           "BFX001": 2,
           "mq:eventfig/58": 1,
@@ -4010,7 +3968,7 @@
           {
             "target": "mq:eventfig/60",
             "materials": [
-              "101",
+              "100",
               "BFX001"
             ],
             "label": "砂漠 × タグ:MUSIC",
@@ -4022,12 +3980,12 @@
               "mq:eventfig/58",
               "mq:eventfig/60"
             ],
-            "label": "58 × 60",
-            "special": true
+            "label": "58 × タグ:MUSIC",
+            "special": false
           }
         ],
         "seeds": {
-          "101": 1,
+          "100": 1,
           "mq:eventfig/56": 1,
           "BFX001": 2
         }
@@ -4223,13 +4181,13 @@
       "BFX008",
       "NS2_004",
       "NS2_002",
-      "NS2_003",
+      "NS2_002",
       "NS2_010",
       "NS2_011",
+      "NS2_003",
       "NS2_009",
       "NS2_001",
       "NS2_001",
-      "NS2_002",
       "NS2_002",
       "NS2_003",
       "NS2_003",
@@ -4485,8 +4443,7 @@
       },
       {
         "needs": {
-          "NS2_002": 1,
-          "NS2_003": 1,
+          "NS2_002": 2,
           "NS2_030": 1
         },
         "steps": [
@@ -4494,15 +4451,14 @@
             "target": "NS2_030",
             "materials": [
               "NS2_002",
-              "NS2_003"
+              "NS2_002"
             ],
             "label": "002 × 001～004",
             "special": false
           }
         ],
         "seeds": {
-          "NS2_002": 1,
-          "NS2_003": 1
+          "NS2_002": 2
         }
       },
       {
@@ -4998,13 +4954,13 @@
       "NS2_034",
       "NS2_016",
       "BFX007",
-      "NS2_015",
+      "NS2_013",
       "NS2_036",
       "BFX009",
-      "NS2_013",
+      "NS2_014",
       "NS2_035",
       "NS2_021",
-      "NS2_014",
+      "NS2_015",
       "NS2_025",
       "BFX001",
       "NS2_037",
@@ -5090,7 +5046,7 @@
           "NS2_034": 2,
           "BFX007": 1,
           "NS2_047": 1,
-          "NS2_015": 1,
+          "NS2_013": 1,
           "NS2_039": 1,
           "NS2_051": 1
         },
@@ -5108,7 +5064,7 @@
             "target": "NS2_039",
             "materials": [
               "NS2_034",
-              "NS2_015"
+              "NS2_013"
             ],
             "label": "034×013～016",
             "special": false
@@ -5126,7 +5082,7 @@
         "seeds": {
           "NS2_034": 2,
           "BFX007": 1,
-          "NS2_015": 1
+          "NS2_013": 1
         }
       },
       {
@@ -5135,7 +5091,7 @@
           "BFX009": 1,
           "NS2_048": 1,
           "NS2_034": 1,
-          "NS2_013": 1,
+          "NS2_014": 1,
           "NS2_039": 1,
           "NS2_052": 1
         },
@@ -5153,7 +5109,7 @@
             "target": "NS2_039",
             "materials": [
               "NS2_034",
-              "NS2_013"
+              "NS2_014"
             ],
             "label": "034×013～016",
             "special": false
@@ -5172,7 +5128,7 @@
           "NS2_036": 1,
           "BFX009": 1,
           "NS2_034": 1,
-          "NS2_013": 1
+          "NS2_014": 1
         }
       },
       {
@@ -5181,7 +5137,7 @@
           "NS2_021": 1,
           "NS2_041": 1,
           "NS2_034": 1,
-          "NS2_014": 1,
+          "NS2_015": 1,
           "NS2_039": 1,
           "NS2_053": 1
         },
@@ -5199,7 +5155,7 @@
             "target": "NS2_039",
             "materials": [
               "NS2_034",
-              "NS2_014"
+              "NS2_015"
             ],
             "label": "034×013～016",
             "special": false
@@ -5218,7 +5174,7 @@
           "NS2_035": 1,
           "NS2_021": 1,
           "NS2_034": 1,
-          "NS2_014": 1
+          "NS2_015": 1
         }
       },
       {
@@ -5338,11 +5294,11 @@
       "BFX013",
       "NS2_016",
       "BFX007",
-      "NS2_015",
-      "BFX009",
       "NS2_013",
-      "NS2_021",
+      "BFX009",
       "NS2_014",
+      "NS2_021",
+      "NS2_015",
       "NS2_025",
       "BFX001",
       "BFX030",
@@ -5395,11 +5351,11 @@
       "M4F_MIM_V02",
       "piece:031",
       "piece:031",
-      "piece:002",
-      "piece:002",
-      "piece:005",
+      "piece:010",
+      "piece:010",
       "DUA_S01",
-      "BFX034",
+      "piece:012",
+      "piece:019",
       "191",
       "191",
       "44",
@@ -5417,12 +5373,12 @@
       "193",
       "195",
       "198",
-      "199",
       "215",
       "M4F_MIM_M01",
       "piece:038",
       "piece:040",
       "piece:046",
+      "piece:048",
       "190",
       "200",
       "216",
@@ -5565,9 +5521,8 @@
       {
         "needs": {
           "piece:031": 2,
-          "piece:002": 1,
+          "piece:010": 2,
           "piece:038": 1,
-          "piece:005": 1,
           "piece:040": 1,
           "piece:039": 1
         },
@@ -5576,7 +5531,7 @@
             "target": "piece:038",
             "materials": [
               "piece:031",
-              "piece:002"
+              "piece:010"
             ],
             "label": "モブ兵士 × ピースメイン",
             "special": false
@@ -5585,7 +5540,7 @@
             "target": "piece:040",
             "materials": [
               "piece:031",
-              "piece:005"
+              "piece:010"
             ],
             "label": "モブ兵士 × ピースメイン",
             "special": false
@@ -5602,16 +5557,16 @@
         ],
         "seeds": {
           "piece:031": 2,
-          "piece:002": 1,
-          "piece:005": 1
+          "piece:010": 2
         }
       },
       {
         "needs": {
           "DUA_S01": 1,
-          "piece:002": 2,
+          "piece:010": 1,
           "piece:046": 1,
           "piece:031": 1,
+          "piece:012": 1,
           "piece:038": 1,
           "piece:049": 1
         },
@@ -5620,7 +5575,7 @@
             "target": "piece:046",
             "materials": [
               "DUA_S01",
-              "piece:002"
+              "piece:010"
             ],
             "label": "ボクサー × ピースメイン",
             "special": false
@@ -5629,7 +5584,7 @@
             "target": "piece:038",
             "materials": [
               "piece:031",
-              "piece:002"
+              "piece:012"
             ],
             "label": "モブ兵士 × ピースメイン",
             "special": false
@@ -5646,8 +5601,9 @@
         ],
         "seeds": {
           "DUA_S01": 1,
-          "piece:002": 2,
-          "piece:031": 1
+          "piece:010": 1,
+          "piece:031": 1,
+          "piece:012": 1
         }
       },
       {
@@ -5696,24 +5652,24 @@
       },
       {
         "needs": {
-          "185": 1,
-          "199": 1,
-          "BFX034": 1
+          "DUA_S01": 1,
+          "piece:019": 1,
+          "piece:048": 1
         },
         "steps": [
           {
-            "target": "199",
+            "target": "piece:048",
             "materials": [
-              "185",
-              "BFX034"
+              "DUA_S01",
+              "piece:019"
             ],
-            "label": "砂漠 or 頼もしい仲間 × 風属性",
+            "label": "ボクサー × ピースメイン",
             "special": false
           }
         ],
         "seeds": {
-          "185": 1,
-          "BFX034": 1
+          "DUA_S01": 1,
+          "piece:019": 1
         }
       }
     ],
@@ -5725,10 +5681,10 @@
       "M4F_MIM_V01",
       "M4F_MIM_V02",
       "piece:031",
-      "piece:002",
-      "piece:005",
+      "piece:010",
       "DUA_S01",
-      "BFX034",
+      "piece:012",
+      "piece:019",
       "70",
       "71",
       "215",
@@ -5736,6 +5692,7 @@
       "piece:038",
       "piece:040",
       "piece:046",
+      "piece:048",
       "216",
       "piece:039",
       "piece:049"
@@ -6868,9 +6825,9 @@
       "M4F_NEO_V02",
       "M4F_NEO_V03",
       "piece:023",
-      "piece:002",
       "piece:010",
-      "piece:004",
+      "piece:010",
+      "piece:031",
       "BFX009",
       "BFX027",
       "SWEET05",
@@ -6891,7 +6848,7 @@
       "M4F_NEO_M01",
       "M4F_NEO_M02",
       "piece:022",
-      "piece:011",
+      "piece:040",
       "BFX043",
       "176",
       "BFX045",
@@ -7083,11 +7040,10 @@
       {
         "needs": {
           "piece:023": 1,
-          "piece:002": 1,
+          "piece:010": 2,
           "piece:022": 1,
-          "piece:010": 1,
-          "piece:004": 1,
-          "piece:011": 1,
+          "piece:031": 1,
+          "piece:040": 1,
           "piece:025": 1
         },
         "steps": [
@@ -7095,25 +7051,25 @@
             "target": "piece:022",
             "materials": [
               "piece:023",
-              "piece:002"
+              "piece:010"
             ],
             "label": "PB2 × ピースメイン",
             "special": false
           },
           {
-            "target": "piece:011",
+            "target": "piece:040",
             "materials": [
-              "piece:010",
-              "piece:004"
+              "piece:031",
+              "piece:010"
             ],
-            "label": "ヒーローベル × ピースメイン",
+            "label": "モブ兵士 × ピースメイン",
             "special": false
           },
           {
             "target": "piece:025",
             "materials": [
               "piece:022",
-              "piece:011"
+              "piece:040"
             ],
             "label": "PB2 × ピースメイン",
             "special": false
@@ -7121,9 +7077,8 @@
         ],
         "seeds": {
           "piece:023": 1,
-          "piece:002": 1,
-          "piece:010": 1,
-          "piece:004": 1
+          "piece:010": 2,
+          "piece:031": 1
         }
       },
       {
@@ -7151,9 +7106,9 @@
     ],
     "supportIds": [
       "ECL_S02",
-      "piece:002",
-      "piece:004",
+      "piece:031",
       "piece:022",
+      "piece:040",
       "piece:025"
     ],
     "supportSummary": "ネオン・MUSICの進化先＋音楽機材の補助",

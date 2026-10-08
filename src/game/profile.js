@@ -1,3 +1,4 @@
+import {oct10LegacyOwnedCaps} from '../data/oct10-legacy-owned-caps.js';
 import {favoriteIds} from './favorites.js';
 import {testSettings} from '../data/test-settings.js?v=7.3.0';
 import {byId} from '../data/catalog.js?v=7.3.0';
@@ -33,7 +34,7 @@ function normalizeDeckStorage(obj,source=null){
 function sanitizeFigureRecords(raw){const out={};for(const [id,row] of Object.entries(raw||{})){if(!byId.has(id))continue;out[id]={appearances:integer(row?.appearances),roundWins:integer(row?.roundWins),matchWins:integer(row?.matchWins)};}return out;}
 export function loadProfile(){try{
   const data=JSON.parse(localStorage.getItem(key));if(!data||![1,2,3,4,5,6].includes(data.version)){isNewProfile=true;return defaults();}
-  const base=defaults(),owned={};for(const [id,n] of Object.entries(data.owned||{})){const f=byId.get(id);if(f)owned[id]=Math.min(integer(n),testSettings.enabled&&data.testMode?25:OWN_CAP[f.rarity]);}
+  const base=defaults(),owned={};for(const [id,n] of Object.entries(data.owned||{})){const f=byId.get(id);if(f)owned[id]=Math.min(integer(n),testSettings.enabled&&data.testMode?25:Math.max(OWN_CAP[f.rarity],oct10LegacyOwnedCaps[id]||0));}
   const randomMatch={key:typeof data.randomMatch?.key==='string'?data.randomMatch.key:'',played:integer(data.randomMatch?.played),wins:integer(data.randomMatch?.wins)};
   const last=data.lastDraw;const validLast=last&&[...banners,...archivedBanners].some(b=>b.id===last.bannerId)&&['normal','chance','ultra','ssr','pickup','allSSR'].includes(last.cue)&&[1,10].includes(last.entries?.length)&&last.entries.every(e=>byId.has(e.id)&&typeof e.converted==='boolean'&&typeof e.isNew==='boolean'&&Number.isSafeInteger(e.ruby)&&e.ruby>=0);
   const hist=Array.isArray(data.battleHistory)?data.battleHistory:[];
