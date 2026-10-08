@@ -1,3 +1,17 @@
-MOB PIECE BATTLE の バトル と MOB MONSTERやMOB STORYの草原の戦闘BGMです
+MOB PIECE BATTLE の 草原タワーマスターバトル と MOB MONSTERやMOB STORYの草原のボスやイベントボス戦闘BGMです
 001がwave
 002がmp3
+003 MOB PIECE BATTLE の通常戦闘
+004 MOB STORYとMOB MONSTERSのタイトル画面と、MOB STORYのお城とMOB MONSTERSの闘技場
+005 MOB STORYの読みかけの本の最終戦 MOB PIECE BATTLEのMOBタワー全部
+006 田舎町のタワーマスターやボスやイベントボス※以下これで統一
+007 魔王城
+008 海底
+009 MOB STORYのイベント戦闘とMOB MONSTERSの闘技場戦闘
+010 MOB STORYとMOB MONSTERSの通常戦闘
+011 砂漠
+012 ネオン街
+013 箱庭ゲームの朝と昼　MOB STORYの酒場
+014 箱庭ゲームの夜 
+015 MOB STORYのボス降臨とレジェンドボス MOB MONSTERSのソウルフュージョンラボ 箱庭ゲームのゲームセンター
+
