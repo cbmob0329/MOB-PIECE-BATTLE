@@ -1,7 +1,5 @@
 import {availableFusionLinks,fusionRefKey} from '../game/fusion-links.js';
 
-let serial=0;
-const textAndControls='.duel-hud,.duel-topline,.duel-message,.duel-phases button,.duel-commands button,.duel-budget,.duel-hand-title>span,.duel-footer,.duel-figure-name,.duel-stats,.duel-status,.duel-rarity,.duel-hand-piece>small,.duel-hand-piece>b,.duel-hand-piece>span';
 const n=value=>Math.round(value*10)/10;
 const intersect=(a,b)=>({left:Math.max(a.left,b.left),top:Math.max(a.top,b.top),right:Math.min(a.right,b.right),bottom:Math.min(a.bottom,b.bottom)});
 
@@ -31,7 +29,7 @@ function energyPath(points,seed,offset=0){
 }
 
 export function createFusionEnergyLinks(host,{side=0,reducedMotion=()=>false}={}){
- const maskId='fusion-energy-mask-'+(++serial),win=host.ownerDocument.defaultView;
+ const win=host.ownerDocument.defaultView;
  let links=[],focus=null,frame=0,destroyed=false,svg=null,geometry='',observer;
  const schedule=()=>{if(!destroyed&&!frame)frame=win.requestAnimationFrame(draw);};
  function clear(){svg?.remove();svg=null;geometry='';}
@@ -40,16 +38,15 @@ export function createFusionEnergyLinks(host,{side=0,reducedMotion=()=>false}={}
   const bounds=host.getBoundingClientRect();
   const located=links.map(link=>({...link,anchors:link.refs.map(ref=>visibleAnchor(host.querySelector(typeof ref==='number'?`[data-piece="${ref}"][data-side="${side}"]`:`[data-hand="${ref.handIndex}"]`),bounds))})).filter(link=>link.anchors.every(Boolean));
   if(!located.length){clear();return;}
-  const masks=[...host.querySelectorAll(textAndControls)].map(el=>intersect(el.getBoundingClientRect(),bounds)).filter(r=>r.right>r.left&&r.bottom>r.top).map(r=>({x:n(r.left-bounds.left-2),y:n(r.top-bounds.top-2),w:n(r.right-r.left+4),h:n(r.bottom-r.top+4)}));
-  const next=JSON.stringify([bounds.width,bounds.height,located,focus,masks,reducedMotion()]);
+  const next=JSON.stringify([bounds.width,bounds.height,located,focus,reducedMotion()]);
   if(next===geometry&&svg?.isConnected)return;
   geometry=next;
   if(!svg?.isConnected){svg=host.ownerDocument.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('fusion-energy-layer');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');host.append(svg);}
   svg.setAttribute('viewBox',`0 0 ${bounds.width} ${bounds.height}`);svg.classList.toggle('motion-reduced',reducedMotion());
   const density=Math.max(.22,.7/Math.sqrt(located.length));
-  svg.innerHTML=`<defs><mask id="${maskId}" maskUnits="userSpaceOnUse" x="0" y="0" width="${bounds.width}" height="${bounds.height}"><rect width="100%" height="100%" fill="white"/>${masks.map(r=>`<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" rx="3" fill="black"/>`).join('')}</mask></defs><g mask="url(#${maskId})">${located.map((link,index)=>{
-   const [a,b]=link.anchors,mixed=a.zone!==b.zone,rail=(a.x+b.x)/2<bounds.width/2?5:bounds.width-5;
-   const points=mixed?[a,{x:rail,y:a.y+13},{x:rail,y:b.y-13},b]:[a,{x:(a.x+b.x)/2,y:Math.min(a.y,b.y)-15},b];
+  svg.innerHTML=`<g>${located.map((link,index)=>{
+   const [a,b]=link.anchors;
+   const points=[a,b];
    const highlighted=focus&&link.refs.some(ref=>fusionRefKey(ref)===focus),opacity=focus?(highlighted?.85:.13):density;
    return `<g data-fusion-link="${link.key}" opacity="${opacity}">${link.kinds.map((kind,k)=>{const d=energyPath(points,index,link.kinds.length===2?(k?1.6:-1.6):0);return `<g class="fusion-energy ${kind}" data-fusion-kind="${kind}"><path class="energy-glow" d="${d}"/><path class="energy-thread" d="${d}"/><path class="energy-current" d="${d}"/>${[a,b].map(p=>`<circle cx="${p.x}" cy="${p.y}" r="2.1"/>`).join('')}</g>`;}).join('')}</g>`;
   }).join('')}</g>`;
