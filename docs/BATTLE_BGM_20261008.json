@@ -1,0 +1,132 @@
+{
+  "sourceMemo": "素材集/BGM.txt",
+  "scope": "MOB PIECE BATTLE only",
+  "tracks": [
+    {
+      "id": "normal",
+      "sourceMp3": "素材集/003.mp3",
+      "originalWav": "素材集/PIECE BATTLE通常戦闘.wav",
+      "runtime": "public/assets/audio/bgm-20261008/battle-normal.mp3",
+      "sha256": "930229c21e5e9df76387f37eeed9bf79d07fc9258f3356bb8b626708bbd1ccae",
+      "decodedSeconds": 99.04,
+      "loopStart": 0,
+      "loopEnd": "native media duration (entire file)",
+      "gain": 0.22
+    },
+    {
+      "id": "grass",
+      "sourceMp3": "素材集/002.mp3",
+      "originalWav": "素材集/001.wav",
+      "runtime": "public/assets/audio/user-20261007/battle.mp3",
+      "sha256": "dcfb4a8ce3fc247b32806c4d457e15dbcd827eefbfdabc877f069bf7687211f1",
+      "decodedSeconds": 106.28,
+      "loopStart": 0,
+      "loopEnd": "native media duration (entire file)",
+      "gain": 0.22
+    },
+    {
+      "id": "mob",
+      "sourceMp3": "素材集/005.mp3",
+      "originalWav": "素材集/モブナビ戦.wav",
+      "runtime": "public/assets/audio/bgm-20261008/mob-tower.mp3",
+      "sha256": "54a72e0a830f1c068b1e4656cf77a51d56ec972d67ba4fd25fde92bba14405df",
+      "decodedSeconds": 98.8,
+      "loopStart": 0,
+      "loopEnd": "native media duration (entire file)",
+      "gain": 0.22
+    },
+    {
+      "id": "town",
+      "sourceMp3": "素材集/006.mp3",
+      "originalWav": "素材集/傷つくキツツキ.wav",
+      "runtime": "public/assets/audio/bgm-20261008/town-master.mp3",
+      "sha256": "72041ef5db17137b1c9849c27bbeed2c8a57bafbf299482e415de17e44b29299",
+      "decodedSeconds": 98.76,
+      "loopStart": 0,
+      "loopEnd": "native media duration (entire file)",
+      "gain": 0.22
+    },
+    {
+      "id": "castle",
+      "sourceMp3": "素材集/007.mp3",
+      "originalWav": "素材集/戦闘用魔王城.wav",
+      "runtime": "public/assets/audio/bgm-20261008/castle-master.mp3",
+      "sha256": "c2aee2aaaee2ac614d53194bf2ec684d53e413800d3407379099aa3ab37ba2b1",
+      "decodedSeconds": 99.2,
+      "loopStart": 0,
+      "loopEnd": "native media duration (entire file)",
+      "gain": 0.22
+    },
+    {
+      "id": "sea",
+      "sourceMp3": "素材集/008.mp3",
+      "originalWav": "素材集/戦闘用くまのこみていたあのベルト.wav",
+      "runtime": "public/assets/audio/bgm-20261008/sea-master.mp3",
+      "sha256": "2ac7c97841f156e1db04f154f0db83e17750c099ac7bde85c99a2f3dc25fb2d0",
+      "decodedSeconds": 98.36,
+      "loopStart": 0,
+      "loopEnd": "native media duration (entire file)",
+      "gain": 0.22
+    },
+    {
+      "id": "desert",
+      "sourceMp3": "素材集/011.mp3",
+      "originalWav": "素材集/ももいろがえりさ (2).wav",
+      "runtime": "public/assets/audio/bgm-20261008/desert-master.mp3",
+      "sha256": "5398cd3a953559a146167e1eff1cd429b1e256e5d5edc34bada6bd93f4940631",
+      "decodedSeconds": 99.92,
+      "loopStart": 0,
+      "loopEnd": "native media duration (entire file)",
+      "gain": 0.22
+    },
+    {
+      "id": "neon",
+      "sourceMp3": "素材集/012.mp3",
+      "originalWav": "素材集/ももいろがえりさ (1).wav",
+      "runtime": "public/assets/audio/bgm-20261008/neon-master.mp3",
+      "sha256": "9ba23b20755e8fbd8567af861e218ce25a2a2ab6eedbf63fa6fdb725ecee6137",
+      "decodedSeconds": 98.6,
+      "loopStart": 0,
+      "loopEnd": "native media duration (entire file)",
+      "gain": 0.22
+    }
+  ],
+  "effects": [
+    {
+      "source": "素材集/sound effect/052.mp3",
+      "sourceCurrentlyDecodable": false,
+      "currentSourceSha256": "3078cbab742313431c4da971535d7b826df5e15cf0010e34142bd0b9578962f9",
+      "runtime": "public/assets/audio/user-20261007/052.mp3",
+      "runtimeSha256": "d266a799bd41fdd0d789fa6c8121a4be2d22ac1d0392bd5476712315c5a5031a",
+      "recoveryCommit": "a22caa9",
+      "use": "167 ドラゴンブレス"
+    },
+    {
+      "source": "素材集/sound effect/065.wav",
+      "sourceCurrentlyDecodable": false,
+      "currentSourceSha256": "0b1e6e6c5bda0d08a8954b24ac1772a41b2e2ba9f263a96b270ef348eeb9547c",
+      "runtime": "public/assets/audio/user-20261007/065.wav",
+      "runtimeSha256": "51fa23ed881d77d131a36c3424376144a479dfaa5c20af2aaffbc32ab92be518",
+      "recoveryCommit": "a22caa9",
+      "use": "208 地獄の斬撃"
+    },
+    {
+      "source": "素材集/sound effect/066.wav",
+      "sourceCurrentlyDecodable": false,
+      "currentSourceSha256": "0b1e6e6c5bda0d08a8954b24ac1772a41b2e2ba9f263a96b270ef348eeb9547c",
+      "runtime": "public/assets/audio/user-20261007/066.wav",
+      "runtimeSha256": "876efd7b35a3ffeeffb3f72f6655eaecd103e2d75f206a63b02ea99f0e2943ef",
+      "recoveryCommit": "a22caa9",
+      "use": "debuff skill"
+    },
+    {
+      "source": "素材集/sound effect/067.wav",
+      "sourceCurrentlyDecodable": false,
+      "currentSourceSha256": "b27e637eee7b3febce7fda0962b7ce35f6086b2aa18bfdb144aedb7da1867895",
+      "runtime": "public/assets/audio/user-20261007/067.wav",
+      "runtimeSha256": "22c01b46919459062828b3c167e7123451f1d3cb2913bb83f5fc294bdeabed67",
+      "recoveryCommit": "a22caa9",
+      "use": "mq:eventfig/10 ポーションシャワー"
+    }
+  ]
+}
