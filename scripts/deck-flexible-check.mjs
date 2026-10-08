@@ -18,6 +18,6 @@ assert.throws(()=>autoSoulDeck(countIds(deck.slice(0,44))),/45/);
 const state=createSoulBattle([deck,auto],['PLAYER','CPU'],{random:()=>.5});assert.equal(state.players[0].reserve.length,0);assert.equal(state.players[1].reserve.length,0);assert.equal(state.players[0].deck.length+state.players[0].hand.length,45);
 const allOwned=Object.fromEntries(soulFigures.filter(f=>!f.retired).map(f=>[f.id,f.soulClass==='seed'?3:1]));assert.deepEqual(validateSoulDeck(autoSoulDeck(allOwned),allOwned).counts,{seed:30,middle:10,mob:5});
 const reserves=soulFigures.filter(f=>!f.retired&&f.soulClass!=='seed').slice(0,45).map(f=>f.id);assert.ok(validateSoulDeck(reserves).valid);assert.ok(validateSoulDeck([reserves[0],reserves[0]]).violations.some(v=>v.type==='copies'));
-const html=deckScreen({profile:next,byId:soulById,art:()=>''});assert.ok(html.includes('READY TO BATTLE'));assert.ok(!html.includes('45 / 30'));assert.ok(html.includes('シード45体'));
+const html=deckScreen({profile:next,byId:soulById,art:()=>''});assert.ok(html.includes('保存済み · 対戦できます'));assert.ok(!html.includes('45 / 30'));assert.ok(html.includes('シード45体'));
 const legacy=JSON.parse(JSON.stringify(next));assert.ok(validateSoulDeck(legacy.soulDecks[0],legacy.owned,{profile:legacy}).valid);
 console.log('PASS flexible45: seed-only manual/auto/five aces/fill/battle/CPU/UI; default30/10/5; no stage minimum; size/copies/ownership/exclusion; partial edits and JSON persistence.');

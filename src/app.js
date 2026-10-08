@@ -1,3 +1,4 @@
+import {selectDeckView} from './screens/deckWorkshop.js';
 import {towerShopScreen,handleTowerShop} from './screens/towerShop.js';
 import {watchScreenImages} from './components/loading.js';
 import {towerStarters} from './data/tower.js';
@@ -64,6 +65,7 @@ function settleScreenImages(){cancelScreenLoad();cancelScreenLoad=watchScreenIma
 function render({preserveScroll=false}={}){
   cancelScreenLoad();
   const scroll=preserveScroll?(app.querySelector('#main')?.scrollTop||0):0;
+  const deckScroll=preserveScroll?(app.querySelector('.deck-panel-scroll')?.scrollTop||0):0;
   const focused=preserveScroll?document.activeElement?.getAttribute('data-add'):null;
   const route=location.hash.slice(1)||'home';
   document.documentElement.classList.toggle('reduce-motion',profile.reducedMotion);
@@ -75,6 +77,7 @@ function render({preserveScroll=false}={}){
   app.innerHTML=`<div class="game-shell"><header class="topbar"><button class="player" data-go="player">${avatarMarkup}<span class="player-copy"><b>PLAYER</b><small class="season-mini">${labelDate(profile.competition.date)}</small><small class="player-rank-line">${iconArt('rank','top-rank-symbol','RANK')}${rankArt(rankKey,'top-rank-art',rankKey)}<i>${master?'MOB MASTER':'CHALLENGER'}</i></small></span></button><div class="wallet wallet-v6"><span title="${Number(profile.coins||0).toLocaleString('ja-JP')} COIN">${iconArt('coin','wallet-art','COIN')}<b>${compact(profile.coins)}</b></span><span title="${Number(profile.diamonds||0).toLocaleString('ja-JP')} DIAMOND">${iconArt('diamond','wallet-art','DIAMOND')}<b>${compact(profile.diamonds)}</b></span><span title="${Number(profile.rubies||0).toLocaleString('ja-JP')} RUBY">${iconArt('ruby','wallet-art','RUBY')}<b>${compact(profile.rubies)}</b></span></div><button class="settings" data-go="settings" aria-label="設定">${menuArt('settings','top-settings-art','SETTINGS')}</button></header><main id="main">${page}</main><nav aria-label="メインナビゲーション">${nav.map(([id,ic,label,menuKey])=>{const active=route===id||(battleRoute&&id==='battle');const artMarkup=id==='deck'?iconArt('deck','bottom-menu-icon-art',label):(menuKey?menuArt(menuKey,'bottom-menu-art',label):icon(ic));return `<button data-go="${id}" class="${active?'active':''}" ${active?'aria-current="page"':''} aria-label="${label}"><span class="nav-art">${artMarkup}</span>${active?'<i></i>':''}</button>`;}).join('')}</nav><div class="screen-loader" data-screen-loader hidden><div><b>MOB PIECE BATTLE</b><span></span><small>IMAGE LOADING...</small></div></div><div class="toast" role="status"></div>${route==='initial-starter'?'':noticeMarkup()}</div>`;
   if(route==='gacha')bindGacha();
   app.querySelector('#main').scrollTop=scroll;
+  if(route==='deck'&&app.querySelector('.deck-panel-scroll'))app.querySelector('.deck-panel-scroll').scrollTop=deckScroll;
   if(focused)app.querySelector('[data-add="'+focused+'"]')?.focus({preventScroll:true});
   if(route==='figure')app.querySelector('#figure-search').value=query;
   if(route==='display')app.querySelector('#display-search').value=displayQuery;
@@ -152,6 +155,8 @@ if(await handleTower(b,ctx,{render,toast}))return;
 if(b.hasAttribute('data-figure-favorites')){collectionFavorites=!collectionFavorites;b.setAttribute('aria-pressed',String(collectionFavorites));refreshSearch(app.querySelector('#figure-search'));return;}
 if(b.dataset.figureFavorite){e.preventDefault();e.stopPropagation();const id=b.dataset.figureFavorite;if(!commitProfile(prepareFavoriteToggle(profile,id))){toast('保存できませんでした。お気に入りは変更していません。','error');return;}refreshSearch(app.querySelector('#figure-search'));const replacement=[...app.querySelectorAll('[data-figure-favorite]')].find(el=>el.dataset.figureFavorite===id);(replacement||app.querySelector('[data-figure-favorites]'))?.focus({preventScroll:true});return;}
 if(b.dataset.battleCube||b.dataset.battleMat){setBattleStyle(profile,b.dataset.battleCube?'cube':'mat',b.dataset.battleCube||b.dataset.battleMat);persist();render({preserveScroll:true});toast('バトルデザインを変更しました');return;}
+if(b.hasAttribute('data-deck-view')){selectDeckView(b.dataset.deckView);render();return;}
+if(b.hasAttribute('data-deck-done')){const check=validateSoulDeck(ensureSoulDecks(profile),profile.owned,{profile});if(!check.valid){toast(check.errors[0]||'45体の編成を確認してください','error');return;}location.hash='battle';toast('このデッキで準備できました');return;}
 if(handleDeckAssist(b,ctx,{render,persist,toast}))return;
 if(b.hasAttribute('data-deck-reset-filters')){deckQuery='';deckTag='ALL';profile.soulDeckFilter='all';render({preserveScroll:true});return;}
 if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}

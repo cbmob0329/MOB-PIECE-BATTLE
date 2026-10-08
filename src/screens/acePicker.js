@@ -34,3 +34,5 @@ export function mountAcePicker(dialog,profile,owned,slot){
  dialog.addEventListener('click',click);dialog.addEventListener('change',change);search.addEventListener('input',input);search.addEventListener('search',input);search.addEventListener('compositionstart',start);search.addEventListener('compositionend',end);renderResults();
  return {ids:()=>[...draft.ids],dispose(){dialog.removeEventListener('click',click);dialog.removeEventListener('change',change);dialog.classList.remove('ace-picker');footer.remove();}};
 }
+
+export const selectedAceIds=slot=>[...(drafts.get(slot)?.ids||[])];

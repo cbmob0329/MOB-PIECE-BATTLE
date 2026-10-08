@@ -4,6 +4,7 @@ import {byId} from '../src/data/catalog.js';
 import {buildAceDeck} from '../src/game/ace-deck.js';
 import {freeEnemies} from '../src/game/free-enemies.js';
 import {deckScreen} from '../src/screens/soulLibrary.js';
+import {selectDeckView} from '../src/screens/deckWorkshop.js';
 const owned=Object.fromEntries([...g.soulById.values()].map(f=>[f.id,f.soulClass==='seed'?3:1]));
 owned.spboss001=1;
 const blank=()=>({owned:{...owned},soulDecks:[[],[],[],[],[]],soulDeckSlot:0});
@@ -22,7 +23,7 @@ p.soulDecks[2]=freeEnemies[0].deck.slice();assert.ok(g.soulDeckAddStatus(p,'NS2_
 const legacy=blank();legacy.soulDecks=[['NS2_001','NS2_001','NS2_001','NS2_001','spboss001','obsolete-id']];legacy.soulDeckSlot='4';const original=structuredClone(legacy.soulDecks[0]);assert.deepEqual(g.ensureSoulDecks(legacy),[]);assert.equal(legacy.soulDeckSlot,4);assert.deepEqual(legacy.soulDecks[0],original);
 legacy.soulDeckSlot=0;assert.equal(g.soulDeckAddStatus(legacy,'NS2_002').allowed,false);let repaired=legacy;for(let i=0;i<3;i++)repaired=g.prepareSoulDeck(repaired,repaired.soulDecks[0].slice(0,-1));assert.ok(g.soulDeckAddStatus(repaired,'NS2_002').allowed);assert.deepEqual(legacy.soulDecks[0],original);assert.deepEqual(repaired.owned,owned);
 assert.ok(g.soulDeckAddStatus(blank(),'spboss001').reasons.some(r=>r.includes('BATTLE対象外')));
-const ui=blank();ui.soulDecks[1]=['NS2_033'];ui.soulDeckFilter='all';const html=deckScreen({profile:ui,byId,art:()=>''},{query:'NS2_033'});assert.ok(html.includes('DECK 2に編成中'));assert.ok(html.includes('aria-describedby="deck-reason-NS2_033"'));assert.ok(html.includes('data-soul-filter="all"'));assert.ok(deckScreen({profile:ui,byId,art:()=>''},{query:'no-such-figure'}).includes('絞り込み解除'));
+selectDeckView('inventory');const ui=blank();ui.soulDecks[1]=['NS2_033'];ui.soulDeckFilter='all';const html=deckScreen({profile:ui,byId,art:()=>''},{query:'NS2_033'});assert.ok(html.includes('DECK 2に編成中'));assert.ok(html.includes('aria-describedby="deck-reason-NS2_033"'));assert.ok(html.includes('data-soul-filter="all"'));assert.ok(deckScreen({profile:ui,byId,art:()=>''},{query:'no-such-figure'}).includes('絞り込み解除'));
 const built=buildAceDeck(blank(),['NS2_050','NS2_051','NS2_052','NS2_053','NS2_054']);assert.ok(g.validateSoulDeck(built.deck,owned).valid);
 let saved=null;globalThis.localStorage={getItem:()=>saved,setItem:(_k,v)=>{saved=v;}};
 const profileModule=await import('../src/game/profile.js');saved=JSON.stringify({...blank(),version:6,soulDecks:[built.deck],soulDeckSlot:4,favoriteFigureIds:['spboss001','NS2_033']});
