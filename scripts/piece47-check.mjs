@@ -45,5 +45,5 @@ for(const starter of pieceStarters.filter(s=>['piece-soldier','piece-boxer'].inc
  const refs=p.field.filter(Boolean).map(x=>x.uid);const r=g.fusionOptions(s,0,refs).find(r=>r.target===target);assert.ok(r);g.fuse(s,0,refs,r.id);assert.ok(p.field.some(x=>x?.id===target));
  const other=structuredClone(existing.soulDecks[0]);applyPieceStarter(existing,starter.id);assert.deepEqual(existing.soulDecks[0],other);
 }
-assert.equal(banners.length,3);assert.ok(archivedBanners.filter(b=>b.id!=='SELECTED-BFX').every(b=>poolFor(b).every(f=>!f.sourceId.startsWith('piece:'))));
+assert.equal(banners.length,4);assert.ok(archivedBanners.filter(b=>b.id!=='SELECTED-BFX').every(b=>poolFor(b).every(f=>!f.sourceId.startsWith('piece:'))));
 console.log('PASS: 47 images/data/skills; 19 recipes (38 field/hand cases); 207 free main figures (including original 72); 2 legal starters and seed-middle-MOB chains; non-destructive/idempotent migration; unchanged gacha pools');

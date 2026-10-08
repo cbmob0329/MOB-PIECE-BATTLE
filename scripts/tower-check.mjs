@@ -14,15 +14,15 @@ test('two editable starters; one-time grant, immutable input and existing occupi
  const old={...fresh(),owned:{'01':12,'70':2},welcomeClaimed:true,diamonds:123,soulDecks:Array.from({length:5},()=>['01']),custom:{keep:1},towerProgress:undefined};const before=structuredClone(old);const n=t.prepareTowerStartup(old);assert.deepEqual(old,before);assert.equal(n.owned['01'],12);assert.equal(n.owned['70'],2);assert.equal(n.diamonds,123);assert.deepEqual(n.soulDecks,old.soulDecks);assert.deepEqual(n.custom,old.custom);
  const c=t.prepareTowerThirdDeck(p);assert.equal(c.soulDeckSlot,2);assert.ok(g.validateSoulDeck(c.soulDecks[2],c.owned,{profile:c,slot:2}).valid);assert.deepEqual(c.owned,p.owned);
 });
-test('initial 61 mixed figures, every reserve has legal material pairs, all rarities and rates retained',()=>{
- assert.equal(banners.length,3);
- for(const b of towerBanners){const pool=poolFor(b),ids=new Set(pool.map(f=>f.sourceId));assert.equal(pool.length,61);for(const id of commonTowerIds)assert.ok(ids.has(id));for(let id=32;id<=250;id++)assert.ok(!ids.has(String(id)));for(const r of ['R','SR','SSR','UR','MOB'])assert.ok(pool.some(f=>f.rarity===r));
+test('two starter booster pools; later mixed pools retain legal material pairs and normalized rates',()=>{
+ assert.equal(banners.length,4);assert.equal(towerBanners.filter(b=>bannerUnlocked(fresh(),b)).length,2);
+ for(const b of towerBanners){const pool=poolFor(b),ids=new Set(pool.map(f=>f.sourceId));assert.equal(pool.length,b.requiresClear?61:25);if(b.requiresClear)for(const id of commonTowerIds)assert.ok(ids.has(id));else assert.ok(pool.every(f=>g.soulById.get(f.sourceId).soulClass!=='mob'));
  const figs=[...ids].map(id=>g.soulById.get(id));for(const f of figs.filter(f=>f.soulClass!=='seed'))assert.ok(g.recipes.some(r=>r.target===f.id&&figs.some(a=>a.soulClass===recipeMaterialClass(r,g.soulById)&&figs.some(b=>b.soulClass===a.soulClass&&(a.id!==b.id||a.soulClass==='seed')&&recipePairMatches(r,[a,b])))),b.id+' unreachable '+f.id);
  for(const count of [1,10])for(let i=0;i<count;i++)assert.ok(Math.abs(pool.reduce((n,f)=>n+drawFigureRate(b,f,count,i),0)-1)<1e-9);
  }
 });
 test('locked draw and exchange rejected; no currency mutation; costs and guarantees unchanged',()=>{
- const p=fresh(),before=structuredClone(p);assert.ok(bannerUnlocked(p,banners[0]));assert.ok(!bannerUnlocked(p,banners[1]));assert.throws(()=>prepareDraw(p,banners[1],1));assert.throws(()=>exchangeFigure({...p,rubies:999},banners[2],'01'));assert.deepEqual(p,before);
+ const p=fresh(),before=structuredClone(p);assert.ok(bannerUnlocked(p,banners[0]));assert.ok(bannerUnlocked(p,banners[1]));assert.ok(!bannerUnlocked(p,banners[2]));assert.throws(()=>prepareDraw(p,banners[2],1));assert.throws(()=>exchangeFigure({...p,rubies:999},banners[2],'01'));assert.deepEqual(p,before);
  p.towerProgress.cleared=[1,2,3,4,5];p.diamonds=100;for(const b of banners){const n=prepareDraw(p,b,10,()=>.5);assert.equal(n.diamonds,50);assert.notEqual(g.soulById.get(n.lastDraw.entries[9].id).rarity,'R');}
 });
 function match(p,won){const req=t.towerMatchRequest(p);const out=t.prepareTowerResult(p,req.towerToken,won);assert.throws(()=>t.prepareTowerResult(out.next,req.towerToken,won));return out.next;}

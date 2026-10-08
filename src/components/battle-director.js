@@ -1,3 +1,4 @@
+import {versusStage} from './versus-stage.js';
 import {sound,battleSound} from '../audio/audio.js';
 import {soulById} from '../game/soul-battle.js';
 import {cubeMarkup} from './battle-art.js';
@@ -12,7 +13,7 @@ export function createBattleDirector(root,{profile,style}){
 
  function presentation(e){
   const f=soulById.get(e.id),name=f?.name||'';
-  if(e.type==='start')return {time:1100,kind:'start',title:'BATTLE START',sub:'小さなフィギュア、大きなバトル。',body:`<div class="fx-vs"><div>${image(e.playerId)}<b>PLAYER</b><small>LIFE 400</small></div><strong>VS</strong><div>${image(e.enemyId)}<b>${esc(e.enemyName)}</b><small>LIFE 400</small></div></div>`};
+  if(e.type==='start')return {time:1100,kind:'start',title:'対戦開始',sub:'',body:versusStage({playerId:e.playerId,enemyId:e.enemyId,enemyLabel:e.enemyName||'対戦相手',caption:e.title||'この一戦に、挑もう。'})};
   if(e.type==='turn')return {time:380,kind:'phase',title:e.side===0?'YOUR TURN':'ENEMY TURN',sub:'TURN '+e.turn,body:''};
   if(e.type==='draw')return {time:550,kind:'draw',title:'ドロー！',sub:(e.side===0?'手札に':'相手が')+e.count+'体',body:`<div class="fx-draw">${cubeMarkup(e.side===0?style.cube.id:'shadow')}<div class="fx-draw-cards">${e.ids.slice(0,5).map((id,i)=>`<span style="--i:${i}">${e.side===0?image(id):'✦'}</span>`).join('')}</div></div>`};
   if(e.type==='summon')return {time:850,kind:'summon',title:'召喚！',sub:name,body:forming(e.id)+`<div class="fx-stats">ATK <b>${e.atk}</b><span>DEF <b>${e.def}</b></span></div>`};

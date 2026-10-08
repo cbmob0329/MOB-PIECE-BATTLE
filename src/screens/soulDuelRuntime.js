@@ -15,7 +15,7 @@ const art=f=>f?`<img src="${esc(f.image)}" alt="${esc(f.name)}" draggable="false
 const colors={'火':'#ff915b','水':'#64bcff','雷':'#ffe66e','地':'#dcac77','風':'#9ee895','光':'#ffe5a0','闇':'#c897ff','無':'#d2e2f7'};
 export async function launchBattle({profile,request,onResolved,saveProfile}){
  const deck=[...(request.playerDeck||g.ensureSoulDecks(profile))],check=g.validateSoulDeck(deck,profile.owned,request.playerDeck?{}:{profile});if(!check.valid)throw Error(check.errors[0]||'合計45体のデッキを完成させてください');
- const enemy=request.enemy||(request.enemyId?freeEnemy(request.enemyId):selectCpuStarter(request.difficulty)),cpuDeck=enemy.deck,state=g.createSoulBattle([deck,cpuDeck],['PLAYER',request.opponentName||enemy.name]),style=battleStyle(profile);state.cpuStrategy=enemy.strategy||null;state.cpuThemeTags=enemy.themeTagIds||[];style.sound=!sound.getSettings().muted;
+ const enemy=request.enemy||(request.enemyId?freeEnemy(request.enemyId):selectCpuStarter(request.difficulty)),cpuDeck=enemy.deck,state=g.createSoulBattle([deck,cpuDeck],['PLAYER',request.opponentName||enemy.name]),style=battleStyle(profile);state.cpuStrategy=enemy.strategy||null;state.cpuThemeTags=enemy.themeTagIds||[];style.sound=!sound.getSettings().muted&&sound.getSettings().volume>0;
  const dialog=document.createElement('dialog');dialog.className='soul-battle-dialog duel-dialog';dialog.setAttribute('aria-label','MOB SOUL BATTLE');document.body.append(dialog);dialog.showModal();
  let selected=null,hand=null,materials=[],sheet=null,skillValues={},busy=false,settled=false,meta=null,eventCursor=0,cpuPrepared=0,closed=false,message='',suppressClick=false,drag=null,resolveDone;
  const figureTaps=createFigureTaps();
@@ -98,7 +98,7 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
  dialog.addEventListener('cancel',e=>{e.preventDefault();figureTaps.reset();if(busy){director.skip();return;}if(sheet){materials=[];hand=null;message='';sheet=null;render();}else{sheet={type:'quit'};render();}});
  dialog.onchange=e=>{if(e.target.dataset.skillChoice){skillValues[e.target.dataset.skillChoice]=e.target.value;render();}};
  dialog.onclick=async e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-fx-skip')){director.skip();return;}
-  if(b.hasAttribute('data-sound')){sound.setSettings({muted:!sound.getSettings().muted});style.sound=!sound.getSettings().muted;void sound.unlock();b.textContent=style.sound?'SOUND ON':'SOUND OFF';b.setAttribute('aria-pressed',String(style.sound));if(!busy)render();return;}
+  if(b.hasAttribute('data-sound')){const settings=sound.getSettings();sound.setSettings(settings.muted||settings.volume===0?{muted:false,volume:settings.volume||.55}:{muted:true});style.sound=!sound.getSettings().muted;void sound.unlock();b.textContent=style.sound?'SOUND ON':'SOUND OFF';b.setAttribute('aria-pressed',String(style.sound));if(!busy)render();return;}
   if(b.hasAttribute('data-speed')){const key=b.hasAttribute('data-speed')?'fast':'sound';style[key]=!style[key];setBattleStyle(profile,key,style[key]);saveProfile?.();if(!busy)render();return;}
   if(!b.hasAttribute('data-piece'))figureTaps.reset();
   if(busy||suppressClick){suppressClick=false;return;}
@@ -146,6 +146,6 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
   else{sound.play('error');message=d.hand!==null&&target?.hasAttribute('data-hand')?'手札×手札では融合できません。場の味方を選んでください。':'召喚は空き台座へ、融合は場×場・手札×場の2体で。';render();}
  };
  busy=true;render();
- await director.run([{type:'start',playerId:profile.centerId||deck[0],enemyId:cpuDeck[0],enemyName:state.players[1].name},...state.events]);eventCursor=state.eventSerial||0;busy=false;render();
+ await director.run([{type:'start',playerId:profile.centerId||deck[0],enemyId:enemy.strategy?.focusIds?.[0]||cpuDeck[0],enemyName:state.players[1].name,title:request.title},...state.events]);eventCursor=state.eventSerial||0;busy=false;render();
  return done;
 }
