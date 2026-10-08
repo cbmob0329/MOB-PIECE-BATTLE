@@ -40,7 +40,8 @@
     "test:tower": "node scripts/tower-check.mjs",
     "test:strengthen": "node scripts/strengthen-check.mjs",
     "test:oct07": "node scripts/oct07-safe-check.mjs && node scripts/oct07-skills-check.mjs && node scripts/oct07-effects-check.mjs && node scripts/oct07-boundaries-check.mjs && node scripts/strengthen-check.mjs && node scripts/campaign19-check.mjs && node scripts/tower-campaign-check.mjs && node scripts/practice-check.mjs",
-    "test:campaign-ui": "node scripts/campaign-final-browser.mjs"
+    "test:campaign-ui": "node scripts/campaign-final-browser.mjs",
+    "test:oct08": "node scripts/oct08-mob39-check.mjs && node scripts/oct08-audio-check.mjs"
   },
   "devDependencies": {
     "vite": "^7.1.5"

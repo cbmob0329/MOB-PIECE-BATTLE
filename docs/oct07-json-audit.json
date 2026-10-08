@@ -333,10 +333,11 @@
     "SWEET38",
     "SWEET39",
     "SWEET40",
-    "SWEET41"
+    "SWEET41",
+    "39"
   ],
-  "pendingFigures": 1,
-  "reason": "153 requested records applied; 138/139 changed skills implemented and regression verified. MOB39 alone retains its old coherent stage/stat/skill tuple pending its fusion recipe. See OCT07_MATERIALS_PROGRESS.md for exact validation and limits.",
+  "pendingFigures": 0,
+  "reason": "All139 requested skill revisions are implemented. MOB39 recipe confirmed Oct8; current Oct7/Oct8 checks pass. Two superseded Oct6 checks also fail against the pre-change game source (see OCT08_FIX_VERIFICATION.md).",
   "audit": [
     {
       "id": "26",
@@ -1076,13 +1077,13 @@
         "def",
         "skill"
       ],
-      "applied": [],
-      "pending": [
+      "applied": [
         "soulClass",
         "atk",
         "def",
         "skill"
       ],
+      "pending": [],
       "before": {
         "id": "39",
         "uid": "MSB-039",
@@ -1184,17 +1185,22 @@
         }
       },
       "current": {
-        "soulClass": "seed",
-        "atk": 150,
-        "def": 140,
+        "soulClass": "mob",
+        "atk": 0,
+        "def": 0,
         "skill": {
-          "name": "20thビート",
+          "name": "ANNIVERSARY",
           "timing": "own-main",
-          "effect": "センターの味方1体のATK+30、DEF+20。",
+          "effect": "メインスキル:自分と相手の手札を全て墓地へ送る。\nパッシブ:このフィギュアのATKとDEFは自分と相手の墓地の数×20となる。",
           "timingLabel": "自分メイン",
-          "description": "センターの味方1体のATK+30、DEF+20。",
+          "description": "メインスキル:自分と相手の手札を全て墓地へ送る。\nパッシブ:このフィギュアのATKとDEFは自分と相手の墓地の数×20となる。",
           "program": 18,
-          "sourceText": "センターの味方1体のATK+30、DEF+20。"
+          "sourceText": "メインスキル:自分と相手の手札を全て墓地へ送る。\nパッシブ:このフィギュアのATKとDEFは自分と相手の墓地の数×20となる。",
+          "runtimePlan": {
+            "revision": "oct07",
+            "duration": "persistent",
+            "discardAllHands": true
+          }
         },
         "summon": {
           "passive": {},
@@ -26954,7 +26960,8 @@
       "oncePerIndividual": true,
       "stationaryBase": true,
       "specialEvolutionBonus": 25
-    }
+    },
+    "mob39": "Middle PB2 + arbitrary Middle; ordinary MOB evolution. Both hands to grave; ATK/DEF base 0 plus both grave counts x20."
   },
   "implementedSkills": [
     "55",
@@ -27094,27 +27101,35 @@
     "NS2_050",
     "NS2_051",
     "NS2_052",
-    "BFX052"
+    "BFX052",
+    "39"
   ],
-  "pendingSkills": 1,
+  "pendingSkills": 0,
   "verification": {
-    "date": "2026-10-07T16:15:02.320Z",
-    "head": "7786bf7",
-    "regressionScripts": 30,
-    "skillExecutions": 504,
-    "boundaryGroups": 21,
-    "towers": 19,
-    "towerDecks": 239,
-    "towerBattles": 478,
-    "practiceOpponents": 45,
-    "themeBattles": 220,
-    "build": true,
-    "mobileWidths": [
-      320,
-      390,
-      430
+    "date": "2026-10-08",
+    "catalogFigures": 641,
+    "implementedRequestedSkills": 139,
+    "requestedRecords": 154,
+    "fullyAppliedRecords": 154,
+    "checks": [
+      "oct07-safe",
+      "oct07-skills",
+      "oct07-effects",
+      "oct07-boundaries",
+      "strengthen",
+      "campaign19",
+      "tower-campaign",
+      "practice",
+      "oct08-mob39",
+      "oct08-audio"
     ],
-    "physicalIOS": false,
-    "subjectiveAudio": false
+    "campaignDecks": 239,
+    "campaignCompletedBattles": 478,
+    "freeEnemyDecks": 22,
+    "freeEnemyCompletedBattles": 220,
+    "knownBaselineFailures": [
+      "oct06-runtime-check.mjs: obsolete no-fusion assertion also includes current resonance options",
+      "oct06-stage-rules-check.mjs: older stat235/250 expectation does not reflect latest Oct7 changes"
+    ]
   }
 }

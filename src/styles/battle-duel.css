@@ -76,3 +76,16 @@
 @media(max-height:740px){.duel-screen{grid-template-rows:62px 26px minmax(150px,1fr) 49px 42px 41px 121px 47px}.duel-hand-piece>b{font-size:9px}}
 
 .duel-screen{min-width:0;width:100%;grid-template-columns:minmax(0,1fr)}.duel-hand-wrap,.duel-hand{min-width:0;max-width:100%}
+
+/* Availability links are independent of the purple/gold fusion-result auras. */
+.duel-dialog>.fusion-energy-layer{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:4;contain:strict}
+.fusion-energy-layer,.fusion-energy-layer *{pointer-events:none!important}
+.fusion-energy{--energy:#ffdc59;fill:none;stroke:var(--energy);stroke-linecap:round;stroke-linejoin:round}
+.fusion-energy.mob{--energy:#ff4f62}
+.fusion-energy .energy-glow{stroke-width:3;opacity:.2;filter:blur(1.3px)}
+.fusion-energy .energy-thread{stroke-width:.9;opacity:.9}
+.fusion-energy .energy-current{stroke-width:1.35;stroke-dasharray:5 39;opacity:.85;animation:fusion-current-flow 2.2s linear infinite}
+.fusion-energy circle{stroke-width:.8;fill:var(--energy);opacity:.75;filter:drop-shadow(0 0 3px var(--energy))}
+@keyframes fusion-current-flow{to{stroke-dashoffset:-88}}
+.fusion-energy-layer.motion-reduced .energy-current{animation:none;stroke-dasharray:none;opacity:.35}
+@media(prefers-reduced-motion:reduce){.fusion-energy .energy-current{animation:none;stroke-dasharray:none;opacity:.35}}

@@ -2384,6 +2384,24 @@
           ]
         }
       }
+    },
+    {
+      "id": "39",
+      "name": "ANNIVERSARY",
+      "description": "メインスキル:自分と相手の手札を全て墓地へ送る。\nパッシブ:このフィギュアのATKとDEFは自分と相手の墓地の数×20となる。",
+      "timing": "own-main",
+      "plan": {
+        "revision": "oct07",
+        "duration": "persistent",
+        "discardAllHands": true
+      },
+      "passive": {
+        "graveScale": {
+          "scope": "both",
+          "atk": 20,
+          "def": 20
+        }
+      }
     }
   ],
   "stagePatches": [
@@ -2555,6 +2573,32 @@
           ],
           "label": "スライム×スライム",
           "special": false
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "after": {
+        "soulClass": "mob",
+        "atk": 0,
+        "def": 0
+      },
+      "recipes": [
+        {
+          "id": "OCT08-39-PB2-MIDDLE",
+          "target": "39",
+          "fromClass": "middle",
+          "materials": [
+            {
+              "tag": "11"
+            },
+            {
+              "class": "middle"
+            }
+          ],
+          "label": "ミドルのPB2 × 任意のミドル",
+          "special": false,
+          "basis": "User-confirmed Oct8 recipe"
         }
       ]
     }

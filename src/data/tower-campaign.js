@@ -1,3 +1,4 @@
+import {publicAsset} from './public-assets.js';
 import {fusionRecommendations} from '../game/soul-deck-assist.js';
 import {soulFigures,soulById,validateSoulDeck} from '../game/soul-battle.js';
 import {rankSettings} from '../game/ranked-free-enemies.js';
@@ -10,7 +11,7 @@ export const campaignTowers=[
  ['magma','マグマ','C','B','138',["33","37","38","piece:024"],'レッツゴー！','レッツゴー！','#ba6647','マグマタワー'],
  ['sweets','スイーツ','C','B','mq:eventfig/51',series(22,25),'やってやるぜ！','いらっしゃ～い♪','#c7909a','スイーツタワー'],
  ['retro','レトロゲーム','C','B','RETRO09',Array.from({length:8},(_,i)=>'RETRO'+String(i+1).padStart(2,'0')),'バトル、カイシ。チカラ、ミセテ。','いっくよー！','#729dd0','レトロゲームタワー']
-].map(([id,label,rank,bossRank,masterId,portraits,dialogue,greeting,color,art])=>({id,name:label+'タワー',rank,bossRank,masterId,portraits,dialogue,greeting,color,art,background:'assets/towers/'+id+'.png',title:'モブタワーマスターへの道'}));
+].map(([id,label,rank,bossRank,masterId,portraits,dialogue,greeting,color,art])=>({id,name:label+'タワー',rank,bossRank,masterId,portraits,dialogue,greeting,color,art,background:publicAsset('assets/towers/'+id+'.png'),title:'モブタワーマスターへの道'}));
 
 const tagged=(tags,seed=false)=>soulFigures.filter(f=>tags.some(t=>f.tags.includes(t))&&(!seed||f.soulClass==='seed')).map(f=>f.id);
 const additions=[
@@ -27,7 +28,7 @@ const additions=[
  ['castle','魔王城','S','SS','207',tagged(['48']),'来たね？やろうか','バトル！！！','#7d4f85','魔王城タワー',['48']],
  ['mob','MOB','SS','SS','NS2_055',['mq:eventfig/61','mq:eventfig/24','mq:eventfig/63','185'],'全力で、いこう！','さあ、勝負！','#c9a758','MOBタワー',[]]
 ];
-for(const [id,label,rank,bossRank,masterId,portraits,dialogue,greeting,color,art,themeTags]of additions)campaignTowers.push({id,name:label+'タワー',rank,bossRank,masterId,portraits,dialogue,greeting,color,art,themeTags,background:'assets/towers/'+id+'.png',title:'モブタワーマスターへの道',...(id==='tribe'?{focusIds:['173','171']}:{})});
+for(const [id,label,rank,bossRank,masterId,portraits,dialogue,greeting,color,art,themeTags]of additions)campaignTowers.push({id,name:label+'タワー',rank,bossRank,masterId,portraits,dialogue,greeting,color,art,themeTags,background:publicAsset('assets/towers/'+id+'.png'),title:'モブタワーマスターへの道',...(id==='tribe'?{focusIds:['173','171']}:{})});
 export const campaignOpponentCount=(tower,floor)=>floor===5||tower.id==='mob'?1:3;
 const floorTags=(tower,floor)=>tower.id==='mob'?[['46'],['44'],['47'],['24'],['specified-sweets']][floor-1]:tower.themeTags||[];
 export const campaignAllowed=(f,tower,floor)=>!!f&&!f.retired&&((tower?.id==='mob'&&floor===4&&f.tags.includes('24'))||(floor===5&&f.id===tower?.masterId&&['M4F_MIM_V02','NS2_052','NS2_055'].includes(f.id))||(!f.tags.some(t=>['24','52'].includes(t))&&!/魔王|ミラモブファラオ|モブギドラ|モブネプチューン/.test(f.name)));

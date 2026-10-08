@@ -1,5 +1,8 @@
 // Numbered user assets; originals remain in 素材集. Unspecified cues retain synthesis.
 export const sampleFiles={
+ "43":"assets/audio/user-20261007/043.wav",
+ "45":"assets/audio/user-20261007/045.wav",
+ "46":"assets/audio/user-20261007/046.wav",
   "1": "assets/audio/user-20261007/001.wav",
   "2": "assets/audio/user-20261007/002.wav",
   "3": "assets/audio/user-20261007/003.wav",
@@ -32,4 +35,4 @@ export const sampleFiles={
   "100": "assets/audio/user-20261007/100.wav"
 };
 export const battleMusic='assets/audio/user-20261007/battle.mp3';
-export function sampleNumber(cue,o={}){if(sampleFiles[o.sampleId])return Number(o.sampleId);const fixed={select:13,confirm:13,back:13,navigate:1,deckAdd:13,deckRemove:13,deckArrange:3,starter:5,reward:5,start:97,hit:53,defeat:19,fusion:55,win:5,lose:4,move:3,gachaReveal:5};if(cue==='skill'&&o.healing)return 38;if(cue==='attack'||cue==='skill'){if(o.attackType==='物理')return o.strength==='large'?20:2;const big=o.strength==='large',attribute=String(o.attribute||'無').split('/')[0];return {火:big?29:31,水:37,地:big?32:35,風:big?34:27,闇:big?30:33,光:big?50:49,無:28}[attribute]||28;}return fixed[cue]||null;}
+export function sampleNumber(cue,o={}){if(sampleFiles[o.sampleId])return Number(o.sampleId);const fixed={select:13,confirm:13,back:13,navigate:1,deckAdd:13,deckRemove:13,deckArrange:3,starter:5,reward:5,start:97,hit:53,defeat:19,fusion:55,win:5,lose:4,move:3,gachaReveal:5};if(cue==='skill'){if(o.healing)return 38;const support={buff:7,debuff:43,control:43};if(support[o.skillKind])return support[o.skillKind];}if(cue==='attack'||cue==='skill'){if(o.attackType==='物理')return o.strength==='large'?20:2;const big=o.strength==='large',attribute=String(o.attribute||'無').split('/')[0];return {雷:big?46:45,火:big?29:31,水:37,地:big?32:35,風:big?34:27,闇:big?30:33,光:big?50:49,無:28}[attribute]||28;}return fixed[cue]||null;}

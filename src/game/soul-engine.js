@@ -208,6 +208,7 @@ function applySkill(s,side,f,o){
  const extraHostile=q.handDefDebuff?live(s,1-side):q.selectedEnemyAtk?live(s,1-side).filter(t=>t.uid===Number(o.selectedEnemyUid)):q.controlSwap?live(s,1-side).filter(t=>t.uid===Number(o.swapEnemyUid)):[];if(consumeSkillShield(s,side,[...targets,...extraHostile]))return;
  // A one-use team barrier cancels the hostile lowering skill as specified.
  if(targets.length&&(q.atk<0||q.def<0)){const i=enemy.teamEffects.findIndex(e=>e.key==='debuffShield'&&e.starts<=s.turn&&e.until>=s.turn&&(e.value==='both'||q.def<0));if(i>=0){enemy.teamEffects.splice(i,1);log(s,'低下スキルを無効化');return;}}
+ if(q.discardAllHands)for(const owner of s.players)while(owner.hand.length){const card=takeHand(owner,0);putStoredCard(owner,'grave',card.id,card.bonus);}
  if(q.heal)p.life=Math.min(400,p.life+q.heal);
  const lockUntil=q.lockDuration==='persistent'?Infinity:q.lockDuration==='next-opponent'?expiresNextOpponent(s,side):typeof q.lockDuration==='number'?s.turn+q.lockDuration-1:s.turn;
  if(q.teamLock)for(const targetSide of q.lockSide==='both'?[0,1]:q.lockSide==='enemy'?[1-side]:[side])s.players[targetSide].teamEffects.push({key:'skillRule',value:q.teamLock,attribute:q.onlyAttribute,starts:s.turn,until:lockUntil});
