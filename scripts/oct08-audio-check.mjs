@@ -1,6 +1,8 @@
 import assert from'node:assert/strict';import fs from'node:fs';import {battleSound}from'../src/audio/audio.js';import{sampleFiles,sampleNumber}from'../src/audio/user-samples.js';
 for(const file of Object.values(sampleFiles)){const bytes=fs.readFileSync(new URL('../public/'+file,import.meta.url));assert(bytes.length>0);if(file.endsWith('.wav'))assert.equal(bytes.subarray(0,4).toString(),'RIFF',file);}
-assert.equal(Object.keys(sampleFiles).length,34);
+assert.equal(Object.keys(sampleFiles).length,37);
 for(const[cue,options,id]of [['attack',{attribute:'雷',attackType:'魔法',strength:'small'},45],['attack',{attribute:'雷',attackType:'魔法',strength:'large'},46],['attack',{attackType:'物理'},2],['hit',{},53],['fusion',{},55],['skill',{healing:true},38],['skill',{skillKind:'buff'},7],['skill',{skillKind:'debuff'},66],['skill',{skillKind:'control'},43]])assert.equal(sampleNumber(cue,options),id);
 for(const [plan,id]of [[{atk:20},7],[{def:-20},66],[{discardAllHands:true},43],[{heal:30},38]]){const a=battleSound({type:'skill',seq:1},{soulClass:'middle',soulSkill:{runtimePlan:plan}});assert.equal(sampleNumber(a.cue,a.options),id);}
-console.log('PASS34 audio files, valid WAV headers, memo-based lightning/buff/debuff/control/heal/attack/hit/fusion mappings');
+console.log('PASS37 audio files, valid WAV headers, memo-based lightning/buff/debuff/control/heal/attack/hit/fusion mappings');
+
+for(const [id,sample] of [['167',52],['208',65],['mq:eventfig/10',67]]){const a=battleSound({type:'skill',seq:10},{id,soulSkill:{runtimePlan:{heal:30}}});assert.equal(sampleNumber(a.cue,a.options),sample);}

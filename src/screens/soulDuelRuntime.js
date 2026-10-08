@@ -3,6 +3,7 @@ import {observePresentation} from '../game/battle-presentation.js';
 import {createFigureTaps} from '../components/figure-taps.js';
 import {freeEnemy} from '../game/free-enemies.js';
 import {sound} from '../audio/audio.js';
+import {battleMusicFor} from '../audio/battle-music.js';
 import {selectCpuStarter} from '../game/piece-starters.js';
 import * as g from '../game/soul-battle.js';
 import catalog from '../data/soul-catalog.js';
@@ -21,7 +22,7 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
  const figureTaps=createFigureTaps();
  const energyLinks=createFusionEnergyLinks(dialog,{reducedMotion:()=>profile.reducedMotion===true||window.matchMedia('(prefers-reduced-motion: reduce)').matches});
  const done=new Promise(resolve=>{resolveDone=resolve;});
- const musicScope=sound.beginScope('battle-music');sound.startMusic(musicScope);
+ const musicScope=sound.beginScope('battle-music');sound.startMusic(musicScope,battleMusicFor(request));
  const director=createBattleDirector(dialog,{profile,style}),timeline=observePresentation(state);let view=state;
 
  const own=()=>view.active===0,main=()=>own()&&view.phase==='main'&&!view.pending&&!view.evolutionQueue?.length&&view.winner===null;
