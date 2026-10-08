@@ -1,0 +1,16 @@
+/* Flat 2D scenery: distance comes from overlap, scale, paths and restrained parallax. */
+.tower-world{height:282px;perspective:none;--depth-x:0px;--depth-y:0px}
+.tower-depth-town,.tower-depth-ground,.tower-depth-front{position:absolute;left:0;bottom:61px;width:100%;height:220px;pointer-events:none;transform-origin:50% 100%}
+.tower-depth-town{z-index:1;transform:translate(calc(var(--depth-x)*.3),calc(var(--depth-y)*.3))}
+.tower-depth-ground{z-index:2}
+.tower-depth-front{z-index:4;transform:translate(calc(var(--depth-x)*1.2),var(--depth-y))}
+.tower-world .world-diorama{z-index:3;left:22%;width:56%;height:165px;bottom:109px;transform:translate(calc(var(--depth-x)*.65),calc(var(--depth-y)*.5));transform-style:flat}
+.tower-world .world-diorama .tower-sprite{bottom:0;width:138px;height:165px;filter:none}
+.tower-world .world-island,.tower-world .world-path,.tower-world .world-front{display:none}
+.tower-world .world-ridge{bottom:128px;height:112px;opacity:.5}.tower-world .world-ridge.near{bottom:99px;height:80px;opacity:.55}
+.tower-world .world-sun{width:52px;height:52px;top:19px;left:12%;border:2px solid var(--land-dark)}
+.tower-world .world-cloud{animation:none}.tower-world .cloud-one{top:40px;left:28%;width:50px}.tower-world .cloud-two{top:32px;left:74%;width:38px}
+.tower-world .world-floor-path{z-index:6;background:#244c40;backdrop-filter:none}.tower-world .world-location{bottom:72px;left:auto;right:10px;z-index:5;background:#244c40;font-size:9px}
+@media(max-width:350px){.tower-world{height:264px}.tower-depth-town,.tower-depth-ground,.tower-depth-front{height:202px}.tower-world .world-diorama{bottom:105px;height:149px}.tower-world .world-diorama .tower-sprite{width:123px;height:149px}}
+@media(prefers-reduced-motion:reduce){.tower-depth-town,.tower-depth-front,.tower-world .world-diorama{transform:none}}
+.reduce-motion .tower-depth-town,.reduce-motion .tower-depth-front,.reduce-motion .tower-world .world-diorama{transform:none}

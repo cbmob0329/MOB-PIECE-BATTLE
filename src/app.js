@@ -1,3 +1,5 @@
+import {mountTowerDepth} from './components/tower-depth.js';
+import {openSaveReset} from './screens/saveReset.js';
 import {selectDeckView} from './screens/deckWorkshop.js';
 import {towerShopScreen,handleTowerShop} from './screens/towerShop.js';
 import {watchScreenImages} from './components/loading.js';
@@ -60,10 +62,11 @@ const compact=n=>{const v=Number(n||0);if(v>=1000000)return `${(v/1000000).toFix
 try{if(!profile.towerProgress?.starterGranted){if(!commitProfile(prepareTowerStartup(profile)))throw Error('スターターを保存できませんでした');if(isNewProfile)location.hash='tower';}normalizeBattleProgress(profile);if(syncCompetition(profile))saveProfile();}catch(err){console.error('[MPB] profile bootstrap failed',err);}
 
 function noticeMarkup(){const n=getCompetitionNotice(profile);if(!n)return '';const kicker=n.type==='weekly-rank'?'WEEKLY RANK REWARD':n.type==='bonus'?'MOB MASTER BONUS':'ANNUAL COMPETITION';return `<div class="competition-notice" role="dialog" aria-modal="true"><div class="competition-notice-card"><small>${kicker}</small><h2>${n.title}</h2><p>${n.body}</p><strong>${Number(n.coins||0).toLocaleString('ja-JP')} COIN<br>+ ${Number(n.diamonds||0).toLocaleString('ja-JP')} DIAMOND</strong><button data-comp="dismiss-notice">受け取る</button></div></div>`;}
-let cancelScreenLoad=()=>{};
+let cancelScreenLoad=()=>{},cancelTowerDepth=()=>{};
 function settleScreenImages(){cancelScreenLoad();cancelScreenLoad=watchScreenImages(app,app.querySelector('[data-screen-loader]'));}
+window.addEventListener('mpb:screen-images-changed',settleScreenImages);
 function render({preserveScroll=false}={}){
-  cancelScreenLoad();
+  cancelScreenLoad();cancelTowerDepth();
   const scroll=preserveScroll?(app.querySelector('#main')?.scrollTop||0):0;
   const deckScroll=preserveScroll?(app.querySelector('.deck-panel-scroll')?.scrollTop||0):0;
   const focused=preserveScroll?document.activeElement?.getAttribute('data-add'):null;
@@ -81,8 +84,8 @@ function render({preserveScroll=false}={}){
   if(focused)app.querySelector('[data-add="'+focused+'"]')?.focus({preventScroll:true});
   if(route==='figure')app.querySelector('#figure-search').value=query;
   if(route==='display')app.querySelector('#display-search').value=displayQuery;
-  app.querySelectorAll('img').forEach(img=>{const fallback=()=>{img.hidden=true;if(img.nextElementSibling)img.nextElementSibling.hidden=false;};if(img.complete&&!img.naturalWidth)fallback();else img.addEventListener('error',fallback,{once:true});});
-  settleScreenImages();
+  app.querySelectorAll('img').forEach(img=>{const fallback=()=>{img.hidden=true;if(img.nextElementSibling?.classList.contains('missing'))img.nextElementSibling.hidden=false;};if(img.complete&&!img.naturalWidth)fallback();else img.addEventListener('error',fallback,{once:true});});
+  settleScreenImages();cancelTowerDepth=mountTowerDepth(app);
 }
 export function toast(msg,tone){if(tone==='error')sound.play('error');const el=app.querySelector('.toast');if(!el)return;el.textContent=msg;el.classList.add('visible');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.remove('visible'),2400);}
 function commitDeck(deck){if(!commitProfile(prepareSoulDeck(profile,deck)))throw Error('保存できませんでした。編成は変更していません。');}
@@ -150,6 +153,7 @@ function grantAllFigures(){
 }
 
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
+if(b.hasAttribute('data-save-reset')){openSaveReset({onDeleted:()=>{sound.stopAll();location.reload();}});return;}
 if(handleTowerShop(b,ctx,{render,toast}))return;
 if(await handleTower(b,ctx,{render,toast}))return;
 if(b.hasAttribute('data-figure-favorites')){collectionFavorites=!collectionFavorites;b.setAttribute('aria-pressed',String(collectionFavorites));refreshSearch(app.querySelector('#figure-search'));return;}
