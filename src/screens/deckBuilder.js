@@ -6,7 +6,10 @@ import {commitProfile} from '../game/profile.js?v=7.3.0';
 import {stageBadge,soulPerformance} from '../components/soul-performance.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm=s=>String(s).normalize('NFKC').toLowerCase();
-function modal(className,title){const focus=document.activeElement,dialog=document.createElement('dialog');dialog.className=className;dialog.setAttribute('aria-label',title);document.body.append(dialog);const close=()=>{dialog.close();dialog.remove();window.removeEventListener('hashchange',close);if(focus?.isConnected)focus.focus({preventScroll:true});};dialog.addEventListener('cancel',e=>{e.preventDefault();close();});window.addEventListener('hashchange',close);return {dialog,close};}
+function modal(className,title){const focus=document.activeElement,dialog=document.createElement('dialog');dialog.className=className;dialog.setAttribute('aria-label',title);document.body.append(dialog);
+ const viewport=()=>{const v=window.visualViewport;dialog.style.setProperty('--draft-height',`${v?.height||window.innerHeight}px`);dialog.style.setProperty('--draft-top',`${v?.offsetTop||0}px`);};
+ viewport();window.visualViewport?.addEventListener('resize',viewport);window.visualViewport?.addEventListener('scroll',viewport);
+ const close=()=>{window.visualViewport?.removeEventListener('resize',viewport);window.visualViewport?.removeEventListener('scroll',viewport);dialog.close();dialog.remove();window.removeEventListener('hashchange',close);if(focus?.isConnected)focus.focus({preventScroll:true});};dialog.addEventListener('cancel',e=>{e.preventDefault();close();});window.addEventListener('hashchange',close);return {dialog,close};}
 export function openDeckClear(c,{render,toast}){
  if(document.querySelector('.deck-clear-dialog'))return;
  const slot=c.profile.soulDeckSlot||0,old=[...ensureSoulDecks(c.profile)],{dialog,close}=modal('deck-clear-dialog',`DECK ${slot+1}を空にする`);

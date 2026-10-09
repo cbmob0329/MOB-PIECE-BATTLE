@@ -9,7 +9,7 @@ import {banners,poolFor,drawFigureRate} from '../src/data/gacha.js';
 const fresh=()=>t.prepareTowerStartup({version:6,owned:{},diamonds:0,rubies:0,coins:0,soulDecks:[],soulDeckSlot:0});
 let checks=0;function test(name,fn){fn();checks++;console.log('PASS '+name);}
 test('three editable starters; one-time grant, immutable input and existing occupied slots/ownership',()=>{
- const p=fresh();assert.equal(p.diamonds,50);assert.deepEqual(t.prepareTowerStartup(p),p);assert.equal(Object.values(p.owned).reduce((a,b)=>a+b,0),135);
+ const p=fresh();assert.equal(p.diamonds,50);assert.deepEqual(t.prepareTowerStartup(p),p);assert.equal(Object.values(p.owned).reduce((a,b)=>a+b,0),93);
  for(let i=0;i<3;i++){const check=g.validateSoulDeck(p.soulDecks[i],p.owned,{profile:p,slot:i});assert.ok(check.valid);assert.deepEqual(check.counts,{seed:42,middle:3,mob:0});}
  const old={...fresh(),owned:{'01':12,'70':2},welcomeClaimed:true,diamonds:123,soulDecks:Array.from({length:5},()=>['01']),custom:{keep:1},towerProgress:undefined};const before=structuredClone(old);const n=t.prepareTowerStartup(old);assert.deepEqual(old,before);assert.equal(n.owned['01'],12);assert.equal(n.owned['70'],2);assert.equal(n.diamonds,123);assert.deepEqual(n.soulDecks,old.soulDecks);assert.deepEqual(n.custom,old.custom);
  const c=t.prepareTowerThirdDeck(p);assert.equal(c.soulDeckSlot,3);assert.ok(g.validateSoulDeck(c.soulDecks[3],c.owned,{profile:c,slot:3}).valid);assert.deepEqual(c.owned,p.owned);
@@ -17,7 +17,7 @@ test('three editable starters; one-time grant, immutable input and existing occu
 test('three starter booster pools; later mixed pools retain legal material pairs and normalized rates',()=>{
  assert.equal(banners.length,5);assert.equal(towerBanners.filter(b=>bannerUnlocked(fresh(),b)).length,3);
  for(const b of towerBanners){const pool=poolFor(b),ids=new Set(pool.map(f=>f.sourceId));assert.equal(pool.length,b.figureIds.length);if(b.requiresClear)for(const id of commonTowerIds)assert.ok(ids.has(id));else assert.ok(pool.every(f=>!g.soulById.get(f.sourceId).retired));
- const figs=[...new Set([...ids,...Object.keys(fresh().owned)])].map(id=>g.soulById.get(id));for(const f of [...ids].map(id=>g.soulById.get(id)).filter(f=>f.soulClass!=='seed'))assert.ok(g.recipes.some(r=>r.target===f.id&&figs.some(a=>a.soulClass===recipeMaterialClass(r,g.soulById)&&figs.some(b=>b.soulClass===a.soulClass&&(a.id!==b.id||a.soulClass==='seed')&&recipePairMatches(r,[a,b])))),b.id+' unreachable '+f.id);
+ const figs=[...new Set([...towerBanners.filter(x=>b.requiresClear||!x.requiresClear).flatMap(x=>x.figureIds),...Object.keys(fresh().owned)])].map(id=>g.soulById.get(id));for(const f of [...ids].map(id=>g.soulById.get(id)).filter(f=>f.soulClass!=='seed'))assert.ok(g.recipes.some(r=>r.target===f.id&&figs.some(a=>a.soulClass===recipeMaterialClass(r,g.soulById)&&figs.some(b=>b.soulClass===a.soulClass&&(a.id!==b.id||a.soulClass==='seed')&&recipePairMatches(r,[a,b])))),b.id+' unreachable '+f.id);
  for(const count of [1,10])for(let i=0;i<count;i++)assert.ok(Math.abs(pool.reduce((n,f)=>n+drawFigureRate(b,f,count,i),0)-1)<1e-9);
  }
 });

@@ -3,7 +3,7 @@ import {matchesMaterial,recipeMaterialClass,recipeStageMatches} from '../game/fu
 export function applyOct10Additions(catalog){
  const figures=catalog.figures.map(f=>({...f,tags:[...f.tags]})),by=new Map(figures.map(f=>[f.id,f]));let recipes=[...catalog.recipes];
  for(const patch of data.records){const {id,skill,plan,materials,timing,...fields}=patch,f=by.get(id);if(!f)throw Error('追加番号がありません: '+id);Object.assign(f,fields);
-  if(['daily','bakery','bell','object'].includes(f.series)||['piece:022','piece:023','piece:024','piece:025'].includes(id))f.tags=[...new Set([...f.tags,'10'])];
+  if(['piece:022','piece:023','piece:024','piece:025','piece:026','piece:027','piece:028','piece:029'].includes(id))f.tags=[...new Set([...f.tags,'10'])];
   if(skill)f.soulSkill={...f.soulSkill,...skill,effect:skill.description,sourceText:skill.description,timing,timingLabel:timing==='passive'?'自動発動':timing==='attack-response'?'相手攻撃宣言時':timing==='skill-response'?'相手スキル発動時':'自分メイン',runtimePlan:plan};
   if(materials){recipes=recipes.filter(r=>r.target!==id);recipes.push({id:'oct10-'+id,target:id,fromClass:'seed',materials,special:false,label:materials.map(m=>m.attribute?m.attribute+'属性':catalog.tags.find(t=>t.id===m.tag)?.name).join(' × '),basis:data.source});}
  }

@@ -5,6 +5,7 @@ export const shopPurchaseCount=(profile,id)=>Math.max(0,Math.trunc(Number(profil
 export function shopUnavailable(profile,item){
  if(!item)return '商品が見つかりません';
  if(item.requiresTower&&!profile.towerCampaign?.regions?.[item.requiresTower]&&!profile.towerProgress?.cleared?.includes(5))return '砂漠タワー到達で解放';
+ if(!Number.isSafeInteger(item.price)||item.price<0)return '販売準備中';
  if(shopPurchaseCount(profile,item.id)>=item.limit)return '購入済み';
  if(item.kind==='cube'&&profile.ownedDeckCubes?.includes(item.cubeId))return '所持済み';
  if(item.kind==='figure'){const f=soulById.get(item.figureId);if(!f||f.retired)return '販売対象外';if((profile.owned?.[f.id]||0)>=Math.min(3,OWN_CAP[f.rarity]))return '必要枚数を所持済み';}

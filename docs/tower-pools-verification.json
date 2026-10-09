@@ -1,7 +1,7 @@
 [
   {
     "id": "tower-beginning",
-    "reachable": 66,
+    "reachable": 78,
     "unreachable": [],
     "normalRarityRates": {
       "R": 0.5025125628140703,
@@ -26,7 +26,7 @@
   },
   {
     "id": "tower-guardians",
-    "reachable": 66,
+    "reachable": 79,
     "unreachable": [],
     "normalRarityRates": {
       "R": 0.5025125628140703,
@@ -51,7 +51,7 @@
   },
   {
     "id": "tower-adventure",
-    "reachable": 66,
+    "reachable": 78,
     "unreachable": [],
     "normalRarityRates": {
       "R": 0.5025125628140703,
@@ -76,7 +76,7 @@
   },
   {
     "id": "tower-crossroads",
-    "reachable": 103,
+    "reachable": 102,
     "unreachable": [],
     "normalRarityRates": {
       "R": 0.5,
@@ -102,7 +102,7 @@
   },
   {
     "id": "tower-lanterns",
-    "reachable": 103,
+    "reachable": 101,
     "unreachable": [],
     "normalRarityRates": {
       "R": 0.5,
