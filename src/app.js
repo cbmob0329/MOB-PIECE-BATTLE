@@ -7,6 +7,9 @@ import {towerShopScreen,handleTowerShop} from './screens/towerShop.js';
 import {watchScreenImages} from './components/loading.js';
 import {towerStarters} from './data/tower.js';
 import {towerScreen,handleTower,handleTowerChange} from './screens/tower.js';
+import {towerRematchRequest} from './game/tower-rematch.js';
+import {filterRematches} from './screens/towerRematch.js';
+import {prepareTowerRewards} from './game/tower-rewards.js';
 import {prepareTowerStartup} from './game/tower.js';
 import {prepareFavoriteToggle} from './game/favorites.js';
 import {prepareFamilyCollection} from './game/family-collection.js';
@@ -61,7 +64,7 @@ if(!app)throw new Error('APP_ROOT_NOT_FOUND');
 const nav=[['home','home','HOME','home'],['figure','figure','FIGURE','figure'],['deck','deck','DECK','deck'],['battle','battle','BATTLE','battle'],['gacha','gacha','GACHA','gacha']];
 const compact=n=>{const v=Number(n||0);if(v>=1000000)return `${(v/1000000).toFixed(v>=10000000?0:1)}M`;if(v>=10000)return `${Math.floor(v/1000)}K`;return v.toLocaleString('ja-JP');};
 
-try{if(!profile.towerProgress?.starterGranted||(profile.towerProgress?.starterVersion||0)<3){if(!commitProfile(prepareTowerStartup(profile)))throw Error('スターターを保存できませんでした');if(isNewProfile)location.hash='tower';}normalizeBattleProgress(profile);if(syncCompetition(profile))saveProfile();}catch(err){console.error('[MPB] profile bootstrap failed',err);}
+try{if(!profile.towerProgress?.starterGranted||(profile.towerProgress?.starterVersion||0)<3){if(!commitProfile(prepareTowerStartup(profile)))throw Error('スターターを保存できませんでした');if(isNewProfile)location.hash='tower';}const towerRewards=prepareTowerRewards(profile);if(JSON.stringify(towerRewards.next.towerOpponentRewards)!==JSON.stringify(profile.towerOpponentRewards)){if(!commitProfile(towerRewards.next))throw Error('タワー報酬を保存できませんでした');}normalizeBattleProgress(profile);if(syncCompetition(profile))saveProfile();}catch(err){console.error('[MPB] profile bootstrap failed',err);}
 
 function noticeMarkup(){const n=getCompetitionNotice(profile);if(!n)return '';const kicker=n.type==='weekly-rank'?'WEEKLY RANK REWARD':n.type==='bonus'?'MOB MASTER BONUS':'ANNUAL COMPETITION';return `<div class="competition-notice" role="dialog" aria-modal="true"><div class="competition-notice-card"><small>${kicker}</small><h2>${n.title}</h2><p>${n.body}</p><strong>${Number(n.coins||0).toLocaleString('ja-JP')} COIN<br>+ ${Number(n.diamonds||0).toLocaleString('ja-JP')} DIAMOND</strong><button data-comp="dismiss-notice">受け取る</button></div></div>`;}
 let cancelScreenLoad=()=>{},cancelTowerDepth=()=>{};
@@ -122,7 +125,10 @@ async function startBattleFromUi(spec){
   if(battleBusy)return; battleBusy=true;
   try{
     let request,onResolved;
-    if(spec.startsWith('free:')){
+    if(spec.startsWith('rematch:')){
+      request=towerRematchRequest(profile,spec.slice('rematch:'.length));
+      onResolved=result=>{const rw=battleReward(profile,'free','easy',result.won);recordHistory(result,request,{mode:'free-rematch',rank:request.cpuRank});persist();return {reward:result.won?rw:null,message:result.won?'再戦に勝利！':'何度でも挑戦できます'};};
+    }else if(spec.startsWith('free:')){
       const difficulty=(spec.split(':')[1]||'easy'),enemyId=spec.split(':')[2];request={mode:'free',difficulty,enemyId,title:`FREE BATTLE · ${difficulty.toUpperCase()}`,opponentName:enemyId?undefined:`CPU ${difficulty.toUpperCase()}`,cpuRank:profile.rank,forfeitCountsLoss:false};
       onResolved=result=>{const rw=battleReward(profile,'free',difficulty,result.won);recordHistory(result,request,{mode:`free-${difficulty}`,rank:profile.rank});persist();return {reward:result.won?rw:null,message:result.won?'FREE BATTLE CLEAR':'再挑戦しよう'};};
     }else if(spec==='random'){
@@ -162,6 +168,8 @@ function grantAllFigures(){
   if(!profile.avatarId||!byId.has(profile.avatarId))profile.avatarId=profile.centerId;
 }
 
+app.addEventListener('input',e=>{if(e.target.id==='rematch-search')filterRematches(app);});
+app.addEventListener('change',e=>{if(e.target.id==='rematch-area')filterRematches(app);});
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
 if(b.hasAttribute('data-save-reset')){openSaveReset({onDeleted:()=>{sound.stopAll();location.reload();}});return;}
 if(handleTowerShop(b,ctx,{render,toast}))return;

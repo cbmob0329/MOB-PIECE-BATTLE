@@ -1,0 +1,5 @@
+import {towerVictoryKeys} from './tower-rewards.js';
+import {campaignTowers,campaignOpponent,campaignEnemy} from '../data/tower-campaign.js';
+import {soulById} from './soul-battle.js';
+export function defeatedTowerOpponents(profile){return towerVictoryKeys(profile).keys.map(key=>{const [towerId,f,s]=key.split(':'),floor=Number(f),slot=Number(s),tower=campaignTowers.find(t=>t.id===towerId),figure=soulById.get(campaignOpponent(tower,floor,slot)),area=tower.name.replace(/タワー$/,'');return {key,towerId,area,floor,slot,figureId:figure.id,name:figure.name,image:figure.image,rank:floor===5?tower.bossRank:tower.rank,color:tower.color,label:`${area} ${floor}F ${figure.name}`,boss:floor===5};});}
+export function towerRematchRequest(profile,key){const opponent=defeatedTowerOpponents(profile).find(o=>o.key===key);if(!opponent)throw Error('タワーで勝利済みの相手を選んでください');const tower=campaignTowers.find(t=>t.id===opponent.towerId);return {mode:'free',difficulty:'easy',title:'FREE BATTLE · '+opponent.label,opponentName:opponent.name,enemy:campaignEnemy(tower,opponent.floor,opponent.slot),cpuRank:opponent.rank,rematchKey:key,forfeitCountsLoss:false,returnLabel:'フリーバトルへ →'};}

@@ -27,9 +27,9 @@ test('locked draw and exchange rejected; no currency mutation; costs and guarant
 });
 function match(p,won){const req=t.towerMatchRequest(p);const out=t.prepareTowerResult(p,req.towerToken,won);assert.throws(()=>t.prepareTowerResult(out.next,req.towerToken,won));return out.next;}
 test('floor gates, first-to-two/three early stop, unique first clear reward, losses no penalty',()=>{
- let p=fresh();assert.throws(()=>t.prepareTowerStart(p,2,['slot:0']));p=t.prepareTowerStart(p,1,['slot:0']);p=match(p,true);assert.ok(p.towerProgress.active);p=match(p,true);assert.equal(p.towerProgress.active,null);assert.equal(p.coins,1000);assert.equal(p.diamonds,51);assert.throws(()=>t.towerMatchRequest(p));
- p=t.prepareTowerStart(p,1,['slot:0']);p=match(p,true);p=match(p,true);assert.equal(p.coins,1000);assert.equal(p.diamonds,51);
- p=t.prepareTowerStart(p,2,['slot:0']);p=match(p,false);p=match(p,false);assert.equal(p.coins,1000);assert.equal(p.diamonds,51);assert.deepEqual(p.towerProgress.cleared,[1]);
+ let p=fresh();assert.throws(()=>t.prepareTowerStart(p,2,['slot:0']));p=t.prepareTowerStart(p,1,['slot:0']);p=match(p,true);assert.ok(p.towerProgress.active);p=match(p,true);assert.equal(p.towerProgress.active,null);assert.equal(p.coins,6000);assert.equal(p.diamonds,80);assert.throws(()=>t.towerMatchRequest(p));
+ p=t.prepareTowerStart(p,1,['slot:0']);p=match(p,true);p=match(p,true);assert.equal(p.coins,6000);assert.equal(p.diamonds,80);
+ p=t.prepareTowerStart(p,2,['slot:0']);p=match(p,false);p=match(p,false);assert.equal(p.coins,6000);assert.equal(p.diamonds,80);assert.deepEqual(p.towerProgress.cleared,[1]);
  p.towerProgress.cleared=[1,2,3,4];assert.throws(()=>t.prepareTowerStart(p,5,['slot:0','slot:1','starter:mix'],[0,0,0,1,2]));assert.throws(()=>t.prepareTowerStart(p,5,['slot:0','slot:0','starter:mix'],[0,1,2,0,1]));
  p=t.prepareTowerStart(p,5,['slot:0','slot:1','starter:mix'],[0,1,2,0,1]);p=match(p,true);p=match(p,true);p=match(p,true);assert.equal(p.towerProgress.last.wins,3);assert.equal(p.towerProgress.last.losses,0);assert.equal(p.towerProgress.active,null);assert.ok(bannerUnlocked(p,banners[1]));assert.ok(bannerUnlocked(p,banners[2]));
 });

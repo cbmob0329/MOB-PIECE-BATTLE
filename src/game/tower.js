@@ -1,7 +1,7 @@
 import starterV2 from '../data/oct10-starter-v2.json' with {type:'json'};
 import {towerVersion,towerStarters,towerMix,grassTower,towerEnemy} from '../data/tower.js';
 import {validateSoulDeck} from './soul-battle.js';
-import {FREE_BATTLE} from '../data/battle.js';
+import {prepareTowerRewards,applyTowerOpponentRewards} from './tower-rewards.js';
 export function towerState(profile){const p=profile.towerProgress||{};return {...p,version:towerVersion,cleared:[...new Set((p.cleared||[]).filter(n=>Number.isInteger(n)&&n>=1&&n<=5))],starterGranted:p.starterGranted===true,starterVersion:p.starterVersion||0,active:p.active||null,last:p.last||null};}
 export function prepareTowerStartup(profile){
  const next=structuredClone(profile),t=towerState(next);next.towerProgress=t;if(t.starterGranted&&t.starterVersion>=3)return next;const grants=towerStarters;
@@ -31,9 +31,9 @@ export function prepareTowerStart(profile,floor,keys,assignment){
 }
 export function towerMatchRequest(profile){const a=towerState(profile).active;if(!a)throw Error('進行中の対戦がありません');const index=a.results.length,wins=a.results.filter(Boolean).length,losses=index-wins;if(wins>=a.need||losses>=a.need)throw Error('この連戦は終了しています');return {mode:'tower',towerId:'grass',floor:a.floor,title:grassTower.name+' '+a.floor+'F · MATCH '+(index+1),opponentName:a.opponent,playerDeck:[...a.decks[a.assignment[index]].ids],enemy:structuredClone(a.enemy),towerToken:a.id+':'+index,seriesLabel:a.floor+'F · MATCH '+(index+1)+' / '+a.assignment.length+' · '+wins+' − '+losses,returnLabel:'塔のスコアへ →'};}
 export function prepareTowerResult(profile,token,won){
- const next=structuredClone(profile),t=towerState(next);next.towerProgress=t;const a=t.active;if(!a||token!==a.id+':'+a.results.length)throw Error('この試合の結果は記録済みです');
+ const next=prepareTowerRewards(profile).next,t=towerState(next);next.towerProgress=t;const a=t.active;if(!a||token!==a.id+':'+a.results.length)throw Error('この試合の結果は記録済みです');
  a.results.push(won===true);const wins=a.results.filter(Boolean).length,losses=a.results.length-wins,finished=wins>=a.need||losses>=a.need;let reward=null;
- if(finished){const cleared=wins>=a.need,first=cleared&&!t.cleared.includes(a.floor);if(first){t.cleared.push(a.floor);reward={coins:FREE_BATTLE.easy.coins,diamonds:FREE_BATTLE.easy.diamonds};next.coins=(next.coins||0)+reward.coins;next.diamonds=(next.diamonds||0)+reward.diamonds;}t.last={floor:a.floor,won:cleared,wins,losses,reward,unlockedBanners:first&&a.floor===5};t.active=null;}
+ if(finished){const cleared=wins>=a.need,first=cleared&&!t.cleared.includes(a.floor);if(first){t.cleared.push(a.floor);reward=applyTowerOpponentRewards(next);}t.last={floor:a.floor,won:cleared,wins,losses,reward,unlockedBanners:first&&a.floor===5};t.active=null;}
  return {next,reward,finished,message:(finished?(wins>=a.need?'FLOOR CLEAR!':'また挑戦しよう。ペナルティはありません。'):'MATCH FINISHED')+' · '+wins+' − '+losses};
 }
 export function prepareTowerAbandon(profile){const next=structuredClone(profile);next.towerProgress=towerState(next);next.towerProgress.active=null;return next;}
