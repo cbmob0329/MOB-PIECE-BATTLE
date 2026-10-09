@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {soulFigures,soulById,prepareSoulDeck,validateSoulDeck,createSoulBattle} from '../src/game/soul-battle.js';
+import {towerStarters} from '../src/data/tower.js';
+import {prepareDeckReplacement,replacementChoices} from '../src/game/deck-replace.js';
+const owned=Object.fromEntries(soulFigures.map(f=>[f.id,4]));
+const p={owned,soulDeckSlot:2,soulDecks:[[],[],[...towerStarters[0].deck],[],[]],diamonds:123,coins:456};
+const before=structuredClone(p),target='piece:003',next=prepareDeckReplacement(p,0,target);
+assert.equal(next.soulDecks[2].length,45);assert.equal(next.soulDecks[2][0],target);assert.deepEqual(p,before);assert.deepEqual(next.owned,p.owned);assert.equal(next.coins,p.coins);assert.equal(next.diamonds,p.diamonds);
+assert(validateSoulDeck(next.soulDecks[2],owned,{profile:next}).valid);assert(replacementChoices(p,target).some(x=>!x.reason));
+assert.throws(()=>prepareDeckReplacement(p,-1,target));assert.throws(()=>prepareDeckReplacement(p,0,p.soulDecks[2][0]));assert.throws(()=>prepareDeckReplacement({...p,owned:{}},0,target),/所持/);
+const exclusive={...p,soulDeckSlot:0,soulDecks:[p.soulDecks[2],[target],[],[],[]]};assert.throws(()=>prepareDeckReplacement(exclusive,0,target),/DECK 2/);
+const mid=soulById.get(target),mob=soulFigures.find(f=>f.soulClass==='mob');
+const three=prepareSoulDeck(p,[...Array(3).fill(mid.id)]);assert.equal(three.soulDecks[2].length,3);assert.throws(()=>prepareSoulDeck(p,Array(4).fill(mid.id)),/同名/);assert.throws(()=>prepareSoulDeck(p,[mob.id,mob.id]),/同名/);
+const seeds=towerStarters[0].deck.filter(id=>soulById.get(id).soulClass==='seed');const state=createSoulBattle([[...seeds,...Array(3).fill(mid.id)],towerStarters[1].deck]);assert.equal(state.players[0].reserve.filter(id=>id===mid.id).length,3);
+console.log('PASS 3 middle / 1 MOB, duplicate reserve, atomic 45-card replacement, ownership, exclusive slots, currencies and source preservation');

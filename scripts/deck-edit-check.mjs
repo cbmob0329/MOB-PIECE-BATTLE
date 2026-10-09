@@ -5,14 +5,14 @@ import {buildAceDeck} from '../src/game/ace-deck.js';
 import {freeEnemies} from '../src/game/free-enemies.js';
 import {deckScreen} from '../src/screens/soulLibrary.js';
 import {selectDeckView} from '../src/screens/deckWorkshop.js';
-const owned=Object.fromEntries([...g.soulById.values()].map(f=>[f.id,f.soulClass==='seed'?3:1]));
+const owned=Object.fromEntries([...g.soulById.values()].map(f=>[f.id,f.soulClass==='mob'?1:3]));
 owned.spboss001=1;
 const blank=()=>({owned:{...owned},soulDecks:[[],[],[],[],[]],soulDeckSlot:0});
 for(const f of g.soulFigures){
  assert.ok(byId.has(f.id),f.id+' ownership catalog mismatch');
  const p=blank(),snapshot=structuredClone(p);assert.ok(g.soulDeckAddStatus(p,f.id).allowed,f.id);
  const next=g.prepareSoulDeck(p,[f.id]);assert.deepEqual(p,snapshot);assert.deepEqual(next.soulDecks[0],[f.id]);
- const limit=f.soulClass==='seed'?3:1;next.soulDecks[0]=Array(limit).fill(f.id);
+ const limit=f.soulClass==='mob'?1:3;next.soulDecks[0]=Array(limit).fill(f.id);
  assert.ok(g.soulDeckAddStatus(next,f.id).reasons.some(r=>r.includes('同名')));
  assert.throws(()=>g.prepareSoulDeck(next,[...next.soulDecks[0],f.id]));
  assert.deepEqual(g.prepareSoulDeck(next,[]).soulDecks[0],[]);
@@ -29,4 +29,4 @@ let saved=null;globalThis.localStorage={getItem:()=>saved,setItem:(_k,v)=>{saved
 const profileModule=await import('../src/game/profile.js');saved=JSON.stringify({...blank(),version:6,soulDecks:[built.deck],soulDeckSlot:4,favoriteFigureIds:['spboss001','NS2_033']});
 const loaded=profileModule.loadProfile();for(const f of g.soulFigures)assert.ok(loaded.owned[f.id]>0,f.id+' lost on reload');assert.equal(loaded.owned.spboss001,1);assert.deepEqual(loaded.soulDecks[0],built.deck);assert.deepEqual(g.ensureSoulDecks(loaded),[]);assert.ok(profileModule.commitProfile(loaded));assert.deepEqual(profileModule.loadProfile().soulDecks,loaded.soulDecks);
 const previous=saved;globalThis.localStorage.setItem=()=>{throw Error('quota');};assert.equal(profileModule.commitProfile(g.prepareSoulDeck(loaded,['NS2_033'])),false);assert.equal(saved,previous);
-console.log('PASS all 627 owned figures add/remove; 3/1/1, slot 1/2 exclusion, quotas, archived/unknown repair, partial legacy slots, UI reasons, five aces, save/reload/failure.');
+console.log('PASS all 627 owned figures add/remove; 3/3/1, slot 1/2 exclusion, quotas, archived/unknown repair, partial legacy slots, UI reasons, five aces, save/reload/failure.');

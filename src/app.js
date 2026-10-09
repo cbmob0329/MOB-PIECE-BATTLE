@@ -1,3 +1,4 @@
+import {openDeckReplace} from './screens/deckReplace.js';
 import {openDeckBuilder,openDeckClear} from './screens/deckBuilder.js';
 import {mountTowerDepth} from './components/tower-depth.js';
 import {openSaveReset} from './screens/saveReset.js';
@@ -32,7 +33,7 @@ import {profile,saveProfile,commitProfile,storageAvailable,isNewProfile} from '.
 import {homeScreen} from './screens/showroom.js?v=7.3.0';
 import {infoScreen} from './screens/library.js?v=7.3.0';
 import {collectionScreen,deckScreen,battleScreen,soulInfo} from './screens/soulLibrary.js';
-import {ensureSoulDecks,setSoulDeck,prepareSoulDeck,validateSoulDeck,autoSoulDeck} from './game/soul-battle.js';
+import {soulById,soulDeckAddStatus,ensureSoulDecks,setSoulDeck,prepareSoulDeck,validateSoulDeck,autoSoulDeck} from './game/soul-battle.js';
 import {competitionScreen} from './screens/competition.js?v=7.3.0';
 import {missionScreen} from './screens/mission.js?v=7.3.0';
 import {historyScreen,hallOfFameScreen} from './screens/records.js?v=7.3.0';
@@ -135,10 +136,18 @@ async function startBattleFromUi(spec){
 }
 
 function openFigureInfo(id){
+ const route=location.hash.slice(1);
  const f=byId.get(id);if(!f)return;
  const dlg=document.createElement('dialog');dlg.className='figure-dex-dialog';
- dlg.innerHTML='<section><button class="figure-dex-close" aria-label="閉じる">×</button><div class="figure-dex-hero">'+art(f)+'</div><h2>'+f.name+'</h2><p>所持 '+(profile.owned[id]||0)+'</p>'+soulInfo(f)+'</section>';
- document.body.appendChild(dlg);dlg.showModal();const close=()=>{dlg.close();dlg.remove();};dlg.querySelector('.figure-dex-close').onclick=close;dlg.addEventListener('click',e=>{if(e.target===dlg)close();});dlg.addEventListener('cancel',e=>{e.preventDefault();close();});
+ dlg.innerHTML='<section><button class="figure-dex-close" aria-label="閉じる">×</button><div class="figure-dex-hero">'+art(f)+'</div><h2>'+f.name+'</h2><p>所持 '+(profile.owned[id]||0)+'</p>'+soulInfo(f)+(route==='deck'?`<div class="figure-deck-actions"><button data-info-add>＋ 1体追加</button><button data-info-replace>入れ替え</button>${soulById.get(id)?.soulClass!=='seed'?'<button data-info-materials>おすすめの融合素材を見る</button>':''}<p role="status" class="deck-add-reason"></p></div>`:'')+'</section>';
+ document.body.appendChild(dlg);dlg.showModal();const close=()=>{dlg.close();dlg.remove();};
+ if(route==='deck'){
+  const add=dlg.querySelector('[data-info-add]'),status=soulDeckAddStatus(profile,id);add.disabled=!status.allowed;dlg.querySelector('.deck-add-reason').textContent=status.reasons.join(' / ');dlg.querySelector('[data-info-replace]').disabled=!ensureSoulDecks(profile).length;
+  add.onclick=()=>{try{commitDeck([...ensureSoulDecks(profile),id]);close();render({preserveScroll:true});toast('1体追加して保存しました');}catch(error){dlg.querySelector('.deck-add-reason').textContent=error.message;}};
+  dlg.querySelector('[data-info-replace]').onclick=()=>{close();openDeckReplace(ctx,id,{render,toast});};
+  dlg.querySelector('[data-info-materials]')?.addEventListener('click',()=>{close();const b=document.createElement('button');b.dataset.soulRecommend=id;handleDeckAssist(b,ctx,{render,persist,toast});});
+ }
+dlg.querySelector('.figure-dex-close').onclick=close;dlg.addEventListener('click',e=>{if(e.target===dlg)close();});dlg.addEventListener('cancel',e=>{e.preventDefault();close();});
 }
 
 function setRank(rank){
@@ -164,6 +173,7 @@ if(b.hasAttribute('data-deck-view')){selectDeckView(b.dataset.deckView);render()
 if(b.hasAttribute('data-deck-done')){const check=validateSoulDeck(ensureSoulDecks(profile),profile.owned,{profile});if(!check.valid){toast(check.errors[0]||'45体の編成を確認してください','error');return;}location.hash='battle';toast('このデッキで準備できました');return;}
 if(b.hasAttribute('data-deck-build-new')){openDeckBuilder(ctx,{render,toast});return;}
 if(b.hasAttribute('data-soul-clear')){openDeckClear(ctx,{render,toast});return;}
+if(b.dataset.deckReplace){openDeckReplace(ctx,b.dataset.deckReplace,{render,toast});return;}
 if(handleDeckAssist(b,ctx,{render,persist,toast}))return;
 if(b.hasAttribute('data-deck-reset-filters')){deckQuery='';deckTag='ALL';deckRarity='ALL';profile.soulDeckFilter='all';render({preserveScroll:true});return;}
 if(b.hasAttribute('data-soul-slot')){ensureSoulDecks(profile);profile.soulDeckSlot=Number(b.dataset.soulSlot);persist();render({preserveScroll:true});return;}

@@ -1,7 +1,7 @@
 // Shared policy for editing, saving, auto-building and battle entry.
 export const soulDeckSize=45;
 export const deckPolicy={copyKey:'id',exclusiveSlots:[0,1]};
-export const soulCopyLimits={seed:3,middle:1,mob:1};
+export const soulCopyLimits={seed:3,middle:3,mob:1};
 export const cardName=f=>String(f.name).normalize('NFKC').trim();
 export function deckViolations(ids,owned,by,quotas,{profile=null,slot=profile?.soulDeckSlot||0,policy=deckPolicy}={}){
  const counts={seed:0,middle:0,mob:0},used={},names={},issues=[];
