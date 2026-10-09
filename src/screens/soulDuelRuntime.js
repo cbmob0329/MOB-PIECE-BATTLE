@@ -155,6 +155,6 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
   else{sound.play('error');message=d.hand!==null&&target?.hasAttribute('data-hand')?'手札×手札では融合できません。場の味方を選んでください。':'召喚は空き台座へ、融合は場×場・手札×場の2体で。';render();}
  };
  busy=true;render();
- await director.run([{type:'start',playerId:profile.centerId||deck[0],enemyId:enemy.strategy?.focusIds?.[0]||cpuDeck[0],enemyName:state.players[1].name,title:request.title},...state.events]);eventCursor=state.eventSerial||0;busy=false;render();
+ await director.run([{type:'start',playerId:profile.centerId||deck[0],enemyId:enemy.strategy?.focusIds?.[0]||cpuDeck[0],enemyName:state.players[1].name,title:request.title,towerId:request.mode==='tower'?request.towerId:null,floor:request.floor,seriesLabel:request.seriesLabel},...state.events]);eventCursor=state.eventSerial||0;busy=false;render();
  return done;
 }

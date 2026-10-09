@@ -1,3 +1,4 @@
+import {masterDeckLocked,MASTER_DECK_LOCK_MESSAGE} from './master-deck-lock.js';
 import {recipePairMatches} from './fusion-rules.js';
 import {deckViolations,isRepairOnly,availableDeckOwned,soulCopyLimits,soulDeckSize} from './deck-legality.js';
 import catalog from '../data/soul-catalog.js';
@@ -22,7 +23,7 @@ export function soulDeckAddStatus(profile,id){
  const reasons=(own.length?own:check.violations).map(v=>v.message);
  return {allowed:check.errors.length===0,reasons:[...new Set(reasons)]};
 }
-export function setSoulDeck(profile,deck){const old=ensureSoulDecks(profile),context={profile},check=validateSoulDeck(deck,profile.owned,context);if(check.errors.length&&!isRepairOnly(validateSoulDeck(old,profile.owned,context),check,old,deck))throw Error(check.errors[0]);profile.soulDecks[profile.soulDeckSlot]=[...deck];}
+export function setSoulDeck(profile,deck){if(masterDeckLocked(profile))throw Error(MASTER_DECK_LOCK_MESSAGE);const old=ensureSoulDecks(profile),context={profile},check=validateSoulDeck(deck,profile.owned,context);if(check.errors.length&&!isRepairOnly(validateSoulDeck(old,profile.owned,context),check,old,deck))throw Error(check.errors[0]);profile.soulDecks[profile.soulDeckSlot]=[...deck];}
 export function prepareSoulDeck(profile,deck){const next=structuredClone(profile);setSoulDeck(next,deck);return next;}
 export function autoSoulDeck(owned,context={}){
  if(context.profile)owned=availableDeckOwned(context.profile,context.slot);

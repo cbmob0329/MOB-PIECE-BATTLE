@@ -1,3 +1,4 @@
+import {masterDeckLocked,MASTER_DECK_LOCK_MESSAGE} from './master-deck-lock.js';
 import starterV2 from '../data/oct10-starter-v2.json' with {type:'json'};
 import {towerVersion,towerStarters,towerMix,grassTower,towerEnemy} from '../data/tower.js';
 import {validateSoulDeck} from './soul-battle.js';
@@ -19,7 +20,7 @@ export function towerDeckOptions(profile){
  const templates=[...towerStarters,towerMix].map(s=>({key:'starter:'+s.id,name:s.name,deck:s.deck,slot:2}));
  return [...saved,...templates].map(o=>({...o,check:validateSoulDeck(o.deck,profile.owned,{profile,slot:o.slot})}));
 }
-export function prepareTowerThirdDeck(profile){const next=structuredClone(profile);const slot=[2,3,4].find(i=>!next.soulDecks?.[i]?.length);if(slot===undefined)throw Error('空き枠がありません。既存のデッキ、または組み替えCを選べます。');next.soulDecks??=[];const check=validateSoulDeck(towerMix.deck,next.owned,{profile:next,slot});if(!check.valid)throw Error(check.errors[0]||'カードが不足しています');next.soulDecks[slot]=[...towerMix.deck];next.soulDeckSlot=slot;return next;}
+export function prepareTowerThirdDeck(profile){if(masterDeckLocked(profile))throw Error(MASTER_DECK_LOCK_MESSAGE);const next=structuredClone(profile);const slot=[2,3,4].find(i=>!next.soulDecks?.[i]?.length);if(slot===undefined)throw Error('空き枠がありません。既存のデッキ、または組み替えCを選べます。');next.soulDecks??=[];const check=validateSoulDeck(towerMix.deck,next.owned,{profile:next,slot});if(!check.valid)throw Error(check.errors[0]||'カードが不足しています');next.soulDecks[slot]=[...towerMix.deck];next.soulDeckSlot=slot;return next;}
 export function prepareTowerStart(profile,floor,keys,assignment){
  const next=structuredClone(profile),t=towerState(next);next.towerProgress=t;if(t.active)throw Error('進行中の対戦を再開してください');
  const spec=grassTower.floors.find(f=>f.id===floor);if(!spec||floor>1&&!t.cleared.includes(floor-1))throw Error('前の階をクリアしてください');

@@ -1,0 +1,41 @@
+{
+  "mode": "built-in image_gen",
+  "images": [
+    {
+      "name": "モブトナウルフ",
+      "prompt": "Use case: style-transfer. Create one transparent-background game figure PNG: モブトナウルフ. Input image 1 is the CHARACTER IDENTITY reference: use only its central Tonawolf character, not the card frame, text, icons or background. Input image 2 is the STRICT COLLECTION STYLE reference (existing MOB figure): match its cute oversized head, bold black clean outlines, bright flat cartoon colors, restrained cel shading, round oversized black-lensed glasses and full pedestal design. Tonawolf must retain wolf ears, white muzzle, cyan forelock, magenta hood, black and magenta superhero clothing and cape from image 1. Add oversized ROUND glasses, circles not angular goggles, worn on the face. Make a friendly compact two-head-tall cartoon collectible, not realistic 3D/anime rendering. Full body with feet attached to the exact type of magenta circular snow-trimmed pedestal from reference 2, gold front plaque with only text \"MOB\" in clear black letters. Portrait centered within square canvas, generous transparent margins around all ears/cape/base, no cropping. No separate caption/name, card frame, rarity badge, extra character or background. Preserve identity of reference 1 while simplifying into reference 2's existing game style.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-e9e53abb-09d5-4c7f-86d6-2d4af3ef03f7.png",
+      "file": "1-mob-tonawolf.png"
+    },
+    {
+      "name": "モブトナレオン",
+      "prompt": "Use case: style-transfer. Create ONE transparent-background game figure PNG: モブトナレオン. Input 1 is CHARACTER IDENTITY reference: use only central character, discard card frame, writing and icons. Input 2 is STRICT COLLECTION STYLE reference: match cute oversized head, bold black clean outlines, bright flat cartoon colors, restrained cel shading, oversized round black-lensed glasses and full pedestal design. Identity: A cute chameleon hero, white muzzle, magenta spiky helmet, curled magenta chameleon tail, black and magenta superhero clothes and cape. Replace original goggles with perfectly ROUND oversized glasses. Friendly compact two-head-tall cartoon collectible, no realistic 3D rendering. Full body standing on a magenta circular snow-trimmed pedestal matching input 2, gold front plaque with ONLY exact black text \"MOB\". Center figure inside square canvas with generous transparent margins, no cropped hat, tail, cape or base. No captions, character names, card frames, rarity badges, extra characters, background or scenery. Preserve input 1 identity while simplifying into input 2's existing game style.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-52f8903d-fa03-4bc4-b9f1-6ca7760469d8.png",
+      "file": "2-mob-tonaleon.png"
+    },
+    {
+      "name": "モブファイトサンタ",
+      "prompt": "Use case: style-transfer. Create ONE transparent-background game figure PNG: モブファイトサンタ. Input 1 is CHARACTER IDENTITY reference: use only central character, discard card frame, writing and icons. Input 2 is STRICT COLLECTION STYLE reference: match cute oversized head, bold black clean outlines, bright flat cartoon colors, restrained cel shading, oversized round black-lensed glasses and full pedestal design. Identity: A stocky strong Santa superhero, magenta Santa hat with white trim and pompom, silver lower-face mask, bulky magenta armor, gauntlets and cape. Add clearly visible ROUND oversized glasses over the eyes above the face mask. Friendly compact two-head-tall cartoon collectible, no realistic 3D rendering. Full body standing on a magenta circular snow-trimmed pedestal matching input 2, gold front plaque with ONLY exact black text \"MOB\". Center figure inside square canvas with generous transparent margins, no cropped hat, tail, cape or base. No captions, character names, card frames, rarity badges, extra characters, background or scenery. Preserve input 1 identity while simplifying into input 2's existing game style.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-6447c0e7-65d8-41f5-877a-dcc8ffb51c51.png",
+      "file": "3-mob-fight-santa.png"
+    },
+    {
+      "name": "モブリラクリボン",
+      "prompt": "Use case: style-transfer. Create ONE transparent-background game figure PNG: モブリラクリボン. Input 1 is CHARACTER IDENTITY reference: use only central character, discard card frame, writing and icons. Input 2 is STRICT COLLECTION STYLE reference: match cute oversized head, bold black clean outlines, bright flat cartoon colors, restrained cel shading, oversized round black-lensed glasses and full pedestal design. Identity: A cute girl with silver bob hair, magenta horned helmet with round headphones, magenta cape and skirt, black boots. Replace original glasses with perfectly ROUND oversized glasses. Friendly compact two-head-tall cartoon collectible, no realistic 3D rendering. Full body standing on a magenta circular snow-trimmed pedestal matching input 2, gold front plaque with ONLY exact black text \"MOB\". Center figure inside square canvas with generous transparent margins, no cropped hat, tail, cape or base. No captions, character names, card frames, rarity badges, extra characters, background or scenery. Preserve input 1 identity while simplifying into input 2's existing game style.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-db9ad39e-5895-4817-838c-054f62568ee6.png",
+      "file": "4-mob-rilac-ribbon.png"
+    },
+    {
+      "name": "モブカカオベル",
+      "prompt": "Use case: style-transfer. Create ONE transparent-background game figure PNG: モブカカオベル. Input 1 is CHARACTER IDENTITY reference: use only central character, discard card frame, writing and icons. Input 2 is STRICT COLLECTION STYLE reference: match cute oversized head, bold black clean outlines, bright flat cartoon colors, restrained cel shading, oversized round black-lensed glasses and full pedestal design. Identity: A cute elf-like hero with pointed ears, white face, magenta helmet with two silver horns, black outfit and sweeping magenta cape. Add perfectly ROUND oversized glasses. Friendly compact two-head-tall cartoon collectible, no realistic 3D rendering. Full body standing on a magenta circular snow-trimmed pedestal matching input 2, gold front plaque with ONLY exact black text \"MOB\". Center figure inside square canvas with generous transparent margins, no cropped hat, tail, cape or base. No captions, character names, card frames, rarity badges, extra characters, background or scenery. Preserve input 1 identity while simplifying into input 2's existing game style.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-4f9c15c1-9f7c-4797-aa3e-b8185e2ea86f.png",
+      "file": "5-mob-cacao-belle.png"
+    },
+    {
+      "name": "モブユキノシキ",
+      "prompt": "Use case: style-transfer. Create ONE transparent-background game figure PNG: モブユキノシキ. Input 1 is CHARACTER IDENTITY reference: use only central character, discard card frame, writing and icons. Input 2 is STRICT COLLECTION STYLE reference: match cute oversized head, bold black clean outlines, bright flat cartoon colors, restrained cel shading, oversized round black-lensed glasses and full pedestal design. Identity: A cute girl with silver bob hair, tall bent magenta pointed winter hat with floral clasp, magenta lower-face scarf, magenta cloak and dark outfit. Add clearly visible perfectly ROUND oversized glasses over the eyes above the scarf. Friendly compact two-head-tall cartoon collectible, no realistic 3D rendering. Full body standing on a magenta circular snow-trimmed pedestal matching input 2, gold front plaque with ONLY exact black text \"MOB\". Center figure inside square canvas with generous transparent margins, no cropped hat, tail, cape or base. No captions, character names, card frames, rarity badges, extra characters, background or scenery. Preserve input 1 identity while simplifying into input 2's existing game style.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-d408e857-ea82-4d66-9323-d8d46790d875.png",
+      "file": "6-mob-yukinoshiki.png"
+    }
+  ]
+}
