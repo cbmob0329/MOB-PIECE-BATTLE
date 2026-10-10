@@ -89,3 +89,8 @@
 @keyframes fusion-current-flow{to{stroke-dashoffset:-88}}
 .fusion-energy-layer.motion-reduced .energy-current{animation:none;stroke-dasharray:none;opacity:.35}
 @media(prefers-reduced-motion:reduce){.fusion-energy .energy-current{animation:none;stroke-dasharray:none;opacity:.35}}
+/* Keep the browser from turning a figure drag into page pan/pointercancel. */
+.duel-slot[data-piece][data-side="0"]{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.duel-dialog.dragging .duel-slot,.duel-dialog.dragging .duel-hand-piece{translate:none!important;transition:none!important}
+.duel-dialog.dragging .duel-figure{animation-play-state:paused}
+.duel-drag-ghost{transition:none!important;user-select:none}

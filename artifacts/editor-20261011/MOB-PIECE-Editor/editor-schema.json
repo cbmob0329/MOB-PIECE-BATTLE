@@ -1,0 +1,11 @@
+{
+  "schema": "mpb-editor/1",
+  "workshopSchema": "mpb-workshop/2",
+  "records": "既存のrecord形式。追加はeditorAdded:true、固定ID/UID、gameImageを保持。",
+  "workshop": {
+    "images": "figureId → data:image/png|jpeg|webp;base64,...。追加・差し替え画像をJSON内に同梱。",
+    "towers": "towerId → floors配列（index 0〜4、number 1〜5）。各階のrewardは対戦相手1人/マスター連戦1回の初回勝利報酬。",
+    "banners": "bannerId → figureIds、pickupIds、featuredIds、requiresClear（空は常設）"
+  },
+  "integration": "編集ファイルを保存して本体への反映作業に使用。ゲーム本体やセーブは自動更新しない。"
+}
