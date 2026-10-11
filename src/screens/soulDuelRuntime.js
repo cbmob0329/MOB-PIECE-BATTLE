@@ -28,7 +28,7 @@ export async function launchBattle({profile,request,onResolved,saveProfile}){
 
  const own=()=>view.active===0,main=()=>own()&&view.phase==='main'&&!view.pending&&!view.evolutionQueue?.length&&view.winner===null;
  const selectedPiece=()=>view.players[0].field.find(p=>p?.uid===selected);
- const result=()=>({won:state.winner===0,battleFor:state.winner===0?1:0,battleAgainst:state.winner===1?1:0,match:{ruleset:'soul-master-v1',playerDeckOriginal:deck,cpuDeckOriginal:cpuDeck,history:[{pHand:state.players[0].used,cHand:state.players[1].used,won:state.winner===0}],life:state.players.map(p=>p.life),reason:state.reason},soulState:state});
+ const result=()=>({won:state.winner===0,battleFor:state.winner===0?1:0,battleAgainst:state.winner===1?1:0,match:{missionCombat:structuredClone(state.missionCombat),ruleset:'soul-master-v1',playerDeckOriginal:deck,cpuDeckOriginal:cpuDeck,history:[{pHand:state.players[0].used,cHand:state.players[1].used,won:state.winner===0}],life:state.players.map(p=>p.life),reason:state.reason},soulState:state});
  const close=()=>{if(closed)return;closed=true;stopDrag();window.removeEventListener('blur',stopDrag);window.removeEventListener('hashchange',close);timeline.destroy();energyLinks.destroy();figureTaps.reset();sound.endScope(musicScope);sound.stopAll();director.destroy();dialog.close();dialog.remove();resolveDone(result());};
  window.addEventListener('hashchange',close);
  const skillInfo=(ref,side=0,state=view)=>{const b=g.skillBudget(state,side,ref);if(b?.reactivePassive)return 'パッシブ · 手札1枚';return !b?'':b.passive?'自動発動':`スキル 残り ${b.remaining}/${b.limit}`;};

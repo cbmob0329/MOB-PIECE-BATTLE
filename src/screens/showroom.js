@@ -1,3 +1,4 @@
+import {missionHomeButton} from '../components/mission-art.js';
 import {battleStyleHome} from './battleCustomize.js';
 import {ensureSoulDecks} from '../game/soul-battle.js';
 
@@ -16,7 +17,7 @@ export function homeScreen({figures,byId,profile,icon,art,menuArt,iconArt}){
     menuTile(menuArt('gacha','home-menu-art','GACHA'),'GACHA','ガチャ','gacha')
   ]),
   shelfRow([
-    menuTile(menuArt('mission','home-menu-art','MISSION'),'MISSION','報酬を受け取る','mission'),
+    missionHomeButton(),
     menuTile(menuArt('history','home-menu-art','HISTORY'),'HISTORY','全戦績を見る','history'),
     menuTile(menuArt('shop','home-menu-art','MOB SHOP'),'MOB SHOP','ショップ','shop')
   ]),

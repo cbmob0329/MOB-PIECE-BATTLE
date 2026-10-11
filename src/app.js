@@ -40,7 +40,7 @@ import {infoScreen} from './screens/library.js?v=7.3.0';
 import {collectionScreen,deckScreen,battleScreen,soulInfo} from './screens/soulLibrary.js';
 import {soulById,soulDeckAddStatus,ensureSoulDecks,setSoulDeck,prepareSoulDeck,validateSoulDeck,autoSoulDeck} from './game/soul-battle.js';
 import {competitionScreen} from './screens/competition.js?v=7.3.0';
-import {missionScreen,selectMissionRank} from './screens/mission.js?v=7.3.0';
+import {missionScreen,selectMissionRank,selectMissionCategory} from './screens/mission.js?v=7.3.0';
 import {historyScreen,hallOfFameScreen} from './screens/records.js?v=7.3.0';
 import {
   syncCompetition,recordQualifierResult,chooseRankUpTournament,recordRankUpResult,
@@ -128,7 +128,7 @@ async function startBattleFromUi(spec){
     let request,onResolved;
     if(spec.startsWith('rematch:')){
       request=towerRematchRequest(profile,spec.slice('rematch:'.length));
-      onResolved=result=>{const next=structuredClone(profile),out=recordProgressBattle(next,result,request);if(!commitProfile(next))throw Error('対戦結果を保存できませんでした');return {reward:out.reward,message:out.reward?'初回対戦報酬！ ダイヤ5＋1,000コイン':result.won?'再戦に勝利！':'何度でも挑戦できます'};};
+      onResolved=result=>{const next=structuredClone(profile),out=recordProgressBattle(next,result,request);if(!commitProfile(next))throw Error('対戦結果を保存できませんでした');return {reward:out.reward,message:out.reward?'初回対戦報酬！ ダイヤ10＋1,000コイン':result.won?'再戦に勝利！':'何度でも挑戦できます'};};
     }else{throw Error('タワーで勝利済みの相手を選んでください');}
     const result=await launchBattle({profile,request,onResolved,saveProfile,testMode:testSettings.enabled&&profile.testMode});if(!result?.cancelled){render();}
   }catch(err){render();toast(err?.message||'バトルを開始できませんでした。','error');}
@@ -202,6 +202,7 @@ if(b.dataset.figureInfo){openFigureInfo(b.dataset.figureInfo);return;}
 if(b.dataset.playerAvatar){profile.avatarId=b.dataset.playerAvatar;persist();render({preserveScroll:true});toast('プレイヤーアバターを変更しました');return;}
 if(b.hasAttribute('data-mission-claim-all')){try{const next=structuredClone(profile),reward=claimAllMissions(next,{figures,byId});if(!commitProfile(next))throw Error('保存できませんでした');sound.play('reward');render();toast(`MISSION ALL CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND · ${reward.count}件`);}catch(err){toast(err.message,'error');}return;}
 if(b.dataset.rivalSelect){selectRival(app,profile,b.dataset.rivalSelect);sound.play('select');return;}
+if(b.dataset.missionCategory){selectMissionCategory(b.dataset.missionCategory);render({preserveScroll:true});return;}
 if(b.dataset.missionClaim){try{const next=structuredClone(profile),reward=claimMission(next,b.dataset.missionClaim,{figures,byId});if(!commitProfile(next))throw Error('保存できませんでした');sound.play('reward');render();toast(`MISSION CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND`);}catch(err){toast(err.message,'error');}return;}
 if(b.dataset.testAction){
   try{

@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import * as g from '../src/game/soul-battle.js';
+import {towerStarters} from '../src/data/tower.js';
+import {recordProgressBattle} from '../src/game/progression.js';
+import {allMissionStates,claimMission,metricValue} from '../src/game/missions.js';
+import {campaignTowers} from '../src/data/tower-campaign.js';
+const deck=towerStarters[0].deck,fresh=()=>g.createSoulBattle([deck,deck],undefined,{random:()=>.3});
+const put=(s,side,id,slot=0)=>s.players[side].field[slot]={id,uid:++s.serial,summonTurn:0,skillUsesUsed:0,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],extra:0,permanentAtk:0,permanentDef:0};
+const state=fresh();state.turn=3;const a=put(state,0,'01');state.players[0].hand=['01'];state.players[0].handBonuses=[];const recipe=g.fusionOptions(state,0,[{handIndex:0},a.uid]).find(r=>r.resonance);assert(recipe);g.fuse(state,0,[{handIndex:0},a.uid],recipe.id);assert.deepEqual(state.missionCombat.fusions,[1,0]);assert.deepEqual(JSON.parse(JSON.stringify(state)).missionCombat,state.missionCombat);
+const damaged=fresh();damaged.turn=3;const attacker=put(damaged,0,'01');attacker.reactionPlan={lifeDamage:10};g.useSkill(damaged,0,attacker.uid,{});while(damaged.pending)g.passReaction(damaged,1-damaged.pending.side);assert.equal(damaged.players[1].life,390);assert.deepEqual(damaged.missionCombat.lifeLost,[false,true]);damaged.players[1].life=400;assert.equal(damaged.missionCombat.lifeLost[1],true);
+const p={owned:{},coins:0,diamonds:0,battleStats:{},towerCampaign:{regions:{grass:{cleared:[1,2,3,4,5],defeated:{}}}}},req={mode:'free',resultToken:'1',rematchKey:'grass:1:0'},result={won:true,match:{playerDeckOriginal:deck,history:[],missionCombat:{fusions:[3,99],lifeLost:[false,true]}}};const out=recordProgressBattle(p,result,req);assert.deepEqual(out.reward,{diamonds:10,coins:1000});assert.equal(p.battleStats.fusions,3);assert.equal(p.battleStats.flawlessWins,1);assert.equal(recordProgressBattle(p,result,req).recorded,false);assert.equal(p.battleStats.fusions,3);
+recordProgressBattle(p,{...result,match:{...result.match,missionCombat:{fusions:[2,0],lifeLost:[true,false]},life:[400,0]}},{...req,resultToken:'2'});assert.equal(p.battleStats.fusions,5);assert.equal(p.battleStats.flawlessWins,1);assert.equal(p.diamonds,10);assert.equal(p.coins,1000);
+recordProgressBattle(p,{won:true,match:{playerDeckOriginal:deck,history:[],life:[400,0]}},{...req,resultToken:'3'});assert.equal(p.battleStats.flawlessWins,1);assert.equal(metricValue(p,'tower:grass'),1);assert.equal(metricValue(p,'tower:desert'),0);assert.equal(allMissionStates(p).filter(m=>m.category==='タワー制覇').length,campaignTowers.length);
+for(const id of ['v3:fusions:1','v3:flawlessWins:1','v3:tower:grass']){assert.deepEqual(claimMission(p,id),{diamonds:5,coins:1000});assert.throws(()=>claimMission(p,id));}assert.throws(()=>claimMission(p,'v3:tower:desert'));assert.equal(p.battleStats.fusions,5);
+console.log('PASS fusion counters, life-loss retained after heal, CPU isolation, old/duplicate result protection, all tower missions, rewards10/1000 and claim once');
