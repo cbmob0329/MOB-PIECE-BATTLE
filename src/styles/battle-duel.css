@@ -95,8 +95,7 @@
 .duel-dialog.dragging .duel-figure{animation-play-state:paused}
 .duel-drag-ghost{transition:none!important;user-select:none}
 /* Applied attribute / tag energy stays small and never intercepts figure input. */
-.strength-energies{position:absolute;top:13px;left:50%;transform:translateX(-50%);display:flex;gap:3px;z-index:6;pointer-events:none;white-space:nowrap}
-.strength-energy{display:grid;place-items:center;width:18px;height:18px;border:1px solid var(--energy-color);border-radius:50%;background:#0b1733ed;color:var(--energy-color);box-shadow:0 0 5px color-mix(in srgb,var(--energy-color) 50%,transparent)}
-.duel-dialog .strength-energy svg{width:12px;height:12px;flex-shrink:0}
-.duel-slot:has(>.strength-energies) .duel-figure{padding-top:20px}
+.strength-energies{position:absolute;bottom:39px;right:0;display:flex;flex-direction:column;gap:2px;z-index:6;pointer-events:none;white-space:nowrap}
+.strength-energy{display:grid;place-items:center;width:14px;height:14px;border:1px solid var(--energy-color);border-radius:50%;background:#0b1733ed;color:var(--energy-color);box-shadow:0 0 3px color-mix(in srgb,var(--energy-color) 35%,transparent)}
+.duel-dialog .strength-energy svg{width:10px;height:10px;flex-shrink:0}
 .duel-skill-targets{border:0;padding:0;margin:14px 0;min-width:0}.duel-skill-targets legend{font-size:13px;font-weight:800;margin-bottom:7px}.duel-skill-targets>button{display:flex;gap:10px;align-items:center;width:100%;padding:8px;margin:5px 0;border:2px solid #ccd5ca;border-radius:10px;background:#fff;color:#173a37;text-align:left}.duel-skill-targets>button[aria-pressed=true]{border-color:#258572;background:#e1f4e6}.duel-skill-targets img{width:46px;height:52px;object-fit:contain}.duel-skill-targets b,.duel-skill-targets small{display:block}.duel-skill-targets small{font-size:11px;margin-top:3px}
