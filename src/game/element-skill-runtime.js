@@ -23,7 +23,7 @@ export function elementChoices(s,side,f,byId,selected={}){
   if(q.zone==='mode')xs=q.values.map(value=>({value,label:({atk:'ATK',def:'DEF',guard:'構え',advance:'進撃'})[value]}));
   if(q.zone==='effect'){const t=[...c.live(c.own),...c.live(c.foe)].find(x=>String(x.uid)===String(chosen[q.target]));xs=(t?.effects||[]).map((e,i)=>({e,i})).filter(x=>c.effectMatches(x.e,q.filter)).map(x=>({value:String(x.i),label:`${x.e.key.toUpperCase()} ${x.e.value>0?'+':''}${x.e.value} / 終了ターン${x.e.until}`}));}
   if(q.optional)xs.push({value:'-1',label:'選択しない'});
-  const key='el_'+q.key;out.push({key,label:({ally:'味方',enemy:'相手',grave:'墓地',top:'山札の上',effect:'解除する効果',mode:'効果'})[q.zone]+'を選択',choices:xs});
+  const key='el_'+q.key;out.push({key,zone:q.zone,label:({ally:'味方',enemy:'相手',grave:'墓地',top:'山札の上',effect:'解除する効果',mode:'効果'})[q.zone]+'を選択',choices:xs});
   chosen[q.key]=selected[key]??selected[q.key]??xs[0]?.value;
  }
  return out;
