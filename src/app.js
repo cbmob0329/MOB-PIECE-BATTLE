@@ -1,3 +1,5 @@
+import {plusBonus} from './game/inventory.js';
+import {recordProgressBattle} from './game/progression.js';
 import {openDeckReplace} from './screens/deckReplace.js';
 import {openDeckBuilder,openDeckClear} from './screens/deckBuilder.js';
 import {mountTowerDepth} from './components/tower-depth.js';
@@ -8,7 +10,7 @@ import {watchScreenImages} from './components/loading.js';
 import {towerStarters} from './data/tower.js';
 import {towerScreen,handleTower,handleTowerChange} from './screens/tower.js';
 import {towerRematchRequest} from './game/tower-rematch.js';
-import {filterRematches} from './screens/towerRematch.js';
+import {filterRematches,selectRival} from './screens/towerRematch.js';
 import {prepareTowerRewards} from './game/tower-rewards.js';
 import {prepareTowerStartup} from './game/tower.js';
 import {prepareFavoriteToggle} from './game/favorites.js';
@@ -38,7 +40,7 @@ import {infoScreen} from './screens/library.js?v=7.3.0';
 import {collectionScreen,deckScreen,battleScreen,soulInfo} from './screens/soulLibrary.js';
 import {soulById,soulDeckAddStatus,ensureSoulDecks,setSoulDeck,prepareSoulDeck,validateSoulDeck,autoSoulDeck} from './game/soul-battle.js';
 import {competitionScreen} from './screens/competition.js?v=7.3.0';
-import {missionScreen} from './screens/mission.js?v=7.3.0';
+import {missionScreen,selectMissionRank} from './screens/mission.js?v=7.3.0';
 import {historyScreen,hallOfFameScreen} from './screens/records.js?v=7.3.0';
 import {
   syncCompetition,recordQualifierResult,chooseRankUpTournament,recordRankUpResult,
@@ -64,9 +66,8 @@ if(!app)throw new Error('APP_ROOT_NOT_FOUND');
 const nav=[['home','home','HOME','home'],['figure','figure','FIGURE','figure'],['deck','deck','DECK','deck'],['battle','battle','BATTLE','battle'],['gacha','gacha','GACHA','gacha']];
 const compact=n=>{const v=Number(n||0);if(v>=1000000)return `${(v/1000000).toFixed(v>=10000000?0:1)}M`;if(v>=10000)return `${Math.floor(v/1000)}K`;return v.toLocaleString('ja-JP');};
 
-try{if(!profile.towerProgress?.starterGranted||(profile.towerProgress?.starterVersion||0)<3){if(!commitProfile(prepareTowerStartup(profile)))throw Error('スターターを保存できませんでした');if(isNewProfile)location.hash='tower';}const towerRewards=prepareTowerRewards(profile);if(JSON.stringify(towerRewards.next.towerOpponentRewards)!==JSON.stringify(profile.towerOpponentRewards)||JSON.stringify(towerRewards.next.towerMasterRewards)!==JSON.stringify(profile.towerMasterRewards)){if(!commitProfile(towerRewards.next))throw Error('タワー報酬を保存できませんでした');}normalizeBattleProgress(profile);if(syncCompetition(profile))saveProfile();}catch(err){console.error('[MPB] profile bootstrap failed',err);}
+try{if(!profile.towerProgress?.starterGranted||(profile.towerProgress?.starterVersion||0)<4){if(!commitProfile(prepareTowerStartup(profile)))throw Error('スターターを保存できませんでした');if(isNewProfile)location.hash='tower';}const towerRewards=prepareTowerRewards(profile);if(JSON.stringify(towerRewards.next.towerOpponentRewards)!==JSON.stringify(profile.towerOpponentRewards)||JSON.stringify(towerRewards.next.towerMasterRewards)!==JSON.stringify(profile.towerMasterRewards)){if(!commitProfile(towerRewards.next))throw Error('タワー報酬を保存できませんでした');}normalizeBattleProgress(profile);}catch(err){console.error('[MPB] profile bootstrap failed',err);}
 
-function noticeMarkup(){const n=getCompetitionNotice(profile);if(!n)return '';const kicker=n.type==='weekly-rank'?'WEEKLY RANK REWARD':n.type==='bonus'?'MOB MASTER BONUS':'ANNUAL COMPETITION';return `<div class="competition-notice" role="dialog" aria-modal="true"><div class="competition-notice-card"><small>${kicker}</small><h2>${n.title}</h2><p>${n.body}</p><strong>${Number(n.coins||0).toLocaleString('ja-JP')} COIN<br>+ ${Number(n.diamonds||0).toLocaleString('ja-JP')} DIAMOND</strong><button data-comp="dismiss-notice">受け取る</button></div></div>`;}
 let cancelScreenLoad=()=>{},cancelTowerDepth=()=>{};
 function settleScreenImages(){cancelScreenLoad();cancelScreenLoad=watchScreenImages(app,app.querySelector('[data-screen-loader]'));}
 window.addEventListener('mpb:screen-images-changed',settleScreenImages);
@@ -75,14 +76,14 @@ function render({preserveScroll=false}={}){
   const scroll=preserveScroll?(app.querySelector('#main')?.scrollTop||0):0;
   const deckScroll=preserveScroll?(app.querySelector('.deck-panel-scroll')?.scrollTop||0):0;
   const focused=preserveScroll?document.activeElement?.getAttribute('data-add'):null;
-  const route=location.hash.slice(1)||'home';
+  const requestedRoute=location.hash.slice(1)||'home';const route=['tournament','rankTournament','mobLeague','calendar','hall'].includes(requestedRoute)?'battle':requestedRoute;
   document.documentElement.classList.toggle('reduce-motion',profile.reducedMotion);
   const page=['tower','initial-starter'].includes(route)?towerScreen(ctx):route==='sound'?soundGalleryScreen():route==='home'?homeScreen(ctx):route==='battle-style'?battleCustomizeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup,collectionFavorites):route==='deck'?deckScreen(ctx,{query:deckQuery,tag:deckTag,rarity:deckRarity}):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='shop'?towerShopScreen(ctx):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
   const battleRoute=['battle','tournament','rankTournament','mobLeague'].includes(route);
-  const master=isPlayerMaster(profile);const rankKey=master?'MOB_MASTER':profile.rank;
+  const master=false;const rankKey=profile.rank;
   const avatarFigure=byId.get(profile.avatarId)||byId.get(profile.centerId)||figures.find(f=>!f.pending);
   const avatarMarkup=avatarFigure?`<span class="avatar avatar-figure">${art(avatarFigure,'top-avatar-art')}</span>`:`<span class="avatar">M<span>01</span></span>`;
-  app.innerHTML=`<div class="game-shell"><header class="topbar"><button class="player" data-go="player">${avatarMarkup}<span class="player-copy"><b>PLAYER</b><small class="season-mini">${labelDate(profile.competition.date)}</small><small class="player-rank-line">${iconArt('rank','top-rank-symbol','RANK')}${rankArt(rankKey,'top-rank-art',rankKey)}<i>${master?'MOB MASTER':'CHALLENGER'}</i></small></span></button><div class="wallet wallet-v6"><span title="${Number(profile.coins||0).toLocaleString('ja-JP')} COIN">${iconArt('coin','wallet-art','COIN')}<b>${compact(profile.coins)}</b></span><span title="${Number(profile.diamonds||0).toLocaleString('ja-JP')} DIAMOND">${iconArt('diamond','wallet-art','DIAMOND')}<b>${compact(profile.diamonds)}</b></span><span title="${Number(profile.rubies||0).toLocaleString('ja-JP')} RUBY">${iconArt('ruby','wallet-art','RUBY')}<b>${compact(profile.rubies)}</b></span></div><button class="settings" data-go="settings" aria-label="設定">${menuArt('settings','top-settings-art','SETTINGS')}</button></header><main id="main">${page}</main><nav aria-label="メインナビゲーション">${nav.map(([id,ic,label,menuKey])=>{const active=route===id||(battleRoute&&id==='battle');const artMarkup=id==='deck'?iconArt('deck','bottom-menu-icon-art',label):(menuKey?menuArt(menuKey,'bottom-menu-art',label):icon(ic));return `<button data-go="${id}" class="${active?'active':''}" ${active?'aria-current="page"':''} aria-label="${label}"><span class="nav-art">${artMarkup}</span>${active?'<i></i>':''}</button>`;}).join('')}</nav><div class="screen-loader" data-screen-loader hidden><div><b>MOB PIECE BATTLE</b><span></span><small>IMAGE LOADING...</small></div></div><div class="toast" role="status"></div>${route==='initial-starter'?'':noticeMarkup()}</div>`;
+  app.innerHTML=`<div class="game-shell"><header class="topbar"><button class="player" data-go="player">${avatarMarkup}<span class="player-copy"><b>PLAYER</b><small class="player-rank-line">${iconArt('rank','top-rank-symbol','RANK')}${rankArt(rankKey,'top-rank-art',rankKey)}<i>${master?'MOB MASTER':'CHALLENGER'}</i></small></span></button><div class="wallet wallet-v6"><span title="${Number(profile.coins||0).toLocaleString('ja-JP')} COIN">${iconArt('coin','wallet-art','COIN')}<b>${compact(profile.coins)}</b></span><span title="${Number(profile.diamonds||0).toLocaleString('ja-JP')} DIAMOND">${iconArt('diamond','wallet-art','DIAMOND')}<b>${compact(profile.diamonds)}</b></span><span title="${Number(profile.rubies||0).toLocaleString('ja-JP')} RUBY">${iconArt('ruby','wallet-art','RUBY')}<b>${compact(profile.rubies)}</b></span></div><button class="settings" data-go="settings" aria-label="設定">${menuArt('settings','top-settings-art','SETTINGS')}</button></header><main id="main">${page}</main><nav aria-label="メインナビゲーション">${nav.map(([id,ic,label,menuKey])=>{const active=route===id||(battleRoute&&id==='battle');const artMarkup=id==='deck'?iconArt('deck','bottom-menu-icon-art',label):(menuKey?menuArt(menuKey,'bottom-menu-art',label):icon(ic));return `<button data-go="${id}" class="${active?'active':''}" ${active?'aria-current="page"':''} aria-label="${label}"><span class="nav-art">${artMarkup}</span>${active?'<i></i>':''}</button>`;}).join('')}</nav><div class="screen-loader" data-screen-loader hidden><div><b>MOB PIECE BATTLE</b><span></span><small>IMAGE LOADING...</small></div></div><div class="toast" role="status"></div></div>`;
   if(route==='gacha')bindGacha();
   app.querySelector('#main').scrollTop=scroll;
   if(route==='deck'&&app.querySelector('.deck-panel-scroll'))app.querySelector('.deck-panel-scroll').scrollTop=deckScroll;
@@ -127,16 +128,9 @@ async function startBattleFromUi(spec){
     let request,onResolved;
     if(spec.startsWith('rematch:')){
       request=towerRematchRequest(profile,spec.slice('rematch:'.length));
-      onResolved=result=>{const rw=battleReward(profile,'free','easy',result.won);recordHistory(result,request,{mode:'free-rematch',rank:request.cpuRank});persist();return {reward:result.won?rw:null,message:result.won?'再戦に勝利！':'何度でも挑戦できます'};};
-    }else if(spec.startsWith('free:')){
-      const difficulty=(spec.split(':')[1]||'easy'),enemyId=spec.split(':')[2];request={mode:'free',difficulty,enemyId,title:`FREE BATTLE · ${difficulty.toUpperCase()}`,opponentName:enemyId?undefined:`CPU ${difficulty.toUpperCase()}`,cpuRank:profile.rank,forfeitCountsLoss:false};
-      onResolved=result=>{const rw=battleReward(profile,'free',difficulty,result.won);recordHistory(result,request,{mode:`free-${difficulty}`,rank:profile.rank});persist();return {reward:result.won?rw:null,message:result.won?'FREE BATTLE CLEAR':'再挑戦しよう'};};
-    }else if(spec==='random'){
-      const state=randomMatchStatus(profile);if(state.remaining<=0)throw new Error('今週のランダムマッチ3回は終了しています。');
-      const opponentName=CPU_NAMES[Math.floor(Math.random()*CPU_NAMES.length)]||'RANDOM CPU';request={mode:'random',title:'RANDOM MATCH',opponentName,cpuRank:profile.rank,forfeitCountsLoss:true};
-      onResolved=result=>{const rr=recordRandomMatch(profile,result.won);recordHistory(result,request,{mode:'random',rank:profile.rank});persist();return {reward:result.won?rr.reward:null,message:`RANDOM MATCH ${result.won?'WIN':'LOSE'} · 今週 ${rr.played}/3`};};
-    }else{const c=competitionBattleRequest(spec);request=c.request;onResolved=result=>{const meta=c.resolve(result);persist();return meta;};}
-    const result=await launchBattle({profile,request,onResolved,saveProfile,testMode:testSettings.enabled&&profile.testMode});if(!result?.cancelled){syncCompetition(profile);persist();render();}
+      onResolved=result=>{const next=structuredClone(profile),out=recordProgressBattle(next,result,request);if(!commitProfile(next))throw Error('対戦結果を保存できませんでした');return {reward:out.reward,message:out.reward?'初回対戦報酬！ ダイヤ5＋1,000コイン':result.won?'再戦に勝利！':'何度でも挑戦できます'};};
+    }else{throw Error('タワーで勝利済みの相手を選んでください');}
+    const result=await launchBattle({profile,request,onResolved,saveProfile,testMode:testSettings.enabled&&profile.testMode});if(!result?.cancelled){render();}
   }catch(err){render();toast(err?.message||'バトルを開始できませんでした。','error');}
   finally{battleBusy=false;}
 }
@@ -145,7 +139,7 @@ function openFigureInfo(id){
  const route=location.hash.slice(1);
  const f=byId.get(id);if(!f)return;
  const dlg=document.createElement('dialog');dlg.className='figure-dex-dialog';
- dlg.innerHTML='<section><button class="figure-dex-close" aria-label="閉じる">×</button><div class="figure-dex-hero">'+art(f)+'</div><h2>'+f.name+'</h2><p>所持 '+(profile.owned[id]||0)+'</p>'+soulInfo(f)+(route==='deck'?`<div class="figure-deck-actions"><button data-info-add>＋ 1体追加</button><button data-info-replace>入れ替え</button>${soulById.get(id)?.soulClass!=='seed'?'<button data-info-materials>おすすめの融合素材を見る</button>':''}<p role="status" class="deck-add-reason"></p></div>`:'')+'</section>';
+ dlg.innerHTML='<section><button class="figure-dex-close" aria-label="閉じる">×</button><div class="figure-dex-hero">'+art(f)+'</div><h2>'+f.name+'</h2><p>所持 '+(profile.owned[id]||0)+'</p><p>入手順：'+(profile.figurePlus?.[id]||[]).map((n,i)=>`${i+1}体目 ＋${n}（ATK・DEF ＋${plusBonus(n)}）`).join('<br>')+'</p>'+soulInfo(f)+(route==='deck'?`<div class="figure-deck-actions"><button data-info-add>＋ 1体追加</button><button data-info-replace>入れ替え</button>${soulById.get(id)?.soulClass!=='seed'?'<button data-info-materials>おすすめの融合素材を見る</button>':''}<p role="status" class="deck-add-reason"></p></div>`:'')+'</section>';
  document.body.appendChild(dlg);dlg.showModal();const close=()=>{dlg.close();dlg.remove();};
  if(route==='deck'){
   const add=dlg.querySelector('[data-info-add]'),status=soulDeckAddStatus(profile,id);add.disabled=!status.allowed;dlg.querySelector('.deck-add-reason').textContent=status.reasons.join(' / ');dlg.querySelector('[data-info-replace]').disabled=!ensureSoulDecks(profile).length;
@@ -169,7 +163,7 @@ function grantAllFigures(){
 }
 
 app.addEventListener('input',e=>{if(e.target.id==='rematch-search')filterRematches(app);});
-app.addEventListener('change',e=>{if(e.target.id==='rematch-area')filterRematches(app);});
+app.addEventListener('change',e=>{if(e.target.id==='rematch-area')filterRematches(app);if(e.target.id==='mission-rank-view'){selectMissionRank(e.target.value);render({preserveScroll:true});}});
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
 if(b.hasAttribute('data-save-reset')){openSaveReset({onDeleted:()=>{sound.stopAll();location.reload();}});return;}
 if(handleTowerShop(b,ctx,{render,toast}))return;
@@ -192,7 +186,7 @@ if(b.dataset.initialReview){initialSelection=b.dataset.initialReview;render();re
   if(b.hasAttribute('data-initial-back')){initialSelection=null;render();return;}
   if(b.dataset.initialConfirm){try{const next=prepareInitialChoice(profile,b.dataset.initialConfirm);if(!commitProfile(next))throw Error('保存できませんでした。スターターは未受領です。もう一度お試しください。');initialSelection=null;sound.play('starter');location.hash='deck';render();toast(next.initialChoice.deckSlot<0?'所持品に追加しました。保存済みデッキは維持しています。':'スターターを受け取りました');}catch(err){toast(err.message,'error');}return;}
   if(b.hasAttribute('data-piece-starter')){try{const starter=towerStarters.find(s=>s.id===b.dataset.pieceStarter);if(!starter)throw Error('スターターが見つかりません');const check=validateSoulDeck(starter.deck,profile.owned,{profile});if(!check.valid)throw Error(check.errors[0]||'45体の編成を確認してください');commitDeck(starter.deck);render({preserveScroll:true});sound.play('starter');toast('スターターをセットしました');}catch(err){toast(err.message,'error');}return;}
-if(b.hasAttribute('data-soul-starter')&&testSettings.enabled){try{applyStarter(profile,b.dataset.soulStarter);persist();render({preserveScroll:true});sound.play('starter');toast('テスト用スターターデッキをセットしました');}catch(err){toast(err.message,'error');}return;}
+if(b.hasAttribute('data-soul-starter')&&testSettings.enabled&&profile.testMode){try{applyStarter(profile,b.dataset.soulStarter);persist();render({preserveScroll:true});sound.play('starter');toast('テスト用スターターデッキをセットしました');}catch(err){toast(err.message,'error');}return;}
 if(['data-soul-add','data-soul-remove','data-soul-auto','data-soul-clear'].some(a=>b.hasAttribute(a))){try{let deck=[...ensureSoulDecks(profile)];if(b.hasAttribute('data-soul-add'))deck.push(b.dataset.soulAdd);if(b.hasAttribute('data-soul-remove'))deck.splice(Number(b.dataset.soulRemove),1);if(b.hasAttribute('data-soul-auto'))deck=autoSoulDeck(profile.owned,{profile});if(b.hasAttribute('data-soul-clear'))deck=[];commitDeck(deck);sound.play(b.hasAttribute('data-soul-add')?'deckAdd':b.hasAttribute('data-soul-remove')?'deckRemove':'deckArrange');render({preserveScroll:true});}catch(err){toast(err.message,'error');}return;}
 if(b.hasAttribute('data-week-open')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=false;return;}
 if(b.hasAttribute('data-week-close')){const modal=app.querySelector('[data-week-modal]');if(modal)modal.hidden=true;return;}
@@ -206,8 +200,9 @@ if(b.dataset.calendarOpenMonth){calendarMonth=Number(b.dataset.calendarOpenMonth
 if(b.dataset.collectionStatus){collectionStatus=b.dataset.collectionStatus;render();return;}
 if(b.dataset.figureInfo){openFigureInfo(b.dataset.figureInfo);return;}
 if(b.dataset.playerAvatar){profile.avatarId=b.dataset.playerAvatar;persist();render({preserveScroll:true});toast('プレイヤーアバターを変更しました');return;}
-if(b.hasAttribute('data-mission-claim-all')){try{const reward=claimAllMissions(profile,{figures,byId});persist();sound.play('reward');render();toast(`MISSION ALL CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND · ${reward.count}件`);}catch(err){toast(err.message,'error');}return;}
-if(b.dataset.missionClaim){try{const reward=claimMission(profile,b.dataset.missionClaim,{figures,byId});persist();sound.play('reward');render();toast(`MISSION CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND`);}catch(err){toast(err.message,'error');}return;}
+if(b.hasAttribute('data-mission-claim-all')){try{const next=structuredClone(profile),reward=claimAllMissions(next,{figures,byId});if(!commitProfile(next))throw Error('保存できませんでした');sound.play('reward');render();toast(`MISSION ALL CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND · ${reward.count}件`);}catch(err){toast(err.message,'error');}return;}
+if(b.dataset.rivalSelect){selectRival(app,profile,b.dataset.rivalSelect);sound.play('select');return;}
+if(b.dataset.missionClaim){try{const next=structuredClone(profile),reward=claimMission(next,b.dataset.missionClaim,{figures,byId});if(!commitProfile(next))throw Error('保存できませんでした');sound.play('reward');render();toast(`MISSION CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND`);}catch(err){toast(err.message,'error');}return;}
 if(b.dataset.testAction){
   try{
     const action=b.dataset.testAction;

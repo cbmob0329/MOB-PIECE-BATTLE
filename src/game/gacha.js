@@ -1,3 +1,6 @@
+import {figures} from '../data/catalog.js';
+import {usableFigure} from '../data/gacha.js';
+import {collectionFull} from './inventory.js';
 import {bannerUnlocked} from '../data/tower.js';
 import {banners,poolFor,pickupsFor,mainPickupFor,ratesFor,RARITY_RANK,RUBY_COST,OWN_CAP} from '../data/gacha.js?v=7.3.0';
 import {acquireFigure,ensureGachaStats} from './inventory.js?v=7.3.0';
@@ -15,18 +18,15 @@ export function prepareDraw(current,banner,count,rng=randomUnit){
  const mode=drawMode(rng()),next=structuredClone(current);
  const rows=Array.from({length:count},(_,i)=>mode==='pickup'&&i===count-1?mainPickupFor(banner):rollFigure(banner,mode==='allSSR'?'SSR':count===10&&i===9,rng));
  next.diamonds-=cost;
- const stats=ensureGachaStats(next),entries=rows.map(f=>{const got=acquireFigure(next,f,1);return {id:f.sourceId,converted:got.converted>0,ruby:got.rubies,isNew:got.isNew};});
+ const stats=ensureGachaStats(next),entries=rows.map(f=>{const got=acquireFigure(next,f,1);return {id:f.sourceId,converted:got.converted>0,ruby:got.rubies,isNew:got.isNew,upgraded:got.upgraded,copyIndex:got.copyIndex,plus:got.plus};});
  stats.draws=(Number(stats.draws)||0)+count;
  next.lastDraw={bannerId:banner.id,entries,cue:mode==='normal'?cueFor(rows):mode,at:Date.now()};
  return next;
 }
 export function welcomeGift(current){if(current.welcomeClaimed)throw new Error('受け取り済みです');return {...structuredClone(current),diamonds:current.diamonds+50,welcomeClaimed:true};}
 export function exchangeFigure(current,banner,id){
- if(!banners.some(b=>b.id===banner?.id))throw Error('このガチャは提供を終了しました');
- banner=banners.find(b=>b.id===banner.id);
- if(!bannerUnlocked(current,banner))throw Error('草原の塔をクリアすると開放されます');
- const f=poolFor(banner).find(f=>f.sourceId===id);if(!f)throw new Error('交換対象ではありません');
- if((current.owned?.[id]||0)>=OWN_CAP[f.rarity])throw new Error('所持上限です');
+ const f=figures.find(f=>f.sourceId===id&&usableFigure(f));if(!f)throw Error('交換対象ではありません');
+ if(collectionFull(current,id))throw Error('9体すべて＋99です');
  const cost=RUBY_COST[f.rarity];if(!Number.isFinite(current.rubies)||current.rubies<cost)throw new Error('ルビーが足りません');
  const next=structuredClone(current);next.rubies-=cost;acquireFigure(next,f);return next;
 }

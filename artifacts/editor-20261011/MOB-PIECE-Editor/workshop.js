@@ -6,14 +6,28 @@ const figureOptions=()=>records.map(r=>option(r.id,r.name+' / '+r.soulClass+' / 
 const update=fn=>{checkpoint();fn();persist();if($('worldUndo'))$('worldUndo').disabled=false;};
 const dialog=document.createElement('dialog');dialog.id='world';document.body.append(dialog);
 const create=document.createElement('dialog');create.id='createFigure';document.body.append(create);
-document.querySelector('nav').insertAdjacentHTML('beforeend','<button id="newFigure">＋ 画像から追加</button><button id="editWorld">タワー・ガチャ</button>');
+document.querySelector('nav').insertAdjacentHTML('beforeend','<button id="workshopUndo" disabled>1操作戻す</button><button id="newFigure">＋ 画像から追加</button><button id="editWorld">タワー・ガチャ</button>');
 let towerId=Object.keys(state().towers)[0],floorIndex=0,enemyIndex=0,bannerId=Object.keys(state().banners)[0],mode='tower';
+$('workshopUndo').onclick=()=>{const old=history.pop();if(!old)return;if(old.source!==D)refreshSource(old.source);records=old.records;orphans=old.orphans;C.installWorkspace(old.workshop);persist();render();};
 const originalRender=render;
-render=function(){originalRender();document.querySelector('h1 span').textContent=records.length;$('figureIDs').innerHTML=records.map(r=>'<option value="'+esc(r.id)+'">'+esc(r.name)+'</option>').join('');};
+render=function(){originalRender();$('workshopUndo').disabled=!history.length;document.querySelector('h1 span').textContent=records.length;$('figureIDs').innerHTML=records.map(r=>'<option value="'+esc(r.id)+'">'+esc(r.name)+'</option>').join('');};
 const oldChanges=renderChanges;
-renderChanges=function(list){oldChanges(list);const w=state(),t=Object.values(w.towers).filter(t=>!C.equal(t,D.workshop.towers[t.id])),b=Object.values(w.banners).filter(b=>!C.equal(b,D.workshop.banners[b.id]));$('changes').insertAdjacentHTML('afterbegin','<div class="notice">追加・差替画像 '+Object.keys(w.images).length+'件 / タワー変更 '+t.length+'件 / ガチャ変更 '+b.length+'件。これらも保存ファイルに含まれます。<br>'+esc([...t,...b].map(x=>x.name).join(' / '))+'</div>');};
+renderChanges=function(list){oldChanges(list);const w=state(),t=Object.values(w.towers).filter(t=>!C.equal(t,D.workshop.towers[t.id])),b=Object.values(w.banners).filter(b=>!C.equal(b,D.workshop.banners[b.id]));$('changes').insertAdjacentHTML('afterbegin','<div class="notice">削除 '+Object.keys(w.deletedFigures||{}).length+'体 / 追加・差替画像 '+Object.keys(w.images).length+'件 / タワー変更 '+t.length+'件 / ガチャ変更 '+b.length+'件。これらも保存ファイルに含まれます。<br>'+esc([...t,...b].map(x=>x.name).join(' / '))+'</div>');};
 const originalEditor=renderEditor;
-renderEditor=function(){originalEditor();if(!current())return;const label=document.createElement('label');label.className='uploadImage';label.innerHTML='画像を差し替える（PNG / JPEG / WebP）<input id="replaceImage" type="file" accept="image/png,image/jpeg,image/webp"><span class="imageStatus"></span>';$('editorBody').querySelector('.hero').after(label);label.querySelector('input').onchange=async e=>{const id=current().id;try{const image=await readImage(e.target.files[0]);update(()=>{state().images[id]=image;});if(current()?.id===id)renderEditor();}catch(error){label.querySelector('span').textContent=error.message;}};};
+renderEditor=function(){originalEditor();if(!current())return;const label=document.createElement('label');label.className='uploadImage';label.innerHTML='画像を差し替える（PNG / JPEG / WebP）<input id="replaceImage" type="file" accept="image/png,image/jpeg,image/webp"><span class="imageStatus"></span>';$('editorBody').querySelector('.hero').after(label);const remove=document.createElement('button');remove.id='deleteFigure';remove.className='danger';remove.textContent='このフィギュアを削除';label.after(remove);remove.onclick=()=>deleteFigure(current().id);label.querySelector('input').onchange=async e=>{const id=current().id;try{const image=await readImage(e.target.files[0]);update(()=>{state().images[id]=image;});if(current()?.id===id)renderEditor();}catch(error){label.querySelector('span').textContent=error.message;}};};
+
+function deleteFigure(id){
+ const figure=records.find(r=>r.id===id);if(!figure)return;
+ const uses=[];for(const t of Object.values(state().towers))for(const f of t.floors){for(const e of f.opponents)if(e.deck.includes(id)||e.figureId===id)uses.push(t.name+' '+f.number+'F / '+e.name);if(f.reward.figures[id])uses.push(t.name+' '+f.number+'F 報酬');}
+ for(const b of Object.values(state().banners))if(['figureIds','featuredIds','pickupIds'].some(k=>b[k].includes(id)))uses.push('ガチャ '+b.name);
+ if(!confirm(figure.name+' を編集データから削除します。画像・タワー報酬・敵デッキ・ガチャ・このフィギュアを指定する融合レシピからも除きます。敵デッキは削除後に45枚へ補充してください。\n'+(uses.length?'使用箇所：\n'+uses.join('\n'):'')+'\n「1操作戻す」で取り消せます。ゲーム本体は変更しません。'))return;
+ update(()=>{state().deletedFigures??={};state().deletedFigures[id]=clone(base.get(id)||figure);records=records.filter(r=>r.id!==id);delete state().images[id];
+ const mentions=m=>m.id===id||(m.any||[]).some(mentions);
+ for(const r of records)r.summon.recipes=r.summon.recipes.filter(recipe=>!(recipe.materials||[]).some(mentions));
+ for(const t of Object.values(state().towers))for(const f of t.floors){delete f.reward.figures[id];for(const e of f.opponents){e.deck=e.deck.filter(x=>x!==id);if(e.figureId===id)e.figureId=e.deck[0]||'';}}
+ for(const b of Object.values(state().banners))for(const k of ['figureIds','featuredIds','pickupIds'])b[k]=b[k].filter(x=>x!==id);
+ });closeEditor();saveMessage('フィギュアを削除しました。1操作戻すで復元できます。');
+}
 async function readImage(file){
  if(!file)throw Error('画像を選択してください');if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>20*1024*1024)throw Error('20MB以下のPNG・JPEG・WebPを選択してください');
  const url=URL.createObjectURL(file);try{const img=new Image();img.src=url;await img.decode();if(!img.width||!img.height)throw Error('画像を読み込めません');const scale=Math.min(1,1200/img.width,1200/img.height),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);const result=canvas.toDataURL('image/webp',.88);if(result.length>3*1024*1024)throw Error('画像が大きすぎます。小さい画像を選んでください');return result;}finally{URL.revokeObjectURL(url);}

@@ -1,7 +1,8 @@
-import {OWN_CAP,OVERFLOW_RUBY} from '../data/gacha.js?v=7.3.0';
-export function ensureGachaStats(profile){if(!profile.gachaStats||typeof profile.gachaStats!=='object')profile.gachaStats={draws:0,converted:0,rubiesFromConversion:0};return profile.gachaStats;}
-export function acquireFigure(profile,figure,qty=1){
-  if(!profile.owned||typeof profile.owned!=='object')profile.owned={};if(!Number.isFinite(profile.rubies))profile.rubies=0;const stats=ensureGachaStats(profile);const cap=OWN_CAP[figure.rarity]??1,rubyEach=OVERFLOW_RUBY[figure.rarity]??0;let acquired=0,converted=0,rubies=0,isNew=(profile.owned[figure.sourceId]||0)===0;
-  for(let i=0;i<qty;i++){const have=profile.owned[figure.sourceId]||0;if(have<cap){profile.owned[figure.sourceId]=have+1;acquired++;}else{converted++;rubies+=rubyEach;profile.rubies+=rubyEach;stats.converted++;stats.rubiesFromConversion+=rubyEach;}}
-  return {acquired,converted,rubies,isNew,cap};
-}
+export const COPY_CAP=9,PLUS_CAP=99;
+const natural=n=>Number.isSafeInteger(n)&&n>=0?n:0;
+export const plusBonus=n=>[10,30,50,99].filter(x=>natural(n)>=x).length*5;
+export function ensureGachaStats(p){if(!p.gachaStats||typeof p.gachaStats!=='object')p.gachaStats={draws:0,converted:0,rubiesFromConversion:0};return p.gachaStats;}
+function addOverflow(p,id,quantity){let upgraded=0,converted=0,lastCopy=-1;const levels=p.figurePlus[id];for(let i=0;i<levels.length&&quantity>0;i++){const n=Math.min(99-levels[i],quantity);if(n){levels[i]+=n;quantity-=n;upgraded+=n;lastCopy=i;}}if(quantity){converted=quantity;p.rubies+=quantity;const stats=ensureGachaStats(p);stats.converted=natural(stats.converted)+quantity;stats.rubiesFromConversion=natural(stats.rubiesFromConversion)+quantity;}return {upgraded,converted,rubies:converted,copyIndex:lastCopy,plus:lastCopy>=0?levels[lastCopy]:0};}
+export function normalizeInventory(p){p.owned??={};if(!p.figurePlus||typeof p.figurePlus!=='object'||Array.isArray(p.figurePlus))p.figurePlus={};p.rubies=natural(p.rubies);for(const [id,n] of Object.entries(p.owned)){const total=natural(n),count=Math.min(9,total),old=Array.isArray(p.figurePlus[id])?p.figurePlus[id]:[];p.figurePlus[id]=Array.from({length:count},(_,i)=>Math.min(99,natural(old[i])));p.owned[id]=count;if(total>9)addOverflow(p,id,total-9);}return p;}
+export function collectionFull(p,id){return (p.owned?.[id]||0)>=9&&Array.from({length:9},(_,i)=>p.figurePlus?.[id]?.[i]||0).every(n=>n>=99);}
+export function acquireFigure(p,f,qty=1){if(!Number.isSafeInteger(qty)||qty<1)throw Error('獲得数が不正です');normalizeInventory(p);const id=f.sourceId||f.id;if(!id)throw Error('フィギュアが見つかりません');const have=p.owned[id]||0,isNew=have===0,acquired=Math.min(9-have,qty);p.owned[id]=have+acquired;p.figurePlus[id]??=[];for(let i=0;i<acquired;i++)p.figurePlus[id].push(0);return {acquired,isNew,cap:9,...addOverflow(p,id,qty-acquired)};}

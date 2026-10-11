@@ -8,7 +8,7 @@ export function initializeInitialRelease(profile,{newProfile=false}={}){
  return true;
 }
 export function prepareInitialChoice(profile,id){
- if(profile.initialChoice?.version!==release.version||!['pending','available'].includes(profile.initialChoice.state))throw Error('スターターは受け取り済みです');
+ if(profile.towerProgress?.starterGranted||profile.initialChoice?.claimed||profile.initialChoice?.version!==release.version||!['pending','available'].includes(profile.initialChoice.state))throw Error('スターターは受け取り済みです');
  const starter=release.starters.find(s=>s.id===id);if(!starter)throw Error('スターターを選んでください');
  const next=structuredClone(profile),counts={};next.owned??={};for(const fid of starter.deck)counts[fid]=(counts[fid]||0)+1;
  for(const [fid,n]of Object.entries(counts))next.owned[fid]=Math.max(next.owned[fid]||0,n);

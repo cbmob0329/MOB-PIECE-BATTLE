@@ -1,3 +1,4 @@
+import {acquireFigure} from './inventory.js';
 import {towerShopItems} from '../data/tower-shop.js';
 import {soulById} from './soul-battle.js';
 import {OWN_CAP} from '../data/gacha.js';
@@ -16,7 +17,7 @@ export function prepareShopPurchase(profile,id,expectedCount){
  const item=towerShopItems.find(x=>x.id===id),reason=shopUnavailable(profile,item);if(reason)throw Error(reason);
  if(expectedCount!==undefined&&expectedCount!==shopPurchaseCount(profile,id))throw Error('購入状態が変わりました。画面を確認してください');
  const next=structuredClone(profile);next[item.currency||'coins']-=item.price;next.towerShop??={};next.towerShop.purchases??={};next.towerShop.purchases[id]=shopPurchaseCount(profile,id)+1;
- if(item.kind==='figure'){next.owned??={};next.owned[item.figureId]=(next.owned[item.figureId]||0)+1;}
+ if(item.kind==='figure'){acquireFigure(next,soulById.get(item.figureId));}
  else next.ownedDeckCubes=[...new Set([...(next.ownedDeckCubes||[]),item.cubeId])];
  return next;
 }

@@ -9,6 +9,7 @@ C.envelope=(records,data,orphans)=>({...envelope(records,data,orphans),workshop:
 function check(w){
  if(!w||w.schema!=='mpb-workshop/2'||!w.towers||!w.banners||!w.images)throw Error('タワー・画像データの形式が不正です');
  for(const src of Object.values(w.images))if(typeof src!=='string'||src.length>3*1024*1024||!/^data:image\/(png|jpeg|webp);base64,[A-Za-z0-9+/=]+$/.test(src))throw Error('追加画像の形式・容量が不正です');
+ if(w.deletedFigures&&(!Object.values(w.deletedFigures).every(r=>r&&typeof r.id==='string')))throw Error('削除記録の形式が不正です');
  const number=v=>Number.isSafeInteger(v)&&v>=0;
  for(const [id,t]of Object.entries(w.towers)){
   if(t.id!==id||typeof t.name!=='string'||!Array.isArray(t.floors)||t.floors.length!==5)throw Error('タワーの形式が不正です');
@@ -37,6 +38,11 @@ C.mergeImport=(p,current,targetWorkspace=root.MPB_WORKSHOP_STATE)=>{
  const result=merge({...p,patches:rest},current);
  for(const c of additions){const existing=result.records.find(r=>r.id===c.id);if(!c.edited.editorAdded){result.unknown.push({reason:'unmarked-added-figure',change:c});continue;}if(!existing)result.records.push(copy(c.edited));else if(!eq(existing,c.edited))result.conflicts.push({reason:'added-figure-conflict',id:c.id,proposed:copy(c.edited)});}
  result.workshop=p.value.workshop?mergeValue(p.value.workshopBase||root.MPB_DATA.workshop,p.value.workshop,targetWorkspace,['workshop'],result.conflicts):copy(targetWorkspace);
+ for(const [id,deleted] of Object.entries(result.workshop.deletedFigures||{})){
+  const existing=result.records.find(r=>r.id===id),original=root.MPB_DATA.records.find(r=>r.id===id);
+  if(existing&&!eq(existing,deleted)){result.conflicts.push({reason:'deleted-figure-conflict',id,current:copy(existing),proposed:null});delete result.workshop.deletedFigures[id];}
+  else result.records=result.records.filter(r=>r.id!==id);
+ }
  return result;
 };
 C.importRecords=(p,current)=>C.mergeImport(p,current).records;

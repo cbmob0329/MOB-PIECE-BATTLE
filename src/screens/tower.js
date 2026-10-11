@@ -1,3 +1,4 @@
+import {recordProgressBattle} from '../game/progression.js';
 import {versusStage} from '../components/versus-stage.js';
 import {towerScene} from '../components/tower-scene.js';
 import {campaignTowers} from '../data/tower-campaign.js';
@@ -26,7 +27,7 @@ export function towerScreen(ctx){
  if(a){const deck=a.decks[a.assignment[a.results.length]]?.ids||a.decks[0]?.ids||[],enemyId=a.enemy?.strategy?.focusIds?.[0]||a.enemy?.deck?.[0]||campaignOpponent(grassTower,a.floor,a.slot||0);content=`<section class="tower-series ${a.floor===5?'master-series':''}"><small>${a.floor}階 · 第${a.results.length+1}戦</small>${versusStage({playerId:representative(ctx,deck),enemyId,enemyLabel:'対戦相手',caption:a.opponent})}<div class="tower-series-status"><strong>${score(a)}</strong><span>${a.need}勝でクリア</span></div><div class="tower-match-track">${a.assignment.map((d,i)=>`<div class="${i<a.results.length?(a.results[i]?'won':'lost'):i===a.results.length?'current':''}"><small>第${i+1}戦</small><b>${a.floor===5?'ABC'[d]:'◆'}</b><span>${i<a.results.length?(a.results[i]?'勝利':'敗北'):i===a.results.length?'次の対戦':'待機'}</span></div>`).join('')}</div><div class="tower-dock"><button class="tower-primary" data-tower-play>第${a.results.length+1}戦をはじめる</button><button data-tower-abandon>この連戦をやり直す</button></div></section>`;}
  else content=campaignMap(ctx,t,grassTower);
  const setup=floor?setupMarkup(ctx):'';
- return `<section class="tower-page">${top}${content}${practicePanel(ctx.profile)}${setup}${abandon?`<div class="tower-modal" role="dialog" aria-modal="true" aria-label="連戦のやり直し"><div class="tower-sheet"><h2>この連戦をやり直す？</h2><p>現在の連戦スコアをリセットします。所持品とクリア済みの階は変わりません。</p><button data-tower-abandon-confirm>はい、やり直す</button><button data-tower-cancel>戻る</button></div></div>`:''}</section>`;
+ return `<section class="tower-page">${top}${content}${setup}${abandon?`<div class="tower-modal" role="dialog" aria-modal="true" aria-label="連戦のやり直し"><div class="tower-sheet"><h2>この連戦をやり直す？</h2><p>現在の連戦スコアをリセットします。所持品とクリア済みの階は変わりません。</p><button data-tower-abandon-confirm>はい、やり直す</button><button data-tower-cancel>戻る</button></div></div>`:''}</section>`;
 }
 function setupMarkup(ctx){
  if(!floorOpen(ctx.profile,floor))return lockedFloor(floor);
@@ -55,7 +56,7 @@ export async function handleTower(button,ctx,{render,toast}){
  }catch(e){toast(e.message,'error');}finally{locked=false;}return true;
 }
 
-async function playCurrent(ctx,render){const request=towerMatchRequest(ctx.profile);sound.stopAll();await launchBattle({profile:ctx.profile,request,saveProfile,onResolved:result=>{const out=prepareTowerResult(ctx.profile,request.towerToken,result.won);commit(out.next);return {message:out.message,reward:out.reward};}});render();}
+async function playCurrent(ctx,render){const request=towerMatchRequest(ctx.profile);sound.stopAll();await launchBattle({profile:ctx.profile,request,saveProfile,onResolved:result=>{const out=prepareTowerResult(ctx.profile,request.towerToken,result.won);recordProgressBattle(out.next,result,request);commit(out.next);return {message:out.message,reward:out.reward};}});render();}
 function towerDefinition(ctx){const t=currentCampaignTower(ctx.profile);return {...t,floors:Array.from({length:5},(_,i)=>({id:i+1,rank:i===4?t.bossRank:t.rank,name:i===4?'タワーマスター':(i+1)+'F',opponent:ctx.byId.get(campaignOpponent(t,i+1))?.name,dialogue:t.dialogue}))};}
 function campaignMap(ctx,t,tower){
  const last=t.last;if(mapTower!==tower.id){mapTower=tower.id;mapFloor=Math.min(5,t.cleared.length+1);}
