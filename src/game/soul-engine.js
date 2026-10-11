@@ -34,7 +34,7 @@ function instance(s,id){return bindUnit(s,{uid:++s.serial,id,summonTurn:s.turn,a
 function statValue(p,k){const fixed=value(p,k+'Set');if(fixed!==undefined)return Math.max(0,fixed);const bonus=passiveBonus(p,soulById),parts=[k==='atk'?p.permanentAtk:p.permanentDef,bonus[k],...values(p,k),...(k==='def'?values(p,'defUntilAttack'):[])];return Math.max(0,info(p)[k]+parts.reduce((n,v)=>n+(has(p,'suppressBuff')?Math.min(0,v):v),0));}
 export const stats=p=>({atk:statValue(p,'atk'),def:statValue(p,'def')});
 export const currentTags=p=>[...new Set([...info(p).tags,...values(p,'addTag')])].filter(t=>!values(p,'removeTag').includes(t));
-const attribute=p=>value(p,'attribute')||info(p).attribute;
+export const attribute=p=>value(p,'attribute')||info(p).attribute;
 const expiresNextOpponent=(s,side)=>s.turn+(s.active===side?1:0);
 function main(s,side){if(s.winner!==null)fail('対戦は終了しています');if(s.evolutionQueue?.length)fail('条件進化を選んでください');if(s.pending)fail('対応スキルの確認を完了してください');if(s.phase!=='main'||s.active!==side)fail('自分のメインフェイズでのみ行えます');}
 function finish(s,side,reason){if(s.winner!==null)return;if(s.evolutionQueue?.length){s.deferredResult??={side,reason};return;}delete s.deferredResult;s.winner=side;s.reason=reason;s.phase='finished';s.pending=null;log(s,reason);emit(s,'result',{side,reason});}

@@ -94,3 +94,8 @@
 .duel-dialog.dragging .duel-slot,.duel-dialog.dragging .duel-hand-piece{translate:none!important;transition:none!important}
 .duel-dialog.dragging .duel-figure{animation-play-state:paused}
 .duel-drag-ghost{transition:none!important;user-select:none}
+/* Applied attribute / tag energy stays small and never intercepts figure input. */
+.strength-energies{position:absolute;top:13px;left:50%;transform:translateX(-50%);display:flex;gap:3px;z-index:6;pointer-events:none;white-space:nowrap}
+.strength-energy{display:grid;place-items:center;width:18px;height:18px;border:1px solid var(--energy-color);border-radius:50%;background:#0b1733ed;color:var(--energy-color);box-shadow:0 0 5px color-mix(in srgb,var(--energy-color) 50%,transparent)}
+.duel-dialog .strength-energy svg{width:12px;height:12px;flex-shrink:0}
+.duel-slot:has(>.strength-energies) .duel-figure{padding-top:20px}
