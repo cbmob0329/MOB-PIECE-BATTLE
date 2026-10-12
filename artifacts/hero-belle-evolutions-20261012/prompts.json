@@ -1,0 +1,23 @@
+{
+  "mode": "built-in imagegen",
+  "assets": [
+    {
+      "file": "01-モブガーディアンベル-折り紙サンタドラゴン.png",
+      "ref": "C:\\Users\\CB-Me\\Documents\\GitHub\\MOB-PIECE-BATTLE\\artifacts\\hero-belle-concepts-20261012-b\\04-モブガーディアンベル.png",
+      "prompt": "Create a polished individual full-body collectible cartoon figurine asset, transparent background, centered with generous margin. Bright Hero Belle aesthetic: hot pink/magenta, snow white, restrained gold, clean bold outlines and cel shading. Oversized ROUND glasses. Absolutely NO mouth on any creature, NO human hair, NO diamond gems or diamond ornaments. Short cute nonhuman mascot proportions. Snow-topped round pink pedestal with gold front plaque reading exactly MOB. No other text. Preserve reference character identity. Edit the referenced guardian figurine. Preserve the small foreground fox ninja, its pose, colors, short sword, round glasses and pedestal as closely as possible. Replace ONLY the large background monster with a magnificent friendly ORIGAMI SANTA DRAGON arching protectively behind the fox. Clearly made of folded paper, visible crisp paper folds and layered angular paper planes, magenta and white paper with cyan accents. Folded-paper Santa hat and white paper fur trim, round gold glasses, closed smooth mouthless face. The dragon must unmistakably be a physical origami paper sculpture, not flesh, metal, or crystalline jewelry. Keep foreground fox clearly readable.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-254f3618-924b-42e7-8c2d-def61d986c34.png"
+    },
+    {
+      "file": "02-モブブレイズベル-ミドル.png",
+      "ref": "C:\\Users\\CB-Me\\Documents\\GitHub\\MOB-PIECE-BATTLE\\artifacts\\hero-belle-concepts-20261012-b\\03-モブフレイムベル.png",
+      "prompt": "Create a polished individual full-body collectible cartoon figurine asset, transparent background, centered with generous margin. Bright Hero Belle aesthetic: hot pink/magenta, snow white, restrained gold, clean bold outlines and cel shading. Oversized ROUND glasses. Absolutely NO mouth on any creature, NO human hair, NO diamond gems or diamond ornaments. Short cute nonhuman mascot proportions. Snow-topped round pink pedestal with gold front plaque reading exactly MOB. No other text. Preserve reference character identity. Design the MIDDLE evolution of the referenced Mob Flame Belle living flame mascot. Maintain smooth charcoal-black oval face, big pink round glasses and mouthless appearance, living magenta flame body with white and warm yellow tips. Evolve to a sturdy somewhat larger two-head-tall flame hero: three elegant flame crown tips, fluffy white-trim magenta Santa shoulder cape, small golden bell clasp, thicker flame mitten arms and boots, gentle curling flame ribbons. Moderate upgrade suitable for middle stage, cute and controlled, not excessively ornate. Flame is fire, not human hair. Show one character only.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-93fbbb0a-2c39-4603-8159-cb40352c91f2.png"
+    },
+    {
+      "file": "03-モブフレアロードベル-MOB.png",
+      "ref": "C:\\Users\\CB-Me\\Documents\\GitHub\\MOB-PIECE-BATTLE\\artifacts\\hero-belle-concepts-20261012-b\\03-モブフレイムベル.png",
+      "prompt": "Create a polished individual full-body collectible cartoon figurine asset, transparent background, centered with generous margin. Bright Hero Belle aesthetic: hot pink/magenta, snow white, restrained gold, clean bold outlines and cel shading. Oversized ROUND glasses. Absolutely NO mouth on any creature, NO human hair, NO diamond gems or diamond ornaments. Short cute nonhuman mascot proportions. Snow-topped round pink pedestal with gold front plaque reading exactly MOB. No other text. Preserve reference character identity. Design the grand final MOB evolution of the referenced Mob Flame Belle living flame mascot. Keep unmistakable smooth charcoal-black face, large round pink-and-gold glasses, NO mouth, nonhuman living magenta fire body. Powerful but adorable squat flame monarch, broad white fur Santa cape with golden bell clasp, huge sweeping magenta-white flame mantle spreading upward behind it into a majestic circular flame halo, five sculpted flame crown tips with warm gold light, confident raised flame mitten fists, sturdy short feet. Clearly more impressive than middle evolution, layered dramatic flame silhouette but clean readable face and uncluttered pedestal. No wings required, no human hair, no weapons, no diamond gems. Show one character only.",
+      "source": "C:\\Users\\CB-Me\\.codex\\generated_images\\01a11e0d-833a-7a82-99c0-28c324d377b8\\exec-609a87c0-8e7e-45c7-861d-6650fbfca81d.png"
+    }
+  ]
+}
