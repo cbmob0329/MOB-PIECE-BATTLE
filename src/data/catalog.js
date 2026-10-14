@@ -5,10 +5,13 @@ import soulCatalog from './soul-catalog.js';
 const tags=soulCatalog.tags;
 const masterNames=new Map(soulCatalog.figures.map(f=>[f.id,f.name]));const masterById=new Map(soulCatalog.figures.map(f=>[f.id,f]));
 import {pieceInventoryFigures} from './piece-catalog.js';
-const storedFigures=[...sourceFigures,...pieceInventoryFigures].map(f=>masterNames.has(f.sourceId)?{...f,name:masterNames.get(f.sourceId),rarity:masterById.get(f.sourceId).rarity,tags:masterById.get(f.sourceId).tags}:f);
-const figures=storedFigures.filter(f=>!isStoryOnlyId(f.sourceId)&&!oct06RetiredIds.has(f.sourceId));
-export { figures, tags };
-export const byId = new Map(storedFigures.map(f => [f.sourceId, (isStoryOnlyId(f.sourceId)||oct06RetiredIds.has(f.sourceId))?{...f,retired:true}:f]));
+const originalFigures=[...sourceFigures,...pieceInventoryFigures];
+const oldById=new Map(originalFigures.map(f=>[f.sourceId,f]));
+const activeFigures=soulCatalog.figures.map((f,i)=>({...oldById.get(f.id),id:oldById.get(f.id)?.id||f.id,sourceId:f.id,name:f.name,image:f.image,rarity:f.rarity,tags:f.tags,dexNo:oldById.get(f.id)?.dexNo||1000+i,displayNo:oldById.get(f.id)?.displayNo||'No.'+(1000+i),pending:false,source:'soul',statsText:'ATK '+f.atk+' / DEF '+f.def,soul:{name:f.soulSkill.name,text:f.soulSkill.description},mobPiece:{cost:1,hp:f.def,attack:f.atk,defense:f.def,speed:20},mobPieceV115:{cost:1,hp:f.def,attack:f.atk,defense:f.def,speed:20},adjacencyTags:oldById.get(f.id)?.adjacencyTags||[],pieceSoul:oldById.get(f.id)?.pieceSoul||{}}));
+const activeIds=new Set(activeFigures.map(f=>f.sourceId));
+const figures=activeFigures.filter(f=>!isStoryOnlyId(f.sourceId)&&!oct06RetiredIds.has(f.sourceId));
+export {figures,tags};
+export const byId=new Map([...originalFigures.filter(f=>!activeIds.has(f.sourceId)).map(f=>({...f,retired:true})),...activeFigures].map(f=>[f.sourceId,(isStoryOnlyId(f.sourceId)||oct06RetiredIds.has(f.sourceId))?{...f,retired:true}:f]));
 export const imagePath = f => {
   if(!f || !f.image) return '';
   try { return new URL(String(f.image).replace(/^\.\//,''), document.baseURI).href; }

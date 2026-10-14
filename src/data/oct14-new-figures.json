@@ -1,0 +1,4240 @@
+{
+  "figures": [
+    {
+      "id": "oct14-moke-001",
+      "uid": "oct14-moke-001",
+      "localNumber": 1,
+      "name": "モブモケオレンジ",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 140,
+      "def": 150,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-001.webp",
+      "sourceText": "001\r\nモブモケオレンジ\r\nミドル SSR 火属性\r\nATK 140 DEF 150\r\nソウルフュージョン モケ × モケ MOBソウルフュージョン モブモケレッド × モブモケ\r\nモケオレンジはモケ想い\r\nこのターン、タグ:モケ を持つ味方フィギュアのATKを25アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "モケオレンジはモケ想い",
+        "description": "このターン、モケタグを持つ味方全体のATKを25アップする。",
+        "effect": "このターン、モケタグを持つ味方全体のATKを25アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "filterTag": "element-GHO",
+          "atk": 25
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/001.png"
+    },
+    {
+      "id": "oct14-moke-002",
+      "uid": "oct14-moke-002",
+      "localNumber": 2,
+      "name": "モブモケブラック",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "闇",
+      "atk": 170,
+      "def": 160,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-002.webp",
+      "sourceText": "002\r\nモブモケブラック\r\nミドル UR 闇属性\r\nATK 170 DEF 160 \r\nソウルフュージョン モブモケグレー × モケ MOBソウルフュージョン モブモケグレー × モブモケシルバー\r\nモケブラックは優等生\r\nこのターン相手はスキルを使用できない。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "モケブラックは優等生",
+        "description": "このターン、相手はスキルを使用できない。",
+        "effect": "このターン、相手はスキルを使用できない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "teamLock": "all",
+          "lockSide": "enemy"
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/002.png"
+    },
+    {
+      "id": "oct14-moke-003",
+      "uid": "oct14-moke-003",
+      "localNumber": 3,
+      "name": "モブモケグリーン",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "風",
+      "atk": 130,
+      "def": 155,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-003.webp",
+      "sourceText": "003\r\nモブモケグリーン\r\nミドル SSR 風属性\r\nATK 130 × DEF 155\r\nソウルフュージョン モブモケミント × モケ MOBソウルフュージョン モブモケミント × モブモケブルー\r\nモケグリーンは策略家\r\n相手フィギュアの攻撃時、攻撃を無効にしてそのフィギュアとこのフィギュアを破壊する。\r\nその後、このフィギュアはミドルデッキに戻る。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "モケグリーンは策略家",
+        "description": "相手の攻撃を無効にし、攻撃してきたフィギュアと自身を破壊する。その後、自身をミドルデッキへ戻す。",
+        "effect": "相手の攻撃を無効にし、攻撃してきたフィギュアと自身を破壊する。その後、自身をミドルデッキへ戻す。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelAttack": true,
+          "oct14": "mutualDestroyReturn"
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/003.png"
+    },
+    {
+      "id": "oct14-moke-004",
+      "uid": "oct14-moke-004",
+      "localNumber": 4,
+      "name": "モブモケパープル",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 150,
+      "def": 140,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-004.webp",
+      "sourceText": "004\r\nモブモケパープル\r\nミドル SSR 闇属性\r\nATK 150 × DEF 140\r\nソウルフュージョン モブモケ × 闇属性 MOBソウルフュージョン モブモケレッド × モブモケブルー\r\nモケパープルはリーダー気質\r\nこのフィギュアが破壊された時、このフィギュアと墓地のシードフィギュアを全てデッキに戻す。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "deathRecycleSeeds": true
+      },
+      "soulSkill": {
+        "name": "モケパープルはリーダー気質",
+        "description": "破壊された時、自身と自分の墓地の全シードをそれぞれのデッキへ戻す。",
+        "effect": "破壊された時、自身と自分の墓地の全シードをそれぞれのデッキへ戻す。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/004.png"
+    },
+    {
+      "id": "oct14-moke-005",
+      "uid": "oct14-moke-005",
+      "localNumber": 5,
+      "name": "モブモケデンキ",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "雷/光",
+      "atk": 165,
+      "def": 160,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-005.webp",
+      "sourceText": "005\r\nモブモケデンキ\r\nミドル SSR 雷属性/光属性\r\nATK 165 × DEF 160\r\nソウルフュージョン モブモケゴールド × 光属性 MOBソウルフュージョン モブモケブラウン × モブモケゴールド\r\nモケデンキは怒りんぼ\r\nこのフィギュアが攻撃を受けた時、相手全体のATKを20、DEFを30ダウンさせる。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "モケデンキは怒りんぼ",
+        "description": "攻撃を受ける時、相手全体のATKを20、DEFを30ダウンする。",
+        "effect": "攻撃を受ける時、相手全体のATKを20、DEFを30ダウンする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "atk": -20,
+          "def": -30
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/005.png"
+    },
+    {
+      "id": "oct14-moke-006",
+      "uid": "oct14-moke-006",
+      "localNumber": 6,
+      "name": "モブモケアワ",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "水/闇",
+      "atk": 140,
+      "def": 180,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-006.webp",
+      "sourceText": "006\r\nモブモケアワ\r\nミドル SSR 水属性/闇属性\r\nATK 140 × 180\r\nソウルフュージョン モブモケブルー × 光属性 MOBソウルフュージョン モブモケブルー × モブモケブルー\r\nモケアワは帰ってくる\r\nこのフィギュアが撃破された時、1度だけフィールドに復活召喚する。\r\nこの時、ATKとDEFが20アップする。次に破壊された時は使用不可。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "phoenixOnce": true,
+        "reviveBonus": {
+          "atk": 20,
+          "def": 20
+        },
+        "banishAfterRevive": true
+      },
+      "soulSkill": {
+        "name": "モケアワは帰ってくる",
+        "description": "破壊された時、一度だけATK・DEFを20アップして復活する。次に破壊された時は使用不可になる。",
+        "effect": "破壊された時、一度だけATK・DEFを20アップして復活する。次に破壊された時は使用不可になる。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/006.png"
+    },
+    {
+      "id": "oct14-moke-009",
+      "uid": "oct14-moke-009",
+      "localNumber": 9,
+      "name": "モブモケピンク",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "光",
+      "atk": 90,
+      "def": 105,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-009.webp",
+      "sourceText": "009\r\nモブモケピンク シード SR 光属性\r\nATK 90 DEF 105\r\nモケピンクはお掃除上手\r\n自分の手札を全て捨てる。\r\n捨てた数×20ライフを回復する。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "モケピンクはお掃除上手",
+        "description": "手札を全て捨て、捨てた枚数×20ライフを回復する。",
+        "effect": "手札を全て捨て、捨てた枚数×20ライフを回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "discardHeal",
+          "healPer": 20
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/009.png"
+    },
+    {
+      "id": "oct14-moke-010",
+      "uid": "oct14-moke-010",
+      "localNumber": 10,
+      "name": "モブモケグレー",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "闇",
+      "atk": 100,
+      "def": 65,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-010.webp",
+      "sourceText": "010\r\nモブモケグレー シード SR 闇属性\r\nATK 100 DEF 65\r\nモケグレーはギャンブラー\r\n相手がフィギュアをドローした時に発動可能。\r\n相手がドローしたフィギュアを墓地へ送る。※同時に複数ドローした場合はランダム",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "enemyDrawDiscardBatch": true
+      },
+      "soulSkill": {
+        "name": "モケグレーはギャンブラー",
+        "description": "相手がドローした時、そのフィギュアを墓地へ送る。複数同時の場合はその中からランダムに1体。",
+        "effect": "相手がドローした時、そのフィギュアを墓地へ送る。複数同時の場合はその中からランダムに1体。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/010.png"
+    },
+    {
+      "id": "oct14-moke-011",
+      "uid": "oct14-moke-011",
+      "localNumber": 11,
+      "name": "モブモケブラウン",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "地",
+      "atk": 80,
+      "def": 75,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-011.webp",
+      "sourceText": "011\r\nモブモケブラウン シード SSR 地属性\r\nATK 80 DEF 75\r\nモケブラウンは友達想い\r\nこのフィギュアが破壊された時、タグ:モケ を持つミドルフィギュア1体をミドルデッキから召喚する。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "reserve"
+          ],
+          "classes": [
+            "middle"
+          ],
+          "tags": [
+            "element-GHO"
+          ]
+        }
+      },
+      "soulSkill": {
+        "name": "モケブラウンは友達想い",
+        "description": "破壊された時、モケタグを持つミドル1体を融合領域から召喚する。",
+        "effect": "破壊された時、モケタグを持つミドル1体を融合領域から召喚する。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/011.png"
+    },
+    {
+      "id": "oct14-moke-012",
+      "uid": "oct14-moke-012",
+      "localNumber": 12,
+      "name": "モブモケミント",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "seed",
+      "rarity": "UR",
+      "attribute": "風/光",
+      "atk": 140,
+      "def": 120,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-012.webp",
+      "sourceText": "012\r\nモブモケミント シード UR 風属性 光属性\r\nATK 140 DEF120\r\nモケミントは努力家\r\n相手フィギュアの攻撃時、その攻撃を無効にし、このフィギュアのATKとDEFを30アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "モケミントは努力家",
+        "description": "相手の攻撃を無効にし、自身のATKとDEFを30アップする。",
+        "effect": "相手の攻撃を無効にし、自身のATKとDEFを30アップする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "cancelAttack": true,
+          "atk": 30,
+          "def": 30
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/012.png"
+    },
+    {
+      "id": "oct14-moke-013",
+      "uid": "oct14-moke-013",
+      "localNumber": 13,
+      "name": "モブモケメダル",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "雷",
+      "atk": 220,
+      "def": 265,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-013.webp",
+      "sourceText": "013\r\nモブモケメダル MOB UR 雷属性\r\nATK220 DEF265\r\nソウルフュージョン 005 × 闇属性 MOBソウルフュージョン 005 × 004\r\nモケメダルはモケのエース\r\nメインスキル:このフィギュアが破壊された時、相手の場のフィギュア1体を破壊する。\r\nパッシブ:このフィギュアのATKは場のモケの数×30アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "deathAction": {
+          "mode": "destroy",
+          "side": "enemy"
+        },
+        "fieldScale": {
+          "tag": "element-GHO",
+          "atk": 30
+        }
+      },
+      "soulSkill": {
+        "name": "モケメダルはモケのエース",
+        "description": "メインスキル:破壊された時、相手の場の1体を選んで破壊する。\nパッシブ:場のモケ1体につき自身のATKを30アップする。",
+        "effect": "メインスキル:破壊された時、相手の場の1体を選んで破壊する。\nパッシブ:場のモケ1体につき自身のATKを30アップする。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/013.png"
+    },
+    {
+      "id": "oct14-moke-014",
+      "uid": "oct14-moke-014",
+      "localNumber": 14,
+      "name": "モブモケサイケ",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "光",
+      "atk": 270,
+      "def": 250,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-014.webp",
+      "sourceText": "014\r\nモブモケサイケ MOB UR 光属性\r\nATK270 DEF250\r\nソウルフュージョン 001 × 光属性 MOBソウルフュージョン 001 × 006\r\nモケサイケは手品師\r\nメインスキル:このフィギュアが破壊された時、墓地からミドル以上のフィギュア1体を復活召喚する。\r\nパッシブ:このフィギュアは1ターンに1度だけ戦闘で破壊されない。※この効果を発動する度DEFが35ダウンする",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "grave"
+          ],
+          "classes": [
+            "middle",
+            "mob"
+          ]
+        },
+        "battleSurviveCost": 35
+      },
+      "soulSkill": {
+        "name": "モケサイケは手品師",
+        "description": "メインスキル:破壊された時、自分の墓地からミドルかMOB1体を復活召喚する。\nパッシブ:毎ターン1回だけ戦闘破壊を免れ、発動するたびDEFを35ダウンする。",
+        "effect": "メインスキル:破壊された時、自分の墓地からミドルかMOB1体を復活召喚する。\nパッシブ:毎ターン1回だけ戦闘破壊を免れ、発動するたびDEFを35ダウンする。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/014.png"
+    },
+    {
+      "id": "oct14-moke-015",
+      "uid": "oct14-moke-015",
+      "localNumber": 15,
+      "name": "モブモケレトロ",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "闇/風",
+      "atk": 265,
+      "def": 260,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-015.webp",
+      "sourceText": "015\r\nモブモケレトロ MOB UR 闇属性 風属性\r\nATK265 DEF260\r\nソウルフュージョン 002 × 闇属性 MOBソウルフュージョン 002 × 004\r\nモケレトロはエスパーかも\r\nメインスキル:自分の全ての墓地から3体ランダムでデッキに戻す。\r\nパッシブ:自分含む味方がスキルを発動する度、ATKとDEFが10アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "skillGrowth": {
+          "side": "own",
+          "atk": 10,
+          "def": 10
+        }
+      },
+      "soulSkill": {
+        "name": "モケレトロはエスパーかも",
+        "description": "メインスキル:自分の墓地からランダムに最大3体を、それぞれのデッキへ戻す。\nパッシブ:味方がスキルを発動するたび、自身のATKとDEFを10アップする。",
+        "effect": "メインスキル:自分の墓地からランダムに最大3体を、それぞれのデッキへ戻す。\nパッシブ:味方がスキルを発動するたび、自身のATKとDEFを10アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "randomRecycle",
+          "count": 3
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/015.png"
+    },
+    {
+      "id": "oct14-moke-016",
+      "uid": "oct14-moke-016",
+      "localNumber": 16,
+      "name": "モブモケローラ",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "光/無",
+      "atk": 270,
+      "def": 280,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-016.webp",
+      "sourceText": "016\r\nモブモケローラ MOB MOB 光属性 無属性\r\nATK270 DEF280\r\nソウルフュージョン 003 × 読みかけの本 MOBソウルフュージョン　002 × 003\r\nモケローラはNo.1\r\nメインスキル:このターン、相手はこのフィギュアに対してスキルを使用できない。\r\nパッシブ:このフィギュアは攻撃する度ATKとDEFを15アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "attackGrowth": {
+          "atk": 15,
+          "def": 15
+        }
+      },
+      "soulSkill": {
+        "name": "モケローラはNo.1",
+        "description": "メインスキル:このターン、相手は自身をスキルの対象に選べない。\nパッシブ:攻撃するたび、自身のATKとDEFを15アップする。",
+        "effect": "メインスキル:このターン、相手は自身をスキルの対象に選べない。\nパッシブ:攻撃するたび、自身のATKとDEFを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "skillUntargetable": "hostile"
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/016.png"
+    },
+    {
+      "id": "oct14-moke-007",
+      "uid": "oct14-moke-007",
+      "localNumber": 7,
+      "name": "モブモケルビー",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "火/光",
+      "atk": 270,
+      "def": 260,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-007.webp",
+      "sourceText": "007\r\nモブモケルビー MOB UR 火属性 光属性\r\nATK270 DEF260\r\nソウルフュージョン 009 × モブモケ MOBソウルフュージョン 001 × 005\r\nモケルビーはハイテンション\r\nメインスキル:このターン、味方の全てのフィギュアのATKを25アップする。\r\nパッシブ:相手がソウルフュージョンする度、このフィギュアのATKは10アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "enemyFusionGrowth": 10
+      },
+      "soulSkill": {
+        "name": "モケルビーはハイテンション",
+        "description": "メインスキル:このターン、味方全体のATKを25アップする。\nパッシブ:相手がソウルフュージョンするたび、自身のATKを10アップする。",
+        "effect": "メインスキル:このターン、味方全体のATKを25アップする。\nパッシブ:相手がソウルフュージョンするたび、自身のATKを10アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "atk": 25
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/007.png"
+    },
+    {
+      "id": "oct14-moke-008",
+      "uid": "oct14-moke-008",
+      "localNumber": 8,
+      "name": "モブモケディーン",
+      "collection": "モケは暗闇に棲む",
+      "series": "モケは暗闇に棲む",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "雷",
+      "atk": 275,
+      "def": 250,
+      "tags": [
+        "element-GHO",
+        "52"
+      ],
+      "image": "piecefig/oct14-moke-008.webp",
+      "sourceText": "008\r\nモブモケディーン MOB UR 雷属性\r\nATK275 DEF250\r\nソウルフュージョン 006 × モブモケ MOBソウルフュージョン 005 × 006\r\nモケディーンは凄く速い\r\nメインスキル:このフィギュアが相手フィギュアを破壊した時、フィギュアを1体ドローする。\r\nパッシブ:このフィギュアは毎ターン2回攻撃出来る。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "killDraw": true,
+        "attacks": 2
+      },
+      "soulSkill": {
+        "name": "モケディーンは凄く速い",
+        "description": "メインスキル:相手フィギュアを撃破するたび、1体ドローする。\nパッシブ:毎ターン2回攻撃できる。",
+        "effect": "メインスキル:相手フィギュアを撃破するたび、1体ドローする。\nパッシブ:毎ターン2回攻撃できる。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/モケは暗闇に棲む/008.png"
+    },
+    {
+      "id": "oct14-peach-001",
+      "uid": "oct14-peach-001",
+      "localNumber": 1,
+      "name": "モブクス",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "地",
+      "atk": 75,
+      "def": 80,
+      "tags": [
+        "oct14-peach",
+        "46"
+      ],
+      "image": "piecefig/oct14-peach-001.webp",
+      "sourceText": "001 SR\r\nモブクス 地属性　部族村\r\nATK 75 DEF 80\r\nクスサークル\r\n相手モンスター攻撃時\r\nその攻撃を無効にする",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "クスサークル",
+        "description": "相手フィギュアの攻撃を無効にする。",
+        "effect": "相手フィギュアの攻撃を無効にする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelAttack": true
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/001.png"
+    },
+    {
+      "id": "oct14-peach-002",
+      "uid": "oct14-peach-002",
+      "localNumber": 2,
+      "name": "モブユラ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "闇",
+      "atk": 80,
+      "def": 85,
+      "tags": [
+        "oct14-peach",
+        "46"
+      ],
+      "image": "piecefig/oct14-peach-002.webp",
+      "sourceText": "002 SR\r\nモブユラ　闇属性　部族村\r\nATK 80 DEF 85\r\nユラノコエ\r\nこのターン、桃影の国タグを持つ味方フィギュアのDEFを25アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ユラノコエ",
+        "description": "このターン、桃影の国タグを持つ味方フィギュアのDEFを25アップする。",
+        "effect": "このターン、桃影の国タグを持つ味方フィギュアのDEFを25アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "filterTag": "oct14-peach",
+          "def": 25
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/002.png"
+    },
+    {
+      "id": "oct14-peach-003",
+      "uid": "oct14-peach-003",
+      "localNumber": 3,
+      "name": "モブぺパ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "風",
+      "atk": 90,
+      "def": 90,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-003.webp",
+      "sourceText": "003 SR\r\nモブぺパ　風属性　ネオン街\r\nATK 90 DEF 90\r\nぺパショット\r\n相手の攻撃時に発動可能。\r\n相手はこのターン、他のフィギュアで攻撃出来ない。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ぺパショット",
+        "description": "相手の攻撃時に発動。このターン、攻撃してきたフィギュア以外は攻撃できない。",
+        "effect": "相手の攻撃時に発動。このターン、攻撃してきたフィギュア以外は攻撃できない。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "lockOtherAttackers"
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/003.png"
+    },
+    {
+      "id": "oct14-peach-004",
+      "uid": "oct14-peach-004",
+      "localNumber": 4,
+      "name": "モブジク",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 110,
+      "def": 80,
+      "tags": [
+        "oct14-peach",
+        "42"
+      ],
+      "image": "piecefig/oct14-peach-004.webp",
+      "sourceText": "004 SSR\r\nモブジク　火属性　砂漠\r\nATK 110 DEF 80\r\nジクノエリア\r\nこのフィギュアが相手フィギュアを撃破した時、相手場の他のフィギュア1体を選択し、DEFを25ダウンする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "killAction": {
+          "mode": "buff",
+          "side": "enemy",
+          "def": -25
+        }
+      },
+      "soulSkill": {
+        "name": "ジクノエリア",
+        "description": "このフィギュアが相手フィギュアを撃破した時、相手の場の他の1体を選んでDEFを25ダウンする。",
+        "effect": "このフィギュアが相手フィギュアを撃破した時、相手の場の他の1体を選んでDEFを25ダウンする。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/004.png"
+    },
+    {
+      "id": "oct14-peach-005",
+      "uid": "oct14-peach-005",
+      "localNumber": 5,
+      "name": "モブミヤ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "風",
+      "atk": 100,
+      "def": 90,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-005.webp",
+      "sourceText": "005 SSR　風属性　ネオン街\r\nモブミヤ\r\nATK 100 DEF 90\r\nミヤ一閃\r\nこのターン、このフィギュアのATKを20アップする。さらに、このフィギュアはこのターン3回攻撃出来る。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ミヤ一閃",
+        "description": "このターン、自身のATKを20アップし、3回攻撃できる。",
+        "effect": "このターン、自身のATKを20アップし、3回攻撃できる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 20,
+          "attacks": 3
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/005.png"
+    },
+    {
+      "id": "oct14-peach-006",
+      "uid": "oct14-peach-006",
+      "localNumber": 6,
+      "name": "モブウサ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "地",
+      "atk": 80,
+      "def": 80,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-006.webp",
+      "sourceText": "006 SR　地属性　ネオン街\r\nモブウサ\r\nATK 80 DEF80\r\n相手の攻撃時に発動。その攻撃を無効にする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ウサの抜け道",
+        "description": "相手の攻撃を無効にする。",
+        "effect": "相手の攻撃を無効にする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelAttack": true
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/006.png"
+    },
+    {
+      "id": "oct14-peach-007",
+      "uid": "oct14-peach-007",
+      "localNumber": 7,
+      "name": "モブギョウ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "水",
+      "atk": 100,
+      "def": 120,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-007.webp",
+      "sourceText": "007 SSR　水属性　ネオン街\r\nモブギョウ\r\nATK 100 DEF 120\r\n相手フィギュアを最大2体選択する。選択したフィギュアのATKとDEFを20ダウンし、このフィギュアのATKを30アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ギョウの水帳",
+        "description": "相手を最大2体選び、ATKとDEFを20ダウンし、自身のATKを30アップする。",
+        "effect": "相手を最大2体選び、ATKとDEFを20ダウンし、自身のATKを30アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "selectedEnemies",
+          "multiSelect": true,
+          "atk": -20,
+          "def": -20,
+          "selfAtk": 30
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/007.png"
+    },
+    {
+      "id": "oct14-peach-008",
+      "uid": "oct14-peach-008",
+      "localNumber": 8,
+      "name": "モブヘイム",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "UR",
+      "attribute": "雷/光",
+      "atk": 150,
+      "def": 150,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-008.webp",
+      "sourceText": "008 UR　雷・光属性　ネオン街\r\nモブヘイム\r\nATK150 DEF 150\r\n自分と相手の手札をランダムに1枚ずつ捨てる。この効果で捨てたフィギュア1体につきATKとDEFを20アップする。※どちらかの手札が0の場合、この効果は発動出来ない。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ヘイムの閃光",
+        "description": "互いの手札をランダムに1枚ずつ捨て、捨てた1体につき自身のATKとDEFを20アップする。どちらかの手札が0枚なら発動不可。",
+        "effect": "互いの手札をランダムに1枚ずつ捨て、捨てた1体につき自身のATKとDEFを20アップする。どちらかの手札が0枚なら発動不可。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "randomDiscardBoth"
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/008.png"
+    },
+    {
+      "id": "oct14-peach-009",
+      "uid": "oct14-peach-009",
+      "localNumber": 9,
+      "name": "モブイタチ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 100,
+      "def": 135,
+      "tags": [
+        "oct14-peach",
+        "41"
+      ],
+      "image": "piecefig/oct14-peach-009.webp",
+      "sourceText": "009 SSR　闇属性　草原\r\nモブイタチ\r\nATK100 DEF135\r\nイタチノヒトフデ\r\n山札から3体ドローする。この効果でドローしたフィギュアは使用しなかった場合ターン終了時に墓地へ送る。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "イタチノヒトフデ",
+        "description": "3体ドローする。この効果で引いたフィギュアは、使わず手札に残っていればターン終了時に墓地へ送る。",
+        "effect": "3体ドローする。この効果で引いたフィギュアは、使わず手札に残っていればターン終了時に墓地へ送る。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "temporaryDraw"
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/009.png"
+    },
+    {
+      "id": "oct14-peach-010",
+      "uid": "oct14-peach-010",
+      "localNumber": 10,
+      "name": "モブラフデ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "無",
+      "atk": 60,
+      "def": 80,
+      "tags": [
+        "oct14-peach",
+        "41"
+      ],
+      "image": "piecefig/oct14-peach-010.webp",
+      "sourceText": "010 SR　無属性　草原\r\nモブラフデ\r\nATK60 DEF80\r\n相手がスキルを発動した時、そのスキルを無効にする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ラフデの打ち消し",
+        "description": "相手のスキル発動を無効にする。",
+        "effect": "相手のスキル発動を無効にする。",
+        "timing": "skill-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelSkill": true
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/010.png"
+    },
+    {
+      "id": "oct14-peach-011",
+      "uid": "oct14-peach-011",
+      "localNumber": 11,
+      "name": "モブラース",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 120,
+      "def": 120,
+      "tags": [
+        "oct14-peach",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-011.webp",
+      "sourceText": "011 SSR　火属性　魔王城\r\nモブラース\r\nATK120 DEF120\r\n自分の手札が0の時、このフィギュアのATKは70アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "emptyHandAtk": 70
+      },
+      "soulSkill": {
+        "name": "ラースの背水",
+        "description": "自分の手札が0枚の間、自身のATKを70アップする。",
+        "effect": "自分の手札が0枚の間、自身のATKを70アップする。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/011.png"
+    },
+    {
+      "id": "oct14-peach-012",
+      "uid": "oct14-peach-012",
+      "localNumber": 12,
+      "name": "モブツネ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "地",
+      "atk": 90,
+      "def": 65,
+      "tags": [
+        "oct14-peach",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-012.webp",
+      "sourceText": "012 SR　 地属性　マグマ\r\nモブツネ\r\nATK90 DEF65\r\nこのフィギュアの攻撃を受けたフィギュアはDEFが追加で20ダウンする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "hitDefDown": 20
+      },
+      "soulSkill": {
+        "name": "ツネの追い打ち",
+        "description": "自身の攻撃を受けた相手のDEFを追加で20ダウンする。",
+        "effect": "自身の攻撃を受けた相手のDEFを追加で20ダウンする。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/012.png"
+    },
+    {
+      "id": "oct14-peach-013",
+      "uid": "oct14-peach-013",
+      "localNumber": 13,
+      "name": "モブクノ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 110,
+      "def": 95,
+      "tags": [
+        "oct14-peach",
+        "41"
+      ],
+      "image": "piecefig/oct14-peach-013.webp",
+      "sourceText": "013 SSR　闇属性　草原\r\nモブクノ\r\nATK110 DEF95\r\n相手の攻撃時、自分の墓地からフィギュアを1体指定してスキルを発動することが出来る。\r\n※相手の攻撃時に発動するスキルに限る。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "クノの残響",
+        "description": "相手の攻撃時、自分の墓地にある攻撃対応スキルを1つ選んで発動する。",
+        "effect": "相手の攻撃時、自分の墓地にある攻撃対応スキルを1つ選んで発動する。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "echoGrave": true
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/013.png"
+    },
+    {
+      "id": "oct14-peach-014",
+      "uid": "oct14-peach-014",
+      "localNumber": 14,
+      "name": "モブマイ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "雷",
+      "atk": 80,
+      "def": 75,
+      "tags": [
+        "oct14-peach",
+        "41"
+      ],
+      "image": "piecefig/oct14-peach-014.webp",
+      "sourceText": "014 SR　雷属性　草原\r\nモブマイ\r\nATK80 DEF75\r\nこのスキルは手札からしか発動出来ない。\r\n相手のスキル発動を無効にし、相手の山札を上から1枚墓地へ送る。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "マイの手札雷",
+        "description": "手札からのみ発動できる。相手のスキルを無効にし、相手の山札の上から1枚を墓地へ送る。",
+        "effect": "手札からのみ発動できる。相手のスキルを無効にし、相手の山札の上から1枚を墓地へ送る。",
+        "timing": "skill-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelSkill": true,
+          "handOnly": true,
+          "millEnemy": 1
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/014.png"
+    },
+    {
+      "id": "oct14-peach-015",
+      "uid": "oct14-peach-015",
+      "localNumber": 15,
+      "name": "モブイタ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 115,
+      "def": 110,
+      "tags": [
+        "oct14-peach",
+        "41"
+      ],
+      "image": "piecefig/oct14-peach-015.webp",
+      "sourceText": "015 SSR　火属性　草原\r\nモブイタ\r\nATK115 DEF110\r\n相手フィギュア1体を選択する。選択したフィギュアとこのフィギュアのDEFをこのターンのみ入れ替える。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "イタの反転筆",
+        "description": "このターン、自身と選んだ相手1体のDEFを入れ替える。",
+        "effect": "このターン、自身と選んだ相手1体のDEFを入れ替える。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "selfEnemySwapDef"
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/015.png"
+    },
+    {
+      "id": "oct14-peach-016",
+      "uid": "oct14-peach-016",
+      "localNumber": 16,
+      "name": "モブミスリ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 120,
+      "def": 95,
+      "tags": [
+        "oct14-peach",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-016.webp",
+      "sourceText": "016 SSR　光属性　魔王城\r\nモブミスリ\r\nATK120 DEF95",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ミスリの灯り",
+        "description": "味方1体のステータス低下を解除し、自分のライフを20回復する。",
+        "effect": "味方1体のステータス低下を解除し、自分のライフを20回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "ally",
+          "cleanse": true,
+          "heal": 20
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/016.png"
+    },
+    {
+      "id": "oct14-peach-017",
+      "uid": "oct14-peach-017",
+      "localNumber": 17,
+      "name": "モブジャノ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "風",
+      "atk": 70,
+      "def": 140,
+      "tags": [
+        "oct14-peach",
+        "45",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-017.webp",
+      "sourceText": "017 SSR　カゼ属性　海底　マグマ\r\nモブジャノ\r\nATK70 DEF140",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ジャノの風壁",
+        "description": "相手の攻撃時、その攻撃中、自身のDEFを40アップする。",
+        "effect": "相手の攻撃時、その攻撃中、自身のDEFを40アップする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "combatDef": 40
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/017.png"
+    },
+    {
+      "id": "oct14-peach-018",
+      "uid": "oct14-peach-018",
+      "localNumber": 18,
+      "name": "モブバート",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "seed",
+      "rarity": "UR",
+      "attribute": "水",
+      "atk": 140,
+      "def": 160,
+      "tags": [
+        "oct14-peach",
+        "45",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-018.webp",
+      "sourceText": "018 UR　水属性　海底　マグマ\r\nモブバート\r\nATK140 DEF160\r\n\r\nここまで全てシード\r\n続いてミドル",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "バートの潮返し",
+        "description": "相手の攻撃を無効にし、このターン、攻撃してきたフィギュアのATKを20ダウンする。",
+        "effect": "相手の攻撃を無効にし、このターン、攻撃してきたフィギュアのATKを20ダウンする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelAttack": true,
+          "target": "trigger",
+          "atk": -20
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/018.png"
+    },
+    {
+      "id": "oct14-peach-019",
+      "uid": "oct14-peach-019",
+      "localNumber": 19,
+      "name": "モブクロクス",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "地",
+      "atk": 145,
+      "def": 185,
+      "tags": [
+        "oct14-peach",
+        "46"
+      ],
+      "image": "piecefig/oct14-peach-019.webp",
+      "sourceText": "019 SSR 地属性 部族村\r\nモブクロクス\r\n\r\nソウルフュージョン 地属性 × 桃影の国 MOBソウルフュージョン 001 × モブウォリアー",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "クロクスの結界",
+        "description": "このターン、味方全体のDEFを35アップする。",
+        "effect": "このターン、味方全体のDEFを35アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "def": 35
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/019.png"
+    },
+    {
+      "id": "oct14-peach-020",
+      "uid": "oct14-peach-020",
+      "localNumber": 20,
+      "name": "モブユラギ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 160,
+      "def": 170,
+      "tags": [
+        "oct14-peach",
+        "46"
+      ],
+      "image": "piecefig/oct14-peach-020.webp",
+      "sourceText": "020 SSR 闇属性 部族村\r\nモブユラギ\r\n\r\nソウルフュージョン 闇属性 × 桃影の国 MOBソウルフュージョン 002 × モブキバ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ユラギの夜帳",
+        "description": "このターン、相手全体のATKを25ダウンする。",
+        "effect": "このターン、相手全体のATKを25ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemies",
+          "atk": -25
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/020.png"
+    },
+    {
+      "id": "oct14-peach-021",
+      "uid": "oct14-peach-021",
+      "localNumber": 21,
+      "name": "モブぺパロール",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 165,
+      "def": 165,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-021.webp",
+      "sourceText": "021 SSR　闇属性 ネオン街\r\nモブぺパロール\r\n\r\nソウルフュージョン 闇属性 × 闇属性 MOBソウルフュージョン 003 × モブネオントカゲ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ぺパロールの封鎖",
+        "description": "相手の攻撃を無効にし、このターン、相手全体のDEFを20ダウンする。",
+        "effect": "相手の攻撃を無効にし、このターン、相手全体のDEFを20ダウンする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelAttack": true,
+          "target": "enemies",
+          "def": -20
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/021.png"
+    },
+    {
+      "id": "oct14-peach-022",
+      "uid": "oct14-peach-022",
+      "localNumber": 22,
+      "name": "モブチジク",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 185,
+      "def": 150,
+      "tags": [
+        "oct14-peach",
+        "42"
+      ],
+      "image": "piecefig/oct14-peach-022.webp",
+      "sourceText": "022 SSR 火属性 砂漠\r\nモブチジク\r\n\r\nソウルフュージョン 火属性 × 桃影の国 MOBソウルフュージョン 004 × モブミイラ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "チジクの熱砂",
+        "description": "相手1体のDEFを35ダウンする。",
+        "effect": "相手1体のDEFを35ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "def": -35
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/022.png"
+    },
+    {
+      "id": "oct14-peach-023",
+      "uid": "oct14-peach-023",
+      "localNumber": 23,
+      "name": "モブオミヤ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "風",
+      "atk": 170,
+      "def": 155,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-023.webp",
+      "sourceText": "023 SSR 風属性 ネオン街\r\nモブオミヤ\r\n\r\nソウルフュージョン 風属性 × 桃色の国 MOBソウルフュージョン 005 × モブカイロ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "オミヤ三閃",
+        "description": "このターン、自身は3回攻撃できる。",
+        "effect": "このターン、自身は3回攻撃できる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "attacks": 3
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/023.png"
+    },
+    {
+      "id": "oct14-peach-024",
+      "uid": "oct14-peach-024",
+      "localNumber": 24,
+      "name": "モブトラビ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "闇/風",
+      "atk": 165,
+      "def": 160,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-024.webp",
+      "sourceText": "024 SSR 闇・風 草原 ネオン街\r\nモブトラビ\r\n\r\nソウルフュージョン 闇属性 × 風属性 MOBソウルフュージョン 006 × 014",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "トラビの影歩き",
+        "description": "このターン、自身のATKとDEFを30アップする。",
+        "effect": "このターン、自身のATKとDEFを30アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 30,
+          "def": 30
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/024.png"
+    },
+    {
+      "id": "oct14-peach-025",
+      "uid": "oct14-peach-025",
+      "localNumber": 25,
+      "name": "モブノラビ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "闇/水",
+      "atk": 155,
+      "def": 180,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-025.webp",
+      "sourceText": "025 SSR 闇・水 草原 魔王城\r\nモブノラビ\r\n\r\nソウルフュージョン 闇属性 × 水属性 MOBソウルフュージョン 006 × 013",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ノラビの夜露",
+        "description": "このターン、相手1体のATKとDEFを25ダウンする。",
+        "effect": "このターン、相手1体のATKとDEFを25ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemy",
+          "atk": -25,
+          "def": -25
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/025.png"
+    },
+    {
+      "id": "oct14-peach-026",
+      "uid": "oct14-peach-026",
+      "localNumber": 26,
+      "name": "モブスイズ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "水",
+      "atk": 155,
+      "def": 195,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-026.webp",
+      "sourceText": "026 SSR 水 ネオン街\r\nモブスイズ\r\n\r\nソウルフュージョン 水属性 × 桃影の国  MOBソウルフュージョン 007 × 005",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "スイズの水環",
+        "description": "このターン、桃影の国タグを持つ味方全体のDEFを40アップする。",
+        "effect": "このターン、桃影の国タグを持つ味方全体のDEFを40アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "filterTag": "oct14-peach",
+          "def": 40
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/026.png"
+    },
+    {
+      "id": "oct14-peach-027",
+      "uid": "oct14-peach-027",
+      "localNumber": 27,
+      "name": "モブキリズ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "火/闇",
+      "atk": 190,
+      "def": 150,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "44",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-027.webp",
+      "sourceText": "027 SSR 火・闇 草原 ネオン街 魔王城\r\nモブキリズ\r\n\r\nソウルフュージョン 火属性 × 闇属性  MOBソウルフュージョン 007 × 011",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "キリズの焦影",
+        "description": "このターン、自身のATKを40アップし、相手ライフに20ダメージを与える。",
+        "effect": "このターン、自身のATKを40アップし、相手ライフに20ダメージを与える。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 40,
+          "lifeDamage": 20
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/027.png"
+    },
+    {
+      "id": "oct14-peach-028",
+      "uid": "oct14-peach-028",
+      "localNumber": 28,
+      "name": "モブダーツ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 155,
+      "def": 180,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-028.webp",
+      "sourceText": "028 SSR 光 草原 魔王城\r\nモブダーツ\r\n\r\nソウルフュージョン 光属性 × 桃影の国 MOBソウルフュージョン 007 × 016",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ダーツの光標",
+        "description": "味方全体のステータス低下を解除し、自分のライフを30回復する。",
+        "effect": "味方全体のステータス低下を解除し、自分のライフを30回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "cleanse": true,
+          "heal": 30
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/028.png"
+    },
+    {
+      "id": "oct14-peach-029",
+      "uid": "oct14-peach-029",
+      "localNumber": 29,
+      "name": "モブガルド",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "雷/光",
+      "atk": 210,
+      "def": 195,
+      "tags": [
+        "oct14-peach",
+        "44",
+        "45"
+      ],
+      "image": "piecefig/oct14-peach-029.webp",
+      "sourceText": "029 UR 雷 光　ネオン街・海底\r\nモブガルド\r\n\r\nソウルフュージョン 雷属性 × 桃色の国 MOBソウルフュージョン 008 × 016",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ガルドの雷灯",
+        "description": "このターン、自身のATKを30アップし、2回攻撃できる。",
+        "effect": "このターン、自身のATKを30アップし、2回攻撃できる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 30,
+          "attacks": 2
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/029.png"
+    },
+    {
+      "id": "oct14-peach-030",
+      "uid": "oct14-peach-030",
+      "localNumber": 30,
+      "name": "モブイトオノ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "地",
+      "atk": 170,
+      "def": 185,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "42",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-030.webp",
+      "sourceText": "030 SSR 地 草原 砂漠 マグマ\r\nモブイトオノ\r\n\r\nソウルフュージョン 地属性 × 地属性 MOBソウルフュージョン 012 × 001",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "イトオノの地固め",
+        "description": "相手の攻撃を無効にし、このターン、味方全体のDEFを20アップする。",
+        "effect": "相手の攻撃を無効にし、このターン、味方全体のDEFを20アップする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelAttack": true,
+          "target": "allies",
+          "def": 20
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/030.png"
+    },
+    {
+      "id": "oct14-peach-031",
+      "uid": "oct14-peach-031",
+      "localNumber": 31,
+      "name": "モブアサルト",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "無/光",
+      "atk": 200,
+      "def": 205,
+      "tags": [
+        "oct14-peach",
+        "44",
+        "45",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-031.webp",
+      "sourceText": "031 UR 無 光 ネオン街 マグマ 海底\r\nモブアサルト\r\n\r\nソウルフュージョン 無属性 × 光属性  MOBソウルフュージョン 008 × 002",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "アサルトの光路",
+        "description": "このターン、自身のATKとDEFを35アップする。",
+        "effect": "このターン、自身のATKとDEFを35アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 35,
+          "def": 35
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/031.png"
+    },
+    {
+      "id": "oct14-peach-032",
+      "uid": "oct14-peach-032",
+      "localNumber": 32,
+      "name": "モブノフダ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "光/水",
+      "atk": 190,
+      "def": 205,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-032.webp",
+      "sourceText": "032 UR 光 水 草原 ネオン街\r\nモブノフダ\r\n\r\nソウルフュージョン 光属性 × 水属性  MOBソウルフュージョン　013 × 003",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ノフダの水札",
+        "description": "相手のスキル発動を無効にする。",
+        "effect": "相手のスキル発動を無効にする。",
+        "timing": "skill-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelSkill": true
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/032.png"
+    },
+    {
+      "id": "oct14-peach-033",
+      "uid": "oct14-peach-033",
+      "localNumber": 33,
+      "name": "モブホノトビ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 185,
+      "def": 150,
+      "tags": [
+        "oct14-peach",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-033.webp",
+      "sourceText": "033 SSR 火 マグマ\r\nモブホノトビ\r\n\r\nソウルフュージョン 火属性 × 火属性 MOBソウルフュージョン 014 × 004",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ホノトビの残火",
+        "description": "相手1体のDEFを30ダウンし、相手ライフに20ダメージを与える。",
+        "effect": "相手1体のDEFを30ダウンし、相手ライフに20ダメージを与える。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "def": -30,
+          "lifeDamage": 20
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/033.png"
+    },
+    {
+      "id": "oct14-peach-034",
+      "uid": "oct14-peach-034",
+      "localNumber": 34,
+      "name": "モブインク",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "水",
+      "atk": 180,
+      "def": 220,
+      "tags": [
+        "oct14-peach",
+        "43"
+      ],
+      "image": "piecefig/oct14-peach-034.webp",
+      "sourceText": "034 UR 水 田舎町\r\nモブインク\r\n\r\nソウルフュージョン 水属性 × 水属性 MOBソウルフュージョン 009 × 015",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "インクの水墨",
+        "description": "このターン、相手全体のATKを35ダウンする。",
+        "effect": "このターン、相手全体のATKを35ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemies",
+          "atk": -35
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/034.png"
+    },
+    {
+      "id": "oct14-peach-035",
+      "uid": "oct14-peach-035",
+      "localNumber": 35,
+      "name": "モブツギライ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "雷",
+      "atk": 210,
+      "def": 190,
+      "tags": [
+        "oct14-peach",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-035.webp",
+      "sourceText": "035 UR 雷 魔王城\r\nモブツギライ\r\n\r\nソウルフュージョン 雷属性 × 雷属性 MOBソウルフュージョン 005 × 016",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ツギライの帯電",
+        "description": "このターン、桃影の国タグを持つ味方全体のATKを35アップする。",
+        "effect": "このターン、桃影の国タグを持つ味方全体のATKを35アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "filterTag": "oct14-peach",
+          "atk": 35
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/035.png"
+    },
+    {
+      "id": "oct14-peach-036",
+      "uid": "oct14-peach-036",
+      "localNumber": 36,
+      "name": "モブカイド",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 170,
+      "def": 180,
+      "tags": [
+        "oct14-peach",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-036.webp",
+      "sourceText": "036 SSR 火 マグマ\r\nモブカイド\r\n\r\nソウルフュージョン 火属性 × 闇属性 MOBソウルフュージョン 006 × 011",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "カイドの火守り",
+        "description": "このターン、自身のATKを20、DEFを40アップする。",
+        "effect": "このターン、自身のATKを20、DEFを40アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 20,
+          "def": 40
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/036.png"
+    },
+    {
+      "id": "oct14-peach-037",
+      "uid": "oct14-peach-037",
+      "localNumber": 37,
+      "name": "モブマリラビ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "雷/水",
+      "atk": 205,
+      "def": 200,
+      "tags": [
+        "oct14-peach",
+        "43"
+      ],
+      "image": "piecefig/oct14-peach-037.webp",
+      "sourceText": "037 UR 雷 水 田舎町\r\nモブマリラビ\r\n\r\nソウルフュージョン 雷属性 × 水属性  MOBソウルフュージョン 013 × 014",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "マリラビの雷雨",
+        "description": "このターン、相手全体のDEFを30ダウンし、自身のATKを20アップする。",
+        "effect": "このターン、相手全体のDEFを30ダウンし、自身のATKを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemies",
+          "def": -30,
+          "selfAtk": 20
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/037.png"
+    },
+    {
+      "id": "oct14-peach-038",
+      "uid": "oct14-peach-038",
+      "localNumber": 38,
+      "name": "モブハンズ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "風",
+      "atk": 160,
+      "def": 190,
+      "tags": [
+        "oct14-peach",
+        "45",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-038.webp",
+      "sourceText": "038 SSR　風 海底 マグマ\r\nモブハンズ\r\n\r\nソウルフュージョン 風属性 × 水属性 MOBソウルフュージョン 017 × モブジンベエ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ハンズの波風",
+        "description": "このターン、味方全体のDEFを25アップし、自分のライフを30回復する。",
+        "effect": "このターン、味方全体のDEFを25アップし、自分のライフを30回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "def": 25,
+          "heal": 30
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/038.png"
+    },
+    {
+      "id": "oct14-peach-039",
+      "uid": "oct14-peach-039",
+      "localNumber": 39,
+      "name": "モブジャグル",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "水",
+      "atk": 200,
+      "def": 215,
+      "tags": [
+        "oct14-peach",
+        "45",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-039.webp",
+      "sourceText": "039 UR 水 海底 マグマ\r\nモブジャグル\r\n\r\nソウルフュージョン 水属性 × 水属性 MOBソウルフュージョン 018 × モブネッシー\r\n\r\nここからMOB",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {},
+      "soulSkill": {
+        "name": "ジャグルの潮流",
+        "description": "このターン、自身のATKを30アップし、2回攻撃できる。",
+        "effect": "このターン、自身のATKを30アップし、2回攻撃できる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 30,
+          "attacks": 2
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/039.png"
+    },
+    {
+      "id": "oct14-peach-040",
+      "uid": "oct14-peach-040",
+      "localNumber": 40,
+      "name": "モブオベリスク",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "地",
+      "atk": 285,
+      "def": 335,
+      "tags": [
+        "oct14-peach",
+        "46"
+      ],
+      "image": "piecefig/oct14-peach-040.webp",
+      "sourceText": "040 UR モブオベリスク　地属性 部族村\r\nソウルフュージョン 019 ×　地属性 MOBソウルフュージョン 019 × 桃影の国と部族村両方のタグを持つ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "aura": {
+          "tags": [
+            "46"
+          ],
+          "def": 20
+        },
+        "description": "部族村タグを持つ味方全体のDEFを20アップする。"
+      },
+      "soulSkill": {
+        "name": "オベリスクの大結界",
+        "description": "メインスキル:このターン、桃影の国タグを持つ味方全体のDEFを50アップする。\nパッシブ:部族村タグを持つ味方全体のDEFを20アップする。",
+        "effect": "メインスキル:このターン、桃影の国タグを持つ味方全体のDEFを50アップする。\nパッシブ:部族村タグを持つ味方全体のDEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "filterTag": "oct14-peach",
+          "def": 50
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/040.png"
+    },
+    {
+      "id": "oct14-peach-041",
+      "uid": "oct14-peach-041",
+      "localNumber": 41,
+      "name": "モブユラギナシ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "闇",
+      "atk": 305,
+      "def": 315,
+      "tags": [
+        "oct14-peach",
+        "46"
+      ],
+      "image": "piecefig/oct14-peach-041.webp",
+      "sourceText": "041 UR モブユラギナシ 闇属性 部族村\r\nソウルフュージョン 020 × 闇属性 MOBソウルフュージョン 020 × 桃影の国と部族村両方のタグを持つ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "skillGrowth": {
+          "side": "own",
+          "atk": 10,
+          "def": 10
+        },
+        "description": "味方がスキルを発動するたび、自身のATKとDEFを10アップする。"
+      },
+      "soulSkill": {
+        "name": "ユラギナシの常夜",
+        "description": "メインスキル:このターン、相手全体のATKを40ダウンする。\nパッシブ:味方がスキルを発動するたび、自身のATKとDEFを10アップする。",
+        "effect": "メインスキル:このターン、相手全体のATKを40ダウンする。\nパッシブ:味方がスキルを発動するたび、自身のATKとDEFを10アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemies",
+          "atk": -40
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/041.png"
+    },
+    {
+      "id": "oct14-peach-042",
+      "uid": "oct14-peach-042",
+      "localNumber": 42,
+      "name": "モブウォルペパー",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "風",
+      "atk": 315,
+      "def": 290,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-042.webp",
+      "sourceText": "042 UR モブウォルペパー 風属性 ネオン街\r\nソウルフュージョン 021 × 風属性 MOBソウルフュージョン 021 × 桃影の国とネオン街両方のタグを持つ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "attackGrowth": {
+          "atk": 10,
+          "def": 0
+        },
+        "description": "攻撃するたび、自身のATKを10アップする。"
+      },
+      "soulSkill": {
+        "name": "ウォルペパーの疾走",
+        "description": "メインスキル:このターン、自身は3回攻撃できる。\nパッシブ:攻撃するたび、自身のATKを10アップする。",
+        "effect": "メインスキル:このターン、自身は3回攻撃できる。\nパッシブ:攻撃するたび、自身のATKを10アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "attacks": 3
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/042.png"
+    },
+    {
+      "id": "oct14-peach-043",
+      "uid": "oct14-peach-043",
+      "localNumber": 43,
+      "name": "モブイチジクノキ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "火",
+      "atk": 320,
+      "def": 305,
+      "tags": [
+        "oct14-peach",
+        "42"
+      ],
+      "image": "piecefig/oct14-peach-043.webp",
+      "sourceText": "043 UR モブイチジクノキ 火属性 砂漠\r\nソウルフュージョン 022 × 火属性 MOBソウルフュージョン 022 × 桃影の国と砂漠両方のタグを持つ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "fieldScale": {
+          "tag": "42",
+          "atk": 15
+        },
+        "description": "場の砂漠タグのフィギュア1体につき、自身のATKを15アップする。"
+      },
+      "soulSkill": {
+        "name": "イチジクノキの烈陽",
+        "description": "メインスキル:相手1体のDEFを45ダウンし、自分のライフを30回復する。\nパッシブ:場の砂漠タグのフィギュア1体につき、自身のATKを15アップする。",
+        "effect": "メインスキル:相手1体のDEFを45ダウンし、自分のライフを30回復する。\nパッシブ:場の砂漠タグのフィギュア1体につき、自身のATKを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "def": -45,
+          "heal": 30
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/043.png"
+    },
+    {
+      "id": "oct14-peach-044",
+      "uid": "oct14-peach-044",
+      "localNumber": 44,
+      "name": "モブナミマル",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "水",
+      "atk": 290,
+      "def": 345,
+      "tags": [
+        "oct14-peach",
+        "42",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-044.webp",
+      "sourceText": "044 UR モブナミマル 水属性 ネオン街 砂漠\r\nソウルフュージョン 026 × 水属性 MOBソウルフュージョン 026 × 桃影の国とネオン街両方のタグを持つ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "attackedHeal": 10,
+        "description": "攻撃対象になるたび、自分のライフを10回復する。"
+      },
+      "soulSkill": {
+        "name": "ナミマルの大潮",
+        "description": "メインスキル:このターン、味方全体のDEFを40アップし、自分のライフを40回復する。\nパッシブ:攻撃対象になるたび、自分のライフを10回復する。",
+        "effect": "メインスキル:このターン、味方全体のDEFを40アップし、自分のライフを40回復する。\nパッシブ:攻撃対象になるたび、自分のライフを10回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "def": 40,
+          "heal": 40
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/044.png"
+    },
+    {
+      "id": "oct14-peach-045",
+      "uid": "oct14-peach-045",
+      "localNumber": 45,
+      "name": "モブギンジャッジ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "雷/光",
+      "atk": 340,
+      "def": 335,
+      "tags": [
+        "oct14-peach",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-045.webp",
+      "sourceText": "045 MOB モブギンジャッジ 雷属性・光属性 ネオン街\r\nソウルフュージョン 029 × 雷属性 MOBソウルフュージョン　029 × 桃影の国とネオン街両方のタグを持つ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "skillGrowth": {
+          "side": "own",
+          "atk": 15,
+          "def": 0
+        },
+        "description": "味方がスキルを発動するたび、自身のATKを15アップする。"
+      },
+      "soulSkill": {
+        "name": "ギンジャッジの判光",
+        "description": "メインスキル:このターン、相手全体のATKとDEFを35ダウンする。\nパッシブ:味方がスキルを発動するたび、自身のATKを15アップする。",
+        "effect": "メインスキル:このターン、相手全体のATKとDEFを35ダウンする。\nパッシブ:味方がスキルを発動するたび、自身のATKを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemies",
+          "atk": -35,
+          "def": -35
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/045.png"
+    },
+    {
+      "id": "oct14-peach-046",
+      "uid": "oct14-peach-046",
+      "localNumber": 46,
+      "name": "モブマツラビ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "火",
+      "atk": 315,
+      "def": 320,
+      "tags": [
+        "oct14-peach",
+        "43",
+        "47"
+      ],
+      "image": "piecefig/oct14-peach-046.webp",
+      "sourceText": "046 UR モブマツラビ 火属性 マグマ・田舎町\r\nソウルフュージョン 036 × 火属性 MOBソウルフュージョン 036 × 桃影の国、マグマ、田舎町 2つ以上タグを持つ",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "attackGrowth": {
+          "atk": 15,
+          "def": 10
+        },
+        "description": "攻撃するたび、自身のATKを15、DEFを10アップする。"
+      },
+      "soulSkill": {
+        "name": "マツラビの火祭り",
+        "description": "メインスキル:このターン、味方全体のATKを40アップする。\nパッシブ:攻撃するたび、自身のATKを15、DEFを10アップする。",
+        "effect": "メインスキル:このターン、味方全体のATKを40アップする。\nパッシブ:攻撃するたび、自身のATKを15、DEFを10アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "atk": 40
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/046.png"
+    },
+    {
+      "id": "oct14-peach-047",
+      "uid": "oct14-peach-047",
+      "localNumber": 47,
+      "name": "モブヒメラビ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "雷/水",
+      "atk": 300,
+      "def": 365,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "43"
+      ],
+      "image": "piecefig/oct14-peach-047.webp",
+      "sourceText": "047 MOB モブヒメラビ 雷・水 草原・田舎町\r\nソウルフュージョン 037 × 水属性 MOBソウルフュージョン 037 × 桃影の国、草原、田舎町 2つ以上タグを持つ\r\nATK 300 DEF 365\r\nメインスキル:次の相手のターン、相手の場のフィギュアは必ず1回ずつ攻撃しなければならない。対象は自由に選択できる。\r\nパッシブ:相手が攻撃する度、このフィギュアのATKは30アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "enemyAttackGrowth": 30
+      },
+      "soulSkill": {
+        "name": "ヒメラビの挑戦状",
+        "description": "メインスキル:次の相手ターン、相手の場の各フィギュアは攻撃可能なら必ず1回攻撃する。対象は自由。\nパッシブ:相手が攻撃するたび、自身のATKを30アップする。",
+        "effect": "メインスキル:次の相手ターン、相手の場の各フィギュアは攻撃可能なら必ず1回攻撃する。対象は自由。\nパッシブ:相手が攻撃するたび、自身のATKを30アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "forceAttacks"
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/047.png"
+    },
+    {
+      "id": "oct14-peach-048",
+      "uid": "oct14-peach-048",
+      "localNumber": 48,
+      "name": "モブショドウ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "火/水",
+      "atk": 0,
+      "def": 335,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "47",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-048.webp",
+      "sourceText": "048 UR モブショドウ 火 水 草原 マグマ 魔王城\r\nソウルフュージョン 034 × 水属性 MOBソウルフュージョン 037 × 桃影の国、草原、マグマ、魔王城 2つ以上タグを持つ\r\nATK 0 DEF 335\r\nメインスキル:このターン手札が3枚以下の場合、5枚になるようにドローする。\r\nパッシブ:このフィギュアのATKは自分の手札の数×75となる。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "handScale": {
+          "atk": 75
+        }
+      },
+      "soulSkill": {
+        "name": "ショドウの描き足し",
+        "description": "メインスキル:手札が3枚以下なら5枚になるまでドローする。\nパッシブ:自身のATKは手札の枚数×75になる。",
+        "effect": "メインスキル:手札が3枚以下なら5枚になるまでドローする。\nパッシブ:自身のATKは手札の枚数×75になる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "drawToFive"
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/048.png"
+    },
+    {
+      "id": "oct14-peach-049",
+      "uid": "oct14-peach-049",
+      "localNumber": 49,
+      "name": "モブライガー",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "雷",
+      "atk": 320,
+      "def": 280,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-049.webp",
+      "sourceText": "049 UR モブライガー　雷 魔王城 草原\r\nATK 320 DEF 280\r\nソウルフュージョン 016 × 雷属性 MOBソウルフュージョン 016 × 桃影の国、草原、魔王城 2つ以上タグを持つ\r\n\r\nメインスキル:このターン、このフィギュアは2回攻撃出来る。\r\nパッシブ:このフィギュアが相手フィギュアを3体破壊した時、このフィギュアはモブライガルトに進化する。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "killEvolve": {
+          "count": 3,
+          "target": "oct14-peach-050"
+        }
+      },
+      "soulSkill": {
+        "name": "ライガーの二連雷",
+        "description": "メインスキル:このターン、自身は2回攻撃できる。\nパッシブ:相手を累計3体撃破すると、融合領域のモブライガルトに進化する。",
+        "effect": "メインスキル:このターン、自身は2回攻撃できる。\nパッシブ:相手を累計3体撃破すると、融合領域のモブライガルトに進化する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "attacks": 2
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/049.png"
+    },
+    {
+      "id": "oct14-peach-050",
+      "uid": "oct14-peach-050",
+      "localNumber": 50,
+      "name": "モブライガルト",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "雷",
+      "atk": 385,
+      "def": 385,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-050.webp",
+      "sourceText": "050 MOB モブライガルト 雷 魔王城 草原\r\nATK 385 DEF 385\r\nこのフィギュアはモブライガーの効果でしか召喚出来ない\r\nメインスキル:このターン、敵味方全てのフィギュアを破壊する。破壊したフィギュアの数×30のダメージを相手に与える。\r\nパッシブ:このフィギュアはスキルの効果を受けない。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "skillImmune": true
+      },
+      "soulSkill": {
+        "name": "ライガルトの終雷",
+        "description": "メインスキル:敵味方の全フィギュアを破壊し、破壊した数×30ダメージを相手ライフに与える。\nパッシブ:スキルの効果を受けない。",
+        "effect": "メインスキル:敵味方の全フィギュアを破壊し、破壊した数×30ダメージを相手ライフに与える。\nパッシブ:スキルの効果を受けない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "destroyAll",
+          "damagePer": 30
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/050.png"
+    },
+    {
+      "id": "oct14-peach-051",
+      "uid": "oct14-peach-051",
+      "localNumber": 51,
+      "name": "モブジャグハンマー",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "水/風",
+      "atk": 340,
+      "def": 390,
+      "tags": [
+        "oct14-peach",
+        "45",
+        "47",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-051.webp",
+      "sourceText": "051 MOB モブジャグハンマー 水・風 海底 マグマ 魔王城\r\nATK 340 DEF 390\r\nソウルフュージョン 039 × 風属性 MOBソウルフュージョン 038 × 039\r\nメインスキル:このターン、全てのフィギュアのATKとDEFを入れ替える。\r\nパッシブ:このフィギュアはDEFダウン効果を受けない。※ダメージによるダウンは適用する",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "defLowerImmune": true
+      },
+      "soulSkill": {
+        "name": "ジャグハンマーの反転",
+        "description": "メインスキル:このターン、全フィギュアのATKとDEFを入れ替える。\nパッシブ:DEFダウン効果を受けない。戦闘ダメージによる低下は適用。",
+        "effect": "メインスキル:このターン、全フィギュアのATKとDEFを入れ替える。\nパッシブ:DEFダウン効果を受けない。戦闘ダメージによる低下は適用。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct14": "swapAllStats"
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/051.png"
+    },
+    {
+      "id": "oct14-peach-052",
+      "uid": "oct14-peach-052",
+      "localNumber": 52,
+      "name": "モブシキガミ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "風",
+      "atk": 315,
+      "def": 315,
+      "tags": [
+        "oct14-peach",
+        "42",
+        "44"
+      ],
+      "image": "piecefig/oct14-peach-052.webp",
+      "sourceText": "052 UR モブシキガミ 風 ネオン街 砂漠\r\nATK 315 DEF 315\r\nソウルフュージョン 023 × 風属性 MOBソウルフュージョン 023 × 032\r\nメインスキル:攻撃を受ける時、このフィギュアのDEFを30アップする。\r\nパッシブ:このフィギュアは攻撃を受ける度ATKが20アップする。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "attackedGrowth": {
+          "atk": 20,
+          "def": 0
+        }
+      },
+      "soulSkill": {
+        "name": "シキガミの風盾",
+        "description": "メインスキル:攻撃を受ける時、このターン、自身のDEFを30アップする。\nパッシブ:攻撃対象になるたび、自身のATKを20アップする。",
+        "effect": "メインスキル:攻撃を受ける時、このターン、自身のDEFを30アップする。\nパッシブ:攻撃対象になるたび、自身のATKを20アップする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "def": 30
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/052.png"
+    },
+    {
+      "id": "oct14-peach-053",
+      "uid": "oct14-peach-053",
+      "localNumber": 53,
+      "name": "モブオンミョウジ",
+      "collection": "桃影の国",
+      "series": "桃影の国",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "光",
+      "atk": 335,
+      "def": 350,
+      "tags": [
+        "oct14-peach",
+        "41",
+        "44",
+        "48"
+      ],
+      "image": "piecefig/oct14-peach-053.webp",
+      "sourceText": "053 MOB モブオンミョウジ 光属性 草原 ネオン街 魔王城\r\nソウルフュージョン 032 × 水属性 MOBソウルフュージョン 032 × 021\r\nメインスキル:\r\nパッシブ:このフィギュアが破壊された時、自分か相手の墓地から1体フィギュアを選択し、自分の場に復活召喚する。",
+      "attackType": "魔法",
+      "role": "支援",
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "owners": "both",
+          "zones": [
+            "grave"
+          ]
+        }
+      },
+      "soulSkill": {
+        "name": "オンミョウジの双札",
+        "description": "メインスキル:このターン、味方全体のATKとDEFを30アップする。\nパッシブ:破壊された時、自分か相手の墓地から1体を選び、自分の場へ復活召喚する。",
+        "effect": "メインスキル:このターン、味方全体のATKとDEFを30アップする。\nパッシブ:破壊された時、自分か相手の墓地から1体を選び、自分の場へ復活召喚する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "atk": 30,
+          "def": 30
+        }
+      },
+      "sourceImage": "新フィギュア/桃影の国/053.png"
+    },
+    {
+      "id": "oct14-kaijin-001",
+      "uid": "oct14-kaijin-001",
+      "localNumber": 1,
+      "name": "モブ怪人ブルー",
+      "collection": "読みかけの本",
+      "series": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "atk": 85,
+      "def": 100,
+      "tags": [
+        "52"
+      ],
+      "image": "piecefig/oct14-kaijin-001.webp",
+      "attackType": "物理",
+      "role": "戦闘",
+      "passive": {},
+      "soulSkill": {
+        "name": "ブルーの守備",
+        "description": "このターン、自身のDEFを25アップする。",
+        "effect": "このターン、自身のDEFを25アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "def": 25
+        }
+      },
+      "sourceImage": "新フィギュア/読みかけの本/001.png"
+    },
+    {
+      "id": "oct14-kaijin-002",
+      "uid": "oct14-kaijin-002",
+      "localNumber": 2,
+      "name": "モブ怪人グリーン",
+      "collection": "読みかけの本",
+      "series": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "風",
+      "atk": 90,
+      "def": 85,
+      "tags": [
+        "52"
+      ],
+      "image": "piecefig/oct14-kaijin-002.webp",
+      "attackType": "物理",
+      "role": "戦闘",
+      "passive": {},
+      "soulSkill": {
+        "name": "グリーンの疾走",
+        "description": "このターン、自身は2回攻撃できる。",
+        "effect": "このターン、自身は2回攻撃できる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "attacks": 2
+        }
+      },
+      "sourceImage": "新フィギュア/読みかけの本/002.png"
+    },
+    {
+      "id": "oct14-kaijin-003",
+      "uid": "oct14-kaijin-003",
+      "localNumber": 3,
+      "name": "モブ怪人レッド",
+      "collection": "読みかけの本",
+      "series": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "火",
+      "atk": 100,
+      "def": 80,
+      "tags": [
+        "52"
+      ],
+      "image": "piecefig/oct14-kaijin-003.webp",
+      "attackType": "物理",
+      "role": "戦闘",
+      "passive": {},
+      "soulSkill": {
+        "name": "レッドの強襲",
+        "description": "このターン、自身のATKを25アップする。",
+        "effect": "このターン、自身のATKを25アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 25
+        }
+      },
+      "sourceImage": "新フィギュア/読みかけの本/003.png"
+    },
+    {
+      "id": "oct14-kaijin-004",
+      "uid": "oct14-kaijin-004",
+      "localNumber": 4,
+      "name": "モブ怪人イエロー",
+      "collection": "読みかけの本",
+      "series": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "雷",
+      "atk": 90,
+      "def": 90,
+      "tags": [
+        "52"
+      ],
+      "image": "piecefig/oct14-kaijin-004.webp",
+      "attackType": "物理",
+      "role": "戦闘",
+      "passive": {},
+      "soulSkill": {
+        "name": "イエローの牽制",
+        "description": "相手1体のATKを15ダウンする。",
+        "effect": "相手1体のATKを15ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "atk": -15
+        }
+      },
+      "sourceImage": "新フィギュア/読みかけの本/004.png"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "oct14-moke-001-0",
+      "target": "oct14-moke-001",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "element-GHO"
+        },
+        {
+          "tag": "element-GHO"
+        }
+      ],
+      "special": false,
+      "label": "モケ × モケ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-001-1",
+      "target": "oct14-moke-001",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "NS2_009"
+        },
+        {
+          "tag": "element-GHO"
+        }
+      ],
+      "special": true,
+      "label": "モブモケレッド × モブモケ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-002-0",
+      "target": "oct14-moke-002",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-moke-010"
+        },
+        {
+          "tag": "element-GHO"
+        }
+      ],
+      "special": false,
+      "label": "モブモケグレー × モケ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-002-1",
+      "target": "oct14-moke-002",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-moke-010"
+        },
+        {
+          "id": "NS2_012"
+        }
+      ],
+      "special": true,
+      "label": "モブモケグレー × モブモケシルバー",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-003-0",
+      "target": "oct14-moke-003",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-moke-012"
+        },
+        {
+          "tag": "element-GHO"
+        }
+      ],
+      "special": false,
+      "label": "モブモケミント × モケ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-003-1",
+      "target": "oct14-moke-003",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-moke-012"
+        },
+        {
+          "id": "NS2_010"
+        }
+      ],
+      "special": true,
+      "label": "モブモケミント × モブモケブルー",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-004-0",
+      "target": "oct14-moke-004",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "tag": "element-GHO"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "モブモケ × 闇属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-004-1",
+      "target": "oct14-moke-004",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "NS2_009"
+        },
+        {
+          "id": "NS2_010"
+        }
+      ],
+      "special": true,
+      "label": "モブモケレッド × モブモケブルー",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-005-0",
+      "target": "oct14-moke-005",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "NS2_011"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "special": false,
+      "label": "モブモケゴールド × 光属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-005-1",
+      "target": "oct14-moke-005",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-moke-011"
+        },
+        {
+          "id": "NS2_011"
+        }
+      ],
+      "special": true,
+      "label": "モブモケブラウン × モブモケゴールド",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-006-0",
+      "target": "oct14-moke-006",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "NS2_010"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "special": false,
+      "label": "モブモケブルー × 光属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-006-1",
+      "target": "oct14-moke-006",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "NS2_010"
+        },
+        {
+          "id": "NS2_010"
+        }
+      ],
+      "special": true,
+      "label": "モブモケブルー × モブモケブルー",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-013-0",
+      "target": "oct14-moke-013",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-005"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "005 × 闇属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-013-1",
+      "target": "oct14-moke-013",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-005"
+        },
+        {
+          "id": "oct14-moke-004"
+        }
+      ],
+      "special": true,
+      "label": "005 × 004",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-014-0",
+      "target": "oct14-moke-014",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-001"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "special": false,
+      "label": "001 × 光属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-014-1",
+      "target": "oct14-moke-014",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-001"
+        },
+        {
+          "id": "oct14-moke-006"
+        }
+      ],
+      "special": true,
+      "label": "001 × 006",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-015-0",
+      "target": "oct14-moke-015",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-002"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "002 × 闇属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-015-1",
+      "target": "oct14-moke-015",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-002"
+        },
+        {
+          "id": "oct14-moke-004"
+        }
+      ],
+      "special": true,
+      "label": "002 × 004",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-016-0",
+      "target": "oct14-moke-016",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-003"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "special": false,
+      "label": "003 × 読みかけの本",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-016-1",
+      "target": "oct14-moke-016",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-002"
+        },
+        {
+          "id": "oct14-moke-003"
+        }
+      ],
+      "special": true,
+      "label": "002 × 003",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-007-0",
+      "target": "oct14-moke-007",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-009"
+        },
+        {
+          "tag": "element-GHO"
+        }
+      ],
+      "special": false,
+      "label": "009 × モブモケ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-007-1",
+      "target": "oct14-moke-007",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-001"
+        },
+        {
+          "id": "oct14-moke-005"
+        }
+      ],
+      "special": true,
+      "label": "001 × 005",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-008-0",
+      "target": "oct14-moke-008",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-006"
+        },
+        {
+          "tag": "element-GHO"
+        }
+      ],
+      "special": false,
+      "label": "006 × モブモケ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-moke-008-1",
+      "target": "oct14-moke-008",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-moke-005"
+        },
+        {
+          "id": "oct14-moke-006"
+        }
+      ],
+      "special": true,
+      "label": "005 × 006",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-019-0",
+      "target": "oct14-peach-019",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "地"
+        },
+        {
+          "tag": "oct14-peach"
+        }
+      ],
+      "special": false,
+      "label": "地属性 × 桃影の国",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-019-1",
+      "target": "oct14-peach-019",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-001"
+        },
+        {
+          "id": "132"
+        }
+      ],
+      "special": true,
+      "label": "001 × モブウォリアー",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-020-0",
+      "target": "oct14-peach-020",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "闇"
+        },
+        {
+          "tag": "oct14-peach"
+        }
+      ],
+      "special": false,
+      "label": "闇属性 × 桃影の国",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-020-1",
+      "target": "oct14-peach-020",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-002"
+        },
+        {
+          "id": "133"
+        }
+      ],
+      "special": true,
+      "label": "002 × モブキバ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-021-0",
+      "target": "oct14-peach-021",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "闇"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "闇属性 × 闇属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-021-1",
+      "target": "oct14-peach-021",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-003"
+        },
+        {
+          "id": "116"
+        }
+      ],
+      "special": true,
+      "label": "003 × モブネオントカゲ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-022-0",
+      "target": "oct14-peach-022",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "火"
+        },
+        {
+          "tag": "oct14-peach"
+        }
+      ],
+      "special": false,
+      "label": "火属性 × 桃影の国",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-022-1",
+      "target": "oct14-peach-022",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-004"
+        },
+        {
+          "id": "97"
+        }
+      ],
+      "special": true,
+      "label": "004 × モブミイラ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-023-0",
+      "target": "oct14-peach-023",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "風"
+        },
+        {
+          "tag": "oct14-peach"
+        }
+      ],
+      "special": false,
+      "label": "風属性 × 桃色の国",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-023-1",
+      "target": "oct14-peach-023",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-005"
+        },
+        {
+          "id": "117"
+        }
+      ],
+      "special": true,
+      "label": "005 × モブカイロ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-024-0",
+      "target": "oct14-peach-024",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "闇"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "special": false,
+      "label": "闇属性 × 風属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-024-1",
+      "target": "oct14-peach-024",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-006"
+        },
+        {
+          "id": "oct14-peach-014"
+        }
+      ],
+      "special": true,
+      "label": "006 × 014",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-025-0",
+      "target": "oct14-peach-025",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "闇"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "闇属性 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-025-1",
+      "target": "oct14-peach-025",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-006"
+        },
+        {
+          "id": "oct14-peach-013"
+        }
+      ],
+      "special": true,
+      "label": "006 × 013",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-026-0",
+      "target": "oct14-peach-026",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "水"
+        },
+        {
+          "tag": "oct14-peach"
+        }
+      ],
+      "special": false,
+      "label": "水属性 × 桃影の国",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-026-1",
+      "target": "oct14-peach-026",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-007"
+        },
+        {
+          "id": "oct14-peach-005"
+        }
+      ],
+      "special": true,
+      "label": "007 × 005",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-027-0",
+      "target": "oct14-peach-027",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "火"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "火属性 × 闇属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-027-1",
+      "target": "oct14-peach-027",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-007"
+        },
+        {
+          "id": "oct14-peach-011"
+        }
+      ],
+      "special": true,
+      "label": "007 × 011",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-028-0",
+      "target": "oct14-peach-028",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "光"
+        },
+        {
+          "tag": "oct14-peach"
+        }
+      ],
+      "special": false,
+      "label": "光属性 × 桃影の国",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-028-1",
+      "target": "oct14-peach-028",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-007"
+        },
+        {
+          "id": "oct14-peach-016"
+        }
+      ],
+      "special": true,
+      "label": "007 × 016",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-029-0",
+      "target": "oct14-peach-029",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "雷"
+        },
+        {
+          "tag": "oct14-peach"
+        }
+      ],
+      "special": false,
+      "label": "雷属性 × 桃色の国",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-029-1",
+      "target": "oct14-peach-029",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-008"
+        },
+        {
+          "id": "oct14-peach-016"
+        }
+      ],
+      "special": true,
+      "label": "008 × 016",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-030-0",
+      "target": "oct14-peach-030",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "地"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "special": false,
+      "label": "地属性 × 地属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-030-1",
+      "target": "oct14-peach-030",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-012"
+        },
+        {
+          "id": "oct14-peach-001"
+        }
+      ],
+      "special": true,
+      "label": "012 × 001",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-031-0",
+      "target": "oct14-peach-031",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "無"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "special": false,
+      "label": "無属性 × 光属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-031-1",
+      "target": "oct14-peach-031",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-008"
+        },
+        {
+          "id": "oct14-peach-002"
+        }
+      ],
+      "special": true,
+      "label": "008 × 002",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-032-0",
+      "target": "oct14-peach-032",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "光"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "光属性 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-032-1",
+      "target": "oct14-peach-032",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-013"
+        },
+        {
+          "id": "oct14-peach-003"
+        }
+      ],
+      "special": true,
+      "label": "013 × 003",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-033-0",
+      "target": "oct14-peach-033",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "火"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "special": false,
+      "label": "火属性 × 火属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-033-1",
+      "target": "oct14-peach-033",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-014"
+        },
+        {
+          "id": "oct14-peach-004"
+        }
+      ],
+      "special": true,
+      "label": "014 × 004",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-034-0",
+      "target": "oct14-peach-034",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "水"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "水属性 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-034-1",
+      "target": "oct14-peach-034",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-009"
+        },
+        {
+          "id": "oct14-peach-015"
+        }
+      ],
+      "special": true,
+      "label": "009 × 015",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-035-0",
+      "target": "oct14-peach-035",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "雷"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "special": false,
+      "label": "雷属性 × 雷属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-035-1",
+      "target": "oct14-peach-035",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-005"
+        },
+        {
+          "id": "oct14-peach-016"
+        }
+      ],
+      "special": true,
+      "label": "005 × 016",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-036-0",
+      "target": "oct14-peach-036",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "火"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "火属性 × 闇属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-036-1",
+      "target": "oct14-peach-036",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-006"
+        },
+        {
+          "id": "oct14-peach-011"
+        }
+      ],
+      "special": true,
+      "label": "006 × 011",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-037-0",
+      "target": "oct14-peach-037",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "雷"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "雷属性 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-037-1",
+      "target": "oct14-peach-037",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-013"
+        },
+        {
+          "id": "oct14-peach-014"
+        }
+      ],
+      "special": true,
+      "label": "013 × 014",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-038-0",
+      "target": "oct14-peach-038",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "風"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "風属性 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-038-1",
+      "target": "oct14-peach-038",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-017"
+        },
+        {
+          "id": "124"
+        }
+      ],
+      "special": true,
+      "label": "017 × モブジンベエ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-039-0",
+      "target": "oct14-peach-039",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "attribute": "水"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "水属性 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-039-1",
+      "target": "oct14-peach-039",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-peach-018"
+        },
+        {
+          "id": "125"
+        }
+      ],
+      "special": true,
+      "label": "018 × モブネッシー",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-040-0",
+      "target": "oct14-peach-040",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-019"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "special": false,
+      "label": "019 ×　地属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-040-1",
+      "target": "oct14-peach-040",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-019"
+        },
+        {
+          "allTags": [
+            "46",
+            "oct14-peach"
+          ]
+        }
+      ],
+      "special": true,
+      "label": "019 × 桃影の国と部族村両方のタグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-041-0",
+      "target": "oct14-peach-041",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-020"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "020 × 闇属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-041-1",
+      "target": "oct14-peach-041",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-020"
+        },
+        {
+          "allTags": [
+            "46",
+            "oct14-peach"
+          ]
+        }
+      ],
+      "special": true,
+      "label": "020 × 桃影の国と部族村両方のタグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-042-0",
+      "target": "oct14-peach-042",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-021"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "special": false,
+      "label": "021 × 風属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-042-1",
+      "target": "oct14-peach-042",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-021"
+        },
+        {
+          "allTags": [
+            "44",
+            "oct14-peach"
+          ]
+        }
+      ],
+      "special": true,
+      "label": "021 × 桃影の国とネオン街両方のタグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-043-0",
+      "target": "oct14-peach-043",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-022"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "special": false,
+      "label": "022 × 火属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-043-1",
+      "target": "oct14-peach-043",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-022"
+        },
+        {
+          "allTags": [
+            "42",
+            "oct14-peach"
+          ]
+        }
+      ],
+      "special": true,
+      "label": "022 × 桃影の国と砂漠両方のタグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-044-0",
+      "target": "oct14-peach-044",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-026"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "026 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-044-1",
+      "target": "oct14-peach-044",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-026"
+        },
+        {
+          "allTags": [
+            "44",
+            "oct14-peach"
+          ]
+        }
+      ],
+      "special": true,
+      "label": "026 × 桃影の国とネオン街両方のタグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-045-0",
+      "target": "oct14-peach-045",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-029"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "special": false,
+      "label": "029 × 雷属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-045-1",
+      "target": "oct14-peach-045",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-029"
+        },
+        {
+          "allTags": [
+            "44",
+            "oct14-peach"
+          ]
+        }
+      ],
+      "special": true,
+      "label": "029 × 桃影の国とネオン街両方のタグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-046-0",
+      "target": "oct14-peach-046",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-036"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "special": false,
+      "label": "036 × 火属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-046-1",
+      "target": "oct14-peach-046",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-036"
+        },
+        {
+          "tagsAtLeast": {
+            "count": 2,
+            "tags": [
+              "43",
+              "47",
+              "oct14-peach"
+            ]
+          }
+        }
+      ],
+      "special": true,
+      "label": "036 × 桃影の国、マグマ、田舎町 2つ以上タグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-047-0",
+      "target": "oct14-peach-047",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-037"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "037 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-047-1",
+      "target": "oct14-peach-047",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-037"
+        },
+        {
+          "tagsAtLeast": {
+            "count": 2,
+            "tags": [
+              "41",
+              "43",
+              "oct14-peach"
+            ]
+          }
+        }
+      ],
+      "special": true,
+      "label": "037 × 桃影の国、草原、田舎町 2つ以上タグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-048-0",
+      "target": "oct14-peach-048",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-034"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "034 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-048-1",
+      "target": "oct14-peach-048",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-037"
+        },
+        {
+          "tagsAtLeast": {
+            "count": 2,
+            "tags": [
+              "41",
+              "47",
+              "48",
+              "oct14-peach"
+            ]
+          }
+        }
+      ],
+      "special": true,
+      "label": "037 × 桃影の国、草原、マグマ、魔王城 2つ以上タグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-049-0",
+      "target": "oct14-peach-049",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-016"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "special": false,
+      "label": "016 × 雷属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-049-1",
+      "target": "oct14-peach-049",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-016"
+        },
+        {
+          "tagsAtLeast": {
+            "count": 2,
+            "tags": [
+              "41",
+              "48",
+              "oct14-peach"
+            ]
+          }
+        }
+      ],
+      "special": true,
+      "label": "016 × 桃影の国、草原、魔王城 2つ以上タグを持つ",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-051-0",
+      "target": "oct14-peach-051",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-039"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "special": false,
+      "label": "039 × 風属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-051-1",
+      "target": "oct14-peach-051",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-038"
+        },
+        {
+          "id": "oct14-peach-039"
+        }
+      ],
+      "special": true,
+      "label": "038 × 039",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-052-0",
+      "target": "oct14-peach-052",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-023"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "special": false,
+      "label": "023 × 風属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-052-1",
+      "target": "oct14-peach-052",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-023"
+        },
+        {
+          "id": "oct14-peach-032"
+        }
+      ],
+      "special": true,
+      "label": "023 × 032",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-053-0",
+      "target": "oct14-peach-053",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-032"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "032 × 水属性",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    },
+    {
+      "id": "oct14-peach-053-1",
+      "target": "oct14-peach-053",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-peach-032"
+        },
+        {
+          "id": "oct14-peach-021"
+        }
+      ],
+      "special": true,
+      "label": "032 × 021",
+      "basis": "ユーザー指定 新フィギュア 2026-10-14"
+    }
+  ],
+  "tags": [
+    {
+      "id": "oct14-peach",
+      "name": "桃影の国"
+    }
+  ]
+}

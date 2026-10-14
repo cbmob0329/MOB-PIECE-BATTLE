@@ -1,0 +1,1127 @@
+{
+  "target": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE",
+  "changes": [
+    {
+      "from": "src/data/catalog.js",
+      "to": "src/data/catalog.js",
+      "before": "97a9562f03d0d21b4c9aca04a8c9d76b40f5d843a194f48ddec51752ca05f0c1",
+      "after": "9e87b7366357cab76a3d80537d83720c5339d7cb60b747979f00cf31755a938d"
+    },
+    {
+      "from": "src/data/oct14-additions.js",
+      "to": "src/data/oct14-additions.js",
+      "before": null,
+      "after": "07fe92a5cfc35e8fa5cddef49c80a0d0879f61c5acaefc975db58342fa92cbb2"
+    },
+    {
+      "from": "src/data/oct14-new-figures.json",
+      "to": "src/data/oct14-new-figures.json",
+      "before": null,
+      "after": "faa4dc623f44a1cf5ae115bf99e9c7e5cf2b8ea3f0e6010c1205b2334767463d"
+    },
+    {
+      "from": "src/data/oct14-user-edits.json",
+      "to": "src/data/oct14-user-edits.json",
+      "before": null,
+      "after": "05b3afe8abee2d6147ced00a1d9fb9c41493f44c7dac433f6e965e4239e04c78"
+    },
+    {
+      "from": "src/data/soul-catalog.js",
+      "to": "src/data/soul-catalog.js",
+      "before": "63b0678f0f6251ba6f725721762163a0ac413c1fb304452afa7959256d86134c",
+      "after": "e73e6f27674df04be4c53ec9eb7fce75f92f49d5e70ee62379c3cd884d4b427e"
+    },
+    {
+      "from": "src/game/element-skill-runtime.js",
+      "to": "src/game/element-skill-runtime.js",
+      "before": "fb54db11edf920f3c547f894a1ba6a74a7552ccdaa88f105eaaad52f5e448427",
+      "after": "90c4f759f9721f9ff9d36341c51c93d396b272cf98a1844ef9ea3988737c6f92"
+    },
+    {
+      "from": "src/game/fusion-rules.js",
+      "to": "src/game/fusion-rules.js",
+      "before": "e6f6935ad8416ca0dbe7c521afb1db1ebe92ad48d9d2c073f0cffd73a685656a",
+      "after": "028cdb3e617919b1e259c72ca8c38ecd63ed8ac43df0d1467816a83d8131a5f4"
+    },
+    {
+      "from": "src/game/oct06-passives.js",
+      "to": "src/game/oct06-passives.js",
+      "before": "2774300d4cedce0a7c1ed00f2ed053e5db8b9f9d56d45790a34b565988424118",
+      "after": "bb43da31e770981d3dd5116a3bb22b8f539ca024b73b8bcefcb959bb3f4699cd"
+    },
+    {
+      "from": "src/game/oct07-action-choices.js",
+      "to": "src/game/oct07-action-choices.js",
+      "before": "5f003ce8086f2301266168b5abd3e603151ba2dbf9bd6268ec0aceba5937d3c3",
+      "after": "160d8fa77947ba8793d91f9b1783ced7f03c66bf969db8f94e9e03815f354046"
+    },
+    {
+      "from": "src/game/oct14-effects.js",
+      "to": "src/game/oct14-effects.js",
+      "before": null,
+      "after": "6928a83c193ecd8feb56dc3d5b71ca8b282975f2d57d476b76983b615db7f160"
+    },
+    {
+      "from": "src/game/soul-engine.js",
+      "to": "src/game/soul-engine.js",
+      "before": "48981c3c6a36459458b4fa75fcb72ef8438cdb0be40a6e5be7838c8e5e77f831",
+      "after": "9717fb4623ca99345a34097036459fbbe2ff1189a9b0b2fa049b21eb9d8cf3b8"
+    },
+    {
+      "from": "editor/app.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/app.js",
+      "before": "643079154d60a146f875d301d6ce4100956690fa5e4df7631e17d8e2af44dc47",
+      "after": "7c4d0193eb0bc759b5687d32105a55a784560229c177c8088532f95b7f914047"
+    },
+    {
+      "from": "editor/core.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/core.js",
+      "before": "9fc0a9bbe3aa9a91dc79426e6562110c37f2bfb32777b756a1b6bbeecb3b0fd3",
+      "after": "9fc0a9bbe3aa9a91dc79426e6562110c37f2bfb32777b756a1b6bbeecb3b0fd3"
+    },
+    {
+      "from": "editor/data.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/data.js",
+      "before": "0bfb16489eb8b53f6ba8926767e74112994f013e8ecb7863c5e0b3031b2fb89b",
+      "after": "e307692d49d458ec9f2a60bd614ad7edf98e6868ddacd3c3a480ff7bd29cfff5"
+    },
+    {
+      "from": "editor/editor-current-snapshot.json",
+      "to": "編集アプリ/MOB-PIECE-Editor/editor-current-snapshot.json",
+      "before": "09946faddc99101cec2f23fe179bf97928e7ae86d54a946898be4079a45c90c7",
+      "after": "c0c8752373c632e03ec3fe03dfe1d86901115f4ad6459aeb1359a7d9e7c48570"
+    },
+    {
+      "from": "editor/index.html",
+      "to": "編集アプリ/MOB-PIECE-Editor/index.html",
+      "before": "c996bb21cfe6c8e92a3c385115f6a327b04776d44e6faf8bb21fad710665b343",
+      "after": "cc96f3024af568f8cc3ff4ab7a5b8650d9f5a134ca54f34678cb63d0ff4c1e4f"
+    },
+    {
+      "from": "editor/migration-base.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/migration-base.js",
+      "before": null,
+      "after": "dff467a077bd7ad99237c808e6b8d2f6b5adda0557c0a6f2c79aaf60e1fe5b08"
+    },
+    {
+      "from": "editor/style.css",
+      "to": "編集アプリ/MOB-PIECE-Editor/style.css",
+      "before": "0b3538821ff01849896b28113d17a57b56cccdc343261026e23b8a239144e2e3",
+      "after": "0b3538821ff01849896b28113d17a57b56cccdc343261026e23b8a239144e2e3"
+    },
+    {
+      "from": "editor/sync-core.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/sync-core.js",
+      "before": "0cfbf367bcfd2f1d6d64f50e414db12d3472b8171a5e20b2449be32332630789",
+      "after": "7493322b716d3d651e952db6fbb8c8f08cb2b7db44816072d9a162b1528ea4ab"
+    },
+    {
+      "from": "editor/workshop-core.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/workshop-core.js",
+      "before": "9d3a9354a59cf5a658c9feab2504c3f395b028d885f7086842ef6eb99a3c0e67",
+      "after": "9d3a9354a59cf5a658c9feab2504c3f395b028d885f7086842ef6eb99a3c0e67"
+    },
+    {
+      "from": "editor/workshop-tools.css",
+      "to": "編集アプリ/MOB-PIECE-Editor/workshop-tools.css",
+      "before": "06c1f8e27967e6bdbb53d49ae64ed7530328bc208accbaf74682a88437f03312",
+      "after": "06c1f8e27967e6bdbb53d49ae64ed7530328bc208accbaf74682a88437f03312"
+    },
+    {
+      "from": "editor/workshop.css",
+      "to": "編集アプリ/MOB-PIECE-Editor/workshop.css",
+      "before": "61d9bf31bb2e1775a644467708cad17454eecbd906ac48520520a3093a88cf10",
+      "after": "61d9bf31bb2e1775a644467708cad17454eecbd906ac48520520a3093a88cf10"
+    },
+    {
+      "from": "editor/workshop.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/workshop.js",
+      "before": "0ecc85cc91a50c63042fd2ec12b1116163e24f64fa6ed04466edb22f0b7fb607",
+      "after": "0ecc85cc91a50c63042fd2ec12b1116163e24f64fa6ed04466edb22f0b7fb607"
+    },
+    {
+      "from": "piecefig/custom-5ee64f5a-12e5-44a9-acbf-306f421c4b98.webp",
+      "to": "piecefig/custom-5ee64f5a-12e5-44a9-acbf-306f421c4b98.webp",
+      "before": null,
+      "after": "1d31be950a7fe6f7820a4f9f7fb34f2dba6bae0352e02908649f8f81c8550b84"
+    },
+    {
+      "from": "piecefig/custom-7fc09255-3c45-49cc-aa6a-527a9ea1dc49.webp",
+      "to": "piecefig/custom-7fc09255-3c45-49cc-aa6a-527a9ea1dc49.webp",
+      "before": null,
+      "after": "4f9b5984d75a0e9b4b4a3dda2a28539a1f4a233d32c0890c42b48f8c5394fae5"
+    },
+    {
+      "from": "piecefig/custom-a9f6ab85-6488-4ef6-bcf0-f97094afc091.webp",
+      "to": "piecefig/custom-a9f6ab85-6488-4ef6-bcf0-f97094afc091.webp",
+      "before": null,
+      "after": "ea94e54e492c44b2939ada6b90f699f66d9c5153a9e82e430ccc350dfa7576bc"
+    },
+    {
+      "from": "piecefig/custom-c1bade5d-e616-4275-a5bc-2e711eb5a3f7.webp",
+      "to": "piecefig/custom-c1bade5d-e616-4275-a5bc-2e711eb5a3f7.webp",
+      "before": null,
+      "after": "1c6d2da803f3211223ede60fcb0aae53fc817d5b060d50386f39a3d236b72074"
+    },
+    {
+      "from": "piecefig/custom-ca79356d-659d-44c7-a148-ae8f0d43d50d.webp",
+      "to": "piecefig/custom-ca79356d-659d-44c7-a148-ae8f0d43d50d.webp",
+      "before": null,
+      "after": "6438e59b6c403e022841213385216a5b17e4f3b57edf084f963dd0c80b1fc387"
+    },
+    {
+      "from": "piecefig/custom-e8efa10a-bc75-4a39-81a8-92a443d14149.webp",
+      "to": "piecefig/custom-e8efa10a-bc75-4a39-81a8-92a443d14149.webp",
+      "before": null,
+      "after": "e87b3336cba10822e9732b29ff0947c2fdecce74c6f09f1b0164e3d599aec961"
+    },
+    {
+      "from": "piecefig/custom-f8dd57e0-9292-4194-9efc-dcae43adb88c.webp",
+      "to": "piecefig/custom-f8dd57e0-9292-4194-9efc-dcae43adb88c.webp",
+      "before": null,
+      "after": "665709a6d02fc10774f208842180d96c8e953e6e47f85eb3b480d82023d9bdd8"
+    },
+    {
+      "from": "piecefig/NS046.webp",
+      "to": "piecefig/NS046.webp",
+      "before": null,
+      "after": "1d31be950a7fe6f7820a4f9f7fb34f2dba6bae0352e02908649f8f81c8550b84"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-001.webp",
+      "to": "piecefig/oct14-kaijin-001.webp",
+      "before": null,
+      "after": "5dadc210596f2344ddfb4b422415560bdf59a749a7aeb4d44170d1f4fb7658b9"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-002.webp",
+      "to": "piecefig/oct14-kaijin-002.webp",
+      "before": null,
+      "after": "5739b3b6233843f04d3f9095038b1795d308b61516482ab3a31820c93cb9a4c5"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-003.webp",
+      "to": "piecefig/oct14-kaijin-003.webp",
+      "before": null,
+      "after": "4bde986097cceb6543babdbff61b52d8f225d719d40340af6fe490a2bdc4f901"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-004.webp",
+      "to": "piecefig/oct14-kaijin-004.webp",
+      "before": null,
+      "after": "e3e1b155386e11b89fb6e71ded29c9021a127e129330ee99c08830f62c46ff24"
+    },
+    {
+      "from": "piecefig/oct14-moke-001.webp",
+      "to": "piecefig/oct14-moke-001.webp",
+      "before": null,
+      "after": "fe0bd47de9951ff527f6e0bf77ca8cf53715e69b8064d4fa6371403bc3498cdb"
+    },
+    {
+      "from": "piecefig/oct14-moke-002.webp",
+      "to": "piecefig/oct14-moke-002.webp",
+      "before": null,
+      "after": "c3217e1ed3fc19ebb0e953fac76a8b6baa9442cf368a4693e3b9b0b5fde553c1"
+    },
+    {
+      "from": "piecefig/oct14-moke-003.webp",
+      "to": "piecefig/oct14-moke-003.webp",
+      "before": null,
+      "after": "14d69a86eea1cc72b95e437bacb944b043177e5224c0b49cd3e3e26998598420"
+    },
+    {
+      "from": "piecefig/oct14-moke-004.webp",
+      "to": "piecefig/oct14-moke-004.webp",
+      "before": null,
+      "after": "4d705890c3f27e8193e0415967d4f2fcdc35b81438f1c0fdb56f09ff4eecbd96"
+    },
+    {
+      "from": "piecefig/oct14-moke-005.webp",
+      "to": "piecefig/oct14-moke-005.webp",
+      "before": null,
+      "after": "ef61005a7c61b9becf3aa0457aed3b2d1f511aecbf4ce87025417ce18f4b651e"
+    },
+    {
+      "from": "piecefig/oct14-moke-006.webp",
+      "to": "piecefig/oct14-moke-006.webp",
+      "before": null,
+      "after": "136ebef18601810ac64d8d75e65fa72414a0b24ed5809a07de0513b4b00113a5"
+    },
+    {
+      "from": "piecefig/oct14-moke-007.webp",
+      "to": "piecefig/oct14-moke-007.webp",
+      "before": null,
+      "after": "2416aef785b2248daecfa003d1a4056dc48bba956359eae19cc93172c17c5fa2"
+    },
+    {
+      "from": "piecefig/oct14-moke-008.webp",
+      "to": "piecefig/oct14-moke-008.webp",
+      "before": null,
+      "after": "f1c08baab100a42384e9b7b8260bd7b0ecba32810c88ea2eb56b832c55713f0c"
+    },
+    {
+      "from": "piecefig/oct14-moke-009.webp",
+      "to": "piecefig/oct14-moke-009.webp",
+      "before": null,
+      "after": "680348acf5e9a648e68840aa63c207d51088e8820a5ab59047754ecf8209ed64"
+    },
+    {
+      "from": "piecefig/oct14-moke-010.webp",
+      "to": "piecefig/oct14-moke-010.webp",
+      "before": null,
+      "after": "4774dd568b8f7d8bf6002a91043ba7d154f4254d1954cddd95ac61b3e97f1caa"
+    },
+    {
+      "from": "piecefig/oct14-moke-011.webp",
+      "to": "piecefig/oct14-moke-011.webp",
+      "before": null,
+      "after": "ca1e4ea94dda50efabaf798d37d1d24eb39809d7162811013e4f7cd60b908d43"
+    },
+    {
+      "from": "piecefig/oct14-moke-012.webp",
+      "to": "piecefig/oct14-moke-012.webp",
+      "before": null,
+      "after": "2dd4f75cade2249373ba7129b5d7f2dc2f84cab9955f0657b6ccfe38d1512f68"
+    },
+    {
+      "from": "piecefig/oct14-moke-013.webp",
+      "to": "piecefig/oct14-moke-013.webp",
+      "before": null,
+      "after": "8ec4b119d6f1b704bd4821c88ddd86c93b051d783d6569bba25311707bc97f4f"
+    },
+    {
+      "from": "piecefig/oct14-moke-014.webp",
+      "to": "piecefig/oct14-moke-014.webp",
+      "before": null,
+      "after": "ccf534f78cb3391b1c7c20fb0177d5ec2d62ec6d78f2c5f969edba657d164788"
+    },
+    {
+      "from": "piecefig/oct14-moke-015.webp",
+      "to": "piecefig/oct14-moke-015.webp",
+      "before": null,
+      "after": "263f268d77c005f6495aec91c066704eb2552584beee974cba122530f192d458"
+    },
+    {
+      "from": "piecefig/oct14-moke-016.webp",
+      "to": "piecefig/oct14-moke-016.webp",
+      "before": null,
+      "after": "ad764468661160b87b6cdd2bde8c4c5c97563483a518b05fe3308521ec00ed3c"
+    },
+    {
+      "from": "piecefig/oct14-peach-001.webp",
+      "to": "piecefig/oct14-peach-001.webp",
+      "before": null,
+      "after": "49bd6c523da28aba117c409f47ca4f9f76d328f24d0f22c783ec58efc1fdd3eb"
+    },
+    {
+      "from": "piecefig/oct14-peach-002.webp",
+      "to": "piecefig/oct14-peach-002.webp",
+      "before": null,
+      "after": "510ec892e1b70fe8e931acacf2e6fa913f61a92904b63ea61c2c1932f4d6eb1f"
+    },
+    {
+      "from": "piecefig/oct14-peach-003.webp",
+      "to": "piecefig/oct14-peach-003.webp",
+      "before": null,
+      "after": "8952e909621ee0bedbb8a0f4b7f518901e041105bcfdf94f8c461c5df72e8c6e"
+    },
+    {
+      "from": "piecefig/oct14-peach-004.webp",
+      "to": "piecefig/oct14-peach-004.webp",
+      "before": null,
+      "after": "8692c3db8992d6e47b71c87f7fc2913698d2d894fe1cb0384dfe9dc32340b0e4"
+    },
+    {
+      "from": "piecefig/oct14-peach-005.webp",
+      "to": "piecefig/oct14-peach-005.webp",
+      "before": null,
+      "after": "dce53a92ce16969dcf1b61410313c54aa76d20105ab5904db80178fc6852058f"
+    },
+    {
+      "from": "piecefig/oct14-peach-006.webp",
+      "to": "piecefig/oct14-peach-006.webp",
+      "before": null,
+      "after": "6a9da1923455984bdba3a8e95d3326cfc842339ed9edfde39729c17e47c964c6"
+    },
+    {
+      "from": "piecefig/oct14-peach-007.webp",
+      "to": "piecefig/oct14-peach-007.webp",
+      "before": null,
+      "after": "0828c019a3fe08e2f55c02d276d944fd4be9b40104840c6acec23b248e6b7744"
+    },
+    {
+      "from": "piecefig/oct14-peach-008.webp",
+      "to": "piecefig/oct14-peach-008.webp",
+      "before": null,
+      "after": "0e86b1a62f7bd40f46d34d2ab96700e7e80ca6cd4196382dfe2ed56b6ea98411"
+    },
+    {
+      "from": "piecefig/oct14-peach-009.webp",
+      "to": "piecefig/oct14-peach-009.webp",
+      "before": null,
+      "after": "7abf54f1b992a134ee2a4fa4882bd67edc6734b6c58342d3be77703c51a8e08e"
+    },
+    {
+      "from": "piecefig/oct14-peach-010.webp",
+      "to": "piecefig/oct14-peach-010.webp",
+      "before": null,
+      "after": "fb24446458bdb711ad541a85d353c5ee9a5f2e1bcb7e9f55dbb0e9cfa2cba833"
+    },
+    {
+      "from": "piecefig/oct14-peach-011.webp",
+      "to": "piecefig/oct14-peach-011.webp",
+      "before": null,
+      "after": "fe36f72b46f81cbedcdea25b73517d9bfddc501cb144de7eeadc3aa5966a4426"
+    },
+    {
+      "from": "piecefig/oct14-peach-012.webp",
+      "to": "piecefig/oct14-peach-012.webp",
+      "before": null,
+      "after": "729e196f6d28844c4273a071f1a60634564dc6c2bde5764fec2bd82cbb048e1f"
+    },
+    {
+      "from": "piecefig/oct14-peach-013.webp",
+      "to": "piecefig/oct14-peach-013.webp",
+      "before": null,
+      "after": "6999b08ed847698a3dff607ed55b30267644a52d7f16121aec650d32493af0a8"
+    },
+    {
+      "from": "piecefig/oct14-peach-014.webp",
+      "to": "piecefig/oct14-peach-014.webp",
+      "before": null,
+      "after": "ce4260abdc56ab7811f266fe5d55a56b23fea80ad7266cb86b2033dffc91274a"
+    },
+    {
+      "from": "piecefig/oct14-peach-015.webp",
+      "to": "piecefig/oct14-peach-015.webp",
+      "before": null,
+      "after": "e369bb970c5762d83168b8018bb666183fcb8485fd6e97e2f8911228a8778486"
+    },
+    {
+      "from": "piecefig/oct14-peach-016.webp",
+      "to": "piecefig/oct14-peach-016.webp",
+      "before": null,
+      "after": "e7d4221a20c64746b15eb33a3193f2619834e657fde90e28240797fe330b8fd0"
+    },
+    {
+      "from": "piecefig/oct14-peach-017.webp",
+      "to": "piecefig/oct14-peach-017.webp",
+      "before": null,
+      "after": "4b012c8b3cbe32c6dc54366b06dc6d672c21fcd50dd04438ec2d4d48941c72bf"
+    },
+    {
+      "from": "piecefig/oct14-peach-018.webp",
+      "to": "piecefig/oct14-peach-018.webp",
+      "before": null,
+      "after": "fad557babb9f884c8d0c9ef5cb083ad81f8ef5b31573899413d04b7f25091890"
+    },
+    {
+      "from": "piecefig/oct14-peach-019.webp",
+      "to": "piecefig/oct14-peach-019.webp",
+      "before": null,
+      "after": "413b2f1f33d17e2bc2a21027d6d33612b7d2fe7040151f750669e8e5dc3d635a"
+    },
+    {
+      "from": "piecefig/oct14-peach-020.webp",
+      "to": "piecefig/oct14-peach-020.webp",
+      "before": null,
+      "after": "bc043182886f9391d498f7dd950d55f05bd6f366d62b18023008b4eb72580019"
+    },
+    {
+      "from": "piecefig/oct14-peach-021.webp",
+      "to": "piecefig/oct14-peach-021.webp",
+      "before": null,
+      "after": "9445a7800f011d9761fabdd68e6cebad2d20a39ef62d84f4f58bd6d31f488814"
+    },
+    {
+      "from": "piecefig/oct14-peach-022.webp",
+      "to": "piecefig/oct14-peach-022.webp",
+      "before": null,
+      "after": "9ff0d3fdd65f3d92105af7908b05d7e75aa97e939b50dccf6652787d7845c01d"
+    },
+    {
+      "from": "piecefig/oct14-peach-023.webp",
+      "to": "piecefig/oct14-peach-023.webp",
+      "before": null,
+      "after": "dea01bb491d45ac8ae2bef15d7a9a015eab42c94944d36bd1d3a3dbbb4151a4a"
+    },
+    {
+      "from": "piecefig/oct14-peach-024.webp",
+      "to": "piecefig/oct14-peach-024.webp",
+      "before": null,
+      "after": "b0081aa845c54a30660a9f40d64f162c6852b1e494cfd09c76a7dcff34988c46"
+    },
+    {
+      "from": "piecefig/oct14-peach-025.webp",
+      "to": "piecefig/oct14-peach-025.webp",
+      "before": null,
+      "after": "5550b6cb4bf569ba38a86b8286127124ea0437298c924c0435dde8658493b826"
+    },
+    {
+      "from": "piecefig/oct14-peach-026.webp",
+      "to": "piecefig/oct14-peach-026.webp",
+      "before": null,
+      "after": "5c0755138d40fda59f73eaadd30b852592b699fe5ca1c4b0a52aa3e403322c2b"
+    },
+    {
+      "from": "piecefig/oct14-peach-027.webp",
+      "to": "piecefig/oct14-peach-027.webp",
+      "before": null,
+      "after": "15093de4062767674e588f314e9c594ce301af21c8b6ebf5f76ee8ea68e7afc7"
+    },
+    {
+      "from": "piecefig/oct14-peach-028.webp",
+      "to": "piecefig/oct14-peach-028.webp",
+      "before": null,
+      "after": "f605c4dcbf3fd7b29b7708ffc127b874fd2d43668e515c86bd7a77e4a9baee9b"
+    },
+    {
+      "from": "piecefig/oct14-peach-029.webp",
+      "to": "piecefig/oct14-peach-029.webp",
+      "before": null,
+      "after": "2661377ea53d16e2ed286d4e26cc3413be6605d1c6419c1be5f1177ada62e44b"
+    },
+    {
+      "from": "piecefig/oct14-peach-030.webp",
+      "to": "piecefig/oct14-peach-030.webp",
+      "before": null,
+      "after": "85187846fa81e3a8a8b6ce3d623407f0341ec06899d5d3f666106ed5791ac3ed"
+    },
+    {
+      "from": "piecefig/oct14-peach-031.webp",
+      "to": "piecefig/oct14-peach-031.webp",
+      "before": null,
+      "after": "1b811587306ac6315f889235f8a991138e2659f3fb6b1de840f520b66c5140b3"
+    },
+    {
+      "from": "piecefig/oct14-peach-032.webp",
+      "to": "piecefig/oct14-peach-032.webp",
+      "before": null,
+      "after": "9569a6c0f53546027ff1e88da7d24fb75e9ba55026ed2a89da4e128e4083505d"
+    },
+    {
+      "from": "piecefig/oct14-peach-033.webp",
+      "to": "piecefig/oct14-peach-033.webp",
+      "before": null,
+      "after": "467f5f2d01015968ae0ecb32c9540f8d966e45468ce609667506cd5af0591691"
+    },
+    {
+      "from": "piecefig/oct14-peach-034.webp",
+      "to": "piecefig/oct14-peach-034.webp",
+      "before": null,
+      "after": "4b62966995eaa85e353d5dae7ff0fa2958630f0a605e1f47a52f295aaa37c191"
+    },
+    {
+      "from": "piecefig/oct14-peach-035.webp",
+      "to": "piecefig/oct14-peach-035.webp",
+      "before": null,
+      "after": "f47ce8c8010a78f92f64826cc2c57bdd56d3214c3e993b64f4530d6be240de80"
+    },
+    {
+      "from": "piecefig/oct14-peach-036.webp",
+      "to": "piecefig/oct14-peach-036.webp",
+      "before": null,
+      "after": "23147e22774d8ea2dedbc242f1eac34576ef0b1bfc9515d9c116e8e77f11e652"
+    },
+    {
+      "from": "piecefig/oct14-peach-037.webp",
+      "to": "piecefig/oct14-peach-037.webp",
+      "before": null,
+      "after": "bd90ac259d020880b5e87de840e5b4560933391e23c883e48916310b4c73fbf8"
+    },
+    {
+      "from": "piecefig/oct14-peach-038.webp",
+      "to": "piecefig/oct14-peach-038.webp",
+      "before": null,
+      "after": "c7c7b5cc3137f68fb93cbbc0775426d58dd7ef9d67a97c706bc109ab750bb8c4"
+    },
+    {
+      "from": "piecefig/oct14-peach-039.webp",
+      "to": "piecefig/oct14-peach-039.webp",
+      "before": null,
+      "after": "1f186478022ffa2e72252d6b0b390c4985d8a113cd62203fb08452b6f8aeef6b"
+    },
+    {
+      "from": "piecefig/oct14-peach-040.webp",
+      "to": "piecefig/oct14-peach-040.webp",
+      "before": null,
+      "after": "467efa532da3ea55b8204f14cbce7b4df34901eaf1f6c3a12b7826e419bc57f2"
+    },
+    {
+      "from": "piecefig/oct14-peach-041.webp",
+      "to": "piecefig/oct14-peach-041.webp",
+      "before": null,
+      "after": "b1fe34e087ad17ee21c011645e7af4f61d4b0e4b87b27f6c2d12791c45ab9474"
+    },
+    {
+      "from": "piecefig/oct14-peach-042.webp",
+      "to": "piecefig/oct14-peach-042.webp",
+      "before": null,
+      "after": "2d1fda3ec0a3334f73a84d3c012c300ddd68dabb4177e4c3f3ad8ba0a67f7cd7"
+    },
+    {
+      "from": "piecefig/oct14-peach-043.webp",
+      "to": "piecefig/oct14-peach-043.webp",
+      "before": null,
+      "after": "ebe42fdbf65c75190833d4bd7aef9e0f8a269872cbbf3edd97a72daaa3fafcfa"
+    },
+    {
+      "from": "piecefig/oct14-peach-044.webp",
+      "to": "piecefig/oct14-peach-044.webp",
+      "before": null,
+      "after": "7f0a9bffe8098dde4d9002ffa7c05884fe839c813d4aafad8bdb614f64de2ce1"
+    },
+    {
+      "from": "piecefig/oct14-peach-045.webp",
+      "to": "piecefig/oct14-peach-045.webp",
+      "before": null,
+      "after": "e9baf8583da1c40957231758697a668b5d6e1e114752e3cc0f9a1bfdeb018d33"
+    },
+    {
+      "from": "piecefig/oct14-peach-046.webp",
+      "to": "piecefig/oct14-peach-046.webp",
+      "before": null,
+      "after": "e4ede1ee8ff883934dccaad2014b3989d1b72917200e094a93610f2e7cf4a42f"
+    },
+    {
+      "from": "piecefig/oct14-peach-047.webp",
+      "to": "piecefig/oct14-peach-047.webp",
+      "before": null,
+      "after": "03311c0032c3734e02e043fc29d2cd848a02bae22bf01e48f781139700aee891"
+    },
+    {
+      "from": "piecefig/oct14-peach-048.webp",
+      "to": "piecefig/oct14-peach-048.webp",
+      "before": null,
+      "after": "0126df4086366c15bbb9a63032030be63e564fa4891fe2b03dd6015a532a2689"
+    },
+    {
+      "from": "piecefig/oct14-peach-049.webp",
+      "to": "piecefig/oct14-peach-049.webp",
+      "before": null,
+      "after": "1aa528c5dba38a8553976b5196296206348df88362af77fd4dde58237b2f7a07"
+    },
+    {
+      "from": "piecefig/oct14-peach-050.webp",
+      "to": "piecefig/oct14-peach-050.webp",
+      "before": null,
+      "after": "a59096f706bf2ee6186cd06ef4d0bd1acc6e25f53398e37aeccb4eeb1b35216c"
+    },
+    {
+      "from": "piecefig/oct14-peach-051.webp",
+      "to": "piecefig/oct14-peach-051.webp",
+      "before": null,
+      "after": "32f35a17e8aef843fb50b2b03ef1d83d9d21fbfc20d915ae1453777fe5ab6e51"
+    },
+    {
+      "from": "piecefig/oct14-peach-052.webp",
+      "to": "piecefig/oct14-peach-052.webp",
+      "before": null,
+      "after": "d8cbcfbc54b9e3000ca11ef4eb7dc3adf7b927ea159f4e583af944fb3ea2f4d2"
+    },
+    {
+      "from": "piecefig/oct14-peach-053.webp",
+      "to": "piecefig/oct14-peach-053.webp",
+      "before": null,
+      "after": "151e1e5b6b187a2eaa4c37938d094365909cf81182a71a6b627e8d38f93d4c40"
+    },
+    {
+      "from": "editor/assets/custom-5ee64f5a-12e5-44a9-acbf-306f421c4b98.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/custom-5ee64f5a-12e5-44a9-acbf-306f421c4b98.webp",
+      "before": null,
+      "after": "602fff835519a03d5dcc835ec94912948fe670f0f3164d5c5794245b280bf6d6"
+    },
+    {
+      "from": "editor/assets/custom-7fc09255-3c45-49cc-aa6a-527a9ea1dc49.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/custom-7fc09255-3c45-49cc-aa6a-527a9ea1dc49.webp",
+      "before": null,
+      "after": "bf1fe090e828129e55def1f61b164b18e39fca510f9612344f410a08d4251c98"
+    },
+    {
+      "from": "editor/assets/custom-a9f6ab85-6488-4ef6-bcf0-f97094afc091.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/custom-a9f6ab85-6488-4ef6-bcf0-f97094afc091.webp",
+      "before": null,
+      "after": "fd59dae377681de09285d5cf3ab41536376aa905f9f5010207da6697cbec6312"
+    },
+    {
+      "from": "editor/assets/custom-c1bade5d-e616-4275-a5bc-2e711eb5a3f7.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/custom-c1bade5d-e616-4275-a5bc-2e711eb5a3f7.webp",
+      "before": null,
+      "after": "0354116d09a7aedf3d86f31f40ced1ba5e165d7043260b63ad06bf68b040a28a"
+    },
+    {
+      "from": "editor/assets/custom-ca79356d-659d-44c7-a148-ae8f0d43d50d.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/custom-ca79356d-659d-44c7-a148-ae8f0d43d50d.webp",
+      "before": null,
+      "after": "8770ab48d6badbf68eeaff0f29fa9b7c87818caf0f1fa58d1dcde70234a0199c"
+    },
+    {
+      "from": "editor/assets/custom-e8efa10a-bc75-4a39-81a8-92a443d14149.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/custom-e8efa10a-bc75-4a39-81a8-92a443d14149.webp",
+      "before": null,
+      "after": "4285056f741f99b72c44a0c66f2e54e4c3620f9fa99c65b026293c9f86177cdd"
+    },
+    {
+      "from": "editor/assets/custom-f8dd57e0-9292-4194-9efc-dcae43adb88c.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/custom-f8dd57e0-9292-4194-9efc-dcae43adb88c.webp",
+      "before": null,
+      "after": "5d5c86d9ce88a0f2a96e1fcbf88cb726ac9818a8df7efa8d05fee9b18ecbf3f0"
+    },
+    {
+      "from": "editor/assets/NS046.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/NS046.webp",
+      "before": null,
+      "after": "602fff835519a03d5dcc835ec94912948fe670f0f3164d5c5794245b280bf6d6"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-001.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-001.webp",
+      "before": null,
+      "after": "129d388bef6dc080d92bbb6234b84dbacb5858899b81e550a99d6099ae9a3d55"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-002.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-002.webp",
+      "before": null,
+      "after": "d9d55eed8c8bfb1e09ddcc13c822e306a6c3b549ef69427aa3d4a5e49f776eb8"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-003.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-003.webp",
+      "before": null,
+      "after": "658c4501c124c76b5a9d93d059c4f17a16d5134fe0f7a0a6c51d6d05080b4953"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-004.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-004.webp",
+      "before": null,
+      "after": "e4ca77b44d456789cc9189769230f60455eb5b07e531a5a0ee7aef806e5a725f"
+    },
+    {
+      "from": "editor/assets/oct14-moke-001.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-001.webp",
+      "before": null,
+      "after": "60965793566ee4a9c66106f7019b4ceb00bbb911ea0127e210554f1334ebd234"
+    },
+    {
+      "from": "editor/assets/oct14-moke-002.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-002.webp",
+      "before": null,
+      "after": "222c6ae15c0e9f63b6d0e339eb6cf07ff6845755f2307ea7b867ffaa32e862c8"
+    },
+    {
+      "from": "editor/assets/oct14-moke-003.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-003.webp",
+      "before": null,
+      "after": "e8d70bac110b3d081a67a0270a950837bcc8aa7e6f6283b35a8dec0ab153b18f"
+    },
+    {
+      "from": "editor/assets/oct14-moke-004.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-004.webp",
+      "before": null,
+      "after": "c612509ea14faa15ccba696a608c8b47b2dc48508b92cf1d579768e74b1120a8"
+    },
+    {
+      "from": "editor/assets/oct14-moke-005.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-005.webp",
+      "before": null,
+      "after": "66939a64512a859b6e6ec68e20a9fda060afb1993a232558ce7fdded4b76adc8"
+    },
+    {
+      "from": "editor/assets/oct14-moke-006.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-006.webp",
+      "before": null,
+      "after": "0e3da3ac0b93642ff77a96312677a8dac3f38b8524c01405d9b1c650285d5eef"
+    },
+    {
+      "from": "editor/assets/oct14-moke-007.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-007.webp",
+      "before": null,
+      "after": "947d696061973fcfa21948649cf31a3415e942b92903f2a835af42fd4752a0eb"
+    },
+    {
+      "from": "editor/assets/oct14-moke-008.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-008.webp",
+      "before": null,
+      "after": "9afe54a8e77e12b097cad4346780f8f9a6f55cb6eeb258adec888d287c222f54"
+    },
+    {
+      "from": "editor/assets/oct14-moke-009.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-009.webp",
+      "before": null,
+      "after": "3a7139c38853afa08942e529ebbd008ea72b919a679c395c1ab1a9720924a925"
+    },
+    {
+      "from": "editor/assets/oct14-moke-010.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-010.webp",
+      "before": null,
+      "after": "60198eb26d627cf3f9bd40d25ebb299a4ce881968505641106c8f1be206c7156"
+    },
+    {
+      "from": "editor/assets/oct14-moke-011.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-011.webp",
+      "before": null,
+      "after": "54a8b5321a7d1930e0efd85723398d3dc736c10de689eaff29a3a2e253bc7585"
+    },
+    {
+      "from": "editor/assets/oct14-moke-012.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-012.webp",
+      "before": null,
+      "after": "3c0ad91b261f575fc6d93c5b30433b72e27402cc52884c67cda21d1f0a5595d2"
+    },
+    {
+      "from": "editor/assets/oct14-moke-013.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-013.webp",
+      "before": null,
+      "after": "9b53c9974f2a73e5fb7502076dcef2cf534cd2910edd9fd830d21e2bac19bc8a"
+    },
+    {
+      "from": "editor/assets/oct14-moke-014.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-014.webp",
+      "before": null,
+      "after": "dc9846ddf931f123fca0eec4f888cd7fa8c6edc943023324aa6d7a713b88bfbd"
+    },
+    {
+      "from": "editor/assets/oct14-moke-015.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-015.webp",
+      "before": null,
+      "after": "c01ba0f0a43b11f3f3132eca0862d346fa6f3bbc95227da3c573f45228a0f960"
+    },
+    {
+      "from": "editor/assets/oct14-moke-016.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-moke-016.webp",
+      "before": null,
+      "after": "d15f0421a2d55160c5826f13003a4d7c3f6e8539ff16029596a16108fee2eab7"
+    },
+    {
+      "from": "editor/assets/oct14-peach-001.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-001.webp",
+      "before": null,
+      "after": "56b2f6c9ea934e763a355dc3401b6e62bb382f226425ba54085fbcd6910d28bc"
+    },
+    {
+      "from": "editor/assets/oct14-peach-002.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-002.webp",
+      "before": null,
+      "after": "9faeedda404caab93c89ec5d75955a1979f9e7b2ad225d09081a0c8b770b58d1"
+    },
+    {
+      "from": "editor/assets/oct14-peach-003.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-003.webp",
+      "before": null,
+      "after": "c377bfdae9dce4a0e82cdfd9e84f2456ea3ef1c05ee674a4d2d5bd55827217d4"
+    },
+    {
+      "from": "editor/assets/oct14-peach-004.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-004.webp",
+      "before": null,
+      "after": "509fb29ab1297d107ab8a63eb3cbdc237a8d913c65d7f2e8563f728bb30ff796"
+    },
+    {
+      "from": "editor/assets/oct14-peach-005.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-005.webp",
+      "before": null,
+      "after": "21197c326008b19034b8812d7d147b7731abce7e59f0267a291fd14c8d888d62"
+    },
+    {
+      "from": "editor/assets/oct14-peach-006.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-006.webp",
+      "before": null,
+      "after": "96f2409705ef78e0be2b75b9e2179dfa82b7860c6ca73b7b67bb3c81e73ffc31"
+    },
+    {
+      "from": "editor/assets/oct14-peach-007.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-007.webp",
+      "before": null,
+      "after": "c432834d9092c2da26001f279d6717d7d80bb4ee94d3b7727072fa7a304fb386"
+    },
+    {
+      "from": "editor/assets/oct14-peach-008.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-008.webp",
+      "before": null,
+      "after": "e8a9c8e13cf8756555e327aaa36d284337c0097565d944518c70f4413c9fd7e1"
+    },
+    {
+      "from": "editor/assets/oct14-peach-009.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-009.webp",
+      "before": null,
+      "after": "76b4a5df3a83813df790f6fc54cf445bce3c78d4b9fb7b25a1df708a7d78f51d"
+    },
+    {
+      "from": "editor/assets/oct14-peach-010.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-010.webp",
+      "before": null,
+      "after": "a3b4c1f81ccfb83f99e5247d0bea65a7fa7a50ff9afbf0ebc0a9053c6138acaf"
+    },
+    {
+      "from": "editor/assets/oct14-peach-011.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-011.webp",
+      "before": null,
+      "after": "39b433420c341c617eeaaa139656e84fb4639abf3f95d40d16429470c166b463"
+    },
+    {
+      "from": "editor/assets/oct14-peach-012.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-012.webp",
+      "before": null,
+      "after": "5e893d3e5c6ff0457067cee642a78d8df0a5c28479d445c1d86769e41d2baf24"
+    },
+    {
+      "from": "editor/assets/oct14-peach-013.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-013.webp",
+      "before": null,
+      "after": "cd9c2d0836f00cc781844a7d0ae0b827e093531b365161ba528b8831912351e9"
+    },
+    {
+      "from": "editor/assets/oct14-peach-014.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-014.webp",
+      "before": null,
+      "after": "81cf687da32c50433d3bb7a632f1165b84341ad19188e94a355e266751dc3c96"
+    },
+    {
+      "from": "editor/assets/oct14-peach-015.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-015.webp",
+      "before": null,
+      "after": "cd6172a4b0ede34a48566cd96a9a6eeca5a8e757d58ea325e194a5199ba9908b"
+    },
+    {
+      "from": "editor/assets/oct14-peach-016.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-016.webp",
+      "before": null,
+      "after": "cbca31a34354a761f0a8a9d18b079f2f2f0e096c3c17a671aad8e2483ab75d37"
+    },
+    {
+      "from": "editor/assets/oct14-peach-017.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-017.webp",
+      "before": null,
+      "after": "97192b14e1a07852cafbdbe3009ff35e123910b30e4bcff3454668734d462d5d"
+    },
+    {
+      "from": "editor/assets/oct14-peach-018.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-018.webp",
+      "before": null,
+      "after": "0bb7233eac35aa2803c7af64964ab0ad4793e1ec38899954c8a37599e799b7ec"
+    },
+    {
+      "from": "editor/assets/oct14-peach-019.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-019.webp",
+      "before": null,
+      "after": "1e214fe69605d132c49720fc694d7b07d9359b79685ea8506ba511a67cb4970e"
+    },
+    {
+      "from": "editor/assets/oct14-peach-020.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-020.webp",
+      "before": null,
+      "after": "450b09375f4dc3f63d96809ce15c681f2bcde5923e92da8e1056e42cd0cb6b2c"
+    },
+    {
+      "from": "editor/assets/oct14-peach-021.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-021.webp",
+      "before": null,
+      "after": "905be2e88a5f690afe3496498265736b607164e18aac46e0a5f65ff60ba43b90"
+    },
+    {
+      "from": "editor/assets/oct14-peach-022.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-022.webp",
+      "before": null,
+      "after": "8a46b8fbc0d8c8a911ced52b28da25b52715f3f202756436c5cc699607ad289c"
+    },
+    {
+      "from": "editor/assets/oct14-peach-023.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-023.webp",
+      "before": null,
+      "after": "70ffa54bc3e3dd21f98579cd63d29a28ac5146e1fe887f33bba599f0b6bf902d"
+    },
+    {
+      "from": "editor/assets/oct14-peach-024.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-024.webp",
+      "before": null,
+      "after": "65b22c97452c10fec47399120a047630875f121d8b144e92f553d5bad0e84856"
+    },
+    {
+      "from": "editor/assets/oct14-peach-025.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-025.webp",
+      "before": null,
+      "after": "a7356a5de35d6248978d4bf3889b10e7c77b20b35ac2e62009e5f5ffd3b20ff0"
+    },
+    {
+      "from": "editor/assets/oct14-peach-026.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-026.webp",
+      "before": null,
+      "after": "e858cf7452513608550d4e4ab6867a4958119a5e55207d773e1ee9d44850714d"
+    },
+    {
+      "from": "editor/assets/oct14-peach-027.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-027.webp",
+      "before": null,
+      "after": "a9f9692481909acb9f8bd0cd839b8fc0dbac1e5be03de241799126543879ceb4"
+    },
+    {
+      "from": "editor/assets/oct14-peach-028.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-028.webp",
+      "before": null,
+      "after": "2e1036db130dfa438a7eebb0682b6a399befe61e70574486feca2a7d6ed42db5"
+    },
+    {
+      "from": "editor/assets/oct14-peach-029.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-029.webp",
+      "before": null,
+      "after": "01142d696c84fdc51ffaf70dfac6d421362b6424ad163c38e5cf166448a751ed"
+    },
+    {
+      "from": "editor/assets/oct14-peach-030.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-030.webp",
+      "before": null,
+      "after": "aadef6940c7fc5be70a25598181bf50a1d448c8abf24b1d4cb656c80c55d8072"
+    },
+    {
+      "from": "editor/assets/oct14-peach-031.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-031.webp",
+      "before": null,
+      "after": "0ed44c26be954aa0d9527a2325590fac9e57b6bbde7b95ce9c96a6eddcb71fa0"
+    },
+    {
+      "from": "editor/assets/oct14-peach-032.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-032.webp",
+      "before": null,
+      "after": "080623915b0d60d5c541d55b20357cbe6701b7cc1540253e074f12ea193d5b0c"
+    },
+    {
+      "from": "editor/assets/oct14-peach-033.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-033.webp",
+      "before": null,
+      "after": "a37a7898cc920697f32c5aedcb1db67879b3c3e20ba81e9349e0649d55ffedd1"
+    },
+    {
+      "from": "editor/assets/oct14-peach-034.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-034.webp",
+      "before": null,
+      "after": "cb5e141f213b91f353766a1101fc798b751a85cc3bab59c88ab670d274fe2106"
+    },
+    {
+      "from": "editor/assets/oct14-peach-035.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-035.webp",
+      "before": null,
+      "after": "5c45c996f46ce3331060446527dd3488181bdcb1d3a5053d36cc3377119dc146"
+    },
+    {
+      "from": "editor/assets/oct14-peach-036.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-036.webp",
+      "before": null,
+      "after": "9bc5bcefb69c6e27874d8d7534f4433fa990e34b35af1b7fcaa9d4b02c6da90d"
+    },
+    {
+      "from": "editor/assets/oct14-peach-037.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-037.webp",
+      "before": null,
+      "after": "c6a3c48d893f243b91ce5f0de7a1301b30ee848c4bae915b5235652e5f9d9e18"
+    },
+    {
+      "from": "editor/assets/oct14-peach-038.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-038.webp",
+      "before": null,
+      "after": "a050ddfa00af7a2ef1316720adc112802fe4b1f61d294812c6f2419c7f507f73"
+    },
+    {
+      "from": "editor/assets/oct14-peach-039.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-039.webp",
+      "before": null,
+      "after": "d122b8c38f704a968f24f7f9e1d2e62fb541ab46fbc71e3a69e23f46d5b2d5fb"
+    },
+    {
+      "from": "editor/assets/oct14-peach-040.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-040.webp",
+      "before": null,
+      "after": "3209a4d2db1835d41473cc392530c0770a9b134802edb74c84a0bcfdf6792ebd"
+    },
+    {
+      "from": "editor/assets/oct14-peach-041.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-041.webp",
+      "before": null,
+      "after": "acd032714cd5ebc3de8f7b46913ae02a1b86155286ef43fc8cb608fa85d110f8"
+    },
+    {
+      "from": "editor/assets/oct14-peach-042.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-042.webp",
+      "before": null,
+      "after": "803442d076e6579bafa38954c7b6e828e7b3e886959f707096ea307affdd066f"
+    },
+    {
+      "from": "editor/assets/oct14-peach-043.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-043.webp",
+      "before": null,
+      "after": "0e89d7aa18fe534670160fac028a2d706a411d065ae0432e2bf04d0fcccb7ba2"
+    },
+    {
+      "from": "editor/assets/oct14-peach-044.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-044.webp",
+      "before": null,
+      "after": "9323b03ae1ccee59156b326571d81cb9d1fcca8522c7511bfbfb9bee1e932fb3"
+    },
+    {
+      "from": "editor/assets/oct14-peach-045.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-045.webp",
+      "before": null,
+      "after": "4948057d61a824470a5a0f85499181fa440069713b35aad5dd3c4dce14591e25"
+    },
+    {
+      "from": "editor/assets/oct14-peach-046.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-046.webp",
+      "before": null,
+      "after": "adb7d0ec59b2dae1cbead0e315c7cf4365fd5774ca96d03148e1f5eda8d8ca75"
+    },
+    {
+      "from": "editor/assets/oct14-peach-047.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-047.webp",
+      "before": null,
+      "after": "52c6fc459f35db25f60afe40956176ee7547bdf648a092125e354fe6c68985a1"
+    },
+    {
+      "from": "editor/assets/oct14-peach-048.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-048.webp",
+      "before": null,
+      "after": "318bcd8a30a1f12b47b60d5b3ca4d292b27861352cc3e6bfe683f82a162b4747"
+    },
+    {
+      "from": "editor/assets/oct14-peach-049.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-049.webp",
+      "before": null,
+      "after": "db07712b77875ceb081ad125a8a111234ac970c588ea14f7b4b4d072bb8bcd0c"
+    },
+    {
+      "from": "editor/assets/oct14-peach-050.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-050.webp",
+      "before": null,
+      "after": "f58be98f0306bfe9c2bcf1a512d8034db892ca47943615aa17a860f9747a99a1"
+    },
+    {
+      "from": "editor/assets/oct14-peach-051.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-051.webp",
+      "before": null,
+      "after": "b446701061d64a04bf25a646f043416acea4de4624e2223bba7629b93ae99747"
+    },
+    {
+      "from": "editor/assets/oct14-peach-052.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-052.webp",
+      "before": null,
+      "after": "e8fa4775777c15c1622204b272ad2668bcfbba761ef487c4f7ddd283ecddf375"
+    },
+    {
+      "from": "editor/assets/oct14-peach-053.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-peach-053.webp",
+      "before": null,
+      "after": "d69492485de0c1585fd0107d87824a63c36503508f8d55fadf7827347bea9f79"
+    },
+    {
+      "from": "merged-editor-draft.json",
+      "to": "編集アプリ/反映済み下書き-20261014.json",
+      "before": null,
+      "after": "e0318d8784dc1eb7a72abdcddf3be114ac7afed4424fc22a543724d2854d9af7"
+    },
+    {
+      "from": "更新内容-20261014.txt",
+      "to": "編集アプリ/更新内容-20261014.txt",
+      "before": null,
+      "after": "1f5e80da12ff4bcac57fe450dad30a6f577924ebce7a072dc62a71ae296e0ff1"
+    }
+  ]
+}
