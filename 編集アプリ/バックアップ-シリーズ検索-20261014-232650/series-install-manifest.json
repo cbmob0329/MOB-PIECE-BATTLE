@@ -1,0 +1,41 @@
+{
+  "target": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE",
+  "changes": [
+    {
+      "from": "src/app.js",
+      "to": "src/app.js",
+      "before": "c29d8c283a1af6c4368d662bb8b7be49863e127eb0c6a37b5768db140d86494f",
+      "after": "ae802ceeab40108b82da2c2912804b581a072232934708f1d76d6a1cb373a1a3"
+    },
+    {
+      "from": "src/screens/deckWorkshop.js",
+      "to": "src/screens/deckWorkshop.js",
+      "before": "1321f4b460f48afa9e9f572c2d7be1d21b110fb36ee9de425522c6fa40768f36",
+      "after": "e35172c8bc000f76bd909d547ae894fe37582731b44b32512b258acf2ed17ca6"
+    },
+    {
+      "from": "src/screens/soulLibrary.js",
+      "to": "src/screens/soulLibrary.js",
+      "before": "553945e6bb8c9368c0d4ed9e9a17ceb13a0db066e818710fbfe20c77610fd2b4",
+      "after": "4a861d570ae5418e4d9c98c3f7324a8b3deb114784cf66de31560ecfa28cf5d7"
+    },
+    {
+      "from": "src/screens/deckBuilder.js",
+      "to": "src/screens/deckBuilder.js",
+      "before": "addfc7191ecc7b91f5913d5b29032b74c22b5111491b5e67377eb7f3186dcbcc",
+      "after": "368f037a1ddff3c713ee6b3344eb5f9392bbdcb04dd8db2147a1bc70042fb519"
+    },
+    {
+      "from": "src/styles/deck-builder.css",
+      "to": "src/styles/deck-builder.css",
+      "before": "d32891f7bcc148d3d92ffbc03caa8a45a8f05986acc438203f43ab9240cc0d07",
+      "after": "45512f21a2001a2758ce115a80fc33d9692a8036432001e62c22b603a57504bc"
+    },
+    {
+      "from": "src/game/figure-series.js",
+      "to": "src/game/figure-series.js",
+      "before": null,
+      "after": "66d1fbbfbd39d0e70ccd91586d95330b7d10352fd476bf0abbdbdacce2e5532c"
+    }
+  ]
+}

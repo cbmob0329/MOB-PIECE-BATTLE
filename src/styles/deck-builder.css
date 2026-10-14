@@ -17,3 +17,5 @@
 .shop-figure-detail{width:100%;max-width:100%;min-width:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3px;gap:4px}.shop-figure-detail img{width:100%;max-width:96px;height:115px;min-width:0;object-fit:contain}.shop-figure-detail span{font-size:10px;text-decoration:underline;color:#244b43}
 .duel-zone-list button small{display:block;font-size:10px;line-height:1.5}
 .material-candidates{padding:10px 0;border-bottom:1px solid #b6c5ac}.material-candidates summary{padding:10px 0;font-size:12px;line-height:1.6}.material-candidates button{width:100%;min-height:44px;border:1px solid #315b4c;border-radius:8px;background:#ffcf69;margin-top:6px;font-size:12px}.material-candidates button:disabled{opacity:.5}
+
+.deck-search-tools>.deck-series-filter{grid-column:1/-1}.deck-search-tools>label{min-width:0}.draft-filters>label+label{display:block;margin-top:8px}
