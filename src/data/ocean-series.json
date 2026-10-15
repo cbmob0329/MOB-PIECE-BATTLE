@@ -19,7 +19,7 @@
         "mat-ocean"
       ],
       "image": "piecefig/WRECK_S01.png",
-      "artReady": false,
+      "artReady": true,
       "passive": {},
       "soulSkill": {
         "name": "帰港の羅針盤",
@@ -54,7 +54,7 @@
         "mat-ocean"
       ],
       "image": "piecefig/WRECK_S02.png",
-      "artReady": false,
+      "artReady": true,
       "passive": {},
       "soulSkill": {
         "name": "銀糸の応急処置",
@@ -88,7 +88,7 @@
         "mat-ocean"
       ],
       "image": "piecefig/WRECK_M01.png",
-      "artReady": false,
+      "artReady": true,
       "passive": {},
       "soulSkill": {
         "name": "船灯の航路",
@@ -124,7 +124,7 @@
         "mat-ocean"
       ],
       "image": "piecefig/WRECK_M02.png",
-      "artReady": false,
+      "artReady": true,
       "passive": {},
       "soulSkill": {
         "name": "投錨の拘束",
@@ -161,7 +161,7 @@
         "mat-ocean"
       ],
       "image": "piecefig/WRECK_B01.png",
-      "artReady": false,
+      "artReady": true,
       "passive": {
         "aura": {
           "tags": [
@@ -204,7 +204,7 @@
         "mat-ocean"
       ],
       "image": "piecefig/WRECK_B02.png",
-      "artReady": false,
+      "artReady": true,
       "passive": {
         "killHeal": 10
       },
