@@ -1,0 +1,47 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import catalog from '../src/data/soul-catalog.js';
+import {applyPriorCatalogUpdates} from '../src/data/catalog-updates.js';
+import {applyOceanSeries,shipMembers,clearMembers,shipSeries,clearSeries,shipTag} from '../src/data/ocean-series.js';
+import additions from '../src/data/ocean-series.json' with {type:'json'};
+import * as g from '../src/game/soul-battle.js';
+import {bindBattle} from '../src/game/oct06-passives.js';
+import {pieceStarterDeck} from '../src/game/piece-starters.js';
+import {collectionScreen,soulInfo} from '../src/screens/soulLibrary.js';
+const source=fs.readFileSync(new URL('../src/data/soul-catalog.js',import.meta.url),'utf8');
+const prior=applyPriorCatalogUpdates(JSON.parse(source.match(/const base = ([\s\S]*);\s*export default/)[1]));
+const by=g.soulById,old=new Map(prior.figures.map(f=>[f.id,f]));
+const fresh=()=>{const d=pieceStarterDeck('materials-balloon'),s=g.createSoulBattle([d,d]);s.turn=3;s.active=0;s.phase='main';for(const p of s.players){p.life=200;p.hand=[];p.handBonuses=[];p.field=[null,null,null];p.reserve=[];p.grave=[];p.destroyed=[];}return s;};
+const put=(s,side,id,slot=0)=>s.players[side].field[slot]={id,uid:++s.serial,summonTurn:0,skillUsesUsed:0,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],extra:0,permanentAtk:0,permanentDef:0};
+const settle=s=>{for(let i=0;s.pending&&i<20;i++)g.passReaction(s,1-s.pending.side);assert.equal(s.pending,null);};
+const cast=(s,f,o=g.cpuOptions(s,0,f.uid))=>{g.useSkill(s,0,f.uid,o);settle(s);};
+const next=s=>{g.beginBattle(s,s.active);g.endTurn(s,s.active);};
+test('only authorized memberships change; all 739 identities, images, stats and skills survive',()=>{
+ assert.equal(catalog.figures.length,prior.figures.length+6);assert.equal(new Set(catalog.figures.map(f=>f.id)).size,catalog.figures.length);
+ const allowed=new Set([...shipMembers,...clearMembers]);
+ for(const a of prior.figures){const b=by.get(a.id);assert(b,a.id);const strip=f=>{const {series,tags,fusionMaterials,fusionTargets,...rest}=f;return rest;};assert.deepEqual(strip(b),strip(a),a.id);assert.deepEqual(b.tags,shipMembers.includes(a.id)?[...new Set([...a.tags,shipTag])]:a.tags);if(!allowed.has(a.id))assert.equal(b.series,a.series,a.id);}
+ for(const id of clearMembers.slice(2))assert.match(old.get(id).series,/スイーツ/);
+ assert.equal(catalog.figures.filter(f=>f.series===shipSeries).length,19);assert.equal(catalog.figures.filter(f=>f.series===clearSeries).length,6);
+ assert.deepEqual(catalog.recipes.slice(0,prior.recipes.length),prior.recipes);
+});
+test('overlay is immutable and preserves upstream edits; generator shares runtime pipeline',()=>{
+ const saved=JSON.stringify(prior),c=structuredClone(prior);c.figures.find(f=>f.id==='NS001').atk=123;
+ assert.equal(applyOceanSeries(c).figures.find(f=>f.id==='NS001').atk,123);assert.equal(JSON.stringify(prior),saved);
+ const generator=fs.readFileSync(new URL('../scripts/import-soul-master.mjs',import.meta.url),'utf8');assert.match(generator,/import \{applyCatalogUpdates\}/);assert.match(generator,/export default applyCatalogUpdates\(base\)/);
+});
+for(const r of additions.recipes)test('live fusion '+r.id,()=>{for(const hand of [false,true]){const s=fresh(),a=put(s,0,r.materials[0].id);s.players[0].reserve=[r.target];let second;if(hand){s.players[0].hand=[r.materials[1].id];second={handIndex:0};}else second=put(s,0,r.materials[1].id,1).uid;const refs=[a.uid,second];assert(g.fusionOptions(s,0,refs).some(x=>x.id===r.id));g.fuse(s,0,refs,r.id);assert(s.players[0].field.some(f=>f?.id===r.target));assert.equal(s.players[0].reserve.length,0);assert.equal(s.players[0].grave.length,2);}});
+test('all-hand fusion and wrong-stage fusion rejected',()=>{const s=fresh();s.players[0].hand=['WRECK_S01','WRECK_S02'];s.players[0].reserve=['WRECK_M01'];assert.deepEqual(g.fusionOptions(s,0,[{handIndex:0},{handIndex:1}]),[]);const a=put(s,0,'WRECK_M01'),b=put(s,0,'WRECK_S01',1);assert(!g.fusionOptions(s,0,[a.uid,b.uid]).some(r=>r.target==='WRECK_M01'));});
+for(const id of ['WRECK_S01','WRECK_M01','WRECK_B01'])test(id+' friendly ship-only buffs and expiration',()=>{
+ const s=fresh(),f=put(s,0,id),ally=put(s,0,'NS002',1),other=put(s,0,'01',2),enemy=put(s,1,'NS002');bindBattle(s,by);const base=g.stats(ally),otherBase=g.stats(other),enemyBase=g.stats(enemy);cast(s,f);const atk=id==='WRECK_M01'?20:0,def=id==='WRECK_S01'?15:id==='WRECK_M01'?10:30;assert.deepEqual(g.stats(ally),{atk:base.atk+atk,def:base.def+def});assert.deepEqual(g.stats(other),otherBase);assert.deepEqual(g.stats(enemy),enemyBase);if(id==='WRECK_B01')assert.equal(s.players[0].life,225);next(s);if(id==='WRECK_M01')assert.deepEqual(g.stats(ally),base);else {assert.equal(g.stats(ally).def,base.def+def);next(s);assert.deepEqual(g.stats(ally),base);}
+});
+test('S02 heals and removes only negative stat effects',()=>{const s=fresh(),f=put(s,0,'WRECK_S02'),a=put(s,0,'NS001',1);a.effects=[{key:'atk',value:-20,until:9},{key:'def',value:-30,until:9},{key:'def',value:10,until:9},{key:'fusionLock',value:true,until:9}];cast(s,f,{targetUid:a.uid});assert.equal(s.players[0].life,220);assert.deepEqual(a.effects.map(e=>e.value),[10,true]);});
+test('M02 lowers defense now and blocks fusion through opponent turn only',()=>{const s=fresh(),f=put(s,0,'WRECK_M02'),e=put(s,1,'WRECK_S01'),e2=put(s,1,'WRECK_S02',1);s.players[1].reserve=['WRECK_M01'];cast(s,f,{targetUid:e.uid});assert.equal(g.stats(e).def,by.get(e.id).def-25);next(s);assert.equal(g.stats(e).def,by.get(e.id).def);assert.deepEqual(g.fusionOptions(s,1,[e.uid,e2.uid]),[]);next(s);next(s);assert(g.fusionOptions(s,1,[e.uid,e2.uid]).some(r=>r.target==='WRECK_M01'));});
+test('B01 passive adds ten defense only to friendly ship members',()=>{const s=fresh(),a=put(s,0,'NS001'),o=put(s,0,'01',1),e=put(s,1,'NS001');bindBattle(s,by);const base=g.stats(a),ob=g.stats(o),eb=g.stats(e);put(s,0,'WRECK_B01',2);assert.deepEqual(g.stats(a),{atk:base.atk,def:base.def+10});assert.deepEqual(g.stats(o),ob);assert.deepEqual(g.stats(e),eb);});
+test('B02 distinct attacks, defense debuff, kill healing and expiration',()=>{const s=fresh(),f=put(s,0,'WRECK_B02'),enemies=[0,1,2].map(i=>put(s,1,'16',i));s.players[1].life=400;cast(s,f,{targetUid:enemies[0].uid});assert.equal(g.stats(enemies[0]).def,by.get('16').def-30);g.beginBattle(s,0);for(const e of enemies){assert(g.canAttack(s,0,f,e));g.attack(s,0,f.uid,e.uid);settle(s);assert(!g.canAttack(s,0,f,e));}assert.equal(f.attacks,3);assert.equal(s.players[0].life,230);g.endTurn(s,0);assert(!f.effects.some(e=>e.key==='eachTarget'));});
+test('collection search and detail classification include both series',()=>{const c={profile:{owned:{}},byId:by,art:()=>''};for(const [name,count] of [[shipSeries,19],[clearSeries,6]]){const html=collectionScreen(c,name,'ALL','ALL','DEX_ASC','ALL','ALL');assert(html.includes(`${count} FIGURES`));}assert(soulInfo(by.get('WRECK_M01')).includes(shipSeries));assert(soulInfo(by.get('NS006')).includes(clearSeries));});
+test('save/load roundtrip retains ownership, plus levels, decks and favorites',async()=>{const store=new Map();globalThis.localStorage={getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v)};const {loadProfile,commitProfile}=await import('../src/game/profile.js');const p=loadProfile();p.owned=Object.fromEntries(prior.figures.map(f=>[f.id,2]));p.figurePlus=Object.fromEntries(prior.figures.map(f=>[f.id,[10,30]]));p.favoriteFigureIds=[...clearMembers];p.deck=['NS001','M4F_SIL_V01','mq:eventfig/43'];p.deckPresets[0]=p.deck;assert(commitProfile(p));const loaded=loadProfile();for(const key of ['owned','figurePlus','deck','favoriteFigureIds'])assert.deepEqual(loaded[key],p[key],key);assert(!Object.keys(loaded.owned).some(id=>id.startsWith('WRECK_')));});
+
+test('every member is reachable from series seeds through legal fusion pairs',()=>{const ids=[...shipMembers,...clearMembers,...additions.figures.map(f=>f.id)];const reachable=new Set(ids.filter(id=>by.get(id).soulClass==='seed'));for(let round=0;round<3;round++)for(const target of ids.filter(id=>!reachable.has(id))){const candidates=[...reachable];outer:for(const a of candidates)for(const b of candidates){const s=fresh(),u=put(s,0,a),v=put(s,0,b,1);s.players[0].reserve=[target];if(g.fusionOptions(s,0,[u.uid,v.uid]).some(r=>r.target===target&&!r.resonance)){reachable.add(target);break outer;}}}assert.deepEqual(ids.filter(id=>!reachable.has(id)),[]);});
+
+test('actual master regeneration preserves all IDs, memberships and skills without writing files',async()=>{const {registerHooks}=await import('node:module');const captured=new Map(),write=fs.writeFileSync;try{fs.writeFileSync=(p,data)=>{assert(['src/data/soul-catalog.js','docs/soul-master-audit.json'].includes(p));captured.set(p,data);};await import('./import-soul-master.mjs');}finally{fs.writeFileSync=write;}const hook=registerHooks({load(url,context,next){if(url.endsWith('soul-catalog.js?regeneration-test'))return {format:'module',source:captured.get('src/data/soul-catalog.js'),shortCircuit:true};return next(url,context);}});try{const rebuilt=(await import('../src/data/soul-catalog.js?regeneration-test')).default;assert.equal(rebuilt.figures.length,catalog.figures.length);for(const a of catalog.figures){const b=rebuilt.figures.find(f=>f.id===a.id);assert(b);for(const key of ['series','soulSkill','passive'])assert.deepEqual(b[key],a[key],a.id+' '+key);}}finally{hook.deregister();}});

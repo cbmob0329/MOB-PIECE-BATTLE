@@ -11,7 +11,7 @@ export function matchesMaterial(figure,material,{tags=figure.tags,attribute=figu
  return !!(material.id||material.tag||material.attribute||material.rarity||material.class||material.allTags||material.tagsAtLeast);
 }
 export function recipeMaterialClass(recipe,by){const target=by.get(recipe.target);if(!target)return null;return recipe.explicitFromClass|| (recipe.preserveStage?target.soulClass:soulStages[soulStages.indexOf(target.soulClass)-1]||null);}
-export function recipeStageMatches(recipe,pair,by){const kind=recipeMaterialClass(recipe,by);return !!kind&&pair.length===2&&pair.every(f=>f.soulClass===kind);}
+export function recipeStageMatches(recipe,pair,by){if(recipe.materialClasses)return pair.length===2&&recipe.materials.every(m=>m.id)&&((pair[0].soulClass===recipe.materialClasses[0]&&pair[1].soulClass===recipe.materialClasses[1])||(pair[1].soulClass===recipe.materialClasses[0]&&pair[0].soulClass===recipe.materialClasses[1]));const kind=recipeMaterialClass(recipe,by);return !!kind&&pair.length===2&&pair.every(f=>f.soulClass===kind);}
 
 // One universal material may substitute one condition; the other condition must
 // match naturally. Stage legality is always checked separately by the caller.

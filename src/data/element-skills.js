@@ -27,7 +27,7 @@ add('NIN_S01','相手1体のDEFをこのターン20下げる。雷属性の相�
 add('NIN_S02','味方1体のATK/DEF低下を解除し、DEFを次の相手ターン終了まで10上げる。',[ally()],[{kind:'cleanse',to:'a'},buff('a',0,10,true)]);
 add('NIN_S03','異なる味方2体までのATKをこのターン20上げる。',[ally(),{...ally('b'),optional:true,distinct:'a'}],[buff('a',20),buff('b',20)]);
 add('NIN_M01','味方1体のDEFを次の相手ターン終了まで30上げ、相手1体のATKを同じ期限まで20下げる。',[ally(),enemy()],[buff('a',0,30,true),buff('e',-20,0,true)]);
-add('NIN_M02','物理タイプの味方1体はこのターン最大2回、異なる相手に攻撃できる。',[ally('a',{type:'物理'})],[buff('a',0,0,false,{flags:{maxAttacks:2,eachTarget:true}})]);
+add('NIN_M02','物理タイプの味方1体はこのターン最大2回、異なる相手に攻撃できる。',[ally('a',{type:'物理'})],[buff('a',0,0,false,{flags:{maxAttacks:2,eachTarget:true,attackCap:2}})]);
 add('NIN_B01','異なる物理タイプの味方2体までのATKをこのターン30上げ、守護を無視して攻撃対象を選べる。',[ally('a',{type:'物理'}),{...ally('b',{type:'物理'}),optional:true,distinct:'a'}],[buff('a',30,0,false,{flags:{pierceGuard:true}}),buff('b',30,0,false,{flags:{pierceGuard:true}})]);
 add('FRG_S01','味方1体のATKをこのターン15上げる。火属性なら20上げる。',[ally()],[buff('a',15,0,false,{bonus:{condition:{targetAttribute:'火'},atk:5}})]);
 add('FRG_S02','味方1体の一時的DEF低下を1件選んで解除する。',[ally('a',{effect:{key:'def',sign:-1}}),{key:'fx',zone:'effect',target:'a',filter:{key:'def',sign:-1}}],[{kind:'remove',to:'a',choice:'fx'}]);

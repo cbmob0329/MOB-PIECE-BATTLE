@@ -1,0 +1,1714 @@
+{
+  "figures": [
+    {
+      "id": "oct14-kaijin-005",
+      "uid": "oct14-kaijin-005",
+      "name": "モブ怪人道着",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "火",
+      "atk": 100,
+      "def": 75,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-005.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/005.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーアップ",
+        "description": "このターン、読みかけの本タグを持つ味方全体のATKを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "filterTag": "52",
+          "atk": 20
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-006",
+      "uid": "oct14-kaijin-006",
+      "name": "モブ怪人奇術",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "闇",
+      "atk": 65,
+      "def": 100,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-006.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/006.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーマジック",
+        "description": "相手の攻撃時、その攻撃を無効にして相手全体のDEFを10ダウンする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "cancelAttack": true,
+          "target": "enemies",
+          "def": -10
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-007",
+      "uid": "oct14-kaijin-007",
+      "name": "モブ怪人探偵",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "atk": 80,
+      "def": 95,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-007.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/007.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキースペル",
+        "description": "相手フィギュアを1体指定する。そのフィギュアはこのターンスキルを発動出来ない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemy",
+          "currentSkillLock": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-008",
+      "uid": "oct14-kaijin-008",
+      "name": "モブ怪人整備",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "雷",
+      "atk": 95,
+      "def": 85,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-008.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/008.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーリカバー",
+        "description": "自分のフィギュア1体を指定する。そのフィギュアのステータスダウン効果を全て解除する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "ally",
+          "cleanse": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-009",
+      "uid": "oct14-kaijin-009",
+      "name": "モブ怪人紳士",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "光",
+      "atk": 75,
+      "def": 90,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-009.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/009.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーハロー",
+        "description": "お互いのプレイヤーのライフを40回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "heal": 40,
+          "enemyHeal": 40
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-010",
+      "uid": "oct14-kaijin-010",
+      "name": "モブ怪人幹部候補青",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "水",
+      "atk": 100,
+      "def": 100,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-010.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/010.png",
+      "passive": {
+        "killGrowth": {
+          "atk": 20,
+          "def": 20,
+          "damage": 20
+        }
+      },
+      "soulSkill": {
+        "name": "アクノタクラミ",
+        "description": "相手フィギュアの撃破に成功した時、このフィギュアのATKとDEFを20アップし、相手のライフに20ダメージを与える。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-011",
+      "uid": "oct14-kaijin-011",
+      "name": "モブ怪人幹部候補赤",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 100,
+      "def": 100,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-011.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/011.png",
+      "passive": {
+        "killGrowth": {
+          "atk": 20,
+          "def": 20,
+          "damage": 20
+        }
+      },
+      "soulSkill": {
+        "name": "アクノタクラミ",
+        "description": "相手フィギュアの撃破に成功した時、このフィギュアのATKとDEFを20アップし、相手のライフに20ダメージを与える。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-012",
+      "uid": "oct14-kaijin-012",
+      "name": "モブ怪人紳士隊長",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 105,
+      "def": 95,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-012.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/012.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーグッバイ",
+        "description": "このフィギュアが攻撃対象になった時、戦闘を行わず相手のバトルフェイズを終了する。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelAttack": true,
+          "endEnemyBattle": true,
+          "selfAttackResponse": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-013",
+      "uid": "oct14-kaijin-013",
+      "name": "モブ怪人奇術隊長",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 110,
+      "def": 90,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-013.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/013.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーループ",
+        "description": "このターン、自分の場のフィギュアは2回ずつ攻撃出来る。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "attacks": 2
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-014",
+      "uid": "oct14-kaijin-014",
+      "name": "モブ怪人整備隊長",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "雷",
+      "atk": 95,
+      "def": 100,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-014.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/014.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーコーティング",
+        "description": "自分のフィギュア1体を指定する。指定したフィギュアはこのターン攻撃対象にならない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "ally",
+          "attackHidden": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-015",
+      "uid": "oct14-kaijin-015",
+      "name": "モブ怪人モブ探偵隊長",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "水",
+      "atk": 100,
+      "def": 85,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-015.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/015.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーノミネート",
+        "description": "相手フィギュアを1体指定する。そのフィギュアをデッキに戻す。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemy",
+          "returnTargetDeck": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-016",
+      "uid": "oct14-kaijin-016",
+      "name": "モブ怪人音楽隊長",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "風",
+      "atk": 100,
+      "def": 75,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-016.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/016.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーミュージック",
+        "description": "味方の墓地からシードフィギュア1体を復活させる。このフィギュアと選んだフィギュアはDEFが30アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "summon": {
+            "zones": [
+              "grave"
+            ],
+            "classes": [
+              "seed"
+            ],
+            "defBonus": 30
+          },
+          "selfDef": 30
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-017",
+      "uid": "oct14-kaijin-017",
+      "name": "モブ怪人道着隊長",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 110,
+      "def": 85,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-017.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/017.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーハートブレイク",
+        "description": "相手フィギュア1体を選択する。そのフィギュアは次のターンまで攻撃出来ない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemy",
+          "skipBattle": true,
+          "lockDuration": "next-opponent"
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-036",
+      "uid": "oct14-kaijin-036",
+      "name": "モブ怪人エラー",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "UR",
+      "attribute": "光/闇",
+      "atk": 150,
+      "def": 140,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-036.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/036.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーエラー",
+        "description": "相手の場のフィギュア1体をランダムで破壊する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct15": "randomDestroy"
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-018",
+      "uid": "oct14-kaijin-018",
+      "name": "モブ怪人紳士幹部",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "光",
+      "atk": 170,
+      "def": 150,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-018.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/018.png",
+      "passive": {
+        "graveFusion": true
+      },
+      "soulSkill": {
+        "name": "キーキーコール",
+        "description": "このフィギュアは墓地にいてもソウルフュージョン、MOBソウルフュージョンを行うことが出来る。\n※属性フュージョン、タグフュージョン、同名フュージョンは不可。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-019",
+      "uid": "oct14-kaijin-019",
+      "name": "モブ怪人奇術幹部",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 50,
+      "def": 150,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-019.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/019.png",
+      "passive": {
+        "phoenixOnce": true,
+        "reviveStats": {
+          "atk": 120,
+          "def": 200
+        }
+      },
+      "soulSkill": {
+        "name": "キーキーワープ",
+        "description": "このフィギュアが撃破された時、1度だけ墓地から復活召喚される。\nこの時、ATK120 DEF200 となる。",
+        "timing": "passive",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "passive": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-020",
+      "uid": "oct14-kaijin-020",
+      "name": "モブ怪人整備幹部",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "雷",
+      "atk": 140,
+      "def": 155,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-020.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/020.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーバースト",
+        "description": "このターン、読みかけの本タグを持つ全てのフィギュアのATKを25アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "specified": "tagBuff",
+          "both": true,
+          "tag": "52",
+          "atk": 25
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-025",
+      "uid": "oct14-kaijin-025",
+      "name": "モブ怪人探偵幹部",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "水",
+      "atk": 110,
+      "def": 185,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-025.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/025.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキースナイプアイ",
+        "description": "相手の墓地のミドルフィギュア1体を自分の場に復活召喚する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "summon": {
+            "zones": [
+              "grave"
+            ],
+            "owners": "enemy",
+            "classes": [
+              "middle"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-026",
+      "uid": "oct14-kaijin-026",
+      "name": "モブ怪人音楽幹部",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "middle",
+      "rarity": "UR",
+      "attribute": "風",
+      "atk": 135,
+      "def": 145,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-026.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/026.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーソウルミュージック",
+        "description": "このターン、自分がソウルフュージョンで召喚したフィギュアはATKとDEFが20アップする。\n※相手には適用しない",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "fusionAura": {
+            "atk": 20,
+            "def": 20
+          }
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-027",
+      "uid": "oct14-kaijin-027",
+      "name": "モブ怪人道着幹部",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 180,
+      "def": 120,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-027.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/027.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "キーキーファイトスタイル",
+        "description": "相手が攻撃してきた時、その攻撃を無効にし、このフィギュアのDEFを20アップする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "cancelAttack": true,
+          "selfDef": 20
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-021",
+      "uid": "oct14-kaijin-021",
+      "name": "モブ怪人紳士変身",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "光",
+      "atk": 240,
+      "def": 240,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-021.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/021.png",
+      "passive": {
+        "reviveGrowth": 40
+      },
+      "soulSkill": {
+        "name": "アクノリベンジ",
+        "description": "メインスキル:このスキルは1度使用すると失われる。お互い自分の場の全てのフィギュアを破壊する。その後、自分の墓地から1体フィギュアを選択し、場に復活召喚する。※この効果で破壊したフィギュアも選択可能\nパッシブ:このフィギュアは復活召喚される度、ATKとDEFが40アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct15": "destroyRevive",
+          "onceLost": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-022",
+      "uid": "oct14-kaijin-022",
+      "name": "モブ怪人奇術変身",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "闇",
+      "atk": 200,
+      "def": 180,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-022.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/022.png",
+      "passive": {
+        "surviveStrongerAtk": true
+      },
+      "soulSkill": {
+        "name": "アクノイリュージョン",
+        "description": "メインスキル:このターン中のみ、このフィギュアのATKを100アップする。\nパッシブ:このフィギュアは自分よりATKの高いフィギュアとの戦闘では破壊されない。ダメージ適用やDEFダウンは変わらず行う。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 100
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-023",
+      "uid": "oct14-kaijin-023",
+      "name": "モブ怪人整備変身",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "mob",
+      "rarity": "SSR",
+      "attribute": "雷",
+      "atk": 230,
+      "def": 265,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-023.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/023.png",
+      "passive": {
+        "enemySkillDraw": 1
+      },
+      "soulSkill": {
+        "name": "アクノマシーン",
+        "description": "メインスキル:手札から1枚シードフィギュアを捨てる。自分の場に モブ怪人整備変身 のクローンフィギュア1体を召喚する。ATKとDEFは190となる。\nパッシブ:相手がスキルを発動する度、フィギュアを1体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct15": "clone",
+          "discardCost": 1,
+          "discardSeedOnly": true
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-024",
+      "uid": "oct14-kaijin-024",
+      "name": "モブ怪人大幹部",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "火/水",
+      "atk": 300,
+      "def": 285,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-024.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/024.png",
+      "passive": {
+        "reserveReplacement": 2
+      },
+      "soulSkill": {
+        "name": "アクノソンザイ",
+        "description": "メインスキル:墓地のミドルフィギュアを2体除外する。このフィギュアのATKはこのターン60アップする。\nパッシブ:このフィギュアが戦闘・スキルで破壊される代わりに、ミドルデッキからフィギュアを2体破壊することが出来る。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "atk": 60,
+          "banishMiddleCost": 2
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-028",
+      "uid": "oct14-kaijin-028",
+      "name": "モブ怪人探偵変身",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "水",
+      "atk": 0,
+      "def": 240,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-028.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/028.png",
+      "passive": {
+        "lifeAtk": true
+      },
+      "soulSkill": {
+        "name": "アクノマインドスキャン",
+        "description": "メインスキル:相手は手札が5枚になるようフィギュアをドローする。このフィギュア効果を発動したプレイヤーはライフを50回復する。\nパッシブ:このフィギュアのATKは自分の残りライフポイントと同じになる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct15": "enemyDrawFive",
+          "heal": 50
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-029",
+      "uid": "oct14-kaijin-029",
+      "name": "モブ怪人音楽変身",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "風",
+      "atk": 150,
+      "def": 300,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-029.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/029.png",
+      "passive": {
+        "attacks": 2
+      },
+      "soulSkill": {
+        "name": "アクノスクラッチ",
+        "description": "メインスキル:このフィギュアを破壊し、墓地のMOBフィギュア1体を復活召喚する。\nパッシブ:このフィギュアは1ターンに2回攻撃出来る。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "oct15": "selfDestroyReviveMob"
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-030",
+      "uid": "oct14-kaijin-030",
+      "name": "モブ怪人道着変身",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "mob",
+      "rarity": "SSR",
+      "attribute": "火",
+      "atk": 250,
+      "def": 230,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-030.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/030.png",
+      "passive": {
+        "deathAction": {
+          "mode": "summon",
+          "zones": [
+            "grave"
+          ],
+          "attributes": [
+            "火"
+          ]
+        }
+      },
+      "soulSkill": {
+        "name": "アクノファイトソウル",
+        "description": "メインスキル:このターン、相手はスキルを発動出来ない。\nパッシブ:このフィギュアが破壊された時、墓地から火属性フィギュア1体を復活召喚する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "teamLock": "all",
+          "lockSide": "enemy"
+        }
+      }
+    },
+    {
+      "id": "oct14-kaijin-031",
+      "uid": "oct14-kaijin-031",
+      "name": "モブナビJr.",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "atk": 80,
+      "def": 100,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-031.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/031.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "ナビゲートライト",
+        "description": "山札の上から3体を見て1体を手札に加える。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "scout": true
+        }
+      },
+      "supplemented": true
+    },
+    {
+      "id": "oct14-kaijin-032",
+      "uid": "oct14-kaijin-032",
+      "name": "モブ怪人のボスJr.",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 110,
+      "def": 90,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-032.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/032.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "ちいさな号令",
+        "description": "このターン、読みかけの本タグを持つ味方全体のATKを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "allies",
+          "filterTag": "52",
+          "atk": 20
+        }
+      },
+      "supplemented": true
+    },
+    {
+      "id": "oct14-kaijin-033",
+      "uid": "oct14-kaijin-033",
+      "name": "モブタブ",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "雷",
+      "atk": 85,
+      "def": 100,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-033.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/033.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "バックアップ",
+        "description": "味方1体のステータス低下を解除し、自分のライフを20回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "ally",
+          "cleanse": true,
+          "heal": 20
+        }
+      },
+      "supplemented": true
+    },
+    {
+      "id": "oct14-kaijin-034",
+      "uid": "oct14-kaijin-034",
+      "name": "モブタブー",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "atk": 110,
+      "def": 85,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-034.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/034.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "アクセス拒否",
+        "description": "相手1体はこのターンスキルを発動できない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "target": "enemy",
+          "currentSkillLock": true
+        }
+      },
+      "supplemented": true
+    },
+    {
+      "id": "oct14-kaijin-035",
+      "uid": "oct14-kaijin-035",
+      "name": "モブタブダミー",
+      "series": "悪の組織とあのヒーロー",
+      "series2": "読みかけの本",
+      "collection": "読みかけの本",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "無",
+      "atk": 70,
+      "def": 110,
+      "tags": [
+        "52"
+      ],
+      "attackType": "物理",
+      "role": "支援",
+      "image": "piecefig/oct14-kaijin-035.webp",
+      "sourceImage": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE/新フィギュア/読みかけの本/035.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "ダミーガード",
+        "description": "相手の攻撃を無効にする。",
+        "timing": "attack-response",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "turn",
+          "cancelAttack": true
+        }
+      },
+      "supplemented": true
+    }
+  ],
+  "recipes": [
+    {
+      "id": "oct15-18-0",
+      "target": "oct14-kaijin-018",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-009"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-009 × 光"
+    },
+    {
+      "id": "oct15-18-1",
+      "target": "oct14-kaijin-018",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-012"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-012 × 読みかけの本"
+    },
+    {
+      "id": "oct15-18-2",
+      "target": "oct14-kaijin-018",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-009"
+        },
+        {
+          "id": "oct14-kaijin-012"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-009 × oct14-kaijin-012"
+    },
+    {
+      "id": "oct15-19-3",
+      "target": "oct14-kaijin-019",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-006"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-006 × 闇"
+    },
+    {
+      "id": "oct15-19-4",
+      "target": "oct14-kaijin-019",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-013"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-013 × 読みかけの本"
+    },
+    {
+      "id": "oct15-19-5",
+      "target": "oct14-kaijin-019",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-006"
+        },
+        {
+          "id": "oct14-kaijin-013"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-006 × oct14-kaijin-013"
+    },
+    {
+      "id": "oct15-20-6",
+      "target": "oct14-kaijin-020",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-008"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-008 × 雷"
+    },
+    {
+      "id": "oct15-20-7",
+      "target": "oct14-kaijin-020",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-014"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-014 × 読みかけの本"
+    },
+    {
+      "id": "oct15-20-8",
+      "target": "oct14-kaijin-020",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-008"
+        },
+        {
+          "id": "oct14-kaijin-014"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-008 × oct14-kaijin-014"
+    },
+    {
+      "id": "oct15-21-9",
+      "target": "oct14-kaijin-021",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-018"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-018 × 光"
+    },
+    {
+      "id": "oct15-21-10",
+      "target": "oct14-kaijin-021",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-018"
+        },
+        {
+          "id": "oct14-kaijin-019"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-018 × oct14-kaijin-019"
+    },
+    {
+      "id": "oct15-22-11",
+      "target": "oct14-kaijin-022",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-019"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-019 × 闇"
+    },
+    {
+      "id": "oct15-22-12",
+      "target": "oct14-kaijin-022",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-019"
+        },
+        {
+          "id": "oct14-kaijin-018"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-019 × oct14-kaijin-018"
+    },
+    {
+      "id": "oct15-23-13",
+      "target": "oct14-kaijin-023",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-020"
+        },
+        {
+          "attribute": "雷"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-020 × 雷"
+    },
+    {
+      "id": "oct15-23-14",
+      "target": "oct14-kaijin-023",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-020"
+        },
+        {
+          "id": "oct14-kaijin-027"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-020 × oct14-kaijin-027"
+    },
+    {
+      "id": "oct15-24-15",
+      "target": "oct14-kaijin-024",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "214"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "special": false,
+      "label": "214 × 火"
+    },
+    {
+      "id": "oct15-24-16",
+      "target": "oct14-kaijin-024",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "214"
+        },
+        {
+          "id": "oct14-kaijin-030"
+        }
+      ],
+      "special": true,
+      "label": "214 × oct14-kaijin-030"
+    },
+    {
+      "id": "oct15-25-17",
+      "target": "oct14-kaijin-025",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-007"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-007 × 水"
+    },
+    {
+      "id": "oct15-25-18",
+      "target": "oct14-kaijin-025",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-015"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-015 × 読みかけの本"
+    },
+    {
+      "id": "oct15-25-19",
+      "target": "oct14-kaijin-025",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-007"
+        },
+        {
+          "id": "oct14-kaijin-015"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-007 × oct14-kaijin-015"
+    },
+    {
+      "id": "oct15-26-20",
+      "target": "oct14-kaijin-026",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-016"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-016 × 風"
+    },
+    {
+      "id": "oct15-26-21",
+      "target": "oct14-kaijin-026",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-015"
+        },
+        {
+          "id": "oct14-kaijin-016"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-015 × oct14-kaijin-016"
+    },
+    {
+      "id": "oct15-27-22",
+      "target": "oct14-kaijin-027",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-005"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-005 × 火"
+    },
+    {
+      "id": "oct15-27-23",
+      "target": "oct14-kaijin-027",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-017"
+        },
+        {
+          "tag": "52"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-017 × 読みかけの本"
+    },
+    {
+      "id": "oct15-27-24",
+      "target": "oct14-kaijin-027",
+      "targetClass": "middle",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "oct14-kaijin-005"
+        },
+        {
+          "id": "oct14-kaijin-017"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-005 × oct14-kaijin-017"
+    },
+    {
+      "id": "oct15-28-25",
+      "target": "oct14-kaijin-028",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-025"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-025 × 水"
+    },
+    {
+      "id": "oct15-28-26",
+      "target": "oct14-kaijin-028",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-025"
+        },
+        {
+          "id": "oct14-kaijin-026"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-025 × oct14-kaijin-026"
+    },
+    {
+      "id": "oct15-29-27",
+      "target": "oct14-kaijin-029",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-026"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-026 × 風"
+    },
+    {
+      "id": "oct15-29-28",
+      "target": "oct14-kaijin-029",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-026"
+        },
+        {
+          "id": "oct14-kaijin-025"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-026 × oct14-kaijin-025"
+    },
+    {
+      "id": "oct15-30-29",
+      "target": "oct14-kaijin-030",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-027"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "special": false,
+      "label": "oct14-kaijin-027 × 火"
+    },
+    {
+      "id": "oct15-30-30",
+      "target": "oct14-kaijin-030",
+      "targetClass": "mob",
+      "targetTags": [
+        "52"
+      ],
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "oct14-kaijin-027"
+        },
+        {
+          "id": "oct14-kaijin-020"
+        }
+      ],
+      "special": true,
+      "label": "oct14-kaijin-027 × oct14-kaijin-020"
+    }
+  ]
+}

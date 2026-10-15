@@ -3,6 +3,7 @@
 const clone=x=>JSON.parse(JSON.stringify(x));
 const stable=x=>JSON.stringify(x,(_,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
 const equal=(a,b)=>stable(a)===stable(b);
+const seriesList=r=>[...new Set([r.series,r.series2].filter(x=>typeof x==='string'&&x.trim()).map(x=>x.trim()))];
 const classes=['seed','middle','mob'];
 const caches=new WeakMap();
 function index(data){if(!caches.has(data)){const plans=new Map();for(const [id,p]of Object.entries(data.plans)){const key=stable(p);if(!plans.has(key))plans.set(key,new Set());for(const r of data.records)if(String(r.skill.program)===id)plans.get(key).add(r.skill.timing);}caches.set(data,{plans,base:new Map(data.records.map(r=>[r.id,r]))});}return caches.get(data);}
@@ -16,7 +17,7 @@ function status(r,data){
 }
 function filter(records,f,groups){
  const q=(f.q||'').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
- return records.filter(r=>(!f.series||r.series===f.series)&&(!f.soulClass||r.soulClass===f.soulClass)&&(!f.rarity||r.rarity===f.rarity)&&(!f.attribute||r.attribute===f.attribute)&&(!f.tag||r.tags.includes(f.tag))&&q.every(w=>[r.name,r.id,r.uid,r.skill.name,r.skill.description,r.series].join(' ').toLocaleLowerCase().includes(w)))
+ return records.filter(r=>(!f.series||seriesList(r).includes(f.series))&&(!f.soulClass||r.soulClass===f.soulClass)&&(!f.rarity||r.rarity===f.rarity)&&(!f.attribute||r.attribute===f.attribute)&&(!f.tag||r.tags.includes(f.tag))&&q.every(w=>[r.name,r.id,r.uid,r.skill.name,r.skill.description,...seriesList(r)].join(' ').toLocaleLowerCase().includes(w)))
  .sort((a,b)=>(groups.indexOf(a.series)<0?999:groups.indexOf(a.series))-(groups.indexOf(b.series)<0?999:groups.indexOf(b.series))||classes.indexOf(a.soulClass)-classes.indexOf(b.soulClass)||a.id.localeCompare(b.id,'ja',{numeric:true}));
 }
 function groups(records,mode){
@@ -68,6 +69,7 @@ function parseImport(text,data){
  if(!Array.isArray(o.records))throw Error('records配列がありません');
  const seen=new Set(),known=new Set(data.records.map(r=>r.id));
  for(const r of o.records){if(!r||typeof r.id!=='string'||seen.has(r.id))throw Error('IDが不正または重複しています');seen.add(r.id);if(known.has(r.id)&&r.uid!==data.records.find(f=>f.id===r.id).uid)throw Error(r.id+': 固定UIDが元データと異なります');
+  if(r.series2!==undefined&&typeof r.series2!=='string')throw Error(r.id+': 第2シリーズが文字列ではありません');
   for(const k of ['name','uid','series','soulClass','rarity','attribute','attackType','role'])if(typeof r[k]!=='string')throw Error(r.id+': '+k+' が文字列ではありません');
   if(!Array.isArray(r.tags)||r.tags.some(t=>typeof t!=='string')||!r.skill||!['existing','custom'].includes(r.skill.mode)||typeof r.skill.name!=='string'||typeof r.skill.description!=='string'||typeof r.skill.timing!=='string'||!r.skill.plan||typeof r.skill.plan!=='object'||Array.isArray(r.skill.plan)||!r.skill.custom||typeof r.skill.custom!=='object'||!r.summon||typeof r.summon.normal!=='boolean'||!Array.isArray(r.summon.recipes)||!r.summon.passive||typeof r.summon.passive!=='object'||typeof r.summon.notes!=='string'||(r.atk!==null&&typeof r.atk!=='number')||(r.def!==null&&typeof r.def!=='number'))throw Error(r.id+': データ構造が不正です');
   const validMaterial=(m,depth=0)=>!!m&&typeof m==='object'&&!Array.isArray(m)&&depth<8&&(!m.any||(Array.isArray(m.any)&&m.any.every(x=>validMaterial(x,depth+1))))&&['id','tag','attribute','rarity','class'].every(k=>m[k]===undefined||typeof m[k]==='string');
@@ -78,5 +80,5 @@ function parseImport(text,data){
  return {value:o,conflict:o.sourceHash!==data.sourceHash||o.sourceVersion!==data.sourceVersion,missing:data.records.filter(r=>!seen.has(r.id)).map(r=>r.id),unknown:o.records.filter(r=>!known.has(r.id))};
 }
 function importRecords(parsed,current){const by=new Map(parsed.value.records.map(r=>[r.id,r]));return current.map(r=>clone(by.get(r.id)||r));}
-root.MPB_CORE={clone,stable,equal,classes,status,filter,groups,changes,validate,envelope,parseImport,importRecords};
+root.MPB_CORE={clone,stable,equal,classes,seriesList,status,filter,groups,changes,validate,envelope,parseImport,importRecords};
 })(typeof window==='undefined'?globalThis:window);

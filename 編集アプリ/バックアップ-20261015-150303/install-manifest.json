@@ -1,0 +1,539 @@
+{
+  "target": "C:/Users/CB-Me/Documents/GitHub/MOB-PIECE-BATTLE",
+  "changes": [
+    {
+      "from": "src/data/oct15-additions.js",
+      "to": "src/data/oct15-additions.js",
+      "before": null,
+      "after": "4c56b50e010cd5c8be7f0d411979a5e2e947c39953a964652ac00805c1fd36f9"
+    },
+    {
+      "from": "src/data/oct15-new-figures.json",
+      "to": "src/data/oct15-new-figures.json",
+      "before": null,
+      "after": "65423cd04aa551f32ac79249d9c9f54d44fd93098f779bd8aa696f4b673b09ac"
+    },
+    {
+      "from": "src/data/oct15-user-edits.json",
+      "to": "src/data/oct15-user-edits.json",
+      "before": null,
+      "after": "c752180f16c582e5aaf34189d7a5a19623dd3fc23a5a0b8be7996d48295054e6"
+    },
+    {
+      "from": "src/data/series-test-decks.json",
+      "to": "src/data/series-test-decks.json",
+      "before": null,
+      "after": "d6e7fcda932a19a7fba34a94fdbd17688e33319dec9edf70a9645d69d9c045b9"
+    },
+    {
+      "from": "src/data/soul-catalog.js",
+      "to": "src/data/soul-catalog.js",
+      "before": "e73e6f27674df04be4c53ec9eb7fce75f92f49d5e70ee62379c3cd884d4b427e",
+      "after": "51ac1b177ef0d6cb8e29493246805c6346f1dec5f37708dc05b1ff98289ac236"
+    },
+    {
+      "from": "src/game/battle-practice.js",
+      "to": "src/game/battle-practice.js",
+      "before": "5ce5026929f6efa8bcb647dea8d3be1a02eeaafe16443bb9a896932086ece258",
+      "after": "17fcc52594c3df65bbd37cb6c77869a2c13de968694a30522ecd2dbc7fa20c9b"
+    },
+    {
+      "from": "src/game/figure-series.js",
+      "to": "src/game/figure-series.js",
+      "before": "66d1fbbfbd39d0e70ccd91586d95330b7d10352fd476bf0abbdbdacce2e5532c",
+      "after": "503f111f5d96e60f3654f2d83b59c4456e03bb6c28ae58930a8b8edf1e41d4f6"
+    },
+    {
+      "from": "src/game/fusion-rules.js",
+      "to": "src/game/fusion-rules.js",
+      "before": "028cdb3e617919b1e259c72ca8c38ecd63ed8ac43df0d1467816a83d8131a5f4",
+      "after": "e23dc1e73ccd0ad9aeaa36b3a59e845287cb05061f037cf169a4d51e35db2336"
+    },
+    {
+      "from": "src/game/oct06-passives.js",
+      "to": "src/game/oct06-passives.js",
+      "before": "bb43da31e770981d3dd5116a3bb22b8f539ca024b73b8bcefcb959bb3f4699cd",
+      "after": "726129ac4e8c49725362d745f37eb0f2b020bcfb919004ecf120992e8c8c2136"
+    },
+    {
+      "from": "src/game/oct14-effects.js",
+      "to": "src/game/oct14-effects.js",
+      "before": "6928a83c193ecd8feb56dc3d5b71ca8b282975f2d57d476b76983b615db7f160",
+      "after": "d1101f37e28c3dccbae96f2e1ee0f3956f2c2ac9123b0849ca6d9672ea962fb3"
+    },
+    {
+      "from": "src/game/skill-budget.js",
+      "to": "src/game/skill-budget.js",
+      "before": "8f45643340f3b26239197970fdb92e6450cb4bedda8ad797e0a8ac8f6ed8c787",
+      "after": "f2574b5c46fe030f71c398f7ec15aa4fd7e58359931a58c8208c36df77b98345"
+    },
+    {
+      "from": "src/game/soul-engine.js",
+      "to": "src/game/soul-engine.js",
+      "before": "9717fb4623ca99345a34097036459fbbe2ff1189a9b0b2fa049b21eb9d8cf3b8",
+      "after": "69c268035467f761f7a499c97790ba37d5229d066ae295fb5556a94f74677fda"
+    },
+    {
+      "from": "src/screens/deckBuilder.js",
+      "to": "src/screens/deckBuilder.js",
+      "before": "368f037a1ddff3c713ee6b3344eb5f9392bbdcb04dd8db2147a1bc70042fb519",
+      "after": "5ac253c05270599b4d271918d9fd3e5cafb59cdbad4a454ce2d1144399b3fc18"
+    },
+    {
+      "from": "src/screens/practice.js",
+      "to": "src/screens/practice.js",
+      "before": "3f7903d93f6abed3f7e47e53fb71214b6fe12d212fab6b83d50254982f58b834",
+      "after": "b1afc29f7f6f4ab93db3745fbd8084f55fc7e4e1f253db470dde017e0098c146"
+    },
+    {
+      "from": "src/screens/soulDuelRuntime.js",
+      "to": "src/screens/soulDuelRuntime.js",
+      "before": "b6cd378f0e63473d2594a0ba1723d846fbd5abbd80cca5583d855222fc4ccccd",
+      "after": "ef692abc23244b02e1b864bf44cae6a9c1cf82a7cf472a361000e77e48bff391"
+    },
+    {
+      "from": "src/screens/soulLibrary.js",
+      "to": "src/screens/soulLibrary.js",
+      "before": "4a861d570ae5418e4d9c98c3f7324a8b3deb114784cf66de31560ecfa28cf5d7",
+      "after": "0504905e5ad02030802c9f1cd1fd54f8968e1a1d21c7945fcd1bd4e58d7d48b1"
+    },
+    {
+      "from": "src/screens/tower.js",
+      "to": "src/screens/tower.js",
+      "before": "4b861011c784757f1e5ac2a666e17b20ba41500d0c9d979b28be6893476cf543",
+      "after": "cce7ade9122b488a8bd2aabd39b7a12350a846ac372fc91fdfa1eadbbd37376e"
+    },
+    {
+      "from": "editor/app.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/app.js",
+      "before": "7c4d0193eb0bc759b5687d32105a55a784560229c177c8088532f95b7f914047",
+      "after": "042236d308736fbd34c269b2f676646f4b9f13f3e2ae44190066b483e733d672"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-005.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-005.webp",
+      "before": null,
+      "after": "3d291fc68393dcd5f582b9963c6eefdaece6e32fc1e48a62ea14eab680c88f90"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-006.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-006.webp",
+      "before": null,
+      "after": "d7117785733242fb77252c31b67f225b519130f83ab6a58f80930466f3741916"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-007.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-007.webp",
+      "before": null,
+      "after": "676eeab3f72b696586390277b2a800db3c563896569c7cb21d06813f6455344e"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-008.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-008.webp",
+      "before": null,
+      "after": "e262940004925ab27189f20481329a015ab0f255c2205e0b7159e482e6770c4f"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-009.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-009.webp",
+      "before": null,
+      "after": "394472fc815bc1e0aaa5f1c86305477d5ef150bc00f0fb3176f5471e5d1bb50b"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-010.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-010.webp",
+      "before": null,
+      "after": "c81cc7a295b7600b81d489c3527095ebcb47fb88246681ce507e3b99294a03a8"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-011.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-011.webp",
+      "before": null,
+      "after": "607dea99c3ff55674fa2017a253e3bd156dc3783298d0a0e55a7f87572c0cb50"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-012.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-012.webp",
+      "before": null,
+      "after": "340e509438e37405d665473ac2111cb2964b540c5ec61031fa12b28b4fe3b5ca"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-013.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-013.webp",
+      "before": null,
+      "after": "c985396f73e08b4a9469eab92c13e1b59e633c435321d24830306b5d98fda3af"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-014.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-014.webp",
+      "before": null,
+      "after": "ae55c37a7c6a71ab775d3345087c0636e36ccb0d2ee1505f4ad7361f2bcd2fc5"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-015.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-015.webp",
+      "before": null,
+      "after": "9db9257291661a6e0b723bb80cae02badb7ee63cc3817e54d7bdf3f71dc050e3"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-016.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-016.webp",
+      "before": null,
+      "after": "31501a307f4e990fb8992a1dcaaa585104f2b950aebd843b3e6478c2f8d769d5"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-017.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-017.webp",
+      "before": null,
+      "after": "68087fb658663dfe5934e29a7fccff82f54c456bbf392ae5f04ce55808c95698"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-018.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-018.webp",
+      "before": null,
+      "after": "9d54df17ffdf9a9639d5dc8efb0108425639e620b33bcdbd53ccce984dd734ed"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-019.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-019.webp",
+      "before": null,
+      "after": "b720d996a881eb1ae737d2e1230338f93321ca554c032d3d133104617567f77d"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-020.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-020.webp",
+      "before": null,
+      "after": "1384d5efafae3ba88b384694f7ef912fc9e3c7ca0daa31b3280ace6f5cc37213"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-021.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-021.webp",
+      "before": null,
+      "after": "e14b99740caab68647397b46c1c3a0dad801de39487d9837fef8adce0af332fa"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-022.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-022.webp",
+      "before": null,
+      "after": "6b0fa60e1f063982c0cffffa0b9029b017033f5352a1af73591a5c89305c1ae8"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-023.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-023.webp",
+      "before": null,
+      "after": "06501a6c90ba60f89f5b8f68ee6494d680b769a9c97eb84f0b45e0bf13a053c1"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-024.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-024.webp",
+      "before": null,
+      "after": "5fdff53406ad1874bfd14579cfb31bf809bdf7504291db5db27100ac067a0279"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-025.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-025.webp",
+      "before": null,
+      "after": "212e0fd82c6d5400f4cb9bf1ede2f58625d9200254a8dd0b4b67e974fe68895c"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-026.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-026.webp",
+      "before": null,
+      "after": "b2ec965d16e5852b6c29529b535456e4e7a51e57cab873345c9905babdf91fcc"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-027.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-027.webp",
+      "before": null,
+      "after": "55aec427c37157017007eacc70f379a0b1c50def4e904c60a070a191e566a970"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-028.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-028.webp",
+      "before": null,
+      "after": "7066d8e9dca670f04836a1ffa6106069e1e7f46062ae6f55353be061b4fa2635"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-029.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-029.webp",
+      "before": null,
+      "after": "49279bf994f63417364c7c2e8867dbe5e524853337683171d095974639cb260d"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-030.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-030.webp",
+      "before": null,
+      "after": "4931f973334e82a20587f81fb2e7f6fc529a3b71fd8ed18b1fe609f9ee40574a"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-031.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-031.webp",
+      "before": null,
+      "after": "5710de715001320d8fd2a4d840465b5a1f6108739d72a743879d00dc180f0ab8"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-032.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-032.webp",
+      "before": null,
+      "after": "3be29af424bf08ea11b55929fc939ee1f9ad0e7c487cf55ff076185bde933ce9"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-033.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-033.webp",
+      "before": null,
+      "after": "510611749f65f56fa3bdd6bd8f761f01d75e8ade085eb5eecfed1d6a757d95f4"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-034.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-034.webp",
+      "before": null,
+      "after": "46de13691714a27359d4591a56868f498b03f19bd3d10a4f384fd0837f4c7d67"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-035.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-035.webp",
+      "before": null,
+      "after": "45400848a0d6cf5cb3dd0c4f1f613adcb1fb43b1f012b5a8640a6f60240ba8df"
+    },
+    {
+      "from": "editor/assets/oct14-kaijin-036.webp",
+      "to": "編集アプリ/MOB-PIECE-Editor/assets/oct14-kaijin-036.webp",
+      "before": null,
+      "after": "5adff61ef0c1e7501efad8b1127a2b3f498d116cb762f2e437db796c7802a41e"
+    },
+    {
+      "from": "editor/core.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/core.js",
+      "before": "9fc0a9bbe3aa9a91dc79426e6562110c37f2bfb32777b756a1b6bbeecb3b0fd3",
+      "after": "16d1b4d3e78dddf68696f6d8a59251842350e1653d2c502db1e4e0a00cac5018"
+    },
+    {
+      "from": "editor/data.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/data.js",
+      "before": "e307692d49d458ec9f2a60bd614ad7edf98e6868ddacd3c3a480ff7bd29cfff5",
+      "after": "e6978ecf1a6b03bfee08ff661a1c7d42f3554b57ecd4fee6ca2a22baced28f6f"
+    },
+    {
+      "from": "editor/editor-current-snapshot.json",
+      "to": "編集アプリ/MOB-PIECE-Editor/editor-current-snapshot.json",
+      "before": "c0c8752373c632e03ec3fe03dfe1d86901115f4ad6459aeb1359a7d9e7c48570",
+      "after": "e3d012686cdda2af2d5992b9c156cbcc323611b86e69f8ad169602f95e18ccf4"
+    },
+    {
+      "from": "editor/index.html",
+      "to": "編集アプリ/MOB-PIECE-Editor/index.html",
+      "before": "cc96f3024af568f8cc3ff4ab7a5b8650d9f5a134ca54f34678cb63d0ff4c1e4f",
+      "after": "23b3205d3a7324709805b36aa98389804535437588b69a1de0f4fed143e3cf58"
+    },
+    {
+      "from": "editor/migration-base.js",
+      "to": "編集アプリ/MOB-PIECE-Editor/migration-base.js",
+      "before": "dff467a077bd7ad99237c808e6b8d2f6b5adda0557c0a6f2c79aaf60e1fe5b08",
+      "after": "420d291667bdc163fc5e64b5dada2c1fb273c73740bf78654c1c27420187f3bf"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-005.webp",
+      "to": "piecefig/oct14-kaijin-005.webp",
+      "before": null,
+      "after": "cfde95a0cc50950e76226a0cb725b96ddf0c04d0498e7ad4b5e8b7a3751f3567"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-006.webp",
+      "to": "piecefig/oct14-kaijin-006.webp",
+      "before": null,
+      "after": "344bce6b437bbbacfcad1ee8179a54a8e60a9c996d1e38f8db9fbbfae813e6e7"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-007.webp",
+      "to": "piecefig/oct14-kaijin-007.webp",
+      "before": null,
+      "after": "fa528cc1a537a8c155ab4bab13e92cb8b657cdd1491691ba444158fbabb0458b"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-008.webp",
+      "to": "piecefig/oct14-kaijin-008.webp",
+      "before": null,
+      "after": "50216dc970f9f5eb10b28cedfcf5502ea6a2e710beef02dc42b6b5e7664d0460"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-009.webp",
+      "to": "piecefig/oct14-kaijin-009.webp",
+      "before": null,
+      "after": "d21ac46bd0cc876c4d57db1afe070aa2f1a2f6012fcbf1601d3c5193c41b1a85"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-010.webp",
+      "to": "piecefig/oct14-kaijin-010.webp",
+      "before": null,
+      "after": "9bca7f7b478987c105e99ed912ce0d851ac543f85f797f7c7fec3cfa28b4d687"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-011.webp",
+      "to": "piecefig/oct14-kaijin-011.webp",
+      "before": null,
+      "after": "0f0675c0cfffac010ead6dd68ba326f97b6b83fe54a3795adc4bacce1a8f131d"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-012.webp",
+      "to": "piecefig/oct14-kaijin-012.webp",
+      "before": null,
+      "after": "be34b5491271dfd82a89db6cf90e7eaef1dfb44567c31bb5987e91db53df821d"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-013.webp",
+      "to": "piecefig/oct14-kaijin-013.webp",
+      "before": null,
+      "after": "9a3a1a2a6905cb1428714aa7b52d8d5a478be8dacd87273ee7bc506d7b6be8bb"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-014.webp",
+      "to": "piecefig/oct14-kaijin-014.webp",
+      "before": null,
+      "after": "c2549ca9042bac9c65b9548fe0bb62da01537ac5d5ff4f0304e4ab0ddbc6ab07"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-015.webp",
+      "to": "piecefig/oct14-kaijin-015.webp",
+      "before": null,
+      "after": "deca0be8de7e91993b25655aed75980b80e9439a7d79e53d9c9a4a4696c50a43"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-016.webp",
+      "to": "piecefig/oct14-kaijin-016.webp",
+      "before": null,
+      "after": "b78dc0fa356dc22ae37cd23e71fe483f64971747bf08a14f293751cb88bee61e"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-017.webp",
+      "to": "piecefig/oct14-kaijin-017.webp",
+      "before": null,
+      "after": "d55880a20476e59c5bed3a4de694044597866319d115694166c706c8e087f9bb"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-018.webp",
+      "to": "piecefig/oct14-kaijin-018.webp",
+      "before": null,
+      "after": "3482f369d226f498f80aa2f2ea1ad4de1b21d396eb45a55fa18495bfa5b62bb0"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-019.webp",
+      "to": "piecefig/oct14-kaijin-019.webp",
+      "before": null,
+      "after": "be2421a86e28df9f5d5c755e37f90676527a95da8d2989e29469c2f83c1aac0f"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-020.webp",
+      "to": "piecefig/oct14-kaijin-020.webp",
+      "before": null,
+      "after": "4ef9d5537007b5dcb18baba1c6b4e2244910dbee9fc0d61ceaddcf9c7c32ba0b"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-021.webp",
+      "to": "piecefig/oct14-kaijin-021.webp",
+      "before": null,
+      "after": "9e11267cd9a8bf794ccadea7eb6ed46964346ebb026ecc9926d6f7d855622154"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-022.webp",
+      "to": "piecefig/oct14-kaijin-022.webp",
+      "before": null,
+      "after": "20ba6365d50d669de1a85a094138b595b5aa0b4f6bbfabe671d203861ae74273"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-023.webp",
+      "to": "piecefig/oct14-kaijin-023.webp",
+      "before": null,
+      "after": "41da679584d04d1be8ad3662794803af332a10fabf6927e5d43f978e2ea2a896"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-024.webp",
+      "to": "piecefig/oct14-kaijin-024.webp",
+      "before": null,
+      "after": "dc3a81ab16bda60a49e12c2c028269dc59d5b203efca8af95bfd058b05848f0a"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-025.webp",
+      "to": "piecefig/oct14-kaijin-025.webp",
+      "before": null,
+      "after": "e9112cde704ebe657201f5ed32963f20bd174026e7d9d7c8ab93e6e6cc88e9ed"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-026.webp",
+      "to": "piecefig/oct14-kaijin-026.webp",
+      "before": null,
+      "after": "f2aacd1e51da57ae55e554527799b58cd445990f67790f946d0e3fb2855d0e2f"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-027.webp",
+      "to": "piecefig/oct14-kaijin-027.webp",
+      "before": null,
+      "after": "0b3d2394b60d890bdabd1ca1f16ba20e0a7b3ae1c1ceed3b2df9127bb409cdfc"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-028.webp",
+      "to": "piecefig/oct14-kaijin-028.webp",
+      "before": null,
+      "after": "acd26a1c59a5f812ec7ac6e6beb54d34a7a61f813189a6bbb24626f94f99f63f"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-029.webp",
+      "to": "piecefig/oct14-kaijin-029.webp",
+      "before": null,
+      "after": "a5e1c90490ae00523055a648f717615f38908268d45bc221d7d57571c8b3c9cc"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-030.webp",
+      "to": "piecefig/oct14-kaijin-030.webp",
+      "before": null,
+      "after": "a98ea81c2365922a77e828d3e1f6343521d36c1937961c43a960545bddaafed2"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-031.webp",
+      "to": "piecefig/oct14-kaijin-031.webp",
+      "before": null,
+      "after": "460f5e6937a7c8cda44f4103da590aa2a0a6ddc9824c06b895ca05a367cdb201"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-032.webp",
+      "to": "piecefig/oct14-kaijin-032.webp",
+      "before": null,
+      "after": "c5058e509869e40b47f0879b965cd1f6866a66d9829a5d17e91ee4f9818b24fc"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-033.webp",
+      "to": "piecefig/oct14-kaijin-033.webp",
+      "before": null,
+      "after": "de88fb850c953f27261b4388810c281ced8da8ad4bab3e15c96327c2fcfca89c"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-034.webp",
+      "to": "piecefig/oct14-kaijin-034.webp",
+      "before": null,
+      "after": "8bff94656d94778b6e42c7dcad18aab490a58566a79bd877ccbc8ad10d0d86f0"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-035.webp",
+      "to": "piecefig/oct14-kaijin-035.webp",
+      "before": null,
+      "after": "48fc4efef1d394d56f9ab1ec44c4b8e8d1a95b879d92beb8085acc05ae70d417"
+    },
+    {
+      "from": "piecefig/oct14-kaijin-036.webp",
+      "to": "piecefig/oct14-kaijin-036.webp",
+      "before": null,
+      "after": "2a8be3034ad7fbaa4923650ffbee4f106017d95355488925c6cb8b826d5b295c"
+    },
+    {
+      "from": "更新内容-20261015.txt",
+      "to": "編集アプリ/更新内容-20261015.txt",
+      "before": null,
+      "after": "d2a22c4654a53a979345875368e841ae5051f92686fcf7d2ab56c538b4585d23"
+    },
+    {
+      "from": "merged-editor-draft.json",
+      "to": "編集アプリ/反映済み下書き-20261015.json",
+      "before": null,
+      "after": "ec2ccb825751895d9cb59997b2b4919ac91bde9c2752608a7a87501547e185dd"
+    }
+  ]
+}

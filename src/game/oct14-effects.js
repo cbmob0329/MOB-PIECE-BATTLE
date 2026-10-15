@@ -29,9 +29,11 @@ export function oct14Death(s,side,f,c){const p=s.players[side],q=c.passive(f);
  if(q.banishAfterRevive&&f.phoenixRevived){const i=p.grave.lastIndexOf(f.id);if(i>=0){const card=takeStoredCard(p,'grave',i);p.banished??=[];p.banished.push(card.id);const n=p.destroyed.lastIndexOf(card.id);if(n>=0)p.destroyed.splice(n,1);}}
 }
 export function oct14Event(s,e,by){for(let side=0;side<2;side++)for(const f of s.players[side].field.filter(Boolean)){const q=f.passiveLost?{}:by.get(f.id)?.passive||{};
+ if(e.type==='draw'&&q.cappedDrawGrowth){const n=Math.min(q.cappedDrawGrowth.step,q.cappedDrawGrowth.cap-(f.cappedDrawGrowth||0));f.cappedDrawGrowth=(f.cappedDrawGrowth||0)+n;f.permanentAtk+=n;f.permanentDef+=n;}
  if(e.type==='attack'&&e.side!==side){f.permanentAtk+=q.enemyAttackGrowth||0;const growth=q.attackedGrowth||f.effects.find(e=>e.key==='attackedGrowthTurn')?.value;if(e.targetUid===f.uid&&growth){f.permanentAtk+=growth.atk||0;f.permanentDef+=growth.def||0;}}
  if(e.type==='attack'&&e.side===side&&e.uid===f.uid){const g=f.effects.find(e=>e.key==='attackTeamGrowth')?.value;if(g)for(const t of s.players[side].field.filter(Boolean))if(g.tags.some(tag=>by.get(t.id).tags.includes(tag)))t.permanentAtk+=g.atk;}
  if(e.type==='defeat'&&e.side===side&&q.allyDeathGrowth){f.permanentAtk+=q.allyDeathGrowth.atk||0;f.permanentDef+=q.allyDeathGrowth.def||0;}
  if(e.type==='draw'&&e.side!==side&&q.enemyDrawDiscardBatch){const p=s.players[e.side],batch=s.drawBatch;if(batch){batch.discard=true;batch.ids.push(e.id);}else{const index=p.hand.lastIndexOf(e.id);if(index>=0){const card=takeStoredCard(p,'hand',index);putStoredCard(p,'grave',card.id,card.usage);}}}
 }const max=Math.min(99,...s.players.flatMap(p=>p.field.filter(Boolean)).filter(f=>!f.passiveLost).map(f=>by.get(f.id)?.passive?.handMax||99));if(max<99)for(const p of s.players)while(p.hand.length>max){const card=takeStoredCard(p,'hand',p.hand.length-1);putStoredCard(p,'grave',card.id,card.usage);}}
 export function finishDrawBatch(s){const batch=s.drawBatch;delete s.drawBatch;if(!batch?.discard||!batch.ids.length)return;const p=s.players[batch.side],id=batch.ids[Math.floor(Math.random()*batch.ids.length)],i=p.hand.lastIndexOf(id);if(i>=0){const c=takeStoredCard(p,'hand',i);putStoredCard(p,'grave',c.id,c.usage);}}
+

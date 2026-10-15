@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import {pathToFileURL} from 'node:url';
+const root=process.env.MPB_ROOT?pathToFileURL(process.env.MPB_ROOT.replaceAll('\\','/')+'/'):new URL('../',import.meta.url);
+const g=await import(new URL('src/game/soul-battle.js',root));
+const {bindBattle}=await import(new URL('src/game/oct06-passives.js',root));
+const {pieceStarterDeck}=await import(new URL('src/game/piece-starters.js',root));
+const fresh=()=>{const deck=pieceStarterDeck('materials-balloon'),s=g.createSoulBattle([deck,deck]);s.turn=3;s.active=0;s.phase='main';for(const p of s.players){p.hand=[];p.handBonuses=[];p.field=[null,null,null];p.reserve=[];p.grave=[];p.destroyed=[];}return s;};
+const put=(s,side,id,slot=0)=>s.players[side].field[slot]={id,uid:++s.serial,summonTurn:0,skillUsesUsed:0,attacks:0,skillTurn:-1,effects:[],attackedTargets:[],extra:0,permanentAtk:0,permanentDef:0};
+const settle=s=>{for(let i=0;s.pending&&i<20;i++)g.passReaction(s,1-s.pending.side);assert.equal(s.pending,null);};
+const cast=(s,f,options=g.cpuOptions(s,0,f.uid))=>{g.useSkill(s,0,f.uid,options);settle(s);};
+const setup=(id='01')=>{const s=fresh(),a=put(s,0,id),support=put(s,0,'NIN_M02',1),targets=[0,1,2].map(i=>put(s,1,'16',i));return {s,a,support,targets};};
+const strike=(s,a,d)=>{g.attack(s,0,a.uid,d.uid);settle(s);};
+test('Honetsubame: two distinct attacks, third target rejected without mutation',()=>{const {s,a,support,targets}=setup();cast(s,support,{el_a:a.uid});g.beginBattle(s,0);strike(s,a,targets[0]);assert(!g.canAttack(s,0,a,targets[0]));strike(s,a,targets[1]);assert(!g.canAttack(s,0,a,targets[2]));const before=JSON.stringify(s);assert.throws(()=>g.attack(s,0,a.uid,targets[2].uid));assert.equal(JSON.stringify(s),before);assert.equal(g.attackLimit(a),2);});
+for(const order of ['before','after'])test('Honetsubame cap survives four attacks '+order+' and extra attack credit',()=>{const {s,a,support,targets}=setup('202');a.permanentAtk=-200;if(order==='before')cast(s,a);cast(s,support,{el_a:a.uid});if(order==='after')cast(s,a);a.extra=2;g.beginBattle(s,0);strike(s,a,targets[0]);strike(s,a,targets[1]);assert.equal(g.attackLimit(a),2);assert(!g.canAttack(s,0,a,targets[2]));});
+test('Honetsubame expires on next turn; underlying four-attack skill still works',()=>{const {s,a,support,targets}=setup('202');cast(s,support,{el_a:a.uid});g.beginBattle(s,0);g.endTurn(s,0);g.beginBattle(s,1);g.endTurn(s,1);s.players[0].hand=[];cast(s,a);assert.equal(g.attackLimit(a),4);assert(!a.effects.some(e=>e.key==='eachTarget'));});
+test('Ordinary all-target attack still reaches three enemies, never repeats a target',()=>{const {s,a,targets}=setup('44');cast(s,a);g.beginBattle(s,0);for(const d of targets){assert(g.canAttack(s,0,a,d));strike(s,a,d);assert(!g.canAttack(s,0,a,d));}assert.equal(a.attacks,3);});
+test('Ordinary multiple attacks still permit the same target',()=>{const {s,a,targets}=setup('202');a.permanentAtk=-200;cast(s,a);g.beginBattle(s,0);for(let i=0;i<4;i++){assert(g.canAttack(s,0,a,targets[0]));strike(s,a,targets[0]);}assert(!g.canAttack(s,0,a,targets[0]));});
+test('Ameron data uses sweets and food tags',()=>{assert.deepEqual(g.soulById.get('NS2_055').passive.aura.tags,['specified-sweets','18']);});
+for(const tags of [['specified-sweets'],['18'],['specified-sweets','18'],['56'],['57'],[]])test('Ameron aura for tags '+JSON.stringify(tags),()=>{const s=fresh(),f=put(s,0,'01'),enemy=put(s,1,'01'),data=g.soulById.get('01'),original=data.tags;try{data.tags=tags;bindBattle(s,g.soulById);const base=g.stats(f),enemyBase=g.stats(enemy);put(s,0,'NS2_055',1);const actual=g.stats(f),bonus=tags.some(t=>['specified-sweets','18'].includes(t))?35:0;assert.deepEqual(actual,{atk:base.atk+bonus,def:base.def+bonus});assert.deepEqual(g.stats(enemy),enemyBase);}finally{data.tags=original;}});
+
+test('Honetsubame hard cap also survives earned kill-chain attacks',()=>{const {s,a,support,targets}=setup('52');for(const d of targets)d.permanentDef=-100;cast(s,a);cast(s,support,{el_a:a.uid});g.beginBattle(s,0);strike(s,a,targets[0]);strike(s,a,targets[1]);assert.equal(a.extra,2);assert.equal(g.attackLimit(a),2);assert(!g.canAttack(s,0,a,targets[2]));});

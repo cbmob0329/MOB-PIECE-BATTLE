@@ -1,0 +1,388 @@
+{
+  "figures": [
+    {
+      "id": "WRECK_S01",
+      "uid": "WRECK_S01",
+      "number": "WRECK_S01",
+      "name": "モブコンパスコ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "水",
+      "attackType": "物理",
+      "atk": 90,
+      "def": 110,
+      "role": "帰港の羅針盤",
+      "collection": "main",
+      "family": "WRECK",
+      "tags": [
+        "45",
+        "mat-ocean"
+      ],
+      "image": "piecefig/WRECK_S01.png",
+      "artReady": false,
+      "passive": {},
+      "soulSkill": {
+        "name": "帰港の羅針盤",
+        "description": "次の相手ターン終了まで、「海底に伝わる沈没船」タグを持つ味方全体のDEFを15アップする。",
+        "effect": "次の相手ターン終了まで、「海底に伝わる沈没船」タグを持つ味方全体のDEFを15アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "target": "allies",
+          "filterTag": "series-sunken-ship",
+          "def": 15,
+          "duration": "next-opponent"
+        }
+      }
+    },
+    {
+      "id": "WRECK_S02",
+      "uid": "WRECK_S02",
+      "number": "WRECK_S02",
+      "name": "モブイトアンカー",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "attackType": "物理",
+      "atk": 110,
+      "def": 90,
+      "role": "銀糸の応急処置",
+      "collection": "main",
+      "family": "WRECK",
+      "tags": [
+        "45",
+        "mat-ocean"
+      ],
+      "image": "piecefig/WRECK_S02.png",
+      "artReady": false,
+      "passive": {},
+      "soulSkill": {
+        "name": "銀糸の応急処置",
+        "description": "自分のライフを20回復し、味方1体のATK・DEF低下を解除する。",
+        "effect": "自分のライフを20回復し、味方1体のATK・DEF低下を解除する。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "heal": 20,
+          "target": "ally",
+          "cleanse": true
+        }
+      }
+    },
+    {
+      "id": "WRECK_M01",
+      "uid": "WRECK_M01",
+      "number": "WRECK_M01",
+      "name": "モブランタンナビ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "光/水",
+      "attackType": "魔法",
+      "atk": 165,
+      "def": 190,
+      "role": "船灯の航路",
+      "collection": "main",
+      "family": "WRECK",
+      "tags": [
+        "45",
+        "mat-ocean"
+      ],
+      "image": "piecefig/WRECK_M01.png",
+      "artReady": false,
+      "passive": {},
+      "soulSkill": {
+        "name": "船灯の航路",
+        "description": "このターン、「海底に伝わる沈没船」タグを持つ味方全体のATKを20、DEFを10アップする。",
+        "effect": "このターン、「海底に伝わる沈没船」タグを持つ味方全体のATKを20、DEFを10アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "target": "allies",
+          "filterTag": "series-sunken-ship",
+          "atk": 20,
+          "def": 10,
+          "duration": "turn"
+        }
+      }
+    },
+    {
+      "id": "WRECK_M02",
+      "uid": "WRECK_M02",
+      "number": "WRECK_M02",
+      "name": "モブアンカーリガー",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "水",
+      "attackType": "物理",
+      "atk": 190,
+      "def": 165,
+      "role": "投錨の拘束",
+      "collection": "main",
+      "family": "WRECK",
+      "tags": [
+        "45",
+        "mat-ocean"
+      ],
+      "image": "piecefig/WRECK_M02.png",
+      "artReady": false,
+      "passive": {},
+      "soulSkill": {
+        "name": "投錨の拘束",
+        "description": "相手1体のDEFをこのターン25下げる。そのフィギュアを次の相手ターン終了まで融合素材にできなくする。",
+        "effect": "相手1体のDEFをこのターン25下げる。そのフィギュアを次の相手ターン終了まで融合素材にできなくする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemy",
+          "def": -25,
+          "duration": "turn",
+          "fusionLock": true,
+          "lockDuration": "next-opponent"
+        }
+      }
+    },
+    {
+      "id": "WRECK_B01",
+      "uid": "WRECK_B01",
+      "number": "WRECK_B01",
+      "name": "モブレクイエムアーク",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "光/水",
+      "attackType": "魔法",
+      "atk": 260,
+      "def": 285,
+      "role": "沈没船の守り灯",
+      "collection": "main",
+      "family": "WRECK",
+      "tags": [
+        "45",
+        "mat-ocean"
+      ],
+      "image": "piecefig/WRECK_B01.png",
+      "artReady": false,
+      "passive": {
+        "aura": {
+          "tags": [
+            "series-sunken-ship"
+          ],
+          "def": 10
+        }
+      },
+      "soulSkill": {
+        "name": "沈没船の守り灯",
+        "description": "メインスキル：ライフを25回復し、次の相手ターン終了まで「海底に伝わる沈没船」タグを持つ味方全体のDEFを30アップする。\nパッシブ：同タグを持つ味方全体のDEFを10アップする。",
+        "effect": "メインスキル：ライフを25回復し、次の相手ターン終了まで「海底に伝わる沈没船」タグを持つ味方全体のDEFを30アップする。\nパッシブ：同タグを持つ味方全体のDEFを10アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "heal": 25,
+          "target": "allies",
+          "filterTag": "series-sunken-ship",
+          "def": 30,
+          "duration": "next-opponent"
+        }
+      }
+    },
+    {
+      "id": "WRECK_B02",
+      "uid": "WRECK_B02",
+      "number": "WRECK_B02",
+      "name": "モブアビスサルベイザー",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "水",
+      "attackType": "物理",
+      "atk": 285,
+      "def": 260,
+      "role": "深淵の引き揚げ",
+      "collection": "main",
+      "family": "WRECK",
+      "tags": [
+        "45",
+        "mat-ocean"
+      ],
+      "image": "piecefig/WRECK_B02.png",
+      "artReady": false,
+      "passive": {
+        "killHeal": 10
+      },
+      "soulSkill": {
+        "name": "深淵の引き揚げ",
+        "description": "メインスキル：相手1体のDEFをこのターン30下げる。このターン、相手フィールド全員へ1回ずつ攻撃できる。\nパッシブ：敵を撃破するたびライフを10回復する。",
+        "effect": "メインスキル：相手1体のDEFをこのターン30下げる。このターン、相手フィールド全員へ1回ずつ攻撃できる。\nパッシブ：敵を撃破するたびライフを10回復する。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "target": "enemy",
+          "def": -30,
+          "casterEach": true,
+          "duration": "turn"
+        }
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "id": "ocean-WRECK_M01-1",
+      "target": "WRECK_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "WRECK_S01"
+        },
+        {
+          "id": "NS002"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-WRECK_M01-2",
+      "target": "WRECK_M01",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "WRECK_S01"
+        },
+        {
+          "id": "WRECK_S02"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-WRECK_M02-1",
+      "target": "WRECK_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "WRECK_S02"
+        },
+        {
+          "id": "M4F_SIL_V02"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-WRECK_M02-2",
+      "target": "WRECK_M02",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "WRECK_S01"
+        },
+        {
+          "id": "WRECK_S02"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-WRECK_B01-1",
+      "target": "WRECK_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "WRECK_M01"
+        },
+        {
+          "id": "M4F_SIL_M01"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-WRECK_B01-2",
+      "target": "WRECK_B01",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "WRECK_M01"
+        },
+        {
+          "id": "WRECK_M02"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-WRECK_B02-1",
+      "target": "WRECK_B02",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "WRECK_M02"
+        },
+        {
+          "id": "M4F_SIL_M02"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-WRECK_B02-2",
+      "target": "WRECK_B02",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "WRECK_M01"
+        },
+        {
+          "id": "WRECK_M02"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-NS006-1",
+      "target": "NS006",
+      "fromClass": "seed",
+      "materials": [
+        {
+          "id": "mq:eventfig/43"
+        },
+        {
+          "id": "SWEET31"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    },
+    {
+      "id": "ocean-NS009-1",
+      "target": "NS009",
+      "fromClass": "middle",
+      "materials": [
+        {
+          "id": "M4F_SIL_M01"
+        },
+        {
+          "id": "M4F_SIL_M02"
+        }
+      ],
+      "special": false,
+      "status": "implemented",
+      "basis": "2026-10-15 requested ocean series integration"
+    }
+  ]
+}

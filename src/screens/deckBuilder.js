@@ -1,4 +1,4 @@
-import {figureSeries,figureSeriesNames} from '../game/figure-series.js';
+import {figureSeriesList,figureSeries,figureSeriesNames} from '../game/figure-series.js';
 import {soulFigures,soulById,ensureSoulDecks,prepareSoulDeck,validateSoulDeck} from '../game/soul-battle.js';
 import {createDeckDraft,draftProfile,draftStatus,updateDraft,addDraftRoute,prepareDraftSave} from '../game/deck-draft.js';
 import {fusionRecommendations,countIds} from '../game/soul-deck-assist.js';
@@ -26,7 +26,7 @@ export function openDeckBuilder(c,{render,toast}){
  const art=f=>`<img src="${esc(f.image)}" alt="" loading="lazy">`;
  const status=message=>{dialog.querySelector('[data-draft-message]').textContent=message;};
  function card(f){const n=draft.ids.filter(id=>id===f.id).length,s=draftStatus(profile,draft,f.id);return `<article class="draft-card" data-draft-card="${esc(f.id)}">${stageBadge(f)}<small>レア度 ${esc(f.rarity)}</small>${art(f)}<b>${esc(f.name)}</b><small>編成 ${n} / 所持 ${profile.owned[f.id]||0}</small><div class="draft-quantity"><button data-draft-remove="${esc(f.id)}" ${n?'':'disabled'} aria-label="${esc(f.name)}を1体外す">−</button><strong>${n}</strong><button data-draft-add="${esc(f.id)}" ${s.allowed?'':'disabled'} aria-label="${esc(f.name)}を1体追加">＋</button></div><small class="draft-reason">${esc(s.reasons.length?'追加不可：'+s.reasons.join(' / '):'')}</small><details><summary>性能を見る</summary>${soulPerformance(f)}</details></article>`;}
- function list(){const counts=countIds(draft.ids);let rows=soulFigures.filter(f=>profile.owned[f.id]>0&&(step==='targets'?f.soulClass!=='seed':step==='seeds'?f.soulClass==='seed':counts[f.id]>0));rows=rows.filter(f=>(rarity==='ALL'||f.rarity===rarity)&&(stage==='ALL'||f.soulClass===stage)&&(series==='ALL'||figureSeries(f)===series)&&norm(f.name+' '+f.id+' '+figureSeries(f)).includes(norm(query)));dialog.querySelector('.draft-grid').innerHTML=rows.map(card).join('')||'<p>条件に合う所持フィギュアがありません。</p>';}
+ function list(){const counts=countIds(draft.ids);let rows=soulFigures.filter(f=>profile.owned[f.id]>0&&(step==='targets'?f.soulClass!=='seed':step==='seeds'?f.soulClass==='seed':counts[f.id]>0));rows=rows.filter(f=>(rarity==='ALL'||f.rarity===rarity)&&(stage==='ALL'||f.soulClass===stage)&&(series==='ALL'||figureSeriesList(f).includes(series))&&norm(f.name+' '+f.id+' '+figureSeries(f)).includes(norm(query)));dialog.querySelector('.draft-grid').innerHTML=rows.map(card).join('')||'<p>条件に合う所持フィギュアがありません。</p>';}
  function materialBody(){const targets=[...new Set(draft.ids.filter(id=>soulById.get(id)?.soulClass!=='seed'))].sort((a,b)=>(soulById.get(a).soulClass==='mob'?-1:1)-(soulById.get(b).soulClass==='mob'?-1:1));if(!targets.includes(target))target=targets[0]||'';
   if(!target){routes=[];return '<p>MOB・ミドルが未選択です。戻って選ぶか、所持シード一覧から編成できます。</p>';}
   if(!routeCache.has(target))routeCache.set(target,fusionRecommendations(target,availableDeckOwned(profile,draft.slot),draft.ids));routes=routeCache.get(target);
