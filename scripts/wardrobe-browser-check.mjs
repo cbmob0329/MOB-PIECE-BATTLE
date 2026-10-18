@@ -17,6 +17,25 @@ try{
  await page.reload();await page.locator('.wardrobe-page').waitFor();assert(await page.locator('.wardrobe-model img[src$="layers/sea/scarf.png"]').count());
  for(const width of [320,390,1024]){await page.setViewportSize({width,height:844});const overflow=await page.locator('.wardrobe-page').evaluate(e=>({width:e.clientWidth,scroll:e.scrollWidth,wide:[...e.querySelectorAll('*')].filter(x=>x.getBoundingClientRect().right>e.getBoundingClientRect().right+1).slice(0,12).map(x=>[x.className,x.getBoundingClientRect().width])}));if(overflow.scroll>overflow.width+1){console.log(width,overflow);await page.screenshot({path:'artifacts/wardrobe-overflow.png'});}assert(overflow.scroll<=overflow.width+1);await page.locator('.wardrobe-model img').evaluateAll(imgs=>Promise.all(imgs.map(img=>img.decode())));await page.locator('#main').screenshot({path:`artifacts/wardrobe-${width}.png`});}
  await page.locator('.wardrobe-closet').scrollIntoViewIfNeeded();await page.locator('#main').screenshot({path:'artifacts/wardrobe-parts.png'});
+ // The bottom-most part must be selectable while preview and save stay visible.
+ for(const [width,height] of [[320,568],[390,844],[1024,768]]){
+  await page.setViewportSize({width,height});
+  await page.locator('[data-wardrobe-view="parts"]').click();
+  await page.locator('[data-wardrobe-slot="outfit"]').click();
+  await page.locator('.wardrobe-grid').evaluate(e=>e.scrollTop=e.scrollHeight);
+  const before=await page.locator('.wardrobe-grid').evaluate(e=>e.scrollTop);
+  await page.locator('[data-wardrobe-item="miramob"]').click();
+  const layout=await page.evaluate(()=>{const main=document.querySelector('#main'),stage=document.querySelector('.wardrobe-stage'),grid=document.querySelector('.wardrobe-grid'),save=document.querySelector('[data-wardrobe="save"]');return {main:main.getBoundingClientRect().toJSON(),stage:stage.getBoundingClientRect().toJSON(),grid:grid.getBoundingClientRect().toJSON(),save:save.getBoundingClientRect().toJSON(),scroll:grid.scrollTop,outerScroll:main.scrollTop};});
+  assert(layout.stage.top>=layout.main.top&&layout.stage.bottom<=layout.grid.top);
+  assert(layout.save.top>=layout.main.top&&layout.save.bottom<=layout.main.bottom);
+  if(layout.grid.height<100){console.log(layout);await page.screenshot({path:'artifacts/wardrobe-short-debug.png'});}
+  assert(layout.grid.height>=100,`parts remain usable at ${width}x${height}`);
+  assert(Math.abs(layout.scroll-before)<3,'selection preserves list scroll');assert.equal(layout.outerScroll,0);
+  assert(await page.locator('.wardrobe-model img[src$="layers/miramob/outfit.png"]').count());
+  await page.locator('.wardrobe-model img').evaluateAll(imgs=>Promise.all(imgs.map(img=>img.decode())));
+  await page.locator('#main').screenshot({path:`artifacts/wardrobe-fixed-${width}.png`});
+ }
+ await page.locator('[data-wardrobe="undo"]').click();
  // Failed writes must leave the saved outfit and the active avatar intact.
  await page.locator('[data-wardrobe-view="sets"]').click();await page.locator('[data-wardrobe-item="desert"]').click();
  await page.evaluate(()=>{window.savedStorageSet=Storage.prototype.setItem;Storage.prototype.setItem=function(){throw Error('test quota');};});
