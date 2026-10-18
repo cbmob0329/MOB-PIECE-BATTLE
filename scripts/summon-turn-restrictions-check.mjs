@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import * as g from '../src/game/soul-battle.js';
+import {pieceStarterDeck} from '../src/game/piece-starters.js';
+import {usageRecord} from '../src/game/skill-budget.js';
+const deck=pieceStarterDeck('materials-balloon');
+const fresh=side=>{const s=g.createSoulBattle([deck,deck]);s.turn=5;s.active=side;s.phase='main';for(const p of s.players){p.field=[null,null,null];p.hand=[];p.handBonuses=[];p.reserve=[];p.skillUsage={};}return s;};
+const put=(s,side,id,slot,turn=1)=>s.players[side].field[slot]={id,uid:++s.serial,summonTurn:turn,attacks:0,skillTurn:-1,skillUsesUsed:0,effects:[],attackedTargets:[],lastTarget:null,extra:0,permanentAtk:0,permanentDef:0};
+const candidates=g.recipes.filter(r=>g.soulById.get(r.target)?.soulClass==='mob'&&r.materials.every(m=>m.id&&g.soulById.get(m.id)?.soulClass==='middle'));
+assert(candidates.length);let checked=0;
+for(const side of [0,1])for(const recipe of candidates){const s=fresh(side),p=s.players[side],a=put(s,side,recipe.materials[0].id,0),b=put(s,side,recipe.materials[1].id,1);p.reserve=[recipe.target];assert(g.fusionOptions(s,side,[a.uid,b.uid]).some(r=>r.id===recipe.id));for(const unit of [a,b]){unit.summonTurn=s.turn;assert(!g.fusionOptions(s,side,[a.uid,b.uid]).some(r=>r.id===recipe.id));const before=JSON.stringify(s);assert.throws(()=>g.fuse(s,side,[a.uid,b.uid],recipe.id));assert.equal(JSON.stringify(s),before);unit.summonTurn=1;}
+// A just-summoned middle returned to the hand still cannot become MOB material.
+p.field[1]=null;b.summonTurn=s.turn;p.hand=[b.id];p.handBonuses=[{id:b.id,index:0,...usageRecord(b)}];assert(!g.fusionOptions(s,side,[a.uid,{handIndex:0}]).some(r=>r.id===recipe.id));s.turn+=2;assert(g.fusionOptions(s,side,[a.uid,{handIndex:0}]).some(r=>r.id===recipe.id));g.fuse(s,side,[a.uid,{handIndex:0}],recipe.id);const mob=p.field.find(Boolean),enemy=put(s,1-side,'01',0);assert.equal(mob.mobFusionTurn,s.turn);s.phase='battle';assert(!g.canAttack(s,side,mob,enemy));assert.throws(()=>g.attack(s,side,mob.uid,enemy.uid));const restored=JSON.parse(JSON.stringify(s));assert(!g.canAttack(restored,side,restored.players[side].field.find(Boolean),restored.players[1-side].field[0]));
+// Returning to hand and summoning again must retain the fusion restriction.
+s.phase='main';p.field=[null,null,null];p.hand=[mob.id];p.handBonuses=[{id:mob.id,index:0,direct:true,...usageRecord(mob)}];const returned=g.summon(s,side,0,0);s.phase='battle';assert(!g.canAttack(s,side,returned,enemy));s.turn+=2;assert(g.canAttack(s,side,returned,enemy));checked++;}
+for(const side of [0,1]){const s=fresh(side),middle=candidates[0].materials[0].id,a=put(s,side,middle,0,s.turn),p=s.players[side];p.hand=[middle];const r=g.fusionOptions(s,side,[{handIndex:0},a.uid]).find(r=>r.resonance);assert(r,'Middle strengthening stays allowed');g.fuse(s,side,[{handIndex:0},a.uid],r.id);assert.equal(p.field[0].summonTurn,s.turn);
+const mobId=candidates[0].target;for(const turn of [s.turn,s.turn-2]){const t=fresh(side),m=put(t,side,mobId,0,1);m.mobFusionTurn=turn;t.players[side].hand=[mobId];const r=g.fusionOptions(t,side,[{handIndex:0},m.uid]).find(r=>r.resonance);assert(r);g.fuse(t,side,[{handIndex:0},m.uid],r.id);const target=put(t,1-side,'01',0);t.phase='battle';assert.equal(g.canAttack(t,side,t.players[side].field[0],target),turn!==t.turn);}}
+console.log(`PASS ${checked} recipe/side cases: either fresh Middle blocked, hand return, next turn unlock, MOB fusion attack lock, resummon, JSON, strengthening preservation`);

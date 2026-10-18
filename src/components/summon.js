@@ -6,12 +6,13 @@ const clamp=x=>Math.min(1,Math.max(0,x));
 const ease=x=>1-Math.pow(1-clamp(x),3);
 // Visuals never mutate the already-committed draw.
 export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,onFinish}){
+ reduced=!!reduced||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  const audioScope=sound.beginScope('gacha');
  const copy=messages.cues[cue]||messages.cues.normal,t=Object.fromEntries(Object.entries(messages).map(([k,v])=>[k,typeof v==='string'?esc(v):v]));
  const palette=({normal:['#b8e66d','#244c3d'],ssr:['#c2abff','#553597'],pickup:['#ffaf81','#ab403d'],allSSR:['#ffe476','#705011']})[cue]||['#b8e66d','#244c3d'];
  dialog.classList.add('cinema-dialog');
  dialog.innerHTML='<section class="figure-lab lab-'+cue+'" data-phase="ready" style="--lab-accent:'+palette[0]+';--lab-ink:'+palette[1]+'">'+
- '<canvas class="lab-canvas" aria-hidden="true"></canvas><header><b>'+t.brand+'<small>'+(preview?t.previewHeader:t.header)+'</small></b><button data-skip>'+t.skip+'</button></header>'+
+ '<div class="lab-portal" aria-hidden="true"><i></i><i></i><i></i></div><div class="lab-completion-glow" aria-hidden="true"></div><canvas class="lab-canvas" aria-hidden="true"></canvas><header><b>'+t.brand+'<small>'+(preview?t.previewHeader:t.header)+'</small></b><button data-skip>'+t.skip+'</button></header>'+
  '<div class="lab-heading"><small>'+t.eyebrow+'</small><h2>'+t.title+'</h2></div>'+
  '<div class="lab-core" aria-hidden="true"><div class="lab-core-ring"></div><img src="'+(import.meta.env?.BASE_URL??'./')+'icon/gacha.png" alt=""><b hidden>'+t.mob+'</b><span>＋</span><span>＋</span></div><div class="lab-platform" aria-hidden="true"></div>'+
  '<div class="lab-cue"><small>'+t.cutLabel+'</small><h2>'+esc(copy[0])+'</h2><p>'+esc(copy[1])+'</p></div>'+
@@ -21,6 +22,7 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
  '<div class="lab-parade" hidden></div>'+
  '<footer><p class="scene-caption" aria-live="polite">'+t.ready+'</p><button data-release>'+t.release+'<small>'+t.releaseEnglish+'</small></button><button data-finish hidden>'+(preview?t.closePreview:t.showResult)+' →</button><small>'+(reduced?t.reduced:t.hint)+'</small></footer></section>';
  const scene=dialog.querySelector('.figure-lab'),canvas=scene.querySelector('canvas'),ctx=canvas.getContext('2d');
+ scene.dataset.reduced=String(reduced);
  const core=scene.querySelector('.lab-core img');core.onerror=()=>{core.hidden=true;core.nextElementSibling.hidden=false;};
  const sprite=new Image();const sourceUrl=new URL(hero.image,document.baseURI).href;sprite.src=sourceUrl;let layers=null;const rank=({R:1,SR:2,SSR:3,UR:4,MOB:5})[hero.rarity]||1;const intensity=1+(rank-1)*.22;scene.dataset.figureId=hero.sourceId||hero.id;scene.dataset.rarity=hero.rarity;
  const durations=reduced?{assemble:1200,ink:1300}:{assemble:2700,ink:2800};
@@ -35,9 +37,26 @@ export function playSummon(dialog,{cue,hero,figures=[hero],art,reduced,preview,o
   const {width:w,height:h}=canvas.getBoundingClientRect(),scale=Math.min(devicePixelRatio||1,2);
   if(canvas.width!==Math.round(w*scale)||canvas.height!==Math.round(h*scale)){canvas.width=Math.round(w*scale);canvas.height=Math.round(h*scale);}
   ctx.setTransform(scale,0,0,scale,0,0);ctx.clearRect(0,0,w,h);const elapsed=(now-born)/1000,cx=w/2,cy=h*.46;
-  if(!reduced)for(let i=0;i<24;i++){
+  if(!reduced)for(let i=0;i<40+rank*8;i++){
    const a=i*2.399+elapsed*(phase==='gather'?1.8:.15),r=(phase==='gather'?Math.max(20,180-elapsed*90):145)+i%4*10;
    ctx.save();ctx.translate(cx+Math.cos(a)*r,cy+Math.sin(a)*r*.8);ctx.rotate(a);ctx.fillStyle=i%3?palette[0]:palette[1];ctx.globalAlpha=phase==='reveal'?.16:.6;ctx.fillRect(-3,-3,6+i%4,6+i%4);ctx.restore();
+  }
+  if(!reduced&&phase!=='ready'){
+   ctx.save();ctx.globalCompositeOperation='screen';
+   // Energy ribbons converge during formation; the finished figure gets a starburst.
+   const reveal=phase==='reveal',charge=['gather','cue','outline'].includes(phase),radius=Math.min(w*.42,h*.25);
+   for(let i=0;i<18+rank*4;i++){
+    const a=i*2.399+elapsed*(reveal?.12:.3),pulse=(elapsed*.42+i*.137)%1;
+    const r=reveal?radius*(.55+pulse*1.9):radius*(charge?1.8-pulse:1.1+pulse*.8);
+    const length=reveal?28+rank*8:10+rank*4;
+    ctx.strokeStyle=i%3===0?'#fff2b4':palette[0];ctx.globalAlpha=(1-pulse)*.65;
+    ctx.lineWidth=i%3===0?2:1;ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*r,cy+Math.sin(a)*r);
+    ctx.lineTo(cx+Math.cos(a)*(r+length),cy+Math.sin(a)*(r+length));ctx.stroke();
+   }
+   if(reveal&&elapsed<2){
+    for(let i=0;i<3;i++){const p=clamp((elapsed-i*.23)/1.3);if(p<=0||p>=1)continue;ctx.globalAlpha=(1-p)*.8;ctx.strokeStyle=palette[0];ctx.lineWidth=3*(1-p)+1;ctx.beginPath();ctx.ellipse(cx,cy,radius*(.3+p*1.7),radius*(.3+p*1.7)*.75,0,0,Math.PI*2);ctx.stroke();}
+   }
+   ctx.restore();
   }
   if(layers&&['gather','cue','outline','assemble','ink'].includes(phase)){
    const size=Math.min(w*.8,h*.4,340),ratio=Math.min(size/layers.width,size/layers.height),dw=layers.width*ratio,dh=layers.height*ratio;

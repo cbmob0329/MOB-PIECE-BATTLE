@@ -1,3 +1,4 @@
+import {deckSlotCount} from './deck-slots.js';
 import {masterDeckLocked,MASTER_DECK_LOCK_MESSAGE} from './master-deck-lock.js';
 import {recipePairMatches} from './fusion-rules.js';
 import {deckViolations,isRepairOnly,availableDeckOwned,soulCopyLimits,soulDeckSize} from './deck-legality.js';
@@ -11,8 +12,8 @@ export const recipes=catalog.recipes;
 export function validateSoulDeck(ids,owned=null,context={}){return deckViolations(ids,owned,soulById,quotas,context);}
 export function ensureSoulDecks(profile){
  if(!Array.isArray(profile.soulDecks))profile.soulDecks=[];
- for(let i=0;i<5;i++)if(!Array.isArray(profile.soulDecks[i]))profile.soulDecks[i]=[];
- profile.soulDeckSlot=Math.max(0,Math.min(4,Math.trunc(Number(profile.soulDeckSlot)||0)));
+ for(let i=0;i<deckSlotCount(profile);i++)if(!Array.isArray(profile.soulDecks[i]))profile.soulDecks[i]=[];
+ profile.soulDeckSlot=Math.max(0,Math.min(deckSlotCount(profile)-1,Math.trunc(Number(profile.soulDeckSlot)||0)));
  return profile.soulDecks[profile.soulDeckSlot];
 }
 // Use the same validation for the add button and the save operation. A card's

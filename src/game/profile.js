@@ -1,3 +1,4 @@
+import {deckSlotCount} from './deck-slots.js';
 import {normalizeProgression} from './progression.js';
 import {normalizeInventory} from './inventory.js';
 import {favoriteIds} from './favorites.js';
@@ -21,10 +22,12 @@ export let storageAvailable=true;
 export let isNewProfile=false;
 function cleanDeck(deck){return Array.isArray(deck)?deck.filter(id=>byId.has(id)):[];}
 function normalizeDeckStorage(obj,source=null){
-  const active=Math.max(0,Math.min(DECK_SLOTS-1,Math.trunc(Number(obj.activeDeckSlot)||0)));
+  obj.deckSlotCount=deckSlotCount(obj);
+  const count=obj.deckSlotCount;
+  const active=Math.max(0,Math.min(count-1,Math.trunc(Number(obj.activeDeckSlot)||0)));
   const incoming=Array.isArray(source?.deckPresets)?source.deckPresets:null;
-  const presets=emptyDecks();
-  if(incoming){for(let i=0;i<DECK_SLOTS;i++)presets[i]=cleanDeck(incoming[i]);}
+  const presets=Array.from({length:count},()=>[]);
+  if(incoming){for(let i=0;i<count;i++)presets[i]=cleanDeck(incoming[i]);}
   else presets[0]=cleanDeck(source?.deck||obj.deck||[]);
   obj.activeDeckSlot=active;obj.deckPresets=presets;
   const current=cleanDeck(source?.deck||obj.deck||presets[active]);

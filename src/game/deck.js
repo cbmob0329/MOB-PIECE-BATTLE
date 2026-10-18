@@ -1,3 +1,4 @@
+import {deckSlotCount} from './deck-slots.js';
 export const RULES = Object.freeze({deckSize:25,maxCost:80,handSize:5,exchangesPerBattle:1,winsToMatch:2,centerIndex:2,duplicateCaps:Object.freeze({R:3,SR:3,SSR:2,UR:2,MOB:1}),versions:Object.freeze({stats:115,modes:132,presentation:133,tempo:136})});
 // A draft validator. Ownership must additionally be supplied before a playable deck is accepted.
 export function validateDeck(ids, byId, owned = null) {
@@ -41,13 +42,13 @@ export function autoBuildDeck(figures, owned = {}) {
 
 export const DECK_SLOT_COUNT=5;
 export function normalizeDeckPresets(profile){
- if(!Array.isArray(profile.deckPresets))profile.deckPresets=Array.from({length:DECK_SLOT_COUNT},()=>[]);
- while(profile.deckPresets.length<DECK_SLOT_COUNT)profile.deckPresets.push([]);
- profile.deckPresets=profile.deckPresets.slice(0,DECK_SLOT_COUNT).map(x=>Array.isArray(x)?x:[]);
- profile.activeDeckSlot=Math.max(0,Math.min(DECK_SLOT_COUNT-1,Math.trunc(Number(profile.activeDeckSlot)||0)));
+ if(!Array.isArray(profile.deckPresets))profile.deckPresets=Array.from({length:deckSlotCount(profile)},()=>[]);
+ while(profile.deckPresets.length<deckSlotCount(profile))profile.deckPresets.push([]);
+ profile.deckPresets=profile.deckPresets.slice(0,deckSlotCount(profile)).map(x=>Array.isArray(x)?x:[]);
+ profile.activeDeckSlot=Math.max(0,Math.min(deckSlotCount(profile)-1,Math.trunc(Number(profile.activeDeckSlot)||0)));
  if(!Array.isArray(profile.deck))profile.deck=[];
  profile.deckPresets[profile.activeDeckSlot]=[...profile.deck];
  return profile;
 }
 export function saveActiveDeck(profile){normalizeDeckPresets(profile);profile.deckPresets[profile.activeDeckSlot]=[...profile.deck];return profile;}
-export function switchDeckSlot(profile,index){normalizeDeckPresets(profile);saveActiveDeck(profile);const next=Math.max(0,Math.min(DECK_SLOT_COUNT-1,Math.trunc(Number(index)||0)));profile.activeDeckSlot=next;profile.deck=[...(profile.deckPresets[next]||[])];return profile.deck;}
+export function switchDeckSlot(profile,index){normalizeDeckPresets(profile);saveActiveDeck(profile);const next=Math.max(0,Math.min(deckSlotCount(profile)-1,Math.trunc(Number(index)||0)));profile.activeDeckSlot=next;profile.deck=[...(profile.deckPresets[next]||[])];return profile.deck;}

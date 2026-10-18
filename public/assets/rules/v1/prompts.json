@@ -1,0 +1,13 @@
+{
+  "method": "Original game PNGs embedded unchanged in HTML/CSS diagrams; scripts/render-rule-illustrations.mjs exports 1200px square PNGs. Built-in image_gen only removes the guide mascot pedestal.",
+  "mascotPrompt": "Edit the provided mascot image: remove ONLY the entire display pedestal, all signage, all text, wooden ORIGINAL FIGURE sign, MOB block, platform, shadow and background. Keep exactly the same black spiky mascot, same glasses, same white eyes, blue graduation cap and gold tassel, red scarf, crossed-arm pose, body and feet. Full body centered, no crop of cap or feet, substantial transparent margin around it. Output a clean transparent PNG cutout. Do not add any other creature, text, decoration or ground. Preserve character design faithfully.",
+  "figures": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "18",
+    "piece:002"
+  ]
+}

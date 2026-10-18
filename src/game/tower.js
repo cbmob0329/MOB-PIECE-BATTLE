@@ -1,3 +1,4 @@
+import {deckSlotCount} from './deck-slots.js';
 import {masterDeckLocked,MASTER_DECK_LOCK_MESSAGE} from './master-deck-lock.js';
 import starterV2 from '../data/oct10-starter-v2.json' with {type:'json'};
 import {towerVersion,towerStarters,towerMix,grassTower,towerEnemy} from '../data/tower.js';
@@ -6,11 +7,11 @@ import {prepareTowerRewards,applyTowerOpponentRewards} from './tower-rewards.js'
 export function towerState(profile){const p=profile.towerProgress||{};return {...p,version:towerVersion,cleared:[...new Set((p.cleared||[]).filter(n=>Number.isInteger(n)&&n>=1&&n<=5))],starterGranted:p.starterGranted===true,starterVersion:p.starterVersion||0,active:p.active||null,last:p.last||null};}
 export function prepareTowerStartup(profile){
  const next=structuredClone(profile),t=towerState(next);next.towerProgress=t;if(t.starterGranted&&t.starterVersion>=4)return next;
- if(!t.starterGranted&&!next.initialChoice?.claimed&&next.initialChoice?.state!=='claimed'){const starter=towerStarters[0];next.owned??={};const counts={};for(const id of starter.deck)counts[id]=(counts[id]||0)+1;for(const [id,n] of Object.entries(counts))next.owned[id]=Math.max(next.owned[id]||0,n);next.soulDecks=Array.from({length:5},(_,i)=>[...(next.soulDecks?.[i]||[])]);const slot=next.soulDecks.findIndex(d=>!d.length);if(slot>=0)next.soulDecks[slot]=[...starter.deck];t.starterId=starter.id;if(!next.welcomeClaimed){next.diamonds=(next.diamonds||0)+50;next.welcomeClaimed=true;}}
+ if(!t.starterGranted&&!next.initialChoice?.claimed&&next.initialChoice?.state!=='claimed'){const starter=towerStarters[0];next.owned??={};const counts={};for(const id of starter.deck)counts[id]=(counts[id]||0)+1;for(const [id,n] of Object.entries(counts))next.owned[id]=Math.max(next.owned[id]||0,n);next.soulDecks=Array.from({length:deckSlotCount(next)},(_,i)=>[...(next.soulDecks?.[i]||[])]);const slot=next.soulDecks.findIndex(d=>!d.length);if(slot>=0)next.soulDecks[slot]=[...starter.deck];t.starterId=starter.id;if(!next.welcomeClaimed){next.diamonds=(next.diamonds||0)+50;next.welcomeClaimed=true;}}
  t.starterGranted=true;t.starterVersion=4;next.initialChoice={...next.initialChoice,claimed:true};return next;
 }
 export function towerDeckOptions(profile){
- const saved=Array.from({length:5},(_,i)=>({key:'slot:'+i,name:'DECK '+(i+1),deck:profile.soulDecks?.[i]||[],slot:i}));
+ const saved=Array.from({length:deckSlotCount(profile)},(_,i)=>({key:'slot:'+i,name:'DECK '+(i+1),deck:profile.soulDecks?.[i]||[],slot:i}));
  const templates=[...towerStarters,towerMix].map(s=>({key:'starter:'+s.id,name:s.name,deck:s.deck,slot:2}));
  return [...saved,...templates].map(o=>({...o,check:validateSoulDeck(o.deck,profile.owned,{profile,slot:o.slot})}));
 }
