@@ -1,0 +1,115 @@
+{
+  "tool": "Built-in image_gen",
+  "assets": [
+    {
+      "id": "032",
+      "name": "真珠貝の案内人",
+      "concept": "SEED beginner: pearl-shell guide, small pearly white shell hood with cat ears, turquoise inner cloak, round gold eyeglasses and gold ear disks, holds one dorayaki pancake open on a pearl oyster shell, simple cute calm silhouette, short small body.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-b9531310-a7ad-49e8-adb7-0850023b93d3.png"
+    },
+    {
+      "id": "033",
+      "name": "珊瑚の菓子職人",
+      "concept": "SEED beginner: coral pastry chef, pale coral pink and white short chef outfit, little coral branches decorating a cat-eared hood, gold round eyeglasses and gold ear disks, holding one handmade dorayaki pancake and a tiny wooden spatula, simple outfit, cheerful.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-db94d7bc-abb7-434b-9531-b0e0548c3418.png"
+    },
+    {
+      "id": "034",
+      "name": "くらげ灯の配達員",
+      "concept": "SEED beginner: jellyfish lantern courier, translucent pale cyan jellyfish cap above cat ears, dark navy body with round gold eyeglasses and gold ear disks, short cyan cape, holds one dorayaki pancake and a small jellyfish lantern, compact clean readable silhouette.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-4565f3b0-2e8e-4ce8-bccd-83d64811890d.png"
+    },
+    {
+      "id": "035",
+      "name": "潮星の見張り番",
+      "concept": "SEED beginner: starfish lookout, orange starfish ornament on deep teal cat-eared sailor hood, dark face with big round gold eyeglasses and gold ear disks, short tiny sailor costume, holding dorayaki pancake like a small starfish shield, energetic.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-3a0176d6-3264-40ed-b088-7f01650b68e2.png"
+    },
+    {
+      "id": "036",
+      "name": "タツノオトシゴの探索者",
+      "concept": "SEED beginner: seahorse treasure scout, mint green and golden-yellow explorer costume, little seahorse crest on cat-eared hood, round gold eyeglasses and gold ear disks, carries a small rolled map and a dorayaki pancake treasure, short legs and oversized head.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-eacf6f2f-a041-4d26-9d1c-1d7cf5886c43.png"
+    },
+    {
+      "id": "037",
+      "name": "泡の宝箱守り",
+      "concept": "SEED beginner: bubble treasure-chest keeper, rounded aqua diving costume, cat ears and round gold eyeglasses, gold ear disks, holding a little opened treasure chest with a single golden-brown dorayaki pancake and two pearls, compact friendly guardian, no complex armor.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-ce2728ec-9643-44a4-8684-bbc96113317f.png"
+    },
+    {
+      "id": "038",
+      "name": "潮音の笛吹き",
+      "concept": "SEED beginner: conch flute musician, lavender-blue and pearly white sailor hood with cat ears, gold round eyeglasses and gold ear disks, holds a short conch flute in one hand and dorayaki pancake in the other, simple compact beginner costume.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-479df1c7-224d-49c8-993b-07b2524b4dc8.png"
+    },
+    {
+      "id": "039",
+      "name": "真珠珊瑚の司祭",
+      "concept": "MIDDLE evolution: pearl coral priest, ornate white turquoise gold cat-eared hood and flowing short ceremonial robe, oversized dark face with round gold glasses and gold ear disks, holds tall coral staff crowned with a dorayaki pancake and pearls, pearl water magic curling gently, visually more elaborate than beginner but not boss.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-12c9b656-ca21-4024-9cd3-83ebd5b2b5c7.png"
+    },
+    {
+      "id": "040",
+      "name": "竜潮の秘宝騎士",
+      "concept": "MIDDLE evolution: seahorse tide treasure knight, ornate navy teal gold armor with cat ears, dark face and round gold eyeglasses and gold ear disks, elegant small seahorse crest, one hand holds a dorayaki shield and other a conch-tipped short spear, restrained turquoise waves around feet, compact chibi, not a giant monster.",
+      "path": "C:\\Users\\user\\.codex\\generated_images\\01a0f685-b546-7733-86ca-eb69fee17f0b\\exec-d236c1c8-f4fc-4cc3-a2ca-98b4d47a2317.png"
+    }
+  ],
+  "prompts": [
+    {
+      "id": "032",
+      "name": "真珠貝の案内人",
+      "concept": "SEED beginner: pearl-shell guide, small pearly white shell hood with cat ears, turquoise inner cloak, round gold eyeglasses and gold ear disks, holds one dorayaki pancake open on a pearl oyster shell, simple cute calm silhouette, short small body.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: SEED beginner: pearl-shell guide, small pearly white shell hood with cat ears, turquoise inner cloak, round gold eyeglasses and gold ear disks, holds one dorayaki pancake open on a pearl oyster shell, simple cute calm silhouette, short small body. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    },
+    {
+      "id": "033",
+      "name": "珊瑚の菓子職人",
+      "concept": "SEED beginner: coral pastry chef, pale coral pink and white short chef outfit, little coral branches decorating a cat-eared hood, gold round eyeglasses and gold ear disks, holding one handmade dorayaki pancake and a tiny wooden spatula, simple outfit, cheerful.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: SEED beginner: coral pastry chef, pale coral pink and white short chef outfit, little coral branches decorating a cat-eared hood, gold round eyeglasses and gold ear disks, holding one handmade dorayaki pancake and a tiny wooden spatula, simple outfit, cheerful. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    },
+    {
+      "id": "034",
+      "name": "くらげ灯の配達員",
+      "concept": "SEED beginner: jellyfish lantern courier, translucent pale cyan jellyfish cap above cat ears, dark navy body with round gold eyeglasses and gold ear disks, short cyan cape, holds one dorayaki pancake and a small jellyfish lantern, compact clean readable silhouette.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: SEED beginner: jellyfish lantern courier, translucent pale cyan jellyfish cap above cat ears, dark navy body with round gold eyeglasses and gold ear disks, short cyan cape, holds one dorayaki pancake and a small jellyfish lantern, compact clean readable silhouette. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    },
+    {
+      "id": "035",
+      "name": "潮星の見張り番",
+      "concept": "SEED beginner: starfish lookout, orange starfish ornament on deep teal cat-eared sailor hood, dark face with big round gold eyeglasses and gold ear disks, short tiny sailor costume, holding dorayaki pancake like a small starfish shield, energetic.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: SEED beginner: starfish lookout, orange starfish ornament on deep teal cat-eared sailor hood, dark face with big round gold eyeglasses and gold ear disks, short tiny sailor costume, holding dorayaki pancake like a small starfish shield, energetic. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    },
+    {
+      "id": "036",
+      "name": "タツノオトシゴの探索者",
+      "concept": "SEED beginner: seahorse treasure scout, mint green and golden-yellow explorer costume, little seahorse crest on cat-eared hood, round gold eyeglasses and gold ear disks, carries a small rolled map and a dorayaki pancake treasure, short legs and oversized head.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: SEED beginner: seahorse treasure scout, mint green and golden-yellow explorer costume, little seahorse crest on cat-eared hood, round gold eyeglasses and gold ear disks, carries a small rolled map and a dorayaki pancake treasure, short legs and oversized head. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    },
+    {
+      "id": "037",
+      "name": "泡の宝箱守り",
+      "concept": "SEED beginner: bubble treasure-chest keeper, rounded aqua diving costume, cat ears and round gold eyeglasses, gold ear disks, holding a little opened treasure chest with a single golden-brown dorayaki pancake and two pearls, compact friendly guardian, no complex armor.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: SEED beginner: bubble treasure-chest keeper, rounded aqua diving costume, cat ears and round gold eyeglasses, gold ear disks, holding a little opened treasure chest with a single golden-brown dorayaki pancake and two pearls, compact friendly guardian, no complex armor. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    },
+    {
+      "id": "038",
+      "name": "潮音の笛吹き",
+      "concept": "SEED beginner: conch flute musician, lavender-blue and pearly white sailor hood with cat ears, gold round eyeglasses and gold ear disks, holds a short conch flute in one hand and dorayaki pancake in the other, simple compact beginner costume.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: SEED beginner: conch flute musician, lavender-blue and pearly white sailor hood with cat ears, gold round eyeglasses and gold ear disks, holds a short conch flute in one hand and dorayaki pancake in the other, simple compact beginner costume. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    },
+    {
+      "id": "039",
+      "name": "真珠珊瑚の司祭",
+      "concept": "MIDDLE evolution: pearl coral priest, ornate white turquoise gold cat-eared hood and flowing short ceremonial robe, oversized dark face with round gold glasses and gold ear disks, holds tall coral staff crowned with a dorayaki pancake and pearls, pearl water magic curling gently, visually more elaborate than beginner but not boss.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: MIDDLE evolution: pearl coral priest, ornate white turquoise gold cat-eared hood and flowing short ceremonial robe, oversized dark face with round gold glasses and gold ear disks, holds tall coral staff crowned with a dorayaki pancake and pearls, pearl water magic curling gently, visually more elaborate than beginner but not boss. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    },
+    {
+      "id": "040",
+      "name": "竜潮の秘宝騎士",
+      "concept": "MIDDLE evolution: seahorse tide treasure knight, ornate navy teal gold armor with cat ears, dark face and round gold eyeglasses and gold ear disks, elegant small seahorse crest, one hand holds a dorayaki shield and other a conch-tipped short spear, restrained turquoise waves around feet, compact chibi, not a giant monster.",
+      "prompt": "Use case: stylized-concept. Asset: one collectible figure sprite for Japanese cartoon game MOB PIECE BATTLE, series 海底の秘宝どら焼き. Input images are visual STYLE and SPECIES references only, not editing targets. Create a NEW distinct character: MIDDLE evolution: seahorse tide treasure knight, ornate navy teal gold armor with cat ears, dark face and round gold eyeglasses and gold ear disks, elegant small seahorse crest, one hand holds a dorayaki shield and other a conch-tipped short spear, restrained turquoise waves around feet, compact chibi, not a giant monster. Match references' bold dark outline, polished hand-drawn cel-shaded 2D cartoon art, cute oversized head, small limbs, cat-eared silhouette, round golden glasses and gold headphones. A dorayaki is two golden pancake halves with dark red-bean filling, never a burger. Full body on a small round white and gold collectible pedestal with exact lettering 'MOB', matching referenced proportions. Square canvas, character centered and entire pedestal fully visible, 8% transparent margin. Genuinely transparent background, preserve alpha; no black backdrop, no checkerboard, no surrounding scene. Elegant clear silhouette, no photorealism, no extra figures, no sheet, no captions. Design should fit existing supplied figure family."
+    }
+  ]
+}
