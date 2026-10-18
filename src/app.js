@@ -1,3 +1,5 @@
+import {wardrobeScreen,handleWardrobe,resetWardrobeDraft} from './screens/wardrobe.js';
+import {playerWardrobe} from './components/wardrobe-avatar.js';
 import {openRuleGuide,RULE_GUIDE_VERSION} from './components/rule-guide.js';
 import {openDeckExpansion} from './screens/deckExpansion.js';
 import {plusBonus} from './game/inventory.js';
@@ -80,11 +82,12 @@ function render({preserveScroll=false}={}){
   const focused=preserveScroll?document.activeElement?.getAttribute('data-add'):null;
   const requestedRoute=location.hash.slice(1)||'home';const route=['tournament','rankTournament','mobLeague','calendar','hall'].includes(requestedRoute)?'battle':requestedRoute;
   document.documentElement.classList.toggle('reduce-motion',profile.reducedMotion);
-  const page=['tower','initial-starter'].includes(route)?towerScreen(ctx):route==='sound'?soundGalleryScreen():route==='home'?homeScreen(ctx):route==='battle-style'?battleCustomizeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup,collectionFavorites):route==='deck'?deckScreen(ctx,{query:deckQuery,tag:deckTag,rarity:deckRarity,series:deckSeries}):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='shop'?towerShopScreen(ctx):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
+  if(route!=='wardrobe')resetWardrobeDraft();
+  const page=route==='wardrobe'?wardrobeScreen(ctx):['tower','initial-starter'].includes(route)?towerScreen(ctx):route==='sound'?soundGalleryScreen():route==='home'?homeScreen(ctx):route==='battle-style'?battleCustomizeScreen(ctx):route==='display'?displayScreen(ctx,displaySlot,displayQuery):route==='figure'?collectionScreen(ctx,query,rarity,collectionStatus,collectionSort,collectionTag,collectionGroup,collectionFavorites):route==='deck'?deckScreen(ctx,{query:deckQuery,tag:deckTag,rarity:deckRarity,series:deckSeries}):route==='battle'?battleScreen(ctx):route==='tournament'?competitionScreen(ctx,'all'):route==='rankTournament'?competitionScreen(ctx,'rank'):route==='mobLeague'?competitionScreen(ctx,'league'):route==='calendar'?calendarScreen(ctx,calendarView,calendarMonth):route==='shop'?towerShopScreen(ctx):route==='gacha'?gachaScreen(ctx):route==='mission'?missionScreen(ctx):route==='history'?historyScreen(ctx,historyFilter):route==='hall'?hallOfFameScreen(ctx):infoScreen(ctx,route);
   const battleRoute=['battle','tournament','rankTournament','mobLeague'].includes(route);
   const master=false;const rankKey=profile.rank;
   const avatarFigure=byId.get(profile.avatarId)||byId.get(profile.centerId)||figures.find(f=>!f.pending);
-  const avatarMarkup=avatarFigure?`<span class="avatar avatar-figure">${art(avatarFigure,'top-avatar-art')}</span>`:`<span class="avatar">M<span>01</span></span>`;
+  const avatarMarkup=profile.wardrobe?.enabled?`<span class="avatar avatar-figure">${playerWardrobe(profile)}</span>`:avatarFigure?`<span class="avatar avatar-figure">${art(avatarFigure,'top-avatar-art')}</span>`:`<span class="avatar">M<span>01</span></span>`;
   app.innerHTML=`<div class="game-shell"><header class="topbar"><button class="player" data-go="player">${avatarMarkup}<span class="player-copy"><b>PLAYER</b><small class="player-rank-line">${iconArt('rank','top-rank-symbol','RANK')}${rankArt(rankKey,'top-rank-art',rankKey)}<i>${master?'MOB MASTER':'CHALLENGER'}</i></small></span></button><div class="wallet wallet-v6"><span title="${Number(profile.coins||0).toLocaleString('ja-JP')} COIN">${iconArt('coin','wallet-art','COIN')}<b>${compact(profile.coins)}</b></span><span title="${Number(profile.diamonds||0).toLocaleString('ja-JP')} DIAMOND">${iconArt('diamond','wallet-art','DIAMOND')}<b>${compact(profile.diamonds)}</b></span><span title="${Number(profile.rubies||0).toLocaleString('ja-JP')} RUBY">${iconArt('ruby','wallet-art','RUBY')}<b>${compact(profile.rubies)}</b></span></div><button class="guide-help" data-open-guide aria-label="遊び方ヘルプ">？<small>ヘルプ</small></button><button class="settings" data-go="settings" aria-label="設定">${menuArt('settings','top-settings-art','SETTINGS')}</button></header><main id="main">${page}</main><nav aria-label="メインナビゲーション">${nav.map(([id,ic,label,menuKey])=>{const active=route===id||(battleRoute&&id==='battle');const artMarkup=id==='deck'?iconArt('deck','bottom-menu-icon-art',label):(menuKey?menuArt(menuKey,'bottom-menu-art',label):icon(ic));return `<button data-go="${id}" class="${active?'active':''}" ${active?'aria-current="page"':''} aria-label="${label}"><span class="nav-art">${artMarkup}</span>${active?'<i></i>':''}</button>`;}).join('')}</nav><div class="screen-loader" data-screen-loader hidden><div><b>MOB PIECE BATTLE</b><span></span><small>IMAGE LOADING...</small></div></div><div class="toast" role="status"></div></div>`;
   if(route==='gacha')bindGacha();
   app.querySelector('#main').scrollTop=scroll;
@@ -167,6 +170,7 @@ function grantAllFigures(){
 app.addEventListener('input',e=>{if(e.target.id==='rematch-search')filterRematches(app);});
 app.addEventListener('change',e=>{if(e.target.id==='rematch-area')filterRematches(app);if(e.target.id==='mission-rank-view'){selectMissionRank(e.target.value);render({preserveScroll:true});}});
 app.addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;
+if(handleWardrobe(b,{profile,commitProfile,render,toast}))return;
 if(b.hasAttribute('data-save-reset')){openSaveReset({onDeleted:()=>{sound.stopAll();location.reload();}});return;}
 if(handleTowerShop(b,ctx,{render,toast}))return;
 if(await handleTower(b,ctx,{render,toast}))return;
@@ -203,7 +207,7 @@ if(b.dataset.calendarMonth){calendarMonth=Number(b.dataset.calendarMonth);calend
 if(b.dataset.calendarOpenMonth){calendarMonth=Number(b.dataset.calendarOpenMonth);calendarView='month';render();return;}
 if(b.dataset.collectionStatus){collectionStatus=b.dataset.collectionStatus;render();return;}
 if(b.dataset.figureInfo){openFigureInfo(b.dataset.figureInfo);return;}
-if(b.dataset.playerAvatar){profile.avatarId=b.dataset.playerAvatar;persist();render({preserveScroll:true});toast('プレイヤーアバターを変更しました');return;}
+if(b.dataset.playerAvatar){profile.avatarId=b.dataset.playerAvatar;if(profile.wardrobe)profile.wardrobe.enabled=false;persist();render({preserveScroll:true});toast('プレイヤーアバターを変更しました');return;}
 if(b.hasAttribute('data-mission-claim-all')){try{const next=structuredClone(profile),reward=claimAllMissions(next,{figures,byId});if(!commitProfile(next))throw Error('保存できませんでした');sound.play('reward');render();toast(`MISSION ALL CLEAR！ ${reward.coins.toLocaleString('ja-JP')} COIN + ${reward.diamonds} DIAMOND · ${reward.count}件`);}catch(err){toast(err.message,'error');}return;}
 if(b.dataset.rivalSelect){selectRival(app,profile,b.dataset.rivalSelect);sound.play('select');return;}
 if(b.dataset.missionCategory){selectMissionCategory(b.dataset.missionCategory);render({preserveScroll:true});return;}

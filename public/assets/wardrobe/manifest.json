@@ -1,0 +1,305 @@
+{
+  "schema": "mob-piece-avatar-1",
+  "canvas": [
+    768,
+    768
+  ],
+  "origin": "top-left",
+  "anchor": {
+    "neck": [
+      376,
+      459
+    ],
+    "feet": [
+      384,
+      728
+    ]
+  },
+  "slots": [
+    "outfit",
+    "scarf",
+    "eyewear",
+    "shoes",
+    "floating"
+  ],
+  "layer_order": [
+    "base/head.png",
+    "outfit",
+    "shoes",
+    "scarf",
+    "eyewear",
+    "floating"
+  ],
+  "notes": [
+    "When outfit is none, use base/full.png instead of base/head.png.",
+    "When shoes are none and outfit is equipped, draw base/bare_feet.png under outfit.",
+    "Every layer has exactly the same full canvas and origin. Do not auto-trim.",
+    "outfit combines headwear, upper-body clothing and trousers into one choice."
+  ],
+  "themes": [
+    {
+      "id": "grass",
+      "label": "草原",
+      "kind": "area",
+      "outfit": "layers/grass/outfit.png",
+      "scarf": "layers/grass/scarf.png",
+      "eyewear": "layers/grass/eyewear.png",
+      "shoes": "layers/grass/shoes.png",
+      "floating": "layers/grass/floating.png",
+      "preset": "presets/grass.png"
+    },
+    {
+      "id": "desert",
+      "label": "砂漠",
+      "kind": "area",
+      "outfit": "layers/desert/outfit.png",
+      "scarf": "layers/desert/scarf.png",
+      "eyewear": "layers/desert/eyewear.png",
+      "shoes": "layers/desert/shoes.png",
+      "floating": "layers/desert/floating.png",
+      "preset": "presets/desert.png"
+    },
+    {
+      "id": "town",
+      "label": "田舎町",
+      "kind": "area",
+      "outfit": "layers/town/outfit.png",
+      "scarf": "layers/town/scarf.png",
+      "eyewear": "layers/town/eyewear.png",
+      "shoes": "layers/town/shoes.png",
+      "floating": "layers/town/floating.png",
+      "preset": "presets/town.png"
+    },
+    {
+      "id": "neon",
+      "label": "ネオン街",
+      "kind": "area",
+      "outfit": "layers/neon/outfit.png",
+      "scarf": "layers/neon/scarf.png",
+      "eyewear": "layers/neon/eyewear.png",
+      "shoes": "layers/neon/shoes.png",
+      "floating": "layers/neon/floating.png",
+      "preset": "presets/neon.png"
+    },
+    {
+      "id": "magma",
+      "label": "マグマ",
+      "kind": "area",
+      "outfit": "layers/magma/outfit.png",
+      "scarf": "layers/magma/scarf.png",
+      "eyewear": "layers/magma/eyewear.png",
+      "shoes": "layers/magma/shoes.png",
+      "floating": "layers/magma/floating.png",
+      "preset": "presets/magma.png"
+    },
+    {
+      "id": "sweets",
+      "label": "スイーツ",
+      "kind": "area",
+      "outfit": "layers/sweets/outfit.png",
+      "scarf": "layers/sweets/scarf.png",
+      "eyewear": "layers/sweets/eyewear.png",
+      "shoes": "layers/sweets/shoes.png",
+      "floating": "layers/sweets/floating.png",
+      "preset": "presets/sweets.png"
+    },
+    {
+      "id": "retro",
+      "label": "レトロゲーム",
+      "kind": "area",
+      "outfit": "layers/retro/outfit.png",
+      "scarf": "layers/retro/scarf.png",
+      "eyewear": "layers/retro/eyewear.png",
+      "shoes": "layers/retro/shoes.png",
+      "floating": "layers/retro/floating.png",
+      "preset": "presets/retro.png"
+    },
+    {
+      "id": "music",
+      "label": "ミュージック",
+      "kind": "area",
+      "outfit": "layers/music/outfit.png",
+      "scarf": "layers/music/scarf.png",
+      "eyewear": "layers/music/eyewear.png",
+      "shoes": "layers/music/shoes.png",
+      "floating": "layers/music/floating.png",
+      "preset": "presets/music.png"
+    },
+    {
+      "id": "cartoon",
+      "label": "カートゥーン",
+      "kind": "area",
+      "outfit": "layers/cartoon/outfit.png",
+      "scarf": "layers/cartoon/scarf.png",
+      "eyewear": "layers/cartoon/eyewear.png",
+      "shoes": "layers/cartoon/shoes.png",
+      "floating": "layers/cartoon/floating.png",
+      "preset": "presets/cartoon.png"
+    },
+    {
+      "id": "grass2",
+      "label": "草原Ⅱ",
+      "kind": "area",
+      "outfit": "layers/grass2/outfit.png",
+      "scarf": "layers/grass2/scarf.png",
+      "eyewear": "layers/grass2/eyewear.png",
+      "shoes": "layers/grass2/shoes.png",
+      "floating": "layers/grass2/floating.png",
+      "preset": "presets/grass2.png"
+    },
+    {
+      "id": "town2",
+      "label": "田舎町Ⅱ",
+      "kind": "area",
+      "outfit": "layers/town2/outfit.png",
+      "scarf": "layers/town2/scarf.png",
+      "eyewear": "layers/town2/eyewear.png",
+      "shoes": "layers/town2/shoes.png",
+      "floating": "layers/town2/floating.png",
+      "preset": "presets/town2.png"
+    },
+    {
+      "id": "tribe",
+      "label": "部族村",
+      "kind": "area",
+      "outfit": "layers/tribe/outfit.png",
+      "scarf": "layers/tribe/scarf.png",
+      "eyewear": "layers/tribe/eyewear.png",
+      "shoes": "layers/tribe/shoes.png",
+      "floating": "layers/tribe/floating.png",
+      "preset": "presets/tribe.png"
+    },
+    {
+      "id": "sea",
+      "label": "海底",
+      "kind": "area",
+      "outfit": "layers/sea/outfit.png",
+      "scarf": "layers/sea/scarf.png",
+      "eyewear": "layers/sea/eyewear.png",
+      "shoes": "layers/sea/shoes.png",
+      "floating": "layers/sea/floating.png",
+      "preset": "presets/sea.png"
+    },
+    {
+      "id": "neon2",
+      "label": "ネオン街Ⅱ",
+      "kind": "area",
+      "outfit": "layers/neon2/outfit.png",
+      "scarf": "layers/neon2/scarf.png",
+      "eyewear": "layers/neon2/eyewear.png",
+      "shoes": "layers/neon2/shoes.png",
+      "floating": "layers/neon2/floating.png",
+      "preset": "presets/neon2.png"
+    },
+    {
+      "id": "desert2",
+      "label": "砂漠Ⅱ",
+      "kind": "area",
+      "outfit": "layers/desert2/outfit.png",
+      "scarf": "layers/desert2/scarf.png",
+      "eyewear": "layers/desert2/eyewear.png",
+      "shoes": "layers/desert2/shoes.png",
+      "floating": "layers/desert2/floating.png",
+      "preset": "presets/desert2.png"
+    },
+    {
+      "id": "magma2",
+      "label": "マグマⅡ",
+      "kind": "area",
+      "outfit": "layers/magma2/outfit.png",
+      "scarf": "layers/magma2/scarf.png",
+      "eyewear": "layers/magma2/eyewear.png",
+      "shoes": "layers/magma2/shoes.png",
+      "floating": "layers/magma2/floating.png",
+      "preset": "presets/magma2.png"
+    },
+    {
+      "id": "shadow",
+      "label": "シャドー",
+      "kind": "area",
+      "outfit": "layers/shadow/outfit.png",
+      "scarf": "layers/shadow/scarf.png",
+      "eyewear": "layers/shadow/eyewear.png",
+      "shoes": "layers/shadow/shoes.png",
+      "floating": "layers/shadow/floating.png",
+      "preset": "presets/shadow.png"
+    },
+    {
+      "id": "castle",
+      "label": "魔王城",
+      "kind": "area",
+      "outfit": "layers/castle/outfit.png",
+      "scarf": "layers/castle/scarf.png",
+      "eyewear": "layers/castle/eyewear.png",
+      "shoes": "layers/castle/shoes.png",
+      "floating": "layers/castle/floating.png",
+      "preset": "presets/castle.png"
+    },
+    {
+      "id": "mob",
+      "label": "MOB",
+      "kind": "area",
+      "outfit": "layers/mob/outfit.png",
+      "scarf": "layers/mob/scarf.png",
+      "eyewear": "layers/mob/eyewear.png",
+      "shoes": "layers/mob/shoes.png",
+      "floating": "layers/mob/floating.png",
+      "preset": "presets/mob.png"
+    },
+    {
+      "id": "denden",
+      "label": "デンデン",
+      "kind": "character_cosplay",
+      "outfit": "layers/denden/outfit.png",
+      "scarf": "layers/denden/scarf.png",
+      "eyewear": "layers/denden/eyewear.png",
+      "shoes": "layers/denden/shoes.png",
+      "floating": "layers/denden/floating.png",
+      "preset": "presets/denden.png"
+    },
+    {
+      "id": "pink",
+      "label": "ピンク",
+      "kind": "character_cosplay",
+      "outfit": "layers/pink/outfit.png",
+      "scarf": "layers/pink/scarf.png",
+      "eyewear": "layers/pink/eyewear.png",
+      "shoes": "layers/pink/shoes.png",
+      "floating": "layers/pink/floating.png",
+      "preset": "presets/pink.png"
+    },
+    {
+      "id": "manny",
+      "label": "マニー",
+      "kind": "character_cosplay",
+      "outfit": "layers/manny/outfit.png",
+      "scarf": "layers/manny/scarf.png",
+      "eyewear": "layers/manny/eyewear.png",
+      "shoes": "layers/manny/shoes.png",
+      "floating": "layers/manny/floating.png",
+      "preset": "presets/manny.png"
+    },
+    {
+      "id": "mobdesert",
+      "label": "デザート",
+      "kind": "character_cosplay",
+      "outfit": "layers/mobdesert/outfit.png",
+      "scarf": "layers/mobdesert/scarf.png",
+      "eyewear": "layers/mobdesert/eyewear.png",
+      "shoes": "layers/mobdesert/shoes.png",
+      "floating": "layers/mobdesert/floating.png",
+      "preset": "presets/mobdesert.png"
+    },
+    {
+      "id": "miramob",
+      "label": "ミラモブ",
+      "kind": "character_cosplay",
+      "outfit": "layers/miramob/outfit.png",
+      "scarf": "layers/miramob/scarf.png",
+      "eyewear": "layers/miramob/eyewear.png",
+      "shoes": "layers/miramob/shoes.png",
+      "floating": "layers/miramob/floating.png",
+      "preset": "presets/miramob.png"
+    }
+  ]
+}

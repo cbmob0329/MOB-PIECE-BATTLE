@@ -1,3 +1,4 @@
+import {wardrobeHomeButton} from '../components/wardrobe-avatar.js';
 import {missionHomeButton} from '../components/mission-art.js';
 import {battleStyleHome} from './battleCustomize.js';
 import {ensureSoulDecks} from '../game/soul-battle.js';
@@ -18,6 +19,7 @@ export function homeScreen({figures,byId,profile,icon,art,menuArt,iconArt}){
   ]),
   shelfRow([
     missionHomeButton(),
+    wardrobeHomeButton(),
     menuTile(menuArt('history','home-menu-art','HISTORY'),'HISTORY','全戦績を見る','history'),
     menuTile(menuArt('shop','home-menu-art','MOB SHOP'),'MOB SHOP','ショップ','shop')
   ]),

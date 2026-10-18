@@ -1,3 +1,4 @@
+import {statEffectUntil} from './stat-duration.js';
 import {applyOct14,oct14Death,oct14Event,finishDrawBatch} from './oct14-effects.js';
 import {plusBonus} from './inventory.js';
 import {actionChoices,cardMatchesAction} from './oct07-action-choices.js';
@@ -116,7 +117,7 @@ export function fuse(s,side,uids,recipeId){
  f.fusionStyle=r.resonance?r.fusionStyle:r.special?'mob':'soul';f.fusionPartnerIds=r.resonance?[pair[1-r.baseIndex].id]:[...materialIds];
  if(r.special){f.mobFusion=true;f.permanentAtk=25;f.permanentDef=25;s.fusionBanner={serial:f.uid,name:info(f).name,special:true};}
  else s.fusionBanner={serial:f.uid,name:info(f).name,special:false};
- if(p.fusionBonus&&(p.fusionBonus.expires===null||p.fusionBonus.expires>=s.turn)){const until=p.fusionBonus.persistent?Infinity:s.turn;effect(f,'atk',p.fusionBonus.atk,until);effect(f,'def',p.fusionBonus.def,until);p.fusionBonus=null;}
+ if(p.fusionBonus&&(p.fusionBonus.expires===null||p.fusionBonus.expires>=s.turn)){const until=p.fusionBonus.persistent!==false?Infinity:s.turn;effect(f,'atk',p.fusionBonus.atk,until);effect(f,'def',p.fusionBonus.def,until);p.fusionBonus=null;}
  log(s,(r.resonance?'強化召喚 · ':r.special?'MOB SOUL FUSION · ':'SOUL FUSION · ')+info(f).name+(r.resonance?' · ATK/DEF +'+r.bonusATK:r.special?' · ATK +25 / DEF +25':''));
  if(!r.resonance){f.soulFusionTurn=s.turn;if(p.fusionAura?.turn===s.turn){effect(f,'atk',p.fusionAura.atk,s.turn);effect(f,'def',p.fusionAura.def,s.turn);}}
  emit(s,'fusion',{side,slot,uid:f.uid,id:f.id,attribute:attribute(f),attackType:info(f).attackType,materialIds,partnerIds:[...f.fusionPartnerIds],fusionStyle:f.fusionStyle,bonusATK:r.resonance?r.bonusATK:r.special?25:0,bonusDEF:r.resonance?r.bonusDEF:r.special?25:0,special:r.special,resonance:!!r.resonance,...stats(f)});
@@ -214,8 +215,10 @@ export function useSkill(s,side,uid,options={}){
  if(!reactionOptions(s,1-side).length)passReaction(s,1-side);
 }
 function applySkill(s,side,f,o){
+ const applyEffect=effect;
+ const skillEffect=(target,key,value,until)=>{const skill=info({id:skillPlan(f).echoSourceId||f.id}).soulSkill;applyEffect(target,key,value,statEffectUntil(skill,key,until));if(key==='ramp')target.effects.at(-1).statUntil=statEffectUntil(skill,'atk',s.turn);};
  if((!info(f).soulSkill.runtimePlan||skillPlan(f).element)&&applyElement(s,side,skillPlan(f).echoSourceId?{...f,id:skillPlan(f).echoSourceId,handOrigin:true}:f,soulById,o)){bindBattle(s,soulById);return;}
- const specified=skillPlan(f);if(specified.specified){const p=s.players[side];if(specified.specified==='promoteSelf'){const slot=p.field.indexOf(f),i=p.reserve.indexOf(o.promoteId);if(slot<0||i<0)return;remove(s,side,f,true);const stored=takeStoredCard(p,'reserve',i);const next=instance(s,o.promoteId);restoreStrength(next,stored.usage);p.field[slot]=next;p.used.push(next.id);emit(s,'summon',{side,id:next.id,slot,uid:next.uid,...stats(next)});return;}if(specified.specified==='blood'){effect(f,'atk',s.players[1-side].grave.length*10,s.turn);remove(s,side,f,true);return;}if(['tagBuff','rain'].includes(specified.specified)){const tagged=(specified.both?[0,1]:[side]).flatMap(owner=>live(s,owner).filter(t=>currentTags(t).includes(specified.tag)&&affectedBySkill(t,side,owner)));if(consumeSkillShield(s,side,tagged))return;if(specified.specified==='rain')p.life=Math.min(400,p.life+p.hand.length*10);for(const t of tagged){if(specified.atk)effect(t,'atk',specified.atk,s.turn);if(specified.def)effect(t,'def',specified.def,s.turn);}return;}}
+ const specified=skillPlan(f);if(specified.specified){const p=s.players[side];if(specified.specified==='promoteSelf'){const slot=p.field.indexOf(f),i=p.reserve.indexOf(o.promoteId);if(slot<0||i<0)return;remove(s,side,f,true);const stored=takeStoredCard(p,'reserve',i);const next=instance(s,o.promoteId);restoreStrength(next,stored.usage);p.field[slot]=next;p.used.push(next.id);emit(s,'summon',{side,id:next.id,slot,uid:next.uid,...stats(next)});return;}if(specified.specified==='blood'){skillEffect(f,'atk',s.players[1-side].grave.length*10,s.turn);remove(s,side,f,true);return;}if(['tagBuff','rain'].includes(specified.specified)){const tagged=(specified.both?[0,1]:[side]).flatMap(owner=>live(s,owner).filter(t=>currentTags(t).includes(specified.tag)&&affectedBySkill(t,side,owner)));if(consumeSkillShield(s,side,tagged))return;if(specified.specified==='rain')p.life=Math.min(400,p.life+p.hand.length*10);for(const t of tagged){if(specified.atk)skillEffect(t,'atk',specified.atk,s.turn);if(specified.def)skillEffect(t,'def',specified.def,s.turn);}return;}}
  const q=skillPlan(f),p=s.players[side],enemy=s.players[1-side];
  if(q.oct15==='destroyRevive'){for(let owner=0;owner<2;owner++)for(const t of [...live(s,owner)])if(affectedBySkill(t,side,owner)&&!consumeSkillShield(s,side,[t]))remove(s,owner,t,true,'skill',{side,uid:f.uid});queueAction(s,side,f.id,{mode:'summon',zones:['grave']});}
  if(q.oct15==='selfDestroyReviveMob'){remove(s,side,f,true,'skill',{side,uid:f.uid});if(!live(s,side).includes(f))queueAction(s,side,f.id,{mode:'summon',zones:['grave'],classes:['mob']});}
@@ -223,9 +226,9 @@ function applySkill(s,side,f,o){
  if(q.oct15==='clone'&&p.field.includes(null)){const t=instance(s,f.id);t.token=true;t.permanentAtk=190-info(t).atk;t.permanentDef=190-info(t).def;p.field[p.field.indexOf(null)]=t;emit(s,'summon',{side,id:t.id,uid:t.uid,...stats(t)});}
  if(q.oct15==='enemyDrawFive'){const count=Math.max(0,5-enemy.hand.length);s.drawBatch={side:1-side,ids:[],discard:false};for(let i=0;i<count&&s.winner===null;i++)draw(s,1-side);finishDrawBatch(s);}
  if(q.enemyHeal)enemy.life=Math.min(400,enemy.life+q.enemyHeal);
- if(q.fusionAura){p.fusionAura={...q.fusionAura,turn:s.turn};for(const t of live(s,side))if(t.soulFusionTurn===s.turn){effect(t,'atk',q.fusionAura.atk,s.turn);effect(t,'def',q.fusionAura.def,s.turn);}}
+ if(q.fusionAura){p.fusionAura={...q.fusionAura,turn:s.turn};for(const t of live(s,side))if(t.soulFusionTurn===s.turn){skillEffect(t,'atk',q.fusionAura.atk,s.turn);skillEffect(t,'def',q.fusionAura.def,s.turn);}}
  if(q.teamFusionLock)enemy.teamEffects.push({key:'teamFusionLock',until:expiresNextOpponent(s,side),starts:s.turn});
- if(q.oct14){const affected=['swapSelectedStat','selfEnemySwapDef','pairedBuff'].includes(q.oct14)?live(s,1-side).filter(t=>t.uid===Number(o.targetUid)):q.oct14==='mutualDestroyReturn'?live(s,1-side).filter(t=>t.uid===o.triggerUid):['lockAllAttackers','destroyLowDef','swapAllStats','destroyAll','lockOtherAttackers'].includes(q.oct14)?live(s,1-side).filter(t=>q.oct14!=='destroyLowDef'||stats(t).def<=q.threshold):[];if(consumeSkillShield(s,side,affected.filter(t=>affectedBySkill(t,side,1-side))))return;}if(q.oct14)applyOct14(s,side,f,q,o,{live,info,effect,stats,remove,draw,loseLife,finish,emit,affectedBySkill});const until=q.duration==='persistent'?Infinity:q.duration==='next-opponent'?expiresNextOpponent(s,side):s.turn;
+ if(q.oct14){const affected=['swapSelectedStat','selfEnemySwapDef','pairedBuff'].includes(q.oct14)?live(s,1-side).filter(t=>t.uid===Number(o.targetUid)):q.oct14==='mutualDestroyReturn'?live(s,1-side).filter(t=>t.uid===o.triggerUid):['lockAllAttackers','destroyLowDef','swapAllStats','destroyAll','lockOtherAttackers'].includes(q.oct14)?live(s,1-side).filter(t=>q.oct14!=='destroyLowDef'||stats(t).def<=q.threshold):[];if(consumeSkillShield(s,side,affected.filter(t=>affectedBySkill(t,side,1-side))))return;}if(q.oct14)applyOct14(s,side,f,q,o,{live,info,effect:skillEffect,stats,remove,draw,loseLife,finish,emit,affectedBySkill});const until=q.duration==='persistent'?Infinity:q.duration==='next-opponent'?expiresNextOpponent(s,side):s.turn;
  let targets=['selectedAllies','selectedEnemies'].includes(q.target)?live(s,q.target==='selectedAllies'?side:1-side).filter(t=>[Number(o.targetUid),Number(o.secondUid)].includes(t.uid)):q.target==='trigger'?live(s,1-side).filter(x=>x.uid===o.triggerUid):q.target==='ally'?live(s,side).filter(t=>t.uid===Number(o.targetUid)):['enemy','enemySeed'].includes(q.target)?live(s,1-side).filter(t=>t.uid===Number(o.targetUid)):q.target==='attributeAllies'?live(s,side).filter(x=>sharesAttribute(attribute(x),info(f).attribute)):q.target==='allies'?live(s,side):q.target==='enemies'?live(s,1-side):q.target==='center'?[p.field[1]].filter(Boolean):[f];
  targets=targets.filter(t=>affectedBySkill(t,side,s.players.findIndex(p=>p.field.includes(t))));
  if(q.filterAttributes)targets=targets.filter(t=>q.filterAttributes.some(a=>attribute(t).split('/').includes(a)));
@@ -234,39 +237,39 @@ function applySkill(s,side,f,o){
  // A one-use team barrier cancels the hostile lowering skill as specified.
  if(targets.length&&(q.atk<0||q.def<0)){const i=enemy.teamEffects.findIndex(e=>e.key==='debuffShield'&&e.starts<=s.turn&&e.until>=s.turn&&(e.value==='both'||q.def<0));if(i>=0){enemy.teamEffects.splice(i,1);log(s,'低下スキルを無効化');return;}}
  if(q.discardAllHands)for(const owner of s.players)while(owner.hand.length){const card=takeHand(owner,0);putStoredCard(owner,'grave',card.id,card.bonus);}
- if(q.healIfFieldTag&&live(s,side).some(t=>currentTags(t).includes(q.healIfFieldTag.tag)))p.life=Math.min(400,p.life+q.healIfFieldTag.heal);if(q.suppressEnemyDefBuff)for(const t of live(s,1-side))if(affectedBySkill(t,side,1-side))effect(t,'suppressDefBuff',true,s.turn);if(q.millEnemy&&enemy.deck.length)moveStoredCard(enemy,'deck',0,'grave');if(q.heal)p.life=Math.min(400,p.life+q.heal);
+ if(q.healIfFieldTag&&live(s,side).some(t=>currentTags(t).includes(q.healIfFieldTag.tag)))p.life=Math.min(400,p.life+q.healIfFieldTag.heal);if(q.suppressEnemyDefBuff)for(const t of live(s,1-side))if(affectedBySkill(t,side,1-side))skillEffect(t,'suppressDefBuff',true,s.turn);if(q.millEnemy&&enemy.deck.length)moveStoredCard(enemy,'deck',0,'grave');if(q.heal)p.life=Math.min(400,p.life+q.heal);
  const lockUntil=q.lockDuration==='persistent'?Infinity:q.lockDuration==='next-opponent'?expiresNextOpponent(s,side):typeof q.lockDuration==='number'?s.turn+q.lockDuration-1:s.turn;
  if(q.teamLock)for(const targetSide of q.lockSide==='both'?[0,1]:q.lockSide==='enemy'?[1-side]:[side])s.players[targetSide].teamEffects.push({key:'skillRule',value:q.teamLock,attribute:q.onlyAttribute,starts:s.turn,until:lockUntil});
  if(q.discardEnemyOne&&enemy.hand.length){const index=Math.floor(Math.random()*enemy.hand.length),card=takeHand(enemy,index);putStoredCard(enemy,'grave',card.id,card.bonus);}
  if(q.graveSeedHeal&&o.graveSeedsBefore>=q.graveSeedHeal.count)p.life=Math.min(400,p.life+q.graveSeedHeal.heal);
  const pairBonus=q.attributePairBonus&&q.attributePairBonus.attributes.every(a=>live(s,side).some(x=>attribute(x).split('/').includes(a)))?q.attributePairBonus:null;
  for(const t of targets){
-  if(q.tagBonus&&currentTags(t).includes(q.tagBonus.tag)){if(q.tagBonus.atk)effect(t,'atk',q.tagBonus.atk,until);if(q.tagBonus.def)effect(t,'def',q.tagBonus.def,until);}
-  if(q.attackTeamGrowth)effect(t,'attackTeamGrowth',q.attackTeamGrowth,s.turn);if(q.attackedGrowthTurn){effect(t,'attackedGrowthTurn',q.attackedGrowthTurn,s.turn);t.permanentAtk+=q.attackedGrowthTurn.atk||0;t.permanentDef+=q.attackedGrowthTurn.def||0;}if(q.atk)effect(t,'atk',q.atk,until);if(q.def)effect(t,'def',q.def,until);if(pairBonus?.def)effect(t,'def',pairBonus.def,until);if(q.setAtk!==undefined)effect(t,'atkSet',q.setAtk,until);if(q.suppressBuff)effect(t,'suppressBuff',true,until);
-  const protectionUntil=q.protectionDuration==='turn'?s.turn:until;for(const key of ['skillUntargetable','skillImmune','attackHidden','indestructible','battleImmune'])if(q[key])effect(t,key,q[key],protectionUntil);if(q.shieldCharges)effect(t,'shieldCharges',q.shieldCharges,s.turn);if(q.firstGuardTurns)effect(t,'firstAttackGuard',true,s.turn+q.firstGuardTurns-1);if(q.instantKill)effect(t,'instantKill',true,until);if(q.killDiscard)effect(t,'killDiscard',true,until);
-  if(q.turnPoison)effect(t,'turnPoison',q.turnPoison,Infinity);if(q.currentSkillLock)effect(t,'skillLock',true,s.turn);
-  if(q.untilAttackDef)effect(t,'defUntilAttack',q.untilAttackDef,Infinity);
+  if(q.tagBonus&&currentTags(t).includes(q.tagBonus.tag)){if(q.tagBonus.atk)skillEffect(t,'atk',q.tagBonus.atk,until);if(q.tagBonus.def)skillEffect(t,'def',q.tagBonus.def,until);}
+  if(q.attackTeamGrowth)skillEffect(t,'attackTeamGrowth',q.attackTeamGrowth,s.turn);if(q.attackedGrowthTurn){skillEffect(t,'attackedGrowthTurn',q.attackedGrowthTurn,s.turn);t.permanentAtk+=q.attackedGrowthTurn.atk||0;t.permanentDef+=q.attackedGrowthTurn.def||0;}if(q.atk)skillEffect(t,'atk',q.atk,until);if(q.def)skillEffect(t,'def',q.def,until);if(pairBonus?.def)skillEffect(t,'def',pairBonus.def,until);if(q.setAtk!==undefined)skillEffect(t,'atkSet',q.setAtk,until);if(q.suppressBuff)skillEffect(t,'suppressBuff',true,until);
+  const protectionUntil=q.protectionDuration==='turn'?s.turn:until;for(const key of ['skillUntargetable','skillImmune','attackHidden','indestructible','battleImmune'])if(q[key])skillEffect(t,key,q[key],protectionUntil);if(q.shieldCharges)skillEffect(t,'shieldCharges',q.shieldCharges,s.turn);if(q.firstGuardTurns)skillEffect(t,'firstAttackGuard',true,s.turn+q.firstGuardTurns-1);if(q.instantKill)skillEffect(t,'instantKill',true,until);if(q.killDiscard)skillEffect(t,'killDiscard',true,until);
+  if(q.turnPoison)skillEffect(t,'turnPoison',q.turnPoison,Infinity);if(q.currentSkillLock)skillEffect(t,'skillLock',true,s.turn);
+  if(q.untilAttackDef)skillEffect(t,'defUntilAttack',q.untilAttackDef,Infinity);
   if(q.cleanse)t.effects=t.effects.filter(e=>!(['atk','def','defUntilAttack'].includes(e.key)&&e.value<0));
-  for(const k of ['pierceGuard','ignoreDef','ignoreDefOnTarget','equalKill','wildAttribute','eachTarget','laterAtk','ramp','killChain','firstKillChain','killBreak','killDraw','postMove','attribute'])if(q[k])effect(t,k,q[k],q.revision==='oct07'&&k==='ramp'&&q.rampDuration==='persistent'?Infinity:s.turn);
-  if(q.attacks)effect(t,'maxAttacks',Math.max(q.attacks,...values(t,'maxAttacks')), q.attackDuration==='persistent'?Infinity:s.turn);if(q.sameTarget)effect(t,'sameTarget',true,until);if(q.rampDuration==='persistent')effect(t,'rampPersistent',true,until);if(q.noAttackResponse)effect(t,'noAttackResponse',true,q.responseDuration==='turn'?s.turn:until);if(q.killHeal)effect(t,'killHeal',q.killHeal,until);
-  if(q.damageBonus){effect(t,'damageBonus',q.damageBonus,s.turn);if(q.threshold)effect(t,'threshold',q.threshold,s.turn);}
-  if(q.survive)effect(t,'survive',1,q.survivePersistent?Infinity:s.turn);
-  for(const k of ['skillLock','fusionLock','attackOrFuse','skipBattle','lastAttack'])if(q[k]){effect(t,k,true,q.revision==='oct07'?lockUntil:expiresNextOpponent(s,side));if(k==='skillLock'&&q.revision!=='oct07'&&q.duration!=='next-opponent')t.effects.at(-1).starts=s.turn+1;}
-  if(q.addTag)effect(t,'addTag',o.tag,s.turn);if(q.removeTag)effect(t,'removeTag',o.tag,s.turn);
-  if(q.musicFreedom&&currentTags(t).some(t=>['12','78'].includes(t)))effect(t,'pierceGuard',true,s.turn);
-  if(q.musicAtk&&currentTags(t).some(tag=>['12','78'].includes(tag)))effect(t,'atk',q.musicAtk,s.turn);
+  for(const k of ['pierceGuard','ignoreDef','ignoreDefOnTarget','equalKill','wildAttribute','eachTarget','laterAtk','ramp','killChain','firstKillChain','killBreak','killDraw','postMove','attribute'])if(q[k])skillEffect(t,k,q[k],q.revision==='oct07'&&k==='ramp'&&q.rampDuration==='persistent'?Infinity:s.turn);
+  if(q.attacks)skillEffect(t,'maxAttacks',Math.max(q.attacks,...values(t,'maxAttacks')), q.attackDuration==='persistent'?Infinity:s.turn);if(q.sameTarget)skillEffect(t,'sameTarget',true,until);if(q.rampDuration==='persistent')skillEffect(t,'rampPersistent',true,until);if(q.noAttackResponse)skillEffect(t,'noAttackResponse',true,q.responseDuration==='turn'?s.turn:until);if(q.killHeal)skillEffect(t,'killHeal',q.killHeal,until);
+  if(q.damageBonus){skillEffect(t,'damageBonus',q.damageBonus,s.turn);if(q.threshold)skillEffect(t,'threshold',q.threshold,s.turn);}
+  if(q.survive)skillEffect(t,'survive',1,q.survivePersistent?Infinity:s.turn);
+  for(const k of ['skillLock','fusionLock','attackOrFuse','skipBattle','lastAttack'])if(q[k]){skillEffect(t,k,true,q.revision==='oct07'?lockUntil:expiresNextOpponent(s,side));if(k==='skillLock'&&q.revision!=='oct07'&&q.duration!=='next-opponent')t.effects.at(-1).starts=s.turn+1;}
+  if(q.addTag)skillEffect(t,'addTag',o.tag,s.turn);if(q.removeTag)skillEffect(t,'removeTag',o.tag,s.turn);
+  if(q.musicFreedom&&currentTags(t).some(t=>['12','78'].includes(t)))skillEffect(t,'pierceGuard',true,s.turn);
+  if(q.musicAtk&&currentTags(t).some(tag=>['12','78'].includes(tag)))skillEffect(t,'atk',q.musicAtk,s.turn);
  }
- if(q.transferStats&&targets[0]){const n=Number(o.transferAmount);for(const key of ['atk','def']){effect(targets[0],key,n,until);effect(f,key,-n,until);}}
+ if(q.transferStats&&targets[0]){const n=Number(o.transferAmount);for(const key of ['atk','def']){skillEffect(targets[0],key,n,until);skillEffect(f,key,-n,until);}}
  const support=q.supportCaster?(live(s,side).find(t=>t.uid===Number(o.allyUid))||f):f;
- if(q.copyStats&&targets[0]){const from=stats(targets[0]),to=stats(support);effect(support,'atk',from.atk-to.atk,s.turn);effect(support,'def',from.def-to.def,s.turn);}
- if(q.casterSkillImmune)effect(support,'skillImmune',true,s.turn);if(q.skipOtherAllies)for(const t of live(s,side))if(t!==support)effect(t,'skipBattle',true,s.turn);if(q.destroyTarget)for(const t of targets)remove(s,s.players.findIndex(p=>p.field.includes(t)),t,true,'skill',{side,uid:f.uid});
- if(q.selfDef)effect(support,'def',q.selfDef,until);if(q.casterAttackHidden)effect(support,'attackHidden',true,q.casterAttackHidden==='next-own'?s.turn+1:s.turn);if(q.casterIndestructible)effect(support,'indestructible',true,expiresNextOpponent(s,side));if(q.triggerAtk){const t=live(s,1-side).find(t=>t.uid===o.triggerUid);if(t)effect(t,'atk',q.triggerAtk,until);}if(q.selfAtk)effect(support,'atk',q.selfAtk,until);if(q.skipCaster)effect(support,'skipBattle',true,s.turn);
+ if(q.copyStats&&targets[0]){const from=stats(targets[0]),to=stats(support);skillEffect(support,'atk',from.atk-to.atk,s.turn);skillEffect(support,'def',from.def-to.def,s.turn);}
+ if(q.casterSkillImmune)skillEffect(support,'skillImmune',true,s.turn);if(q.skipOtherAllies)for(const t of live(s,side))if(t!==support)skillEffect(t,'skipBattle',true,s.turn);if(q.destroyTarget)for(const t of targets)remove(s,s.players.findIndex(p=>p.field.includes(t)),t,true,'skill',{side,uid:f.uid});
+ if(q.selfDef)skillEffect(support,'def',q.selfDef,until);if(q.casterAttackHidden)skillEffect(support,'attackHidden',true,q.casterAttackHidden==='next-own'?s.turn+1:s.turn);if(q.casterIndestructible)skillEffect(support,'indestructible',true,expiresNextOpponent(s,side));if(q.triggerAtk){const t=live(s,1-side).find(t=>t.uid===o.triggerUid);if(t)skillEffect(t,'atk',q.triggerAtk,until);}if(q.selfAtk)skillEffect(support,'atk',q.selfAtk,until);if(q.skipCaster)skillEffect(support,'skipBattle',true,s.turn);
  if(q.nextOwnAtk){const next=s.turn+(s.active===side?2:1);support.effects.push({key:'futureAtk',value:q.nextOwnAtk,starts:next,until:next});}
- if(q.discardAtkFactor)effect(support,'atk',o.discardedAtk*q.discardAtkFactor,until);
- if(q.ownCount){const rule=q.ownCount,n=live(s,side).filter(t=>rule.tag?currentTags(t).includes(rule.tag):attribute(t).split('/').includes(rule.attribute)).length;if(rule.atk)effect(support,'atk',n*rule.atk,until);if(rule.def)effect(support,'def',n*rule.def,until);}
+ if(q.discardAtkFactor)skillEffect(support,'atk',o.discardedAtk*q.discardAtkFactor,until);
+ if(q.ownCount){const rule=q.ownCount,n=live(s,side).filter(t=>rule.tag?currentTags(t).includes(rule.tag):attribute(t).split('/').includes(rule.attribute)).length;if(rule.atk)skillEffect(support,'atk',n*rule.atk,until);if(rule.def)skillEffect(support,'def',n*rule.def,until);}
  if(q.activateAura){const anchor=f.handOrigin?targets[0]:f;if(anchor)anchor.activatedAura=structuredClone(q.activateAura);}
- if(q.selectedEnemyAtk){const t=live(s,1-side).find(t=>t.uid===Number(o.selectedEnemyUid));if(t)effect(t,'atk',q.selectedEnemyAtk,expiresNextOpponent(s,side));}
- if(q.casterEach)effect(support,'eachTarget',true,s.turn);if(q.casterDamage)effect(support,'damageBonus',q.casterDamage,s.turn);
+ if(q.selectedEnemyAtk){const t=live(s,1-side).find(t=>t.uid===Number(o.selectedEnemyUid));if(t)skillEffect(t,'atk',q.selectedEnemyAtk,expiresNextOpponent(s,side));}
+ if(q.casterEach)skillEffect(support,'eachTarget',true,s.turn);if(q.casterDamage)skillEffect(support,'damageBonus',q.casterDamage,s.turn);
  for(const key of ['debuffShield','damageShield','teamSurvive'])if(q[key])p.teamEffects.push({key,value:q[key],until:key==='teamSurvive'?s.turn:expiresNextOpponent(s,side),starts:key==='teamSurvive'||q.shieldNow?s.turn:s.turn+1});
  if(q.recycle&&Number(o.graveIndex)>=0){const id=p.destroyed.splice(Number(o.graveIndex),1)[0];moveStoredCard(p,'grave',p.grave.indexOf(id),'deck');}
  if(q.recoverSeed){const {id,usage}=takeStoredCard(p,'grave',Number(o.recoverIndex));const destroyed=p.destroyed.indexOf(id);if(destroyed>=0)p.destroyed.splice(destroyed,1);putStoredCard(p,'hand',id,usage);}
@@ -279,17 +282,17 @@ function applySkill(s,side,f,o){
  if(q.search){const {id,usage}=takeStoredCard(p,'deck',Number(o.deckIndex)),back=takeHand(p,Number(o.handIndex));putStoredCard(p,'deck',back.id,back.bonus);putStoredCard(p,'hand',id,usage);}
  if(q.returnSelf){const slot=p.field.indexOf(f);bounce(s,side,f);if(q.replaceSeed&&Number(o.handIndex)>=0)place(s,side,Number(o.handIndex),slot);}
  if(q.discardEnemyHand)while(enemy.hand.length){const card=takeHand(enemy,0);putStoredCard(enemy,'grave',card.id,card.bonus);enemy.destroyed.push(card.id);}
- if(q.taunt)for(const t of targets)effect(t,'taunt',true,s.turn);if(q.attackSkillLock)for(const t of targets)effect(t,'attackSkillLock',true,s.turn);if(q.evadeTurn)effect(f,'evadeAll',true,s.turn);
- if(q.graveTagBuff){const n=s.players.flatMap(p=>p.grave).filter(id=>soulById.get(id).tags.includes(q.graveTagBuff.tag)).length;const t=q.target==='ally'?targets[0]:f;effect(t,'atk',n*q.graveTagBuff.atk,s.turn);effect(t,'def',n*q.graveTagBuff.def,s.turn);}
+ if(q.taunt)for(const t of targets)skillEffect(t,'taunt',true,s.turn);if(q.attackSkillLock)for(const t of targets)skillEffect(t,'attackSkillLock',true,s.turn);if(q.evadeTurn)skillEffect(f,'evadeAll',true,s.turn);
+ if(q.graveTagBuff){const n=s.players.flatMap(p=>p.grave).filter(id=>soulById.get(id).tags.includes(q.graveTagBuff.tag)).length;const t=q.target==='ally'?targets[0]:f;skillEffect(t,'atk',n*q.graveTagBuff.atk,s.turn);skillEffect(t,'def',n*q.graveTagBuff.def,s.turn);}
  if(q.summonLoneReserve){const i=p.reserve.indexOf(o.reserveId),slot=p.field.indexOf(null);if(i>=0&&slot>=0&&live(s,side).length===1){const stored=takeStoredCard(p,'reserve',i);const unit=instance(s,o.reserveId);restoreStrength(unit,stored.usage);p.field[slot]=unit;p.used.push(unit.id);emit(s,'summon',{side,id:unit.id,uid:unit.uid,slot,...stats(unit)});}}
- if(q.handDefDebuff)for(const t of live(s,1-side))if(affectedBySkill(t,side,1-side))effect(t,'def',-p.hand.length*q.handDefDebuff,until);
+ if(q.handDefDebuff)for(const t of live(s,1-side))if(affectedBySkill(t,side,1-side))skillEffect(t,'def',-p.hand.length*q.handDefDebuff,until);
  if(q.controlSwap){const a=live(s,side).find(t=>t.uid===Number(o.swapAllyUid)),b=live(s,1-side).find(t=>t.uid===Number(o.swapEnemyUid));if(a&&b&&affectedBySkill(a,side,side)&&affectedBySkill(b,side,1-side)){const i=p.field.indexOf(a),j=enemy.field.indexOf(b);[p.field[i],enemy.field[j]]=[b,a];s.controlSwaps??=[];s.controlSwaps.push({until:s.turn,units:[{uid:a.uid,owner:side,slot:i},{uid:b.uid,owner:1-side,slot:j}]});bindBattle(s,soulById);}}
  if(q.selfSacrifice&&!f.handOrigin)remove(s,side,f);
  if(q.summon){const c=actionChoices(s,side,{mode:'summon',...q.summon},soulById).find(c=>c.value===o.summonRef);if(c)spawnActionCard(s,side,c,q.summon.bonus,q.summon.resetSkills);}
  if(q.summonMany)queueAction(s,side,f.id,{mode:'summon',...q.summonMany});
  if(q.evolveSelf&&p.reserve.includes(q.evolveSelf)){const slot=f.handOrigin?p.field.indexOf(null):p.field.indexOf(f);if(slot>=0){if(!f.handOrigin)remove(s,side,f);const stored=takeStoredCard(p,'reserve',p.reserve.indexOf(q.evolveSelf));const next=instance(s,q.evolveSelf);restoreStrength(next,stored.usage);p.field[slot]=next;p.used.push(next.id);emit(s,'summon',{side,id:next.id,uid:next.uid,slot,...stats(next)});}}
  if(q.loseAbilities){f.passiveLost=true;delete f.activatedAura;if(f.handOrigin)rememberUsage(p,'grave',f.spentGraveIndex,f);}
- if(q.fusionBonus)p.fusionBonus={...q.fusionBonus,expires:q.fusionBonus.turnOnly?s.turn:Infinity};
+ if(q.fusionBonus)p.fusionBonus={...q.fusionBonus,persistent:statEffectUntil(info(f).soulSkill,'atk',s.turn)===Infinity,expires:q.fusionBonus.turnOnly?s.turn:Infinity};
  if(q.revealFusion){const found=fusionPairs(s,side).flatMap(pair=>fusionOptions(s,side,pair));p.revealed=[...new Set(found.map(r=>r.target))];p.revealTurn=s.turn;}
 }
 export function passReaction(s,side){
@@ -303,7 +306,7 @@ function respond(s,side,f,o){
  if(q.revision==='oct07'){
   applySkill(s,side,f,{...o,triggerUid:pending.uid});
   if(s.winner!==null)return;
-  if(pending.kind==='skill'&&q.cancelSkill){if(q.copyCancelledBuff){const original=skillPlan(opposingCaster);for(const key of ['atk','def','attacks','ramp','survive'])if(original[key]>0)effect(f,key==='attacks'?'maxAttacks':key,original[key],s.turn);}if(passive(opposingCaster)?.cancelledDef)opposingCaster.permanentDef+=passive(opposingCaster).cancelledDef;log(s,'相手のソウルスキルを無効化');return;}
+  if(pending.kind==='skill'&&q.cancelSkill){if(q.copyCancelledBuff){const original=skillPlan(opposingCaster);for(const key of ['atk','def','attacks','ramp','survive'])if(original[key]>0)effect(f,key==='attacks'?'maxAttacks':key,original[key],statEffectUntil(info(opposingCaster).soulSkill,key,s.turn));}if(passive(opposingCaster)?.cancelledDef)opposingCaster.permanentDef+=passive(opposingCaster).cancelledDef;log(s,'相手のソウルスキルを無効化');return;}
   if(pending.kind==='attack'&&q.cancelAttack){log(s,'攻撃を無効化');emit(s,'guard',{side,id:f.id,label:'攻撃を無効化！'});afterCombat(s,pending,false);if(q.endEnemyBattle)forceEndBattle(s);return;}
   if(pending.kind==='attack'){if(!live(s,pending.side).some(a=>a.uid===pending.uid)){afterCombat(s,pending,false);return;}if(q.redirectEnemy){pending.targetUid=Number(o.redirectUid);pending.targetSide=1-side;pending.damageBoth=!!q.damageBoth;}if(q.redirectSelf)pending.targetUid=f.uid;pending.combatDef=q.combatDef||0;pending.noDamage=!!q.noDamage;resolveCombat(s,pending);return;}
   if(pending.kind==='skill'){applySkill(s,pending.side,opposingCaster,pending.options);return;}
@@ -347,7 +350,7 @@ export function attack(s,side,uid,targetUid){
  const a=piece(s,side,uid),d=piece(s,1-side,targetUid);if(!canAttack(s,side,a,d))fail('この攻撃はできません（攻撃回数・対象・行動制限を確認）');
  s.moveChoice=null;d.targetedAttacks=(d.targetedAttacks||0)+1;a.attacks++;a.attackedTargets.push(d.uid);a.lastTarget=d.uid;clear(a,'defUntilAttack');
  if(passive(a)?.attackGrowth){a.permanentAtk+=info(a).passive.attackGrowth.atk;a.permanentDef+=info(a).passive.attackGrowth.def;}if(has(a,'attackSkillLock'))effect(d,'skillLock',true,s.turn);
- if(has(a,'ramp'))effect(a,'atk',value(a,'ramp'),has(a,'rampPersistent')?Infinity:s.turn);if(passive(a)?.attackRamp)effect(a,'atk',info(a).passive.attackRamp,s.turn);
+ if(has(a,'ramp')){const ramp=a.effects.filter(e=>e.key==='ramp').at(-1);effect(a,'atk',ramp.value,ramp.statUntil===null?Infinity:ramp.statUntil??(has(a,'rampPersistent')?Infinity:s.turn));}if(passive(a)?.attackRamp)effect(a,'atk',info(a).passive.attackRamp,s.turn);
  s.pending={kind:'attack',side,uid,targetUid,combatDef:0,noDamage:false,survive:false};
  emit(s,'attack',{side,id:a.id,attribute:attribute(a),targetId:d.id,uid,targetUid,slot:s.players[side].field.indexOf(a),targetSlot:s.players[1-side].field.indexOf(d),atk:stats(a).atk+(a.attacks>=2?Number(value(a,'laterAtk')||0):0),def:stats(d).def,attackType:info(a).attackType});
  log(s,info(a).name+' → '+info(d).name+'へ攻撃宣言');if(!reactionOptions(s,1-side).length)passReaction(s,1-side);
@@ -363,7 +366,7 @@ function resolveCombat(s,event){
  event.attackConnected=true;if(passive(a)?.hitDefDown)effect(d,'def',-passive(a).hitDefDown,Infinity);const firstGuard=(passive(d)?.firstAttackGuard||has(d,'firstAttackGuard'))&&d.receivedAttackTurn!==s.turn;d.receivedAttackTurn=s.turn;
  if(has(a,'instantKill')){remove(s,defenderSide,d,true,'skill',{side:event.side,uid:a.uid});afterCombat(s,event,!live(s,defenderSide).includes(d));return;}
  const destroyed=atk>def||(atk===def&&has(d,'equalKill'));
- if(!destroyed){const loss=def>atk?Math.min(10,stats(d).def):0;d.permanentDef-=loss;log(s,info(d).name+'が防御 · ダメージ0'+(loss?' / DEF −'+loss:''));emit(s,'guard',{side:1-event.side,id:d.id,label:loss?'ガード！ DEF −'+loss:'ガード！',atk,def,defLoss:loss,remainingDef:stats(d).def});afterCombat(s,event,false);return;}
+ if(!destroyed){const loss=def>atk?Math.min(10,stats(d).def):0;d.permanentDef-=loss;for(const e of d.effects)if(e.key==='defSet')e.value=Math.max(0,e.value-loss);log(s,info(d).name+'が防御 · ダメージ0'+(loss?' / DEF −'+loss:''));emit(s,'guard',{side:1-event.side,id:d.id,label:loss?'ガード！ DEF −'+loss:'ガード！',atk,def,defLoss:loss,remainingDef:stats(d).def});afterCombat(s,event,false);return;}
  const difference=Math.max(0,atk-def);let damage=difference+(difference>=Number(value(a,'threshold')||0)?Number(value(a,'damageBonus')||0):0);
  const shield=enemy.teamEffects.findIndex(e=>e.key==='damageShield'&&e.starts<=s.turn&&e.until>=s.turn);
  if(event.noDamage||shield>=0){damage=0;if(!event.noDamage&&shield>=0)enemy.teamEffects.splice(shield,1);}

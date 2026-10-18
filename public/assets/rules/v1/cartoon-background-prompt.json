@@ -1,0 +1,6 @@
+{
+  "tool": "Built-in image_gen",
+  "asset": "workshop-background.png",
+  "prompt": "Create a SQUARE 1:1 CARTOON GAME UI background for a cute Japanese toy figure battle tutorial. Strictly 2D flat cel-shaded cartoon, THICK DARK OUTLINES, rounded chunky shapes, simple cheerful geometry, playful Nintendo-like cozy toy workshop aesthetic. NOT realistic, NOT photorealistic, NOT painterly, NO intricate ornate detailing or weathered material. Deep blue/teal smooth central area occupying 85% of image, very uncluttered and empty for readable instructional graphics. At OUTER CORNERS ONLY: two simple rounded amber hanging lamps, a tiny shelf of chunky paint jars, a cute star ornament, a few large simple sparkles, stylized curved floorboards near bottom edge. A rounded thick navy outer frame with simple golden corner tabs. Limited palette navy, turquoise, warm yellow and cream. The empty center should be flat deep teal with extremely subtle radial gradient, no pattern. No characters, no monsters, no toys, no figures, no text or letters or numbers. The whole thing must feel like a clean colorful cartoon mobile game screen, not a realistic environment.",
+  "composition": "Original game figure PNGs and the existing pedestal-free guide mascot; rendered at 1200 × 1200 with scripts/render-rule-illustrations.mjs and scripts/rule-poster-theme.css."
+}

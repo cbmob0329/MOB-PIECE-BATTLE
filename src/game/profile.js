@@ -1,3 +1,4 @@
+import {wardrobeState} from './wardrobe.js';
 import {deckSlotCount} from './deck-slots.js';
 import {normalizeProgression} from './progression.js';
 import {normalizeInventory} from './inventory.js';
@@ -44,6 +45,7 @@ export function loadProfile(){try{
   const hist=Array.isArray(data.battleHistory)?data.battleHistory:[];
   const derivedBattleStats={battles:hist.length,wins:hist.filter(x=>x.won).length,qualifierBattles:hist.filter(x=>String(x.mode||'').startsWith('qualifier')).length,leagueBattles:hist.filter(x=>String(x.mode||'').startsWith('mob-league')).length,rankUpWins:hist.filter(x=>String(x.mode||'').startsWith('rankup-tournament')&&x.won).length,masterWins:hist.filter(x=>String(x.mode||'').startsWith('mob-master')&&x.won).length};
   const next={...base,...data,favoriteFigureIds:favoriteIds(data),version:6,centerId:byId.has(data.centerId)&&!byId.get(data.centerId).retired?data.centerId:'01',avatarId:byId.has(data.avatarId)&&!byId.get(data.avatarId).retired?data.avatarId:(byId.has(data.centerId)?data.centerId:'01'),displayIds:['02','03','04','05'].map((fallback,i)=>{const id=data.displayIds?.[i];const f=byId.get(id);return f&&!f.retired&&!f.pending&&!/^\/+$/u.test(f.name)?id:fallback;}),reducedMotion:data.reducedMotion===true,testMode:data.testMode===true,coins:integer(data.coins),diamonds:integer(data.diamonds),rubies:integer(data.rubies),rank:typeof data.rank==='string'?data.rank:'F',owned,welcomeClaimed:data.welcomeClaimed===true,lastDraw:validLast?last:null,bannerId:banners.some(b=>b.id===data.bannerId)?data.bannerId:banners[0].id,randomMatch,battleHistory:hist.slice(-200),figureRecords:sanitizeFigureRecords(data.figureRecords),battleStats:{...data.battleStats,battles:integer(data.battleStats?.battles??derivedBattleStats.battles),wins:integer(data.battleStats?.wins??derivedBattleStats.wins),qualifierBattles:integer(data.battleStats?.qualifierBattles??derivedBattleStats.qualifierBattles),leagueBattles:integer(data.battleStats?.leagueBattles??derivedBattleStats.leagueBattles),rankUpWins:integer(data.battleStats?.rankUpWins??derivedBattleStats.rankUpWins),masterWins:integer(data.battleStats?.masterWins??derivedBattleStats.masterWins)},gachaStats:{draws:integer(data.gachaStats?.draws),converted:integer(data.gachaStats?.converted),rubiesFromConversion:integer(data.gachaStats?.rubiesFromConversion)},missions:{claimed:Array.isArray(data.missions?.claimed)?data.missions.claimed.filter(x=>typeof x==='string'):[]}};
+  next.wardrobe=wardrobeState(next);
   normalizeDeckStorage(next,data);
   if(validateDeck(next.deck,byId).errors.length){} // Keep incomplete/over-cost drafts; UI validates before battle.
   return normalizeProgression(normalizeInventory(normalizeMissions(normalizeBattleProgress(normalizeCompetition(next)))));
@@ -55,5 +57,5 @@ if(testSettings.enabled && profile.testMode){
   profile.rubies=testSettings.maxCurrency;
   saveProfile();
 }
-export function commitProfile(next){try{normalizeProgression(next);normalizeInventory(next);normalizeDeckStorage(next,next);normalizeMissions(next);localStorage.setItem(key,JSON.stringify(next));Object.assign(profile,next);storageAvailable=true;return true;}catch{storageAvailable=false;return false;}}
+export function commitProfile(next){try{next.wardrobe=wardrobeState(next);normalizeProgression(next);normalizeInventory(next);normalizeDeckStorage(next,next);normalizeMissions(next);localStorage.setItem(key,JSON.stringify(next));Object.assign(profile,next);storageAvailable=true;return true;}catch{storageAvailable=false;return false;}}
 export function saveProfile(){return commitProfile(profile);}
