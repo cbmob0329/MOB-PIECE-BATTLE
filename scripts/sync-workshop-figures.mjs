@@ -1,0 +1,44 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import vm from 'node:vm';
+import crypto from 'node:crypto';
+import {createRequire} from 'node:module';
+import catalog from '../src/data/soul-catalog.js';
+import {skillPlan} from '../src/game/soul-engine.js';
+import {soulCopyLimits,soulDeckSize} from '../src/game/deck-legality.js';
+const root=path.resolve(import.meta.dirname,'..'),editor=path.join(root,'編集アプリ/MOB-PIECE-Editor');
+const read=f=>fs.readFileSync(path.join(editor,f),'utf8').replace(/^\uFEFF/,'');
+const previous=JSON.parse(read('editor-current-snapshot.json')).data;
+const stamp=new Date().toISOString().replace(/[:.]/g,'-');
+const backup=path.join(root,'編集アプリ','バックアップ-'+stamp);fs.mkdirSync(backup,{recursive:true});
+for(const f of ['data.js','editor-current-snapshot.json','migration-base.js','app.js','index.html','README.txt'])fs.copyFileSync(path.join(editor,f),path.join(backup,f));
+const require=createRequire(import.meta.url),sharp=require(path.join(process.env.MPB_RUNTIME_MODULES,'sharp'));
+const old=new Map(previous.records.map(r=>[r.id,r])),d=structuredClone(previous);
+d.records=[];d.plans={};d.tags=structuredClone(catalog.tags);
+for(const f of catalog.figures){
+ const prior=old.get(f.id),plan=structuredClone(skillPlan({id:f.id})||{}),program='current:'+f.id;
+ d.plans[program]=plan;
+ d.records.push({...prior,id:f.id,uid:f.uid||prior?.uid||f.id,name:f.name,series:f.series||prior?.series||f.collection||'その他',soulClass:f.soulClass,rarity:f.rarity,attribute:f.attribute,attackType:f.attackType||'',role:f.role||'',atk:f.atk,def:f.def,tags:f.tags,gameImage:f.image,skill:{mode:'existing',name:f.soulSkill.name,description:f.soulSkill.description||f.soulSkill.effect||'',timing:f.soulSkill.timing,program,plan,custom:prior?.skill?.custom||{target:'',timing:'',condition:'',cost:'',uses:'',example:''}},summon:{normal:f.soulClass==='seed',recipes:catalog.recipes.filter(r=>r.target===f.id),passive:f.passive||{},notes:prior?.summon?.notes||''}});
+ let src=path.join(root,f.image);if(!fs.existsSync(src))src=path.join(root,'public',f.image);
+ const bytes=fs.readFileSync(src),hash=crypto.createHash('sha256').update(f.id).update(bytes).digest('hex').slice(0,20),asset='assets/synced-'+hash+'.webp';
+ if(!fs.existsSync(path.join(editor,asset)))await sharp(bytes).resize({width:480,height:480,fit:'inside',withoutEnlargement:true}).webp({quality:85}).toFile(path.join(editor,asset));
+ d.images[f.id]=asset;
+}
+// Keep editor-only source records, images and workshop settings intact.
+for(const r of previous.records)if(!d.records.some(f=>f.id===r.id))d.records.push(r);
+d.groups=[...new Set(d.records.flatMap(r=>[r.series,r.series2].filter(Boolean)))];
+d.archived=catalog.archivedFigures||[];d.rules={...d.rules,...catalog.rules,deckSize:soulDeckSize,stageComposition:'free',copyLimits:soulCopyLimits};
+d.extractedAt=new Date().toISOString();d.sourceVersion='current-20261019';
+d.sourceHash=crypto.createHash('sha256').update(JSON.stringify({records:d.records,rules:d.rules,tags:d.tags,workshop:d.workshop})).digest('hex');
+const ctx={window:{}};vm.runInNewContext(read('migration-base.js'),ctx);
+const bases=ctx.window.MPB_MIGRATION_BASES||[ctx.window.MPB_MIGRATION_BASE].filter(Boolean);
+if(!bases.some(b=>b.sourceHash===previous.sourceHash))bases.push({sourceHash:previous.sourceHash,records:previous.records,workshop:previous.workshop});
+fs.writeFileSync(path.join(editor,'migration-base.js'),'window.MPB_MIGRATION_BASES='+JSON.stringify(bases)+';\nwindow.MPB_MIGRATION_BASE=window.MPB_MIGRATION_BASES[0];\n');
+fs.writeFileSync(path.join(editor,'data.js'),'window.MPB_DATA='+JSON.stringify(d)+';\n');
+fs.writeFileSync(path.join(editor,'editor-current-snapshot.json'),JSON.stringify({schema:'mpb-editor-source/1',kind:'mpb-editor-source',data:d}));
+fs.writeFileSync(path.join(editor,'app.js'),read('app.js').replace('10月15日版へ更新。','最新版へ更新。'));
+fs.writeFileSync(path.join(editor,'index.html'),read('index.html').replace(/フィギュア工房 <span>\d+<\/span>/,'フィギュア工房 <span>'+d.records.length+'</span>'));
+fs.writeFileSync(path.join(editor,'README.txt'),read('README.txt').replace(/2026-10-\d+ 最新データ対応版/,'2026-10-19 最新データ対応版').replace(/本体の現在の\d+体/,'本体の現在の'+catalog.figures.length+'体'));
+const report={backup,previous:previous.records.length,current:d.records.length,added:catalog.figures.filter(f=>!old.has(f.id)).map(f=>({id:f.id,name:f.name,series:f.series})),sourceHash:d.sourceHash};
+fs.mkdirSync(path.join(root,'artifacts/editor-20261019'),{recursive:true});fs.writeFileSync(path.join(root,'artifacts/editor-20261019/sync-report.json'),JSON.stringify(report,null,2));
+console.log(JSON.stringify({backup,previous:report.previous,current:report.current,added:report.added.length}));
