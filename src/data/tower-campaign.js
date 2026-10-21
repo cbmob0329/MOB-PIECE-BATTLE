@@ -1,3 +1,4 @@
+import {towerCpuArt} from './tower-cpu-art.js';
 import {publicAsset} from './public-assets.js';
 import {fusionRecommendations} from '../game/soul-deck-assist.js';
 import {soulFigures,soulById,validateSoulDeck} from '../game/soul-battle.js';
@@ -47,5 +48,5 @@ export function campaignEnemy(tower,floor,slot=0){const key=tower.id+':'+floor+'
  for(const f of extras){if(Object.keys(counts).filter(id=>soulById.get(id).soulClass!=='seed').length>=reserveLimit)break;const previous=counts;const route=routeFor(f.id);if(route){merge(route.needs);if(Object.keys(counts).filter(id=>soulById.get(id).soulClass!=='seed').length>reserveLimit)counts=previous;}}
  let total=Object.values(counts).reduce((a,b)=>a+b,0);for(let round=0;round<3&&total<45;round++)for(const f of preferred){if(total>=45)break;if((counts[f.id]||0)>=3)continue;counts[f.id]=(counts[f.id]||0)+1;total++;}
  const deck=Object.entries(counts).flatMap(([id,n])=>Array(n).fill(id));if(!validateSoulDeck(deck).valid)throw Error('タワー編成を確認してください: '+key);
- const result={id:'campaign-'+tower.id+'-'+floor+'-'+slot,name:leader.name,rank,deck,strategy:{campaign:true,atk:1,def:1,skill:'support',focusIds:[id,...(tower.focusIds||[])],...rankSettings[rank],...(rank==='F'?{skillLimit:0}:{})},themeTagIds:themeTags};enemyCache.set(key,result);return structuredClone(result);
+ const result={cpuArt:towerCpuArt(tower,floor,slot),id:'campaign-'+tower.id+'-'+floor+'-'+slot,name:leader.name,rank,deck,strategy:{campaign:true,atk:1,def:1,skill:'support',focusIds:[id,...(tower.focusIds||[])],...rankSettings[rank],...(rank==='F'?{skillLimit:0}:{})},themeTagIds:themeTags};enemyCache.set(key,result);return structuredClone(result);
 }
