@@ -1,0 +1,1990 @@
+{
+  "figures": [
+    {
+      "id": "DORA_001",
+      "uid": "DORA_001",
+      "number": "001",
+      "name": "どら焼きのオアシス給仕",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "風",
+      "attackType": "魔法",
+      "atk": 70,
+      "role": "ひとくちのおもてなし",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/001.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "ひとくちのおもてなし",
+        "description": "自分のライフを20回復し、味方1体のDEFを10アップする。",
+        "effect": "自分のライフを20回復し、味方1体のDEFを10アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 20,
+          "target": "ally",
+          "def": 10,
+          "duration": "persistent"
+        }
+      },
+      "def": 85
+    },
+    {
+      "id": "DORA_002",
+      "uid": "DORA_002",
+      "number": "002",
+      "name": "どら焼きの砂丘探検家",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 95,
+      "role": "砂に眠る補給品",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/002.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "砂に眠る補給品",
+        "description": "シードデッキから1体ドローする。",
+        "effect": "シードデッキから1体ドローする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "draw": 1,
+          "duration": "persistent"
+        }
+      },
+      "def": 85
+    },
+    {
+      "id": "DORA_003",
+      "uid": "DORA_003",
+      "number": "003",
+      "name": "どら焼きの小さな炎魔",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 100,
+      "role": "あつあつあんこ弾",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/003.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "あつあつあんこ弾",
+        "description": "相手のライフに20ダメージを与える。",
+        "effect": "相手のライフに20ダメージを与える。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "lifeDamage": 20,
+          "duration": "persistent"
+        }
+      },
+      "def": 65
+    },
+    {
+      "id": "DORA_004",
+      "uid": "DORA_004",
+      "number": "004",
+      "name": "どら焼きの黄金ミイラ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 70,
+      "role": "黄金の包帯",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/004.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "黄金の包帯",
+        "description": "味方1体のDEFを15アップする。",
+        "effect": "味方1体のDEFを15アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "ally",
+          "def": 15,
+          "duration": "persistent"
+        }
+      },
+      "def": 110
+    },
+    {
+      "id": "DORA_005",
+      "uid": "DORA_005",
+      "number": "005",
+      "name": "どら焼きの泡玉ダイバー",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 70,
+      "role": "泡玉シールド",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/005.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "泡玉シールド",
+        "description": "攻撃対象となった味方のDEFを20アップする。",
+        "effect": "攻撃対象となった味方のDEFを20アップする。",
+        "timing": "attack-response",
+        "timingLabel": "相手の攻撃宣言時",
+        "runtimePlan": {
+          "guardAlly": 20,
+          "duration": "persistent"
+        }
+      },
+      "def": 95
+    },
+    {
+      "id": "DORA_006",
+      "uid": "DORA_006",
+      "number": "006",
+      "name": "どら焼きの月砂魔女",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 95,
+      "role": "月影のまどろみ",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/006.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "月影のまどろみ",
+        "description": "相手1体のATKを15ダウンする。",
+        "effect": "相手1体のATKを15ダウンする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemy",
+          "atk": -15,
+          "duration": "persistent"
+        }
+      },
+      "def": 80
+    },
+    {
+      "id": "DORA_007",
+      "uid": "DORA_007",
+      "number": "007",
+      "name": "どら焼きの旅する菓子職人",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 85,
+      "role": "焼きたての差し入れ",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/007.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "焼きたての差し入れ",
+        "description": "自分のライフを30回復する。",
+        "effect": "自分のライフを30回復する。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 30,
+          "duration": "persistent"
+        }
+      },
+      "def": 95
+    },
+    {
+      "id": "DORA_008",
+      "uid": "DORA_008",
+      "number": "008",
+      "name": "どら焼きの海亀守り",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 65,
+      "role": "きよらかな潮水",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/008.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "きよらかな潮水",
+        "description": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを15回復する。防御で失ったDEFは戻らない。",
+        "effect": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを15回復する。防御で失ったDEFは戻らない。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "ally",
+          "cleanse": true,
+          "heal": 15,
+          "duration": "persistent"
+        }
+      },
+      "def": 110
+    },
+    {
+      "id": "DORA_009",
+      "uid": "DORA_009",
+      "number": "009",
+      "name": "どら焼きの真珠サンタ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 90,
+      "role": "海底への贈り物",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/009.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "海底への贈り物",
+        "description": "シードデッキから1体ドローし、自分のライフを10回復する。",
+        "effect": "シードデッキから1体ドローし、自分のライフを10回復する。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "draw": 1,
+          "heal": 10,
+          "duration": "persistent"
+        }
+      },
+      "def": 90
+    },
+    {
+      "id": "DORA_010",
+      "uid": "DORA_010",
+      "number": "010",
+      "name": "どら焼きの砂漠配達員",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "風",
+      "attackType": "魔法",
+      "atk": 95,
+      "role": "砂風のエール",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/010.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "砂風のエール",
+        "description": "味方1体のATKを15アップする。",
+        "effect": "味方1体のATKを15アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "ally",
+          "atk": 15,
+          "duration": "persistent"
+        }
+      },
+      "def": 95
+    },
+    {
+      "id": "DORA_011",
+      "uid": "DORA_011",
+      "number": "011",
+      "name": "どら焼きのあんこゴースト",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 80,
+      "role": "とろける砂の呪い",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/011.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "とろける砂の呪い",
+        "description": "相手1体のDEFを15ダウンする。",
+        "effect": "相手1体のDEFを15ダウンする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemy",
+          "def": -15,
+          "duration": "persistent"
+        }
+      },
+      "def": 100
+    },
+    {
+      "id": "DORA_012",
+      "uid": "DORA_012",
+      "number": "012",
+      "name": "どら焼きの翡翠ティーマスター",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 100,
+      "role": "翡翠のお茶会",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/012.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "翡翠のお茶会",
+        "description": "自分のライフを25回復し、味方1体のATKを10アップする。",
+        "effect": "自分のライフを25回復し、味方1体のATKを10アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 25,
+          "target": "ally",
+          "atk": 10,
+          "duration": "persistent"
+        }
+      },
+      "def": 110
+    },
+    {
+      "id": "DORA_013",
+      "uid": "DORA_013",
+      "number": "013",
+      "name": "どら焼きの月読魔女",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 115,
+      "role": "月読みの封砂",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "37"
+      ],
+      "image": "assets/figures/dorayaki/013.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "月読みの封砂",
+        "description": "相手1体のATKを20ダウンする。",
+        "effect": "相手1体のATKを20ダウンする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemy",
+          "atk": -20,
+          "duration": "persistent"
+        }
+      },
+      "def": 90
+    },
+    {
+      "id": "DORA_014",
+      "uid": "DORA_014",
+      "number": "014",
+      "name": "どら焼きの紅炎術師",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 120,
+      "role": "焦がしあんこの炎",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "56"
+      ],
+      "image": "assets/figures/dorayaki/014.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "焦がしあんこの炎",
+        "description": "相手1体のDEFを20ダウンする。",
+        "effect": "相手1体のDEFを20ダウンする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemy",
+          "def": -20,
+          "duration": "persistent"
+        }
+      },
+      "def": 85
+    },
+    {
+      "id": "DORA_015",
+      "uid": "DORA_015",
+      "number": "015",
+      "name": "どら焼きの黄金墓守",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 85,
+      "role": "砂金の護符",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "54"
+      ],
+      "image": "assets/figures/dorayaki/015.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "砂金の護符",
+        "description": "このフィギュアのDEFを25アップする。",
+        "effect": "このフィギュアのDEFを25アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "def": 25,
+          "duration": "persistent"
+        }
+      },
+      "def": 125
+    },
+    {
+      "id": "DORA_016",
+      "uid": "DORA_016",
+      "number": "016",
+      "name": "どら焼きのオアシス賢者",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 165,
+      "role": "恵みのオアシス",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/016.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "恵みのオアシス",
+        "description": "自分のライフを30回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを15アップする。",
+        "effect": "自分のライフを30回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを15アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 30,
+          "target": "allies",
+          "filterTag": "series-dorayaki-desert",
+          "def": 15,
+          "duration": "persistent"
+        }
+      },
+      "def": 185
+    },
+    {
+      "id": "DORA_017",
+      "uid": "DORA_017",
+      "number": "017",
+      "name": "どら焼きの紅蓮イフリート",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 210,
+      "role": "紅蓮の焼き印",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "56"
+      ],
+      "image": "assets/figures/dorayaki/017.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "紅蓮の焼き印",
+        "description": "このターン、このフィギュアのATKを35アップする。相手のライフに20ダメージを与える。",
+        "effect": "このターン、このフィギュアのATKを35アップする。相手のライフに20ダメージを与える。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "atk": 35,
+          "duration": "turn",
+          "lifeDamage": 20
+        }
+      },
+      "def": 150
+    },
+    {
+      "id": "DORA_018",
+      "uid": "DORA_018",
+      "number": "018",
+      "name": "どら焼きの黄金守護神",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 150,
+      "role": "不落の黄金盾",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "54"
+      ],
+      "image": "assets/figures/dorayaki/018.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "不落の黄金盾",
+        "description": "このフィギュアのDEFを30アップする。このターン、相手はこのフィギュアを優先して攻撃対象に選ぶ。",
+        "effect": "このフィギュアのDEFを30アップする。このターン、相手はこのフィギュアを優先して攻撃対象に選ぶ。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "taunt": true,
+          "def": 30,
+          "duration": "persistent"
+        }
+      },
+      "def": 215
+    },
+    {
+      "id": "DORA_019",
+      "uid": "DORA_019",
+      "number": "019",
+      "name": "どら焼きの潮流導師",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 165,
+      "role": "潮流の結界",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea",
+        "37"
+      ],
+      "image": "assets/figures/dorayaki/019.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "潮流の結界",
+        "description": "自分のライフを20回復し、自分の場の水属性フィギュア全体のDEFを20アップする。",
+        "effect": "自分のライフを20回復し、自分の場の水属性フィギュア全体のDEFを20アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 20,
+          "target": "allies",
+          "filterAttribute": "水",
+          "def": 20,
+          "duration": "persistent"
+        }
+      },
+      "def": 180
+    },
+    {
+      "id": "DORA_020",
+      "uid": "DORA_020",
+      "number": "020",
+      "name": "どら焼きの紫煙魔導師",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 185,
+      "role": "紫煙の砂嵐",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "37"
+      ],
+      "image": "assets/figures/dorayaki/020.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "紫煙の砂嵐",
+        "description": "相手全体のATKを15ダウンする。",
+        "effect": "相手全体のATKを15ダウンする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemies",
+          "atk": -15,
+          "duration": "persistent"
+        }
+      },
+      "def": 170
+    },
+    {
+      "id": "DORA_021",
+      "uid": "DORA_021",
+      "number": "021",
+      "name": "どら焼きの翡翠潮風精",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "風/水",
+      "attackType": "物理",
+      "atk": 155,
+      "role": "浄化の潮風",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/021.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "浄化の潮風",
+        "description": "味方1体のスキルによるATK・DEF低下を解除し、ATKを10アップする。自分のライフを30回復する。防御で失ったDEFは戻らない。",
+        "effect": "味方1体のスキルによるATK・DEF低下を解除し、ATKを10アップする。自分のライフを30回復する。防御で失ったDEFは戻らない。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "ally",
+          "cleanse": true,
+          "atk": 10,
+          "heal": 30,
+          "duration": "persistent"
+        }
+      },
+      "def": 200
+    },
+    {
+      "id": "DORA_022",
+      "uid": "DORA_022",
+      "number": "022",
+      "name": "どら焼きの紫紺召喚士",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 200,
+      "role": "秘伝のあんこ魔法",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "37"
+      ],
+      "image": "assets/figures/dorayaki/022.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "秘伝のあんこ魔法",
+        "description": "シードデッキから1体ドローし、このフィギュアのATKを20アップする。",
+        "effect": "シードデッキから1体ドローし、このフィギュアのATKを20アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "draw": 1,
+          "atk": 20,
+          "duration": "persistent"
+        }
+      },
+      "def": 170
+    },
+    {
+      "id": "DORA_023",
+      "uid": "DORA_023",
+      "number": "023",
+      "name": "どら焼きの紅砂槍使い",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 205,
+      "role": "紅砂の突破槍",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/023.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "紅砂の突破槍",
+        "description": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
+        "effect": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "atk": 30,
+          "pierceGuard": true,
+          "duration": "turn"
+        }
+      },
+      "def": 165
+    },
+    {
+      "id": "DORA_024",
+      "uid": "DORA_024",
+      "number": "024",
+      "name": "どら焼きの蒼海奏者",
+      "soulClass": "mob",
+      "rarity": "SSR",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 205,
+      "role": "秘宝の潮騒",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/024.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "秘宝の潮騒",
+        "description": "自分のライフを25回復し、自分の場の水属性フィギュア全体のATKを15アップする。",
+        "effect": "自分のライフを25回復し、自分の場の水属性フィギュア全体のATKを15アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 25,
+          "target": "allies",
+          "filterAttribute": "水",
+          "atk": 15,
+          "duration": "persistent"
+        }
+      },
+      "def": 225
+    },
+    {
+      "id": "DORA_025",
+      "uid": "DORA_025",
+      "number": "025",
+      "name": "どら焼きの海底秘宝姫",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "水/光",
+      "attackType": "物理",
+      "atk": 255,
+      "role": "海底秘宝の祝福",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/025.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "海底秘宝の祝福",
+        "description": "自分のライフを40回復し、自分の場の水属性フィギュア全体のDEFを25アップする。",
+        "effect": "自分のライフを40回復し、自分の場の水属性フィギュア全体のDEFを25アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 40,
+          "target": "allies",
+          "filterAttribute": "水",
+          "def": 25,
+          "duration": "persistent"
+        }
+      },
+      "def": 270
+    },
+    {
+      "id": "DORA_026",
+      "uid": "DORA_026",
+      "number": "026",
+      "name": "どら焼きの紫砂大魔導",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 245,
+      "role": "紫砂の秘術",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "37"
+      ],
+      "image": "assets/figures/dorayaki/026.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "紫砂の秘術",
+        "description": "相手1体のATKを30ダウンし、相手のライフに20ダメージを与える。",
+        "effect": "相手1体のATKを30ダウンし、相手のライフに20ダメージを与える。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemy",
+          "atk": -30,
+          "lifeDamage": 20,
+          "duration": "persistent"
+        }
+      },
+      "def": 255
+    },
+    {
+      "id": "DORA_027",
+      "uid": "DORA_027",
+      "number": "027",
+      "name": "どら焼きの黒蜜魔王",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "闇/火",
+      "attackType": "物理",
+      "atk": 280,
+      "role": "黒蜜の王域",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "37",
+        "56"
+      ],
+      "image": "assets/figures/dorayaki/027.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "黒蜜の王域",
+        "description": "相手全体のATKを20ダウンし、このフィギュアのATKを20アップする。",
+        "effect": "相手全体のATKを20ダウンし、このフィギュアのATKを20アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemies",
+          "atk": -20,
+          "selfAtk": 20,
+          "duration": "persistent"
+        }
+      },
+      "def": 260
+    },
+    {
+      "id": "DORA_029",
+      "uid": "DORA_029",
+      "number": "029",
+      "name": "どら焼きの花砂修復師",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 150,
+      "role": "花あんこの手当て",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/029.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "花あんこの手当て",
+        "description": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを40回復する。防御で失ったDEFは戻らない。",
+        "effect": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを40回復する。防御で失ったDEFは戻らない。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "ally",
+          "cleanse": true,
+          "heal": 40,
+          "duration": "persistent"
+        }
+      },
+      "def": 185
+    },
+    {
+      "id": "DORA_030",
+      "uid": "DORA_030",
+      "number": "030",
+      "name": "どら焼きの砂時計技師",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "地",
+      "attackType": "物理",
+      "atk": 175,
+      "role": "からくり補給",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert"
+      ],
+      "image": "assets/figures/dorayaki/030.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "からくり補給",
+        "description": "シードデッキから1体ドローし、味方1体のDEFを20アップする。",
+        "effect": "シードデッキから1体ドローし、味方1体のDEFを20アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "draw": 1,
+          "target": "ally",
+          "def": 20,
+          "duration": "persistent"
+        }
+      },
+      "def": 170
+    },
+    {
+      "id": "DORA_031",
+      "uid": "DORA_031",
+      "number": "031",
+      "name": "どら焼きの癒砂王ファラオ",
+      "soulClass": "mob",
+      "rarity": "MOB",
+      "attribute": "光/地",
+      "attackType": "物理",
+      "atk": 250,
+      "role": "癒砂王の大饗宴",
+      "collection": "main",
+      "family": "DORA_DESERT",
+      "series": "砂漠を癒すどら焼き",
+      "tags": [
+        "18",
+        "42",
+        "series-dorayaki-desert",
+        "54"
+      ],
+      "image": "assets/figures/dorayaki/031.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "癒砂王の大饗宴",
+        "description": "自分のライフを50回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを20アップする。",
+        "effect": "自分のライフを50回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを20アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 50,
+          "target": "allies",
+          "filterTag": "series-dorayaki-desert",
+          "def": 20,
+          "duration": "persistent"
+        }
+      },
+      "def": 295
+    },
+    {
+      "id": "DORA_032",
+      "uid": "DORA_032",
+      "number": "032",
+      "name": "どら焼きの真珠貝の案内人",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 75,
+      "role": "真珠の道しるべ",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/032.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "真珠の道しるべ",
+        "description": "自分のライフを20回復し、味方1体のDEFを10アップする。",
+        "effect": "自分のライフを20回復し、味方1体のDEFを10アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 20,
+          "target": "ally",
+          "def": 10,
+          "duration": "persistent"
+        }
+      },
+      "def": 95
+    },
+    {
+      "id": "DORA_033",
+      "uid": "DORA_033",
+      "number": "033",
+      "name": "どら焼きの珊瑚の菓子職人",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 85,
+      "role": "珊瑚のおやつ",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/033.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "珊瑚のおやつ",
+        "description": "自分のライフを30回復する。",
+        "effect": "自分のライフを30回復する。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 30,
+          "duration": "persistent"
+        }
+      },
+      "def": 90
+    },
+    {
+      "id": "DORA_034",
+      "uid": "DORA_034",
+      "number": "034",
+      "name": "どら焼きのくらげ灯の配達員",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 90,
+      "role": "くらげ灯の補給便",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/034.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "くらげ灯の補給便",
+        "description": "シードデッキから1体ドローする。",
+        "effect": "シードデッキから1体ドローする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "draw": 1,
+          "duration": "persistent"
+        }
+      },
+      "def": 80
+    },
+    {
+      "id": "DORA_035",
+      "uid": "DORA_035",
+      "number": "035",
+      "name": "どら焼きの潮星の見張り番",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 105,
+      "role": "潮星の照準",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/035.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "潮星の照準",
+        "description": "相手1体のDEFを15ダウンする。",
+        "effect": "相手1体のDEFを15ダウンする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "enemy",
+          "def": -15,
+          "duration": "persistent"
+        }
+      },
+      "def": 90
+    },
+    {
+      "id": "DORA_036",
+      "uid": "DORA_036",
+      "number": "036",
+      "name": "どら焼きのタツノオトシゴの探索者",
+      "soulClass": "seed",
+      "rarity": "R",
+      "attribute": "風/水",
+      "attackType": "物理",
+      "atk": 100,
+      "role": "秘宝への追い風",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/036.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "秘宝への追い風",
+        "description": "味方1体のATKを15アップする。",
+        "effect": "味方1体のATKを15アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "ally",
+          "atk": 15,
+          "duration": "persistent"
+        }
+      },
+      "def": 85
+    },
+    {
+      "id": "DORA_037",
+      "uid": "DORA_037",
+      "number": "037",
+      "name": "どら焼きの泡の宝箱守り",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 70,
+      "role": "泡宝箱の錠前",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/037.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "泡宝箱の錠前",
+        "description": "このフィギュアのDEFを25アップする。",
+        "effect": "このフィギュアのDEFを25アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "def": 25,
+          "duration": "persistent"
+        }
+      },
+      "def": 120
+    },
+    {
+      "id": "DORA_038",
+      "uid": "DORA_038",
+      "number": "038",
+      "name": "どら焼きの潮音の笛吹き",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 90,
+      "role": "潮音の応援歌",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/038.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "潮音の応援歌",
+        "description": "自分の場の水属性フィギュア全体のATKを10アップする。",
+        "effect": "自分の場の水属性フィギュア全体のATKを10アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "target": "allies",
+          "filterAttribute": "水",
+          "atk": 10,
+          "duration": "persistent"
+        }
+      },
+      "def": 105
+    },
+    {
+      "id": "DORA_039",
+      "uid": "DORA_039",
+      "number": "039",
+      "name": "どら焼きの真珠珊瑚の司祭",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "水/光",
+      "attackType": "物理",
+      "atk": 155,
+      "role": "真珠珊瑚の祈り",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/039.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "真珠珊瑚の祈り",
+        "description": "自分のライフを35回復し、「海底の秘宝どら焼き」タグを持つ味方全体のDEFを15アップする。",
+        "effect": "自分のライフを35回復し、「海底の秘宝どら焼き」タグを持つ味方全体のDEFを15アップする。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "heal": 35,
+          "target": "allies",
+          "filterTag": "series-dorayaki-sea",
+          "def": 15,
+          "duration": "persistent"
+        }
+      },
+      "def": 205
+    },
+    {
+      "id": "DORA_040",
+      "uid": "DORA_040",
+      "number": "040",
+      "name": "どら焼きの竜潮の秘宝騎士",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 210,
+      "role": "竜潮の突破槍",
+      "collection": "main",
+      "family": "DORA_SEA",
+      "series": "海底の秘宝どら焼き",
+      "tags": [
+        "18",
+        "45",
+        "series-dorayaki-sea"
+      ],
+      "image": "assets/figures/dorayaki/040.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "竜潮の突破槍",
+        "description": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
+        "effect": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
+        "timing": "own-main",
+        "timingLabel": "自分のメインフェイズ",
+        "runtimePlan": {
+          "revision": "oct07",
+          "atk": 30,
+          "pierceGuard": true,
+          "duration": "turn"
+        }
+      },
+      "def": 160
+    }
+  ],
+  "recipes": [
+    {
+      "id": "dorayaki-016-1",
+      "target": "DORA_016",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_001"
+        },
+        {
+          "id": "DORA_012"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-016-2",
+      "target": "DORA_016",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_001"
+        },
+        {
+          "id": "DORA_007"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-017-1",
+      "target": "DORA_017",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_003"
+        },
+        {
+          "id": "DORA_014"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-017-2",
+      "target": "DORA_017",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_014"
+        },
+        {
+          "attribute": "火"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-018-1",
+      "target": "DORA_018",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_004"
+        },
+        {
+          "id": "DORA_015"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-018-2",
+      "target": "DORA_018",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_015"
+        },
+        {
+          "tag": "42"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-019-1",
+      "target": "DORA_019",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_005"
+        },
+        {
+          "id": "DORA_009"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-019-2",
+      "target": "DORA_019",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_005"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-020-1",
+      "target": "DORA_020",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_006"
+        },
+        {
+          "id": "DORA_011"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-020-2",
+      "target": "DORA_020",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_013"
+        },
+        {
+          "attribute": "闇"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-021-1",
+      "target": "DORA_021",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_008"
+        },
+        {
+          "id": "DORA_009"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-021-2",
+      "target": "DORA_021",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_008"
+        },
+        {
+          "attribute": "風"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-022-1",
+      "target": "DORA_022",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_013"
+        },
+        {
+          "id": "DORA_011"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-022-2",
+      "target": "DORA_022",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_013"
+        },
+        {
+          "tag": "18"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-023-1",
+      "target": "DORA_023",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_002"
+        },
+        {
+          "id": "DORA_014"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-023-2",
+      "target": "DORA_023",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_010"
+        },
+        {
+          "id": "DORA_003"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-029-1",
+      "target": "DORA_029",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_007"
+        },
+        {
+          "id": "DORA_010"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-029-2",
+      "target": "DORA_029",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_007"
+        },
+        {
+          "attribute": "光"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-030-1",
+      "target": "DORA_030",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_002"
+        },
+        {
+          "id": "DORA_015"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-030-2",
+      "target": "DORA_030",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_002"
+        },
+        {
+          "attribute": "地"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-039-1",
+      "target": "DORA_039",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_032"
+        },
+        {
+          "id": "DORA_033"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-039-2",
+      "target": "DORA_039",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_032"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-040-1",
+      "target": "DORA_040",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_035"
+        },
+        {
+          "id": "DORA_036"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-040-2",
+      "target": "DORA_040",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "DORA_036"
+        },
+        {
+          "id": "DORA_037"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-024-1",
+      "target": "DORA_024",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_019"
+        },
+        {
+          "id": "DORA_040"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-025-1",
+      "target": "DORA_025",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_019"
+        },
+        {
+          "id": "DORA_021"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-025-2",
+      "target": "DORA_025",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_039"
+        },
+        {
+          "id": "DORA_040"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-026-1",
+      "target": "DORA_026",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_020"
+        },
+        {
+          "id": "DORA_022"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-026-2",
+      "target": "DORA_026",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_020"
+        },
+        {
+          "id": "DORA_023"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-027-1",
+      "target": "DORA_027",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_017"
+        },
+        {
+          "id": "DORA_022"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-027-2",
+      "target": "DORA_027",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_017"
+        },
+        {
+          "id": "DORA_023"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-031-1",
+      "target": "DORA_031",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_018"
+        },
+        {
+          "id": "DORA_029"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-031-2",
+      "target": "DORA_031",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_018"
+        },
+        {
+          "id": "DORA_030"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "dorayaki-024-2",
+      "target": "DORA_024",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "DORA_019"
+        },
+        {
+          "attribute": "水"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    }
+  ],
+  "tags": [
+    {
+      "id": "series-dorayaki-desert",
+      "name": "砂漠を癒すどら焼き"
+    },
+    {
+      "id": "series-dorayaki-sea",
+      "name": "海底の秘宝どら焼き"
+    }
+  ]
+}
