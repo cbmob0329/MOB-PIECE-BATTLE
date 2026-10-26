@@ -1,0 +1,32 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+const root=path.resolve(import.meta.dirname,'..'),dir=path.resolve(root,process.argv[2]||'artifacts/dorayaki-remake-20261025');
+const manifest=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'),'utf8'));
+const editor=path.join(root,'編集アプリ/MOB-PIECE-Editor'),snapshot=JSON.parse(fs.readFileSync(path.join(editor,'editor-current-snapshot.json'),'utf8'));
+const sharp=createRequire(import.meta.url)(path.join(process.env.MPB_RUNTIME_MODULES,'sharp'));
+const backup=path.join(dir,'originals');
+const writeImage=async(file,bytes)=>{for(let attempt=0;;attempt++){try{fs.writeFileSync(file,bytes);return;}catch(error){if(attempt>=8||!['UNKNOWN','EBUSY','EPERM'].includes(error.code))throw error;await new Promise(resolve=>setTimeout(resolve,250));}}};
+const protect=rel=>{const to=path.join(backup,rel);if(!fs.existsSync(to)){fs.mkdirSync(path.dirname(to),{recursive:true});fs.copyFileSync(path.join(root,rel),to);}};
+for(const f of ['data.js','editor-current-snapshot.json'])protect('編集アプリ/MOB-PIECE-Editor/'+f);
+const before=JSON.stringify(snapshot.data.records),installed=[];
+assert.equal(manifest.assets.length,24);
+for(const a of manifest.assets){
+ const bytes=fs.readFileSync(a.path),meta=await sharp(bytes).metadata();assert.equal(meta.width,meta.height,a.id);assert(meta.hasAlpha,a.id);
+ const stats=await sharp(bytes).stats();assert(stats.channels[3].min===0,a.id+' background must be transparent');
+ const originals='新フィギュア/どら焼き/'+a.id+'.png',runtime='public/assets/figures/dorayaki/'+a.id+'.png';
+ protect(originals);protect(runtime);
+ await writeImage(path.join(root,originals),bytes);await writeImage(path.join(root,runtime),bytes);
+ const asset='assets/dorayaki-remake-'+a.id+'-'+crypto.createHash('sha256').update(bytes).digest('hex').slice(0,12)+'.webp';
+ await sharp(bytes).resize({width:480,height:480,fit:'inside',withoutEnlargement:true}).webp({quality:90}).toFile(path.join(editor,asset));
+ snapshot.data.images['DORA_'+a.id]=asset;
+ installed.push({id:a.id,width:meta.width,height:meta.height,sha256:crypto.createHash('sha256').update(bytes).digest('hex'),editorImage:asset});
+}
+snapshot.data.extractedAt=new Date().toISOString();
+assert.equal(JSON.stringify(snapshot.data.records),before,'Figure stats and rules must remain unchanged');
+await writeImage(path.join(editor,'editor-current-snapshot.json'),JSON.stringify(snapshot));
+await writeImage(path.join(editor,'data.js'),'window.MPB_DATA='+JSON.stringify(snapshot.data)+';\n');
+fs.writeFileSync(path.join(dir,'installed.json'),JSON.stringify({backup,installed},null,2));
+console.log('Installed '+installed.length+' square transparent remakes into originals, game, and workshop. Figure data unchanged. Backup: '+backup);

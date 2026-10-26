@@ -1,3 +1,5 @@
+import {grantTowerFigures} from './tower-figure-rewards.js';
+import {release,initializeInitialRelease} from './initial-release.js';
 import {deckSlotCount} from './deck-slots.js';
 import {masterDeckLocked,MASTER_DECK_LOCK_MESSAGE} from './master-deck-lock.js';
 import starterV2 from '../data/oct10-starter-v2.json' with {type:'json'};
@@ -5,14 +7,10 @@ import {towerVersion,towerStarters,towerMix,grassTower,towerEnemy} from '../data
 import {validateSoulDeck} from './soul-battle.js';
 import {prepareTowerRewards,applyTowerOpponentRewards} from './tower-rewards.js';
 export function towerState(profile){const p=profile.towerProgress||{};return {...p,version:towerVersion,cleared:[...new Set((p.cleared||[]).filter(n=>Number.isInteger(n)&&n>=1&&n<=5))],starterGranted:p.starterGranted===true,starterVersion:p.starterVersion||0,active:p.active||null,last:p.last||null};}
-export function prepareTowerStartup(profile){
- const next=structuredClone(profile),t=towerState(next);next.towerProgress=t;if(t.starterGranted&&t.starterVersion>=4)return next;
- if(!t.starterGranted&&!next.initialChoice?.claimed&&next.initialChoice?.state!=='claimed'){const starter=towerStarters[0];next.owned??={};const counts={};for(const id of starter.deck)counts[id]=(counts[id]||0)+1;for(const [id,n] of Object.entries(counts))next.owned[id]=Math.max(next.owned[id]||0,n);next.soulDecks=Array.from({length:deckSlotCount(next)},(_,i)=>[...(next.soulDecks?.[i]||[])]);const slot=next.soulDecks.findIndex(d=>!d.length);if(slot>=0)next.soulDecks[slot]=[...starter.deck];t.starterId=starter.id;if(!next.welcomeClaimed){next.diamonds=(next.diamonds||0)+50;next.welcomeClaimed=true;}}
- t.starterGranted=true;t.starterVersion=4;next.initialChoice={...next.initialChoice,claimed:true};return next;
-}
+export function prepareTowerStartup(profile){const next=structuredClone(profile);initializeInitialRelease(next);return next;}
 export function towerDeckOptions(profile){
  const saved=Array.from({length:deckSlotCount(profile)},(_,i)=>({key:'slot:'+i,name:'DECK '+(i+1),deck:profile.soulDecks?.[i]||[],slot:i}));
- const templates=[...towerStarters,towerMix].map(s=>({key:'starter:'+s.id,name:s.name,deck:s.deck,slot:2}));
+ const templates=release.starters.map(s=>({key:'starter:'+s.id,name:s.name,deck:s.deck,slot:2}));
  return [...saved,...templates].map(o=>({...o,check:validateSoulDeck(o.deck,profile.owned,{profile,slot:o.slot})}));
 }
 export function prepareTowerThirdDeck(profile){if(masterDeckLocked(profile))throw Error(MASTER_DECK_LOCK_MESSAGE);const next=structuredClone(profile);const slot=[2,3,4].find(i=>!next.soulDecks?.[i]?.length);if(slot===undefined)throw Error('空き枠がありません。既存のデッキ、または組み替えCを選べます。');next.soulDecks??=[];const check=validateSoulDeck(towerMix.deck,next.owned,{profile:next,slot});if(!check.valid)throw Error(check.errors[0]||'カードが不足しています');next.soulDecks[slot]=[...towerMix.deck];next.soulDeckSlot=slot;return next;}
@@ -28,8 +26,8 @@ export function prepareTowerStart(profile,floor,keys,assignment){
 export function towerMatchRequest(profile){const a=towerState(profile).active;if(!a)throw Error('進行中の対戦がありません');const index=a.results.length,wins=a.results.filter(Boolean).length,losses=index-wins;if(wins>=a.need||losses>=a.need)throw Error('この連戦は終了しています');return {mode:'tower',towerId:'grass',floor:a.floor,title:grassTower.name+' '+a.floor+'F · MATCH '+(index+1),opponentName:a.opponent,playerDeck:[...a.decks[a.assignment[index]].ids],enemy:structuredClone(a.enemy),towerToken:a.id+':'+index,seriesLabel:a.floor+'F · MATCH '+(index+1)+' / '+a.assignment.length+' · '+wins+' − '+losses,returnLabel:'塔のスコアへ →'};}
 export function prepareTowerResult(profile,token,won){
  const next=prepareTowerRewards(profile).next,t=towerState(next);next.towerProgress=t;const a=t.active;if(!a||token!==a.id+':'+a.results.length)throw Error('この試合の結果は記録済みです');
- a.results.push(won===true);const wins=a.results.filter(Boolean).length,losses=a.results.length-wins,finished=wins>=a.need||losses>=a.need;let reward=null;
- if(finished){const cleared=wins>=a.need,first=cleared&&!t.cleared.includes(a.floor);if(first){t.cleared.push(a.floor);reward=applyTowerOpponentRewards(next);}t.last={floor:a.floor,won:cleared,wins,losses,reward,unlockedBanners:first&&a.floor===5};t.active=null;}
+ a.results.push(won===true);const wins=a.results.filter(Boolean).length,losses=a.results.length-wins,finished=wins>=a.need||losses>=a.need;const figureRewards=won===true?grantTowerFigures(next,a.enemy,{master:a.floor===5&&wins>=a.need}):[];let reward=figureRewards.length?{coins:0,diamonds:0,figures:figureRewards}:null;
+ if(finished){const cleared=wins>=a.need,first=cleared&&!t.cleared.includes(a.floor);if(first){t.cleared.push(a.floor);reward={coins:0,diamonds:0,...applyTowerOpponentRewards(next),figures:figureRewards};}t.last={floor:a.floor,won:cleared,wins,losses,reward,unlockedBanners:false};t.active=null;}
  return {next,reward,finished,message:(finished?(wins>=a.need?'FLOOR CLEAR!':'また挑戦しよう。ペナルティはありません。'):'MATCH FINISHED')+' · '+wins+' − '+losses};
 }
 export function prepareTowerAbandon(profile){const next=structuredClone(profile);next.towerProgress=towerState(next);next.towerProgress.active=null;return next;}

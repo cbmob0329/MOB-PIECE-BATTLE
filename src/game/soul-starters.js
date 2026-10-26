@@ -1,6 +1,7 @@
+import {mbTestDecks} from '../data/mb-test-decks.js';
 import priorTemplates from '../data/test-starters.json' with {type:'json'};
 import {dorayakiDecks} from '../data/dorayaki-test-decks.js';
-const templates=[...priorTemplates,...dorayakiDecks];
+const templates=[...mbTestDecks,...priorTemplates,...dorayakiDecks];
 import {soulFigures,soulById,recipes,quotas,autoSoulDeck,setSoulDeck} from './soul-battle.js';
 import {OWN_CAP} from '../data/gacha.js';
 export const soulStarters=[{id:'grassland',name:'草原デッキ',tag:'41',attributes:['風','水','地']},{id:'desert',name:'砂漠デッキ',tag:'42',attributes:['闇','地','光']}];

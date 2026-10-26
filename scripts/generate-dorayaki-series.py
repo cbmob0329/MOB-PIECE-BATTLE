@@ -71,7 +71,17 @@ for target,a,b in [(16,1,12),(16,1,7),(17,3,14),(17,14,{'attribute':'火'}),(18,
 for target,a,b in [(39,32,33),(39,32,{'attribute':'水'}),(40,35,36),(40,36,37)]:recipe(target,a,b)
 for target,a,b in [(24,19,40),(25,19,21),(25,39,40),(26,20,22),(26,20,23),(27,17,22),(27,17,23),(31,18,29),(31,18,30)]:recipe(target,a,b,True)
 recipe(24,19,{'attribute':'水'})
+# Preserve reviewed names, combat design and passives when rebuilding recipe data.
+current_path=ROOT/'src/data/dorayaki-series.json'
+current=json.loads(current_path.read_text(encoding='utf-8')) if current_path.exists() else {}
+if current.get('reviewRevision'):
+    reviewed={f['id']:f for f in current['figures']}
+    for f in rows:
+        prior=reviewed.get(f['id'],{})
+        for key in ['name','atk','def','role','soulSkill','passive','passiveName','passiveDescription']:
+            if key in prior:f[key]=prior[key]
 payload=dict(figures=rows,recipes=recipes,tags=[dict(id=DT,name=DESERT),dict(id=ST,name=SEA)])
+if current.get('reviewRevision'):payload['reviewRevision']=current['reviewRevision']
 (ROOT/'src/data/dorayaki-series.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 target=ROOT/'public/assets/figures/dorayaki';target.mkdir(parents=True,exist_ok=True)
 for f in rows:shutil.copyfile(ROOT/'新フィギュア/どら焼き'/f"{f['number']}.png",target/f"{f['number']}.png")

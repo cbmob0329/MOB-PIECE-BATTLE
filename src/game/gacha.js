@@ -2,10 +2,10 @@ import {figures} from '../data/catalog.js';
 import {usableFigure} from '../data/gacha.js';
 import {collectionFull} from './inventory.js';
 import {bannerUnlocked} from '../data/tower.js';
-import {banners,poolFor,pickupsFor,mainPickupFor,ratesFor,RARITY_RANK,RUBY_COST,OWN_CAP} from '../data/gacha.js?v=7.3.0';
+import {banners,puniPoolFor,poolFor,pickupsFor,mainPickupFor,ratesFor,RARITY_RANK,RUBY_COST,OWN_CAP} from '../data/gacha.js?v=7.3.0';
 import {acquireFigure,ensureGachaStats} from './inventory.js?v=7.3.0';
 export function randomUnit(){const a=new Uint32Array(1);globalThis.crypto.getRandomValues(a);return a[0]/4294967296;}
-export function rollFigure(banner,guaranteed=false,rng=randomUnit){const pool=poolFor(banner);if(!pool.length)throw new Error('排出対象がありません');let n=rng();const rates=Object.entries(ratesFor(banner,guaranteed));let rarity=rates.at(-1)[0];for(const [r,p] of rates){n-=p;if(n<0){rarity=r;break;}}const same=pool.filter(f=>f.rarity===rarity);const picks=pickupsFor(banner).filter(f=>f.rarity===rarity);const bucket=picks.length&&rng()<.55?picks:same;return bucket[Math.min(bucket.length-1,Math.floor(rng()*bucket.length))];}
+export function rollFigure(banner,guaranteed=false,rng=randomUnit){const puni=puniPoolFor(banner);if(guaranteed!=='SSR'&&puni.length&&rng()<(banner.puniRate||0))return puni[Math.min(puni.length-1,Math.floor(rng()*puni.length))];const pool=poolFor(banner).filter(f=>!banner.puniIds?.includes(f.sourceId));if(!pool.length)throw new Error('排出対象がありません');let n=rng();const rates=Object.entries(ratesFor(banner,guaranteed));let rarity=rates.at(-1)[0];for(const [r,p] of rates){n-=p;if(n<0){rarity=r;break;}}const same=pool.filter(f=>f.rarity===rarity);const picks=pickupsFor(banner).filter(f=>f.rarity===rarity);const bucket=picks.length&&rng()<.55?picks:same;return bucket[Math.min(bucket.length-1,Math.floor(rng()*bucket.length))];}
 // One exclusive special-mode roll per paid action (single or ten).
 export function drawMode(value){return value<.001?'allSSR':value<.021?'pickup':'normal';}
 export function cueFor(rows){return rows.some(f=>RARITY_RANK[f.rarity]>=3)?'ssr':'normal';}

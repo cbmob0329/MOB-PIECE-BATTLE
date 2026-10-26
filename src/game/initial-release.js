@@ -1,10 +1,11 @@
 import {deckSlotCount} from './deck-slots.js';
 import {validateSoulDeck} from './soul-battle.js';
-import release from '../data/initial-release.json' with {type:'json'};
+import release from '../data/mb-adventure.json' with {type:'json'};
 export {release};
 export function initializeInitialRelease(profile,{newProfile=false}={}){
  if(profile.initialChoice?.version===release.version)return false;
- profile.initialChoice={version:release.version,state:newProfile?'pending':'available',starterId:null};
+ const claimed=profile.towerProgress?.starterGranted||profile.initialChoice?.claimed||profile.initialChoice?.state==='claimed';
+ profile.initialChoice={version:release.version,state:claimed?'claimed':'pending',claimed:!!claimed,starterId:profile.initialChoice?.starterId||null};
  if(!release.banners.some(b=>b.id===profile.bannerId))profile.bannerId=release.banners[0].id;
  return true;
 }
@@ -16,6 +17,9 @@ export function prepareInitialChoice(profile,id){
  const decks=Array.from({length:deckSlotCount(next)},(_,i)=>Array.isArray(next.soulDecks?.[i])?[...next.soulDecks[i]]:[]),slot=decks.findIndex((d,i)=>d.length===0&&validateSoulDeck(starter.deck,next.owned,{profile:{...next,soulDecks:decks},slot:i}).valid);
  if(slot>=0){decks[slot]=[...starter.deck];next.soulDecks=decks;if(profile.initialChoice.state==='pending')next.soulDeckSlot=slot;}
  if(profile.initialChoice.state==='pending'){next.centerId=starter.featuredIds[0];next.avatarId=starter.featuredIds[0];next.displayIds=[...new Set(starter.deck)].slice(0,4);}
- next.initialChoice={version:release.version,state:'claimed',starterId:id,deckSlot:slot};
+ next.initialChoice={version:release.version,state:'claimed',claimed:true,starterId:id,deckSlot:slot};
+ next.towerProgress={...next.towerProgress,starterGranted:true,starterVersion:5,starterId:id};
+ if(!next.welcomeClaimed){next.diamonds=(next.diamonds||0)+50;next.welcomeClaimed=true;}
+ next.bannerId='mb-adventure-'+id.replace('mb-','')+'-1';
  return next;
 }

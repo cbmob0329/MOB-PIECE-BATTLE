@@ -1,0 +1,958 @@
+[
+  {
+    "id": "DORA_001",
+    "name": "モブオアシア",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "風",
+    "atk": 65,
+    "def": 90,
+    "skill": {
+      "name": "ひとくちのおもてなし",
+      "description": "自分のライフを20回復し、味方1体のDEFを10アップする。",
+      "effect": "自分のライフを20回復し、味方1体のDEFを10アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 20,
+        "target": "ally",
+        "def": 10,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_002",
+    "name": "モブサンドラ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "地",
+    "atk": 90,
+    "def": 90,
+    "skill": {
+      "name": "砂に眠る補給品",
+      "description": "シードデッキから1体ドローする。",
+      "effect": "シードデッキから1体ドローする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "draw": 1,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_003",
+    "name": "モブコゲドラ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "火",
+    "atk": 105,
+    "def": 60,
+    "skill": {
+      "name": "あつあつあんこ弾",
+      "description": "相手のライフに20ダメージを与える。",
+      "effect": "相手のライフに20ダメージを与える。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "lifeDamage": 20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_004",
+    "name": "モブマミドラ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "地",
+    "atk": 70,
+    "def": 110,
+    "skill": {
+      "name": "黄金の包帯",
+      "description": "味方1体のDEFを15アップする。",
+      "effect": "味方1体のDEFを15アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "ally",
+        "def": 15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_005",
+    "name": "モブバブル",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "水",
+    "atk": 70,
+    "def": 95,
+    "skill": {
+      "name": "泡玉シールド",
+      "description": "攻撃対象となった味方のDEFを20アップする。",
+      "effect": "攻撃対象となった味方のDEFを20アップする。",
+      "timing": "attack-response",
+      "timingLabel": "相手の攻撃宣言時",
+      "runtimePlan": {
+        "guardAlly": 20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_006",
+    "name": "モブルナ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "闇",
+    "atk": 90,
+    "def": 85,
+    "skill": {
+      "name": "月影のまどろみ",
+      "description": "相手1体のATKを15ダウンする。",
+      "effect": "相手1体のATKを15ダウンする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "enemy",
+        "atk": -15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_007",
+    "name": "モブアンコック",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "地",
+    "atk": 80,
+    "def": 100,
+    "skill": {
+      "name": "焼きたての差し入れ",
+      "description": "自分のライフを30回復する。",
+      "effect": "自分のライフを30回復する。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 30,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_008",
+    "name": "モブシェルド",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "水",
+    "atk": 65,
+    "def": 110,
+    "skill": {
+      "name": "きよらかな潮水",
+      "description": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを15回復する。防御で失ったDEFは戻らない。",
+      "effect": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを15回復する。防御で失ったDEFは戻らない。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "ally",
+        "cleanse": true,
+        "heal": 15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_009",
+    "name": "モブギフティ",
+    "stage": "seed",
+    "rarity": "SR",
+    "attribute": "水",
+    "atk": 85,
+    "def": 95,
+    "skill": {
+      "name": "海底への贈り物",
+      "description": "シードデッキから1体ドローし、自分のライフを10回復する。",
+      "effect": "シードデッキから1体ドローし、自分のライフを10回復する。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "draw": 1,
+        "heal": 10,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_010",
+    "name": "モブシルフィ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "風",
+    "atk": 100,
+    "def": 85,
+    "skill": {
+      "name": "砂風のエール",
+      "description": "味方1体のATKを15アップする。",
+      "effect": "味方1体のATKを15アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "ally",
+        "atk": 15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_011",
+    "name": "モブクロミツ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "闇",
+    "atk": 85,
+    "def": 95,
+    "skill": {
+      "name": "とろける砂の呪い",
+      "description": "相手1体のDEFを15ダウンする。",
+      "effect": "相手1体のDEFを15ダウンする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "enemy",
+        "def": -15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_012",
+    "name": "モブヒスイ",
+    "stage": "seed",
+    "rarity": "SR",
+    "attribute": "光",
+    "atk": 95,
+    "def": 115,
+    "skill": {
+      "name": "翡翠のお茶会",
+      "description": "自分のライフを25回復し、味方1体のATKを10アップする。",
+      "effect": "自分のライフを25回復し、味方1体のATKを10アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 25,
+        "target": "ally",
+        "atk": 10,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_013",
+    "name": "モブツクヨミ",
+    "stage": "seed",
+    "rarity": "SR",
+    "attribute": "闇",
+    "atk": 110,
+    "def": 95,
+    "skill": {
+      "name": "月読みの封砂",
+      "description": "相手1体のATKを20ダウンする。",
+      "effect": "相手1体のATKを20ダウンする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "enemy",
+        "atk": -20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_014",
+    "name": "モブベニア",
+    "stage": "seed",
+    "rarity": "SR",
+    "attribute": "火",
+    "atk": 125,
+    "def": 80,
+    "skill": {
+      "name": "焦がしあんこの炎",
+      "description": "相手1体のDEFを20ダウンする。",
+      "effect": "相手1体のDEFを20ダウンする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "enemy",
+        "def": -20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_015",
+    "name": "モブサンドガード",
+    "stage": "seed",
+    "rarity": "SR",
+    "attribute": "地",
+    "atk": 80,
+    "def": 130,
+    "skill": {
+      "name": "砂金の護符",
+      "description": "このフィギュアのDEFを25アップする。",
+      "effect": "このフィギュアのDEFを25アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "def": 25,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_016",
+    "name": "モブオアセージ",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "光",
+    "atk": 160,
+    "def": 190,
+    "skill": {
+      "name": "恵みのオアシス",
+      "description": "自分のライフを30回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを15アップする。",
+      "effect": "自分のライフを30回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを15アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 30,
+        "target": "allies",
+        "filterTag": "series-dorayaki-desert",
+        "def": 15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_017",
+    "name": "モブイフリドラ",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "火",
+    "atk": 215,
+    "def": 145,
+    "skill": {
+      "name": "紅蓮の焼き印",
+      "description": "このターン、このフィギュアのATKを35アップする。相手のライフに20ダメージを与える。",
+      "effect": "このターン、このフィギュアのATKを35アップする。相手のライフに20ダメージを与える。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "atk": 35,
+        "duration": "turn",
+        "lifeDamage": 20
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_018",
+    "name": "モブゴルディア",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "地",
+    "atk": 145,
+    "def": 220,
+    "skill": {
+      "name": "不落の黄金盾",
+      "description": "このフィギュアのDEFを30アップする。このターン、相手はこのフィギュアを優先して攻撃対象に選ぶ。",
+      "effect": "このフィギュアのDEFを30アップする。このターン、相手はこのフィギュアを優先して攻撃対象に選ぶ。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "taunt": true,
+        "def": 30,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_019",
+    "name": "モブタイディア",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "水",
+    "atk": 160,
+    "def": 190,
+    "skill": {
+      "name": "潮流の結界",
+      "description": "自分のライフを20回復し、自分の場の水属性フィギュア全体のDEFを20アップする。",
+      "effect": "自分のライフを20回復し、自分の場の水属性フィギュア全体のDEFを20アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 20,
+        "target": "allies",
+        "filterAttribute": "水",
+        "def": 20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_020",
+    "name": "モブミストラ",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "闇",
+    "atk": 190,
+    "def": 165,
+    "skill": {
+      "name": "紫煙の砂嵐",
+      "description": "相手全体のATKを15ダウンする。",
+      "effect": "相手全体のATKを15ダウンする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "enemies",
+        "atk": -15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_021",
+    "name": "モブミントラ",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "風/水",
+    "atk": 150,
+    "def": 205,
+    "skill": {
+      "name": "浄化の潮風",
+      "description": "味方1体のスキルによるATK・DEF低下を解除し、ATKを10アップする。自分のライフを30回復する。防御で失ったDEFは戻らない。",
+      "effect": "味方1体のスキルによるATK・DEF低下を解除し、ATKを10アップする。自分のライフを30回復する。防御で失ったDEFは戻らない。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "ally",
+        "cleanse": true,
+        "atk": 10,
+        "heal": 30,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_022",
+    "name": "モブアヌビス",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "闇",
+    "atk": 195,
+    "def": 175,
+    "skill": {
+      "name": "秘伝のあんこ魔法",
+      "description": "シードデッキから1体ドローし、このフィギュアのATKを20アップする。",
+      "effect": "シードデッキから1体ドローし、このフィギュアのATKを20アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "draw": 1,
+        "atk": 20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_023",
+    "name": "モブグレンランス",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "火",
+    "atk": 215,
+    "def": 155,
+    "skill": {
+      "name": "紅砂の突破槍",
+      "description": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
+      "effect": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "atk": 30,
+        "pierceGuard": true,
+        "duration": "turn"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_024",
+    "name": "モブマエストラ",
+    "stage": "mob",
+    "rarity": "SSR",
+    "attribute": "水",
+    "atk": 200,
+    "def": 225,
+    "skill": {
+      "name": "秘宝の潮騒",
+      "description": "自分のライフを25回復し、自分の場の水属性フィギュア全体のATKを15アップする。\n【パッシブ：潮騒アンサンブル】このフィギュアが場にいる間、このフィギュア以外の味方の水属性フィギュアのATKを10アップする。",
+      "effect": "自分のライフを25回復し、自分の場の水属性フィギュア全体のATKを15アップする。\n【パッシブ：潮騒アンサンブル】このフィギュアが場にいる間、このフィギュア以外の味方の水属性フィギュアのATKを10アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 25,
+        "target": "allies",
+        "filterAttribute": "水",
+        "atk": 15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {
+      "aura": {
+        "attributes": [
+          "水"
+        ],
+        "excludeSelf": true,
+        "atk": 10
+      }
+    },
+    "passiveName": "潮騒アンサンブル",
+    "passiveDescription": "このフィギュアが場にいる間、このフィギュア以外の味方の水属性フィギュアのATKを10アップする。"
+  },
+  {
+    "id": "DORA_025",
+    "name": "モブパルシエラ",
+    "stage": "mob",
+    "rarity": "UR",
+    "attribute": "水/光",
+    "atk": 245,
+    "def": 270,
+    "skill": {
+      "name": "海底秘宝の祝福",
+      "description": "自分のライフを40回復し、自分の場の水属性フィギュア全体のDEFを25アップする。\n【パッシブ：秘宝姫の加護】このフィギュアが場にいる間、このフィギュア以外の「海底の秘宝どら焼き」タグを持つ味方のDEFを15アップする。",
+      "effect": "自分のライフを40回復し、自分の場の水属性フィギュア全体のDEFを25アップする。\n【パッシブ：秘宝姫の加護】このフィギュアが場にいる間、このフィギュア以外の「海底の秘宝どら焼き」タグを持つ味方のDEFを15アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 40,
+        "target": "allies",
+        "filterAttribute": "水",
+        "def": 25,
+        "duration": "persistent"
+      }
+    },
+    "passive": {
+      "aura": {
+        "tags": [
+          "series-dorayaki-sea"
+        ],
+        "excludeSelf": true,
+        "def": 15
+      }
+    },
+    "passiveName": "秘宝姫の加護",
+    "passiveDescription": "このフィギュアが場にいる間、このフィギュア以外の「海底の秘宝どら焼き」タグを持つ味方のDEFを15アップする。"
+  },
+  {
+    "id": "DORA_026",
+    "name": "モブアークノワール",
+    "stage": "mob",
+    "rarity": "UR",
+    "attribute": "闇",
+    "atk": 250,
+    "def": 245,
+    "skill": {
+      "name": "紫砂の秘術",
+      "description": "相手1体のATKを30ダウンし、相手のライフに20ダメージを与える。\n【パッシブ：秘術の研鑽】このフィギュアがソウルスキルを発動するたび、このフィギュアのATKを10アップする。",
+      "effect": "相手1体のATKを30ダウンし、相手のライフに20ダメージを与える。\n【パッシブ：秘術の研鑽】このフィギュアがソウルスキルを発動するたび、このフィギュアのATKを10アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "enemy",
+        "atk": -30,
+        "lifeDamage": 20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {
+      "skillGrowth": {
+        "selfOnly": true,
+        "atk": 10
+      }
+    },
+    "passiveName": "秘術の研鑽",
+    "passiveDescription": "このフィギュアがソウルスキルを発動するたび、このフィギュアのATKを10アップする。"
+  },
+  {
+    "id": "DORA_027",
+    "name": "モブアビスドラ",
+    "stage": "mob",
+    "rarity": "MOB",
+    "attribute": "闇/火",
+    "atk": 285,
+    "def": 250,
+    "skill": {
+      "name": "黒蜜の王域",
+      "description": "相手全体のATKを20ダウンし、このフィギュアのATKを20アップする。\n【パッシブ：黒蜜の覇気】このフィギュアが攻撃を宣言するたび、このフィギュアのATKを10、DEFを5アップする。",
+      "effect": "相手全体のATKを20ダウンし、このフィギュアのATKを20アップする。\n【パッシブ：黒蜜の覇気】このフィギュアが攻撃を宣言するたび、このフィギュアのATKを10、DEFを5アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "enemies",
+        "atk": -20,
+        "selfAtk": 20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {
+      "attackGrowth": {
+        "atk": 10,
+        "def": 5
+      }
+    },
+    "passiveName": "黒蜜の覇気",
+    "passiveDescription": "このフィギュアが攻撃を宣言するたび、このフィギュアのATKを10、DEFを5アップする。"
+  },
+  {
+    "id": "DORA_029",
+    "name": "モブハニエル",
+    "stage": "middle",
+    "rarity": "SR",
+    "attribute": "光",
+    "atk": 145,
+    "def": 190,
+    "skill": {
+      "name": "花蜜のリペアグレーズ",
+      "description": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを40回復する。防御で失ったDEFは戻らない。",
+      "effect": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを40回復する。防御で失ったDEFは戻らない。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "ally",
+        "cleanse": true,
+        "heal": 40,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_030",
+    "name": "モブクロノギア",
+    "stage": "middle",
+    "rarity": "SR",
+    "attribute": "地",
+    "atk": 170,
+    "def": 180,
+    "skill": {
+      "name": "からくり補給",
+      "description": "シードデッキから1体ドローし、味方1体のDEFを20アップする。",
+      "effect": "シードデッキから1体ドローし、味方1体のDEFを20アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "draw": 1,
+        "target": "ally",
+        "def": 20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_031",
+    "name": "モブファラディア",
+    "stage": "mob",
+    "rarity": "MOB",
+    "attribute": "光/地",
+    "atk": 245,
+    "def": 285,
+    "skill": {
+      "name": "癒砂王の大饗宴",
+      "description": "自分のライフを50回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを20アップする。\n【パッシブ：癒砂王の号令】このフィギュアが場にいる間、このフィギュア以外の「砂漠を癒すどら焼き」タグを持つ味方のATK・DEFを10アップする。",
+      "effect": "自分のライフを50回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを20アップする。\n【パッシブ：癒砂王の号令】このフィギュアが場にいる間、このフィギュア以外の「砂漠を癒すどら焼き」タグを持つ味方のATK・DEFを10アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 50,
+        "target": "allies",
+        "filterTag": "series-dorayaki-desert",
+        "def": 20,
+        "duration": "persistent"
+      }
+    },
+    "passive": {
+      "aura": {
+        "tags": [
+          "series-dorayaki-desert"
+        ],
+        "excludeSelf": true,
+        "atk": 10,
+        "def": 10
+      }
+    },
+    "passiveName": "癒砂王の号令",
+    "passiveDescription": "このフィギュアが場にいる間、このフィギュア以外の「砂漠を癒すどら焼き」タグを持つ味方のATK・DEFを10アップする。"
+  },
+  {
+    "id": "DORA_032",
+    "name": "モブパール",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "水",
+    "atk": 70,
+    "def": 100,
+    "skill": {
+      "name": "真珠の道しるべ",
+      "description": "自分のライフを20回復し、味方1体のDEFを10アップする。",
+      "effect": "自分のライフを20回復し、味方1体のDEFを10アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 20,
+        "target": "ally",
+        "def": 10,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_033",
+    "name": "モブメルティ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "水",
+    "atk": 80,
+    "def": 95,
+    "skill": {
+      "name": "珊瑚のおやつ",
+      "description": "自分のライフを30回復する。",
+      "effect": "自分のライフを30回復する。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 30,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_034",
+    "name": "モブルミナ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "水",
+    "atk": 85,
+    "def": 85,
+    "skill": {
+      "name": "灯火の補給便",
+      "description": "シードデッキから1体ドローする。",
+      "effect": "シードデッキから1体ドローする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "draw": 1,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_035",
+    "name": "モブシースコープ",
+    "stage": "seed",
+    "rarity": "SR",
+    "attribute": "水",
+    "atk": 110,
+    "def": 85,
+    "skill": {
+      "name": "潮星の照準",
+      "description": "相手1体のDEFを15ダウンする。",
+      "effect": "相手1体のDEFを15ダウンする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "enemy",
+        "def": -15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_036",
+    "name": "モブタツドラ",
+    "stage": "seed",
+    "rarity": "R",
+    "attribute": "風/水",
+    "atk": 105,
+    "def": 80,
+    "skill": {
+      "name": "秘宝への追い風",
+      "description": "味方1体のATKを15アップする。",
+      "effect": "味方1体のATKを15アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "ally",
+        "atk": 15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_037",
+    "name": "モブトレジャ",
+    "stage": "seed",
+    "rarity": "SR",
+    "attribute": "水",
+    "atk": 65,
+    "def": 125,
+    "skill": {
+      "name": "泡宝箱の錠前",
+      "description": "このフィギュアのDEFを25アップする。",
+      "effect": "このフィギュアのDEFを25アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "def": 25,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_038",
+    "name": "モブシオネ",
+    "stage": "seed",
+    "rarity": "SR",
+    "attribute": "水",
+    "atk": 85,
+    "def": 110,
+    "skill": {
+      "name": "潮音の応援歌",
+      "description": "自分の場の水属性フィギュア全体のATKを10アップする。",
+      "effect": "自分の場の水属性フィギュア全体のATKを10アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "target": "allies",
+        "filterAttribute": "水",
+        "atk": 10,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_039",
+    "name": "モブセレパール",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "水/光",
+    "atk": 150,
+    "def": 210,
+    "skill": {
+      "name": "聖真珠の祈り",
+      "description": "自分のライフを35回復し、「海底の秘宝どら焼き」タグを持つ味方全体のDEFを15アップする。",
+      "effect": "自分のライフを35回復し、「海底の秘宝どら焼き」タグを持つ味方全体のDEFを15アップする。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "heal": 35,
+        "target": "allies",
+        "filterTag": "series-dorayaki-sea",
+        "def": 15,
+        "duration": "persistent"
+      }
+    },
+    "passive": {}
+  },
+  {
+    "id": "DORA_040",
+    "name": "モブアズランス",
+    "stage": "middle",
+    "rarity": "SSR",
+    "attribute": "水",
+    "atk": 215,
+    "def": 155,
+    "skill": {
+      "name": "蒼潮の突破槍",
+      "description": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
+      "effect": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
+      "timing": "own-main",
+      "timingLabel": "自分のメインフェイズ",
+      "runtimePlan": {
+        "revision": "oct07",
+        "atk": 30,
+        "pierceGuard": true,
+        "duration": "turn"
+      }
+    },
+    "passive": {}
+  }
+]

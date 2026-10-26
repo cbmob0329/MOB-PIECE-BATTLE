@@ -4,12 +4,12 @@
       "id": "DORA_001",
       "uid": "DORA_001",
       "number": "001",
-      "name": "モブオアシス給仕",
+      "name": "モブオアシア",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "風",
       "attackType": "魔法",
-      "atk": 70,
+      "atk": 65,
       "role": "ひとくちのおもてなし",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -35,18 +35,18 @@
           "duration": "persistent"
         }
       },
-      "def": 85
+      "def": 90
     },
     {
       "id": "DORA_002",
       "uid": "DORA_002",
       "number": "002",
-      "name": "モブ砂丘探検家",
+      "name": "モブサンドラ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "地",
       "attackType": "物理",
-      "atk": 95,
+      "atk": 90,
       "role": "砂に眠る補給品",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -70,18 +70,18 @@
           "duration": "persistent"
         }
       },
-      "def": 85
+      "def": 90
     },
     {
       "id": "DORA_003",
       "uid": "DORA_003",
       "number": "003",
-      "name": "モブ小さな炎魔",
+      "name": "モブコゲドラ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "火",
       "attackType": "物理",
-      "atk": 100,
+      "atk": 105,
       "role": "あつあつあんこ弾",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -105,13 +105,13 @@
           "duration": "persistent"
         }
       },
-      "def": 65
+      "def": 60
     },
     {
       "id": "DORA_004",
       "uid": "DORA_004",
       "number": "004",
-      "name": "モブ黄金ミイラ",
+      "name": "モブマミドラ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "地",
@@ -147,7 +147,7 @@
       "id": "DORA_005",
       "uid": "DORA_005",
       "number": "005",
-      "name": "モブ泡玉ダイバー",
+      "name": "モブバブル",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "水",
@@ -181,12 +181,12 @@
       "id": "DORA_006",
       "uid": "DORA_006",
       "number": "006",
-      "name": "モブ月砂魔女",
+      "name": "モブルナ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "闇",
       "attackType": "魔法",
-      "atk": 95,
+      "atk": 90,
       "role": "月影のまどろみ",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -211,18 +211,18 @@
           "duration": "persistent"
         }
       },
-      "def": 80
+      "def": 85
     },
     {
       "id": "DORA_007",
       "uid": "DORA_007",
       "number": "007",
-      "name": "モブ旅する菓子職人",
+      "name": "モブアンコック",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "地",
       "attackType": "物理",
-      "atk": 85,
+      "atk": 80,
       "role": "焼きたての差し入れ",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -246,13 +246,13 @@
           "duration": "persistent"
         }
       },
-      "def": 95
+      "def": 100
     },
     {
       "id": "DORA_008",
       "uid": "DORA_008",
       "number": "008",
-      "name": "モブ海亀守り",
+      "name": "モブシェルド",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "水",
@@ -289,12 +289,12 @@
       "id": "DORA_009",
       "uid": "DORA_009",
       "number": "009",
-      "name": "モブ真珠サンタ",
+      "name": "モブギフティ",
       "soulClass": "seed",
       "rarity": "SR",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 90,
+      "atk": 85,
       "role": "海底への贈り物",
       "collection": "main",
       "family": "DORA_SEA",
@@ -319,18 +319,18 @@
           "duration": "persistent"
         }
       },
-      "def": 90
+      "def": 95
     },
     {
       "id": "DORA_010",
       "uid": "DORA_010",
       "number": "010",
-      "name": "モブ砂漠配達員",
+      "name": "モブシルフィ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "風",
       "attackType": "魔法",
-      "atk": 95,
+      "atk": 100,
       "role": "砂風のエール",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -355,18 +355,18 @@
           "duration": "persistent"
         }
       },
-      "def": 95
+      "def": 85
     },
     {
       "id": "DORA_011",
       "uid": "DORA_011",
       "number": "011",
-      "name": "モブあんこゴースト",
+      "name": "モブクロミツ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "闇",
       "attackType": "魔法",
-      "atk": 80,
+      "atk": 85,
       "role": "とろける砂の呪い",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -391,18 +391,18 @@
           "duration": "persistent"
         }
       },
-      "def": 100
+      "def": 95
     },
     {
       "id": "DORA_012",
       "uid": "DORA_012",
       "number": "012",
-      "name": "モブ翡翠ティーマスター",
+      "name": "モブヒスイ",
       "soulClass": "seed",
       "rarity": "SR",
       "attribute": "光",
       "attackType": "魔法",
-      "atk": 100,
+      "atk": 95,
       "role": "翡翠のお茶会",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -428,18 +428,18 @@
           "duration": "persistent"
         }
       },
-      "def": 110
+      "def": 115
     },
     {
       "id": "DORA_013",
       "uid": "DORA_013",
       "number": "013",
-      "name": "モブ月読魔女",
+      "name": "モブツクヨミ",
       "soulClass": "seed",
       "rarity": "SR",
       "attribute": "闇",
       "attackType": "魔法",
-      "atk": 115,
+      "atk": 110,
       "role": "月読みの封砂",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -465,18 +465,18 @@
           "duration": "persistent"
         }
       },
-      "def": 90
+      "def": 95
     },
     {
       "id": "DORA_014",
       "uid": "DORA_014",
       "number": "014",
-      "name": "モブ紅炎術師",
+      "name": "モブベニア",
       "soulClass": "seed",
       "rarity": "SR",
       "attribute": "火",
       "attackType": "物理",
-      "atk": 120,
+      "atk": 125,
       "role": "焦がしあんこの炎",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -502,18 +502,18 @@
           "duration": "persistent"
         }
       },
-      "def": 85
+      "def": 80
     },
     {
       "id": "DORA_015",
       "uid": "DORA_015",
       "number": "015",
-      "name": "モブ黄金墓守",
+      "name": "モブサンドガード",
       "soulClass": "seed",
       "rarity": "SR",
       "attribute": "地",
       "attackType": "物理",
-      "atk": 85,
+      "atk": 80,
       "role": "砂金の護符",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -538,18 +538,18 @@
           "duration": "persistent"
         }
       },
-      "def": 125
+      "def": 130
     },
     {
       "id": "DORA_016",
       "uid": "DORA_016",
       "number": "016",
-      "name": "モブオアシス賢者",
+      "name": "モブオアセージ",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "光",
       "attackType": "魔法",
-      "atk": 165,
+      "atk": 160,
       "role": "恵みのオアシス",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -576,18 +576,18 @@
           "duration": "persistent"
         }
       },
-      "def": 185
+      "def": 190
     },
     {
       "id": "DORA_017",
       "uid": "DORA_017",
       "number": "017",
-      "name": "モブ紅蓮イフリート",
+      "name": "モブイフリドラ",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "火",
       "attackType": "物理",
-      "atk": 210,
+      "atk": 215,
       "role": "紅蓮の焼き印",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -613,18 +613,18 @@
           "lifeDamage": 20
         }
       },
-      "def": 150
+      "def": 145
     },
     {
       "id": "DORA_018",
       "uid": "DORA_018",
       "number": "018",
-      "name": "モブ黄金守護神",
+      "name": "モブゴルディア",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "地",
       "attackType": "物理",
-      "atk": 150,
+      "atk": 145,
       "role": "不落の黄金盾",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -650,18 +650,18 @@
           "duration": "persistent"
         }
       },
-      "def": 215
+      "def": 220
     },
     {
       "id": "DORA_019",
       "uid": "DORA_019",
       "number": "019",
-      "name": "モブ潮流導師",
+      "name": "モブタイディア",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 165,
+      "atk": 160,
       "role": "潮流の結界",
       "collection": "main",
       "family": "DORA_SEA",
@@ -689,18 +689,18 @@
           "duration": "persistent"
         }
       },
-      "def": 180
+      "def": 190
     },
     {
       "id": "DORA_020",
       "uid": "DORA_020",
       "number": "020",
-      "name": "モブ紫煙魔導師",
+      "name": "モブミストラ",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "闇",
       "attackType": "魔法",
-      "atk": 185,
+      "atk": 190,
       "role": "紫煙の砂嵐",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -726,18 +726,18 @@
           "duration": "persistent"
         }
       },
-      "def": 170
+      "def": 165
     },
     {
       "id": "DORA_021",
       "uid": "DORA_021",
       "number": "021",
-      "name": "モブ翡翠潮風精",
+      "name": "モブミントラ",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "風/水",
       "attackType": "物理",
-      "atk": 155,
+      "atk": 150,
       "role": "浄化の潮風",
       "collection": "main",
       "family": "DORA_SEA",
@@ -764,18 +764,18 @@
           "duration": "persistent"
         }
       },
-      "def": 200
+      "def": 205
     },
     {
       "id": "DORA_022",
       "uid": "DORA_022",
       "number": "022",
-      "name": "モブ紫紺召喚士",
+      "name": "モブアヌビス",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "闇",
       "attackType": "魔法",
-      "atk": 200,
+      "atk": 195,
       "role": "秘伝のあんこ魔法",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -801,18 +801,18 @@
           "duration": "persistent"
         }
       },
-      "def": 170
+      "def": 175
     },
     {
       "id": "DORA_023",
       "uid": "DORA_023",
       "number": "023",
-      "name": "モブ紅砂槍使い",
+      "name": "モブグレンランス",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "火",
       "attackType": "物理",
-      "atk": 205,
+      "atk": 215,
       "role": "紅砂の突破槍",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -837,18 +837,18 @@
           "duration": "turn"
         }
       },
-      "def": 165
+      "def": 155
     },
     {
       "id": "DORA_024",
       "uid": "DORA_024",
       "number": "024",
-      "name": "モブ蒼海奏者",
+      "name": "モブマエストラ",
       "soulClass": "mob",
       "rarity": "SSR",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 205,
+      "atk": 200,
       "role": "秘宝の潮騒",
       "collection": "main",
       "family": "DORA_SEA",
@@ -859,11 +859,19 @@
         "series-dorayaki-sea"
       ],
       "image": "assets/figures/dorayaki/024.png",
-      "passive": {},
+      "passive": {
+        "aura": {
+          "attributes": [
+            "水"
+          ],
+          "excludeSelf": true,
+          "atk": 10
+        }
+      },
       "soulSkill": {
         "name": "秘宝の潮騒",
-        "description": "自分のライフを25回復し、自分の場の水属性フィギュア全体のATKを15アップする。",
-        "effect": "自分のライフを25回復し、自分の場の水属性フィギュア全体のATKを15アップする。",
+        "description": "自分のライフを25回復し、自分の場の水属性フィギュア全体のATKを15アップする。\n【パッシブ：潮騒アンサンブル】このフィギュアが場にいる間、このフィギュア以外の味方の水属性フィギュアのATKを10アップする。",
+        "effect": "自分のライフを25回復し、自分の場の水属性フィギュア全体のATKを15アップする。\n【パッシブ：潮騒アンサンブル】このフィギュアが場にいる間、このフィギュア以外の味方の水属性フィギュアのATKを10アップする。",
         "timing": "own-main",
         "timingLabel": "自分のメインフェイズ",
         "runtimePlan": {
@@ -875,18 +883,20 @@
           "duration": "persistent"
         }
       },
-      "def": 225
+      "def": 225,
+      "passiveName": "潮騒アンサンブル",
+      "passiveDescription": "このフィギュアが場にいる間、このフィギュア以外の味方の水属性フィギュアのATKを10アップする。"
     },
     {
       "id": "DORA_025",
       "uid": "DORA_025",
       "number": "025",
-      "name": "モブ海底秘宝姫",
+      "name": "モブパルシエラ",
       "soulClass": "mob",
       "rarity": "UR",
       "attribute": "水/光",
       "attackType": "物理",
-      "atk": 255,
+      "atk": 245,
       "role": "海底秘宝の祝福",
       "collection": "main",
       "family": "DORA_SEA",
@@ -897,11 +907,19 @@
         "series-dorayaki-sea"
       ],
       "image": "assets/figures/dorayaki/025.png",
-      "passive": {},
+      "passive": {
+        "aura": {
+          "tags": [
+            "series-dorayaki-sea"
+          ],
+          "excludeSelf": true,
+          "def": 15
+        }
+      },
       "soulSkill": {
         "name": "海底秘宝の祝福",
-        "description": "自分のライフを40回復し、自分の場の水属性フィギュア全体のDEFを25アップする。",
-        "effect": "自分のライフを40回復し、自分の場の水属性フィギュア全体のDEFを25アップする。",
+        "description": "自分のライフを40回復し、自分の場の水属性フィギュア全体のDEFを25アップする。\n【パッシブ：秘宝姫の加護】このフィギュアが場にいる間、このフィギュア以外の「海底の秘宝どら焼き」タグを持つ味方のDEFを15アップする。",
+        "effect": "自分のライフを40回復し、自分の場の水属性フィギュア全体のDEFを25アップする。\n【パッシブ：秘宝姫の加護】このフィギュアが場にいる間、このフィギュア以外の「海底の秘宝どら焼き」タグを持つ味方のDEFを15アップする。",
         "timing": "own-main",
         "timingLabel": "自分のメインフェイズ",
         "runtimePlan": {
@@ -913,18 +931,20 @@
           "duration": "persistent"
         }
       },
-      "def": 270
+      "def": 270,
+      "passiveName": "秘宝姫の加護",
+      "passiveDescription": "このフィギュアが場にいる間、このフィギュア以外の「海底の秘宝どら焼き」タグを持つ味方のDEFを15アップする。"
     },
     {
       "id": "DORA_026",
       "uid": "DORA_026",
       "number": "026",
-      "name": "モブ紫砂大魔導",
+      "name": "モブアークノワール",
       "soulClass": "mob",
       "rarity": "UR",
       "attribute": "闇",
       "attackType": "魔法",
-      "atk": 245,
+      "atk": 250,
       "role": "紫砂の秘術",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -936,11 +956,16 @@
         "37"
       ],
       "image": "assets/figures/dorayaki/026.png",
-      "passive": {},
+      "passive": {
+        "skillGrowth": {
+          "selfOnly": true,
+          "atk": 10
+        }
+      },
       "soulSkill": {
         "name": "紫砂の秘術",
-        "description": "相手1体のATKを30ダウンし、相手のライフに20ダメージを与える。",
-        "effect": "相手1体のATKを30ダウンし、相手のライフに20ダメージを与える。",
+        "description": "相手1体のATKを30ダウンし、相手のライフに20ダメージを与える。\n【パッシブ：秘術の研鑽】このフィギュアがソウルスキルを発動するたび、このフィギュアのATKを10アップする。",
+        "effect": "相手1体のATKを30ダウンし、相手のライフに20ダメージを与える。\n【パッシブ：秘術の研鑽】このフィギュアがソウルスキルを発動するたび、このフィギュアのATKを10アップする。",
         "timing": "own-main",
         "timingLabel": "自分のメインフェイズ",
         "runtimePlan": {
@@ -951,18 +976,20 @@
           "duration": "persistent"
         }
       },
-      "def": 255
+      "def": 245,
+      "passiveName": "秘術の研鑽",
+      "passiveDescription": "このフィギュアがソウルスキルを発動するたび、このフィギュアのATKを10アップする。"
     },
     {
       "id": "DORA_027",
       "uid": "DORA_027",
       "number": "027",
-      "name": "モブ黒蜜魔王",
+      "name": "モブアビスドラ",
       "soulClass": "mob",
       "rarity": "MOB",
       "attribute": "闇/火",
       "attackType": "物理",
-      "atk": 280,
+      "atk": 285,
       "role": "黒蜜の王域",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -975,11 +1002,16 @@
         "56"
       ],
       "image": "assets/figures/dorayaki/027.png",
-      "passive": {},
+      "passive": {
+        "attackGrowth": {
+          "atk": 10,
+          "def": 5
+        }
+      },
       "soulSkill": {
         "name": "黒蜜の王域",
-        "description": "相手全体のATKを20ダウンし、このフィギュアのATKを20アップする。",
-        "effect": "相手全体のATKを20ダウンし、このフィギュアのATKを20アップする。",
+        "description": "相手全体のATKを20ダウンし、このフィギュアのATKを20アップする。\n【パッシブ：黒蜜の覇気】このフィギュアが攻撃を宣言するたび、このフィギュアのATKを10、DEFを5アップする。",
+        "effect": "相手全体のATKを20ダウンし、このフィギュアのATKを20アップする。\n【パッシブ：黒蜜の覇気】このフィギュアが攻撃を宣言するたび、このフィギュアのATKを10、DEFを5アップする。",
         "timing": "own-main",
         "timingLabel": "自分のメインフェイズ",
         "runtimePlan": {
@@ -990,19 +1022,21 @@
           "duration": "persistent"
         }
       },
-      "def": 260
+      "def": 250,
+      "passiveName": "黒蜜の覇気",
+      "passiveDescription": "このフィギュアが攻撃を宣言するたび、このフィギュアのATKを10、DEFを5アップする。"
     },
     {
       "id": "DORA_029",
       "uid": "DORA_029",
       "number": "029",
-      "name": "モブ花砂修復師",
+      "name": "モブハニエル",
       "soulClass": "middle",
       "rarity": "SR",
       "attribute": "光",
       "attackType": "魔法",
-      "atk": 150,
-      "role": "花あんこの手当て",
+      "atk": 145,
+      "role": "花蜜のリペアグレーズ",
       "collection": "main",
       "family": "DORA_DESERT",
       "series": "砂漠を癒すどら焼き",
@@ -1014,7 +1048,7 @@
       "image": "assets/figures/dorayaki/029.png",
       "passive": {},
       "soulSkill": {
-        "name": "花あんこの手当て",
+        "name": "花蜜のリペアグレーズ",
         "description": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを40回復する。防御で失ったDEFは戻らない。",
         "effect": "味方1体のスキルによるATK・DEF低下を解除し、自分のライフを40回復する。防御で失ったDEFは戻らない。",
         "timing": "own-main",
@@ -1027,18 +1061,18 @@
           "duration": "persistent"
         }
       },
-      "def": 185
+      "def": 190
     },
     {
       "id": "DORA_030",
       "uid": "DORA_030",
       "number": "030",
-      "name": "モブ砂時計技師",
+      "name": "モブクロノギア",
       "soulClass": "middle",
       "rarity": "SR",
       "attribute": "地",
       "attackType": "物理",
-      "atk": 175,
+      "atk": 170,
       "role": "からくり補給",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -1064,18 +1098,18 @@
           "duration": "persistent"
         }
       },
-      "def": 170
+      "def": 180
     },
     {
       "id": "DORA_031",
       "uid": "DORA_031",
       "number": "031",
-      "name": "モブ癒砂王ファラオ",
+      "name": "モブファラディア",
       "soulClass": "mob",
       "rarity": "MOB",
       "attribute": "光/地",
       "attackType": "物理",
-      "atk": 250,
+      "atk": 245,
       "role": "癒砂王の大饗宴",
       "collection": "main",
       "family": "DORA_DESERT",
@@ -1087,11 +1121,20 @@
         "54"
       ],
       "image": "assets/figures/dorayaki/031.png",
-      "passive": {},
+      "passive": {
+        "aura": {
+          "tags": [
+            "series-dorayaki-desert"
+          ],
+          "excludeSelf": true,
+          "atk": 10,
+          "def": 10
+        }
+      },
       "soulSkill": {
         "name": "癒砂王の大饗宴",
-        "description": "自分のライフを50回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを20アップする。",
-        "effect": "自分のライフを50回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを20アップする。",
+        "description": "自分のライフを50回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを20アップする。\n【パッシブ：癒砂王の号令】このフィギュアが場にいる間、このフィギュア以外の「砂漠を癒すどら焼き」タグを持つ味方のATK・DEFを10アップする。",
+        "effect": "自分のライフを50回復し、「砂漠を癒すどら焼き」タグを持つ味方全体のDEFを20アップする。\n【パッシブ：癒砂王の号令】このフィギュアが場にいる間、このフィギュア以外の「砂漠を癒すどら焼き」タグを持つ味方のATK・DEFを10アップする。",
         "timing": "own-main",
         "timingLabel": "自分のメインフェイズ",
         "runtimePlan": {
@@ -1103,18 +1146,20 @@
           "duration": "persistent"
         }
       },
-      "def": 295
+      "def": 285,
+      "passiveName": "癒砂王の号令",
+      "passiveDescription": "このフィギュアが場にいる間、このフィギュア以外の「砂漠を癒すどら焼き」タグを持つ味方のATK・DEFを10アップする。"
     },
     {
       "id": "DORA_032",
       "uid": "DORA_032",
       "number": "032",
-      "name": "モブ真珠貝の案内人",
+      "name": "モブパール",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 75,
+      "atk": 70,
       "role": "真珠の道しるべ",
       "collection": "main",
       "family": "DORA_SEA",
@@ -1140,18 +1185,18 @@
           "duration": "persistent"
         }
       },
-      "def": 95
+      "def": 100
     },
     {
       "id": "DORA_033",
       "uid": "DORA_033",
       "number": "033",
-      "name": "モブ珊瑚の菓子職人",
+      "name": "モブメルティ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 85,
+      "atk": 80,
       "role": "珊瑚のおやつ",
       "collection": "main",
       "family": "DORA_SEA",
@@ -1175,19 +1220,19 @@
           "duration": "persistent"
         }
       },
-      "def": 90
+      "def": 95
     },
     {
       "id": "DORA_034",
       "uid": "DORA_034",
       "number": "034",
-      "name": "モブくらげ灯の配達員",
+      "name": "モブルミナ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 90,
-      "role": "くらげ灯の補給便",
+      "atk": 85,
+      "role": "灯火の補給便",
       "collection": "main",
       "family": "DORA_SEA",
       "series": "海底の秘宝どら焼き",
@@ -1199,7 +1244,7 @@
       "image": "assets/figures/dorayaki/034.png",
       "passive": {},
       "soulSkill": {
-        "name": "くらげ灯の補給便",
+        "name": "灯火の補給便",
         "description": "シードデッキから1体ドローする。",
         "effect": "シードデッキから1体ドローする。",
         "timing": "own-main",
@@ -1210,18 +1255,18 @@
           "duration": "persistent"
         }
       },
-      "def": 80
+      "def": 85
     },
     {
       "id": "DORA_035",
       "uid": "DORA_035",
       "number": "035",
-      "name": "モブ潮星の見張り番",
+      "name": "モブシースコープ",
       "soulClass": "seed",
       "rarity": "SR",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 105,
+      "atk": 110,
       "role": "潮星の照準",
       "collection": "main",
       "family": "DORA_SEA",
@@ -1246,18 +1291,18 @@
           "duration": "persistent"
         }
       },
-      "def": 90
+      "def": 85
     },
     {
       "id": "DORA_036",
       "uid": "DORA_036",
       "number": "036",
-      "name": "モブタツノオトシゴの探索者",
+      "name": "モブタツドラ",
       "soulClass": "seed",
       "rarity": "R",
       "attribute": "風/水",
       "attackType": "物理",
-      "atk": 100,
+      "atk": 105,
       "role": "秘宝への追い風",
       "collection": "main",
       "family": "DORA_SEA",
@@ -1282,18 +1327,18 @@
           "duration": "persistent"
         }
       },
-      "def": 85
+      "def": 80
     },
     {
       "id": "DORA_037",
       "uid": "DORA_037",
       "number": "037",
-      "name": "モブ泡の宝箱守り",
+      "name": "モブトレジャ",
       "soulClass": "seed",
       "rarity": "SR",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 70,
+      "atk": 65,
       "role": "泡宝箱の錠前",
       "collection": "main",
       "family": "DORA_SEA",
@@ -1317,18 +1362,18 @@
           "duration": "persistent"
         }
       },
-      "def": 120
+      "def": 125
     },
     {
       "id": "DORA_038",
       "uid": "DORA_038",
       "number": "038",
-      "name": "モブ潮音の笛吹き",
+      "name": "モブシオネ",
       "soulClass": "seed",
       "rarity": "SR",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 90,
+      "atk": 85,
       "role": "潮音の応援歌",
       "collection": "main",
       "family": "DORA_SEA",
@@ -1354,19 +1399,19 @@
           "duration": "persistent"
         }
       },
-      "def": 105
+      "def": 110
     },
     {
       "id": "DORA_039",
       "uid": "DORA_039",
       "number": "039",
-      "name": "モブ真珠珊瑚の司祭",
+      "name": "モブセレパール",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "水/光",
       "attackType": "物理",
-      "atk": 155,
-      "role": "真珠珊瑚の祈り",
+      "atk": 150,
+      "role": "聖真珠の祈り",
       "collection": "main",
       "family": "DORA_SEA",
       "series": "海底の秘宝どら焼き",
@@ -1378,7 +1423,7 @@
       "image": "assets/figures/dorayaki/039.png",
       "passive": {},
       "soulSkill": {
-        "name": "真珠珊瑚の祈り",
+        "name": "聖真珠の祈り",
         "description": "自分のライフを35回復し、「海底の秘宝どら焼き」タグを持つ味方全体のDEFを15アップする。",
         "effect": "自分のライフを35回復し、「海底の秘宝どら焼き」タグを持つ味方全体のDEFを15アップする。",
         "timing": "own-main",
@@ -1392,19 +1437,19 @@
           "duration": "persistent"
         }
       },
-      "def": 205
+      "def": 210
     },
     {
       "id": "DORA_040",
       "uid": "DORA_040",
       "number": "040",
-      "name": "モブ竜潮の秘宝騎士",
+      "name": "モブアズランス",
       "soulClass": "middle",
       "rarity": "SSR",
       "attribute": "水",
       "attackType": "魔法",
-      "atk": 210,
-      "role": "竜潮の突破槍",
+      "atk": 215,
+      "role": "蒼潮の突破槍",
       "collection": "main",
       "family": "DORA_SEA",
       "series": "海底の秘宝どら焼き",
@@ -1416,7 +1461,7 @@
       "image": "assets/figures/dorayaki/040.png",
       "passive": {},
       "soulSkill": {
-        "name": "竜潮の突破槍",
+        "name": "蒼潮の突破槍",
         "description": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
         "effect": "このターン、このフィギュアのATKを30アップし、守護を無視して攻撃対象を選べる。",
         "timing": "own-main",
@@ -1428,7 +1473,7 @@
           "duration": "turn"
         }
       },
-      "def": 160
+      "def": 155
     }
   ],
   "recipes": [
@@ -1986,5 +2031,6 @@
       "id": "series-dorayaki-sea",
       "name": "海底の秘宝どら焼き"
     }
-  ]
+  ],
+  "reviewRevision": "2026-10-25"
 }

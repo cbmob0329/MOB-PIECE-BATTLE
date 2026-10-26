@@ -1,0 +1,215 @@
+[
+  {
+    "key": "grass",
+    "ref": "MB001.png",
+    "theme": "fresh grassland expedition, moss greens, scarlet travel accents, cream canvas, exploration tools, friendly energetic adventure",
+    "jobs": [
+      [
+        "076",
+        "seed",
+        "モブハルネ",
+        "small hooded seed planter, crouching to plant one glowing seed with trowel"
+      ],
+      [
+        "077",
+        "seed",
+        "モブコンパ",
+        "small cartographer holding oversized round compass, windswept scarf"
+      ],
+      [
+        "078",
+        "seed",
+        "モブツユリ",
+        "dew collector with translucent leaf umbrella, balancing tiny water flask"
+      ],
+      [
+        "079",
+        "seed",
+        "モブロープ",
+        "rope rescuer braced backward pulling a coiled rope, canvas hood"
+      ],
+      [
+        "080",
+        "seed",
+        "モブキノリ",
+        "mushroom-cap costume herbalist inspecting a leaf, NOT actual fungus flesh"
+      ],
+      [
+        "081",
+        "seed",
+        "モブピクル",
+        "picnic courier carrying woven lunch basket on backpack, jaunty walking pose"
+      ],
+      [
+        "082",
+        "seed",
+        "モブハネト",
+        "wind-glider apprentice with folded cloth kite on back, two arms two legs"
+      ],
+      [
+        "083",
+        "seed",
+        "モブモリト",
+        "wooden shield scout kneeling behind leaf-shaped shield, no animal"
+      ],
+      [
+        "084",
+        "seed",
+        "モブホシミ",
+        "stargazer with travel telescope and star map, sky blue canvas hood"
+      ],
+      [
+        "085",
+        "middle",
+        "モブトレイル",
+        "advanced expedition captain with broad utility cape, compass staff, one foot on smooth rock, dignified SSR evolution"
+      ],
+      [
+        "086",
+        "mob",
+        "モブグランドラ",
+        "majestic forest expedition sovereign, sculpted root-like armored cloak not creepy roots, emerald compass halo, large surveying staff, impressive full silhouette and cat-ear crown, highest rank, no animal head"
+      ]
+    ]
+  },
+  {
+    "key": "desert",
+    "ref": "MB020.png",
+    "theme": "miraculous desert fragments, sandstone gold, ivory and teal, old oasis magic, windblown scarves and crystal relics",
+    "jobs": [
+      [
+        "087",
+        "seed",
+        "モブシンキ",
+        "small mirage illusionist peeking around a flat floating crystal mirror"
+      ],
+      [
+        "088",
+        "seed",
+        "モブラクサ",
+        "tiny water carrier balancing two ceramic canteens with a shoulder pole"
+      ],
+      [
+        "089",
+        "seed",
+        "モブサハリ",
+        "sandboard traveler crouched on short board above pedestal, scarf sweeps"
+      ],
+      [
+        "090",
+        "seed",
+        "モブヒカケ",
+        "sunshade keeper holding patterned parasol, asymmetrical relaxed stance"
+      ],
+      [
+        "091",
+        "seed",
+        "モブセキト",
+        "relic reader kneeling with cracked sandstone tablet, no living stone animal"
+      ],
+      [
+        "092",
+        "seed",
+        "モブスナトケ",
+        "hourglass observer holding small hourglass at eye level"
+      ],
+      [
+        "093",
+        "seed",
+        "モブオアリ",
+        "oasis gardener with palm-leaf hood and little water vessel, no insect"
+      ],
+      [
+        "094",
+        "seed",
+        "モブカラト",
+        "ceramic lantern keeper, round patterned pot backpack, stretching one hand"
+      ],
+      [
+        "095",
+        "seed",
+        "モブキラネ",
+        "small crystal shard appraiser with magnifying lens held aside and sparkle cloth"
+      ],
+      [
+        "096",
+        "seed",
+        "モブタビラ",
+        "desert caravan guide with rolled rug pack, forward pointing step"
+      ],
+      [
+        "097",
+        "middle",
+        "モブシロッコ",
+        "evolved desert wind guide with long teal scarves orbiting a sandstone torso, broad elegant robe, floating low on sand ribbon, SSR"
+      ],
+      [
+        "098",
+        "mob",
+        "モブミラージュ",
+        "majestic mirage sovereign, ivory and teal layered mantle, large translucent angular crystal panels behind like abstract palace, mouthless calm face and spectacles, UR"
+      ],
+      [
+        "099",
+        "mob",
+        "モブサンドリア",
+        "highest rank miracle sun pharaoh, enormous ceremonial gold cat-ear hood crown, cream flowing cape, two hands hold giant glowing desert relic, strong imposing stance"
+      ]
+    ]
+  },
+  {
+    "key": "neon",
+    "ref": "MB028.png",
+    "theme": "neon street dream sleepers, purple indigo cyan pink glowing signs, moonlit dream magic, soft cloth and stylish city accessories",
+    "jobs": [
+      [
+        "100",
+        "seed",
+        "モブマクラ",
+        "sleepy pillow porter with square quilted backpack, half-lidded eyes, loose night hood"
+      ],
+      [
+        "101",
+        "seed",
+        "モブネオン",
+        "small neon sign painter holding brush and crescent-shaped light sign"
+      ],
+      [
+        "102",
+        "seed",
+        "モブウタタ",
+        "drowsy floating night-scarf spirit with arms crossed, smooth swirling cloth base"
+      ],
+      [
+        "103",
+        "seed",
+        "モブミラル",
+        "dream mirror attendant holding oval handheld mirror and wearing asymmetric cape"
+      ],
+      [
+        "104",
+        "seed",
+        "モブレコード",
+        "midnight record courier carrying vinyl record and compact shoulder satchel"
+      ],
+      [
+        "105",
+        "seed",
+        "モブユメト",
+        "small dream ticket conductor with punch tool and glowing paper tickets"
+      ],
+      [
+        "106",
+        "seed",
+        "モブホロリ",
+        "hologram messenger in translucent angular rain cape, holding glowing envelope"
+      ],
+      [
+        "107",
+        "seed",
+        "モブヨアケ",
+        "dawn lantern apprentice stretching with small star lamp, violet/coral hood"
+      ]
+    ]
+  }
+]

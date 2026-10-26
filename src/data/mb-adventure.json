@@ -1,0 +1,6144 @@
+{
+  "version": 20261025,
+  "figures": [
+    {
+      "id": "MB001",
+      "uid": "MB001",
+      "number": "MB001",
+      "name": "モブススケ",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "探検隊の号令",
+      "atk": 90,
+      "def": 130,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "piece-boxer",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "探検隊の号令",
+        "description": "味方全体のATKを20アップする。",
+        "effect": "味方全体のATKを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "atk": 20
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.001-005_1of10/MOB_口なし_No.001-005/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 60 / DEF 80",
+        "traitText": "大きな手袋と作業ブーツで歩く、小柄な影のモンスター。錆色の帽子とミント色の丸眼鏡が目印。",
+        "soul": {
+          "text": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "大きな手袋と作業ブーツで歩く、小柄な影のモンスター。錆色の帽子とミント色の丸眼鏡が目印。",
+          "performanceBasis": "designed-local",
+          "program": 17
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB001.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB004",
+      "uid": "MB004",
+      "number": "MB004",
+      "name": "モブヒヤリ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "物理",
+      "role": "ひんやり包帯",
+      "atk": 70,
+      "def": 90,
+      "tags": [
+        "mat-mouth",
+        "10",
+        "55",
+        "oct06-latent-talent",
+        "37",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "ひんやり包帯",
+        "description": "味方1体を選び、DEFを15アップする。自分のライフを20回復する。",
+        "effect": "味方1体を選び、DEFを15アップする。自分のライフを20回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "def": 15,
+          "heal": 20
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.001-005_1of10/MOB_口なし_No.001-005/README_キャラクター紹介.txt",
+        "rarity": "SSR",
+        "statsText": "設計値 ATK 130 / DEF 150",
+        "traitText": "紺色のマフラーを巻いた、水色の氷の精霊。紫の丸眼鏡と、くるりとした尾が目印。",
+        "soul": {
+          "text": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+40。差分ライフダメージは0。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "紺色のマフラーを巻いた、水色の氷の精霊。紫の丸眼鏡と、くるりとした尾が目印。",
+          "performanceBasis": "designed-local",
+          "program": 13
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB004.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB009",
+      "uid": "MB009",
+      "number": "MB009",
+      "name": "モブトモシ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "道しるべの灯",
+      "atk": 80,
+      "def": 80,
+      "tags": [
+        "mat-mouth",
+        "56",
+        "10",
+        "55",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "道しるべの灯",
+        "description": "シードデッキの上から3体を見て、1体を選んで手札に加える。",
+        "effect": "シードデッキの上から3体を見て、1体を選んで手札に加える。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "scout": true
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.006-010_2of10/MOB_口なし_No.006-010/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 70 / DEF 70",
+        "traitText": "眠そうな目で路地を照らす、青緑の帽子のランタン番。",
+        "soul": {
+          "text": "自分ライフを20回復する。手札が4体以下ならシードデッキから1体ドローする。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "眠そうな目で路地を照らす、青緑の帽子のランタン番。",
+          "performanceBasis": "designed-local",
+          "program": 32
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB009.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB008",
+      "uid": "MB008",
+      "number": "MB008",
+      "name": "モブミハリ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "見張りの警告",
+      "atk": 105,
+      "def": 85,
+      "tags": [
+        "mat-mouth",
+        "10",
+        "55",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "見張りの警告",
+        "description": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアは攻撃できない。",
+        "effect": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアは攻撃できない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "skipBattle": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.006-010_2of10/MOB_口なし_No.006-010/README_キャラクター紹介.txt",
+        "rarity": "SSR",
+        "statsText": "設計値 ATK 130 / DEF 150",
+        "traitText": "大きな黄色い兜に隠れて門を守る、心配性の小さな見張り。",
+        "soul": {
+          "text": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "大きな黄色い兜に隠れて門を守る、心配性の小さな見張り。",
+          "performanceBasis": "designed-local",
+          "program": 63
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB008.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB016",
+      "uid": "MB016",
+      "number": "MB016",
+      "name": "モブシオリ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "冒険のしおり",
+      "atk": 100,
+      "def": 60,
+      "tags": [
+        "mat-mouth",
+        "10",
+        "55",
+        "37",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "冒険のしおり",
+        "description": "墓地のシード1体を選んで手札に戻す。",
+        "effect": "墓地のシード1体を選んで手札に戻す。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "recoverSeed": true
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.016-020_4of10/MOB_口なし_No.016-020/README_キャラクター紹介.txt",
+        "rarity": "UR",
+        "statsText": "設計値 ATK 220 / DEF 210",
+        "traitText": "自分ほど大きな本を抱えて急ぐ、心配性の図書係。",
+        "soul": {
+          "text": "相手のソウルスキルを無効にする。その後、自分フィールドのフィギュア1体のATKとDEFを+40する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "自分ほど大きな本を抱えて急ぐ、心配性の図書係。",
+          "performanceBasis": "designed-local",
+          "program": 87
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB016.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB032",
+      "uid": "MB032",
+      "number": "MB032",
+      "name": "モブサビネ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "さび落とし",
+      "atk": 60,
+      "def": 100,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "さび落とし",
+        "description": "相手1体を選び、DEFを15ダウンする。",
+        "effect": "相手1体を選び、DEFを15ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "def": -15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.031-035_7of10/MOB_口なし_No.031-035/README_キャラクター紹介.txt",
+        "rarity": "SR",
+        "statsText": "設計値 ATK 100 / DEF 80",
+        "traitText": "小さな銅のよろいに隠れる、臆病な影の兵士。",
+        "soul": {
+          "text": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+30。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "小さな銅のよろいに隠れる、臆病な影の兵士。",
+          "performanceBasis": "designed-local",
+          "program": 20
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB032.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB005",
+      "uid": "MB005",
+      "number": "MB005",
+      "name": "モブヌイガミ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "お守りの縫い目",
+      "atk": 85,
+      "def": 105,
+      "tags": [
+        "mat-mouth",
+        "58",
+        "10",
+        "55",
+        "37",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "お守りの縫い目",
+        "description": "味方1体を選び、DEFを20アップする。その味方はこのターン中、戦闘で破壊される時に1度だけ耐える。",
+        "effect": "味方1体を選び、DEFを20アップする。その味方はこのターン中、戦闘で破壊される時に1度だけ耐える。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "def": 20,
+          "survive": true
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.001-005_1of10/MOB_口なし_No.001-005/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 65 / DEF 75",
+        "traitText": "からし色のフードに身を包んだ小さな影のモンスター。ターコイズ色の丸眼鏡をかけている。",
+        "soul": {
+          "text": "このフィギュアを手札へ戻し、その攻撃を終了する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "からし色のフードに身を包んだ小さな影のモンスター。ターコイズ色の丸眼鏡をかけている。",
+          "performanceBasis": "designed-local",
+          "program": 1
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB005.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB006",
+      "uid": "MB006",
+      "number": "MB006",
+      "name": "モブトドケ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "森への届け物",
+      "atk": 80,
+      "def": 80,
+      "tags": [
+        "mat-mouth",
+        "75",
+        "10",
+        "55",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "森への届け物",
+        "description": "シードデッキから1体ドローする。自分のライフを15回復する。",
+        "effect": "シードデッキから1体ドローする。自分のライフを15回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "draw": 1,
+          "heal": 15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.006-010_2of10/MOB_口なし_No.006-010/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 70 / DEF 70",
+        "traitText": "青い帽子で手紙を運ぶ、小さな影の配達屋。急ぐと靴につまずく。",
+        "soul": {
+          "text": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "青い帽子で手紙を運ぶ、小さな影の配達屋。急ぐと靴につまずく。",
+          "performanceBasis": "designed-local",
+          "program": 2
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB006.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB007",
+      "uid": "MB007",
+      "number": "MB007",
+      "name": "モブヒロイ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "宝物ひろい",
+      "atk": 90,
+      "def": 70,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "宝物ひろい",
+        "description": "墓地のシード1体を選んで手札に戻す。自分のライフを10回復する。",
+        "effect": "墓地のシード1体を選んで手札に戻す。自分のライフを10回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "recoverSeed": true,
+          "heal": 10
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.006-010_2of10/MOB_口なし_No.006-010/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 60 / DEF 80",
+        "traitText": "拾ったスプーンを宝物にする、ふっくらした影の拾い屋。",
+        "soul": {
+          "text": "撃破済みのシードソウル1体をシードデッキの一番下へ戻す。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "拾ったスプーンを宝物にする、ふっくらした影の拾い屋。",
+          "performanceBasis": "designed-local",
+          "program": 82
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB007.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB018",
+      "uid": "MB018",
+      "number": "MB018",
+      "name": "モブホノリ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "ぬくもりの焚き火",
+      "atk": 115,
+      "def": 75,
+      "tags": [
+        "mat-mouth",
+        "56",
+        "10",
+        "55",
+        "37",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "ぬくもりの焚き火",
+        "description": "味方全体のDEFを15アップする。自分のライフを30回復する。",
+        "effect": "味方全体のDEFを15アップする。自分のライフを30回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "def": 15,
+          "heal": 30
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.016-020_4of10/MOB_口なし_No.016-020/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 60 / DEF 80",
+        "traitText": "炭色のマフラーを巻いた、小さく揺れる火の精。",
+        "soul": {
+          "text": "このターンATK+20。攻撃対象変更・守護効果を無視して任意の相手を攻撃できる。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "炭色のマフラーを巻いた、小さく揺れる火の精。",
+          "performanceBasis": "designed-local",
+          "program": 21
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB018.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB027",
+      "uid": "MB027",
+      "number": "MB027",
+      "name": "モブシオナ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "物理",
+      "role": "潮風の手当て",
+      "atk": 60,
+      "def": 100,
+      "tags": [
+        "mat-mouth",
+        "10",
+        "55",
+        "37",
+        "41",
+        "series-mb-grass"
+      ],
+      "collection": "main",
+      "series": "ホップステップ草原探検隊",
+      "soulSkill": {
+        "name": "潮風の手当て",
+        "description": "味方1体を選び、ATK・DEFの低下効果を取り除き、DEFを15アップする。",
+        "effect": "味方1体を選び、ATK・DEFの低下効果を取り除き、DEFを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "cleanse": true,
+          "def": 15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.026-030_6of10/MOB_口なし_No.026-030/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 60 / DEF 80",
+        "traitText": "珊瑚色の肩掛けをまとった、海の泡から生まれた精。",
+        "soul": {
+          "text": "手札1体をデッキ下へ戻し、同じ属性を持つシードソウル1体をデッキから手札へ加える。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "珊瑚色の肩掛けをまとった、海の泡から生まれた精。",
+          "performanceBasis": "designed-local",
+          "program": 38
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB027.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB076",
+      "uid": "MB076",
+      "number": "MB076",
+      "name": "モブハルネ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB076.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 70,
+      "def": 90,
+      "role": "芽吹きの支度",
+      "passive": {},
+      "soulSkill": {
+        "name": "芽吹きの支度",
+        "description": "次にフュージョン召喚する味方のATK・DEFを15アップする。",
+        "effect": "次にフュージョン召喚する味方のATK・DEFを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "fusionBonus": {
+            "atk": 15,
+            "def": 15
+          }
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB077",
+      "uid": "MB077",
+      "number": "MB077",
+      "name": "モブコンパ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB077.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 95,
+      "def": 95,
+      "role": "まだ見ぬ近道",
+      "passive": {},
+      "soulSkill": {
+        "name": "まだ見ぬ近道",
+        "description": "シードデッキの上から3体を見て、1体を選んで手札に加える。味方1体を選び、ATKを15アップする。",
+        "effect": "シードデッキの上から3体を見て、1体を選んで手札に加える。味方1体を選び、ATKを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "scout": true,
+          "target": "ally",
+          "atk": 15
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB078",
+      "uid": "MB078",
+      "number": "MB078",
+      "name": "モブツユリ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB078.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 90,
+      "def": 70,
+      "role": "雨葉の傘",
+      "passive": {},
+      "soulSkill": {
+        "name": "雨葉の傘",
+        "description": "味方1体を選び、次の相手ターン終了まで相手のスキルの対象にならなくする。",
+        "effect": "味方1体を選び、次の相手ターン終了まで相手のスキルの対象にならなくする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "next-opponent",
+          "target": "ally",
+          "skillUntargetable": "hostile"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB079",
+      "uid": "MB079",
+      "number": "MB079",
+      "name": "モブロープ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB079.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 100,
+      "def": 60,
+      "role": "救助ロープ",
+      "passive": {},
+      "soulSkill": {
+        "name": "救助ロープ",
+        "description": "味方1体を選び、このターン中に戦闘で破壊される時に1度だけ耐えさせる。",
+        "effect": "味方1体を選び、このターン中に戦闘で破壊される時に1度だけ耐えさせる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "survive": true
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB080",
+      "uid": "MB080",
+      "number": "MB080",
+      "name": "モブキノリ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB080.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 75,
+      "def": 115,
+      "role": "きのこの胞子",
+      "passive": {},
+      "soulSkill": {
+        "name": "きのこの胞子",
+        "description": "相手1体を選び、ATKを20ダウンする。自分のライフを30回復する。",
+        "effect": "相手1体を選び、ATKを20ダウンする。自分のライフを30回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "atk": -20,
+          "heal": 30
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB081",
+      "uid": "MB081",
+      "number": "MB081",
+      "name": "モブピクル",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB081.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 70,
+      "def": 90,
+      "role": "お弁当タイム",
+      "passive": {},
+      "soulSkill": {
+        "name": "お弁当タイム",
+        "description": "自分のライフを40回復する。",
+        "effect": "自分のライフを40回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "heal": 40
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB082",
+      "uid": "MB082",
+      "number": "MB082",
+      "name": "モブハネト",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB082.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 80,
+      "def": 80,
+      "role": "風をつかめ",
+      "passive": {},
+      "soulSkill": {
+        "name": "風をつかめ",
+        "description": "味方1体を選び、ATKを15アップする。",
+        "effect": "味方1体を選び、ATKを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "atk": 15
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB083",
+      "uid": "MB083",
+      "number": "MB083",
+      "name": "モブモリト",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB083.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 105,
+      "def": 85,
+      "role": "大葉の盾",
+      "passive": {},
+      "soulSkill": {
+        "name": "大葉の盾",
+        "description": "味方1体を選び、DEFを20アップする。",
+        "effect": "味方1体を選び、DEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "def": 20
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB084",
+      "uid": "MB084",
+      "number": "MB084",
+      "name": "モブホシミ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB084.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 100,
+      "def": 60,
+      "role": "星読みの地図",
+      "passive": {},
+      "soulSkill": {
+        "name": "星読みの地図",
+        "description": "シードデッキの上から3体を見て、1体を選んで手札に加える。自分のライフを10回復する。",
+        "effect": "シードデッキの上から3体を見て、1体を選んで手札に加える。自分のライフを10回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "scout": true,
+          "heal": 10
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB054",
+      "uid": "MB054",
+      "number": "MB054",
+      "name": "モブブレイザー",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/054.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 150,
+      "def": 190,
+      "role": "先陣を切る炎",
+      "passive": {},
+      "soulSkill": {
+        "name": "先陣を切る炎",
+        "description": "味方全体のATKを20アップする。選んだ味方1体はこのターン中、2回攻撃できる。",
+        "effect": "味方全体のATKを20アップする。選んだ味方1体はこのターン中、2回攻撃できる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "attacks": 2,
+          "teamAtk": 20
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB060",
+      "uid": "MB060",
+      "number": "MB060",
+      "name": "モブアトラス",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/060.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 140,
+      "def": 160,
+      "role": "大地を支える腕",
+      "passive": {},
+      "soulSkill": {
+        "name": "大地を支える腕",
+        "description": "味方全体のDEFを20アップする。",
+        "effect": "味方全体のDEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "def": 20
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB061",
+      "uid": "MB061",
+      "number": "MB061",
+      "name": "モブランタン",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/061.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 170,
+      "def": 170,
+      "role": "帰り道の灯火",
+      "passive": {},
+      "soulSkill": {
+        "name": "帰り道の灯火",
+        "description": "墓地のシード1体を選んで手札に戻す。シードデッキから2体ドローする。",
+        "effect": "墓地のシード1体を選んで手札に戻す。シードデッキから2体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "recoverSeed": true,
+          "draw": 2
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB069",
+      "uid": "MB069",
+      "number": "MB069",
+      "name": "モブブレイブ",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/069.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 160,
+      "def": 140,
+      "role": "勇気の一歩",
+      "passive": {},
+      "soulSkill": {
+        "name": "勇気の一歩",
+        "description": "味方1体を選び、ATKを20アップする。シードデッキから1体ドローする。",
+        "effect": "味方1体を選び、ATKを20アップする。シードデッキから1体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "atk": 20,
+          "draw": 1
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB074",
+      "uid": "MB074",
+      "number": "MB074",
+      "name": "モブクロスティア",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/074.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 190,
+      "def": 150,
+      "role": "交差する一閃",
+      "passive": {},
+      "soulSkill": {
+        "name": "交差する一閃",
+        "description": "相手1体を選び、ATK・DEFを20ダウンする。そのフィギュアは次の相手ターン終了までフュージョン素材にできない。",
+        "effect": "相手1体を選び、ATK・DEFを20ダウンする。そのフィギュアは次の相手ターン終了までフュージョン素材にできない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "atk": -20,
+          "def": -20,
+          "fusionLock": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB085",
+      "uid": "MB085",
+      "number": "MB085",
+      "name": "モブトレイル",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB085.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 130,
+      "def": 170,
+      "role": "踏破の記録",
+      "passive": {},
+      "soulSkill": {
+        "name": "踏破の記録",
+        "description": "墓地のシード1体を選んで手札に戻す。味方1体を選び、ATK・DEFを15アップする。",
+        "effect": "墓地のシード1体を選んで手札に戻す。味方1体を選び、ATK・DEFを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "recoverSeed": true,
+          "target": "ally",
+          "atk": 15,
+          "def": 15
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB065",
+      "uid": "MB065",
+      "number": "MB065",
+      "name": "モブフォレストラ",
+      "soulClass": "mob",
+      "rarity": "SSR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/065.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 190,
+      "def": 230,
+      "role": "森の再生",
+      "passive": {
+        "aura": {
+          "tags": [
+            "series-mb-grass"
+          ],
+          "def": 20,
+          "excludeSelf": true
+        }
+      },
+      "soulSkill": {
+        "name": "森の再生",
+        "description": "味方全体のATK・DEFの低下効果を取り除き、DEFを20アップする。自分のライフを60回復する。\n【パッシブ：森の加護】このフィギュア以外の草原探検隊の味方のDEFを20アップする。",
+        "effect": "味方全体のATK・DEFの低下効果を取り除き、DEFを20アップする。自分のライフを60回復する。\n【パッシブ：森の加護】このフィギュア以外の草原探検隊の味方のDEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "cleanse": true,
+          "def": 20,
+          "heal": 60
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB073",
+      "uid": "MB073",
+      "number": "MB073",
+      "name": "モブエルダリオン",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/073.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 230,
+      "def": 250,
+      "role": "古樹の盟約",
+      "passive": {
+        "fieldScale": {
+          "scope": "own",
+          "tag": "series-mb-grass",
+          "atk": 15,
+          "def": 15
+        }
+      },
+      "soulSkill": {
+        "name": "古樹の盟約",
+        "description": "味方全体のATK・DEFを30アップする。シードデッキから2体ドローする。\n【パッシブ：古樹の記憶】自分の場の草原探検隊1体につき、このフィギュアのATK・DEFを15アップする。",
+        "effect": "味方全体のATK・DEFを30アップする。シードデッキから2体ドローする。\n【パッシブ：古樹の記憶】自分の場の草原探検隊1体につき、このフィギュアのATK・DEFを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "atk": 30,
+          "def": 30,
+          "draw": 2
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB086",
+      "uid": "MB086",
+      "number": "MB086",
+      "name": "モブグランドラ",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "series": "ホップステップ草原探検隊",
+      "series2": "",
+      "family": "MB_GRASS",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB086.png",
+      "tags": [
+        "41",
+        "series-mb-grass"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 270,
+      "def": 270,
+      "role": "大冒険の凱歌",
+      "passive": {
+        "aura": {
+          "tags": [
+            "series-mb-grass"
+          ],
+          "atk": 15,
+          "excludeSelf": true
+        }
+      },
+      "soulSkill": {
+        "name": "大冒険の凱歌",
+        "description": "味方1体を選び、ATKを30アップする。このターン中、その味方は2回攻撃できる。\n【パッシブ：探検隊の大将】このフィギュア以外の草原探検隊の味方のATKを15アップする。",
+        "effect": "味方1体を選び、ATKを30アップする。このターン中、その味方は2回攻撃できる。\n【パッシブ：探検隊の大将】このフィギュア以外の草原探検隊の味方のATKを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "atk": 30,
+          "attacks": 2
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB020",
+      "uid": "MB020",
+      "number": "MB020",
+      "name": "モブスナラ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "砂の防壁",
+      "atk": 75,
+      "def": 115,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "37",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "砂の防壁",
+        "description": "味方1体を選び、DEFを20アップする。その味方はこのターン中、戦闘で破壊される時に1度だけ耐える。",
+        "effect": "味方1体を選び、DEFを20アップする。その味方はこのターン中、戦闘で破壊される時に1度だけ耐える。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "def": 20,
+          "survive": true
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.016-020_4of10/MOB_口なし_No.016-020/README_キャラクター紹介.txt",
+        "rarity": "SR",
+        "statsText": "設計値 ATK 100 / DEF 80",
+        "traitText": "赤い布を巻き、砂の渦で進む小さな旅人。",
+        "soul": {
+          "text": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "赤い布を巻き、砂の渦で進む小さな旅人。",
+          "performanceBasis": "designed-local",
+          "program": 17
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB020.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB022",
+      "uid": "MB022",
+      "number": "MB022",
+      "name": "モブアマネ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "物理",
+      "role": "恵みの雨音",
+      "atk": 70,
+      "def": 90,
+      "tags": [
+        "mat-mouth",
+        "10",
+        "55",
+        "oct06-latent-talent",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "恵みの雨音",
+        "description": "自分のライフを30回復する。シードデッキから1体ドローする。",
+        "effect": "自分のライフを30回復する。シードデッキから1体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "heal": 30,
+          "draw": 1
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.021-025_5of10/MOB_口なし_No.021-025/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 65 / DEF 75",
+        "traitText": "藍色の雨よけをまとい、しずく足で歩く雨の精。",
+        "soul": {
+          "text": "味方全体のDEF+20。次の相手ターン、ATK/DEF低下効果を1回無効にする。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "藍色の雨よけをまとい、しずく足で歩く雨の精。",
+          "performanceBasis": "designed-local",
+          "program": 12
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB022.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB024",
+      "uid": "MB024",
+      "number": "MB024",
+      "name": "モブカゼル",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "風のいたずら",
+      "atk": 80,
+      "def": 80,
+      "tags": [
+        "mat-mouth",
+        "75",
+        "10",
+        "55",
+        "37",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "風のいたずら",
+        "description": "相手1体を選び、ATKを15ダウンする。",
+        "effect": "相手1体を選び、ATKを15ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "atk": -15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.021-025_5of10/MOB_口なし_No.021-025/README_キャラクター紹介.txt",
+        "rarity": "SSR",
+        "statsText": "設計値 ATK 120 / DEF 160",
+        "traitText": "風のしっぽをくるりと巻いた、おしゃれな風の精。",
+        "soul": {
+          "text": "このターンATK+30。攻撃後、まだ攻撃していない味方1体と位置を入れ替えられる。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。 2026-10-04: 位置変更効果を戦術効果へ置換（ユーザー依頼）。",
+        "basis": {
+          "description": "風のしっぽをくるりと巻いた、おしゃれな風の精。",
+          "performanceBasis": "designed-local",
+          "program": 47
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB024.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB041",
+      "uid": "MB041",
+      "number": "MB041",
+      "name": "モブスナリ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "砂に埋もれる足跡",
+      "atk": 105,
+      "def": 85,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "砂に埋もれる足跡",
+        "description": "相手1体を選び、DEFを20ダウンする。そのフィギュアは次の相手ターン終了までフュージョン素材にできない。",
+        "effect": "相手1体を選び、DEFを20ダウンする。そのフィギュアは次の相手ターン終了までフュージョン素材にできない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "def": -20,
+          "fusionLock": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.041-045_9of10/MOB_口なし_No.041-045/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 70 / DEF 70",
+        "traitText": "赤茶のポンチョで旅をする、穏やかな砂岩の巡礼者。",
+        "soul": {
+          "text": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "赤茶のポンチョで旅をする、穏やかな砂岩の巡礼者。",
+          "performanceBasis": "designed-local",
+          "program": 11
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB041.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB034",
+      "uid": "MB034",
+      "number": "MB034",
+      "name": "モブシロガネ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "光",
+      "attackType": "魔法",
+      "role": "白銀の反射",
+      "atk": 100,
+      "def": 60,
+      "tags": [
+        "mat-mouth",
+        "10",
+        "55",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "白銀の反射",
+        "description": "味方1体を選び、DEFを15アップする。",
+        "effect": "味方1体を選び、DEFを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "def": 15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.031-035_7of10/MOB_口なし_No.031-035/README_キャラクター紹介.txt",
+        "rarity": "SSR",
+        "statsText": "設計値 ATK 140 / DEF 140",
+        "traitText": "しずく形の銀かぶとをかぶり、小さな盾で背伸びする番兵。",
+        "soul": {
+          "text": "攻撃対象をこのフィギュアへ変更し、その攻撃中DEF+50。差分ライフダメージは0。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "しずく形の銀かぶとをかぶり、小さな盾で背伸びする番兵。",
+          "performanceBasis": "designed-local",
+          "program": 63
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB034.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB038",
+      "uid": "MB038",
+      "number": "MB038",
+      "name": "モブカケラ",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "奇跡のカケラ",
+      "atk": 90,
+      "def": 130,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "奇跡のカケラ",
+        "description": "味方全体のDEFを20アップする。",
+        "effect": "味方全体のDEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "def": 20
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.036-040_8of10/MOB_口なし_No.036-040/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 70 / DEF 70",
+        "traitText": "大きな結晶の足でよちよち歩く、桃色の石の見習い。",
+        "soul": {
+          "text": "このターンATK+20、DEF+20。次の相手ターン終了時までこの強化を維持する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "大きな結晶の足でよちよち歩く、桃色の石の見習い。",
+          "performanceBasis": "designed-local",
+          "program": 17
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB038.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB026",
+      "uid": "MB026",
+      "number": "MB026",
+      "name": "モブユウヒ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "夕映えの休息",
+      "atk": 85,
+      "def": 105,
+      "tags": [
+        "mat-mouth",
+        "56",
+        "10",
+        "55",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "夕映えの休息",
+        "description": "味方1体を選び、ATK・DEFの低下効果を取り除く。自分のライフを50回復する。",
+        "effect": "味方1体を選び、ATK・DEFの低下効果を取り除く。自分のライフを50回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "cleanse": true,
+          "heal": 50
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.026-030_6of10/MOB_口なし_No.026-030/README_キャラクター紹介.txt",
+        "rarity": "SSR",
+        "statsText": "設計値 ATK 140 / DEF 140",
+        "traitText": "夕焼け色の体を紫のポンチョで包む小さな精。",
+        "soul": {
+          "text": "このターンATK+30。相手のDEF上昇効果を無視し、撃破時の差分ライフダメージ+10。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "夕焼け色の体を紫のポンチョで包む小さな精。",
+          "performanceBasis": "designed-local",
+          "program": 65
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB026.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB035",
+      "uid": "MB035",
+      "number": "MB035",
+      "name": "モブレンガン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "レンガの砦",
+      "atk": 80,
+      "def": 80,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "レンガの砦",
+        "description": "味方1体を選び、DEFを15アップし、ATKを10ダウンする。",
+        "effect": "味方1体を選び、DEFを15アップし、ATKを10ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "def": 15,
+          "atk": -10
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.031-035_7of10/MOB_口なし_No.031-035/README_キャラクター紹介.txt",
+        "rarity": "SR",
+        "statsText": "設計値 ATK 150 / DEF 130",
+        "traitText": "重たい腕でのんびり手を振る、赤土の小さなゴーレム。",
+        "soul": {
+          "text": "このターンATK+30。撃破した場合、別の相手1体へ追加攻撃できる。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "重たい腕でのんびり手を振る、赤土の小さなゴーレム。",
+          "performanceBasis": "designed-local",
+          "program": 25
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB035.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB036",
+      "uid": "MB036",
+      "number": "MB036",
+      "name": "モブオビリン",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "結び直す帯",
+      "atk": 90,
+      "def": 70,
+      "tags": [
+        "mat-mouth",
+        "75",
+        "10",
+        "55",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "結び直す帯",
+        "description": "味方1体を選び、ATK・DEFの低下効果を取り除き、ATKを15アップする。",
+        "effect": "味方1体を選び、ATK・DEFの低下効果を取り除き、ATKを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "cleanse": true,
+          "atk": 15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.036-040_8of10/MOB_口なし_No.036-040/README_キャラクター紹介.txt",
+        "rarity": "SR",
+        "statsText": "設計値 ATK 90 / DEF 90",
+        "traitText": "長い帯の体をくるりとひねって踊る、珊瑚色の布の精。",
+        "soul": {
+          "text": "このターンATK+20。攻撃後、自分フィールド内の位置を自由に変更できる。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。 2026-10-04: 位置変更効果を戦術効果へ置換（ユーザー依頼）。",
+        "basis": {
+          "description": "長い帯の体をくるりとひねって踊る、珊瑚色の布の精。",
+          "performanceBasis": "designed-local",
+          "program": 30
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB036.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB046",
+      "uid": "MB046",
+      "number": "MB046",
+      "name": "モブサラリ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "さらさら砂嵐",
+      "atk": 115,
+      "def": 75,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "42",
+        "series-mb-desert"
+      ],
+      "collection": "main",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "soulSkill": {
+        "name": "さらさら砂嵐",
+        "description": "相手全体のATKを20ダウンする。",
+        "effect": "相手全体のATKを20ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "atk": -20
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.046-050_10of10/MOB_口なし_No.046-050/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 65 / DEF 75",
+        "traitText": "砂色のしっぽを引いて歩く、道に迷いがちな小さな配達屋。",
+        "soul": {
+          "text": "このフィギュアを手札へ戻し、手札から別のシードソウル1体を召喚できる。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "砂色のしっぽを引いて歩く、道に迷いがちな小さな配達屋。",
+          "performanceBasis": "designed-local",
+          "program": 2
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB046.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB087",
+      "uid": "MB087",
+      "number": "MB087",
+      "name": "モブシンキ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB087.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 60,
+      "def": 100,
+      "role": "小さな蜃気楼",
+      "passive": {},
+      "soulSkill": {
+        "name": "小さな蜃気楼",
+        "description": "味方1体を選び、次の相手ターン終了まで相手のスキルの対象にならなくする。自分のライフを10回復する。",
+        "effect": "味方1体を選び、次の相手ターン終了まで相手のスキルの対象にならなくする。自分のライフを10回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "next-opponent",
+          "target": "ally",
+          "skillUntargetable": "hostile",
+          "heal": 10
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB088",
+      "uid": "MB088",
+      "number": "MB088",
+      "name": "モブラクサ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB088.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 70,
+      "def": 90,
+      "role": "ふたつの水がめ",
+      "passive": {},
+      "soulSkill": {
+        "name": "ふたつの水がめ",
+        "description": "味方全体のDEFを10アップする。自分のライフを20回復する。",
+        "effect": "味方全体のDEFを10アップする。自分のライフを20回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "def": 10,
+          "heal": 20
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB089",
+      "uid": "MB089",
+      "number": "MB089",
+      "name": "モブサハリ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB089.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 95,
+      "def": 95,
+      "role": "砂丘サーフ",
+      "passive": {},
+      "soulSkill": {
+        "name": "砂丘サーフ",
+        "description": "味方1体を選び、ATKを20アップする。このターン中、その味方は2回攻撃できる。",
+        "effect": "味方1体を選び、ATKを20アップする。このターン中、その味方は2回攻撃できる。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "atk": 20,
+          "attacks": 2
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB090",
+      "uid": "MB090",
+      "number": "MB090",
+      "name": "モブヒカケ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB090.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 90,
+      "def": 70,
+      "role": "日陰のひとやすみ",
+      "passive": {},
+      "soulSkill": {
+        "name": "日陰のひとやすみ",
+        "description": "味方1体を選び、DEFを15アップする。自分のライフを25回復する。",
+        "effect": "味方1体を選び、DEFを15アップする。自分のライフを25回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "def": 15,
+          "heal": 25
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB091",
+      "uid": "MB091",
+      "number": "MB091",
+      "name": "モブセキト",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB091.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 100,
+      "def": 60,
+      "role": "石板の手がかり",
+      "passive": {},
+      "soulSkill": {
+        "name": "石板の手がかり",
+        "description": "シードデッキの上から3体を見て、1体を選んで手札に加える。相手1体を選び、DEFを10ダウンする。",
+        "effect": "シードデッキの上から3体を見て、1体を選んで手札に加える。相手1体を選び、DEFを10ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "scout": true,
+          "target": "enemy",
+          "def": -10
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB092",
+      "uid": "MB092",
+      "number": "MB092",
+      "name": "モブスナトケ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB092.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 75,
+      "def": 115,
+      "role": "砂時計の足止め",
+      "passive": {},
+      "soulSkill": {
+        "name": "砂時計の足止め",
+        "description": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアはスキルを使えず、フュージョン素材にできない。",
+        "effect": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアはスキルを使えず、フュージョン素材にできない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "skillLock": true,
+          "fusionLock": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB093",
+      "uid": "MB093",
+      "number": "MB093",
+      "name": "モブオアリ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB093.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 70,
+      "def": 90,
+      "role": "オアシスの芽",
+      "passive": {},
+      "soulSkill": {
+        "name": "オアシスの芽",
+        "description": "味方1体を選び、ATK・DEFの低下効果を取り除く。自分のライフを25回復する。",
+        "effect": "味方1体を選び、ATK・DEFの低下効果を取り除く。自分のライフを25回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "cleanse": true,
+          "heal": 25
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB094",
+      "uid": "MB094",
+      "number": "MB094",
+      "name": "モブカラト",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB094.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 80,
+      "def": 80,
+      "role": "旅路の水分補給",
+      "passive": {},
+      "soulSkill": {
+        "name": "旅路の水分補給",
+        "description": "自分のライフを25回復する。墓地のシード1体を選んで手札に戻す。",
+        "effect": "自分のライフを25回復する。墓地のシード1体を選んで手札に戻す。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "heal": 25,
+          "recoverSeed": true
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB095",
+      "uid": "MB095",
+      "number": "MB095",
+      "name": "モブキラネ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB095.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 105,
+      "def": 85,
+      "role": "遺跡の鑑定",
+      "passive": {},
+      "soulSkill": {
+        "name": "遺跡の鑑定",
+        "description": "シードデッキの上から3体を見て、1体を選んで手札に加える。さらに1体ドローする。",
+        "effect": "シードデッキの上から3体を見て、1体を選んで手札に加える。さらに1体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "scout": true,
+          "draw": 1
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB096",
+      "uid": "MB096",
+      "number": "MB096",
+      "name": "モブタビラ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB096.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 100,
+      "def": 60,
+      "role": "旅の備え",
+      "passive": {},
+      "soulSkill": {
+        "name": "旅の備え",
+        "description": "次にフュージョン召喚する味方のATKを15、DEFを15アップする。",
+        "effect": "次にフュージョン召喚する味方のATKを15、DEFを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "fusionBonus": {
+            "atk": 15,
+            "def": 15
+          }
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB052",
+      "uid": "MB052",
+      "number": "MB052",
+      "name": "モブクリスタ",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/052.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 150,
+      "def": 190,
+      "role": "結晶の聖域",
+      "passive": {},
+      "soulSkill": {
+        "name": "結晶の聖域",
+        "description": "味方全体のDEFを20アップする。選んだ味方1体は次の相手ターン終了まで相手のスキルの対象にならない。",
+        "effect": "味方全体のDEFを20アップする。選んだ味方1体は次の相手ターン終了まで相手のスキルの対象にならない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "next-opponent",
+          "target": "ally",
+          "teamDef": 20,
+          "skillUntargetable": "hostile"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB056",
+      "uid": "MB056",
+      "number": "MB056",
+      "name": "モブシルヴェール",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/056.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 140,
+      "def": 160,
+      "role": "銀幕の向こう",
+      "passive": {},
+      "soulSkill": {
+        "name": "銀幕の向こう",
+        "description": "相手のシード1体を選び、シードデッキの一番下へ戻す。",
+        "effect": "相手のシード1体を選び、シードデッキの一番下へ戻す。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemySeed",
+          "returnTargetDeck": true
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB058",
+      "uid": "MB058",
+      "number": "MB058",
+      "name": "モブサンドベル",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/058.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 170,
+      "def": 170,
+      "role": "砂漠に響く鐘",
+      "passive": {},
+      "soulSkill": {
+        "name": "砂漠に響く鐘",
+        "description": "味方全体のATK・DEFの低下効果を取り除く。自分のライフを80回復する。",
+        "effect": "味方全体のATK・DEFの低下効果を取り除く。自分のライフを80回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "cleanse": true,
+          "heal": 80
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB062",
+      "uid": "MB062",
+      "number": "MB062",
+      "name": "モブオアスター",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/062.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 160,
+      "def": 140,
+      "role": "オアシスの祝福",
+      "passive": {},
+      "soulSkill": {
+        "name": "オアシスの祝福",
+        "description": "味方全体のDEFを20アップする。自分のライフを50回復する。",
+        "effect": "味方全体のDEFを20アップする。自分のライフを50回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "def": 20,
+          "heal": 50
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB064",
+      "uid": "MB064",
+      "number": "MB064",
+      "name": "モブサハロード",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/064.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 190,
+      "def": 150,
+      "role": "砂の王道",
+      "passive": {},
+      "soulSkill": {
+        "name": "砂の王道",
+        "description": "相手全体のDEFを20ダウンする。",
+        "effect": "相手全体のDEFを20ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "def": -20
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB097",
+      "uid": "MB097",
+      "number": "MB097",
+      "name": "モブシロッコ",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB097.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 130,
+      "def": 170,
+      "role": "熱風の通り道",
+      "passive": {},
+      "soulSkill": {
+        "name": "熱風の通り道",
+        "description": "相手全体のATKを20ダウンする。シードデッキから1体ドローする。",
+        "effect": "相手全体のATKを20ダウンする。シードデッキから1体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "atk": -20,
+          "draw": 1
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB072",
+      "uid": "MB072",
+      "number": "MB072",
+      "name": "モブクリスタリア",
+      "soulClass": "mob",
+      "rarity": "SSR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/072.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 190,
+      "def": 230,
+      "role": "結晶の牢獄",
+      "passive": {
+        "aura": {
+          "tags": [
+            "series-mb-desert"
+          ],
+          "def": 20,
+          "excludeSelf": true
+        }
+      },
+      "soulSkill": {
+        "name": "結晶の牢獄",
+        "description": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアは攻撃・スキル使用・フュージョン素材にすることができない。\n【パッシブ：結晶の城壁】このフィギュア以外の砂漠のカケラの味方のDEFを20アップする。",
+        "effect": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアは攻撃・スキル使用・フュージョン素材にすることができない。\n【パッシブ：結晶の城壁】このフィギュア以外の砂漠のカケラの味方のDEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "skipBattle": true,
+          "skillLock": true,
+          "fusionLock": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB098",
+      "uid": "MB098",
+      "number": "MB098",
+      "name": "モブミラージュ",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB098.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 230,
+      "def": 250,
+      "role": "蜃気楼への招待",
+      "passive": {
+        "enemyAura": {
+          "atk": -20
+        }
+      },
+      "soulSkill": {
+        "name": "蜃気楼への招待",
+        "description": "相手1体を選び、元のデッキの一番下へ戻す。シードはシードデッキ、ミドル・MOBは進化デッキへ戻る。\n【パッシブ：陽炎の威圧】場にいる間、相手全体のATKを20ダウンする。",
+        "effect": "相手1体を選び、元のデッキの一番下へ戻す。シードはシードデッキ、ミドル・MOBは進化デッキへ戻る。\n【パッシブ：陽炎の威圧】場にいる間、相手全体のATKを20ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "returnTargetDeck": true
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB099",
+      "uid": "MB099",
+      "number": "MB099",
+      "name": "モブサンドリア",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "series": "奇跡を起こす砂漠のカケラ",
+      "series2": "",
+      "family": "MB_DESERT",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB099.png",
+      "tags": [
+        "42",
+        "series-mb-desert"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 270,
+      "def": 270,
+      "role": "砂漠の大奇跡",
+      "passive": {
+        "attackGrowth": {
+          "atk": 15,
+          "def": 15
+        }
+      },
+      "soulSkill": {
+        "name": "砂漠の大奇跡",
+        "description": "相手全体のATK・DEFを30ダウンする。自分のライフを80回復する。\n【パッシブ：不屈の砂王】このフィギュアが攻撃するたびに、自身のATK・DEFを15アップする。",
+        "effect": "相手全体のATK・DEFを30ダウンする。自分のライフを80回復する。\n【パッシブ：不屈の砂王】このフィギュアが攻撃するたびに、自身のATK・DEFを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "atk": -30,
+          "def": -30,
+          "heal": 80
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB028",
+      "uid": "MB028",
+      "number": "MB028",
+      "name": "モブユメル",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "夢へのまどろみ",
+      "atk": 75,
+      "def": 115,
+      "tags": [
+        "mat-mouth",
+        "58",
+        "10",
+        "55",
+        "oct06-latent-talent",
+        "37",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "夢へのまどろみ",
+        "description": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアはスキルを使えない。シードデッキから1体ドローする。",
+        "effect": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアはスキルを使えない。シードデッキから1体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "skillLock": true,
+          "lockDuration": "next-opponent",
+          "draw": 1
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.026-030_6of10/MOB_口なし_No.026-030/README_キャラクター紹介.txt",
+        "rarity": "SSR",
+        "statsText": "設計値 ATK 120 / DEF 160",
+        "traitText": "小さなナイトキャップをかぶった、眠たげな霧の民。",
+        "soul": {
+          "text": "相手1体のATK-30。次の相手ターン、そのフィギュアはソウルスキルを発動できない。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "小さなナイトキャップをかぶった、眠たげな霧の民。",
+          "performanceBasis": "designed-local",
+          "program": 57
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB028.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB033",
+      "uid": "MB033",
+      "number": "MB033",
+      "name": "モブツギト",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "夢のつぎ足し",
+      "atk": 70,
+      "def": 90,
+      "tags": [
+        "mat-mouth",
+        "58",
+        "10",
+        "55",
+        "oct06-latent-talent",
+        "37",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "夢のつぎ足し",
+        "description": "墓地のシード1体を選んで手札に戻す。自分のライフを15回復する。",
+        "effect": "墓地のシード1体を選んで手札に戻す。自分のライフを15回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "recoverSeed": true,
+          "heal": 15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.031-035_7of10/MOB_口なし_No.031-035/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 60 / DEF 80",
+        "traitText": "長い帽子を引きずって歩く、寝ぼけたつぎはぎの精。",
+        "soul": {
+          "text": "手札1体をデッキ下へ戻し、同じタグを1つ以上持つシード1体を手札へ加える。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "長い帽子を引きずって歩く、寝ぼけたつぎはぎの精。",
+          "performanceBasis": "designed-local",
+          "program": 56
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB033.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB047",
+      "uid": "MB047",
+      "number": "MB047",
+      "name": "モブヒソネ",
+      "rarity": "SSR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "内緒の悪夢",
+      "atk": 110,
+      "def": 110,
+      "tags": [
+        "mat-mouth",
+        "58",
+        "10",
+        "55",
+        "37",
+        "oct06-latent-talent",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "内緒の悪夢",
+        "description": "相手1体を選び、DEFを20ダウンする。そのフィギュアは次の相手ターン終了まで攻撃・スキル使用ができない。",
+        "effect": "相手1体を選び、DEFを20ダウンする。そのフィギュアは次の相手ターン終了まで攻撃・スキル使用ができない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "def": -20,
+          "skipBattle": true,
+          "skillLock": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.046-050_10of10/MOB_口なし_No.046-050/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 70 / DEF 70",
+        "traitText": "眠そうな顔でうろつく、夢の世界の小さな住人。",
+        "soul": {
+          "text": "このフィギュアを手札へ戻し、その攻撃を終了する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "眠そうな顔でうろつく、夢の世界の小さな住人。",
+          "performanceBasis": "designed-local",
+          "program": 1
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB047.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB010",
+      "uid": "MB010",
+      "number": "MB010",
+      "name": "モブツギハギ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "つぎはぎ補修",
+      "atk": 105,
+      "def": 85,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "つぎはぎ補修",
+        "description": "味方1体を選び、ATK・DEFの低下効果を取り除き、DEFを20アップする。",
+        "effect": "味方1体を選び、ATK・DEFの低下効果を取り除き、DEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "cleanse": true,
+          "def": 20
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.006-010_2of10/MOB_口なし_No.006-010/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 60 / DEF 80",
+        "traitText": "余り布をつないで服を直す、糸巻きを抱えた影の仕立て屋。",
+        "soul": {
+          "text": "自分ライフを20回復する。味方1体に付いているATK/DEF低下効果を解除する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "余り布をつないで服を直す、糸巻きを抱えた影の仕立て屋。",
+          "performanceBasis": "designed-local",
+          "program": 11
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB010.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB030",
+      "uid": "MB030",
+      "number": "MB030",
+      "name": "モブイシマル",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "地",
+      "attackType": "物理",
+      "role": "石のまくら",
+      "atk": 100,
+      "def": 60,
+      "tags": [
+        "mat-mouth",
+        "77",
+        "10",
+        "55",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "石のまくら",
+        "description": "相手1体を選び、ATKを15ダウンする。自分のライフを15回復する。",
+        "effect": "相手1体を選び、ATKを15ダウンする。自分のライフを15回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "atk": -15,
+          "heal": 15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.026-030_6of10/MOB_口なし_No.026-030/README_キャラクター紹介.txt",
+        "rarity": "UR",
+        "statsText": "設計値 ATK 210 / DEF 220",
+        "traitText": "苔の帽子とつぎ当て服をまとった、気弱な小石の従者。",
+        "soul": {
+          "text": "味方全体のDEF+30。次の相手ターン、最初に発生する差分ライフダメージを0にする。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "苔の帽子とつぎ当て服をまとった、気弱な小石の従者。",
+          "performanceBasis": "designed-local",
+          "program": 94
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB030.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB039",
+      "uid": "MB039",
+      "number": "MB039",
+      "name": "モブマントル",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "夜色のマント",
+      "atk": 60,
+      "def": 100,
+      "tags": [
+        "mat-mouth",
+        "75",
+        "10",
+        "55",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "夜色のマント",
+        "description": "味方1体を選び、次の相手ターン終了まで相手のスキルの対象にならなくする。",
+        "effect": "味方1体を選び、次の相手ターン終了まで相手のスキルの対象にならなくする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "next-opponent",
+          "target": "ally",
+          "skillUntargetable": "hostile"
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.036-040_8of10/MOB_口なし_No.036-040/README_キャラクター紹介.txt",
+        "rarity": "UR",
+        "statsText": "設計値 ATK 210 / DEF 220",
+        "traitText": "大きなマントを広げて得意顔をする、小さな青緑の騎士。",
+        "soul": {
+          "text": "自分フィールド全体のATKとDEFを+30する。このターン、最初に味方が撃破される場合、その撃破を1回だけ無効にする。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "大きなマントを広げて得意顔をする、小さな青緑の騎士。",
+          "performanceBasis": "designed-local",
+          "program": 44
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB039.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false
+    },
+    {
+      "id": "MB019",
+      "uid": "MB019",
+      "number": "MB019",
+      "name": "モブケムリン",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "煙にまく",
+      "atk": 85,
+      "def": 105,
+      "tags": [
+        "mat-mouth",
+        "58",
+        "10",
+        "55",
+        "37",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "煙にまく",
+        "description": "相手全体のATKを15ダウンする。シードデッキから1体ドローする。",
+        "effect": "相手全体のATKを15ダウンする。シードデッキから1体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "atk": -15,
+          "draw": 1
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.016-020_4of10/MOB_口なし_No.016-020/README_キャラクター紹介.txt",
+        "rarity": "SR",
+        "statsText": "設計値 ATK 150 / DEF 130",
+        "traitText": "短いベストで煙をまとめた、のんびり屋の煙の民。",
+        "soul": {
+          "text": "相手1体のATK-30。そのフィギュアが次に攻撃するまでDEFも-20。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "短いベストで煙をまとめた、のんびり屋の煙の民。",
+          "performanceBasis": "designed-local",
+          "program": 48
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB019.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB023",
+      "uid": "MB023",
+      "number": "MB023",
+      "name": "モブスミト",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "墨の目くらまし",
+      "atk": 80,
+      "def": 80,
+      "tags": [
+        "mat-mouth",
+        "58",
+        "10",
+        "55",
+        "37",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "墨の目くらまし",
+        "description": "相手1体を選び、ATK・DEFを15ダウンする。",
+        "effect": "相手1体を選び、ATK・DEFを15ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "atk": -15,
+          "def": -15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.021-025_5of10/MOB_口なし_No.021-025/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 70 / DEF 70",
+        "traitText": "白い襟が目印の、ぽたぽた歩くインクの精。",
+        "soul": {
+          "text": "相手フィールド全体のDEF-10。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "白い襟が目印の、ぽたぽた歩くインクの精。",
+          "performanceBasis": "designed-local",
+          "program": 70
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB023.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB029",
+      "uid": "MB029",
+      "number": "MB029",
+      "name": "モブユラビ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "火",
+      "attackType": "物理",
+      "role": "ゆらめく誘い",
+      "atk": 90,
+      "def": 70,
+      "tags": [
+        "mat-mouth",
+        "56",
+        "10",
+        "55",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "ゆらめく誘い",
+        "description": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。",
+        "effect": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアはフュージョン素材にできない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "fusionLock": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.026-030_6of10/MOB_口なし_No.026-030/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 70 / DEF 70",
+        "traitText": "茶色のマントに緑の火を宿す、森の灯りの精。",
+        "soul": {
+          "text": "味方1体のATK+20。その味方はこのターン守護効果を無視して攻撃対象を選べる。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "茶色のマントに緑の火を宿す、森の灯りの精。",
+          "performanceBasis": "designed-local",
+          "program": 97
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB029.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB031",
+      "uid": "MB031",
+      "number": "MB031",
+      "name": "モブヌノヒラ",
+      "rarity": "SR",
+      "soulClass": "seed",
+      "attribute": "風",
+      "attackType": "物理",
+      "role": "夢を包む布",
+      "atk": 115,
+      "def": 75,
+      "tags": [
+        "mat-mouth",
+        "75",
+        "10",
+        "55",
+        "37",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "夢を包む布",
+        "description": "味方1体を選び、DEFを20アップする。その味方は次の相手ターン終了まで相手のスキルの対象にならない。",
+        "effect": "味方1体を選び、DEFを20アップする。その味方は次の相手ターン終了まで相手のスキルの対象にならない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "next-opponent",
+          "target": "ally",
+          "def": 20,
+          "skillUntargetable": "hostile"
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.031-035_7of10/MOB_口なし_No.031-035/README_キャラクター紹介.txt",
+        "rarity": "R",
+        "statsText": "設計値 ATK 65 / DEF 75",
+        "traitText": "大きな袖をひらひら広げる、薄紫の布の魔法使い。",
+        "soul": {
+          "text": "味方1体に、このフィギュアが持つ通常タグ1つをターン終了まで追加する。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "大きな袖をひらひら広げる、薄紫の布の魔法使い。",
+          "performanceBasis": "designed-local",
+          "program": 75
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB031.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB037",
+      "uid": "MB037",
+      "number": "MB037",
+      "name": "モブクモリ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "水",
+      "attackType": "物理",
+      "role": "曇り空の予感",
+      "atk": 60,
+      "def": 100,
+      "tags": [
+        "mat-mouth",
+        "10",
+        "55",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "曇り空の予感",
+        "description": "相手1体を選び、ATKを15ダウンする。",
+        "effect": "相手1体を選び、ATKを15ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "atk": -15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.036-040_8of10/MOB_口なし_No.036-040/README_キャラクター紹介.txt",
+        "rarity": "SR",
+        "statsText": "設計値 ATK 130 / DEF 150",
+        "traitText": "雲のえりと雨粒ポンチョで、ふらふら歩く空模様の精。",
+        "soul": {
+          "text": "味方全体のDEF+20。次の相手ターン、最初に発生する差分ライフダメージを0にする。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "雲のえりと雨粒ポンチョで、ふらふら歩く空模様の精。",
+          "performanceBasis": "designed-local",
+          "program": 22
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB037.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 2,
+      "pending": true
+    },
+    {
+      "id": "MB040",
+      "uid": "MB040",
+      "number": "MB040",
+      "name": "モブホツレ",
+      "rarity": "R",
+      "soulClass": "seed",
+      "attribute": "闇",
+      "attackType": "魔法",
+      "role": "ほどける守り",
+      "atk": 70,
+      "def": 90,
+      "tags": [
+        "mat-mouth",
+        "58",
+        "10",
+        "55",
+        "37",
+        "44",
+        "series-mb-neon"
+      ],
+      "collection": "main",
+      "series": "ネオン街のドリームスリーパー",
+      "soulSkill": {
+        "name": "ほどける守り",
+        "description": "相手1体を選び、DEFを15ダウンする。",
+        "effect": "相手1体を選び、DEFを15ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "def": -15
+        }
+      },
+      "source": {
+        "figureFile": "handoff/materials-20261003/MOB_口なし_No.036-040_8of10/MOB_口なし_No.036-040/README_キャラクター紹介.txt",
+        "rarity": "SSR",
+        "statsText": "設計値 ATK 120 / DEF 160",
+        "traitText": "ほどけた布のしっぽを振り、いたずらを探す小さな精。",
+        "soul": {
+          "text": "相手1体のDEF-30。次の相手ターン終了まで、そのフィギュアをソウルフュージョン素材にできない。"
+        },
+        "decision": "性能数値が素材集にないため、画像・紹介文と既存効果プログラムに合わせて設計。既存キャラクターの値は変更しない。",
+        "basis": {
+          "description": "ほどけた布のしっぽを振り、いたずらを探す小さな精。",
+          "performanceBasis": "designed-local",
+          "program": 53
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": [],
+      "image": "piecefig/MB/MB040.png",
+      "passive": {},
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 3,
+      "pending": true
+    },
+    {
+      "id": "MB100",
+      "uid": "MB100",
+      "number": "MB100",
+      "name": "モブマクラ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB100.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 95,
+      "def": 95,
+      "role": "おやすみの時間",
+      "passive": {},
+      "soulSkill": {
+        "name": "おやすみの時間",
+        "description": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアは攻撃できない。自分のライフを30回復する。",
+        "effect": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアは攻撃できない。自分のライフを30回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "skipBattle": true,
+          "lockDuration": "next-opponent",
+          "heal": 30
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB101",
+      "uid": "MB101",
+      "number": "MB101",
+      "name": "モブネオン",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB101.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 90,
+      "def": 70,
+      "role": "夢色ペイント",
+      "passive": {},
+      "soulSkill": {
+        "name": "夢色ペイント",
+        "description": "味方1体を選び、ATKを15アップする。",
+        "effect": "味方1体を選び、ATKを15アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "atk": 15
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB102",
+      "uid": "MB102",
+      "number": "MB102",
+      "name": "モブウタタ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB102.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 100,
+      "def": 60,
+      "role": "うたた寝の誘惑",
+      "passive": {},
+      "soulSkill": {
+        "name": "うたた寝の誘惑",
+        "description": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアはスキルを使えない。",
+        "effect": "相手1体を選ぶ。次の相手ターン終了まで、そのフィギュアはスキルを使えない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "skillLock": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB103",
+      "uid": "MB103",
+      "number": "MB103",
+      "name": "モブミラル",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/MB103.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 75,
+      "def": 115,
+      "role": "鏡の向こうの力",
+      "passive": {},
+      "soulSkill": {
+        "name": "鏡の向こうの力",
+        "description": "相手1体を選ぶ。このフィギュアのATK・DEFを相手と同じ値にする。手札から発動する場合は味方1体を選んで同じ値にする。",
+        "effect": "相手1体を選ぶ。このフィギュアのATK・DEFを相手と同じ値にする。手札から発動する場合は味方1体を選んで同じ値にする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "copyStats": true
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB104",
+      "uid": "MB104",
+      "number": "MB104",
+      "name": "モブレコード",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB104.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 70,
+      "def": 90,
+      "role": "リズムに乗って",
+      "passive": {},
+      "soulSkill": {
+        "name": "リズムに乗って",
+        "description": "味方1体を選び、このターン中に2回攻撃できるようにする。",
+        "effect": "味方1体を選び、このターン中に2回攻撃できるようにする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "attacks": 2
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB105",
+      "uid": "MB105",
+      "number": "MB105",
+      "name": "モブユメト",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB105.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 80,
+      "def": 80,
+      "role": "夢行き切符",
+      "passive": {},
+      "soulSkill": {
+        "name": "夢行き切符",
+        "description": "シードデッキの上から3体を見て、1体を選んで手札に加える。自分のライフを15回復する。",
+        "effect": "シードデッキの上から3体を見て、1体を選んで手札に加える。自分のライフを15回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "scout": true,
+          "heal": 15
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB106",
+      "uid": "MB106",
+      "number": "MB106",
+      "name": "モブホロリ",
+      "soulClass": "seed",
+      "rarity": "SR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB106.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 105,
+      "def": 85,
+      "role": "ホログラムの残像",
+      "passive": {},
+      "soulSkill": {
+        "name": "ホログラムの残像",
+        "description": "味方1体を選び、次の相手ターン終了まで攻撃の対象にならなくする。",
+        "effect": "味方1体を選び、次の相手ターン終了まで攻撃の対象にならなくする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "next-opponent",
+          "target": "ally",
+          "attackHidden": true
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB107",
+      "uid": "MB107",
+      "number": "MB107",
+      "name": "モブヨアケ",
+      "soulClass": "seed",
+      "rarity": "R",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/MB107.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 100,
+      "def": 60,
+      "role": "夜明けの合図",
+      "passive": {},
+      "soulSkill": {
+        "name": "夜明けの合図",
+        "description": "味方1体を選び、ATKを15アップする。自分のライフを25回復する。",
+        "effect": "味方1体を選び、ATKを15アップする。自分のライフを25回復する。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "atk": 15,
+          "heal": 25
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB051",
+      "uid": "MB051",
+      "number": "MB051",
+      "name": "モブユメミア",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/051.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 150,
+      "def": 190,
+      "role": "夢喰いの忘却",
+      "passive": {},
+      "soulSkill": {
+        "name": "夢喰いの忘却",
+        "description": "相手のフィギュア1体を選択する。そのフィギュアはスキルを失う。",
+        "effect": "相手のフィギュア1体を選択する。そのフィギュアはスキルを失う。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "targetSkillLost": true
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB053",
+      "uid": "MB053",
+      "number": "MB053",
+      "name": "モブナイトモア",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/053.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 140,
+      "def": 160,
+      "role": "悪夢の足音",
+      "passive": {},
+      "soulSkill": {
+        "name": "悪夢の足音",
+        "description": "相手1体を選び、ATK・DEFを20ダウンする。",
+        "effect": "相手1体を選び、ATK・DEFを20ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "atk": -20,
+          "def": -20
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB057",
+      "uid": "MB057",
+      "number": "MB057",
+      "name": "モブルナヒール",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 1,
+      "pending": false,
+      "collection": "main",
+      "image": "piecefig/MB/057.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 170,
+      "def": 170,
+      "role": "月明かりの癒やし",
+      "passive": {},
+      "soulSkill": {
+        "name": "月明かりの癒やし",
+        "description": "味方全体のATK・DEFの低下効果を取り除く。自分のライフを60回復し、シードデッキから1体ドローする。",
+        "effect": "味方全体のATK・DEFの低下効果を取り除く。自分のライフを60回復し、シードデッキから1体ドローする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "allies",
+          "cleanse": true,
+          "heal": 60,
+          "draw": 1
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB059",
+      "uid": "MB059",
+      "number": "MB059",
+      "name": "モブドリーム",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/059.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "地",
+      "attackType": "魔法",
+      "atk": 160,
+      "def": 140,
+      "role": "夢のつづき",
+      "passive": {},
+      "soulSkill": {
+        "name": "夢のつづき",
+        "description": "墓地のシード1体を選んで手札に戻す。次にフュージョン召喚する味方のATK・DEFを20アップする。",
+        "effect": "墓地のシード1体を選んで手札に戻す。次にフュージョン召喚する味方のATK・DEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "recoverSeed": true,
+          "fusionBonus": {
+            "atk": 20,
+            "def": 20
+          }
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB063",
+      "uid": "MB063",
+      "number": "MB063",
+      "name": "モブミストール",
+      "soulClass": "middle",
+      "rarity": "SSR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/063.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "光",
+      "attackType": "物理",
+      "atk": 190,
+      "def": 150,
+      "role": "眠りの霧",
+      "passive": {},
+      "soulSkill": {
+        "name": "眠りの霧",
+        "description": "相手全体のATKを20ダウンする。相手全体は次の相手ターン終了までスキルを使えない。",
+        "effect": "相手全体のATKを20ダウンする。相手全体は次の相手ターン終了までスキルを使えない。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "atk": -20,
+          "skillLock": true,
+          "lockDuration": "next-opponent"
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB066",
+      "uid": "MB066",
+      "number": "MB066",
+      "name": "モブパッチェル",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/066.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "水",
+      "attackType": "魔法",
+      "atk": 130,
+      "def": 170,
+      "role": "夢の仕立て直し",
+      "passive": {},
+      "soulSkill": {
+        "name": "夢の仕立て直し",
+        "description": "味方1体を選び、ATK・DEFの低下効果を取り除き、ATK・DEFを20アップする。",
+        "effect": "味方1体を選び、ATK・DEFの低下効果を取り除き、ATK・DEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "cleanse": true,
+          "atk": 20,
+          "def": 20
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB067",
+      "uid": "MB067",
+      "number": "MB067",
+      "name": "モブファンタズム",
+      "soulClass": "mob",
+      "rarity": "SSR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 2,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/067.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "火",
+      "attackType": "物理",
+      "atk": 190,
+      "def": 230,
+      "role": "幻想のすり替え",
+      "passive": {
+        "handScale": {
+          "atk": 10
+        }
+      },
+      "soulSkill": {
+        "name": "幻想のすり替え",
+        "description": "相手1体を選び、元のデッキの一番下へ戻す。シードはシードデッキ、ミドル・MOBは進化デッキへ戻る。\n【パッシブ：夢のかけら】自分の手札1体につき、このフィギュアのATKを10アップする。",
+        "effect": "相手1体を選び、元のデッキの一番下へ戻す。シードはシードデッキ、ミドル・MOBは進化デッキへ戻る。\n【パッシブ：夢のかけら】自分の手札1体につき、このフィギュアのATKを10アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemy",
+          "returnTargetDeck": true
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB068",
+      "uid": "MB068",
+      "number": "MB068",
+      "name": "モブルナロード",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/068.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "闇",
+      "attackType": "魔法",
+      "atk": 230,
+      "def": 250,
+      "role": "月下の静寂",
+      "passive": {
+        "enemyAura": {
+          "def": -25
+        }
+      },
+      "soulSkill": {
+        "name": "月下の静寂",
+        "description": "相手全体のATKを30ダウンする。相手全体は次の相手ターン終了までスキルを使えない。自分のライフを60回復する。\n【パッシブ：月夜の支配】場にいる間、相手全体のDEFを25ダウンする。",
+        "effect": "相手全体のATKを30ダウンする。相手全体は次の相手ターン終了までスキルを使えない。自分のライフを60回復する。\n【パッシブ：月夜の支配】場にいる間、相手全体のDEFを25ダウンする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "atk": -30,
+          "skillLock": true,
+          "lockDuration": "next-opponent",
+          "heal": 60
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "MB075",
+      "uid": "MB075",
+      "number": "MB075",
+      "name": "モブユメノヴァ",
+      "soulClass": "mob",
+      "rarity": "UR",
+      "series": "ネオン街のドリームスリーパー",
+      "series2": "",
+      "family": "MB_NEON",
+      "releaseWave": 3,
+      "pending": true,
+      "collection": "main",
+      "image": "piecefig/MB/075.png",
+      "tags": [
+        "44",
+        "series-mb-neon"
+      ],
+      "attribute": "風",
+      "attackType": "物理",
+      "atk": 270,
+      "def": 270,
+      "role": "夢の終着点",
+      "passive": {
+        "aura": {
+          "tags": [
+            "series-mb-neon"
+          ],
+          "def": 25
+        }
+      },
+      "soulSkill": {
+        "name": "夢の終着点",
+        "description": "相手全体のDEFを30ダウンする。\n【パッシブ：夢の共鳴】タグ「ネオン街のドリームスリーパー」を持つ味方のDEFを25アップする。",
+        "effect": "相手全体のDEFを30ダウンする。\n【パッシブ：夢の共鳴】タグ「ネオン街のドリームスリーパー」を持つ味方のDEFを25アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "enemies",
+          "def": -30
+        }
+      },
+      "fusionMaterials": [],
+      "fusionTargets": []
+    },
+    {
+      "id": "PUNI_M01",
+      "uid": "PUNI_M01",
+      "number": "PUNI_M01",
+      "name": "ぷにモブパレット",
+      "soulClass": "middle",
+      "rarity": "SR",
+      "attribute": "光",
+      "attackType": "魔法",
+      "atk": 140,
+      "def": 160,
+      "tags": [
+        "01",
+        "oct06-puni-series"
+      ],
+      "series": "ぷにモブシリーズ",
+      "collection": "main",
+      "image": "piecefig/MB/PUNI_M01.png",
+      "passive": {},
+      "soulSkill": {
+        "name": "ぷにっと彩る",
+        "description": "味方1体を選び、ATK・DEFの低下効果を取り除き、ATK・DEFを20アップする。",
+        "effect": "味方1体を選び、ATK・DEFの低下効果を取り除き、ATK・DEFを20アップする。",
+        "timing": "own-main",
+        "runtimePlan": {
+          "revision": "oct07",
+          "duration": "persistent",
+          "target": "ally",
+          "cleanse": true,
+          "atk": 20,
+          "def": 20
+        }
+      },
+      "role": "ぷにっと彩る"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "mb-adventure-54",
+      "target": "MB054",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB001"
+        },
+        {
+          "id": "MB004"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-60",
+      "target": "MB060",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB009"
+        },
+        {
+          "id": "MB008"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-61",
+      "target": "MB061",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB016"
+        },
+        {
+          "id": "MB032"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-69",
+      "target": "MB069",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB076"
+        },
+        {
+          "id": "MB005"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-74",
+      "target": "MB074",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB077"
+        },
+        {
+          "id": "MB006"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-85",
+      "target": "MB085",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB080"
+        },
+        {
+          "id": "MB081"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-65",
+      "target": "MB065",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB054"
+        },
+        {
+          "id": "MB069"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-73",
+      "target": "MB073",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB060"
+        },
+        {
+          "id": "MB074"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-86",
+      "target": "MB086",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB061"
+        },
+        {
+          "id": "MB085"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-52",
+      "target": "MB052",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB020"
+        },
+        {
+          "id": "MB022"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-56",
+      "target": "MB056",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB024"
+        },
+        {
+          "id": "MB041"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-58",
+      "target": "MB058",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB034"
+        },
+        {
+          "id": "MB038"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-62",
+      "target": "MB062",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB087"
+        },
+        {
+          "id": "MB026"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-64",
+      "target": "MB064",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB088"
+        },
+        {
+          "id": "MB035"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-97",
+      "target": "MB097",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB092"
+        },
+        {
+          "id": "MB093"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-72",
+      "target": "MB072",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB052"
+        },
+        {
+          "id": "MB062"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-98",
+      "target": "MB098",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB056"
+        },
+        {
+          "id": "MB064"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-99",
+      "target": "MB099",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB058"
+        },
+        {
+          "id": "MB097"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-51",
+      "target": "MB051",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB028"
+        },
+        {
+          "id": "MB033"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-53",
+      "target": "MB053",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB047"
+        },
+        {
+          "id": "MB010"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-57",
+      "target": "MB057",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB030"
+        },
+        {
+          "id": "MB039"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-59",
+      "target": "MB059",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB100"
+        },
+        {
+          "id": "MB019"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-63",
+      "target": "MB063",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB101"
+        },
+        {
+          "id": "MB023"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-66",
+      "target": "MB066",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB040"
+        },
+        {
+          "id": "MB104"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-67",
+      "target": "MB067",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB051"
+        },
+        {
+          "id": "MB059"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-68",
+      "target": "MB068",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB053"
+        },
+        {
+          "id": "MB063"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-75",
+      "target": "MB075",
+      "fromClass": "middle",
+      "explicitFromClass": "middle",
+      "materials": [
+        {
+          "id": "MB057"
+        },
+        {
+          "id": "MB066"
+        }
+      ],
+      "special": true,
+      "status": "implemented"
+    },
+    {
+      "id": "puni-palette",
+      "target": "PUNI_M01",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "tag": "01"
+        },
+        {
+          "tag": "01"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-54-easy",
+      "target": "MB054",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB001"
+        },
+        {
+          "tag": "series-mb-grass"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-60-easy",
+      "target": "MB060",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB009"
+        },
+        {
+          "tag": "series-mb-grass"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-61-easy",
+      "target": "MB061",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB016"
+        },
+        {
+          "tag": "series-mb-grass"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-69-easy",
+      "target": "MB069",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB076"
+        },
+        {
+          "tag": "series-mb-grass"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-74-easy",
+      "target": "MB074",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB077"
+        },
+        {
+          "tag": "series-mb-grass"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-85-easy",
+      "target": "MB085",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB080"
+        },
+        {
+          "tag": "series-mb-grass"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-52-easy",
+      "target": "MB052",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB020"
+        },
+        {
+          "tag": "series-mb-desert"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-56-easy",
+      "target": "MB056",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB024"
+        },
+        {
+          "tag": "series-mb-desert"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-58-easy",
+      "target": "MB058",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB034"
+        },
+        {
+          "tag": "series-mb-desert"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-62-easy",
+      "target": "MB062",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB087"
+        },
+        {
+          "tag": "series-mb-desert"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-64-easy",
+      "target": "MB064",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB088"
+        },
+        {
+          "tag": "series-mb-desert"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-97-easy",
+      "target": "MB097",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB092"
+        },
+        {
+          "tag": "series-mb-desert"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-51-easy",
+      "target": "MB051",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB028"
+        },
+        {
+          "tag": "series-mb-neon"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-53-easy",
+      "target": "MB053",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB047"
+        },
+        {
+          "tag": "series-mb-neon"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-57-easy",
+      "target": "MB057",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB030"
+        },
+        {
+          "tag": "series-mb-neon"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-59-easy",
+      "target": "MB059",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB100"
+        },
+        {
+          "tag": "series-mb-neon"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-63-easy",
+      "target": "MB063",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB101"
+        },
+        {
+          "tag": "series-mb-neon"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    },
+    {
+      "id": "mb-adventure-66-easy",
+      "target": "MB066",
+      "fromClass": "seed",
+      "explicitFromClass": "seed",
+      "materials": [
+        {
+          "id": "MB040"
+        },
+        {
+          "tag": "series-mb-neon"
+        }
+      ],
+      "special": false,
+      "status": "implemented"
+    }
+  ],
+  "tags": [
+    {
+      "id": "series-mb-grass",
+      "name": "ホップステップ草原探検隊"
+    },
+    {
+      "id": "series-mb-desert",
+      "name": "奇跡を起こす砂漠のカケラ"
+    },
+    {
+      "id": "series-mb-neon",
+      "name": "ネオン街のドリームスリーパー"
+    }
+  ],
+  "removedIds": [
+    "MB002",
+    "MB003",
+    "MB017",
+    "MB021",
+    "MB025",
+    "MB042",
+    "MB043",
+    "MB044",
+    "MB045",
+    "MB048",
+    "MB049",
+    "MB050"
+  ],
+  "groups": [
+    {
+      "key": "grass",
+      "name": "ホップステップ草原探検隊",
+      "color": "#69ba69",
+      "tag": "41",
+      "seeds": [
+        1,
+        4,
+        9,
+        8,
+        16,
+        32,
+        5,
+        6,
+        7,
+        18,
+        27,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "middles": [
+        54,
+        60,
+        61,
+        69,
+        74,
+        85
+      ],
+      "mobs": [
+        65,
+        73,
+        86
+      ],
+      "newSeeds": [
+        76,
+        77,
+        78,
+        79
+      ],
+      "waves": [
+        [
+          "MB001",
+          "MB004",
+          "MB009",
+          "MB008",
+          "MB016",
+          "MB032",
+          "MB076",
+          "MB077",
+          "MB078",
+          "MB079",
+          "MB054",
+          "MB060",
+          "MB061"
+        ],
+        [
+          "MB005",
+          "MB006",
+          "MB007",
+          "MB018",
+          "MB027",
+          "MB069",
+          "MB074",
+          "MB065"
+        ],
+        [
+          "MB080",
+          "MB081",
+          "MB082",
+          "MB083",
+          "MB084",
+          "MB085",
+          "MB073",
+          "MB086"
+        ]
+      ],
+      "featuredIds": [
+        "MB001",
+        "MB004",
+        "MB009",
+        "MB008",
+        "MB016",
+        "MB032"
+      ]
+    },
+    {
+      "key": "desert",
+      "name": "奇跡を起こす砂漠のカケラ",
+      "color": "#e5b04e",
+      "tag": "42",
+      "seeds": [
+        20,
+        22,
+        24,
+        41,
+        34,
+        38,
+        26,
+        35,
+        36,
+        46,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "middles": [
+        52,
+        56,
+        58,
+        62,
+        64,
+        97
+      ],
+      "mobs": [
+        72,
+        98,
+        99
+      ],
+      "newSeeds": [
+        87,
+        88,
+        89,
+        90
+      ],
+      "waves": [
+        [
+          "MB020",
+          "MB022",
+          "MB024",
+          "MB041",
+          "MB034",
+          "MB038",
+          "MB087",
+          "MB088",
+          "MB089",
+          "MB090",
+          "MB052",
+          "MB056",
+          "MB058"
+        ],
+        [
+          "MB026",
+          "MB035",
+          "MB036",
+          "MB046",
+          "MB091",
+          "MB062",
+          "MB064",
+          "MB072"
+        ],
+        [
+          "MB092",
+          "MB093",
+          "MB094",
+          "MB095",
+          "MB096",
+          "MB097",
+          "MB098",
+          "MB099"
+        ]
+      ],
+      "featuredIds": [
+        "MB020",
+        "MB022",
+        "MB024",
+        "MB041",
+        "MB034",
+        "MB038"
+      ]
+    },
+    {
+      "key": "neon",
+      "name": "ネオン街のドリームスリーパー",
+      "color": "#a77af7",
+      "tag": "44",
+      "seeds": [
+        28,
+        33,
+        47,
+        10,
+        30,
+        39,
+        19,
+        23,
+        29,
+        31,
+        37,
+        40,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "middles": [
+        51,
+        53,
+        57,
+        59,
+        63,
+        66
+      ],
+      "mobs": [
+        67,
+        68,
+        75
+      ],
+      "newSeeds": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "waves": [
+        [
+          "MB028",
+          "MB033",
+          "MB047",
+          "MB010",
+          "MB030",
+          "MB039",
+          "MB100",
+          "MB101",
+          "MB102",
+          "MB103",
+          "MB051",
+          "MB053",
+          "MB057"
+        ],
+        [
+          "MB019",
+          "MB023",
+          "MB029",
+          "MB031",
+          "MB037",
+          "MB059",
+          "MB063",
+          "MB067"
+        ],
+        [
+          "MB040",
+          "MB104",
+          "MB105",
+          "MB106",
+          "MB107",
+          "MB066",
+          "MB068",
+          "MB075"
+        ]
+      ],
+      "featuredIds": [
+        "MB028",
+        "MB033",
+        "MB047",
+        "MB010",
+        "MB030",
+        "MB039"
+      ]
+    }
+  ],
+  "releases": [
+    {
+      "wave": 1,
+      "series": "grass",
+      "figureIds": [
+        "MB001",
+        "MB004",
+        "MB009",
+        "MB008",
+        "MB016",
+        "MB032",
+        "MB076",
+        "MB077",
+        "MB078",
+        "MB079",
+        "MB054",
+        "MB060",
+        "MB061"
+      ],
+      "status": "live"
+    },
+    {
+      "wave": 2,
+      "series": "grass",
+      "figureIds": [
+        "MB005",
+        "MB006",
+        "MB007",
+        "MB018",
+        "MB027",
+        "MB069",
+        "MB074",
+        "MB065"
+      ],
+      "status": "planned"
+    },
+    {
+      "wave": 3,
+      "series": "grass",
+      "figureIds": [
+        "MB080",
+        "MB081",
+        "MB082",
+        "MB083",
+        "MB084",
+        "MB085",
+        "MB073",
+        "MB086"
+      ],
+      "status": "planned"
+    },
+    {
+      "wave": 1,
+      "series": "desert",
+      "figureIds": [
+        "MB020",
+        "MB022",
+        "MB024",
+        "MB041",
+        "MB034",
+        "MB038",
+        "MB087",
+        "MB088",
+        "MB089",
+        "MB090",
+        "MB052",
+        "MB056",
+        "MB058"
+      ],
+      "status": "live"
+    },
+    {
+      "wave": 2,
+      "series": "desert",
+      "figureIds": [
+        "MB026",
+        "MB035",
+        "MB036",
+        "MB046",
+        "MB091",
+        "MB062",
+        "MB064",
+        "MB072"
+      ],
+      "status": "planned"
+    },
+    {
+      "wave": 3,
+      "series": "desert",
+      "figureIds": [
+        "MB092",
+        "MB093",
+        "MB094",
+        "MB095",
+        "MB096",
+        "MB097",
+        "MB098",
+        "MB099"
+      ],
+      "status": "planned"
+    },
+    {
+      "wave": 1,
+      "series": "neon",
+      "figureIds": [
+        "MB028",
+        "MB033",
+        "MB047",
+        "MB010",
+        "MB030",
+        "MB039",
+        "MB100",
+        "MB101",
+        "MB102",
+        "MB103",
+        "MB051",
+        "MB053",
+        "MB057"
+      ],
+      "status": "live"
+    },
+    {
+      "wave": 2,
+      "series": "neon",
+      "figureIds": [
+        "MB019",
+        "MB023",
+        "MB029",
+        "MB031",
+        "MB037",
+        "MB059",
+        "MB063",
+        "MB067"
+      ],
+      "status": "planned"
+    },
+    {
+      "wave": 3,
+      "series": "neon",
+      "figureIds": [
+        "MB040",
+        "MB104",
+        "MB105",
+        "MB106",
+        "MB107",
+        "MB066",
+        "MB068",
+        "MB075"
+      ],
+      "status": "planned"
+    }
+  ],
+  "banners": [
+    {
+      "id": "mb-permanent",
+      "name": "いつもの仲間たち",
+      "category": "permanent",
+      "color": "#e9ba67",
+      "subtitle": "以前のスターターの仲間が集まる常設ガチャ",
+      "figureIds": [
+        "18",
+        "21",
+        "ECL_S01",
+        "ECL_S02",
+        "NIN_S01",
+        "NIN_S02",
+        "FRG_S01",
+        "FRG_S02",
+        "piece:002",
+        "piece:006",
+        "ECL_M02",
+        "17",
+        "19",
+        "20",
+        "CRY_S01",
+        "CRY_S02",
+        "RUN_S01",
+        "RUN_S02",
+        "SPI_S01",
+        "SPI_S02",
+        "piece:003",
+        "piece:005",
+        "CRY_M01",
+        "piece:004",
+        "piece:008",
+        "RUN_M01",
+        "piece:007",
+        "piece:009",
+        "piece:010",
+        "piece:011",
+        "piece:012",
+        "piece:013",
+        "piece:022",
+        "piece:023",
+        "piece:024",
+        "piece:025",
+        "piece:031",
+        "piece:042",
+        "piece:035",
+        "piece:044",
+        "DUA_S01",
+        "GHO_S01",
+        "piece:019",
+        "DUA_M01",
+        "piece:032",
+        "piece:043",
+        "piece:037",
+        "piece:045",
+        "DUA_S02",
+        "GHO_S02",
+        "NIN_M01",
+        "GHO_M02",
+        "ECL_S03",
+        "NIN_S03",
+        "FRG_S03",
+        "piece:033",
+        "CRY_S03",
+        "RUN_S03",
+        "SPI_S03",
+        "piece:041",
+        "DUA_S03",
+        "GHO_S03",
+        "piece:018"
+      ],
+      "featuredIds": [
+        "piece:002",
+        "piece:006",
+        "ECL_M02"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "pickupIds": [
+        "piece:002"
+      ]
+    },
+    {
+      "id": "mb-adventure-grass-1",
+      "name": "ホップステップ草原探検隊",
+      "category": "adventure",
+      "theme": "mb-grass",
+      "color": "#69ba69",
+      "subtitle": "モブくんの大冒険 第1弾 · シード10体／ミドル3体",
+      "figureIds": [
+        "MB001",
+        "MB004",
+        "MB009",
+        "MB008",
+        "MB016",
+        "MB032",
+        "MB076",
+        "MB077",
+        "MB078",
+        "MB079",
+        "MB054",
+        "MB060",
+        "MB061"
+      ],
+      "featuredIds": [
+        "MB001",
+        "MB054",
+        "MB004"
+      ],
+      "pickupIds": [
+        "MB001"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/grass.png"
+    },
+    {
+      "id": "mb-adventure-desert-1",
+      "name": "奇跡を起こす砂漠のカケラ",
+      "category": "adventure",
+      "theme": "mb-desert",
+      "color": "#e5b04e",
+      "subtitle": "モブくんの大冒険 第1弾 · シード10体／ミドル3体",
+      "figureIds": [
+        "MB020",
+        "MB022",
+        "MB024",
+        "MB041",
+        "MB034",
+        "MB038",
+        "MB087",
+        "MB088",
+        "MB089",
+        "MB090",
+        "MB052",
+        "MB056",
+        "MB058"
+      ],
+      "featuredIds": [
+        "MB038",
+        "MB052",
+        "MB022"
+      ],
+      "pickupIds": [
+        "MB038"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/desert.png"
+    },
+    {
+      "id": "mb-adventure-neon-1",
+      "name": "ネオン街のドリームスリーパー",
+      "category": "adventure",
+      "theme": "mb-neon",
+      "color": "#a77af7",
+      "subtitle": "モブくんの大冒険 第1弾 · シード10体／ミドル3体",
+      "figureIds": [
+        "MB028",
+        "MB033",
+        "MB047",
+        "MB010",
+        "MB030",
+        "MB039",
+        "MB100",
+        "MB101",
+        "MB102",
+        "MB103",
+        "MB051",
+        "MB053",
+        "MB057"
+      ],
+      "featuredIds": [
+        "MB047",
+        "MB051",
+        "MB033"
+      ],
+      "pickupIds": [
+        "MB047"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/neon.png"
+    }
+  ],
+  "starters": [
+    {
+      "id": "mb-grass",
+      "name": "ホップステップ草原探検隊",
+      "description": "ぷにモブ31体＋指定シード6種×2体＋シリーズのミドル1体＋ぷにモブパレット1体",
+      "featuredIds": [
+        "MB001",
+        "MB004",
+        "MB009",
+        "MB008",
+        "MB016",
+        "MB032"
+      ],
+      "deck": [
+        "01",
+        "01",
+        "01",
+        "02",
+        "02",
+        "02",
+        "03",
+        "03",
+        "03",
+        "04",
+        "04",
+        "04",
+        "05",
+        "05",
+        "05",
+        "06",
+        "06",
+        "06",
+        "07",
+        "07",
+        "07",
+        "08",
+        "08",
+        "08",
+        "09",
+        "09",
+        "09",
+        "10",
+        "10",
+        "10",
+        "11",
+        "MB001",
+        "MB001",
+        "MB004",
+        "MB004",
+        "MB009",
+        "MB009",
+        "MB008",
+        "MB008",
+        "MB016",
+        "MB016",
+        "MB032",
+        "MB032",
+        "MB054",
+        "PUNI_M01"
+      ]
+    },
+    {
+      "id": "mb-desert",
+      "name": "奇跡を起こす砂漠のカケラ",
+      "description": "ぷにモブ31体＋指定シード6種×2体＋シリーズのミドル1体＋ぷにモブパレット1体",
+      "featuredIds": [
+        "MB020",
+        "MB022",
+        "MB024",
+        "MB041",
+        "MB034",
+        "MB038"
+      ],
+      "deck": [
+        "01",
+        "01",
+        "01",
+        "02",
+        "02",
+        "02",
+        "03",
+        "03",
+        "03",
+        "04",
+        "04",
+        "04",
+        "05",
+        "05",
+        "05",
+        "06",
+        "06",
+        "06",
+        "07",
+        "07",
+        "07",
+        "08",
+        "08",
+        "08",
+        "09",
+        "09",
+        "09",
+        "10",
+        "10",
+        "10",
+        "11",
+        "MB020",
+        "MB020",
+        "MB022",
+        "MB022",
+        "MB024",
+        "MB024",
+        "MB041",
+        "MB041",
+        "MB034",
+        "MB034",
+        "MB038",
+        "MB038",
+        "MB052",
+        "PUNI_M01"
+      ]
+    },
+    {
+      "id": "mb-neon",
+      "name": "ネオン街のドリームスリーパー",
+      "description": "ぷにモブ31体＋指定シード6種×2体＋シリーズのミドル1体＋ぷにモブパレット1体",
+      "featuredIds": [
+        "MB028",
+        "MB033",
+        "MB047",
+        "MB010",
+        "MB030",
+        "MB039"
+      ],
+      "deck": [
+        "01",
+        "01",
+        "01",
+        "02",
+        "02",
+        "02",
+        "03",
+        "03",
+        "03",
+        "04",
+        "04",
+        "04",
+        "05",
+        "05",
+        "05",
+        "06",
+        "06",
+        "06",
+        "07",
+        "07",
+        "07",
+        "08",
+        "08",
+        "08",
+        "09",
+        "09",
+        "09",
+        "10",
+        "10",
+        "10",
+        "11",
+        "MB028",
+        "MB028",
+        "MB033",
+        "MB033",
+        "MB047",
+        "MB047",
+        "MB010",
+        "MB010",
+        "MB030",
+        "MB030",
+        "MB039",
+        "MB039",
+        "MB051",
+        "PUNI_M01"
+      ]
+    }
+  ],
+  "puniIds": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "PUNI_M01"
+  ],
+  "plannedBanners": [
+    {
+      "id": "mb-adventure-grass-2",
+      "name": "ホップステップ草原探検隊 第2弾",
+      "category": "adventure",
+      "theme": "mb-grass",
+      "color": "#69ba69",
+      "subtitle": "後日公開予定 · 新シード5体／ミドル2体／MOB1体",
+      "figureIds": [
+        "MB005",
+        "MB006",
+        "MB007",
+        "MB018",
+        "MB027",
+        "MB069",
+        "MB074",
+        "MB065"
+      ],
+      "featuredIds": [
+        "MB065",
+        "MB005",
+        "MB006"
+      ],
+      "pickupIds": [
+        "MB065"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/grass.png",
+      "status": "planned",
+      "releaseWave": 2
+    },
+    {
+      "id": "mb-adventure-grass-3",
+      "name": "ホップステップ草原探検隊 第3弾",
+      "category": "adventure",
+      "theme": "mb-grass",
+      "color": "#69ba69",
+      "subtitle": "後日公開予定 · 新シード5体／ミドル1体／MOB2体",
+      "figureIds": [
+        "MB080",
+        "MB081",
+        "MB082",
+        "MB083",
+        "MB084",
+        "MB085",
+        "MB073",
+        "MB086"
+      ],
+      "featuredIds": [
+        "MB073",
+        "MB086",
+        "MB080"
+      ],
+      "pickupIds": [
+        "MB073",
+        "MB086"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/grass.png",
+      "status": "planned",
+      "releaseWave": 3
+    },
+    {
+      "id": "mb-adventure-desert-2",
+      "name": "奇跡を起こす砂漠のカケラ 第2弾",
+      "category": "adventure",
+      "theme": "mb-desert",
+      "color": "#e5b04e",
+      "subtitle": "後日公開予定 · 新シード5体／ミドル2体／MOB1体",
+      "figureIds": [
+        "MB026",
+        "MB035",
+        "MB036",
+        "MB046",
+        "MB091",
+        "MB062",
+        "MB064",
+        "MB072"
+      ],
+      "featuredIds": [
+        "MB072",
+        "MB026",
+        "MB035"
+      ],
+      "pickupIds": [
+        "MB072"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/desert.png",
+      "status": "planned",
+      "releaseWave": 2
+    },
+    {
+      "id": "mb-adventure-desert-3",
+      "name": "奇跡を起こす砂漠のカケラ 第3弾",
+      "category": "adventure",
+      "theme": "mb-desert",
+      "color": "#e5b04e",
+      "subtitle": "後日公開予定 · 新シード5体／ミドル1体／MOB2体",
+      "figureIds": [
+        "MB092",
+        "MB093",
+        "MB094",
+        "MB095",
+        "MB096",
+        "MB097",
+        "MB098",
+        "MB099"
+      ],
+      "featuredIds": [
+        "MB098",
+        "MB099",
+        "MB092"
+      ],
+      "pickupIds": [
+        "MB098",
+        "MB099"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/desert.png",
+      "status": "planned",
+      "releaseWave": 3
+    },
+    {
+      "id": "mb-adventure-neon-2",
+      "name": "ネオン街のドリームスリーパー 第2弾",
+      "category": "adventure",
+      "theme": "mb-neon",
+      "color": "#a77af7",
+      "subtitle": "後日公開予定 · 新シード5体／ミドル2体／MOB1体",
+      "figureIds": [
+        "MB019",
+        "MB023",
+        "MB029",
+        "MB031",
+        "MB037",
+        "MB059",
+        "MB063",
+        "MB067"
+      ],
+      "featuredIds": [
+        "MB067",
+        "MB019",
+        "MB023"
+      ],
+      "pickupIds": [
+        "MB067"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/neon.png",
+      "status": "planned",
+      "releaseWave": 2
+    },
+    {
+      "id": "mb-adventure-neon-3",
+      "name": "ネオン街のドリームスリーパー 第3弾",
+      "category": "adventure",
+      "theme": "mb-neon",
+      "color": "#a77af7",
+      "subtitle": "後日公開予定 · 新シード5体／ミドル1体／MOB2体",
+      "figureIds": [
+        "MB040",
+        "MB104",
+        "MB105",
+        "MB106",
+        "MB107",
+        "MB066",
+        "MB068",
+        "MB075"
+      ],
+      "featuredIds": [
+        "MB068",
+        "MB075",
+        "MB040"
+      ],
+      "pickupIds": [
+        "MB068",
+        "MB075"
+      ],
+      "puniIds": [
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "PUNI_M01"
+      ],
+      "puniRate": 0.03,
+      "backdrop": "assets/towers/neon.png",
+      "status": "planned",
+      "releaseWave": 3
+    }
+  ],
+  "reviewRevision": "20261025",
+  "skillReviewRevision": "20261025-individual-abilities"
+}

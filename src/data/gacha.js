@@ -1,3 +1,4 @@
+import adventure from './mb-adventure.json' with {type:'json'};
 import {figures} from './catalog.js?v=7.3.0';
 export const RARITY_RANK=Object.freeze({R:1,SR:2,SSR:3,UR:4,MOB:5});
 export const RATES=Object.freeze({R:50,SR:30,SSR:15,UR:4.5,MOB:.5});
@@ -9,18 +10,19 @@ const common=Array.from({length:25},(_,i)=>'fig/'+String(i+1).padStart(2,'0')+'.
 // This standalone battle game has no Quest story progression: all banners are available.
 import selectedBanner from './selected-banner.json' with {type:'json'};
 import initialRelease from './initial-release.json' with {type:'json'};
-export const archivedBanners=[...questBanners,selectedBanner,...initialRelease.banners];
-export const banners=towerBanners;
+export const archivedBanners=[...questBanners,selectedBanner,...initialRelease.banners,...towerBanners];
+export const banners=adventure.banners;
 export {bannerUnlocked};
 export const availableBanners=profile=>banners.filter(b=>bannerUnlocked(profile,b));
 export const RUBY_COST=Object.freeze({R:50,SR:100,SSR:200,UR:300,MOB:500});
 export const usableFigure=f=>!!(f&&!f.retired&&!f.pending&&f.name&&!/^\/+$/u.test(f.name)&&f.image);
-export function poolFor(banner){if(banner.figureIds){const ids=new Set(banner.figureIds);return figures.filter(f=>ids.has(f.sourceId)&&usableFigure(f));}const paths=new Set([...common,...banner.extra]);return figures.filter(f=>paths.has(f.image)&&usableFigure(f));}
-export function pickupsFor(banner){const pool=poolFor(banner);const explicit=banner.pickupIds?banner.pickupIds.map(id=>pool.find(f=>f.sourceId===id)).filter(Boolean):pool.filter(f=>banner.pickup?.includes(f.image));return explicit.length?explicit:[...pool].sort((a,b)=>RARITY_RANK[b.rarity]-RARITY_RANK[a.rarity]).slice(0,3);}
+export function poolFor(banner){if(banner.figureIds){const ids=new Set([...banner.figureIds,...(banner.puniIds||[])]);return figures.filter(f=>ids.has(f.sourceId)&&usableFigure(f));}const paths=new Set([...common,...banner.extra]);return figures.filter(f=>paths.has(f.image)&&usableFigure(f));}
+export function pickupsFor(banner){const pool=poolFor(banner).filter(f=>!banner.puniIds?.includes(f.sourceId));const explicit=banner.pickupIds?banner.pickupIds.map(id=>pool.find(f=>f.sourceId===id)).filter(Boolean):pool.filter(f=>banner.pickup?.includes(f.image));return explicit.length?explicit:[...pool].sort((a,b)=>RARITY_RANK[b.rarity]-RARITY_RANK[a.rarity]).slice(0,3);}
 export const mainPickupFor=banner=>pickupsFor(banner)[0];
 export const SPECIAL_RATES=Object.freeze({pickup:.02,allSSR:.001});
-export function ratesFor(banner,guaranteed=false){const pool=poolFor(banner);const entries=Object.entries(guaranteed==='SSR'?{SSR:15,UR:4.5,MOB:.5}:guaranteed?TEN_LAST_RATES:RATES).filter(([r])=>pool.some(f=>f.rarity===r));const total=entries.reduce((n,[,w])=>n+w,0);return Object.fromEntries(entries.map(([r,w])=>[r,w/total]));}
-export function figureRate(banner,f,guaranteed=false){const same=poolFor(banner).filter(x=>x.rarity===f.rarity);if(!same.some(x=>x.sourceId===f.sourceId))return 0;const picks=pickupsFor(banner).filter(x=>x.rarity===f.rarity);const r=ratesFor(banner,guaranteed)[f.rarity]||0;return r*(picks.length? .45/same.length+(picks.some(x=>x.sourceId===f.sourceId)?.55/picks.length:0):1/same.length);}
+export function ratesFor(banner,guaranteed=false){const pool=poolFor(banner);const entries=Object.entries(guaranteed==='SSR'?{SSR:15,UR:4.5,MOB:.5}:guaranteed?TEN_LAST_RATES:RATES).filter(([r])=>pool.some(f=>f.rarity===r&&!banner.puniIds?.includes(f.sourceId)));const total=entries.reduce((n,[,w])=>n+w,0);return Object.fromEntries(entries.map(([r,w])=>[r,w/total]));}
+export const puniPoolFor=banner=>poolFor(banner).filter(f=>banner.puniIds?.includes(f.sourceId));
+export function figureRate(banner,f,guaranteed=false){const puni=puniPoolFor(banner),p=guaranteed==='SSR'?0:Number(banner.puniRate)||0;if(puni.some(x=>x.sourceId===f.sourceId))return p/puni.length;const same=poolFor(banner).filter(x=>x.rarity===f.rarity&&!banner.puniIds?.includes(x.sourceId));if(!same.some(x=>x.sourceId===f.sourceId))return 0;const picks=pickupsFor(banner).filter(x=>x.rarity===f.rarity&&!banner.puniIds?.includes(x.sourceId));const r=ratesFor(banner,guaranteed)[f.rarity]||0;return (1-p)*r*(picks.length?.45/same.length+(picks.some(x=>x.sourceId===f.sourceId)?.55/picks.length:0):1/same.length);}
 /** Unconditional odds for an individual slot, including mutually exclusive special draws.
  * Pickup replaces the last slot; allSSR re-rolls every slot from the SSR+ weights. */
 export function drawFigureRate(banner,f,count=1,index=0){

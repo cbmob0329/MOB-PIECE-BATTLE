@@ -1,6 +1,7 @@
+import {mbTestEnemies} from '../data/mb-test-decks.js';
 import priorSeriesDecks from '../data/series-test-decks.json' with {type:'json'};
 import {dorayakiTestEnemies} from '../data/dorayaki-test-decks.js';
-const seriesDecks=[...dorayakiTestEnemies,...priorSeriesDecks];
+const seriesDecks=[...mbTestEnemies,...dorayakiTestEnemies,...priorSeriesDecks];
 import {freeEnemies,freeEnemy} from './free-enemies.js';
 import {campaignTowers,campaignEnemy,campaignOpponent} from '../data/tower-campaign.js';
 import {towerDeckOptions} from './tower.js';

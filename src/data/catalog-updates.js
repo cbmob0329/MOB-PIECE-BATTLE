@@ -1,3 +1,4 @@
+import {applyMbAdventure} from './mb-adventure.js';
 import {applyDorayakiSeries} from './dorayaki-series.js';
 import {applyOct15} from './oct15-additions.js';
 import {applyOct14} from './oct14-additions.js';
@@ -12,4 +13,4 @@ import {applyOceanSeries} from './ocean-series.js';
 
 // Shared by runtime and master regeneration; keep user-approved overlays last.
 export const applyPriorCatalogUpdates=base=>applyOct15(applyOct14(applyOct10Additions(applyOct07Skills(applyOct07Safe(applyOct06Spec(applyBattleCorrections(applyOct05Spec(extendPieceCatalog(base)))))))));
-export const applyCatalogUpdates=base=>applyDorayakiSeries(applyOceanSeries(applyPriorCatalogUpdates(base)));
+export const applyCatalogUpdates=base=>applyMbAdventure(applyDorayakiSeries(applyOceanSeries(applyPriorCatalogUpdates(base))));
