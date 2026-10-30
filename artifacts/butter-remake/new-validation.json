@@ -1,0 +1,242 @@
+[
+  {
+    "id": "NEW01",
+    "file": "17_Butter_Churn_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      122,
+      152,
+      880,
+      1392
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "17d9fda80eb0f4faf4a47b825f99843a1be1b9914966ecbad0f139d4f916eebc"
+  },
+  {
+    "id": "NEW02",
+    "file": "18_Butter_Mallet_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      18,
+      22,
+      1017,
+      1509
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "862a8f1e5a37adf597cb817953171f0a0ce1aad66e5fe973017e5431bf72a52e"
+  },
+  {
+    "id": "NEW03",
+    "file": "19_Butter_Courier_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      11,
+      20,
+      1011,
+      1514
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "18954edd02970da4be99e8401f6ad0d1704c92bb4d4aeb8f0af82b2bc7882879"
+  },
+  {
+    "id": "NEW04",
+    "file": "20_Butter_Palm_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      33,
+      26,
+      992,
+      1492
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "a6a3e72472118b95ce78a65230c93d97e93153ad4aca63745af5bd69ce664a84"
+  },
+  {
+    "id": "NEW05",
+    "file": "21_Butter_Skimmer_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      25,
+      16,
+      998,
+      1512
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "dbad8622002efe77674a279d0d537f986d8bd9fc525968ba68756cdac7e1bac4"
+  },
+  {
+    "id": "NEW06",
+    "file": "22_Butter_Alchemist_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      43,
+      34,
+      999,
+      1489
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "1b5d273f6e942b3e38a8da079598d0883f17110d0767e726649a111091f9615e"
+  },
+  {
+    "id": "NEW07",
+    "file": "23_Butter_Porter_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      46,
+      8,
+      1001,
+      1519
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "9833ea5290cff31cda92c26395dbf9c4d3002cec3883c5b6019ace0cd58d1397"
+  },
+  {
+    "id": "NEW08",
+    "file": "24_Butter_Drum_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      39,
+      5,
+      1023,
+      1484
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "ec73313f9001b37056457b6519f3799963d9a357b1654e85699840013e46cbe9"
+  },
+  {
+    "id": "NEW09",
+    "file": "25_Butter_Lantern_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      171,
+      171,
+      899,
+      1288
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "6b8783d2416725014c1376f41e249bba61ca587702df36771a8612e16ce52713"
+  },
+  {
+    "id": "NEW10",
+    "file": "26_Butter_Sailor_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      34,
+      17,
+      1012,
+      1484
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "2bfa504700b28c961914e6b7e9822ee51b95885957243088a3cb132741a4f1c5"
+  },
+  {
+    "id": "NEW11",
+    "file": "27_Butter_Conductor_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      59,
+      8,
+      996,
+      1519
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "a625822d26c3c8176b990f8c363258938618c29c29582935a7a14df4d7f6abc7"
+  },
+  {
+    "id": "NEW12",
+    "file": "28_Butter_Sculptor_SEED.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      17,
+      5,
+      1005,
+      1501
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "c219c9f4e9807110065a2be27c19b17e7f900b0e7a2f00921ca0f5dc724a65ee"
+  },
+  {
+    "id": "NEW13",
+    "file": "29_Butter_Fortress_MOB.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      10,
+      26,
+      1018,
+      1502
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "82465cbc7016637b3c347f67930bfe56ffcdf8e032309fca0d36095169ec27fe"
+  },
+  {
+    "id": "NEW14",
+    "file": "30_Butter_Torrent_MOB.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      36,
+      33,
+      997,
+      1512
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "e20c771d0e48719129652b02435f5ffd5ba9e76788349ad412840a3bfc6ab88f"
+  },
+  {
+    "id": "NEW15",
+    "file": "31_Butter_Refiner_MOB.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      6,
+      14,
+      1020,
+      1495
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "38f4b3dad970fd05902ae843e81d95d0cb1cacb48b12e44e7b310c7337cc3197"
+  },
+  {
+    "id": "NEW16",
+    "file": "32_Butter_Grandmaster_MOB.png",
+    "mode": "RGBA",
+    "width": 1024,
+    "height": 1536,
+    "visibleBoundsAlphaAbove32": [
+      12,
+      10,
+      1020,
+      1526
+    ],
+    "edgePixelsAlphaAbove32": 0,
+    "sha256": "0e85b3b1e48187da3a33bd262105493e1b185bf346634fcde12195c229170186"
+  }
+]

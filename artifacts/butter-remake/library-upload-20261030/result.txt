@@ -1,0 +1,4 @@
+Attempt: regular Library batch upload of remake-contact.png and バターシリーズ_制作状況と未確定事項.txt using current library_upload.py and its current companion files.
+Result: process exited 1 with library upload failed: [Errno 13] Permission denied: '\\\\.\\nllMonFltProxy\\64afafd579ea8903'
+No successful Library item result or Library ID returned. Remote completion is unconfirmed. Do not retry or substitute direct/external upload without resolving outcome and permission constraint.
+Local source files preserved. No backup/project upload requested or performed by this request.

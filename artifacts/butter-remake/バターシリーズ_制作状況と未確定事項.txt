@@ -1,0 +1,6 @@
+バターシリーズ制作完了: 32体の個別PNG（既存16リメイク＋追加16）を同フォルダへ保存。
+SEED20=SR17/SSR3、MIDDLE8=SSR6/UR2、MOB4=SSR2/UR1/MOB1。
+詳細は「バターシリーズ_32体ステータスとスキル案.txt」「バターシリーズ_32体対照一覧.txt」を参照。
+新規命名/段階配分の提案は承認済み。数値・技は提案として分離し、ゲーム本体には未実装。
+原画と旧制作状況TXTの控えはartifacts/butter-remakeに保存。
+Library保存はPC接続処理のPermission deniedで完了未確認。Library ID未取得。代替外部アップロードなし。

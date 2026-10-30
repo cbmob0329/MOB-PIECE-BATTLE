@@ -1,0 +1,6 @@
+Additional 16 figures generated individually using built-in image_gen. No paid CLI/API path. Final specification source: new-character-proposals.json jobs[7] is per-character image prompt; numeric fields there are intermediate drafts, superseded by butter-32-manifest.json.
+Final common prompt:
+undefined
+Repairs: NEW01 cartoon style redraw; NEW02 background extraction request; NEW01 and NEW09 framing correction to place complete figure/pedestal inside transparent margins. All final outputs retain alpha. Rendered tool previews showed hidden RGB background; alpha-composited contact sheet and pixel QA verified transparency.
+Final QA: 32 individual RGBA images, 32 distinct hashes, no border pixels above alpha32, all originals backed up and verified. Names and individual stage/rarity allocations are authorized proposals; all ATK/DEF/skills are expressly proposed and unimplemented.
+Library: 16-preview regular helper upload exited 1 with Permission denied on nllMonFltProxy. No Library IDs returned. Final 32 output upload was not attempted through the same unavailable helper, and no substitute upload was used.

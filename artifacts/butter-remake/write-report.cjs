@@ -1,0 +1,18 @@
+const fs=require('fs'),path=require('path');
+const root=process.cwd(),work=path.join(root,'artifacts/butter-remake'),dest=path.join(root,'新フィギュア/バター');
+const inventory=JSON.parse(fs.readFileSync(path.join(work,'original-inventory.json'),'utf8').replace(/^\uFEFF/,''));
+const labels=['Steel Gold Masked Gladiator','Steel Gold Masked Gladiator','Energy Wasteland Warrior','Energy Wasteland Warrior','Witchbound Marionette','Witchbound Marionette','Cosmic Butter Master','Cosmic Butter Master','正式名未確認（赤白・盾）','正式名未確認（青・杖）','正式名未確認（緑橙・波）','正式名未確認（紫白・槍）','正式名未確認（赤白・盾）','正式名未確認（青・杖）','正式名未確認（緑橙・波）','正式名未確認（紫白・槍）'];
+const differences=['重装、盾を前に出す低い踏み込み、緑の瞳','軽装のクリーム色布衣、横構え、琥珀の丸い瞳','厚い荒野コート、片膝、橙の瞳','軽装ベスト、走行、青緑の丸い瞳','長い舞台衣装、巻物を広げる踊り、ミント色の瞳','丸い継ぎ当ての布衣、座り姿、紫の丸い瞳','長いローブ、立ち姿で上下の惑星を操る、紫の瞳','短いポンチョと短パン、片膝で惑星を見上げる、青の丸い瞳','重い布鎧、大盾を支える片膝、鋭さのある面積を保った瞳','袖を巻いた上着と太いズボン、杖を横構え、青の瞳','袖なしコート、片脚を上げる、淡緑の瞳','長いコート、槍を斜めに構える、紫の瞳','赤い短コート、盾を両手で支える、茶の丸い瞳','黄色いオーバーオール、杖を支える立ち姿、青緑の瞳','タン色のオーバーオール、低いしゃがみ姿、茶の瞳','短いタバード、槍を縦に持つ立ち姿、茶の丸い瞳'];
+const proposedRarity=['SSR','SR','SSR','SR','SSR','SR','UR','SSR','SSR','SSR','SSR','UR','SR','SR','SR','SR'];
+const rows=inventory.map((r,i)=>({id:'EX'+String(i+1).padStart(2,'0'),file:r.file,name:labels[i],nameEvidence:i<8?'ファイル名の英語を空白表記':'正式名の資料なし。括弧内は識別説明であり命名ではない',confirmedStage:i<8?(r.file.includes('_MIDDLE')?'MIDDLE':'SEED'):null,proposedStage:i<8?(r.file.includes('_MIDDLE')?'MIDDLE':'SEED'):(i<12?'MIDDLE':'SEED'),proposedRarity:proposedRarity[i],rarityStatus:'未承認の配分案。既存設定の断定ではない',artStatus:'個別生成・目視確認済み。元ファイル名で上書き',difference:differences[i],ATK:null,DEF:null,skill:null}));
+fs.writeFileSync(path.join(work,'remake-comparison.json'),JSON.stringify(rows,null,2));
+const proposals=['短いエプロン・バター練りの職人','作業つなぎ・バターハンマー','幅広マフラー・旅人','袖なし道着・バター掌術','短いケープ・バター投擲','ポケット付き上着・調合係','サスペンダー・バター運搬係','ストライプ上着・バター太鼓','丸襟ジャケット・バター灯り','長靴・バター波の船乗り','円形ボタンの礼服・バター指揮','重ね着ローブ・バター造形師'];
+let out='バターシリーズ 制作状況・既存対照一覧\n2026-10-30\n\n【完了範囲】\n既存PNG16枚を1体1枚の正規image_genで個別リメイクし、元ファイル名で上書き。32体完成ではありません。追加16体は未生成。\n原画16枚は artifacts/butter-remake/backup-20261030-091500 に保存。原画と生成後のSHA256はJSON一覧に記録。\n\n【ユーザー確定指定】\n既存含め32体。SEED20=SR17/SSR3、MIDDLE8=SSR6/UR2、MOB4=SSR2/UR1/MOB1。\nカートゥーン、猫耳型被り物、丸眼鏡、バター要素を保持。口なし、線の目なし、ダイヤなし。目・衣装・ポーズを変える。\n\n【資料確認】\n対象フォルダには元PNG16枚のみ。専用名簿・説明TXT・レアリティ・ステータス表なし。\n01〜04の8枚はファイル名から名前とSEED/MIDDLEが確認できる。日付名8枚は正式名と段階が未確認。\n台座のMOB表記は全原画にあるため、進化段階MOBの根拠としては使わない。\nリポジトリ内と祖先の調査対象にAGENTS.mdなし。ルートの.agents/.codexディレクトリなし。\n\n【既存16枚】\n';
+for(const r of rows)out+=`\n${r.id} ${r.name}\n画像: ${r.file}\n確定段階: ${r.confirmedStage||'未確認'}\n配分案（未承認）: ${r.proposedStage} / ${r.proposedRarity}\n変更: ${r.difference}\nATK: 未確認 / DEF: 未確認 / スキル: 未確認\n`;
+out+='\n【32枠への配分案・未承認】\n日付名30/31/32/33の4枚をSEED、16/17/18/19の4枚をMIDDLEとみなす場合、既存はSEED8/MIDDLE8。追加はSEED12/MOB4となる。画像の見た目からの提案で、確定設定ではない。\n上記の個別レアリティ案なら既存SEEDはSR7/SSR1、MIDDLEはSSR6/UR2。新規SEEDをSR10/SSR2にすると総指定に一致する。\n\n【追加16枠・命名未確定、画像未生成】\n';
+proposals.forEach((p,i)=>out+=`提案枠NEW${String(i+1).padStart(2,'0')} / SEED / ${i<10?'SR':'SSR'} / 正式名未定 / 衣装案: ${p}\n`);
+['SSR','SSR','UR','MOB'].forEach((r,i)=>out+=`提案枠NEW${i+13} / MOB / ${r} / 正式名・個別デザイン未定\n`);
+out+='\n【スキル資料の扱い】\n新スキル一覧.txt の50番に「とろけるバター」がある。内容は「自分と敵1体のDEFを30ずつ下げる。敵だけでなく自分も柔らかくなる、攻め向けの能力。」\nこれは既存スキル候補の参考記録であり、本シリーズへの採用・キャラへの割当は未確認。今回勝手に採用していない。\n\n【確認が必要な点】\n1. 日付名8枚の正式名・段階。\n2. 追加16体の命名を提案してよいか、または既存の正式名簿があるか。\n3. 個別レアリティ案と未確認のステータス/技。\n\n【生成方法】\nimagegenスキルに従う組み込みimage_gen。APIキー・課金CLI・外部有料サービスは使用していない。図形代用、色替えのみ、まとめシートからの切り出しではない。\n各生成・修正画像を目視。透過と画像端の画素を検査。最終検査記録: remake-validation.json。\n';
+fs.writeFileSync(path.join(dest,'バターシリーズ_制作状況と未確定事項.txt'),out);
+fs.writeFileSync(path.join(work,'バターシリーズ_制作状況と未確定事項.txt'),out);
+console.log('report written: 16 existing entries; 16 pending proposed slots');

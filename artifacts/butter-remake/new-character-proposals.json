@@ -1,0 +1,164 @@
+{
+  "jobs": [
+    [
+      "17_Butter_Churn_SEED.png",
+      "モブチャーン",
+      "SR",
+      180,
+      240,
+      "撹拌仕込み",
+      "自分の次のターン開始まで自分が場に残れば、自分のDEFを30上げる。重複予約不可。",
+      "Cream butter maker. Ivory cat-ear cloth hood with cinnamon trim, round copper spectacles, full black mouthless face, large oval honey-brown irises and round catchlights. Short flour-dusted apron over striped terracotta shirt, rolled sleeves, baggy cocoa trousers. Seated astride low wooden butter churn on small bronze MOB pedestal, both hands firmly stirring one vertical wooden plunger, creamy butter curls visible over barrel rim. Quiet sturdy squat silhouette; full body visible, only one character."
+    ],
+    [
+      "18_Butter_Mallet_SEED.png",
+      "モブパドル",
+      "SR",
+      250,
+      170,
+      "一打ち成形",
+      "このターン自分のATK+35。このターン自分のDEF-20。",
+      "Workshop butter pounder. Mustard-yellow CAT-EAR safety hood, round black spectacles with large white sclera and deep blue round pupils, no mouth. Indigo work overalls, short orange waist apron, thick mitts and wide work boots. Winding up a large round wooden mallet with a soft butter-coated head over one shoulder, both hands correctly on handle, feet wide apart. No hardhat crown or badge. Butter shavings near pedestal, wood workshop topped small bronze MOB oval base."
+    ],
+    [
+      "19_Butter_Courier_SEED.png",
+      "モブメルトラン",
+      "SR",
+      220,
+      190,
+      "溶け足便",
+      "味方SEED1体を選ぶ。このターンその味方のATK+20、次の相手ターン終了までその味方のDEF+10。",
+      "Butter courier: short teal CAT-EARED rain hood with cream edge, perfectly round brass eyeglasses, wide open amber circular irises with sideward pupils. Rust-orange short bomber jacket, cream scarf streaming in a single arc, brown shorts and oversized teal boots. Leaning forward on one leg, other leg kicks back, holding a strapped wooden butter delivery box under one arm while other palm balances. A soft golden butter block peeks from box with a few drips. Mouthless black face. Small cobbled bronze MOB base."
+    ],
+    [
+      "20_Butter_Palm_SEED.png",
+      "モブなめらか拳",
+      "SR",
+      240,
+      180,
+      "すべり掌",
+      "このターン自分の攻撃は相手のDEF上昇分を20まで無視する。元のDEFは無視しない。",
+      "Butter martial apprentice: soft pale yellow CAT-EAR fabric hood with charcoal edge, round bronze glasses, large alert round russet pupils with white sclera, no mouth. Sleeveless sage-green martial robe, broad cream waist sash with rounded knot, loose dark trousers and wrapped ankles. Deep horse stance, one open palm extended and coated with a rounded swirl of butter, other open palm held near waist. Hands clearly anatomical cartoon mitts. Calm low wide silhouette; small stone bronze MOB pedestal. No weapons or other symbols."
+    ],
+    [
+      "21_Butter_Skimmer_SEED.png",
+      "モブバタースキップ",
+      "SR",
+      230,
+      170,
+      "すべり投げ",
+      "敵1体を選ぶ。次の相手ターン終了までその敵のATK-20。",
+      "Butter skimming thrower: coral pink CAT-EARED short hood, round ivory spectacles, circular green irises with full open pupils and two round catchlights, black mouthless face. Short cream cape over brown fitted vest, knee shorts, knee pads and soft boots. Twisting sideways mid throw of ONE oval soft butter pat, one hand open after release, other arm tucked close. Butter pat and a single smooth curved trail wholly inside frame; one lifted heel. Minimal sandy bronze MOB base. No stars, sparkles, hearts, diamonds."
+    ],
+    [
+      "22_Butter_Alchemist_SEED.png",
+      "モブ澄ましバター",
+      "SR",
+      170,
+      250,
+      "澄ましの一滴",
+      "味方1体のATK低下を20まで戻す。元のATKを超えない。",
+      "Clarified-butter alchemist: lavender CAT-EAR cloth hood with a rounded hanging tail, small perfectly circular silver glasses, large white sclera and circular amber pupils looking down. Black mouthless face. Cream high-collared laboratory coat with many ROUND buttons over plum trousers, brown boots. Crouching, carefully pouring clear golden melted butter from a round little flask into a wide shallow pan held in other hand. Distinct fine precise gesture, readable hands. Small smooth charcoal-topped bronze MOB base. No runes, jewels or diamond shapes."
+    ],
+    [
+      "23_Butter_Porter_SEED.png",
+      "モブバターロール",
+      "SR",
+      150,
+      280,
+      "包み直し",
+      "次の相手ターン終了まで、自分が受ける最初のDEF低下を20まで軽減する。",
+      "Butter porter: cocoa brown cat-ear hood with pale cream inner ears, round thick orange glasses, oversized round hazel pupils with bright white sclera, no mouth. Pale blue shirt, orange suspenders and high-waisted wide brown trousers, heavy boots. Braced backward with knees bent carrying one huge rolled spiral of soft golden butter in both arms at waist, full head and legs visible. Rolled butter spiral is creamy and slightly melting, no paper label. Small flat wood-topped bronze MOB base."
+    ],
+    [
+      "24_Butter_Drum_SEED.png",
+      "モブチャーンビート",
+      "SR",
+      200,
+      220,
+      "撹拌リズム",
+      "自分以外の味方2体までを選ぶ。このターンそれぞれのATK+10。",
+      "Butter rhythm drummer: short black and cream cat-ear hood, round bright red spectacles, very large round blue eyes with white sclera, no mouth. Orange striped shirt, cream short overalls, chunky red shoes. Sitting on a low stool with a round butter churn drum between knees, BOTH hands hold round-tipped drumsticks in alternating heights, butter cream splashes in small curved blobs on drum rim. Bouncy asymmetrical pose but all hands and legs clear. Small bronze MOB base. No music notes shaped like diamonds, no extra symbols."
+    ],
+    [
+      "25_Butter_Lantern_SEED.png",
+      "モブギーランタン",
+      "SR",
+      190,
+      230,
+      "黄金灯",
+      "自分のライフを20回復する。このターン自分は攻撃できない。",
+      "Butter lantern keeper: dark navy CAT-EAR hood with pale amber lining, round bronze glasses, full pale mint round irises looking upward, mouthless black face. Long soft mustard raincoat with large circular fasteners, rolled dark trousers and brown boots. Standing with one leg on a short step integrated into pedestal, lifting a ROUND glass lantern containing golden clarified butter flame with one hand, other shelters lantern side. Flame is soft teardrop, no diamond sparkles. Low cobbled bronze MOB base. Warm glow only near lantern, transparent background."
+    ],
+    [
+      "26_Butter_Sailor_SEED.png",
+      "モブバターフロート",
+      "SR",
+      210,
+      210,
+      "浮き油",
+      "次の相手ターン終了まで自分のDEF+25。効果終了時、自分のATK-10を解除せず適用する。",
+      "Butter sailor: cream cat-eared sailor hood with blue edging (no separate hat), ROUND navy spectacles, large brown circular pupils with white sclera glancing left. Blue sailor jacket, orange belt, white trousers tucked into tall blue boots. Kneeling with one boot forward and holding a short wooden paddle across shoulders in both hands, soft buttery wave curling at feet, thick golden butter block used as a little float at one side. Small oval bronze MOB base. No anchors or unrelated icons. Mouthless."
+    ],
+    [
+      "27_Butter_Conductor_SEED.png",
+      "モブバタータクト",
+      "SSR",
+      280,
+      240,
+      "黄金の拍子",
+      "まだ攻撃していない味方1体を選ぶ。その味方はこのターン攻撃できず、別の味方1体のATK+45。",
+      "Butter conductor: plum cat-ear hood with cream inset, ROUND silver glasses, big circular violet irises, arched brows without eye slits, mouthless black face. Tailored cream short tailcoat with plum waistcoat, round gold buttons, short trousers and glossy brown shoes. Balancing on tiptoes, one hand high wielding a small rounded butter-coated wooden baton, other hand spread low guiding a soft ribbon of butter around ankles. Elegant zigzag body gesture. Bronze MOB pedestal. No music symbols, gems or crowns."
+    ],
+    [
+      "28_Butter_Sculptor_SEED.png",
+      "モブバタークラフト",
+      "SSR",
+      240,
+      280,
+      "削り出し",
+      "自分のDEFを20下げ、味方1体のDEFを35上げる。",
+      "Butter sculptor: turquoise cat-ear hood with cream edge, thick ROUND dark spectacles, large round lime irises with black pupils and circular catchlights. Black mouthless face. Long cinnamon artisan apron, rolled cream sleeves, teal trousers and sturdy brown shoes. Sitting cross-legged at base, carefully shaving a large smooth rounded golden butter block with a blunt flat wooden spatula in one hand, other palm steadies it, butter curl peeling upward. Figure fully visible, no extra characters carved, no faces on butter. Small bronze MOB base."
+    ],
+    [
+      "29_Butter_Fortress_MOB.png",
+      "モブバター砦",
+      "SSR",
+      440,
+      620,
+      "重ね塗り防壁",
+      "次の相手ターン終了まで、味方2体のDEF+35。ただし自分は次の自分のターン開始まで攻撃できない。",
+      "MOB-tier butter fortress guardian, broad powerful squat chibi silhouette. Ivory cat-ear armored hood with copper trim, unmistakably ROUND dark bronze eyeglasses, big open copper round pupils and white sclera, black face with NO mouth. Layered heavy cream and brown horizontal armor plates, broad short mantle, thick boots. Deep braced pose with both hands holding a huge smooth semicircular butter rampart in front at waist, head and legs remain clear. Butter fortress surface is round and melting, no battlements resembling crown, no diamonds or jewels. Substantial bronze oval MOB pedestal, whole character and wall comfortably in frame."
+    ],
+    [
+      "30_Butter_Torrent_MOB.png",
+      "モブメルトストリーム",
+      "SSR",
+      570,
+      480,
+      "流しバター",
+      "敵1体のDEF上昇効果を解除する。このターン自分のATK+20。元のDEFは下げない。",
+      "MOB-tier flowing butter martial master, tall dynamic chibi S-curve silhouette. Deep teal cat-ear hood with orange cream lining, large ROUND copper spectacles, wide fully visible round turquoise irises, no mouth. Sleeveless orange long coat with ROUND clasps, wide cream sash, dark teal baggy trousers, ankle wraps. Airborne side-step with one knee high above bronze pedestal and one foot near it, both palms guiding one broad flowing golden butter stream spiraling behind and below body. No wings, no diamond sparkles, no crown. Butter stream smooth creamy not fire, two arms and two legs fully readable."
+    ],
+    [
+      "31_Butter_Refiner_MOB.png",
+      "モブ黄金のギー",
+      "UR",
+      560,
+      600,
+      "黄金精製",
+      "味方2体までのATK・DEF低下をそれぞれ20まで戻す。元の値を超えない。使用後、自分のDEF-25。",
+      "UR-tier clarified butter sage, dignified wide bell-shaped silhouette. Deep burgundy cat-ear ceremonial fabric hood, ROUND golden spectacles with transparent lenses, big open oval golden irises with round pupils, black mouthless face. Layered flowing cream robes with burgundy wide sleeves, plain gold circular clasps and a thick braided round cord, NO crown, no gems. Sitting serenely cross-legged slightly above bronze MOB base, holding a shallow round gold bowl with both hands, one smooth luminous golden butter ribbon rises from bowl curling around one side. Full feet and hands clear. Radiant clean cel-shaded cartoon finish, no stars or diamonds."
+    ],
+    [
+      "32_Butter_Grandmaster_MOB.png",
+      "モブバター大練師",
+      "MOB",
+      640,
+      660,
+      "とろける大団円",
+      "敵1体と自分のDEFを40ずつ下げる。その後、味方1体のATK+40。この効果はこのターン終了まで。",
+      "Top MOB-tier butter grand churn master, majestic yet cute cartoon black mouthless butter creature, CAT-EAR-shaped ivory-and-copper hood, perfectly ROUND brass spectacles, large fully open emerald round irises with round pupils and two circular highlights. Huge cream sculptural sleeves over copper-brown overcoat with flowing layered rounded hems, teal waist sash, thick dark boots, all fasteners circular. Wide stable stance turned three-quarter, both hands gripping a massive wooden butter-churning paddle diagonally upward. A grand creamy golden spiral of whipped butter rises behind like a soft ribbon, not wings, with a large smooth butter curl at paddle tip. Distinct strong final-tier silhouette and substantial bronze oval pedestal labelled MOB. Absolutely no crown, diamond, rhombus, hearts, mouth or thin eye lines. All props inside roomy transparent margins."
+    ]
+  ]
+}

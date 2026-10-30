@@ -1,0 +1,854 @@
+{
+  "series": "バター",
+  "date": "2026-10-30",
+  "status": "32個別画像完成。設定は提案・未実装",
+  "counts": {
+    "MIDDLE": {
+      "SSR": 6,
+      "UR": 2
+    },
+    "SEED": {
+      "SR": 17,
+      "SSR": 3
+    },
+    "MOB": {
+      "SSR": 2,
+      "UR": 1,
+      "MOB": 1
+    }
+  },
+  "rows": [
+    {
+      "id": "EX02",
+      "file": "01_Steel_Gold_Masked_Gladiator_SEED.png",
+      "name": "Steel Gold Masked Gladiator",
+      "nameOrigin": "既存ファイル名保持",
+      "stage": "SEED",
+      "stageOrigin": "既存ファイル名",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "軽装のクリーム色布衣、横構え、琥珀の丸い瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 100,
+        "DEF": 110,
+        "skillName": "バターパリィ",
+        "skillText": "次の相手ターン終了まで、自分が受ける最初のATK低下を20まで軽減する。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX04",
+      "file": "02_Energy_Wasteland_Warrior_SEED.png",
+      "name": "Energy Wasteland Warrior",
+      "nameOrigin": "既存ファイル名保持",
+      "stage": "SEED",
+      "stageOrigin": "既存ファイル名",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "軽装ベスト、走行、青緑の丸い瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 115,
+        "DEF": 90,
+        "skillName": "携帯バター電池",
+        "skillText": "このターン自分のATK+25。使用後、次の相手ターン終了まで自分のDEF-15。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX06",
+      "file": "03_Witchbound_Marionette_SEED.png",
+      "name": "Witchbound Marionette",
+      "nameOrigin": "既存ファイル名保持",
+      "stage": "SEED",
+      "stageOrigin": "既存ファイル名",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "丸い継ぎ当ての布衣、座り姿、紫の丸い瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 80,
+        "DEF": 115,
+        "skillName": "糸のゆるみ",
+        "skillText": "自分のATK・DEF低下を合計20まで戻す。戻す配分を選べる。元の値を超えない。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX08",
+      "file": "04_Cosmic_Butter_Master_SEED.png",
+      "name": "Cosmic Butter Master",
+      "nameOrigin": "既存ファイル名保持",
+      "stage": "SEED",
+      "stageOrigin": "既存ファイル名",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "短いポンチョと短パン、片膝で惑星を見上げる、青の丸い瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 125,
+        "DEF": 120,
+        "skillName": "小さな衛星",
+        "skillText": "自分以外の味方1体を選ぶ。次の相手ターン終了まで、その味方が受ける最初のDEF低下を無効にする。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX13",
+      "file": "ChatGPT 画像 2026年10月11日 22_36_30-1.png",
+      "name": "モブバターシールド",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "ユーザー承認に基づく配分案",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "赤い短コート、盾を両手で支える、茶の丸い瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 75,
+        "DEF": 130,
+        "skillName": "薄塗りシールド",
+        "skillText": "次の相手ターン終了まで自分のDEF+25。このターン自分のATK-10。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX14",
+      "file": "ChatGPT 画像 2026年10月11日 22_36_31-2.png",
+      "name": "モブバターロッド",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "ユーザー承認に基づく配分案",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "黄色いオーバーオール、杖を支える立ち姿、青緑の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 110,
+        "DEF": 100,
+        "skillName": "やわらかい杖先",
+        "skillText": "敵1体を選ぶ。このターンその敵のDEF-20。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX15",
+      "file": "ChatGPT 画像 2026年10月11日 22_36_32-3.png",
+      "name": "モブバターウェーブ",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "ユーザー承認に基づく配分案",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "タン色のオーバーオール、低いしゃがみ姿、茶の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 95,
+        "DEF": 115,
+        "skillName": "小波の受け流し",
+        "skillText": "次の相手ターン終了まで、自分が最初の攻撃を受けて生き残ったら、攻撃した敵のATKを15下げる。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX16",
+      "file": "ChatGPT 画像 2026年10月11日 22_36_33-4.png",
+      "name": "モブバターランス",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "ユーザー承認に基づく配分案",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "短いタバード、槍を縦に持つ立ち姿、茶の丸い瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 115,
+        "DEF": 95,
+        "skillName": "間合いの一歩",
+        "skillText": "自分よりDEFが高い敵1体を選ぶ。このターンその敵を攻撃するときだけ自分のATK+30。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW01",
+      "file": "17_Butter_Churn_SEED.png",
+      "name": "モブチャーン",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Cream butter maker. Ivory cat-ear cloth hood with cinnamon trim, round copper spectacles, full black mouthless face, large oval honey-brown irises and round catchlights. Short flour-dusted apron over striped terracotta shirt, rolled sleeves, baggy cocoa trousers. Seated astride low wooden butter churn on small bronze MOB pedestal, both hands firmly stirring one vertical wooden plunger, creamy butter curls visible over barrel rim. Quiet sturdy squat silhouette; full body visible, only one character.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 90,
+        "DEF": 120,
+        "skillName": "撹拌仕込み",
+        "skillText": "自分の次のターン開始まで自分が場に残れば、自分のDEFを30上げる。重複予約不可。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW02",
+      "file": "18_Butter_Mallet_SEED.png",
+      "name": "モブパドル",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Workshop butter pounder. Mustard-yellow CAT-EAR safety hood, round black spectacles with large white sclera and deep blue round pupils, no mouth. Indigo work overalls, short orange waist apron, thick mitts and wide work boots. Winding up a large round wooden mallet with a soft butter-coated head over one shoulder, both hands correctly on handle, feet wide apart. No hardhat crown or badge. Butter shavings near pedestal, wood workshop topped small bronze MOB oval base.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 125,
+        "DEF": 85,
+        "skillName": "一打ち成形",
+        "skillText": "このターン自分のATK+35。このターン自分のDEF-20。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW03",
+      "file": "19_Butter_Courier_SEED.png",
+      "name": "モブメルトラン",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter courier: short teal CAT-EARED rain hood with cream edge, perfectly round brass eyeglasses, wide open amber circular irises with sideward pupils. Rust-orange short bomber jacket, cream scarf streaming in a single arc, brown shorts and oversized teal boots. Leaning forward on one leg, other leg kicks back, holding a strapped wooden butter delivery box under one arm while other palm balances. A soft golden butter block peeks from box with a few drips. Mouthless black face. Small cobbled bronze MOB base.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 110,
+        "DEF": 95,
+        "skillName": "溶け足便",
+        "skillText": "味方SEED1体を選ぶ。このターンその味方のATK+20、次の相手ターン終了までその味方のDEF+10。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW04",
+      "file": "20_Butter_Palm_SEED.png",
+      "name": "モブなめらか拳",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter martial apprentice: soft pale yellow CAT-EAR fabric hood with charcoal edge, round bronze glasses, large alert round russet pupils with white sclera, no mouth. Sleeveless sage-green martial robe, broad cream waist sash with rounded knot, loose dark trousers and wrapped ankles. Deep horse stance, one open palm extended and coated with a rounded swirl of butter, other open palm held near waist. Hands clearly anatomical cartoon mitts. Calm low wide silhouette; small stone bronze MOB pedestal. No weapons or other symbols.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 120,
+        "DEF": 90,
+        "skillName": "すべり掌",
+        "skillText": "このターン自分の攻撃は相手のDEF上昇分を20まで無視する。元のDEFは無視しない。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW05",
+      "file": "21_Butter_Skimmer_SEED.png",
+      "name": "モブバタースキップ",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter skimming thrower: coral pink CAT-EARED short hood, round ivory spectacles, circular green irises with full open pupils and two round catchlights, black mouthless face. Short cream cape over brown fitted vest, knee shorts, knee pads and soft boots. Twisting sideways mid throw of ONE oval soft butter pat, one hand open after release, other arm tucked close. Butter pat and a single smooth curved trail wholly inside frame; one lifted heel. Minimal sandy bronze MOB base. No stars, sparkles, hearts, diamonds.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 115,
+        "DEF": 85,
+        "skillName": "すべり投げ",
+        "skillText": "敵1体を選ぶ。次の相手ターン終了までその敵のATK-20。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW06",
+      "file": "22_Butter_Alchemist_SEED.png",
+      "name": "モブ澄ましバター",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Clarified-butter alchemist: lavender CAT-EAR cloth hood with a rounded hanging tail, small perfectly circular silver glasses, large white sclera and circular amber pupils looking down. Black mouthless face. Cream high-collared laboratory coat with many ROUND buttons over plum trousers, brown boots. Crouching, carefully pouring clear golden melted butter from a round little flask into a wide shallow pan held in other hand. Distinct fine precise gesture, readable hands. Small smooth charcoal-topped bronze MOB base. No runes, jewels or diamond shapes.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 85,
+        "DEF": 125,
+        "skillName": "澄ましの一滴",
+        "skillText": "味方1体のATK低下を20まで戻す。元のATKを超えない。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW07",
+      "file": "23_Butter_Porter_SEED.png",
+      "name": "モブバターロール",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter porter: cocoa brown cat-ear hood with pale cream inner ears, round thick orange glasses, oversized round hazel pupils with bright white sclera, no mouth. Pale blue shirt, orange suspenders and high-waisted wide brown trousers, heavy boots. Braced backward with knees bent carrying one huge rolled spiral of soft golden butter in both arms at waist, full head and legs visible. Rolled butter spiral is creamy and slightly melting, no paper label. Small flat wood-topped bronze MOB base.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 75,
+        "DEF": 140,
+        "skillName": "包み直し",
+        "skillText": "次の相手ターン終了まで、自分が受ける最初のDEF低下を20まで軽減する。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW08",
+      "file": "24_Butter_Drum_SEED.png",
+      "name": "モブチャーンビート",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter rhythm drummer: short black and cream cat-ear hood, round bright red spectacles, very large round blue eyes with white sclera, no mouth. Orange striped shirt, cream short overalls, chunky red shoes. Sitting on a low stool with a round butter churn drum between knees, BOTH hands hold round-tipped drumsticks in alternating heights, butter cream splashes in small curved blobs on drum rim. Bouncy asymmetrical pose but all hands and legs clear. Small bronze MOB base. No music notes shaped like diamonds, no extra symbols.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 100,
+        "DEF": 110,
+        "skillName": "撹拌リズム",
+        "skillText": "自分以外の味方2体までを選ぶ。このターンそれぞれのATK+10。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW09",
+      "file": "25_Butter_Lantern_SEED.png",
+      "name": "モブギーランタン",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter lantern keeper: dark navy CAT-EAR hood with pale amber lining, round bronze glasses, full pale mint round irises looking upward, mouthless black face. Long soft mustard raincoat with large circular fasteners, rolled dark trousers and brown boots. Standing with one leg on a short step integrated into pedestal, lifting a ROUND glass lantern containing golden clarified butter flame with one hand, other shelters lantern side. Flame is soft teardrop, no diamond sparkles. Low cobbled bronze MOB base. Warm glow only near lantern, transparent background.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 95,
+        "DEF": 115,
+        "skillName": "黄金灯",
+        "skillText": "自分のライフを20回復する。このターン自分は攻撃できない。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW10",
+      "file": "26_Butter_Sailor_SEED.png",
+      "name": "モブバターフロート",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter sailor: cream cat-eared sailor hood with blue edging (no separate hat), ROUND navy spectacles, large brown circular pupils with white sclera glancing left. Blue sailor jacket, orange belt, white trousers tucked into tall blue boots. Kneeling with one boot forward and holding a short wooden paddle across shoulders in both hands, soft buttery wave curling at feet, thick golden butter block used as a little float at one side. Small oval bronze MOB base. No anchors or unrelated icons. Mouthless.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 105,
+        "DEF": 105,
+        "skillName": "浮き油",
+        "skillText": "次の相手ターン終了まで自分のDEF+25。このターン自分のATK-10。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW11",
+      "file": "27_Butter_Conductor_SEED.png",
+      "name": "モブバタータクト",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter conductor: plum cat-ear hood with cream inset, ROUND silver glasses, big circular violet irises, arched brows without eye slits, mouthless black face. Tailored cream short tailcoat with plum waistcoat, round gold buttons, short trousers and glossy brown shoes. Balancing on tiptoes, one hand high wielding a small rounded butter-coated wooden baton, other hand spread low guiding a soft ribbon of butter around ankles. Elegant zigzag body gesture. Bronze MOB pedestal. No music symbols, gems or crowns.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 140,
+        "DEF": 120,
+        "skillName": "黄金の拍子",
+        "skillText": "まだ攻撃していない味方1体を選ぶ。その味方はこのターン攻撃できず、別の味方1体のATK+45。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW12",
+      "file": "28_Butter_Sculptor_SEED.png",
+      "name": "モブバタークラフト",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "SEED",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Butter sculptor: turquoise cat-ear hood with cream edge, thick ROUND dark spectacles, large round lime irises with black pupils and circular catchlights. Black mouthless face. Long cinnamon artisan apron, rolled cream sleeves, teal trousers and sturdy brown shoes. Sitting cross-legged at base, carefully shaving a large smooth rounded golden butter block with a blunt flat wooden spatula in one hand, other palm steadies it, butter curl peeling upward. Figure fully visible, no extra characters carved, no faces on butter. Small bronze MOB base.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 120,
+        "DEF": 140,
+        "skillName": "削り出し",
+        "skillText": "自分のDEFを20下げ、味方1体のDEFを35上げる。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX01",
+      "file": "01_Steel_Gold_Masked_Gladiator_MIDDLE.png",
+      "name": "Steel Gold Masked Gladiator",
+      "nameOrigin": "既存ファイル名保持",
+      "stage": "MIDDLE",
+      "stageOrigin": "既存ファイル名",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "重装、盾を前に出す低い踏み込み、緑の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 155,
+        "DEF": 175,
+        "skillName": "盾からの反撃",
+        "skillText": "次の相手ターン終了まで、自分が最初の攻撃を受けて生き残った場合、次の自分のターン終了まで自分のATK+30。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX03",
+      "file": "02_Energy_Wasteland_Warrior_MIDDLE.png",
+      "name": "Energy Wasteland Warrior",
+      "nameOrigin": "既存ファイル名保持",
+      "stage": "MIDDLE",
+      "stageOrigin": "既存ファイル名",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "厚い荒野コート、片膝、橙の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 175,
+        "DEF": 140,
+        "skillName": "荒野の放電",
+        "skillText": "敵1体を選ぶ。このターンその敵のDEF-30、自分のATK+15。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX05",
+      "file": "03_Witchbound_Marionette_MIDDLE.png",
+      "name": "Witchbound Marionette",
+      "nameOrigin": "既存ファイル名保持",
+      "stage": "MIDDLE",
+      "stageOrigin": "既存ファイル名",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "長い舞台衣装、巻物を広げる踊り、ミント色の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 130,
+        "DEF": 165,
+        "skillName": "からまる巻物",
+        "skillText": "敵1体を選ぶ。このターンその敵への最初のスキルによるDEF上昇を無効にする。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX07",
+      "file": "04_Cosmic_Butter_Master_MIDDLE.png",
+      "name": "Cosmic Butter Master",
+      "nameOrigin": "既存ファイル名保持",
+      "stage": "MIDDLE",
+      "stageOrigin": "既存ファイル名",
+      "rarity": "UR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "長いローブ、立ち姿で上下の惑星を操る、紫の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 175,
+        "DEF": 180,
+        "skillName": "二重バター軌道",
+        "skillText": "味方1体と敵1体を選ぶ。次の相手ターン終了まで味方のDEF+25、敵のATK-20。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX09",
+      "file": "ChatGPT 画像 2026年10月11日 22_36_16-1.png",
+      "name": "モブバターシールド・ガーディアン",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "MIDDLE",
+      "stageOrigin": "ユーザー承認に基づく配分案",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "重い布鎧、大盾を支える片膝、鋭さのある面積を保った瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 125,
+        "DEF": 185,
+        "skillName": "大盾の退路",
+        "skillText": "味方1体を選ぶ。次の相手ターン終了まで、その味方への最初の攻撃を自分が代わりに受ける。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX10",
+      "file": "ChatGPT 画像 2026年10月11日 22_36_17-2.png",
+      "name": "モブバターロッド・マイスター",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "MIDDLE",
+      "stageOrigin": "ユーザー承認に基づく配分案",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "袖を巻いた上着と太いズボン、杖を横構え、青の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 160,
+        "DEF": 150,
+        "skillName": "横薙ぎバターロッド",
+        "skillText": "敵2体までを選ぶ。このターン、それぞれのDEF-15。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX11",
+      "file": "ChatGPT 画像 2026年10月11日 22_36_18-3.png",
+      "name": "モブバターウェーブ・フロウ",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "MIDDLE",
+      "stageOrigin": "ユーザー承認に基づく配分案",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "袖なしコート、片脚を上げる、淡緑の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 165,
+        "DEF": 145,
+        "skillName": "波の押し返し",
+        "skillText": "敵1体を選ぶ。次の相手ターン終了まで、その敵のATK-30。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "EX12",
+      "file": "ChatGPT 画像 2026年10月11日 22_36_19-4.png",
+      "name": "モブバターランス・スピン",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "MIDDLE",
+      "stageOrigin": "ユーザー承認に基づく配分案",
+      "rarity": "UR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・既存同名上書き",
+      "difference": "長いコート、槍を斜めに構える、紫の瞳",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 185,
+        "DEF": 155,
+        "skillName": "螺旋の突き",
+        "skillText": "敵MIDDLEまたはMOB1体を選ぶ。このターンその敵を攻撃するときだけ自分のATK+45。他の敵を攻撃できない。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW13",
+      "file": "29_Butter_Fortress_MOB.png",
+      "name": "モブバター砦",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "MOB",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "MOB-tier butter fortress guardian, broad powerful squat chibi silhouette. Ivory cat-ear armored hood with copper trim, unmistakably ROUND dark bronze eyeglasses, big open copper round pupils and white sclera, black face with NO mouth. Layered heavy cream and brown horizontal armor plates, broad short mantle, thick boots. Deep braced pose with both hands holding a huge smooth semicircular butter rampart in front at waist, head and legs remain clear. Butter fortress surface is round and melting, no battlements resembling crown, no diamonds or jewels. Substantial bronze oval MOB pedestal, whole character and wall comfortably in frame.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 220,
+        "DEF": 300,
+        "skillName": "重ね塗り防壁",
+        "skillText": "次の相手ターン終了まで、味方2体のDEF+35。ただし自分は次の自分のターン開始まで攻撃できない。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW14",
+      "file": "30_Butter_Torrent_MOB.png",
+      "name": "モブメルトストリーム",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "MOB",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "SSR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "MOB-tier flowing butter martial master, tall dynamic chibi S-curve silhouette. Deep teal cat-ear hood with orange cream lining, large ROUND copper spectacles, wide fully visible round turquoise irises, no mouth. Sleeveless orange long coat with ROUND clasps, wide cream sash, dark teal baggy trousers, ankle wraps. Airborne side-step with one knee high above bronze pedestal and one foot near it, both palms guiding one broad flowing golden butter stream spiraling behind and below body. No wings, no diamond sparkles, no crown. Butter stream smooth creamy not fire, two arms and two legs fully readable.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 285,
+        "DEF": 240,
+        "skillName": "流しバター",
+        "skillText": "敵1体のDEF上昇効果を解除する。このターン自分のATK+20。元のDEFは下げない。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW15",
+      "file": "31_Butter_Refiner_MOB.png",
+      "name": "モブ黄金のギー",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "MOB",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "UR",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "UR-tier clarified butter sage, dignified wide bell-shaped silhouette. Deep burgundy cat-ear ceremonial fabric hood, ROUND golden spectacles with transparent lenses, big open oval golden irises with round pupils, black mouthless face. Layered flowing cream robes with burgundy wide sleeves, plain gold circular clasps and a thick braided round cord, NO crown, no gems. Sitting serenely cross-legged slightly above bronze MOB base, holding a shallow round gold bowl with both hands, one smooth luminous golden butter ribbon rises from bowl curling around one side. Full feet and hands clear. Radiant clean cel-shaded cartoon finish, no stars or diamonds.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 280,
+        "DEF": 300,
+        "skillName": "黄金精製",
+        "skillText": "味方2体までのATK・DEF低下をそれぞれ20まで戻す。元の値を超えない。使用後、自分のDEF-25。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    },
+    {
+      "id": "NEW16",
+      "file": "32_Butter_Grandmaster_MOB.png",
+      "name": "モブバター大練師",
+      "nameOrigin": "ユーザー承認に基づく命名案",
+      "stage": "MOB",
+      "stageOrigin": "指定総数に合わせた追加枠",
+      "rarity": "MOB",
+      "rarityOrigin": "指定総数に合わせた個別配分案",
+      "artStatus": "完成・新規個別生成",
+      "difference": "Top MOB-tier butter grand churn master, majestic yet cute cartoon black mouthless butter creature, CAT-EAR-shaped ivory-and-copper hood, perfectly ROUND brass spectacles, large fully open emerald round irises with round pupils and two circular highlights. Huge cream sculptural sleeves over copper-brown overcoat with flowing layered rounded hems, teal waist sash, thick dark boots, all fasteners circular. Wide stable stance turned three-quarter, both hands gripping a massive wooden butter-churning paddle diagonally upward. A grand creamy golden spiral of whipped butter rises behind like a soft ribbon, not wings, with a large smooth butter curl at paddle tip. Distinct strong final-tier silhouette and substantial bronze oval pedestal labelled MOB. Absolutely no crown, diamond, rhombus, hearts, mouth or thin eye lines. All props inside roomy transparent margins.",
+      "confirmedSettings": {
+        "ATK": null,
+        "DEF": null,
+        "skill": null
+      },
+      "proposal": {
+        "ATK": 300,
+        "DEF": 300,
+        "skillName": "とろける大団円",
+        "skillText": "敵1体と自分のDEFを40ずつ下げる。その後、味方1体のATK+40。この効果はこのターン終了まで。",
+        "usesPerBattle": 1,
+        "timing": "自分メインフェイズ"
+      },
+      "implemented": false
+    }
+  ]
+}

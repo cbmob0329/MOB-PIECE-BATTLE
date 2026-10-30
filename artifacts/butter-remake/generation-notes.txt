@@ -1,0 +1,16 @@
+Generation mode: built-in image_gen, one call per individual asset, with individual repair calls.
+Windows referenced_image_paths failed before generation with: AbsolutePathBuf deserialized without a base path at line 1 column 155.
+Successful route: view_image of local target, then num_last_images_to_include=1 (first successful SEED call used 2 to include the target and original contact sheet).
+Returned image data saved losslessly from PNG base64 through a temporary file; temporary base64 files removed after validation. No raster redraw, color replacement, SVG placeholder or sheet slicing used.
+
+First SEED prompt: Remake Steel Gold Masked Gladiator SEED, preserving cat-eared steel hood, round gold spectacles, mouthless black face, butter buckler and MOB base. Light asymmetric shoulder armor, burgundy short cape, cream tunic and leather skirt, low sideways defensive fencing pose, short horizontal sword, open oval amber irises with round pupils. Transparent background. No mouth, line eyes, diamond decorations, hearts, crowns or invaders.
+First MIDDLE prompt: Retain steel/gold helmet, sword, butter shield and burgundy cape. Broad segmented breastplate, heavy armored boots, thick half mantle, shield forward and sword low behind, deep forward lunge, open green irises and round spectacles. No jewels. See fix-target-0.json for plain-blade repair.
+
+Other 14 prompts: remake-prompts.json, each appended to its common specification and used with its original image as edit target.
+Later extra common constraints: No rhombuses anywhere, no diamond quilting, no angled square patches, no faceted gems, no diamond blade insets. Plain fabric or parallel stripes; circular buttons and badges.
+Specific repairs: fix-target-0.json, fix-target-1.json, fix-target-2.json.
+Additional shield framing repair for 22_36_16-1: preserve exact figure; full character and base smaller and centered within transparent canvas, complete right cape inside frame; no new design or forbidden elements.
+
+Final QA: All 16 generated outputs viewed individually, then final 16-image contact sheet viewed. All 16 RGBA with transparent corners; outer-border pixels with alpha greater than 32 = zero for every image. Original backup SHA256 verified; all 16 destination hashes match accepted output hashes. One wide spear figure is 1223x1286; other figures 1086x1448. This aspect change is recorded and no consuming code was changed.
+Only the Butter target folder and artifacts/butter-remake were modified. No Git commit, push or publication.
+Superseded completion status: after the user approved naming/stage proposals, 16 additional individual images were generated and saved. The authoritative complete roster is butter-32-manifest.json. Final verification is butter-32-validation.json. Names/stats/skills proposed in the final TXT are not implemented game settings.

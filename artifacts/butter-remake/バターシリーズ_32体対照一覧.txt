@@ -1,0 +1,99 @@
+バターシリーズ 32体画像・名称対照一覧
+総数32（既存16＋追加16）。名称・個別配分は提案、既知の名前/段階は保持。
+
+EX02 | SEED | SR | Steel Gold Masked Gladiator
+01_Steel_Gold_Masked_Gladiator_SEED.png
+
+EX04 | SEED | SR | Energy Wasteland Warrior
+02_Energy_Wasteland_Warrior_SEED.png
+
+EX06 | SEED | SR | Witchbound Marionette
+03_Witchbound_Marionette_SEED.png
+
+EX08 | SEED | SSR | Cosmic Butter Master
+04_Cosmic_Butter_Master_SEED.png
+
+EX13 | SEED | SR | モブバターシールド
+ChatGPT 画像 2026年10月11日 22_36_30-1.png
+
+EX14 | SEED | SR | モブバターロッド
+ChatGPT 画像 2026年10月11日 22_36_31-2.png
+
+EX15 | SEED | SR | モブバターウェーブ
+ChatGPT 画像 2026年10月11日 22_36_32-3.png
+
+EX16 | SEED | SR | モブバターランス
+ChatGPT 画像 2026年10月11日 22_36_33-4.png
+
+NEW01 | SEED | SR | モブチャーン
+17_Butter_Churn_SEED.png
+
+NEW02 | SEED | SR | モブパドル
+18_Butter_Mallet_SEED.png
+
+NEW03 | SEED | SR | モブメルトラン
+19_Butter_Courier_SEED.png
+
+NEW04 | SEED | SR | モブなめらか拳
+20_Butter_Palm_SEED.png
+
+NEW05 | SEED | SR | モブバタースキップ
+21_Butter_Skimmer_SEED.png
+
+NEW06 | SEED | SR | モブ澄ましバター
+22_Butter_Alchemist_SEED.png
+
+NEW07 | SEED | SR | モブバターロール
+23_Butter_Porter_SEED.png
+
+NEW08 | SEED | SR | モブチャーンビート
+24_Butter_Drum_SEED.png
+
+NEW09 | SEED | SR | モブギーランタン
+25_Butter_Lantern_SEED.png
+
+NEW10 | SEED | SR | モブバターフロート
+26_Butter_Sailor_SEED.png
+
+NEW11 | SEED | SSR | モブバタータクト
+27_Butter_Conductor_SEED.png
+
+NEW12 | SEED | SSR | モブバタークラフト
+28_Butter_Sculptor_SEED.png
+
+EX01 | MIDDLE | SSR | Steel Gold Masked Gladiator
+01_Steel_Gold_Masked_Gladiator_MIDDLE.png
+
+EX03 | MIDDLE | SSR | Energy Wasteland Warrior
+02_Energy_Wasteland_Warrior_MIDDLE.png
+
+EX05 | MIDDLE | SSR | Witchbound Marionette
+03_Witchbound_Marionette_MIDDLE.png
+
+EX07 | MIDDLE | UR | Cosmic Butter Master
+04_Cosmic_Butter_Master_MIDDLE.png
+
+EX09 | MIDDLE | SSR | モブバターシールド・ガーディアン
+ChatGPT 画像 2026年10月11日 22_36_16-1.png
+
+EX10 | MIDDLE | SSR | モブバターロッド・マイスター
+ChatGPT 画像 2026年10月11日 22_36_17-2.png
+
+EX11 | MIDDLE | SSR | モブバターウェーブ・フロウ
+ChatGPT 画像 2026年10月11日 22_36_18-3.png
+
+EX12 | MIDDLE | UR | モブバターランス・スピン
+ChatGPT 画像 2026年10月11日 22_36_19-4.png
+
+NEW13 | MOB | SSR | モブバター砦
+29_Butter_Fortress_MOB.png
+
+NEW14 | MOB | SSR | モブメルトストリーム
+30_Butter_Torrent_MOB.png
+
+NEW15 | MOB | UR | モブ黄金のギー
+31_Butter_Refiner_MOB.png
+
+NEW16 | MOB | MOB | モブバター大練師
+32_Butter_Grandmaster_MOB.png
+
