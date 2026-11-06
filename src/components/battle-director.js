@@ -9,7 +9,7 @@ export function groupPresentationEvents(events){const out=[];for(const e of even
 export function createBattleDirector(root,{profile,style}){
  let stopped=0,animation=null;const soundScope=sound.beginScope('battle');
  const reduced=()=>profile.reducedMotion||matchMedia('(prefers-reduced-motion: reduce)').matches;
- const particles=()=>`<div class="fx-particles" aria-hidden="true">${Array.from({length:18},(_,i)=>`<i style="--i:${i};--angle:${i*20}deg"></i>`).join('')}</div>`;
+ const particles=()=>`<div class="fx-particles" aria-hidden="true">${Array.from({length:18},(_,i)=>`<i style="--i:${i};--angle:${i*20}deg;--reach:${i%2?145:210}px;--spark-size:${i%3?4:6}px"></i>`).join('')}</div>`;
  const forming=(id,special=false,event={})=>`<div class="fx-form ${special?'special':''}"><i class="fx-platform"></i><i class="fx-ring"></i><i class="fx-ring second"></i><div class="fx-hologram" style="--figure:url('${new URL(soulById.get(id)?.image||'',document.baseURI).href}')"></div><div class="fx-body">${(event.partnerIds||[]).map((id,i)=>`<span class="fx-partner" aria-hidden="true" style="--partner:${i};--partners:${event.partnerIds.length}">${image(id)}</span>`).join('')}${image(id)}</div><i class="fx-scan"></i>${particles()}</div>`;
 
  function presentation(e){

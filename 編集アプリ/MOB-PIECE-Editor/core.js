@@ -17,7 +17,7 @@ function status(r,data){
 }
 function filter(records,f,groups){
  const q=(f.q||'').trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
- return records.filter(r=>(!f.series||seriesList(r).includes(f.series))&&(!f.soulClass||r.soulClass===f.soulClass)&&(!f.rarity||r.rarity===f.rarity)&&(!f.attribute||r.attribute===f.attribute)&&(!f.tag||r.tags.includes(f.tag))&&q.every(w=>[r.name,r.id,r.uid,r.skill.name,r.skill.description,...seriesList(r)].join(' ').toLocaleLowerCase().includes(w)))
+ return records.filter(r=>(!f.series||seriesList(r).includes(f.series))&&(!f.soulClass||r.soulClass===f.soulClass)&&(!f.rarity||r.rarity===f.rarity)&&(!f.attribute||String(r.attribute||'').split('/').map(x=>x.trim()).includes(f.attribute))&&(!f.tag||r.tags.includes(f.tag))&&q.every(w=>[r.name,r.id,r.uid,r.skill.name,r.skill.description,...seriesList(r)].join(' ').toLocaleLowerCase().includes(w)))
  .sort((a,b)=>(groups.indexOf(a.series)<0?999:groups.indexOf(a.series))-(groups.indexOf(b.series)<0?999:groups.indexOf(b.series))||classes.indexOf(a.soulClass)-classes.indexOf(b.soulClass)||a.id.localeCompare(b.id,'ja',{numeric:true}));
 }
 function groups(records,mode){
@@ -80,5 +80,10 @@ function parseImport(text,data){
  return {value:o,conflict:o.sourceHash!==data.sourceHash||o.sourceVersion!==data.sourceVersion,missing:data.records.filter(r=>!seen.has(r.id)).map(r=>r.id),unknown:o.records.filter(r=>!known.has(r.id))};
 }
 function importRecords(parsed,current){const by=new Map(parsed.value.records.map(r=>[r.id,r]));return current.map(r=>clone(by.get(r.id)||r));}
-root.MPB_CORE={clone,stable,equal,classes,seriesList,status,filter,groups,changes,validate,envelope,parseImport,importRecords};
+
+function commonAssignments(rows,kind){if(!rows.length)return [];const values=r=>kind==='tag'?r.tags:seriesList(r);return [...new Set(values(rows[0]))].filter(v=>rows.every(r=>values(r).includes(v)));}
+function bulkAssignments(rows,kind,action,value){let changed=0,skipped=0;if(!value)return {changed,skipped};for(const r of rows){if(kind==='tag'){const has=r.tags.includes(value);if(action==='add'&&!has){r.tags.push(value);changed++;}else if(action==='remove'&&has){r.tags=r.tags.filter(t=>t!==value);changed++;}}else{const names=seriesList(r);if(action==='add'){if(names.includes(value))continue;if(names.length>=2){skipped++;continue;}names.push(value);}else{if(!names.includes(value))continue;names.splice(names.indexOf(value),1);}r.series=names[0]||'';r.series2=names[1]||'';changed++;}}return {changed,skipped};}
+function simpleFusionKind(record,recipe,rows){const by=new Map(rows.map(r=>[r.id,r])),m=recipe.materials||[],fixed=(x,stage)=>!!x?.id&&by.get(x.id)?.soulClass===stage&&Object.keys(x).length===1,tag=x=>!!x?.tag&&Object.keys(x).length===1;if(m.length!==2)return null;if(record.soulClass==='mob')return m.every(x=>fixed(x,'middle'))?'mob':null;if(record.soulClass!=='middle')return null;if(recipe.special&&record.rarity==='UR'&&m.every(x=>fixed(x,'seed')))return 'special';if(!recipe.special&&((fixed(m[0],'seed')&&tag(m[1]))||(tag(m[0])&&fixed(m[1],'seed'))))return 'normal';return null;}
+function createSimpleFusion(record,kind,id){if(kind==='special'&&record.rarity!=='UR')throw Error('MOBソウルフュージョンはUR以上限定です');if(record.soulClass==='middle'&&!['normal','special'].includes(kind)||record.soulClass==='mob'&&kind!=='mob'||record.soulClass==='seed')throw Error('段階に合う融合を選んでください');return {id,target:record.id,fromClass:kind==='mob'?'middle':'seed',materials:kind==='normal'?[{id:''},{tag:''}]:[{id:''},{id:''}],label:kind==='normal'?'ソウルフュージョン':kind==='special'?'MOBソウルフュージョン':'固定ミドル同士の融合',special:kind==='special'};}
+root.MPB_CORE={simpleFusionKind,createSimpleFusion,commonAssignments,bulkAssignments,clone,stable,equal,classes,seriesList,status,filter,groups,changes,validate,envelope,parseImport,importRecords};
 })(typeof window==='undefined'?globalThis:window);

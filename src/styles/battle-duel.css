@@ -102,3 +102,30 @@
 
 .tower-figure-reward{padding:20px;border:2px solid #e9c265;border-radius:24px;background:radial-gradient(ellipse at center,#4f4262,#201c35);color:#fff;margin:18px auto;max-width:560px}.tower-figure-reward h3{font-size:26px;color:#ffe5a2;margin:0}.tower-figure-reward>div{display:flex;justify-content:center;gap:16px}.tower-figure-reward article{display:grid;justify-items:center;width:min(42vw,210px);animation:tower-figure-arrival 1.4s calc(var(--reward-index)*.6s) both}.tower-figure-reward img{width:100%;height:190px;object-fit:contain;filter:drop-shadow(0 0 15px #e8c267)}.tower-figure-reward small{color:#ffe596;font-weight:900}.master-result-quote{font-weight:800;font-size:18px;color:#ffe9ad;max-width:480px;margin:18px auto}@keyframes tower-figure-arrival{0%{opacity:0;transform:translateY(40px) scale(.6);filter:brightness(0)}40%{opacity:1;filter:brightness(0)}70%{filter:brightness(3)}100%{transform:none;filter:none}}@media(prefers-reduced-motion:reduce){.tower-figure-reward article{animation:none}}
 .reduce-motion .tower-figure-reward article{animation:none}
+
+/* Radial composition inspired by https://mojs.github.io/tutorials/burst/.
+   Original CSS; no mo.js runtime or source bundled. */
+.fx-particles{--spark-distance:1;--spark-turn:0deg}
+.fx-particles i{width:var(--spark-size);height:16px;border:0;border-radius:999px;clip-path:none;box-shadow:0 0 7px currentColor;color:var(--burst);animation-name:fx-radial-spark}
+.fx-particles i:nth-child(even){height:7px;background:#efffff}
+.fx-particles::after{content:"";position:absolute;left:50%;top:50%;width:150px;height:150px;border:2px solid var(--burst);border-radius:50%;animation:fx-burst-wave var(--cue-time) ease-out both}
+.cue-summon .fx-particles{--spark-distance:.72}
+.cue-fusion .fx-particles{--spark-turn:18deg}
+.cue-fusion.mob .fx-particles{--spark-distance:1.15;--spark-turn:32deg}
+.cue-skill{--burst:#c5a3ff}
+.cue-hit{--burst:#ffc879}
+.cue-hit .fx-particles{--spark-distance:.65}
+.cue-defeat .fx-particles{--spark-distance:.7;--spark-turn:-20deg}
+.cue-result.lose .fx-particles{display:none}
+@keyframes fx-radial-spark{
+  0%,40%{transform:translate(-50%,-50%) rotate(var(--angle)) translateY(-12px) scale(0);opacity:0}
+  52%{opacity:1}
+  100%{transform:translate(-50%,-50%) rotate(calc(var(--angle) + var(--spark-turn))) translateY(calc(-1 * var(--reach) * var(--spark-distance))) scale(.2);opacity:0}
+}
+@keyframes fx-burst-wave{
+  0%,40%{transform:translate(-50%,-50%) scale(.1);opacity:0}
+  53%{opacity:.7}
+  100%{transform:translate(-50%,-50%) scale(2);opacity:0}
+}
+.motion-reduced .fx-particles{display:none}
+@media(prefers-reduced-motion:reduce){.fx-particles{display:none}}
